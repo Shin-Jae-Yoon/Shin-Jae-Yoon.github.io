@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'nanum';
+    font-weight: 400;
+    src: url(./font/NanumSquareR.woff);
+}
+
+@font-face {
+    font-family: 'nanum';
+    font-weight: 700;
+    src: url(./font/NanumSquareB.woff);
+}
+
+@font-face {
+    font-family: 'nanum';
+    font-weight: 800;
+    src: url(./font/NanumSquareEB.woff);
+}
+
+@font-face {
+    font-family: 'nanum';
+    font-weight: 300;
+    src: url(./font/NanumSquareR.woff);
+}
+
+body {
+    font-family: 'nanum';
+    transform: rotate(0.03deg);
+    background: #f7f9fc;
+}
+
+.white-box {
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0.5px 0.5px 2px 1px #eee;
+}
+
+.gray-color__bg {
+    background: #f7f9fc;
+}
+
+.skyblue-color__bg {
+    background-color: #6fbaf8;
+}
+
+.skyblue-color__text {
+    color: #6fbaf8;
+}
+
+.bottom-solid {
+    border-bottom: 3px solid lightgray;
+}
+
+@media screen and (min-width: 992px) {
+    .left-solid {
+        border-left: 3px solid #f4f4f4;
+        padding-left: 3rem;
+    }
+}
+
+
+/* 알약모양 부트스트랩 안쓰고 직접 구현 코드 */
+/* .pill {
+	display: inline-block;
+	border: 1px solid lightgray;
+	border-radius: 100px;
+	padding: 3px 12px 5px 12px;
+	margin-right: 2px;
+	margin-bottom: 5px;
+} */
