@@ -4,16 +4,23 @@
 <!-- Contact Info -->
 <div id="contact_buttons">
     <footer>
+        <a style="margin: 0;" href="https://hits.seeyoufarm.com">
+            <img style="margin: 0;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fshin-jae-yoon.github.io&count_bg=%23284B63&title_bg=%23284B63&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=true"/>
+        </a>
         {{ $name := $data.name | default $.Site.Data.config.name }}
         {{ $year := dateFormat "2006" now }}
         <p>{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
         <ul>
-            {{ if not .IsHome }}
+            <!-- {{ if not .IsHome }}
             <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
-            {{end}}
-            {{- range $data.links | default $.Site.Data.config.links -}}
+            {{end}} -->
+            <!-- {{- range $data.links | default $.Site.Data.config.links -}}
             <li><a href="{{.link}}">{{.link_name}}</a></li>
-            {{- end -}}
+            {{- end -}} -->
+            <li><a href="https://github.com/Shin-Jae-Yoon"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://jae-yoon.tistory.com/"><i class="fa-solid fa-tenge-sign"></i></a></li>
+            <li><a href="https://www.instagram.com/jae__yoon96/"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="mailto:wlwhsvkdlxh@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
         </ul>
     </footer>
 </div>
