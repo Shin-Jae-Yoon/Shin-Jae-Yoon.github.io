@@ -259,6 +259,14 @@ sup > a {
   }
 }
 
+#page-title2 {
+  display: none;
+  margin: 0;
+  & > a {
+    font-family: var(--font-header);
+  }
+}
+
 .header-nav {
   list-style: none;
   display: flex;
@@ -270,6 +278,11 @@ sup > a {
 
 @media screen and (max-width: 620px) {
   #page-title {
+    display: none;
+  }
+
+  #page-title2 {
+    display: block;
     font-size: 1.2rem;
   }
 
