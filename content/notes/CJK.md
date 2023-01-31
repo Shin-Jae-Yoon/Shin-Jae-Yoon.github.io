@@ -1,5 +1,5 @@
 ---
-title: "CJK + Latex Support (测试)"
+title: "CJK"
 ---
 
 ## Chinese, Japanese, Korean Support

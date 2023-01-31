@@ -1,4 +1,4 @@
-<header style="min-width: 35em;">
+<header style="margin-bottom: 0;">
     {{ $config := cond (eq $.Site.Language.Lang "en") "config" (printf "config.%s" $.Site.Language.Lang) }}
     <img src="https://img1.daumcdn.net/thumb/C32x32/?scode=mtistory2&fname=https%3A%2F%2Ftistory3.daumcdn.net%2Ftistory%2F5252507%2F9f1447b3d8ac45ffa6c01c21fa6aec75"/>
     <h1 style="margin-left: 0.2em;" id="page-title"><a href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a></h1>
@@ -9,4 +9,13 @@
     </div>
     {{partial "darkmode.html" .}}
 </header>
+<div style="margin-bottom: 3em;">
+	<ul class="header-nav">
+    <li style="margin-right: 1em;"><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
+    <li style="margin-right: 1em;"><a href="{{ $.Site.BaseURL}}">{{ i18n "about" }}</a></li>
+    <li style="margin-right: 1em;"><a href="{{ $.Site.BaseURL}}">{{ i18n "til" }}</a></li>
+    <li><a href="https://www.naver.com">{{ i18n "interview" }}</a></li>
+    </ul>
+</div>
+
 

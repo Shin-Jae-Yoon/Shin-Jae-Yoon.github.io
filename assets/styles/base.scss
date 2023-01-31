@@ -21,7 +21,7 @@ html {
 }
 
 .singlePage {
-  padding: 4em 30vw;
+  padding: 4em 27vw;
   @media all and (max-width: 1200px) {
     padding: 25px 5vw;
   }
@@ -256,6 +256,25 @@ sup > a {
   margin: 0;
   & > a {
     font-family: var(--font-header);
+  }
+}
+
+.header-nav {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  margin-right: 1em;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+@media screen and (max-width: 620px) {
+  #page-title {
+    font-size: 1.2rem;
+  }
+
+  .header-nav {
+    justify-content: center;
   }
 }
 
@@ -620,4 +639,29 @@ header {
 mark {
   background-color: var(--highlighted);
   color: var(--gray);
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.top-btn-img {
+  font-size: 4em;
+}
+
+@media screen and (max-width: 620px) {
+  .top-btn {
+      bottom: 30px;
+      right: 30px;
+  }
+
+  .top-btn-img {
+    font-size: 3em;
+  }
 }

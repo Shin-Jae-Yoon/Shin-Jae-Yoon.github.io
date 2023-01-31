@@ -1,8 +1,8 @@
 [404_message]
-other = "Hey! You look a little lost. This page doesn't exist (or may be private)."
+other = "404 에러! 존재하지 않는 페이지 이거나 비공개 페이지 입니다."
 
 [404_back]
-other = "↳ Let's get you home."
+other = "↳ Home으로 돌아가세요."
 
 [all_posts]
 other = "All {{.Title}}"
@@ -17,13 +17,13 @@ other = "notes with this tag"
 other = "showing first 10 results"
 
 [tag]
-other = "Tag"
+other = "태그"
 
 [backlinks]
-other = "Backlinks"
+other = "백링크"
 
 [no_backlinks]
-other = "No backlinks found"
+other = "백링크를 찾을 수 없습니다."
 
 [home]
 other = "Home"
@@ -47,7 +47,7 @@ other = "Dark Mode"
 other = "Edit Source"
 
 [interactive_graph]
-other = "Interactive Graph"
+other = "연결된 그래프"
 
 [search]
 other = "Search"
@@ -65,10 +65,10 @@ other = "Recent Notes"
 other = "first 3 {{ .notes }}"
 
 [search_for_something]
-other = "Search for something..."
+other = " 검색어를 입력하세요 "
 
 [toc]
-other = "Table of Contents"
+other = "Contents"
 
 [copyright]
 other = "Made by {{ .name }} using <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
