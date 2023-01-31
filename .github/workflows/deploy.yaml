@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
@@ -36,4 +36,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: master  # deploying branch
-          cname: quartz.jzhao.xyz
+          cname: shin-jae-yoon.github.io
