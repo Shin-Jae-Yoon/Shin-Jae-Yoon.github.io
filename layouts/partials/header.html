@@ -1,6 +1,7 @@
-<header>
+<header style="min-width: 35em;">
     {{ $config := cond (eq $.Site.Language.Lang "en") "config" (printf "config.%s" $.Site.Language.Lang) }}
-    <h1 id="page-title"><a href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a></h1>
+    <img src="https://img1.daumcdn.net/thumb/C32x32/?scode=mtistory2&fname=https%3A%2F%2Ftistory3.daumcdn.net%2Ftistory%2F5252507%2F9f1447b3d8ac45ffa6c01c21fa6aec75"/>
+    <h1 style="margin-left: 0.2em;" id="page-title"><a href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a></h1>
     <div class="spacer"></div>
     <div id="search-icon">
       <p>{{ i18n "search" }}</p>

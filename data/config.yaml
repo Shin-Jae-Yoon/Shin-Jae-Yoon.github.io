@@ -21,9 +21,11 @@ description:
   Host your second brain and digital garden for free. Quartz features extremely fast full-text search,
   Wikilink support, backlinks, local graph, tags, and link previews.
 page_title:
-  "Dev 유니"
+  "개발자 재윤 - 두 번째 뇌"
 links:
   - link_name: Tistory
     link: https://jae-yoon.tistory.com/
   - link_name: GitHub
     link: https://github.com/Shin-Jae-Yoon
+favicon:
+  - { rel: "shortcut icon", href: "icon.png", type: "image/png" }

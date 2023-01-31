@@ -28,6 +28,15 @@ other = "No backlinks found"
 [home]
 other = "Home"
 
+[about]
+other = "About"
+
+[til]
+other = "TIL"
+
+[interview]
+other = "Interview"
+
 [light_mode]
 other = "Light Mode"
 

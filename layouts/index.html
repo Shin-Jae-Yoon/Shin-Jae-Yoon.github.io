@@ -8,6 +8,7 @@
     <!-- Begin actual content -->
     {{partial "header.html" .}}
     <article>
+        {{partial "headerNav.html" . }}
         {{partial "toc.html" .}}
         {{partial "textprocessing.html" . }}
         {{if $.Site.Data.config.enableRecentNotes}}
