@@ -15,3 +15,5 @@ title: "TIL"
 
 [[notes/TIL/Brain/파이썬]]
 
+[[notes/TIL/Brain/테스트]]
+
