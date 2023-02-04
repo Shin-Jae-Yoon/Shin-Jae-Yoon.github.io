@@ -3,5 +3,5 @@
 {{else if .Lastmod}}
 {{.Lastmod.Format "Jan 2, 2006"}}
 {{else}}
-Unknown
+{{.Date.Format "Jan 2, 2006"}}
 {{end}}

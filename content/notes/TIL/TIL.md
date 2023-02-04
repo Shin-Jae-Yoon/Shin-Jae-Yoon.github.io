@@ -11,3 +11,7 @@ title: "TIL"
 
 [[notes/TIL/Brain/Java]]
 
+[[notes/TIL/Brain/Python]]
+
+[[notes/TIL/Brain/파이썬]]
+
