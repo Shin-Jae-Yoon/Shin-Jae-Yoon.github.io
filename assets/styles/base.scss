@@ -678,3 +678,31 @@ mark {
     font-size: 3em;
   }
 }
+
+.column-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column:nth-child(1) {
+  width: 20%;
+}
+
+.column:nth-child(2) {
+  width: 60%;
+}
+
+@media screen and (max-width: 620px) {
+  .column-list {
+    flex-direction: column;
+  }
+
+  .column:nth-child(1) {
+    width: 100%;
+    align-self: center;
+  }
+
+  .column:nth-child(2) {
+    width: 100%;
+  }
+}

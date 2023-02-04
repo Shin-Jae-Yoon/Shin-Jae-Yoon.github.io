@@ -1,910 +1,233 @@
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>신재윤 (Uni)</title>
-    <style>
-      /* cspell:disable-file */
-      /* webkit printing magic: print all background colors */
-      html {
-        -webkit-print-color-adjust: exact;
-      }
-      * {
-        box-sizing: border-box;
-        -webkit-print-color-adjust: exact;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      @media only screen {
-        body {
-          margin: 2em auto;
-          max-width: 900px;
-          color: rgb(55, 53, 47);
-        }
-      }
-
-      body {
-        line-height: 1.5;
-        white-space: pre-wrap;
-      }
-
-      a,
-      a.visited {
-        color: inherit;
-        text-decoration: underline;
-      }
-
-      .pdf-relative-link-path {
-        font-size: 80%;
-        color: #444;
-      }
-
-      h1,
-      h2,
-      h3 {
-        letter-spacing: -0.01em;
-        line-height: 1.2;
-        font-weight: 600;
-        margin-bottom: 0;
-      }
-
-      .page-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 0.75em;
-      }
-
-      h1 {
-        font-size: 1.875rem;
-        margin-top: 1.875rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      h3 {
-        font-size: 1.25rem;
-        margin-top: 1.25rem;
-      }
-
-      .source {
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        padding: 1.5em;
-        word-break: break-all;
-      }
-
-      .callout {
-        border-radius: 3px;
-        padding: 1rem;
-      }
-
-      figure {
-        margin: 1.25em 0;
-        page-break-inside: avoid;
-      }
-
-      figcaption {
-        opacity: 0.5;
-        font-size: 85%;
-        margin-top: 0.5em;
-      }
-
-      mark {
-        background-color: transparent;
-      }
-
-      .indented {
-        padding-left: 1.5em;
-      }
-
-      hr {
-        background: transparent;
-        display: block;
-        width: 100%;
-        height: 1px;
-        visibility: visible;
-        border: none;
-        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-      }
-
-      img {
-        max-width: 100%;
-      }
-
-      @media only print {
-        img {
-          max-height: 100vh;
-          object-fit: contain;
-        }
-      }
-
-      @page {
-        margin: 1in;
-      }
-
-      .collection-content {
-        font-size: 0.875rem;
-      }
-
-      .column-list {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .column {
-        padding: 0 1em;
-      }
-
-      .column:first-child {
-        padding-left: 0;
-      }
-
-      .column:last-child {
-        padding-right: 0;
-      }
-
-      .table_of_contents-item {
-        display: block;
-        font-size: 0.875rem;
-        line-height: 1.3;
-        padding: 0.125rem;
-      }
-
-      .table_of_contents-indent-1 {
-        margin-left: 1.5rem;
-      }
-
-      .table_of_contents-indent-2 {
-        margin-left: 3rem;
-      }
-
-      .table_of_contents-indent-3 {
-        margin-left: 4.5rem;
-      }
-
-      .table_of_contents-link {
-        text-decoration: none;
-        opacity: 0.7;
-        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-      }
-
-      table,
-      th,
-      td {
-        border: 1px solid rgba(55, 53, 47, 0.09);
-        border-collapse: collapse;
-      }
-
-      table {
-        border-left: none;
-        border-right: none;
-      }
-
-      th,
-      td {
-        font-weight: normal;
-        padding: 0.25em 0.5em;
-        line-height: 1.5;
-        min-height: 1.5em;
-        text-align: left;
-      }
-
-      th {
-        color: rgba(55, 53, 47, 0.6);
-      }
-
-      ol,
-      ul {
-        margin: 0;
-        margin-block-start: 0.6em;
-        margin-block-end: 0.6em;
-      }
-
-      li > ol:first-child,
-      li > ul:first-child {
-        margin-block-start: 0.6em;
-      }
-
-      ul > li {
-        list-style: disc;
-      }
-
-      ul.to-do-list {
-        text-indent: -1.7em;
-      }
-
-      ul.to-do-list > li {
-        list-style: none;
-      }
-
-      .to-do-children-checked {
-        text-decoration: line-through;
-        opacity: 0.375;
-      }
-
-      ul.toggle > li {
-        list-style: none;
-      }
-
-      ul {
-        padding-inline-start: 1.7em;
-      }
-
-      ul > li {
-        padding-left: 0.1em;
-      }
-
-      ol {
-        padding-inline-start: 1.6em;
-      }
-
-      ol > li {
-        padding-left: 0.2em;
-      }
-
-      .mono ol {
-        padding-inline-start: 2em;
-      }
-
-      .mono ol > li {
-        text-indent: -0.4em;
-      }
-
-      .toggle {
-        padding-inline-start: 0em;
-        list-style-type: none;
-      }
-
-      /* Indent toggle children */
-      .toggle > li > details {
-        padding-left: 1.7em;
-      }
-
-      .toggle > li > details > summary {
-        margin-left: -1.1em;
-      }
-
-      .selected-value {
-        display: inline-block;
-        padding: 0 0.5em;
-        background: rgba(206, 205, 202, 0.5);
-        border-radius: 3px;
-        margin-right: 0.5em;
-        margin-top: 0.3em;
-        margin-bottom: 0.3em;
-        white-space: nowrap;
-      }
-
-      .collection-title {
-        display: inline-block;
-        margin-right: 1em;
-      }
-
-      .simple-table {
-        margin-top: 1em;
-        font-size: 0.875rem;
-        empty-cells: show;
-      }
-      .simple-table td {
-        height: 29px;
-        min-width: 120px;
-      }
-
-      .simple-table th {
-        height: 29px;
-        min-width: 120px;
-      }
-
-      .simple-table-header-color {
-        background: rgb(247, 246, 243);
-        color: black;
-      }
-      .simple-table-header {
-        font-weight: 500;
-      }
-
-      time {
-        opacity: 0.5;
-      }
-
-      .icon {
-        display: inline-block;
-        max-width: 1.2em;
-        max-height: 1.2em;
-        text-decoration: none;
-        vertical-align: text-bottom;
-        margin-right: 0.5em;
-      }
-
-      img.icon {
-        border-radius: 3px;
-      }
-
-      .user-icon {
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 100%;
-        margin-right: 0.5rem;
-      }
-
-      .user-icon-inner {
-        font-size: 0.8em;
-      }
-
-      .text-icon {
-        border: 1px solid #000;
-        text-align: center;
-      }
-
-      .page-cover-image {
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        max-height: 30vh;
-      }
-
-      .page-header-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      .page-header-icon-with-cover {
-        margin-top: -0.72em;
-        margin-left: 0.07em;
-      }
-
-      .page-header-icon img {
-        border-radius: 3px;
-      }
-
-      .link-to-page {
-        margin: 1em 0;
-        padding: 0;
-        border: none;
-        font-weight: 500;
-      }
-
-      p > .user {
-        opacity: 0.5;
-      }
-
-      td > .user,
-      td > time {
-        white-space: nowrap;
-      }
-
-      input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 0.6em;
-        vertical-align: middle;
-      }
-
-      p {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-      }
-
-      .image {
-        border: none;
-        margin: 1.5em 0;
-        padding: 0;
-        border-radius: 0;
-        text-align: center;
-      }
-
-      .code,
-      code {
-        background: rgba(135, 131, 120, 0.15);
-        border-radius: 3px;
-        padding: 0.2em 0.4em;
-        border-radius: 3px;
-        font-size: 85%;
-        tab-size: 2;
-      }
-
-      code {
-        color: #eb5757;
-      }
-
-      .code {
-        padding: 1.5em 1em;
-      }
-
-      .code-wrap {
-        white-space: pre-wrap;
-        word-break: break-all;
-      }
-
-      .code > code {
-        background: none;
-        padding: 0;
-        font-size: 100%;
-        color: inherit;
-      }
-
-      blockquote {
-        font-size: 1.25em;
-        margin: 1em 0;
-        padding-left: 1em;
-        border-left: 3px solid rgb(55, 53, 47);
-      }
-
-      .bookmark {
-        text-decoration: none;
-        max-height: 8em;
-        padding: 0;
-        display: flex;
-        width: 100%;
-        align-items: stretch;
-      }
-
-      .bookmark-title {
-        font-size: 0.85em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        height: 1.75em;
-        white-space: nowrap;
-      }
-
-      .bookmark-text {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .bookmark-info {
-        flex: 4 1 180px;
-        padding: 12px 14px 14px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .bookmark-image {
-        width: 33%;
-        flex: 1 1 180px;
-        display: block;
-        position: relative;
-        object-fit: cover;
-        border-radius: 1px;
-      }
-
-      .bookmark-description {
-        color: rgba(55, 53, 47, 0.6);
-        font-size: 0.75em;
-        overflow: hidden;
-        max-height: 4.5em;
-        word-break: break-word;
-      }
-
-      .bookmark-href {
-        font-size: 0.75em;
-        margin-top: 0.25em;
-      }
-
-      .sans {
-        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-      }
-      .code {
-        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier,
-          monospace;
-      }
-      .serif {
-        font-family: Lyon-Text, Georgia, ui-serif, serif;
-      }
-      .mono {
-        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
-      }
-      .pdf .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji",
-          "Noto Color Emoji", "Noto Sans CJK JP";
-      }
-      .pdf:lang(zh-CN) .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji",
-          "Noto Color Emoji", "Noto Sans CJK SC";
-      }
-      .pdf:lang(zh-TW) .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji",
-          "Noto Color Emoji", "Noto Sans CJK TC";
-      }
-      .pdf:lang(ko-KR) .sans {
-        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji",
-          "Noto Color Emoji", "Noto Sans CJK KR";
-      }
-      .pdf .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
-          "Liberation Mono", Courier, monospace, "Twemoji", "Noto Color Emoji",
-          "Noto Sans Mono CJK JP";
-      }
-      .pdf:lang(zh-CN) .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
-          "Liberation Mono", Courier, monospace, "Twemoji", "Noto Color Emoji",
-          "Noto Sans Mono CJK SC";
-      }
-      .pdf:lang(zh-TW) .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
-          "Liberation Mono", Courier, monospace, "Twemoji", "Noto Color Emoji",
-          "Noto Sans Mono CJK TC";
-      }
-      .pdf:lang(ko-KR) .code {
-        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
-          "Liberation Mono", Courier, monospace, "Twemoji", "Noto Color Emoji",
-          "Noto Sans Mono CJK KR";
-      }
-      .pdf .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji", "Noto Color Emoji",
-          "Noto Serif CJK JP";
-      }
-      .pdf:lang(zh-CN) .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji", "Noto Color Emoji",
-          "Noto Serif CJK SC";
-      }
-      .pdf:lang(zh-TW) .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji", "Noto Color Emoji",
-          "Noto Serif CJK TC";
-      }
-      .pdf:lang(ko-KR) .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji", "Noto Color Emoji",
-          "Noto Serif CJK KR";
-      }
-      .pdf .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK JP";
-      }
-      .pdf:lang(zh-CN) .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK SC";
-      }
-      .pdf:lang(zh-TW) .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK TC";
-      }
-      .pdf:lang(ko-KR) .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK KR";
-      }
-      .highlight-default {
-        color: rgba(55, 53, 47, 1);
-      }
-      .highlight-gray {
-        color: rgba(120, 119, 116, 1);
-        fill: rgba(120, 119, 116, 1);
-      }
-      .highlight-brown {
-        color: rgba(159, 107, 83, 1);
-        fill: rgba(159, 107, 83, 1);
-      }
-      .highlight-orange {
-        color: rgba(217, 115, 13, 1);
-        fill: rgba(217, 115, 13, 1);
-      }
-      .highlight-yellow {
-        color: rgba(203, 145, 47, 1);
-        fill: rgba(203, 145, 47, 1);
-      }
-      .highlight-teal {
-        color: rgba(68, 131, 97, 1);
-        fill: rgba(68, 131, 97, 1);
-      }
-      .highlight-blue {
-        color: rgba(51, 126, 169, 1);
-        fill: rgba(51, 126, 169, 1);
-      }
-      .highlight-purple {
-        color: rgba(144, 101, 176, 1);
-        fill: rgba(144, 101, 176, 1);
-      }
-      .highlight-pink {
-        color: rgba(193, 76, 138, 1);
-        fill: rgba(193, 76, 138, 1);
-      }
-      .highlight-red {
-        color: rgba(212, 76, 71, 1);
-        fill: rgba(212, 76, 71, 1);
-      }
-      .highlight-gray_background {
-        background: rgba(241, 241, 239, 1);
-      }
-      .highlight-brown_background {
-        background: rgba(244, 238, 238, 1);
-      }
-      .highlight-orange_background {
-        background: rgba(251, 236, 221, 1);
-      }
-      .highlight-yellow_background {
-        background: rgba(251, 243, 219, 1);
-      }
-      .highlight-teal_background {
-        background: rgba(237, 243, 236, 1);
-      }
-      .highlight-blue_background {
-        background: rgba(231, 243, 248, 1);
-      }
-      .highlight-purple_background {
-        background: rgba(244, 240, 247, 0.8);
-      }
-      .highlight-pink_background {
-        background: rgba(249, 238, 243, 0.8);
-      }
-      .highlight-red_background {
-        background: rgba(253, 235, 236, 1);
-      }
-      .block-color-default {
-        color: inherit;
-        fill: inherit;
-      }
-      .block-color-gray {
-        color: rgba(120, 119, 116, 1);
-        fill: rgba(120, 119, 116, 1);
-      }
-      .block-color-brown {
-        color: rgba(159, 107, 83, 1);
-        fill: rgba(159, 107, 83, 1);
-      }
-      .block-color-orange {
-        color: rgba(217, 115, 13, 1);
-        fill: rgba(217, 115, 13, 1);
-      }
-      .block-color-yellow {
-        color: rgba(203, 145, 47, 1);
-        fill: rgba(203, 145, 47, 1);
-      }
-      .block-color-teal {
-        color: rgba(68, 131, 97, 1);
-        fill: rgba(68, 131, 97, 1);
-      }
-      .block-color-blue {
-        color: rgba(51, 126, 169, 1);
-        fill: rgba(51, 126, 169, 1);
-      }
-      .block-color-purple {
-        color: rgba(144, 101, 176, 1);
-        fill: rgba(144, 101, 176, 1);
-      }
-      .block-color-pink {
-        color: rgba(193, 76, 138, 1);
-        fill: rgba(193, 76, 138, 1);
-      }
-      .block-color-red {
-        color: rgba(212, 76, 71, 1);
-        fill: rgba(212, 76, 71, 1);
-      }
-      .block-color-gray_background {
-        background: rgba(241, 241, 239, 1);
-      }
-      .block-color-brown_background {
-        background: rgba(244, 238, 238, 1);
-      }
-      .block-color-orange_background {
-        background: rgba(251, 236, 221, 1);
-      }
-      .block-color-yellow_background {
-        background: rgba(251, 243, 219, 1);
-      }
-      .block-color-teal_background {
-        background: rgba(237, 243, 236, 1);
-      }
-      .block-color-blue_background {
-        background: rgba(231, 243, 248, 1);
-      }
-      .block-color-purple_background {
-        background: rgba(244, 240, 247, 0.8);
-      }
-      .block-color-pink_background {
-        background: rgba(249, 238, 243, 0.8);
-      }
-      .block-color-red_background {
-        background: rgba(253, 235, 236, 1);
-      }
-      .select-value-color-pink {
-        background-color: rgba(245, 224, 233, 1);
-      }
-      .select-value-color-purple {
-        background-color: rgba(232, 222, 238, 1);
-      }
-      .select-value-color-green {
-        background-color: rgba(219, 237, 219, 1);
-      }
-      .select-value-color-gray {
-        background-color: rgba(227, 226, 224, 1);
-      }
-      .select-value-color-opaquegray {
-        background-color: rgba(255, 255, 255, 0.0375);
-      }
-      .select-value-color-orange {
-        background-color: rgba(250, 222, 201, 1);
-      }
-      .select-value-color-brown {
-        background-color: rgba(238, 224, 218, 1);
-      }
-      .select-value-color-red {
-        background-color: rgba(255, 226, 221, 1);
-      }
-      .select-value-color-yellow {
-        background-color: rgba(253, 236, 200, 1);
-      }
-      .select-value-color-blue {
-        background-color: rgba(211, 229, 239, 1);
-      }
-
-      .checkbox {
-        display: inline-flex;
-        vertical-align: text-bottom;
-        width: 16;
-        height: 16;
-        background-size: 16px;
-        margin-left: 2px;
-        margin-right: 5px;
-      }
-
-      .checkbox-on {
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-      }
-
-      .checkbox-off {
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-      }
-    </style>
-  </head>
-  <body>
-    <article id="513f5236-82b4-4037-b026-84c3d97530d8" class="page sans">
-      <header><h1 class="page-title">신재윤 (Uni)</h1></header>
-      <div class="page-body">
-        <p id="bdfa10bb-c505-4949-a716-8ce67263a763" class="">Backend(Server) Developer</p>
-        <hr id="40a8ce25-e648-498f-9738-30f8b0794376" />
-        <div id="696e708b-ce76-4c43-9b87-1307108ab408" class="column-list">
-          <div id="93a41749-1357-4658-bc33-a7ddd4c41249" style="width: 31.25%" class="column">
-            <figure id="e8a0aa81-0047-412d-b3e9-1c175c4245d3" class="image">
-                <img
-                style="width: 975px"
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+{{ partial "head.html" . }}
+<body>
+{{partial "search.html" .}}
+<div class="singlePage">
+  <article id="513f5236-82b4-4037-b026-84c3d97530d8" class="page sans">
+    <header><h1 class="page-title">신재윤 (Uni)</h1></header>
+    <div class="page-body">
+      <p id="bdfa10bb-c505-4949-a716-8ce67263a763" class="">
+        Backend(Server) Developer
+      </p>
+      <hr id="40a8ce25-e648-498f-9738-30f8b0794376" />
+      <div id="696e708b-ce76-4c43-9b87-1307108ab408" 
+      class="column-list">
+        <div
+          id="93a41749-1357-4658-bc33-a7ddd4c41249"
+          class="column"
+        >
+          <figure id="e8a0aa81-0047-412d-b3e9-1c175c4245d3" class="image">
+            <a
+              href="%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A2%E1%84%8B%E1%85%B2%E1%86%AB%20(Uni)%20513f523682b44037b02684c3d97530d8/KakaoTalk_Photo_2023-02-04-02-15-19-modified.png"
+              ><img
+                style="width: 975px; min-width: 200px;"
                 src="https://i.imgur.com/Ok88E5F.png"
-            />
-            </figure>
-            <p id="7e7f0e32-aa3b-414f-88a9-635c6795ee92" class=""></p>
-          </div>
-          <div id="a564414b-3a4c-41d4-9f7b-c07a4f70b389" style="width: 68.75%" class="column">
-            <h2 id="0e71a80c-6d81-4ef9-b8aa-45b91dfe959d" class=""><strong>Profile</strong></h2>
-            <ol type="1" id="97470d8d-3bce-45a4-af41-5c96ac9d2a65" class="numbered-list" start="1">
-              <li>이름 : 신재윤 (Shin-Jae-Yoon)</li>
-            </ol>
-            <ol type="1" id="918dbce7-8795-4cc3-86f7-3f79c6f6e641" class="numbered-list" start="2">
-              <li>E-mail : <a href="mailto:wlwhsvkdlxh@gmail.com">wlwhsvkdlxh@gmail.com</a></li>
-            </ol>
-            <ol type="1" id="a9b0ac33-7461-4f7c-8a50-1d700c109233" class="numbered-list" start="3">
-              <li>
-                Github :
-                <a href="https://github.com/Shin-Jae-Yoon/">https://github.com/Shin-Jae-Yoon/</a>
-              </li>
-            </ol>
-            <ol type="1" id="3ffc6e24-c1d1-4e77-9297-97f2dff0a0d3" class="numbered-list" start="4">
-              <li>
-                지식저장소 :
-                <a href="https://shin-jae-yoon.github.io/">https://shin-jae-yoon.github.io/</a>
-              </li>
-            </ol>
-            <ol type="1" id="21e0b747-b631-40e6-b8e1-695de286d61b" class="numbered-list" start="5">
-              <li>
-                기술블로그 :
-                <a href="https://jae-yoon.tistory.com/">https://jae-yoon.tistory.com/</a>
-              </li>
-            </ol>
-            <p id="8fef728e-88a1-4694-a5a5-8b789c2d1db6" class=""></p>
-          </div>
+            /></a>
+          </figure>
+          <p id="7e7f0e32-aa3b-414f-88a9-635c6795ee92" class=""></p>
         </div>
-        <hr id="62d6ae2a-29aa-47a0-a274-da1546ea2490" />
-        <h1 id="3b8f6d74-f0c7-43b0-abe0-4074953bc249" class="">Introduction</h1>
-        <p id="10786291-2af8-4ef3-ab59-1409b5552f22" class="">
-          추상적인 세계 속에서 실제에 일어날 법한 일을 상상하고 그에 대한 구현을 즐기는
-          개발자입니다. 개발만이 아닌, 일어나는 모든 일에 대하여 Why가 붙습니다. 저에게 있어서
-          결과도 물론 중요하지만, 결과를 도출해야하는 이유가 더 중요합니다. 세상의 모든 일에
-          “그냥”은 없다는 것이 제 가치관입니다.
-        </p>
-        <p id="22de0f0a-95c1-4db6-885e-5f3b25e3e4f1" class=""></p>
-        <hr id="67cd3216-f5a5-44ab-8323-ac73a650a1f8" />
-        <h1 id="f051386d-4c57-4175-bb24-7331d51db344" class="">Experience</h1>
-        <ul id="3b5c3b27-f9e6-4332-ba61-41f25f03492b" class="bulleted-list">
-          <li style="list-style-type: disc">
-            2022년 한국지능정보시스템학회 추계 학술대회 - Fashion Boomer 논문 투고
-            <ul id="25c81754-b82a-4579-a556-5f6a51db1a3c" class="bulleted-list">
-              <li style="list-style-type: circle">
-                YOLO v5 Object detection + semantic segmentation 활용한 rembg 라이브러리 경험
-              </li>
-            </ul>
-            <ul id="4b7914d8-124a-4d0d-a5e9-4969873393f9" class="bulleted-list">
-              <li style="list-style-type: circle">
-                U-Net 모델 이용하여 배경제거 후 쇼핑몰 제품을 마네킹에 대보며 매칭해보는 연구
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul id="110732fb-f2a2-4e1e-9157-e8e71fcee495" class="bulleted-list">
-          <li style="list-style-type: disc">
-            2022년 캡스톤디자인 경진대회 (Fashion Boomer) - 장려상
-          </li>
-        </ul>
-        <ul id="e13a68d8-a4b0-4306-b7d5-166618560aba" class="bulleted-list">
-          <li style="list-style-type: disc">
-            2022.12.20 ~ 2023.01.20 : SI회사 현장실습 1개월
-            <ul id="6a3e8977-9506-44db-9396-c94787866c3a" class="bulleted-list">
-              <li style="list-style-type: circle">
-                동기적으로 구현된 쿼리문을 RxJava를 이용하여 리팩토링 하였고 3초 → 1초로 성능 개선
-              </li>
-            </ul>
-            <ul id="7a9cb433-1ed0-46a8-80c4-c0dbe098e681" class="bulleted-list">
-              <li style="list-style-type: circle">
-                반복되는 업무를 Jsoup 라이브러리 활용 크롤링을 진행하여 자동화 시스템 구축
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <hr id="c3622e35-df1e-44c3-81b2-eec3e028be9a" />
-        <h1 id="f1b42052-f096-4c2a-be72-26508032e462" class="">Abilities &amp; Skills</h1>
-        <p id="48d13388-c79b-4831-a6bf-aff6dfa96ee0" class="">
-          분류: <mark class="highlight-blue_background">업무 중 바로 사용 가능</mark>,
-          <mark class="highlight-teal_background">약간의 검색을 통해 사용 가능</mark>,
-          <mark class="highlight-orange_background">경험은 있으나 추가 학습 후 사용 가능</mark>
-        </p>
-        <ul id="f6897968-2a77-4320-a2f4-510e9242ee94" class="bulleted-list">
-          <li style="list-style-type: disc">
-            Backend: <mark class="highlight-blue_background">Java &amp; Spring</mark>,
-            <mark class="highlight-blue_background">MyBatis</mark>,
-            <mark class="highlight-orange_background">JPA</mark>,
-            <mark class="highlight-orange_background">AWS (EC2 Ubuntu, RDS)</mark>
-          </li>
-        </ul>
-        <ul id="3f3f253e-99f9-42d6-a27a-b73744c64e0e" class="bulleted-list">
-          <li style="list-style-type: disc">
-            DB: RDBMS (<mark class="highlight-blue_background">MySQL</mark>,
-            <mark class="highlight-teal_background">Oracle</mark>,
-            <mark class="highlight-teal_background">MariaDB</mark>,
-            <mark class="highlight-teal_background">Mssql</mark>)
-          </li>
-        </ul>
-        <ul id="a3f1e7c9-bc99-4261-8e67-20edc96d5ebe" class="bulleted-list">
-          <li style="list-style-type: disc">
-            Frontend: <mark class="highlight-blue_background">HTML</mark>,
-            <mark class="highlight-blue_background">CSS</mark>,
-            <mark class="highlight-teal_background">JavaScript</mark>,
-            <mark class="highlight-teal_background">React.js,</mark>
-            <mark class="highlight-teal_background">Android Studio</mark>
-          </li>
-        </ul>
-        <ul id="b0442f54-4bbd-47fa-862f-bbf7606e8396" class="bulleted-list">
-          <li style="list-style-type: disc">
-            Etc: <mark class="highlight-blue_background">Git</mark>,
-            <mark class="highlight-teal_background">Shellscript</mark>
-          </li>
-        </ul>
-        <hr id="08de5831-87d5-451e-83ef-e275b1ec0fbf" />
-        <h1 id="75081313-4dfc-49df-af75-a3b864dbffff" class="">Education</h1>
-        <ul id="7d0db679-6d55-454f-ac17-661b97884109" class="bulleted-list">
-          <li style="list-style-type: disc">국립 부경대학교 컴퓨터공학과 (2017. 03 ~ 2023. 02)</li>
-        </ul>
-        <p id="be5232d4-d6e5-468c-9037-e8c04fa38481" class=""></p>
-        <hr id="3ca425d2-6da9-4ab4-b13d-8db32a650319" />
-        <div id="588ad058-b973-47aa-a9af-57d8fb4aa7ae" class="column-list">
-          <div id="1ba2ed18-a186-40cd-962e-5f6643debb68" style="width: 18.75%" class="column">
-            <p id="e89ff746-d668-4fe1-8d80-d024b0000e46" class=""></p>
-          </div>
-          <div id="8c2241fb-51fc-4022-b35d-510a97be44a3" style="width: 81.25%" class="column">
-            <p id="b694e498-9253-4828-94c5-6fe67a840355" class="block-color-gray">
-              Copyright © JaeYoon Shin. All rights reserved.
-            </p>
-          </div>
+        <div
+          id="a564414b-3a4c-41d4-9f7b-c07a4f70b389"
+          class="column"
+        >
+          <h2 id="0e71a80c-6d81-4ef9-b8aa-45b91dfe959d" class="">
+            <strong>Profile</strong>
+          </h2>
+          <ol
+            type="1"
+            id="97470d8d-3bce-45a4-af41-5c96ac9d2a65"
+            class="numbered-list"
+            start="1"
+          >
+            <li>이름 : 신재윤 (Shin-Jae-Yoon)</li>
+          </ol>
+          <ol
+            type="1"
+            id="918dbce7-8795-4cc3-86f7-3f79c6f6e641"
+            class="numbered-list"
+            start="2"
+          >
+            <li>
+              E-mail :
+              <a href="mailto:wlwhsvkdlxh@gmail.com">wlwhsvkdlxh@gmail.com</a>
+            </li>
+          </ol>
+          <ol
+            type="1"
+            id="a9b0ac33-7461-4f7c-8a50-1d700c109233"
+            class="numbered-list"
+            start="3"
+          >
+            <li>
+              Github :
+              <a href="https://github.com/Shin-Jae-Yoon/"
+                >https://github.com/Shin-Jae-Yoon/</a
+              >
+            </li>
+          </ol>
+          <ol
+            type="1"
+            id="3ffc6e24-c1d1-4e77-9297-97f2dff0a0d3"
+            class="numbered-list"
+            start="4"
+          >
+            <li>
+              지식저장소 :
+              <a href="https://shin-jae-yoon.github.io/"
+                >https://shin-jae-yoon.github.io/</a
+              >
+            </li>
+          </ol>
+          <ol
+            type="1"
+            id="21e0b747-b631-40e6-b8e1-695de286d61b"
+            class="numbered-list"
+            start="5"
+          >
+            <li>
+              기술블로그 :
+              <a href="https://jae-yoon.tistory.com/"
+                >https://jae-yoon.tistory.com/</a
+              >
+            </li>
+          </ol>
+          <p id="8fef728e-88a1-4694-a5a5-8b789c2d1db6" class=""></p>
         </div>
-        <p id="dd8fff40-bd90-48f0-b51a-61941abc1c00" class=""></p>
       </div>
-    </article>
-  </body>
+      <hr id="62d6ae2a-29aa-47a0-a274-da1546ea2490" />
+      <h1 id="3b8f6d74-f0c7-43b0-abe0-4074953bc249" class="">Introduction</h1>
+      <p id="10786291-2af8-4ef3-ab59-1409b5552f22" class="">
+        추상적인 세계 속에서 실제에 일어날 법한 일을 상상하고 그에 대한 구현을
+        즐기는 개발자입니다. 개발만이 아닌, 일어나는 모든 일에 대하여 Why가
+        붙습니다. 저에게 있어서 결과도 물론 중요하지만, 결과를 도출해야하는
+        이유가 더 중요합니다. 세상의 모든 일에 “그냥”은 없다는 것이 제
+        가치관입니다.
+      </p>
+      <p id="22de0f0a-95c1-4db6-885e-5f3b25e3e4f1" class=""></p>
+      <hr id="67cd3216-f5a5-44ab-8323-ac73a650a1f8" />
+      <h1 id="f051386d-4c57-4175-bb24-7331d51db344" class="">Experience</h1>
+      <ul id="3b5c3b27-f9e6-4332-ba61-41f25f03492b" class="bulleted-list">
+        <li style="list-style-type: disc">
+          2022년 한국지능정보시스템학회 추계 학술대회 - Fashion Boomer 논문
+          투고
+          <ul id="25c81754-b82a-4579-a556-5f6a51db1a3c" class="bulleted-list">
+            <li style="list-style-type: circle">
+              YOLO v5 Object detection + semantic segmentation 활용한 rembg
+              라이브러리 경험
+            </li>
+          </ul>
+          <ul id="4b7914d8-124a-4d0d-a5e9-4969873393f9" class="bulleted-list">
+            <li style="list-style-type: circle">
+              U-Net 모델 이용하여 배경제거 후 쇼핑몰 제품을 마네킹에 대보며
+              매칭해보는 연구
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="110732fb-f2a2-4e1e-9157-e8e71fcee495" class="bulleted-list">
+        <li style="list-style-type: disc">
+          2022년 캡스톤디자인 경진대회 (Fashion Boomer) - 장려상
+        </li>
+      </ul>
+      <ul id="e13a68d8-a4b0-4306-b7d5-166618560aba" class="bulleted-list">
+        <li style="list-style-type: disc">
+          2022.12.20 ~ 2023.01.20 : SI회사 현장실습 1개월
+          <ul id="6a3e8977-9506-44db-9396-c94787866c3a" class="bulleted-list">
+            <li style="list-style-type: circle">
+              동기적으로 구현된 쿼리문을 RxJava를 이용하여 리팩토링 하였고 3초
+              → 1초로 성능 개선
+            </li>
+          </ul>
+          <ul id="7a9cb433-1ed0-46a8-80c4-c0dbe098e681" class="bulleted-list">
+            <li style="list-style-type: circle">
+              반복되는 업무를 Jsoup 라이브러리 활용 크롤링을 진행하여 자동화
+              시스템 구축
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <hr id="c3622e35-df1e-44c3-81b2-eec3e028be9a" />
+      <h1 id="f1b42052-f096-4c2a-be72-26508032e462" class="">
+        Abilities &amp; Skills
+      </h1>
+      <p id="48d13388-c79b-4831-a6bf-aff6dfa96ee0" class="">
+        분류:
+        <mark class="highlight-blue_background">업무 중 바로 사용 가능</mark>,
+        <mark class="highlight-teal_background"
+          >약간의 검색을 통해 사용 가능</mark
+        >,
+        <mark class="highlight-orange_background"
+          >경험은 있으나 추가 학습 후 사용 가능</mark
+        >
+      </p>
+      <ul id="f6897968-2a77-4320-a2f4-510e9242ee94" class="bulleted-list">
+        <li style="list-style-type: disc">
+          Backend:
+          <mark class="highlight-blue_background">Java &amp; Spring</mark>,
+          <mark class="highlight-blue_background">MyBatis</mark>,
+          <mark class="highlight-orange_background">JPA</mark>,
+          <mark class="highlight-orange_background"
+            >AWS (EC2 Ubuntu, RDS)</mark
+          >
+        </li>
+      </ul>
+      <ul id="3f3f253e-99f9-42d6-a27a-b73744c64e0e" class="bulleted-list">
+        <li style="list-style-type: disc">
+          DB: RDBMS (<mark class="highlight-blue_background">MySQL</mark>,
+          <mark class="highlight-teal_background">Oracle</mark>,
+          <mark class="highlight-teal_background">MariaDB</mark>,
+          <mark class="highlight-teal_background">Mssql</mark>)
+        </li>
+      </ul>
+      <ul id="a3f1e7c9-bc99-4261-8e67-20edc96d5ebe" class="bulleted-list">
+        <li style="list-style-type: disc">
+          Frontend: <mark class="highlight-blue_background">HTML</mark>,
+          <mark class="highlight-blue_background">CSS</mark>,
+          <mark class="highlight-teal_background">JavaScript</mark>,
+          <mark class="highlight-teal_background">React.js,</mark>
+          <mark class="highlight-teal_background">Android Studio</mark>
+        </li>
+      </ul>
+      <ul id="b0442f54-4bbd-47fa-862f-bbf7606e8396" class="bulleted-list">
+        <li style="list-style-type: disc">
+          Etc: <mark class="highlight-blue_background">Git</mark>,
+          <mark class="highlight-teal_background">Shellscript</mark>
+        </li>
+      </ul>
+      <hr id="08de5831-87d5-451e-83ef-e275b1ec0fbf" />
+      <h1 id="75081313-4dfc-49df-af75-a3b864dbffff" class="">Education</h1>
+      <ul id="7d0db679-6d55-454f-ac17-661b97884109" class="bulleted-list">
+        <li style="list-style-type: disc">
+          국립 부경대학교 컴퓨터공학과 (2017. 03 ~ 2023. 02)
+        </li>
+      </ul>
+      <p id="be5232d4-d6e5-468c-9037-e8c04fa38481" class=""></p>
+      <hr id="3ca425d2-6da9-4ab4-b13d-8db32a650319" />
+      <div id="588ad058-b973-47aa-a9af-57d8fb4aa7ae" class="column-list">
+        <div
+          id="1ba2ed18-a186-40cd-962e-5f6643debb68"
+          style="width: 18.75%"
+          class="column"
+        >
+          <p id="e89ff746-d668-4fe1-8d80-d024b0000e46" class=""></p>
+        </div>
+        <div
+          id="8c2241fb-51fc-4022-b35d-510a97be44a3"
+          style="width: 81.25%"
+          class="column"
+        >
+          <p
+            id="b694e498-9253-4828-94c5-6fe67a840355"
+            class="block-color-gray"
+          >
+            Copyright © JaeYoon Shin. All rights reserved.
+          </p>
+        </div>
+      </div>
+      <p id="dd8fff40-bd90-48f0-b51a-61941abc1c00" class=""></p>
+    </div>
+  </article>
+</div>
+</body>
 </html>
