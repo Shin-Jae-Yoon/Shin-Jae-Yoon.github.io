@@ -1,6 +1,6 @@
 baseURL = "https://shin-jae-yoon.github.io/"
 aboutURL = "https://shin-jae-yoon.github.io/about/"
-languageCode = "en-us"
+languageCode = "en-us-kr"
 googleAnalytics = "G-XYFD95KB4J"
 relativeURLs = false
 disablePathToLower = true
