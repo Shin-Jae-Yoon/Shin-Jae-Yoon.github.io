@@ -185,8 +185,8 @@ const displayResults = (term, finalResults, extractHighlight = false) => {
   const results = document.getElementById("results-container")
   if (finalResults.length === 0) {
     results.innerHTML = `<button class="result-card">
-                    <h3>No results.</h3>
-                    <p>Try another search term?</p>
+                    <h3>결과를 찾을 수 없습니다.</h3>
+                    <p>다른 검색어를 입력해주세요.</p>
                 </button>`
   } else {
     results.innerHTML = finalResults
