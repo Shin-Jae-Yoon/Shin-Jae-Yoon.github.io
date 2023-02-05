@@ -80,18 +80,20 @@
   "indices/contentIndex.json" | resources.Fingerprint "md5" | resources.Minify
   }}
   <script>
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type','text/plain; charset=UTF-8');
     const SEARCH_ENABLED = {{.Site.Data.config.search.enableSemanticSearch}}
     const LATEX_ENABLED = {{.Site.Data.config.enableLatex}}
     const PRODUCTION = {{ hugo.IsProduction }}
     const BASE_URL = {{.Site.BaseURL}}
     const fetchData = Promise.all([
-          fetch("{{ $linkIndex.Permalink }}")
+          fetch("{{ $linkIndex.Permalink }}", myHeaders)
             .then(data => data.json())
             .then(data => ({
               index: data.index,
               links: data.links,
             })),
-          fetch("{{ $contentIndex.Permalink }}")
+          fetch("{{ $contentIndex.Permalink }}", myHeaders)
             .then(data => data.json()),
         ])
         .then(([{index, links}, content]) => ({
