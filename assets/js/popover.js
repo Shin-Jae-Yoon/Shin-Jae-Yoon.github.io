@@ -10,15 +10,15 @@ function initPopover(baseURL, useContextualBacklinks) {
   fetchData.then(({ content }) => {
     const links = [...document.getElementsByClassName("internal-link")]
     links
-      .filter(li => li.dataset.src || (li.dataset.idx && useContextualBacklinks))
-      .forEach(li => {
+      .filter((li) => li.dataset.src || (li.dataset.idx && useContextualBacklinks))
+      .forEach((li) => {
         let el
         if (li.dataset.ctx) {
           const linkDest = content[li.dataset.src]
           const popoverElement = `<div class="popover">
     <h3>${linkDest.title}</h3>
     <p>${highlight(removeMarkdown(linkDest.content), li.dataset.ctx)}...</p>
-    <p class="meta">{{ partial "date-fmt.html" .}} </p>
+    <p class="meta">${new Date(linkDest.lastmodified).toLocaleDateString()}</p>
 </div>`
           el = htmlToElement(popoverElement)
         } else {
@@ -33,7 +33,7 @@ function initPopover(baseURL, useContextualBacklinks) {
             }
             const popoverElement = `<div class="popover">
     <h3>${linkDest.title}</h3>
-    <p>${cleanedContent.split(" ", 20).join(" ")}...</p>
+    <p>${cleanedContent.split(" ", 20).join(" ")}...d</p>
     <p class="meta">${new Date(linkDest.lastmodified).toLocaleDateString()}</p>
 </div>`
             el = htmlToElement(popoverElement)
@@ -45,17 +45,21 @@ function initPopover(baseURL, useContextualBacklinks) {
           if (LATEX_ENABLED) {
             renderMathInElement(el, {
               delimiters: [
-                { left: '$$', right: '$$', display: false },
-                { left: '$', right: '$', display: false },
+                { left: "$$", right: "$$", display: false },
+                { left: "$", right: "$", display: false },
               ],
-              throwOnError: false
+              throwOnError: false,
             })
           }
 
           li.addEventListener("mouseover", () => {
             // fix tooltip positioning
             window.FloatingUIDOM.computePosition(li, el, {
-              middleware: [window.FloatingUIDOM.offset(10), window.FloatingUIDOM.inline(), window.FloatingUIDOM.shift()],
+              middleware: [
+                window.FloatingUIDOM.offset(10),
+                window.FloatingUIDOM.inline(),
+                window.FloatingUIDOM.shift(),
+              ],
             }).then(({ x, y }) => {
               Object.assign(el.style, {
                 left: `${x}px`,
