@@ -14,9 +14,9 @@ jobs:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Build Link Index
-        uses: jackyzha0/hugo-obsidian@v2.18
+        uses: Shin-Jae-Yoon/hugo-obsidian
         with:
-          index: false
+          index: true
           input: content
           output: assets/indices
           root: .
