@@ -11,7 +11,7 @@ ignoreFiles = [
 ]
 summaryLength = 20
 paginate = 10
-enableGitInfo = false
+enableGitInfo = true
 
 [markup]
     [markup.tableOfContents]
