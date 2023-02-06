@@ -1,13 +1,3 @@
----
-title: "코딩애플"
-created: 2023-02-05 02:47
-updated: 2023-02-05 02:53
-tags: "코딩애플"
----
-
-수정수정!!  ddd 찐막 진짜? dddcccc
-되고있는거니..? 진짜!?
-
 > [!EXAMPLE] Examples
 >
 > Aliases: example
