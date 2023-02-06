@@ -1,0 +1,1 @@
+<p align="center"><img src="<% tp.file.cursor(0) %>" height="30%" width="70%"></p>

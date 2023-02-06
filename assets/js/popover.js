@@ -17,8 +17,7 @@ function initPopover(baseURL, useContextualBacklinks) {
           const linkDest = content[li.dataset.src]
           const popoverElement = `<div class="popover">
     <h3>${linkDest.title}</h3>
-    <p>${highlight(removeMarkdown(linkDest.content), li.dataset.ctx)}...</p>
-    <p class="meta">${new Date(linkDest.lastmodified).toLocaleDateString()}</p>
+    <p>${highlight(removeMarkdown(linkDest.content), li.dataset.ctx)}</p>
 </div>`
           el = htmlToElement(popoverElement)
         } else {
@@ -33,8 +32,7 @@ function initPopover(baseURL, useContextualBacklinks) {
             }
             const popoverElement = `<div class="popover">
     <h3>${linkDest.title}</h3>
-    <p>${cleanedContent.split(" ", 20).join(" ")}...</p>
-    <p class="meta">${new Date(linkDest.lastmodified).toLocaleDateString()}</p>
+    <p>${cleanedContent.split(" ", 20).join(" ")}</p>
 </div>`
             el = htmlToElement(popoverElement)
           }

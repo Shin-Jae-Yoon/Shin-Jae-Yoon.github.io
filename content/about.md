@@ -1,5 +1,5 @@
 ---
-title: "about"
+title: "About"
 layout: about
 ---
-포트폴리오
+신재윤은 어떤 개발자인가?
