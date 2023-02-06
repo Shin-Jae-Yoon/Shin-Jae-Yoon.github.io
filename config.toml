@@ -3,7 +3,7 @@ aboutURL = "https://shin-jae-yoon.github.io/about/"
 languageCode = "ko"
 googleAnalytics = "G-XYFD95KB4J"
 hasCJKLanguage = true
-relativeURLs = true
+relativeURLs = false
 disablePathToLower = true
 ignoreFiles = [
     "/content/templates/*",
@@ -11,7 +11,7 @@ ignoreFiles = [
 ]
 summaryLength = 20
 paginate = 10
-enableGitInfo = true
+enableGitInfo = false
 
 [markup]
     [markup.tableOfContents]
