@@ -11,8 +11,8 @@ enableFooter: true
 enableContextualBacklinks: true
 enableRecentNotes: false
 enableGitHubEdit: true
-enableMermaid: true
 GitHubLink: https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content
+enableMermaid: true
 search:
   enableSemanticSearch: false
   operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
