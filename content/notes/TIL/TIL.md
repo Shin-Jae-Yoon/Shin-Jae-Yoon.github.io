@@ -8,3 +8,5 @@ title: "TIL"
 [[notes/TIL/Book/도서관]]
 
 [[notes/TIL/Lecture/코딩애플/코딩애플]]
+
+[[notes/TIL/Brain/Brain]]
