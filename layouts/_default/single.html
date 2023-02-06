@@ -10,20 +10,20 @@
     <article>
       {{if .Title}}<h1>{{ .Title }}</h1>{{end}}
 
-      {{if .Date}}
+      {{if strings.Date}}
       <p class="meta">
         {{ i18n "last_updated" }} - Published {{ .Date.Format "January 2, 2006" }}
         {{partial "github.html" . }}
       </p>
       {{end}}
 
-      {{if ne .Date .Lastmod}}
+      {{if ne strings.Date .Lastmod}}
       <p class="meta">
         {{ i18n "last_updated" }} - Last Updated {{ .Lastmod.Format "January 2, 2006" }}
         {{partial "github.html" . }}
       </p>
       {{end}}
-      
+
 <!-- 
       <p class="meta">
         {{ i18n "last_updated" }} - {{ partial "date-fmt.html" .}} 
