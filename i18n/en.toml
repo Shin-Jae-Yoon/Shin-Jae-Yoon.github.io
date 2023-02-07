@@ -11,7 +11,10 @@ other = "All {{.Title}}"
 other = "Last updated"
 
 [notes_count]
-other = "notes with this tag"
+other = "태그와 관련된 노트가 "
+
+[notes_count2]
+other = "개 있습니다."
 
 [first_10]
 other = "showing first 10 results"

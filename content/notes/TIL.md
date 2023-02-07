@@ -9,4 +9,4 @@ tags: [""]
 
 > 오늘 학습한 내용은 오늘 기록하자.
 
-[[notes/Lecture/lecture]]
+[[notes/TIL/Lecture/lecture]]
