@@ -1,4 +1,6 @@
 
+`cmd + k` : 링크 바로 걸 수 있음
+
 > [!EXAMPLE] Examples
 >
 > Aliases: example
