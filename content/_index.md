@@ -1,5 +1,5 @@
 ---
-title: main
+title: 개발자 유니의 두 번째 뇌
 enableToc: false
 ---
 
