@@ -21,7 +21,7 @@ html {
 }
 
 .singlePage {
-  padding: 4em 25vw;
+  padding: 4em 20vw;
   @media all and (max-width: 1200px) {
     padding: 25px 5vw;
   }
@@ -94,7 +94,7 @@ tbody, li, p {
   height: 100%;
   width: 20%;
   margin-right: 1em;
-  margin-left: 1em;
+  margin-left: 2em;
   float: right;
   position: sticky;
   top: 1.75em;

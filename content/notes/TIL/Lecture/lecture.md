@@ -1,40 +1,12 @@
 ---
 title: "강의"
 date: "2023-02-07 20:02"
-enableToc: true
+enableToc: false
 tags: [""]
 ---
 
 # 강의 내용 정리
 
-<!-- ## 1. Javascript
-
-### 1.1 코딩애플
-
-- 여기를 보세요 [[notes/Lecture/codeapple]]
-
-## 2. 드림코딩
-
-### 2.1 Java 강의가 그렇게 좋아 좋아 안좋아 싫어? 난 좋아 랄라랄룰룰
-
-### 2.2김영한
-
-## Python -->
-
-## Javascript
-
-글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 
-글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 글자 테스트 
-
-### 코딩애플
-
-- 여기를 보세요 [[notes/TIL/Lecture/codeapple]]
-
-## 드림코딩
-
-### Java 강의가 그렇게 좋아 좋아 안좋아 싫어? 난 좋아 랄라랄룰룰
-
-asdfsdf
-### 김영한ddd
-
-## Python
+- [강의 html_css](notes/TIL/lecture/html_css/html_css)
+- [강의 js](notes/TIL/lecture/javascript/javascript)
+ 

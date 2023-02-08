@@ -8,6 +8,7 @@
     <!-- Begin actual content -->
     {{partial "header.html" .}}
     <article>
+      {{partial "toc.html" .}}
       {{if .Title}}<h1>{{ .Title }}</h1>{{end}}
 
       <p class="meta">
@@ -27,7 +28,7 @@
            </li>
           {{ end }}
       </ul>
-      {{partial "toc.html" .}}
+      <!-- {{partial "toc.html" .}} -->
       {{partial "textprocessing.html" . }}
     </article>
     {{partial "footer.html" .}}

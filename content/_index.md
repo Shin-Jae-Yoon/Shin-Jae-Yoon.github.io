@@ -1,5 +1,5 @@
 ---
-title: 유니의 두 번째 뇌
+title: main
 enableToc: false
 ---
 
