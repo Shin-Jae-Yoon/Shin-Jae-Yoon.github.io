@@ -19,7 +19,7 @@ enableToc: false
 > ↳ Look at my [portfolio](about) <br> 
 > 
 > 2. 📚 How do I study? <br>
-> ↳ Record what I learned today [[notes/TIL]] <br>
+> ↳ Record what I learned today [[notes/TIL/TIL]] <br>
 > 
 > 3. 💻  How prepare tech Interview? <br>
-> ↳ Through mock interview [[notes/Interview]] <br>
+> ↳ Through mock interview [[notes/Interview/Interview]] <br>
