@@ -1,7 +1,6 @@
 baseURL = "https://shin-jae-yoon.github.io/"
 aboutURL = "https://shin-jae-yoon.github.io/about/"
 languageCode = "ko"
-googleAnalytics = "G-GJFBQJ80N7"
 hasCJKLanguage = true
 relativeURLs = false
 disablePathToLower = true
@@ -15,6 +14,9 @@ ignoreFiles = [
 summaryLength = 20
 paginate = 10
 enableGitInfo = true
+
+[params]
+googleAnalyticsID = "G-GJFBQJ80N7"
 
 [markup]
     [markup.tableOfContents]
