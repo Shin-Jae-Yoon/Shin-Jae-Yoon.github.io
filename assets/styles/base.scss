@@ -76,6 +76,20 @@ tbody, li, p {
   padding: 0.75em 0;
   opacity: 0.7;
 
+  & ul {
+    list-style:lower-greek;
+    margin-bottom: 1em;
+    padding-inline-start: 0.5em;
+    & li {
+      font-size: 1rem;
+      margin-left: 0.5em;
+      & li {
+        padding-inline-start: 1em;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
   & details {
     & summary {
       cursor: zoom-in;
