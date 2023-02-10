@@ -1,6 +1,7 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="코딩애플 강의"><meta property="og:title" content="코딩애플"><meta property="og:description" content="코딩애플 강의"><meta property="og:type" content="website"><meta property="og:image" content="https://shin-jae-yoon.github.io/icon.png"><meta property="og:url" content="https://shin-jae-yoon.github.io/notes/TIL/lecture/html_css/apple/"><meta property="og:width" content="200"><meta property="og:height" content="200"><meta name=twitter:card content="summary"><meta name=twitter:title content="코딩애플"><meta name=twitter:description content="코딩애플 강의"><meta name=twitter:image content="https://shin-jae-yoon.github.io/icon.png"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.0745b5b14b60c2c2155b8c283166dff6.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/darkmode.bc2675e781c280aaf6b5cc1b2bc0d940.min.js></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="코딩애플 강의 HTML HTML 태그 띄어쓰기를 하고 원하는"><meta property="og:title" content="코딩애플"><meta property="og:description" content="코딩애플 강의 HTML HTML 태그 띄어쓰기를 하고 원하는"><meta property="og:type" content="website"><meta property="og:image" content="https://shin-jae-yoon.github.io/icon.png"><meta property="og:url" content="https://shin-jae-yoon.github.io/notes/TIL/lecture/html_css/apple/"><meta property="og:width" content="200"><meta property="og:height" content="200"><meta name=twitter:card content="summary"><meta name=twitter:title content="코딩애플"><meta name=twitter:description content="코딩애플 강의 HTML HTML 태그 띄어쓰기를 하고 원하는"><meta name=twitter:image content="https://shin-jae-yoon.github.io/icon.png"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.181b74cecbf348ffc6785d03c74397bd.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/darkmode.bc2675e781c280aaf6b5cc1b2bc0d940.min.js></script>
 <script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.1c7d2715690c5c9c8c67ed0f9f1df9b1.min.js></script>
 <link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
@@ -10,11 +11,855 @@
 <script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
 <script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
 <script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
-<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.efb0f67b32a3cb79a8bdb9e3f20f9c71.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.53c883b46d3b567591c08818d1b5a4b1.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://shin-jae-yoon.github.io",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1}:{centerForce:1,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.5a68d75aa77fc15d161746f1887b449a.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.b6c5510f2c0eb71426d94f87ddd210b8.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://shin-jae-yoon.github.io",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1}:{centerForce:1,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
     import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
     attachSPARouting(init, render)
   </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
 <script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=singlePage><header style=margin-bottom:0><img src="https://img1.daumcdn.net/thumb/C32x32/?scode=mtistory2&fname=https%3A%2F%2Ftistory3.daumcdn.net%2Ftistory%2F5252507%2F9f1447b3d8ac45ffa6c01c21fa6aec75"><h1 style=margin-left:.2em id=page-title><a href=https://shin-jae-yoon.github.io/>개발자 유니 - 두 번째 뇌</a></h1><h1 style=margin-left:.2em id=page-title2><a href=https://shin-jae-yoon.github.io/>개발자 유니</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div style=margin-left:1em><a href=/tags><i class="fa-solid fa-hashtag"></i></a></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
 <label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><div style=margin-bottom:3em><ul class=header-nav><li style=margin-right:1em><a href=https://shin-jae-yoon.github.io/>Home</a></li><li style=margin-right:1em><a href=/about/>About</a></li><li style=margin-right:1em><a href=/notes/TIL/TIL>TIL</a></li><li><a href=/notes/Interview/Interview>Interview</a></li></ul></div><article><h1>코딩애플</h1><p class=meta>Last updated -
-2023년 02월 09일
-<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/notes/TIL/lecture/html_css/apple.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/HTML/>HTML</a></li><li><a href=https://shin-jae-yoon.github.io/tags/CSS/>CSS</a></li></ul><p>코딩애플 강의</p></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>백링크</h3><ul class=backlinks><li><a href=/notes/TIL/lecture/html_css/html_css/ data-ctx=코딩애플 data-src=/notes/TIL/lecture/html_css/html_css class=internal-link>html_css</a></li></ul></div><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>연결된 그래프</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://shin-jae-yoon.github.io/js/graph.6421b50adba269f8b1f5b3e0dc679564.js></script></div></div><div id=contact_buttons><footer><a style=margin:0 href=https://hits.seeyoufarm.com><img style=margin:0 src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fshin-jae-yoon.github.io&count_bg=%23284B63&title_bg=%23284B63&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=true"></a><p>Made by Shin-Jae-Yoon using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://github.com/Shin-Jae-Yoon><i class="fab fa-github"></i></a></li><li><a href=https://jae-yoon.tistory.com/><i class="fa-solid fa-tenge-sign"></i></a></li><li><a href=mailto:wlwhsvkdlxh@gmail.com><i class="fa-solid fa-envelope"></i></a></li></ul></footer></div><a class=top-btn href=#><i class="top-btn-img fa-solid fa-circle-arrow-up"></i></a></div></body></html>
+2023년 02월 10일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/notes/TIL/lecture/html_css/apple.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/html/>html</a></li><li><a href=https://shin-jae-yoon.github.io/tags/css/>css</a></li></ul><aside class=mainTOC><details><summary>Contents</summary><nav id=TableOfContents><ol><li><a href=#코딩애플-강의>코딩애플 강의</a></li><li><a href=#html>HTML</a><ol><li><a href=#html-태그>HTML 태그</a></li><li><a href=#input-태그-name-속성>input 태그 name 속성</a></li><li><a href=#select-태그>select 태그</a></li><li><a href=#label-태그>label 태그</a></li><li><a href=#table>table</a></li></ol></li><li><a href=#css>CSS</a><ol><li><a href=#float-속성>float 속성</a></li><li><a href=#selector-셀렉터>Selector 셀렉터</a></li><li><a href=#background-속성>background 속성</a></li><li><a href=#배경에-검은색-틴트-주기>배경에 검은색 틴트 주기</a></li><li><a href=#margin-collapse-현상>margin collapse 현상</a></li><li><a href=#좌표-이동>좌표 이동</a></li><li><a href=#z-index>z-index</a></li><li><a href=#width의-영역에-관한-문제>width의 영역에 관한 문제</a></li><li><a href=#css-초기-설정시-편한-것-normalize>css 초기 설정시 편한 것, normalize</a></li><li><a href=#input-type에-따른-css-셀렉터>input type에 따른 css 셀렉터</a></li><li><a href=#vertical-align-속성>vertical-align 속성</a></li><li><a href=#table-태그-border-radius-오류>table 태그 border-radius 오류</a></li><li><a href=#button-태그-같이-hover-할-때-마우스-커서>button 태그 같이 hover 할 때 마우스 커서</a></li><li><a href=#input-태그-focus-스타일-안먹힐-때>input 태그 focus 스타일 안먹힐 때</a></li><li><a href=#css의-다양한-pseudo-class>css의 다양한 pseudo-class</a></li><li><a href=#코드-양이-줄어드는-class-작명법-oocss-bem>코드 양이 줄어드는 class 작명법 (OOCSS, BEM)</a></li></ol></li></ol></nav></details></aside><div class=asideTOCbox><aside class=asideTOC id=asideTOC><strong><p>Contents</p></strong><nav id=TableOfContents><ol><li><a href=#코딩애플-강의>코딩애플 강의</a></li><li><a href=#html>HTML</a><ol><li><a href=#html-태그>HTML 태그</a></li><li><a href=#input-태그-name-속성>input 태그 name 속성</a></li><li><a href=#select-태그>select 태그</a></li><li><a href=#label-태그>label 태그</a></li><li><a href=#table>table</a></li></ol></li><li><a href=#css>CSS</a><ol><li><a href=#float-속성>float 속성</a></li><li><a href=#selector-셀렉터>Selector 셀렉터</a></li><li><a href=#background-속성>background 속성</a></li><li><a href=#배경에-검은색-틴트-주기>배경에 검은색 틴트 주기</a></li><li><a href=#margin-collapse-현상>margin collapse 현상</a></li><li><a href=#좌표-이동>좌표 이동</a></li><li><a href=#z-index>z-index</a></li><li><a href=#width의-영역에-관한-문제>width의 영역에 관한 문제</a></li><li><a href=#css-초기-설정시-편한-것-normalize>css 초기 설정시 편한 것, normalize</a></li><li><a href=#input-type에-따른-css-셀렉터>input type에 따른 css 셀렉터</a></li><li><a href=#vertical-align-속성>vertical-align 속성</a></li><li><a href=#table-태그-border-radius-오류>table 태그 border-radius 오류</a></li><li><a href=#button-태그-같이-hover-할-때-마우스-커서>button 태그 같이 hover 할 때 마우스 커서</a></li><li><a href=#input-태그-focus-스타일-안먹힐-때>input 태그 focus 스타일 안먹힐 때</a></li><li><a href=#css의-다양한-pseudo-class>css의 다양한 pseudo-class</a></li><li><a href=#코드-양이-줄어드는-class-작명법-oocss-bem>코드 양이 줄어드는 class 작명법 (OOCSS, BEM)</a></li></ol></li></ol></nav></aside></div><script>document.addEventListener("scroll",function(){console.log("gkdl"),custom_init()},{once:!0})</script><div class=tpstyle-yes><a href=#코딩애플-강의><h2 id=코딩애플-강의><span class=hanchor arialabel=Anchor># </span>코딩애플 강의</h2></a><p><br><br></p><a href=#html><h2 id=html><span class=hanchor arialabel=Anchor># </span>HTML</h2></a><br><a href=#html-태그><h3 id=html-태그><span class=hanchor arialabel=Anchor># </span>HTML 태그</h3></a><br><ul><li>띄어쓰기를 하고 원하는 class 붙이면 클래스 2개 이상 가능</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;container text-center&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#input-태그-name-속성><h3 id=input-태그-name-속성><span class=hanchor arialabel=Anchor># </span>input 태그 name 속성</h3></a><br><ul><li>input 태그에 name 속성을 지정하면 서버에 name에 해당하는 변수로 데이터를 전송하게 된다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;age&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!-- age라는 변수로 서버에 전송 --&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>서버에 데이터 전송할 때 방식 2개</p><ol><li><input type=submit></li><li><p><button type=submit>전송</button></p></li></ol><br><a href=#select-태그><h3 id=select-태그><span class=hanchor arialabel=Anchor># </span>select 태그</h3></a><br><ul><li>드롭다운 구현 가능</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>select</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>option</span><span class=p>&gt;</span>자장면<span class=p>&lt;/</span><span class=nt>option</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>option</span><span class=p>&gt;</span>짬뽕<span class=p>&lt;/</span><span class=nt>option</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>option</span><span class=p>&gt;</span>탕수육<span class=p>&lt;/</span><span class=nt>option</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>select</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#label-태그><h3 id=label-태그><span class=hanchor arialabel=Anchor># </span>label 태그</h3></a><br><ul><li><p>input 태그 체크박스 활용할 때 의미 없는 글자는 span 태그를 사용해도 되지만, label 태그를 이용해보자.</p></li><li><p>input태그의 id와 label 태그의 for를 동일하게 맞춰주면 label 태그의 글자를 클릭해도 체크박스가 선택된다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;sub&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;checkbox&#34;</span> <span class=p>/&gt;</span> <span class=p>&lt;</span><span class=nt>label</span> <span class=na>for</span><span class=o>=</span><span class=s>&#34;sub&#34;</span><span class=p>&gt;</span>Subscribe<span class=p>&lt;/</span><span class=nt>label</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#table><h3 id=table><span class=hanchor arialabel=Anchor># </span>table</h3></a><br><ul><li><p>table 태그로 감싸며 thead 태그와 tbody 태그를 써주는 것이 보기 좋다.</p></li><li><p>그리고 tr 태그로 행 먼저, 그 이후 td 태그로 열, 아래는 3행 3열 테이블</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>table</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>thead</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>tr</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>tr</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>thead</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>tbody</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>tr</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>tr</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>tr</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>td</span><span class=p>&gt;&lt;/</span><span class=nt>td</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>tr</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>tbody</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>table</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>셀 병합을 할때는 <code>&lt;td colspan="4">&lt;/td></code>와 같이 colspan에 합치기 원하는 숫자를 넣기</p></li><li><p>추가로 html 테이블에서 td의 width를 설정하면 전체 열의 width가 변한다.</p></li></ul><p><br><br></p><a href=#css><h2 id=css><span class=hanchor arialabel=Anchor># </span>CSS</h2></a><br><a href=#float-속성><h3 id=float-속성><span class=hanchor arialabel=Anchor># </span>float 속성</h3></a><br><ul><li><p>float는 요소를 <strong>공중에</strong> 붕 띄워서 왼쪽/오른쪽 정렬하는 속성</p></li><li><p>공중에 붕 띄는 속성 때문에 다음에 오는 div 박스가 보이지 않는 경우 발생</p></li><li><p><code>clear: both</code>를 이용해서 초기화 해줘야함</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>box_practice</span> <span class=p>.</span><span class=nc>article01</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>float</span><span class=p>:</span> <span class=kc>left</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>box_practice</span> <span class=p>.</span><span class=nc>article02</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>float</span><span class=p>:</span> <span class=kc>right</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>box_practice</span> <span class=p>.</span><span class=nc>footer</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>clear</span><span class=p>:</span> <span class=kc>both</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>[ 참고 ]</p><p>float 속성으로 가로 정렬할 때</p><p>float 박스들을 감싸난 하나의 큰 div 박스를 만들고</p><p>폭을 지정해주는게 좋다. 그래야 모바일에서</p><p>흘러넘치지 않는다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;left-box&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;right-box&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;footer&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#selector-셀렉터><h3 id=selector-셀렉터><span class=hanchor arialabel=Anchor># </span>Selector 셀렉터</h3></a><br><ul><li><p>셀렉터 사용 시 공백 말고 꺽쇠( <code>></code> )도 가능</p></li><li><p>단, 꺽쇠 사용 시 4~5개 이상 연달아쓰는건 권장X 버그의 원인</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ui</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;navbar&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;</span><span class=nt>span</span><span class=p>&gt;</span>안녕<span class=p>&lt;/</span><span class=nt>span</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ui</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>navbar</span> <span class=nt>li</span> <span class=o>&gt;</span> <span class=nt>span</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li><code>nth-child()</code> 셀렉터는 여러 요소 중 원하는 n번째 요소에 스타일을 주기 위함이다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>cart-table</span> <span class=nt>td</span><span class=p>:</span><span class=nd>nth-child</span><span class=o>(</span><span class=nt>2</span><span class=o>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>cart-table</span> <span class=nt>td</span><span class=p>:</span><span class=nd>nth-child</span><span class=o>(</span><span class=nt>n</span> <span class=o>+</span> <span class=nt>2</span><span class=o>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>color</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>위의 코드는 2번째에 나오는 td에만 color를 주는 것이고</p></li><li><p>아래의 코드는 2번째 이후에 나오는 td들에 color를 주겠다는 것</p></li></ul><br><a href=#background-속성><h3 id=background-속성><span class=hanchor arialabel=Anchor># </span>background 속성</h3></a><br><ul><li><p>그냥 이미지를 넣어도 되지만, background도 생각</p></li><li><p><code>background-image: url(./img/img03.png);</code> 배경 이미지 설정 (이때, url 여러개 넣어서 배경 겹치기 가능)</p></li><li><p><code>background-size: cover;</code> 배경 이미지 div 박스에 꽉차게</p></li><li><p><code>background-size: contain;</code> 배경 이미지 잘리지 않게</p></li><li><p><code>background-repeat: no-repeat;</code> 반복되는거 없애기</p></li><li><p><code>background-position: center;</code> center를 기준으로 배경 채움</p></li><li><p><code>background-attachment: fixed;</code> 스크롤 될 때 배경 동작 설정 방식</p></li><li><p><code>filter: brightness(50%)</code> 배경에 보정 입히기 - 명도 (단, 안에 글씨 있으면 글씨도 필터가 입혀지니까 이는 조심하자.)</p></li></ul><br><a href=#배경에-검은색-틴트-주기><h3 id=배경에-검은색-틴트-주기><span class=hanchor arialabel=Anchor># </span>배경에 검은색 틴트 주기</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>main-background</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>background-image</span><span class=p>:</span> <span class=nb>linear-gradient</span><span class=p>(</span><span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>0.5</span><span class=p>),</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>0.5</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>url</span><span class=p>(</span><span class=sx>이미지경로~~</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#margin-collapse-현상><h3 id=margin-collapse-현상><span class=hanchor arialabel=Anchor># </span>margin collapse 현상</h3></a><br><p>margin collapse 현상은, div 박스 두 개가 겹친 경우에 <strong>박스 2개의 위쪽 테두리가 겹치면, margin도 합쳐지는 현상</strong>을 의미한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;main-background&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>h4</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;main-title&#34;</span><span class=p>&gt;</span>Buy Our Shoes!<span class=p>&lt;/</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>이 경우에서 박스 2개가 겹쳐지게 되어, main-title에 margin-top을 주면 margin이 합쳐진 현상이라 같이 내려가게 될 것이다. 해결방안으로는, 테두리가 안붙게 하면 된다. 부모 박스에 <code>padding: 1px</code>과 같은 조작을 취하면 된다.</p><br><a href=#좌표-이동><h3 id=좌표-이동><span class=hanchor arialabel=Anchor># </span>좌표 이동</h3></a><br><ul><li><p><code>position</code> 속성 부여하여 좌표이동 가능해짐.</p></li><li><p>특징 01 : 좌표 이동 가능</p></li><li><p>특징 02 : float와 비슷하게 공중에 뜨는 원리</p></li><li><p><code>position: relative</code> 내 원래 위치가 기준</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>main-button</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>top</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span> <span class=err>//</span> <span class=err>위쪽에서부터</span> <span class=err>100px</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>left</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span> <span class=err>//</span> <span class=err>왼쪽에서부터</span> <span class=err>100px</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>position: static</code> 좌표 이동 금지</p></li><li><p><code>position: fixed</code> 현재 화면 (viewport) 기준으로 고정</p></li><li><p>navbar 같은거 스크롤 해도 상단에 고정시키면 좋으니까, 그럴 때 사용</p></li><li><p><code>position: absolute</code> 내 부모 태그 중에 <code>position: relative</code> 가진 부모를 기준으로 한다.</p></li><li><p><code>position: absolute</code> 요소를 <strong>가운데 정렬</strong>하는 방법</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>main-btn</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>left</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>right</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>margin</span><span class=p>:</span> <span class=kc>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>width</span><span class=p>:</span> <span class=mi>30</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#z-index><h3 id=z-index><span class=hanchor arialabel=Anchor># </span>z-index</h3></a><br><ul><li><p>div 박스가 겹칠 때 우선순위를 두기</p></li><li><p><code>z-index: 1</code>, <code>z-index: 5</code> 숫자가 클 수록 (높을 수록) 앞에 온다.</p></li></ul><br><a href=#width의-영역에-관한-문제><h3 id=width의-영역에-관한-문제><span class=hanchor arialabel=Anchor># </span>width의 영역에 관한 문제</h3></a><br><ul><li><p>width는 div 박스의 너비가 아니라 <strong>width는 내부 content 영역의 너비를 의미한다.</strong> padding이나 border에 width는 영향을 주지 않는다.</p></li><li><p>해결하려면, content 부분만 width로 설정하는 것이 아니라, padding과 border를 모두 포함하라고 시키면 된다.</p></li><li><p><code>box-sizing: border-box;</code> - width가 padding, border를 포함한다.</p></li><li><p>content-box는 padding과 border를 포함하지 않는 경우이다.</p></li><li><p>아래의 예제로 box-sizing이 있고 없고를 비교해보기</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>explain-box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>margin</span><span class=p>:</span> <span class=kc>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>padding</span><span class=p>:</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>text-align</span><span class=p>:</span> <span class=kc>center</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>top</span><span class=p>:</span> <span class=mi>-80</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>max-width</span><span class=p>:</span> <span class=mi>600</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>width</span><span class=p>:</span> <span class=mi>80</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>height</span><span class=p>:</span> <span class=mi>40</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>background-color</span><span class=p>:</span> <span class=nb>rgb</span><span class=p>(</span><span class=mi>238</span><span class=p>,</span> <span class=mi>237</span><span class=p>,</span> <span class=mi>239</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>box-sizing</span><span class=p>:</span> <span class=kc>border-box</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#css-초기-설정시-편한-것-normalize><h3 id=css-초기-설정시-편한-것-normalize><span class=hanchor arialabel=Anchor># </span>css 초기 설정시 편한 것, normalize</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>body</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>div</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>box-sizing</span><span class=p>:</span> <span class=kc>border-box</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>html</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>line-height</span><span class=p>:</span> <span class=mf>1.15</span><span class=p>;</span> <span class=c>/* 기본 행간 높이 */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>혹은 크롬, 파이어폭스, 사파리와 같이 브라우저 호환성 이슈가 있을 때 css 파일에 추가하고 시작하면 좋은 설정들이 있다. (버튼의 크기나 이미지가 브라우저마다 다르거나 한 경우 때문에)</p><br><p><a href=https://github.com/necolas/normalize.css/blob/master/normalize.css rel=noopener>normalize.css</a>를 참고하도록 하자.</p><br><a href=#input-type에-따른-css-셀렉터><h3 id=input-type에-따른-css-셀렉터><span class=hanchor arialabel=Anchor># </span>input type에 따른 css 셀렉터</h3></a><br><ul><li>아래와 같이 지정하면 input type이 text인 아이들만 css 스타일링 가능</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>input</span><span class=o>[</span><span class=nt>type</span><span class=o>=</span><span class=s1>&#39;text&#39;</span><span class=o>]</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>padding</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>font-size</span><span class=p>:</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#vertical-align-속성><h3 id=vertical-align-속성><span class=hanchor arialabel=Anchor># </span>vertical-align 속성</h3></a><br><ul><li><p>inline/inline-block 요소 간의 세로정렬 할 때 vertical-align을 사용한다.</p></li><li><p>테이블 사용 시 수직 정렬에도 사용 가능</p></li><li><p>pratice02.html에서 실패했던 이유는 ? div박스와 조작을 시도했기 때문</p></li><li><p>해결책은 하나의 div 박스 내에서 img와 글자를 span태그로 묶어서 그 둘을 vertical-align 했으면 가능했을 듯하다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>img</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=na>src</span><span class=o>=</span><span class=s>&#34;https://mdn.mozillademos.org/files/12245/frame_image.svg&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=na>width</span><span class=o>=</span><span class=s>&#34;32&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=na>height</span><span class=o>=</span><span class=s>&#34;32&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>span</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;vertical-align : middle;&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>image with a default alignment.<span class=p>&lt;/</span><span class=nt>span</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#table-태그-border-radius-오류><h3 id=table-태그-border-radius-오류><span class=hanchor arialabel=Anchor># </span>table 태그 border-radius 오류</h3></a><br><ul><li><p>border-collapse 속성을 table 태그에 적용했을 때 border-radius가 안먹는 오류가 있다.</p></li><li><p>첫 번째 해결방안</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>table</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border-collapse</span><span class=p>:</span> <span class=kc>collapse</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border-spacing</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>(</span><span class=nt>왼쪽위에있는</span> <span class=nt>td</span><span class=o>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border-top-left-radius</span><span class=p>:</span> <span class=mi>5</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>두 번째 해결방안</p></li><li><p>box-shadow 속성을 이용하여 테두리를 가짜로 만들어내는 편법</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>table</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border-collapse</span><span class=p>:</span> <span class=kc>collapse</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border-radius</span><span class=p>:</span> <span class=mi>7</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border-style</span><span class=p>:</span> <span class=kc>hidden</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>box-shadow</span><span class=p>:</span> <span class=mi>0</span> <span class=mi>0</span> <span class=mi>0</span> <span class=mi>1</span><span class=kt>px</span> <span class=mh>#666</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#button-태그-같이-hover-할-때-마우스-커서><h3 id=button-태그-같이-hover-할-때-마우스-커서><span class=hanchor arialabel=Anchor># </span>button 태그 같이 hover 할 때 마우스 커서</h3></a><br><ul><li><code>:hover</code>로 pseudo-class를 하지 않아도 <code>cursor:pointer</code>와 같이 작성하면 올렸을 때 마우스 커서 바뀜</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>button</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>padding</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>font-size</span><span class=p>:</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>cursor</span><span class=p>:</span> <span class=kc>pointer</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#input-태그-focus-스타일-안먹힐-때><h3 id=input-태그-focus-스타일-안먹힐-때><span class=hanchor arialabel=Anchor># </span>input 태그 focus 스타일 안먹힐 때</h3></a><br><ul><li><p><code>input:focus</code>를 해서 border 속성을 지정했는데 색깔이 안먹는 경우가 있다.</p></li><li><p>그럴때는 크롬 기본속성인 outline을 none으로 설정해주자.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>cart-footer</span> <span class=p>.</span><span class=nc>input-test</span><span class=p>:</span><span class=nd>focus</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>outline</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border</span><span class=p>:</span> <span class=mi>2</span><span class=kt>px</span> <span class=kc>solid</span> <span class=nb>rgb</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=mi>77</span><span class=p>,</span> <span class=mi>163</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#css의-다양한-pseudo-class><h3 id=css의-다양한-pseudo-class><span class=hanchor arialabel=Anchor># </span>css의 다양한 pseudo-class</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>/* 외우는법 hofa */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>hover</span> <span class=c>/*마우스를 올려놓을 때*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>focus</span> <span class=c>/*클릭 후 계속 포커스 상태일 때*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>active</span> <span class=c>/*클릭 중일 때*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>link</span> <span class=c>/* 방문 전 링크 */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>visited</span> <span class=c>/* 방문 후 링크 */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>any-link</span> <span class=c>/*방문 전, 방문 후 링크 한번에 선택할 때*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>playing</span> <span class=c>/*동영상, 음성이 재생중일 때*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>paused</span> <span class=c>/*동영상, 음성이 정지시*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>autofill</span> <span class=c>/*input의 자동채우기 스타일*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>disabled</span> <span class=c>/*disabled된 요소 스타일*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>checked</span> <span class=c>/*체크박스나 라디오버튼 체크되었을 때*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>blank</span> <span class=c>/*input이 비었을 때*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>valid</span> <span class=c>/*이메일 input 등에 이메일 형식이 맞을 경우*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>invalid</span> <span class=c>/*이메일 input 등에 이메일 형식이 맞지 않을 경우*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>required</span> <span class=c>/*필수로 입력해야할 input의 스타일*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>nth-child</span><span class=o>(</span><span class=nt>n</span><span class=o>)</span> <span class=c>/*n번째 자식 선택*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>first-child</span> <span class=c>/*첫째 자식 선택*/</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>last-child</span> <span class=c>/*마지막 자식 선택*/</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#코드-양이-줄어드는-class-작명법-oocss-bem><h3 id=코드-양이-줄어드는-class-작명법-oocss-bem><span class=hanchor arialabel=Anchor># </span>코드 양이 줄어드는 class 작명법 (OOCSS, BEM)</h3></a><br><ul><li><p><strong>OOCSS (Object Oriented CSS)</strong></p></li><li><p>CSS 양이 줄어들고, 유지보수 편리</p></li><li><p>뼈대용 class, 살점용 class 각각 제작</p></li><li><p>뼈대 디자인을 먼저 분리해놓고 색깔과 같은 살점을 추가하는 방식</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;main-btn bg-red&#34;</span><span class=p>&gt;</span>버튼1<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;main-btn bg-blue&#34;</span><span class=p>&gt;</span>버튼2<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>main-btn</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>padding</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>font-size</span><span class=p>:</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>border</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>cursor</span><span class=p>:</span> <span class=kc>pointer</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>bg-red</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>bg-blue</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>OOCSS를 극단적으로 여러 <strong>Utility class</strong>를 만들어 놓을 수 있다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>f-small</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>font-size</span><span class=p>:</span> <span class=mi>12</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>f-mid</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>font-size</span><span class=p>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>f-lg</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>font-size</span><span class=p>:</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>bg-red</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>bg-blue</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;main-btn bg-red f-lg&#34;</span><span class=p>&gt;</span>버튼<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li><p><strong>BEM (Block__Element&ndash;Modifier)</strong></p></li><li><p>class 작명할 때 창의력이 부족한 경우 BEM 작명법을 이용할 수 있다.</p></li><li><p><code>class = "덩어리이름__역할--세부특징"</code></p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;profile&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>img</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;profile__img&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>h4</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;profile__title&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;profile__content&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;profile__button--red&#34;</span><span class=p>&gt;</span>버튼1<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;profile__button--blue&#34;</span><span class=p>&gt;</span>버튼2<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>사람마다 다르다. OOCSS를 쓰면 html이 더러워져서 추천하지 않는 사람도 있음</p></li><li><p>BEM도 Modifer는 빼고 Block__Element까지만 쓰는 사람도 있음</p></li></ul><br><ul><li><p>최근, React나 Vue로 HTML 만들면 굳이 OOCSS, BEM 굳이 안쓰는 경우가 많아서 깊게 익힐 필요 X</p></li><li><p>React나 Vue에서는 html 페이지 단위가 아닌, 작은 덩어리 (component) 단위로 개발하게 된다. 이때 profile과 같이 class 명이 중복되어도 컴포넌트끼리 스타일이 간섭되지 않게 코드 작성이 가능하다. 대표적으로, React의 styled-components 라이브러리를 사용하면 가능하다.</p></li></ul></div></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>백링크</h3><ul class=backlinks><li><a href=/notes/TIL/lecture/lecture/ data-ctx=코딩애플 data-src=/notes/TIL/lecture/lecture class=internal-link>강의</a></li></ul></div><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>연결된 그래프</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://shin-jae-yoon.github.io/js/graph.6421b50adba269f8b1f5b3e0dc679564.js></script></div></div><div id=contact_buttons><footer><a style=margin:0 href=https://hits.seeyoufarm.com><img style=margin:0 src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fshin-jae-yoon.github.io&count_bg=%23284B63&title_bg=%23284B63&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=true"></a><p>Made by Shin-Jae-Yoon using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://github.com/Shin-Jae-Yoon><i class="fab fa-github"></i></a></li><li><a href=https://jae-yoon.tistory.com/><i class="fa-solid fa-tenge-sign"></i></a></li><li><a href=mailto:wlwhsvkdlxh@gmail.com><i class="fa-solid fa-envelope"></i></a></li></ul></footer></div><a class=top-btn href=#><i class="top-btn-img fa-solid fa-circle-arrow-up"></i></a></div><script></script></body></html>
