@@ -12,10 +12,13 @@
   --outlinegray: #dadada;
   --million-progress-bar-color: var(--secondary);
   --highlighted: #f5dfaf88;
+  --tocscroll: #a7b0c8;
+  --tocscrollactive: #182731;
+  --basic: none;
 }
 
 [saved-theme="dark"] {
-  --light: #1e1e21 !important;
+  --light: #272b34 !important;
   --dark: #fbfffe !important;
   --secondary: #91b8d2 !important;
   --visited: #91b8d2 !important;
@@ -23,8 +26,11 @@
   --primary: #f58382 !important;
   --gray: #d4d4d4 !important;
   --lightgray: #292633 !important;
-  --outlinegray: #343434 !important;
+  --outlinegray: #91b8d2 !important;
   --highlighted: #574010;
+  --tocscroll: #91b8d2 !important;
+  --tocscrollactive: #9ec4bb !important;
+  --basic: #ffffff;
 }
 
 

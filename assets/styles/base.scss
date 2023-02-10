@@ -9,6 +9,7 @@
 // typography
 html {
   scroll-behavior: smooth;
+  
   &:lang(ar) {
     & p, & h1, & h2, & h3, article, header {
       direction: rtl;
@@ -21,7 +22,7 @@ html {
 }
 
 .singlePage {
-  padding: 4em 20vw;
+  padding: 4em 25vw;
   @media all and (max-width: 1200px) {
     padding: 25px 5vw;
   }
@@ -92,9 +93,8 @@ tbody, li, p {
 .asideTOCbox {
   display: block;
   height: 100%;
-  width: 20%;
-  margin-right: 1em;
-  margin-left: 2em;
+  width: 25%;
+  margin-right: -15vw;
   float: right;
   position: sticky;
   top: 1.75em;
@@ -107,6 +107,13 @@ tbody, li, p {
   padding-left: 0.75em;
   z-index: 1;
   opacity: 0.6;
+
+  & a {
+    color: var(--tocscroll);
+    &:hover {
+      color: var(--tocscrollactive) !important;
+    }
+  }
 
   & p {
     margin-top: 0;
@@ -125,9 +132,41 @@ tbody, li, p {
   }
 }
 
+.text-trasition {
+  transition: all 100ms ease-in-out;
+}
+
+.text-active {
+  color: red !important;
+}
+
+
+.tpstyle-yes {
+  width: 100%;
+}
+
+.tpstyle-none {
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .asideTOCbox {
+    width: 20%;
+    margin-right: 0;
+  }
+
+  .tpstyle-yes {
+    width: 75%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .mainTOC {
     display: block;
+  }
+
+  .tpstyle-yes {
+    width: 100%;
   }
 
   .asideTOCbox {
@@ -320,7 +359,6 @@ sup > a {
   list-style: none;
   display: flex;
   justify-content: right;
-  margin-right: 1em;
   font-size: 1.2rem;
   padding: 0;
 }
@@ -455,7 +493,8 @@ header {
 
   #search-icon {
     background-color: var(--lightgray);
-    border-radius: 4px;
+    border: 1px solid var(--basic);
+    border-radius: 20px;
     height: 2em;
     display: flex;
     align-items: center;

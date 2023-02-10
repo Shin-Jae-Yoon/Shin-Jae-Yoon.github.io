@@ -8,9 +8,7 @@
     <!-- Begin actual content -->
     {{partial "header.html" .}}
     <article>
-      {{partial "toc.html" .}}
       {{if .Title}}<h1>{{ .Title }}</h1>{{end}}
-
       <p class="meta">
         {{ i18n "last_updated" }} - {{ partial "date-fmt.html" .}} 
         {{partial "github.html" . }}
@@ -28,8 +26,18 @@
            </li>
           {{ end }}
       </ul>
-      <!-- {{partial "toc.html" .}} -->
-      {{partial "textprocessing.html" . }}
+      {{partial "toc.html" .}}
+      {{ $hasHeaders := gt (len (findRE "<h\\d.*?>(.|\n)*?</h\\d>" .Content)) 0 }}
+      {{ if (or (and (not $.Site.Data.config.enableToc) .Params.enableToc) (and $.Site.Data.config.enableToc (ne .Params.enableToc false) $hasHeaders)) }}
+      {{partial "toc2.html" .}}
+        <div class="tpstyle-yes">
+          {{partial "textprocessing.html" . }}
+        </div>
+      {{ else }}
+        <div class="tpstyle-none">
+          {{partial "textprocessing.html" . }}
+        </div>
+      {{ end }}
     </article>
     {{partial "footer.html" .}}
 
@@ -37,5 +45,7 @@
       <i class="top-btn-img fa-solid fa-circle-arrow-up"></i>
     </a>
 </div>
+<script>
+</script>
 </body>
 </html>

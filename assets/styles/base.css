@@ -370,10 +370,11 @@ header > h1 {
 }
 header #search-icon {
   background-color: var(--lightgray);
-  border-radius: 4px;
+  border-radius: 20px;
   height: 2em;
   display: flex;
   align-items: center;
+  border: 1px solid var(--text-normal);
   cursor: pointer;
 }
 header #search-icon > p {
