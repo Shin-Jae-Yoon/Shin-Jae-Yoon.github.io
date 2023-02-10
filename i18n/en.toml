@@ -71,7 +71,7 @@ other = "first 3 {{ .notes }}"
 other = " 검색어를 입력하세요 "
 
 [toc]
-other = "Contents"
+other = "CONTENTS"
 
 [copyright]
 other = "Made by {{ .name }} using <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"

@@ -21,7 +21,7 @@ googleAnalyticsID = "G-GJFBQJ80N7"
 [markup]
     [markup.tableOfContents]
         endLevel = 3
-        ordered = true
+        ordered = false
         startLevel = 2
     [markup.highlight]
         noClasses = false

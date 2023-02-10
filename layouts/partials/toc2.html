@@ -2,14 +2,10 @@
 {{ if (or (and (not $.Site.Data.config.enableToc) .Params.enableToc) (and $.Site.Data.config.enableToc (ne .Params.enableToc false) $hasHeaders)) }}
 <div class="asideTOCbox">
     <aside class="asideTOC" id="asideTOC">
-        <strong><p>{{ i18n "toc" }}</p></strong>
+        <div id="asideTocTitleBox">
+            <a href="#" id="asideTocTitle">{{ i18n "toc" }}</a>
+        </div>
         {{ .TableOfContents }}
     </aside>
 </div>
-<script>
-    document.addEventListener('scroll', function(e) {
-        console.log('gkdl');
-        custom_init();
-    }, {once: true})
-</script>
 {{ end }}

@@ -27,9 +27,9 @@
           {{ end }}
       </ul>
       {{partial "toc.html" .}}
+      {{partial "toc2.html" .}}
       {{ $hasHeaders := gt (len (findRE "<h\\d.*?>(.|\n)*?</h\\d>" .Content)) 0 }}
       {{ if (or (and (not $.Site.Data.config.enableToc) .Params.enableToc) (and $.Site.Data.config.enableToc (ne .Params.enableToc false) $hasHeaders)) }}
-      {{partial "toc2.html" .}}
         <div class="tpstyle-yes">
           {{partial "textprocessing.html" . }}
         </div>
@@ -45,7 +45,5 @@
       <i class="top-btn-img fa-solid fa-circle-arrow-up"></i>
     </a>
 </div>
-<script>
-</script>
 </body>
 </html>

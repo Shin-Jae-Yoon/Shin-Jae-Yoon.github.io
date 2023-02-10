@@ -100,13 +100,30 @@ tbody, li, p {
   top: 1.75em;
 }
 
+#asideTocTitle {
+  padding-left: 2em;
+  padding-right: 2em;
+  border-color: var(--tocscrollbar) !important;
+  border-bottom: 5px;
+  border-bottom-style:groove;
+  font-weight: 700;
+  color: var(--toctitle) !important;
+  &:hover {
+    color: var(--toctitle) !important;
+  }
+}
+
 .asideTOC {
   width: 100%;
-  border-color: var(--dark);
+  border-color: var(--tocscrollbar) !important;
+  border-left: 5px;
   border-left-style:groove;
-  padding-left: 0.75em;
+  padding-left: 0;
   z-index: 1;
-  opacity: 0.6;
+
+  ul {
+    list-style: none;
+  }
 
   & a {
     color: var(--tocscroll);
@@ -120,13 +137,15 @@ tbody, li, p {
     margin-bottom: 0;
   }
 
-  & ol {
-    padding-inline-start: 1.25em;
+  & ul {
+    padding-inline-start: 0em;
     margin-bottom: 1em;
     & li {
       font-size: 1rem;
+      margin-left: 0.5em;
       & li {
-        font-size: 0.85rem;
+        padding-inline-start: 1em;
+        font-size: 0.9rem;
       }
     }
   }
@@ -137,7 +156,8 @@ tbody, li, p {
 }
 
 .text-active {
-  color: red !important;
+  color: var(--tocscrollactive) !important;
+  border-bottom: 1px solid var(--tocscrollactive) !important;
 }
 
 
