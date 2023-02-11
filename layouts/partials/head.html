@@ -8,17 +8,19 @@
     name="description"
     content="{{if .IsHome}}{{$data.description | default $.Site.Data.config.description}}{{else}}{{.Summary}}{{end}}"
   />
-  <meta property="og:title" content="{{ .Title }}">
-  <meta property="og:description" content="{{if .IsHome}}{{$data.description | default $.Site.Data.config.description}}{{else}}{{.Summary}}{{end}}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="{{.Site.BaseURL}}icon.png">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:width" content="200">
-  <meta property="og:height" content="200">
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="{{ .Title }}" />
-  <meta name="twitter:description" content="{{if .IsHome}}{{$data.description | default $.Site.Data.config.description}}{{else}}{{.Summary}}{{end}}" />
-  <meta name="twitter:image" content="{{.Site.BaseURL}}icon.png">
+	<meta property="og:url" content="https://shin-jae-yoon.github.io/">
+	<meta property="og:site_name" content="개발자 유니의 두 번째 뇌">
+	<meta property="og:title" content="개발자 유니의 두 번째 뇌">
+	<meta property="og:description" content="단편적 지식을 통합된 지식으로">
+	<meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2">
+	<meta property="og:article:author" content="유니">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:site" content="@TISTORY">
+	<meta property="twitter:title" content="개발자 유니의 두 번째 뇌">
+	<meta property="twitter:description" content="단편적 지식을 통합된 지식으로">
+	<meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2">
   {{ range $data.links }}
     {{ if strings.Contains .link "twitter.com" }}
       {{ $twitter_handle := index (split .link "/") (sub (len (split .link "/")) 1) }}
