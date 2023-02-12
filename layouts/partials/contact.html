@@ -4,12 +4,10 @@
 <!-- Contact Info -->
 <div id="contact_buttons">
     <footer>
-        <a style="margin: 0;" href="https://hits.seeyoufarm.com">
-            <img style="margin: 0;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fshin-jae-yoon.github.io&count_bg=%23284B63&title_bg=%23284B63&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=true"/>
-        </a>
         {{ $name := $data.name | default $.Site.Data.config.name }}
         {{ $year := dateFormat "2006" now }}
-        <p>{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
+        <p style="margin-bottom: 0;">{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
+        <p style="margin-top: 0;"><strong>Customized</strong> it by adding some features.</p>
         <ul>
             <!-- {{ if not .IsHome }}
             <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
