@@ -821,13 +821,21 @@ mark {
 
 @media screen and (max-width: 620px) {
   .top-btn {
-    bottom: 4.5rem;
+    bottom: 5rem;
     right: 1rem;
   }
 
+  .top-btn-img {
+    font-size: 2.5rem;
+  }
+
   .bottom-btn {
-      bottom: 1rem;
+      bottom: 1.5rem;
       right: 1rem;
+  }
+
+  .bottom-btn-img {
+    font-size: 2.5rem;
   }
 }
 
