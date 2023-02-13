@@ -7,14 +7,10 @@
         {{ $name := $data.name | default $.Site.Data.config.name }}
         {{ $year := dateFormat "2006" now }}
         <p style="margin-bottom: 0;">{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
-        <p style="margin-top: 0;"><strong>Customized</strong> it by adding some features.</p>
+        <p style="margin-top: 0;">
+            <a href="https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io">Dev Uni</a> has customized it by adding a few features.
+        </p>
         <ul>
-            <!-- {{ if not .IsHome }}
-            <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
-            {{end}} -->
-            <!-- {{- range $data.links | default $.Site.Data.config.links -}}
-            <li><a href="{{.link}}">{{.link_name}}</a></li>
-            {{- end -}} -->
             <li><a href="https://github.com/Shin-Jae-Yoon"><i class="fab fa-github"></i></a></li>
             <li><a href="https://jae-yoon.tistory.com/"><i class="fa-solid fa-tenge-sign"></i></a></li>
             <li><a href="mailto:wlwhsvkdlxh@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>

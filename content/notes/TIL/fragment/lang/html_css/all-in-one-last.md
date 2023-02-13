@@ -2,7 +2,7 @@
 title: "All-in-One 고급모듈"
 date: "2023-02-12 16:35"
 enableToc: true
-tags: ["html", "css"]
+tags: ["apple-html/css"]
 ---
 
 ## Pseudo-element

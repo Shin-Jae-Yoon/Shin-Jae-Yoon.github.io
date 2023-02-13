@@ -2,7 +2,7 @@
 title: "All-in-One 기초모듈"
 date: "2023-02-08 19:45"
 enableToc: true
-tags: ["html", "css"]
+tags: ["apple-html/css"]
 ---
 
 ## HTML

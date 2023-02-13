@@ -153,16 +153,19 @@ tbody, li, p {
 
   & ul {
     padding-inline-start: 0em;
-    margin-bottom: 1em;
     & li {
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-left: 0.5em;
       & li {
         padding-inline-start: 1em;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
   }
+}
+
+#TableOfContents > ul > li {
+  margin-bottom: 0.3em;
 }
 
 .text-trasition {
@@ -778,26 +781,53 @@ mark {
 
 .top-btn {
   position: fixed;
-  bottom: 50px;
-  right: 50px;
-  width: 40px;
-  height: 40px;
+  bottom: 7rem;
+  right: 3rem;
+  width: 3rem;
+  height: 3rem;
   z-index: 1;
-  opacity: 0.8;
+  color: var(--secondary);
+
+  &:hover {
+    transition: all 0.3s ease;
+    color: var(--tertiary);
+    cursor: pointer;
+  }
 }
 
 .top-btn-img {
-  font-size: 4em;
+  font-size: 3rem;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 3rem;
+  height: 3rem;
+  z-index: 1;
+  color: var(--secondary);
+
+  &:hover {
+    transition: all 0.3s ease;
+    color: var(--tertiary);
+    cursor: pointer;
+  }
+}
+
+.bottom-btn-img {
+  font-size: 3rem;
 }
 
 @media screen and (max-width: 620px) {
   .top-btn {
-      bottom: 30px;
-      right: 30px;
+    bottom: 4.5rem;
+    right: 1rem;
   }
 
-  .top-btn-img {
-    font-size: 3em;
+  .bottom-btn {
+      bottom: 1rem;
+      right: 1rem;
   }
 }
 
@@ -829,4 +859,23 @@ mark {
   .column:nth-child(2) {
     width: 100%;
   }
+}
+
+body::-webkit-scrollbar {
+  width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 5%; /* 스크롤바의 길이 */
+  background: var(--secondary); /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--tocscroll);  /*스크롤바 뒷 배경 색상*/
+}
+
+.contact-span {
+  color: var(--secondary);
+  font-weight: 700;
 }

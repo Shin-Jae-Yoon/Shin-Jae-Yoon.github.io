@@ -41,9 +41,22 @@
     </article>
     {{partial "footer.html" .}}
 
-    <a class="top-btn" href="#">
+    <div class="top-btn">
       <i class="top-btn-img fa-solid fa-circle-arrow-up"></i>
-    </a>
+    </div>
+    
+    <div class="bottom-btn">
+      <i class="bottom-btn-img fa-solid fa-circle-arrow-down"></i>
+    </div>
 </div>
+<script>
+  document.querySelector(".top-btn").addEventListener("click", () => {
+    window.scrollTo({top:0, behavior:"smooth"})
+  })
+
+  document.querySelector(".bottom-btn").addEventListener("click", () => {
+    window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"})
+  })
+</script>
 </body>
 </html>

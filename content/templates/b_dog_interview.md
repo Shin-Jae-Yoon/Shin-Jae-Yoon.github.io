@@ -1,0 +1,1 @@
+notes/Interview/dog-week<% tp.file.cursor(0) %>
