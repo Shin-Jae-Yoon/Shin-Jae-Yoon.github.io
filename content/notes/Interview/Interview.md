@@ -1,16 +1,16 @@
 ---
 title: "Interview"
 date: "2023-02-07 03:02"
-enableToc: false
+enableToc: true
 tags: [""]
 ---
-## Tech Interview
+# Tech Interview
 
 > 꼬리에 꼬리를 무는 면접 대비
 
 <br>
 
-## 개발바닥 2사로 - 백엔드 면접 6팀 
+# 개발바닥 2사로 - 백엔드 면접 6팀 
 
 - <a href='https://github.com/Shin-Jae-Yoon/Rebellion-Of-Interviewees' target='_blank'>Github Repository</a>
 	- 매주 수요일 20시 ~ 21시
@@ -29,4 +29,6 @@ tags: [""]
 
 <br><br>
 
-[1주차 스터디](notes/Interview/dog-week01)
+## 1주차 스터디
+
+- [바로가기](notes/Interview/dog-week01)
