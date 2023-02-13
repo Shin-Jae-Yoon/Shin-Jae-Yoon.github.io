@@ -45,3 +45,15 @@ function scroll_update() {
 
   this.ticking = false
 }
+
+function btn_init() {
+  if (document.querySelector(".top-btn")) {
+    document.querySelector(".top-btn").addEventListener("click", () => {
+      window.scrollTo({top:0, behavior:"smooth"})
+    })
+  
+    document.querySelector(".bottom-btn").addEventListener("click", () => {
+      window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"})
+    })
+  }
+}
