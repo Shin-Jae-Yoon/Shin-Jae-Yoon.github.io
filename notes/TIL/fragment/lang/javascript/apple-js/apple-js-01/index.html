@@ -1,0 +1,607 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.5c1e8527c8cd2ba1b3cf8e6987629b9b.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/darkmode.bc2675e781c280aaf6b5cc1b2bc0d940.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.dd2afb7d6055a9d76e9662a2abb5fb6b.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.e0319461d58d6e220892b9d348c0f85a.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.4768bee5d0ea5fb6c5ee401520bb1806.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://shin-jae-yoon.github.io",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1}:{centerForce:1,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:2.4,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.3dafe6f9bb92769e0dfb555c99deab7a.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=singlePage><header style=margin-bottom:0><img src="https://img1.daumcdn.net/thumb/C32x32/?scode=mtistory2&fname=https%3A%2F%2Ftistory3.daumcdn.net%2Ftistory%2F5252507%2F9f1447b3d8ac45ffa6c01c21fa6aec75"><h1 style=margin-left:.2em id=page-title><a href=https://shin-jae-yoon.github.io/>개발자 유니 - 두 번째 뇌</a></h1><h1 style=margin-left:.2em id=page-title2><a href=https://shin-jae-yoon.github.io/>개발자 유니</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div style=margin-left:1em><a href=/tags><i class="fa-solid fa-hashtag"></i></a></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><div style=margin-bottom:3em><ul class=header-nav><li style=margin-right:1em><a href=https://shin-jae-yoon.github.io/>Home</a></li><li style=margin-right:1em><a href=/about/>About</a></li><li style=margin-right:1em><a href=https://shin-jae-yoon.github.io/notes/TIL/TIL>TIL</a></li><li><a href=/notes/Interview/Interview>Interview</a></li></ul></div><article><h1>JS 입문과 웹 개발 01</h1><p class=meta>Last updated -
+2023년 02월 14일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/notes/TIL/fragment/lang/javascript/apple-js/apple-js-01.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C-Javascript/>코딩애플 Javascript</a></li></ul><aside class=mainTOC><details><summary>CONTENTS</summary><nav id=TableOfContents><ul><li><a href=#자바스크립트-사용-목적>자바스크립트 사용 목적</a></li><li><a href=#queryselector>querySelector</a><ul><li><a href=#getelementbyid와-비교>getElementById와 비교</a></li></ul></li><li><a href=#ui-만드는-법칙>UI 만드는 법칙</a></li><li><a href=#자바스크립트-function>자바스크립트 function</a></li><li><a href=#자바스크립트-초창기-겪는-문제들-오류들>자바스크립트 초창기 겪는 문제들, 오류들</a></li><li><a href=#자바스크립트-이벤트리스너>자바스크립트 이벤트리스너</a></li><li><a href=#자바스크립트-콜백함수>자바스크립트 콜백함수</a></li><li><a href=#classlist-toggle>classList, toggle</a></li><li><a href=#jquery-라이브러리>jQuery 라이브러리</a></li><li><a href=#모달modal-창-제작-tip>모달(Modal) 창 제작 Tip</a></li><li><a href=#ui에-애니메이션-추가>UI에 애니메이션 추가</a></li><li><a href=#form태그-ifelse>form태그 if/else</a><ul><li><a href=#조건문-if-else>조건문 (if-else)</a></li><li><a href=#비교-연산자>비교 연산자</a></li><li><a href=#논리-연산자>논리 연산자</a></li></ul></li><li><a href=#truthy-falsy-자료>truthy, falsy 자료</a></li><li><a href=#undefined-null>undefined, null</a><ul><li><a href=#if문-이용한-form-태그>if문 이용한 form 태그</a></li></ul></li><li><a href=#input-이벤트>input 이벤트</a></li><li><a href=#변수-문법>변수 문법</a></li><li><a href=#var-let-const-차이>var let const 차이</a></li><li><a href=#문자-중간에-변수-쉽게-넣기>문자 중간에 변수 쉽게 넣기</a></li></ul></nav></details></aside><div class=asideTOCbox><aside class=asideTOC id=asideTOC><div id=asideTocTitleBox><a href=# id=asideTocTitle>CONTENTS</a></div><nav id=TableOfContents><ul><li><a href=#자바스크립트-사용-목적>자바스크립트 사용 목적</a></li><li><a href=#queryselector>querySelector</a><ul><li><a href=#getelementbyid와-비교>getElementById와 비교</a></li></ul></li><li><a href=#ui-만드는-법칙>UI 만드는 법칙</a></li><li><a href=#자바스크립트-function>자바스크립트 function</a></li><li><a href=#자바스크립트-초창기-겪는-문제들-오류들>자바스크립트 초창기 겪는 문제들, 오류들</a></li><li><a href=#자바스크립트-이벤트리스너>자바스크립트 이벤트리스너</a></li><li><a href=#자바스크립트-콜백함수>자바스크립트 콜백함수</a></li><li><a href=#classlist-toggle>classList, toggle</a></li><li><a href=#jquery-라이브러리>jQuery 라이브러리</a></li><li><a href=#모달modal-창-제작-tip>모달(Modal) 창 제작 Tip</a></li><li><a href=#ui에-애니메이션-추가>UI에 애니메이션 추가</a></li><li><a href=#form태그-ifelse>form태그 if/else</a><ul><li><a href=#조건문-if-else>조건문 (if-else)</a></li><li><a href=#비교-연산자>비교 연산자</a></li><li><a href=#논리-연산자>논리 연산자</a></li></ul></li><li><a href=#truthy-falsy-자료>truthy, falsy 자료</a></li><li><a href=#undefined-null>undefined, null</a><ul><li><a href=#if문-이용한-form-태그>if문 이용한 form 태그</a></li></ul></li><li><a href=#input-이벤트>input 이벤트</a></li><li><a href=#변수-문법>변수 문법</a></li><li><a href=#var-let-const-차이>var let const 차이</a></li><li><a href=#문자-중간에-변수-쉽게-넣기>문자 중간에 변수 쉽게 넣기</a></li></ul></nav></aside></div><div class=tpstyle-yes><blockquote><p>해당 게시글은 <a href=https://codingapple.com/course/javascript-jquery-ui/ target=_blank>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.</p></blockquote><a href=#자바스크립트-사용-목적><h2 id=자바스크립트-사용-목적><span class=hanchor arialabel=Anchor># </span>자바스크립트 사용 목적</h2></a><p>JavaScript는 html 파일 내부에 숨어서 <strong>html 조작과 변경</strong>을 담당하는 언어이다.</p><ul><li>탭, 모달 등 웹페이지 UI 제작 가능</li><li>유저가 입력한 데이터 검사 가능</li><li>유저가 버튼 누르면 서버로 데이터 요청 가능 등</li></ul><p>script 태그 안에 넣어서 작성한다. 물론 js 파일을 따로 만들어서 link 해도 된다. script 태그 안에 적은 코드는 <strong>브라우저 새로고침시 1번 실행된다.</strong></p><br><p><strong><code>document.getElementById('id명').무엇을 = '어떻게';</code></strong><br></p><p><code>document.getElementById('hi').innerHTML = 'JS 고수에요';</code><br></p><ul><li>document : 문서, html 문서를 의미</li><li>마침표 : ~의</li><li>getElementById(&lsquo;hi&rsquo;) : 아이디가 hi인 html 요소 (element)를 가져와라, 셀렉터</li><li>innerHTML : HTML 내부에서</li><li>그리고 &lsquo;JS 고수에요&rsquo;를 대입하라.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>// 글자 색깔 빨간색으로 변경
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;id&#39;</span><span class=p>).</span><span class=nx>style</span><span class=p>.</span><span class=nx>color</span> <span class=o>=</span> <span class=s1>&#39;red&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// img의 src 변경
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;id&#39;</span><span class=p>).</span><span class=nx>src</span> <span class=o>=</span> <span class=s1>&#39;./img/주소&#39;</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong><code>document.getElementsByClassName('class명')\[인덱스].무엇을 = '어떻게';</code></strong><br></p><p><code>document.getElementsByClassName('hi')[0].innerHTML = 'JS 고수에요';</code></p><ul><li>class는 여러 개 나올 수 있어서 인덱싱 해줘야함</li></ul><p><br><br></p><a href=#queryselector><h2 id=queryselector><span class=hanchor arialabel=Anchor># </span>querySelector</h2></a><p>getElementsByClassName, getElementById와 같이 querySelector는 유용하다. css의 셀렉터 기능을 사용할 수 있게 해준다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s1>&#39;.test&#39;</span><span class=p>).</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;안녕&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s1>&#39;#test&#39;</span><span class=p>).</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;안녕&#39;</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><p>단, 클래스 사용 시 제일 최상단 요소만 선택되므로, 예를 들어, 두번째 요소를 선택하고 싶으면 querySelectorAll을 사용하고 인덱스를 줘야 한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ul</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;list-group&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;list-group-item&#34;</span><span class=p>&gt;</span>An item<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;list-group-item&#34;</span><span class=p>&gt;</span>A second item<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;list-group-item&#34;</span><span class=p>&gt;</span>A third item<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=nb>document</span><span class=p>.</span><span class=nx>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;list-group-item&#39;</span><span class=p>)[</span><span class=mi>1</span><span class=p>].</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;두번째 아이템&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><a href=#getelementbyid와-비교><h3 id=getelementbyid와-비교><span class=hanchor arialabel=Anchor># </span>getElementById와 비교</h3></a><p><a href=https://www.measurethat.net/Benchmarks/ShowResult/11974 target=_blank>벤치마크 결과</a>를 살펴보면, getElement가 querySelector보다 약 1.2배 빠른 것을 확인 가능하다. getElement가 성능이 좋은 것은 확실하다.</p><br><p>하지만, id는 getElementById, class는 getElementByClassName 등 요소마다 다른 것을 사용하는 것은 querySelector를 이용하여 셀렉터를 취급하는 것보다 분명 피곤한 일이다. 또, querySelector는 <code>id, class, [data-*=""], input[name=""]</code>등 다양한 셀렉터를 사용할 수 있다.</p><br><p>querySelector가 성능이 약간 떨어질 수 있지만 생산성이 높다는 말이다. 실제로 조금 더 느리다고는 하지만, querySelector는 초당 약 7,000,000 건의 작업을 처리할 수 있다. querySelector도 충분히 빠르다는 말이다. 성능 때문에 querySelector를 지양하고 getElement를 사용하라는 건 조금 받아드리기 힘들다. 실제로, querySelector보다 느린 <a href=https://w3techs.com/technologies/history_overview/javascript_library/all/y target=_blank>jQuery의 시장 점유율</a>을 보면 2022년 8월 17일 기준 77.4%이다. 느려서 querySelector를 쓰지 말아야 한다면, jQuery도 사용하지 말아야 하는 것 아닌가?</p><br><p>물론, 생산성 측면에서 봤을 때 jQuery가 querySelector보다 훨씬 높으니까 조~금 어불성설일 수 있지만, 말하고자 하는 것은 속도때문에 querySelector를 포기해야 할 이유가 있는가 하는 것이다. 하나의 주장일 뿐이지만 나도 굳이 getElement를 쓰기 보다는 querySelector를 쓰는 것에 한 표 던진다.</p><p><br><br></p><a href=#ui-만드는-법칙><h2 id=ui-만드는-법칙><span class=hanchor arialabel=Anchor># </span>UI 만드는 법칙</h2></a><ol><li>HTML/CSS로 미리 디자인 (필요하면 미리 숨김)<ul><li><code>display: none;</code> 이용</li></ul></li><li>필요할때 보여주기 (자바스크립트 사용)<ul><li><code>display: block;</code> 이용</li></ul></li></ol><p>이걸로 모달창, 드롭다운 메뉴 등 구현 가능</p><p><br><br></p><a href=#자바스크립트-function><h2 id=자바스크립트-function><span class=hanchor arialabel=Anchor># </span>자바스크립트 function</h2></a><ul><li>긴 코드 축약하고 싶을 때 사용</li><li>긴 코드 재사용이 잦을 때 사용</li><li>함수명 영어 작명 시</li></ul><ol><li>소문자 시작</li><li>camelCase</li></ol><p><code>open_alert()</code> <strong>X</strong>, <code>openAlert()</code> <strong>O</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>작명</span><span class=p>(</span><span class=nx>파라미터</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;alert&#39;</span><span class=p>).</span><span class=nx>style</span><span class=p>.</span><span class=nx>display</span> <span class=o>=</span> <span class=nx>파라미터</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;alert-open&#34;</span> <span class=na>onclick</span><span class=o>=</span><span class=s>&#34;작명(&#39;flex&#39;)&#34;</span><span class=p>&gt;</span>띄우기<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>파라미터 내부에 문자는 <code>' '</code> 안, 숫자는 바로</li></ul><p><br><br></p><a href=#자바스크립트-초창기-겪는-문제들-오류들><h2 id=자바스크립트-초창기-겪는-문제들-오류들><span class=hanchor arialabel=Anchor># </span>자바스크립트 초창기 겪는 문제들, 오류들</h2></a><br><ol><li>script 태그를 body 내부에서 상단에 작성한 경우</li></ol><p>script 태그를 body 내부에서 상단에 작성하면 잘 안되는 경우가 있다. script 태그를 조작할 html의 하단에 코드를 작성하는 이유는 렌더링 과정에서 위에서 아래로 읽어가기 때문이다. 따라서 상단에 작성하면 렌더링이 늦을 수 있다.</p><br><ol start=2><li>셀렉터 오타 주의</li></ol><p>셀렉터 오타로 자바스크립트 실행이 안되는 경우, 크롬 개발자 도구에서 console 탭에서 에러 타입을 보자. <strong>어쩌구 of null</strong>은 대부분 셀렉터 오타이다. &ldquo;style을 읽고 싶은데 왼쪽에 있는것이 null이다~&rdquo; 라는 형태의 오류가 자주 보일 것이다.</p><br><ol start=3><li>기본 문법 오타</li></ol><p>대문자, 소문자 확인 잘하자. <code>getElementById</code>를 <code>getElementByid</code>로 작성하지 않았는가? 뭐 잘 안보이면 항상 크롬 개발자도구 console 탭을 확인하자.</p><p><br><br></p><a href=#자바스크립트-이벤트리스너><h2 id=자바스크립트-이벤트리스너><span class=hanchor arialabel=Anchor># </span>자바스크립트 이벤트리스너</h2></a><p>html 버튼 태그에 <code>onclick</code> 붙히면 좀 더럽지 않음? 그때 <code>addEventListener()</code>을 자바스크립트에서 구현하자. 클릭, 키 입력, 스크롤, 드래그 등 웹 페이지에 조작을 가하는 행위가 <strong>이벤트</strong>이다. 이벤트가 일어나길 귀 기울여서 기다리는 친구가 <strong>이벤트 리스너</strong>이다.</p><ul><li><code>'click'</code> : 마우스 클릭</li><li>&lsquo;<code>mouseover</code>&rsquo; : 마우스 갖다대는거</li><li><code>'scroll'</code> : 마우스 스크롤</li><li><code>'keydown'</code> : 키 입력</li></ul><p><a href=https://developer.mozilla.org/en-US/docs/Web/Events target=_blank>그 외 수많은 이벤트 목록 참고</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>셀렉터로찾은요소</span><span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;event명&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=c1>// 실행할 코드
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;alert2_close&#39;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;alert2&#39;</span><span class=p>).</span><span class=nx>style</span><span class=p>.</span><span class=nx>display</span> <span class=o>=</span> <span class=s1>&#39;none&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><a href=#자바스크립트-콜백함수><h2 id=자바스크립트-콜백함수><span class=hanchor arialabel=Anchor># </span>자바스크립트 콜백함수</h2></a><p>위에 addEventListener 사용할 때 첫번째 파라미터에는 event 요소가 들어가고, 두번째 파라미터 자리에 들어갔던 function()이 있을거임</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>셀렉터로찾은요소</span><span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;event명&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=c1>// 실행할 코드
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>이 function()이 바로 콜백함수</li><li>자바스크립트에서 코드를 순차적으로 실행하고 싶을 때 콜백함수를 자주 사용</li><li>콜백함수 자리에 만든 함수 넣어도 됨. 단, <code>함수()</code>의 형태가 아닌 <code>함수</code>로 넣어야 오류 없이 작동할 것</li></ul><p><br><br></p><a href=#classlist-toggle><h2 id=classlist-toggle><span class=hanchor arialabel=Anchor># </span>classList, toggle</h2></a><p>navbar 같은 곳에서 주로 사용하는 버튼 눌렀을 때 등장하는 서브메뉴를 구현하려고 한다. 해당하는 UI 제작할 때는</p><ol><li>미리 htmml/css 디자인 해놓고 <code>display: none;</code>으로 숨긴다.</li><li>버튼 누르면 display 속성 바꿔서 보여준다.</li></ol><p>이 경우 <code>document.getElementById('id').style.display = 'none'</code>과 같이 작성해도 되지만, class 탈부착식으로 만드는 것이 유지보수에 편리하기 때문이다.</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>list-group</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>show</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>다음과 같이 show 클래스를 list-group 클래스에 붙혔다 뗐다 하는 방식으로 만들면 될 것 같다. 이때 자바스크립트에서 html에 접근하여 클래스를 붙히는 기능을 해주는 것이 <strong>classList</strong>이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>getElementsByClassName</span><span class=p>(</span><span class=s1>&#39;navbar-toggler&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByClassName</span><span class=p>(</span><span class=s1>&#39;list-group&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>].</span><span class=nx>classList</span><span class=p>.</span><span class=nx>add</span><span class=p>(</span><span class=s1>&#39;show&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p>만약, 버튼을 한 번 더 누르면 서브메뉴를 숨기고 싶다면 if문, 변수문법을 사용해서 가능하다. 아직 안배웠으니까 쉬운 방법인 <strong>toggle</strong>을 이용한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>getElementsByClassName</span><span class=p>(</span><span class=s1>&#39;navbar-toggler&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByClassName</span><span class=p>(</span><span class=s1>&#39;list-group&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>].</span><span class=nx>classList</span><span class=p>.</span><span class=nx>toggle</span><span class=p>(</span><span class=s1>&#39;show&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p>이렇게 코드 작성 시, toggle 기능을 이용하여 show 클래스가 있다면 없애고 없다면 붙히는 방식이다.</p><p><br><br></p><a href=#jquery-라이브러리><h2 id=jquery-라이브러리><span class=hanchor arialabel=Anchor># </span>jQuery 라이브러리</h2></a><p>자바스크립트 코드가 길고 더러워서 HTMl 조작을 쉽게하는 라이브러리들이 대표적으로 jQuery, React, Vue이다. React와 Vue는 자바스크립트 숙련도를 요구하기 때문에 간단하게 jQuery를 배워본다. jQuery는 라이브러리일 뿐 새로운 문법이나 이런게 아니라 함수명만 짧아진다. 예를 들어, <code>document.querySelect</code>와 같은 셀렉터는 짧게 <code>$</code> 하나로 바뀌고 <code>addEventListener</code>는 짧게 <code>on</code> 하나로 바뀐다.</p><br><p>jQuery CDN을 이용하여 사용한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=o>&lt;</span><span class=nx>script</span>
+</span></span><span class=line><span class=cl><span class=nx>src</span><span class=o>=</span><span class=s2>&#34;https://code.jquery.com/jquery-3.6.0.min.js&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>integrity</span><span class=o>=</span><span class=s2>&#34;sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>crossorigin</span><span class=o>=</span><span class=s2>&#34;anonymous&#34;</span><span class=o>&gt;&lt;</span><span class=err>/script&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>거의 모든 자바스크립트 라이브러리는 로딩 속도 때문에 <code>&lt;body></code> 태그 끝나기 전에 넣는 것을 권장한다. jQuery 설치한 곳 <strong>하단</strong>에서 jQuery 문법을 사용 가능하다. 상단에 코드 짜고 안된다고 울지말고 제발 하단에다가 짜라. 강의에서는 편의상 그냥 head 태그 끝에 jQuery를 설치했다. 로딩속도는 조금 느리겠지만, 코드 보기에 좋으니깐 편의상~</p><br><ul><li><p><code>$</code> : querySelectorAll의 역할</p></li><li><p><code>.eq()</code> : querySelectorAll의 인덱스 역할</p></li><li><p><code>.html</code> : jQuery로 html의 내용 변경</p></li><li><p><code>.css('속성', '값')</code> : jQuery로 css의 내용 변경</p></li><li><p><code>.addClass('클래스명')</code> : jQuery로 클래스 부착</p></li><li><p><code>.removeClass('클래스명')</code> : jQuery로 클래스 제거</p></li><li><p><code>.toggleClass('클래스명')</code> : jQuery로 클래스 토글</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>).</span><span class=nx>innerHTML</span><span class=p>(</span><span class=s1>&#39;바보&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span><span class=s1>&#39;바보&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>).</span><span class=nx>style</span><span class=p>.</span><span class=nx>color</span> <span class=o>=</span> <span class=s1>&#39;red&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;color&#39;</span><span class=p>,</span> <span class=s1>&#39;red&#39;</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>querySelector를 쓰면 인덱스 하나하나 지정하고 바꿔줘야해서 양이 늘어난다. (뭐, 클래스명 같게 하고 querySelectorAll 말고 querySelector 쓰면 되긴 함) 근데 jQuery를 쓰면 그냥 한꺼번에 바꿀 수 있다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;hello&#34;</span><span class=p>&gt;</span>안녕<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;hello&#34;</span><span class=p>&gt;</span>안녕<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;hello&#34;</span><span class=p>&gt;</span>안녕<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>].</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;바보&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>)[</span><span class=mi>1</span><span class=p>].</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;바보&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>)[</span><span class=mi>2</span><span class=p>].</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;바보&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.hello&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span><span class=s1>&#39;바보&#39;</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>jQuery 이벤트리스너 사용법</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;#test-btn&#34;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>어쩌구</span><span class=o>~</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p>style의 display 속성을 none으로 바꿔도 되지만 jQuery는 편리한 것들을 제공해줌</p><ul><li><p><code>.hide()</code> : 사라지게</p></li><li><p><code>.fadeOut()</code> : 서서히 사라지게</p></li><li><p><code>.slideUp()</code> : 줄어들며 사라지게</p></li><li><p><code>.show()</code> : 보이게</p></li><li><p><code>.fadeIn()</code> : 서서히 보이게</p></li><li><p><code>.slideDown()</code> : 늘어나며 보이게</p></li><li><p><code>.fadeToggle()</code> : 누를때마다 fade</p></li></ul><p><br><br></p><a href=#모달modal-창-제작-tip><h2 id=모달modal-창-제작-tip><span class=hanchor arialabel=Anchor># </span>모달(Modal) 창 제작 Tip</h2></a><p>Modal창은 보통 페이지 맨 앞에, 모든 html 요소 제일 위에 존재하기 때문에 <strong>html 맨 위에 적는 것</strong>이 관습이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 모달창 국룰 세팅 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>modal</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>position</span><span class=p>:</span> <span class=kc>fixed</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>z-index</span><span class=p>:</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;black-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;white-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>h4</span><span class=p>&gt;</span>로그인하세요<span class=p>&lt;/</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;btn btn-danger&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;close&#34;</span><span class=p>&gt;</span>닫기<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;login&#34;</span><span class=p>&gt;</span>로그인<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#login&#39;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.black-bg&#39;</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s1>&#39;show-modal&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#close&#39;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.black-bg&#39;</span><span class=p>).</span><span class=nx>removeClass</span><span class=p>(</span><span class=s1>&#39;show-modal&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><a href=#ui에-애니메이션-추가><h2 id=ui에-애니메이션-추가><span class=hanchor arialabel=Anchor># </span>UI에 애니메이션 추가</h2></a><p>위의 예제 코드에서 addClass와 removeClass 대신에 fadeIn과 fadeOut을 넣으면 애니메이션을 넣을 수 있지만, 자바스크립트에 애니메이션을 넣는 것은 성능 때문에 좋은 관습은 아니고 css에 넣는 것이 좋다.</p><ul><li><p><a href=/notes/TIL/fragment/lang/html_css/all-in-one-mid target=_blank>one-way-animation</a></p></li><li><p><a href=/notes/TIL/fragment/lang/html_css/all-in-one-last target=_blank>animation 심화</a></p></li></ul><p>추가로, 애니메이션 제작 시 <code>display: none;</code> 보다 <code>visibility: hidden;</code>이 낫다.</p><br><ul><li>자바스크립트 (jQuery)로 애니메이션 넣은 코드</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;black-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;white-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>h4</span><span class=p>&gt;</span>로그인하세요<span class=p>&lt;/</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;btn btn-danger&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;close&#34;</span><span class=p>&gt;</span>닫기<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>button</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;login&#34;</span><span class=p>&gt;</span>로그인<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#login&#39;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=c1>// fadeIn() 사용
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.black-bg&#39;</span><span class=p>).</span><span class=nx>fadeIn</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>black-bg</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>position</span><span class=p>:</span> <span class=kc>fixed</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>0.5</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>z-index</span><span class=p>:</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>padding</span><span class=p>:</span> <span class=mi>30</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* display: none 사용 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>show-modal</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* display: block 사용 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>css로 애니메이션 적용한 코드</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;black-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;white-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>h4</span><span class=p>&gt;</span>로그인하세요<span class=p>&lt;/</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>button</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;btn btn-danger&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;close&#34;</span><span class=p>&gt;</span>닫기<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>button</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;login&#34;</span><span class=p>&gt;</span>로그인<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#login&#39;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=c1>// addClass() 사용
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.black-bg&#39;</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s1>&#39;show-modal&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>black-bg</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>position</span><span class=p>:</span> <span class=kc>fixed</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>0.5</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>z-index</span><span class=p>:</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>padding</span><span class=p>:</span> <span class=mi>30</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c>/* visibility, opacity, transition 사용 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>visibility</span><span class=p>:</span> <span class=kc>hidden</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>opacity</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>transition</span><span class=p>:</span> <span class=kc>all</span> <span class=mi>1</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>show-modal</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* visibility, opacity 사용 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>visibility</span><span class=p>:</span> <span class=kc>visible</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>opacity</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>자바스크립트 (jQuery)로 애니메이션 넣은 서브메뉴바</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.navbar-toggler&#39;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.list-group&#39;</span><span class=p>).</span><span class=nx>slideToggle</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>list-group</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>css로 애니메이션 적용한 서브메뉴바</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.navbar-toggler&#39;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;click&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.list-group&#39;</span><span class=p>).</span><span class=nx>toggleClass</span><span class=p>(</span><span class=s1>&#39;show-menubar&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>list-group</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>overflow</span><span class=p>:</span> <span class=kc>hidden</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>transition</span><span class=p>:</span> <span class=kc>all</span> <span class=mi>1</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>show-menubar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>210</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><a href=#form태그-ifelse><h2 id=form태그-ifelse><span class=hanchor arialabel=Anchor># </span>form태그 if/else</h2></a><ul><li>form 태그 다룰 때, 전송 버튼은 반드시 <code>type="submit"</code> 해줄 것 명심하자. 일반 버튼은 <code>type="button"</code> 이렇게 해야 오류가 없다.</li><li>form 태그는 서버로 유저정보 전송하려고 쓰는 것이다.</li><li><code>&lt;form action="url~~~">&lt;/form></code> 서버 경로 제대로 설정하자.</li></ul><br><a href=#조건문-if-else><h3 id=조건문-if-else><span class=hanchor arialabel=Anchor># </span>조건문 (if-else)</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=nx>조건</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>조건이</span> <span class=nx>참일</span> <span class=nx>때</span> <span class=nx>실행할</span> <span class=nx>코드</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>조건이</span> <span class=nx>거짓일</span> <span class=nx>때</span> <span class=nx>실행할</span> <span class=nx>코드</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>조건 사용 시 비교연산자 <code><mark>, </mark>=, !=, !==, &lt;, &lt;=, >, >=</code></li><li>조건 사용 시 boolean <code>true(1), false(0)</code> 이용</li><li>참고로 <code>elif</code>는 파이썬임 <code>else if</code>가 자바스크립트</li><li><code>else if</code>는 위의 조건이 참이면 실행 안되는 것임</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=mi>1</span> <span class=o>==</span> <span class=mi>3</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;맞아요1&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=mi>1</span> <span class=o>==</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;맞아요2&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 출력 : 맞아요2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>if</span> <span class=p>(</span><span class=mi>3</span> <span class=o>==</span> <span class=mi>3</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;맞아요1&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=mi>1</span> <span class=o>==</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;맞아요2&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 출력 : 맞아요1
+</span></span></span><span class=line><span class=cl><span class=c1>// 위에가 참이니까 맞아요2는 출력안되고 그냥 끝남
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=mi>1</span> <span class=o>==</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;맞아요1&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=mi>2</span> <span class=o>==</span> <span class=mi>2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;맞아요2&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 출력 : 맞아요1
+</span></span></span><span class=line><span class=cl><span class=c1>// 출력 : 맞아요2
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#비교-연산자><h3 id=비교-연산자><span class=hanchor arialabel=Anchor># </span>비교 연산자</h3></a><p>그냥 비교할 때는 <code>==</code>, <code>!=</code> 타입까지 맞춰서 비교할 때는 <code>=<mark></code>, <code>!</mark></code></p><ul><li>동등 연산자(<code>==</code>) : 두 피연산자의 자료형을 일치시킨 후 비교 수행</li><li>부등 연산자(<code>!=</code>) : 두 피연산자의 자료형을 일치시킨 후 비교 수행</li><li>일치 연산자(<code>===</code>) : 자료형 변환 없이 비교 수행</li><li>불일치 연산자(<code>!==</code>) : 자료형 변환 없이 비교 수행</li></ul><br><a href=#논리-연산자><h3 id=논리-연산자><span class=hanchor arialabel=Anchor># </span>논리 연산자</h3></a><ul><li><code>&&</code> : AND</li><li><code>||</code> : OR</li><li><code>!</code> : NOT</li></ul><br><a href=#truthy-falsy-자료><h2 id=truthy-falsy-자료><span class=hanchor arialabel=Anchor># </span>truthy, falsy 자료</h2></a><table><thead><tr><th style=text-align:center>truthy 자료</th><th style=text-align:center>falsy 자료</th></tr></thead><tbody><tr><td style=text-align:center>0 제외 숫자</td><td style=text-align:center>0</td></tr><tr><td style=text-align:center>&lsquo;문자&rsquo;</td><td style=text-align:center>'&rsquo;</td></tr><tr><td style=text-align:center>[]</td><td style=text-align:center>null</td></tr><tr><td style=text-align:center>{}</td><td style=text-align:center>undefined</td></tr><tr><td style=text-align:center></td><td style=text-align:center>NaN</td></tr></tbody></table><br><a href=#undefined-null><h2 id=undefined-null><span class=hanchor arialabel=Anchor># </span>undefined, null</h2></a><p>undefined와 null은 &lsquo;값이 없다&rsquo; 라는 점에서 유사하지만 엄밀히 말하면 다른 개념이다. typeof 연산자로 타입을 확인해보면 undefined는 undefined 타입이, null은 object 타입이라고 표시된다.</p><ul><li><p>undefiend : 변수는 존재하나, 어떠한 값으로도 할당되지 않아 자료형이 정해지지(undefined) 않은 상태</p></li><li><p>null : 변수는 존재하나, null 로 (값이) 할당된 상태. 즉 null은 자료형이 정해진(defined) 상태</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>var</span> <span class=nx>var1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//undefined (어떤 값도 할당되지 않아서 자료형을 알 수 없음)
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>var2</span> <span class=o>=</span> <span class=kc>null</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//null (null로 (값이) 할당되어서 자료형을 알 수 있음 - null의 자료형은 object)
+</span></span></span></code></pre></td></tr></table></div></div><p>근데, <code>undefined == null</code>을 비교하면 true값이 나온다. 이는 위에서 설명한 비교연산자 때문이다. 엄격한 비교인지 엄격하지 않은 비교인지 때문이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kc>undefined</span> <span class=o>==</span> <span class=kc>null</span><span class=p>;</span> <span class=c1>//true , 형변환 까지 해줘서 true가 나옴
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kc>undefined</span> <span class=o>===</span> <span class=kc>null</span><span class=p>;</span> <span class=c1>//false , 형변환을 하지 않아서 false가 나옴
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#if문-이용한-form-태그><h3 id=if문-이용한-form-태그><span class=hanchor arialabel=Anchor># </span>if문 이용한 form 태그</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>// 물론 둘다 else if 말고 그냥 if 문들로 해도 됨
+</span></span></span><span class=line><span class=cl><span class=c1>// 근데 else if가 나은듯
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nb>document</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;form&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;submit&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;email&#39;</span><span class=p>).</span><span class=nx>value</span> <span class=o>==</span> <span class=s1>&#39;&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>			<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;아이디를 입력 해주세요 !&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;pw&#39;</span><span class=p>).</span><span class=nx>value</span> <span class=o>==</span> <span class=s1>&#39;&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>			<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;비밀번호를 입력 해주세요 !&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;pw&#39;</span><span class=p>).</span><span class=nx>value</span><span class=p>.</span><span class=nx>length</span> <span class=o>&lt;</span> <span class=mi>6</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>			<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;비밀번호를 6자리 이상 입력 해주세요 !&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;정상적으로 제출되었습니다.&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// jQuery 사용
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;form&#39;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;submit&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;email&#39;</span><span class=p>).</span><span class=nx>value</span> <span class=o>==</span> <span class=s1>&#39;&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>		<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;아이디를 입력 해주세요 !&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;pw&#39;</span><span class=p>).</span><span class=nx>value</span> <span class=o>==</span> <span class=s1>&#39;&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>		<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;비밀번호를 입력 해주세요 !&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;pw&#39;</span><span class=p>).</span><span class=nx>value</span><span class=p>.</span><span class=nx>length</span> <span class=o>&lt;</span> <span class=mi>6</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>		<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;비밀번호를 6자리 이상 입력 해주세요 !&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>alert</span><span class=p>(</span><span class=s1>&#39;정상적으로 제출되었습니다.&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>getElementsByTagName 할 때도 인덱스 지정해줘야함</p></li><li><p>제출버튼에 id 지정해줘도 되지만, form 태그의 이벤트를 submit으로 해줘도 됨</p></li><li><p>input의 값은 value로 가져옴</p></li><li><p>전송을 원하지 않으면 function의 괄호 안에 <code>e</code>를 넣고 <code>e.preventDefault();</code> 해주면 됨</p></li></ul><br><a href=#input-이벤트><h2 id=input-이벤트><span class=hanchor arialabel=Anchor># </span>input 이벤트</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;email&#39;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;input&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;email&#39;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;change&#39;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>불러온 id 태그가 input 태그일 때 addEventListener 이벤트에 input / change 준 경우</p></li><li><p>input 태그에 유저가 입력한 값이 변할 때 실행된다는 의미</p></li><li><p>이벤트 input 일 때 : input 태그에 입력한 값이 바뀔 때마다 실행</p></li><li><p>이벤트 change 일 때 : input 태그에 입력한 값이 바뀌고 <strong>포커스를 잃을 때</strong> 실행</p></li><li><p>응용하면 비밀번호 6자리 이상 입력해야할 때 그것보다 작게 입력하고 있으면 계속 ui 띄우는 경우가 있겠네</p></li></ul><br><a href=#변수-문법><h2 id=변수-문법><span class=hanchor arialabel=Anchor># </span>변수 문법</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>var</span> <span class=nx>변수명</span> <span class=o>=</span> <span class=nx>넣을자료</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><p>변수를 사용하는 이유</p><ul><li>길고 복잡한 자료들 저장 가능</li><li>특정 값을 기억하게 하려고 (count 같은거)</li><li><strong>좋은 관습 : 자주쓰는 셀렉터 변수에 넣어쓰기</strong></li></ul><br><p>변수는 <strong>변수의 선언, 할당, 범위</strong> 세 가지만 잘 기억하면 된다.</p><ul><li>변수의 선언 : 변수 만들겠습니다.</li><li>변수의 할당 : 변수에 자료 넣기</li><li>변수의 범위</li><li>함수 안에서 변수 만들면 사용가능 범위는 함수 내부<br>함수 안에서 만든 변수를 함수 밖에서 사용하려고 하면 사용 불가능</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>var</span> <span class=nx>이름</span><span class=p>;</span> <span class=c1>// 변수의 선언
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;kim&#39;</span><span class=p>;</span> <span class=c1>// 변수의 할당
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;kim&#39;</span><span class=p>;</span> <span class=c1>// 변수의 선언과 할당
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;park&#39;</span><span class=p>;</span> <span class=c1>// 변수의 재할당
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>함수</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;kim&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>이름</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=c1>// 출력 : kim
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>함수</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;kim&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>이름</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// 출력 : Uncaught ReferenceError: 이름 is not defined
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#var-let-const-차이><h2 id=var-let-const-차이><span class=hanchor arialabel=Anchor># </span>var let const 차이</h2></a><table><thead><tr><th style=text-align:center>var</th><th style=text-align:center>let</th><th style=text-align:center>const</th></tr></thead><tbody><tr><td style=text-align:center>재선언O</td><td style=text-align:center>재선언X</td><td style=text-align:center>재선언X</td></tr><tr><td style=text-align:center>재할당O</td><td style=text-align:center>재할당O</td><td style=text-align:center>재할당X</td></tr><tr><td style=text-align:center>범위 function<br>Function-scoped</td><td style=text-align:center>범위{ }<br>{Block-scoped}</td><td style=text-align:center>범위{ }<br>{Block-scoped}</td></tr></tbody></table><ul><li><p>let 변수 : 재선언 불가</p></li><li><p>코드가 길어지면 사용한 변수를 까먹고 또 만들 수 있다.<br>let은 이것을 방지 가능</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;kim&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;park&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 출력 : Uncaught SyntaxError: Identifier &#39;이름&#39; has already been declared
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p>const 변수 : 재선언 불가, 재할당 불가</p></li><li><p>변하는 안되는 값을 보관할 때 좋다. 상수</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>const</span> <span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;kim&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>이름</span> <span class=o>=</span> <span class=s1>&#39;park&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 출력 : Uncaught TypeError: Assignment to constant variable.
+</span></span></span></code></pre></td></tr></table></div></div><ul><li>추가로, let과 const는 function뿐만 아니라 중괄호 <code>{}</code> 내부는 모두 범위로 취급한다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=k>if</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>이름</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 이것도 밖에서 이름 사용 못함
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#문자-중간에-변수-쉽게-넣기><h2 id=문자-중간에-변수-쉽게-넣기><span class=hanchor arialabel=Anchor># </span>문자 중간에 변수 쉽게 넣기</h2></a><ul><li><p>백틱 기호를 사용한다.</p></li><li><p>변수는 <code>${변수}</code>와 같이 담는다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>a</span> <span class=o>=</span> <span class=s1>&#39;안녕&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;문자&#39;</span> <span class=o>+</span> <span class=nx>a</span> <span class=o>+</span> <span class=s1>&#39;문자&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`문자</span><span class=si>${</span><span class=nx>a</span><span class=si>}</span><span class=sb>문자`</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 문자안녕문자
+</span></span></span></code></pre></td></tr></table></div></div></div></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>백링크</h3><ul class=backlinks><li><a href=/notes/TIL/fragment/lang/javascript/javascript/ data-ctx="코딩애플 JS 입문과 웹 개발 01" data-src=/notes/TIL/fragment/lang/javascript/javascript class=internal-link>Javascript</a></li></ul></div><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>연결된 그래프</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://shin-jae-yoon.github.io/js/graph.6421b50adba269f8b1f5b3e0dc679564.js></script></div></div><div id=contact_buttons><footer><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a few features.</p><ul><li><a href=https://github.com/Shin-Jae-Yoon><i class="fab fa-github"></i></a></li><li><a href=https://jae-yoon.tistory.com/><i class="fa-solid fa-tenge-sign"></i></a></li><li><a href=mailto:wlwhsvkdlxh@gmail.com><i class="fa-solid fa-envelope"></i></a></li></ul></footer></div><div class=top-btn><i class="top-btn-img fa-solid fa-circle-arrow-up"></i></div><div class=bottom-btn><i class="bottom-btn-img fa-solid fa-circle-arrow-down"></i></div></div><script>document.querySelector(".top-btn").addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})}),document.querySelector(".bottom-btn").addEventListener("click",()=>{window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})})</script></body></html>

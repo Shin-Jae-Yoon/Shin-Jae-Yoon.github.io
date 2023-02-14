@@ -1,0 +1,205 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.5c1e8527c8cd2ba1b3cf8e6987629b9b.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/darkmode.bc2675e781c280aaf6b5cc1b2bc0d940.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.dd2afb7d6055a9d76e9662a2abb5fb6b.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.e0319461d58d6e220892b9d348c0f85a.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.4768bee5d0ea5fb6c5ee401520bb1806.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://shin-jae-yoon.github.io",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1}:{centerForce:1,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:2.4,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.3dafe6f9bb92769e0dfb555c99deab7a.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=singlePage><header style=margin-bottom:0><img src="https://img1.daumcdn.net/thumb/C32x32/?scode=mtistory2&fname=https%3A%2F%2Ftistory3.daumcdn.net%2Ftistory%2F5252507%2F9f1447b3d8ac45ffa6c01c21fa6aec75"><h1 style=margin-left:.2em id=page-title><a href=https://shin-jae-yoon.github.io/>개발자 유니 - 두 번째 뇌</a></h1><h1 style=margin-left:.2em id=page-title2><a href=https://shin-jae-yoon.github.io/>개발자 유니</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div style=margin-left:1em><a href=/tags><i class="fa-solid fa-hashtag"></i></a></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><div style=margin-bottom:3em><ul class=header-nav><li style=margin-right:1em><a href=https://shin-jae-yoon.github.io/>Home</a></li><li style=margin-right:1em><a href=/about/>About</a></li><li style=margin-right:1em><a href=https://shin-jae-yoon.github.io/notes/TIL/TIL>TIL</a></li><li><a href=/notes/Interview/Interview>Interview</a></li></ul></div><article><h1>[잔재미] 변수심화</h1><p class=meta>Last updated -
+2023년 02월 14일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/notes/TIL/fragment/lang/python/funny/funny09.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/%EC%9E%94%EC%9E%AC%EB%AF%B8%EC%BD%94%EB%94%A9-%ED%8C%8C%EC%9D%B4%EC%8D%AC/>잔재미코딩 파이썬</a></li></ul><aside class=mainTOC><details><summary>CONTENTS</summary><nav id=TableOfContents><ul><li><a href=#01-변수의-정확한-의미>01. 변수의 정확한 의미</a></li><li><a href=#02-변수-다루기-응용>02. 변수 다루기 응용</a></li></ul></nav></details></aside><div class=asideTOCbox><aside class=asideTOC id=asideTOC><div id=asideTocTitleBox><a href=# id=asideTocTitle>CONTENTS</a></div><nav id=TableOfContents><ul><li><a href=#01-변수의-정확한-의미>01. 변수의 정확한 의미</a></li><li><a href=#02-변수-다루기-응용>02. 변수 다루기 응용</a></li></ul></nav></aside></div><div class=tpstyle-yes><blockquote><p>해당 게시글은 <a href=https://www.inflearn.com/course/python-crawling-basic target=_blank>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.</p></blockquote><a href=#01-변수의-정확한-의미><h2 id=01-변수의-정확한-의미><span class=hanchor arialabel=Anchor># </span>01. 변수의 정확한 의미</h2></a><br><p><code>변수 = 값</code>의 형태로 계속 사용해왔다. <code>=(대입연산자, assignment)</code>는 우측의 값을 왼쪽 변수에 대입한다는 의미를 가진다. 조금 더 깊게 생각해보면, 파이썬은 모든 것을 객체로 다룬다고 했다.</p><p>쉽게 말해서, <code>우리가 지금까지 다뤄온 자료형은 객체라고 보면 된다.</code> 값을 생성하는 과정을 통해 자료형(객체)가 메모리에 공간을 할당받는다. 그러면 <code>변수가 값이 해당하는 메모리의 주소를 가리키게 된다.</code></p><p><strong>마치, C언어의 포인터와 비슷한 느낌이다.</strong> 실제로 변수에 값이 저장되는 것이 아니라 값이 저장되어 있는 메모리의 주소를 가리킬 뿐이다. 이를 코드로 확인해보면,</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>id</span><span class=p>(</span><span class=n>a</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>id</span><span class=p>(</span><span class=n>b</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>140539428263424</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>140539428263424</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>a 변수에 리스트를 저장했고, a를 b에 대입한 것의 각각 메모리 주소를 확인해보면 동일한 것을 알 수 있다. 변수는 단지 메모리의 주소를 가리키는 것이기 때문이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>a</span> <span class=ow>is</span> <span class=n>b</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=kc>True</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><code>a is b</code>가 뜻하는 바는 a와 b가 동일한 가 보다는 조금 더 정확하게 <code>a와 b가 가리키는 객체가 동일한가?</code>로 이해할 수 있다. 서로 가리키는 객체가 동일하기에 True가 반환된다. 이를 증명해보면,</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>a</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>a</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>4</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>b</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><code>a = [1, 2, 3]</code>인 상태를 b에 대입하고 난 이후에 a의 인덱스 값을 바꿨다. 그 이후에 b를 출력해보면 b 역시 바뀐 것을 알 수 있다. 즉, a라는 공간에 리스트를 넣어서가 아닌, <code>리스트 객체가 저장된 메모리의 주소를 a가 가리키기 떄문에, 또 b가 가리키기 때문에 이런 결과가 나타나는 것이다.</code></p><p><br><br></p><a href=#02-변수-다루기-응용><h2 id=02-변수-다루기-응용><span class=hanchor arialabel=Anchor># </span>02. 변수 다루기 응용</h2></a><br><p>값을 가져오면서 주소는 다르게 변수 복사도 가능하다. <code>즉, A라는 객체의 값을 가져오면서 새로 생성한 B라는 객체에 A의 값을 넣겠다는 의미이다.</code> A 객체의 값을 변경하더라도 B 객체는 애초에 다른 객체기 때문에 영향을 끼치지 않는다. 메모리 주소를 확인해봐도 주소가 다르다.</p><br><ul><li><code>[:]</code>을 사용하는 방법</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>a</span><span class=p>[:]</span>
+</span></span><span class=line><span class=cl><span class=n>a</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>4</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>b</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1># 서로 다른 메모리를 가리키는 것을 확인 가능하다.</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>id</span><span class=p>(</span><span class=n>a</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>id</span><span class=p>(</span><span class=n>b</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>140011803112896</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>140011802234432</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li><code>copy 모듈</code>을 사용하는 방법</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>copy</span> <span class=kn>import</span> <span class=n>copy</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>copy</span><span class=p>(</span><span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>a</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>4</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>b</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>id</span><span class=p>(</span><span class=n>a</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>id</span><span class=p>(</span><span class=n>b</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>139811777411136</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>139811777409472</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>리스트의 경우 <code>copy()</code> 함수 사용</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>a</span><span class=o>.</span><span class=n>copy</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>a</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>4</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>b</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>다른 객체를 가리키는지 확인하려면 그냥 <code>is</code> 쓰면 되기는 한다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=n>a</span><span class=o>.</span><span class=n>copy</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>c</span> <span class=o>=</span> <span class=n>a</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>b</span> <span class=ow>is</span> <span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>c</span> <span class=ow>is</span> <span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=kc>False</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=kc>True</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>변수 만들 때 <code>변수 = 값</code> 말고도 튜플, 리스트, 여러 개 대입 등도 가능하다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span><span class=p>,</span> <span class=n>b</span> <span class=o>=</span> <span class=p>(</span><span class=s1>&#39;hello&#39;</span><span class=p>,</span> <span class=s1>&#39;world&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=n>c</span><span class=p>,</span> <span class=n>d</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;I&#39;</span><span class=p>,</span> <span class=s1>&#39;am&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>e</span> <span class=o>=</span> <span class=n>f</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>((</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>([</span><span class=n>c</span><span class=p>,</span> <span class=n>d</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>e</span><span class=p>,</span> <span class=n>f</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>(</span><span class=s1>&#39;hello&#39;</span><span class=p>,</span> <span class=s1>&#39;world&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=s1>&#39;I&#39;</span><span class=p>,</span> <span class=s1>&#39;am&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>3</span> <span class=mi>3</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li><a href=/notes/TIL/fragment/lang/python/funny/funny05/ rel=noopener class=internal-link data-src=/notes/TIL/fragment/lang/python/funny/funny05/>[잔재미] Tuple</a>에서 설명한 내용인데 이를 이용하여 변수를 손쉽게 바꿀 수 있다. 파이썬의 강력한 특징이다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>a</span> <span class=o>=</span> <span class=s1>&#39;hello&#39;</span>
+</span></span><span class=line><span class=cl><span class=n>b</span> <span class=o>=</span> <span class=s1>&#39;world&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>a</span><span class=p>,</span> <span class=n>b</span> <span class=o>=</span> <span class=n>b</span><span class=p>,</span> <span class=n>a</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>b</span><span class=p>,</span> <span class=n>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hello</span> <span class=n>world</span>
+</span></span></code></pre></td></tr></table></div></div></div></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>백링크</h3><ul class=backlinks><li><a href=/notes/TIL/fragment/lang/python/python/ data-ctx="잔재미코딩 - 09. 파이썬 Variable" data-src=/notes/TIL/fragment/lang/python/python class=internal-link>Python</a></li></ul></div><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>연결된 그래프</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://shin-jae-yoon.github.io/js/graph.6421b50adba269f8b1f5b3e0dc679564.js></script></div></div><div id=contact_buttons><footer><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a few features.</p><ul><li><a href=https://github.com/Shin-Jae-Yoon><i class="fab fa-github"></i></a></li><li><a href=https://jae-yoon.tistory.com/><i class="fa-solid fa-tenge-sign"></i></a></li><li><a href=mailto:wlwhsvkdlxh@gmail.com><i class="fa-solid fa-envelope"></i></a></li></ul></footer></div><div class=top-btn><i class="top-btn-img fa-solid fa-circle-arrow-up"></i></div><div class=bottom-btn><i class="bottom-btn-img fa-solid fa-circle-arrow-down"></i></div></div><script>document.querySelector(".top-btn").addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})}),document.querySelector(".bottom-btn").addEventListener("click",()=>{window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})})</script></body></html>
