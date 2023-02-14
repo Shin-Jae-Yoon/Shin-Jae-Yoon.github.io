@@ -45,8 +45,10 @@ h1, h2, h3, h4, h5, h6, thead {
   margin: 2rem 0 0;
   padding: 2rem auto 1rem;
 
-  &:hover > .hanchor {
-    color: var(--secondary);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover > .hanchor {
+      color: var(--secondary);
+    }
   }
 }
 
@@ -122,8 +124,11 @@ tbody, li, p {
   border-bottom-style:groove;
   font-weight: 700;
   color: var(--toctitle) !important;
-  &:hover {
-    color: var(--toctitle) !important;
+  
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--toctitle) !important;
+    }
   }
 }
 
@@ -141,8 +146,10 @@ tbody, li, p {
 
   & a {
     color: var(--tocscroll);
-    &:hover {
-      color: var(--tocscrollactive) !important;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--tocscrollactive) !important;
+      }
     }
   }
 
@@ -421,8 +428,10 @@ a {
   text-decoration: none;
   transition: all 0.2s ease;
   color: var(--secondary);
-  &:hover {
-    color: var(--tertiary) !important;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--tertiary) !important;
+    } 
   }
 }
 
@@ -548,10 +557,14 @@ header {
     min-width: 18px;
     margin: 0 0.5em;
 
-    &:hover .search-path {
-      stroke: var(--tertiary);
+    
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .search-path {
+        stroke: var(--tertiary);
+      }
     }
 
+    
     .search-path {
       stroke: var(--gray);
       stroke-width: 2px;
@@ -623,8 +636,10 @@ header {
         background: var(--light);
         outline: none;
 
-        &:hover, &:focus {
-          background: rgba(180, 180, 180, 0.15);
+        @media (hover: hover) and (pointer: fine) {
+          &:hover, &:focus {
+            background: rgba(180, 180, 180, 0.15);
+          }
         }
 
         &:first-of-type {
@@ -788,10 +803,12 @@ mark {
   z-index: 1;
   color: var(--secondary);
 
-  &:hover {
-    transition: all 0.3s ease;
-    color: var(--tertiary);
-    cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transition: all 0.3s ease;
+      color: var(--tertiary);
+      cursor: pointer;
+    }
   }
 }
 
@@ -808,10 +825,12 @@ mark {
   z-index: 1;
   color: var(--secondary);
 
-  &:hover {
-    transition: all 0.3s ease;
-    color: var(--tertiary);
-    cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transition: all 0.3s ease;
+      color: var(--tertiary);
+      cursor: pointer;
+    } 
   }
 }
 
