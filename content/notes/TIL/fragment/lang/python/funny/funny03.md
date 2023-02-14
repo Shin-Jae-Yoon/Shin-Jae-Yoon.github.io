@@ -7,6 +7,8 @@ tags: ["잔재미코딩 파이썬"]
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 01. 문자열 다루기 기본
 
 <br>  
@@ -166,9 +168,7 @@ print(new_string)
 출력결과 : pithon
 ```
 
-<br><br>
-
-  
+<hr>
 
 ## 02. 코드 이용 포매팅
 
@@ -274,7 +274,7 @@ print(string2)
 출력결과 : 3.4213 (숫자를 소숫점 네 번째 자리까지만 표시하고 전체 10개의 문자열 공간에서 오른쪽 정렬)
 ```
 
-<br><br>
+<hr>
 
 ## 03. format 이용 포매팅
 
@@ -399,7 +399,7 @@ print(string)
 출력결과 : I bought banana and {apple}. Apple is delicious.
 ```
 
-<br><br>  
+<hr>
 
 ## 04. f 문자열 이용 포매팅
 
@@ -481,8 +481,8 @@ print(f'{pi:10.4f}')
 출력결과 : 3.1416
 ```
 
-<br><br>
-  
+<hr>
+
 ## 05. 문자열 다양한 함수들
 
 <br>

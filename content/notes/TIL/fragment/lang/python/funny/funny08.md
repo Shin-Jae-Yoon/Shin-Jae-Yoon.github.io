@@ -7,6 +7,8 @@ tags: ["잔재미코딩 파이썬"]
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 01. 불 자료형이란?
 
 <br>
@@ -39,7 +41,7 @@ print(bool('None'))
 출력결과 : True # 이 None은 문자열 None이니까, True
 ```
 
-<br><br>
+<hr>
 
 ## 02. 불 자료형 다루기  
 

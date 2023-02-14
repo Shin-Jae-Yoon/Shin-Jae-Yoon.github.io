@@ -7,6 +7,8 @@ tags: ["코딩애플 Javascript"]
 
 > 해당 게시글은 <a href='https://codingapple.com/course/javascript-jquery-ui/' target='_blank'>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 자바스크립트 사용 목적
 
 JavaScript는 html 파일 내부에 숨어서 **html 조작과 변경**을 담당하는 언어이다.
@@ -45,7 +47,7 @@ document.getElementById('id').src = './img/주소';
 
 - class는 여러 개 나올 수 있어서 인덱싱 해줘야함
 
-<br><br>
+<hr>
 
 ## querySelector
 
@@ -88,7 +90,7 @@ querySelector가 성능이 약간 떨어질 수 있지만 생산성이 높다는
 
 물론, 생산성 측면에서 봤을 때 jQuery가 querySelector보다 훨씬 높으니까 조~금 어불성설일 수 있지만, 말하고자 하는 것은 속도때문에 querySelector를 포기해야 할 이유가 있는가 하는 것이다. 하나의 주장일 뿐이지만 나도 굳이 getElement를 쓰기 보다는 querySelector를 쓰는 것에 한 표 던진다.
 
-<br><br>
+<hr>
 
 ## UI 만드는 법칙
 1. HTML/CSS로 미리 디자인 (필요하면 미리 숨김)
@@ -98,7 +100,7 @@ querySelector가 성능이 약간 떨어질 수 있지만 생산성이 높다는
 
 이걸로 모달창, 드롭다운 메뉴 등 구현 가능
 
-<br><br>
+<hr>
 
 ## 자바스크립트 function
 
@@ -123,9 +125,9 @@ function 작명(파라미터) {
 
 - 파라미터 내부에 문자는 `' '` 안, 숫자는 바로  
 
-<br><br>
+<hr>
 
-## 자바스크립트 초창기 겪는 문제들, 오류들
+## 초창기 겪는 문제들, 오류들
 
 <br>
 
@@ -145,9 +147,9 @@ script 태그를 body 내부에서 상단에 작성하면 잘 안되는 경우�
 
 대문자, 소문자 확인 잘하자. `getElementById`를 `getElementByid`로 작성하지 않았는가? 뭐 잘 안보이면 항상 크롬 개발자도구 console 탭을 확인하자.
 
-<br><br>
+<hr>
 
-## 자바스크립트 이벤트리스너
+## 이벤트리스너
 
 html 버튼 태그에 `onclick` 붙히면 좀 더럽지 않음? 그때 `addEventListener()`을 자바스크립트에서 구현하자. 클릭, 키 입력, 스크롤, 드래그 등 웹 페이지에 조작을 가하는 행위가 **이벤트**이다. 이벤트가 일어나길 귀 기울여서 기다리는 친구가 **이벤트 리스너**이다.
 
@@ -170,7 +172,7 @@ document.getElementById('alert2_close').addEventListener('click', function () {
 
 <br><br>
 
-## 자바스크립트 콜백함수  
+### 콜백함수  
 
 위에 addEventListener 사용할 때 첫번째 파라미터에는 event 요소가 들어가고, 두번째 파라미터 자리에 들어갔던 function()이 있을거임
 
@@ -184,7 +186,7 @@ document.getElementById('alert2_close').addEventListener('click', function () {
 - 자바스크립트에서 코드를 순차적으로 실행하고 싶을 때 콜백함수를 자주 사용
 - 콜백함수 자리에 만든 함수 넣어도 됨. 단, `함수()`의 형태가 아닌 `함수`로 넣어야 오류 없이 작동할 것
 
-<br><br>
+<hr>
 
 ## classList, toggle
 
@@ -229,7 +231,7 @@ document
 
 이렇게 코드 작성 시, toggle 기능을 이용하여 show 클래스가 있다면 없애고 없다면 붙히는 방식이다.
 
-<br><br>
+<hr>
 
 ## jQuery 라이브러리
 
@@ -314,7 +316,7 @@ style의 display 속성을 none으로 바꿔도 되지만 jQuery는 편리한 �
 
 - `.fadeToggle()` : 누를때마다 fade
 
-<br><br>
+<hr>
 
 ## 모달(Modal) 창 제작 Tip
 
@@ -349,7 +351,7 @@ $('#close').on('click', function () {
 </script>
 ```
 
-<br><br>
+<hr>
 
 ## UI에 애니메이션 추가
   
@@ -488,7 +490,7 @@ $('#close').on('click', function () {
 }
 ```
 
-<br><br>
+<hr>
 
 ## form태그 if/else
 
@@ -561,7 +563,7 @@ if (2 == 2) {
 - `||` : OR
 - `!` : NOT
 
-<br>
+<hr>
 
 ## truthy, falsy 자료
 
@@ -573,7 +575,7 @@ if (2 == 2) {
 | {} | undefined |
 | | NaN |  
 
-<br>
+<hr>
 
 ## undefined, null
 
@@ -598,11 +600,9 @@ undefined == null; //true , 형변환 까지 해줘서 true가 나옴
 undefined === null; //false , 형변환을 하지 않아서 false가 나옴
 ```
 
-<br>
+<hr>
 
-### if문 이용한 form 태그
-
-  
+## if문 이용한 form 태그 
 
 ```javascript
 // 물론 둘다 else if 말고 그냥 if 문들로 해도 됨
@@ -650,7 +650,7 @@ $('form').on('submit', function (e) {
 
 - 전송을 원하지 않으면 function의 괄호 안에 `e`를 넣고 `e.preventDefault();` 해주면 됨
 
-<br>
+<hr>
 
 ## input 이벤트  
 
@@ -670,7 +670,7 @@ document.getElementById('email').addEventListener('change', function () {});
 
 - 응용하면 비밀번호 6자리 이상 입력해야할 때 그것보다 작게 입력하고 있으면 계속 ui 띄우는 경우가 있겠네
 
-<br>
+<hr>
 
 ## 변수 문법
   
@@ -719,7 +719,7 @@ console.log(이름);
 
 <br>
 
-## var let const 차이
+### var let const 차이
 
 | var | let | const |
 | :--------------------------------: | :-------------------------: | :-------------------------: |
@@ -761,7 +761,7 @@ if () {
 
 <br>
 
-## 문자 중간에 변수 쉽게 넣기
+### 문자 중간에 변수 쉽게 넣기
 
 - 백틱 기호를 사용한다.
 

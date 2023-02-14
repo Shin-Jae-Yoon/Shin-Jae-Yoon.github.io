@@ -1,11 +1,13 @@
 ---
-title: "스프링 입문 섹션0-섹션3"
+title: "스프링 입문 : 섹션0-섹션3"
 date: "2023-02-14 21:22"
 enableToc: true
 tags: [""]
 ---
 
 > 해당 게시글은 김영한님 <a href='https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8' target='_blank'>스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술</a>강좌의 섹션0부터 섹션3까지 정리한 내용입니다.
+
+<hr>
 
 ## 프로젝트 환경설정
 
@@ -262,7 +264,7 @@ public class HelloController {
 
 - `http://www.thymeleaf.org`를 추가함으로써 타임리프 문법 사용 가능
 
-<p align="center"><img src="https://i.imgur.com/9RradTY.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/9RradTY.png" height="50%" width="80%"></p>
 
 1. 웹 브라우저에서 `localhost:8080/hello`로 get 요청
 2. 내장된 톰캣이 웹서버의 역할을 하여 받아서 controller로 전달
@@ -308,7 +310,7 @@ spring.devtools.restart.enabled=true
 
 - 빌드 폴더 깔끔하게 지우기 `./gradlew clean`
 
-<br><br>
+<hr>
 
 ## 스프링 웹 개발 기초
 
@@ -335,7 +337,7 @@ spring.devtools.restart.enabled=true
 스프링 부트는 정적 컨텐츠를 <a href='https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web.servlet.spring-mvc.static-content' target='_blank'>제공</a>하고 있다. `/resources/static` 폴더에 아무 html 파일을 만들면 그대로 반환해준다. 만약 `hello-static.html` 파일을 만들었다면, `localhost:8080/hello-static.html`로 들어가면 나온다.
 
 <p align="center"><img src="https://i.imgur.com/saADxTn.png
-" height="50%" width="100%"></p>
+" height="50%" width="80%"></p>
 
   
 
@@ -347,55 +349,27 @@ spring.devtools.restart.enabled=true
 
 4. 없으면 `resources: statc/hello-static.html`을 찾고 있으면 반환해줌
 
-  
-
 <br>
-
-  
 
 ### MVC와 템플릿 엔진
 
-  
-
-MVC : Model, View, Controller <br>
-
-  
+MVC : Model, View, Controller
 
 과거에는 컨트롤러와 뷰를 따로 분리하지 않고 JSP 같은걸로 뷰에 모든 걸 다했다. 이것이 **Model 1 방식**이다. 하지만, 지금은 MVC 패턴으로 많이 한다. 그 이유는 **관심사의 분리, 역할과 책임** 때문이다.
 
-  
-
-<br>
-
-  
-
 View는 화면을 그리는 것에 모든 역량을 집중해야 하고, Controller나 Model과 관련된 부분은 비즈니스 로직과 관련있거나 내부적인 걸 처리하는 것에 집중해야 한다.
 
-  
-
 <br>
-
-  
 
 `HelloController.java`에 내용 추가
 
-  
-
 ```java
-
 @GetMapping("hello-mvc")
-
 public String helloMvc(@RequestParam("name") String name, Model model) {
-
-model.addAttribute("name", name);
-
-return "hello-template";
-
+	model.addAttribute("name", name);
+	return "hello-template";
 }
-
 ```
-
-  
 
 - `hello-mvc` get 요청에 맵핑
 
@@ -405,75 +379,39 @@ return "hello-template";
 
 - `addAttribute`에서 파라미터로 넘어온 name을 넘긴다.
 
-  
-
 <br>
-
-  
 
 `resources/templates/hello-static.html`
 
-  
-
 ```html
-
 <html xmlns:th="http://www.thymeleaf.org">
-
-<body>
-
-<p th:text="'hello ' + ${name}">hello! empty</p>
-
-</body>
-
+	<body>
+		<p th:text="'hello ' + ${name}">hello! empty</p>
+	</body>
 </html>
-
 ```
-
-  
 
 - 템플릿 엔진으로써 잘 동작하면 th:text의 값인 `'hello ' + ${name}`로 우측의 내용(hello! empty)이 치환이 된다.
 
-  
-
 <br>
-
-  
 
 타임리프 템플릿의 장점은 html을 쓰고 서버 없이 파일을 열어서 껍데기를 볼 수 있는 것이다. `템플릿 파일명 우클릭 - Copy Path/References.. - Absolute Path 복사`하고 웹 브라우저 링크에 치면 볼 수 있다.
 
-  
-
 <br>
-
-  
 
 여기까지 하고 `localhost:8080/hello-mvc`를 입력하면!? `Required request parameter 'name' for method parameter type String is not present]`라는 오류가 콘솔창에 뜬다. 파라미터를 입력해주지 않았기 때문이다. 인텔리제이에서 필요한 파라미터가 무엇인지 볼 때 `Ctrl + P`를 누르면 뜬다.
 
-  
-
-<p align="center"><img src="./img/img03.png"></img></p>
-
-  
+<p align="center"><img src="https://i.imgur.com/ofYiI3f.png" height="50%" width="80%"></p>
 
 `boolean required() default true`인 것으로 보아 반드시 값이 필요한게 디폴트 설정이다. 따라서, 웹 브라우저 창에 `localhost:8080/hello-mvc?name=name에 들어갈 문자열`을 넣어주면 된다. 그러면 결과로 `'hello ' + ${name}`이니까 `hello name에 들어갈 문자열`이라는 모습이 보일 것이다.
 
+<p align="center"><img src="https://i.imgur.com/15HkOIc.png" height="50%" width="80%"></p>
   
-
-<p align="center"><img src="./img/img04.png"></img></p>
-
-  
-
 다시 한번, **달러($) 사인에 들어가는 것은 Model에서 뽑아온 key에 해당하는 value이다.** `model.addAttribute("name", name);`이라고 했으니까 `name`이라는 key에서 `name`이라는 value를 가져오는 것!
-
-  
 
 <br>
 
-  
-
-<p align="center"><img src="./img/img05.png"></img></p>
-
-  
+<p align="center"><img src="https://i.imgur.com/gg0Tehb.png" height="50%" width="80%"></p>
 
 1. 웹브라우저에서 `localhost:8080/hello-mvc`로 get 요청
 
@@ -487,39 +425,23 @@ return "hello-template";
 
 6. 템플릿 엔진이 렌더링해서 변환한 HTML 파일을 웹 브라우저에 반환
 
-  
-
 <br>
-
-  
 
 ### API
 
-  
+MVC 방식과는 다르게 (HTML 파일을 내리는 방식과는 다르게) API는 데이터를 바로 내리는 방식이다. 
 
-MVC 방식과는 다르게 (HTML 파일을 내리는 방식과는 다르게) API는 데이터를 바로 내리는 방식이다. <br>
-
-  
+<br>
 
 `HelloController.java`에 내용 추가
 
-  
-
 ```java
-
 @GetMapping("hello-string")
-
 @ResponseBody
-
 public String helloString(@RequestParam("name") String name) {
-
-return "hello " + name;
-
+	return "hello " + name;
 }
-
 ```
-
-  
 
 - `hello-string` get 요청에 맵핑
 
@@ -527,63 +449,35 @@ return "hello " + name;
 
 - 템플릿 엔진과는 다르게 view 이런게 없어서 저 return 문자가 그대로 내려간다.
 
-  
-
-<p align="center"><img src="./img/img06.png"></img></p>
-
-  
+<p align="center"><img src="https://i.imgur.com/d2uD6Kh.png" height="50%" width="80%"></p>
 
 이렇게 페이지 소스보기 해보면 html 태그 같은거 안뜨고 **문자 데이터 자체**가 그대로 왔다. 그러면, 본격적으로 api를 사용해보도록 하자. 객체를 만들어서 JSON 형식(`key : value`)으로 데이터를 보내보자.
 
-  
+<br>
 
 `HelloController.java`에 내용 추가
 
-  
-
 ```java
-
 @GetMapping("hello-api")
-
 @ResponseBody
-
 public Hello helloApi(@RequestParam("name") String name) {
-
-Hello hello = new Hello();
-
-hello.setName(name);
-
-return hello;
-
+	Hello hello = new Hello();
+	hello.setName(name);
+	return hello;
 }
-
-  
 
 static class Hello {
-
-private String name;
-
-  
-
-public String getName() {
-
-return name;
-
+	private String name;
+	
+	public String getName() {
+		return name;
+	}
+	  
+	public void setName(String name) {
+		this.name = name;
+	}
 }
-
-  
-
-public void setName(String name) {
-
-this.name = name;
-
-}
-
-}
-
 ```
-
-  
 
 - static은 기억나지? 힙에 올리는게 아니라 그냥 클래스 변수로 만들어서 올리고 아무데서나 사용할 수 있게 만들었던거
 
@@ -593,50 +487,28 @@ this.name = name;
 
 - 마지막으로 hello 객체를 반환해줌
 
-  
+<p align="center"><img src="https://i.imgur.com/Qt7XFIr.png" height="50%" width="80%"></p>
 
-<p align="center"><img src="./img/img07.png"></img></p>
-
-  
-
-<p align="center"><img src="./img/img08.png"></img></p>
-
-  
+<p align="center"><img src="https://i.imgur.com/8obtOHl.png" height="50%" width="80%"></p>
 
 1. 웹브라우저에서 `localhost:8080/hello-api`로 get 요청
-
 2. 내장 톰캣 서버가 요청을 받고 스프링에게 넘김
-
 3. 스프링은 컨트롤러 쪽에서 `hello-api`와 맵핑된 컨트롤러 있나 찾아봄
-
 4. 있네. 근데 `@ResponseBody` 애노테이션이 붙어있네?
-
-- 저게 없으면, viewResolver에게 던져서 view에 맞는 템플릿 엔진 연결해줬잖아
-
-- 얘는 HTTP body 응답에 이걸 그대로 넘겨야겠구나 라고 생각
-
-- 근데, 문자였으면 바로 넣어서 주면 끝인데, 객체일 경우는 어떻게 해야할까?
-
-- 객체가 오면, 기본 default가 json 방식으로 데이터를 만들어서 HTTP 응답에 반환하겠다가 기본 정책!
-
+	- 저게 없으면, viewResolver에게 던져서 view에 맞는 템플릿 엔진 연결해줬잖아
+	- 얘는 HTTP body 응답에 이걸 그대로 넘겨야겠구나 라고 생각
+	- 근데, 문자였으면 바로 넣어서 주면 끝인데, 객체일 경우는 어떻게 해야할까?
+	- 객체가 오면, 기본 default가 json 방식으로 데이터를 만들어서 HTTP 응답에 반환하겠다가 기본 정책!
 5. `viewResolver`가 아닌, `HttpMessageConverter`가 동작
-
 6. 단순 문자면 `StringConverter`가 동작. 객체이면 `JsonConverter`가 동작
+7. 이것을 응답으로 웹 브라우저에 
 
-7. 이것을 응답으로 웹 브라우저에 보냄
-
-  
+<br>
 
 - 기본 문자처리 : `StringHttpMessageConverter`
-
 - 기본 객체처리 : `MappingJackson2HttpMessageConverter`
-
-- 객체를 json으로 변환해주는 유명한 라이브러리 대표적인 2개
-
-- Jackson version 2
-
-- Gson (구글에서 만든거)
-
-- 스프링은 기본적으로 잭슨 라이브러리를 채택!
-
+	- 객체를 json으로 변환해주는 유명한 라이브러리 대표적인 2개
+		- Jackson version 2
+		- Gson (구글에서 만든거)
+	- 스프링은 기본적으로 잭슨 라이브러리를 채택!
 - 참고 : 클라이언트의 HTTP Accept 헤더와 서버의 컨트롤러 반환 타입 정보를 조합해서 `HttpMessageConverter`가 선택된다. 예를 들어, 클라이언트 쪽에서 XML을 요청하면 서버 쪽에서 XML 라이브러리를 끼워넣고 XML로 보낼 수 있다는 말이다. 근데 그냥 마음 편하게 json으로 하자 ^^ 다 json으로 한다.

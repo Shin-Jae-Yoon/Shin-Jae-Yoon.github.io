@@ -7,6 +7,8 @@ tags: ["잔재미코딩 파이썬"]
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 01. Python 학습의 이유
 
 <br>  
@@ -19,7 +21,7 @@ Java와 Javascript를 학습하며 프론트엔드와 백엔드 모두를 경험
 
 나아가, python을 이용하여 database 학습을 하려는 계획도 세웠다. 아직 Java를 제대로 사용하지 못하는 것도 있어서, 이참에 주력 언어를 python으로 정하겠다는 결심이 섰기 때문에 기초를 탄탄히 하고자 언어의 기본 문법을 학습하고자 한다.
 
-<br><br>  
+<hr>
 
 ## 02. Python 설치
 
@@ -42,7 +44,7 @@ Python을 사용하기 위한 여러 가지 옵션이 있다.
 3. <a href='https://carmack-kim.tistory.com/90' target='_blank'>virtualpyenv activate 오류 발생 시</a>
 4. <a href='https://codenoyes.tistory.com/63' target='_blank'>mac에 jupyter notebook 설치</a>
 
-<br><br>  
+<hr>
 
 ## 03. Python IDE
 
@@ -72,7 +74,7 @@ html, css, javascript를 사용하면서 익숙했던 visual studio code를 사�
 
 <p align="center"><img src="https://i.imgur.com/lUzLuL5.png" height="30%" width="100%"></p>
 
-<br><br>  
+<hr>
 
 ## 04. jupyter사용 TIP
 

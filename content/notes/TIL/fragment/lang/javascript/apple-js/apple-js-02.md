@@ -7,6 +7,8 @@ tags: ["코딩애플 Javascript"]
 
 > 해당 게시글은 <a href='https://codingapple.com/course/javascript-jquery-ui/' target='_blank'>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## setTimeout, setInterval
 
 <br>
@@ -73,7 +75,7 @@ let 타이머 = setTimeout(콘솔출력, 1000);
 clearTimeout(타이머);
 ```
 
-<br><br>
+<hr>
 
 ## JS 문법 vs 브라우저 사용법
 
@@ -85,7 +87,7 @@ clearTimeout(타이머);
 
 - 웹 브라우저 사용법은 정확하게 **Web Browser API 사용법** 이라고 한다.  
 
-<br>
+<hr>
 
 ## 정규식
 
@@ -165,9 +167,9 @@ clearTimeout(타이머);
 
 <br>
 
-> [!quote] Memo
+> [!note] Memo
 >
-> 주의할 게, 지금 문자 1개를 찾는 것이다. /a/는 a 문자 1개"만" 찾는 것이다. 여러 개 찾고 싶으면 /a+/ 형태로 +를 사용하자. +는 왼쪽 문자 반복 검색이다.
+> 주의할 게, 지금 문자 1개를 찾는 것이다. /a/는 a 문자 1개"만" 찾는 것이다. 여러 개 찾고 싶으면 /a+/ 형태로 +를 사용하자. +는 왼쪽 문자 반복 검색
 
 <br><br>
 
@@ -201,7 +203,7 @@ clearTimeout(타이머);
 // true
 ```
 
-<br><br>
+<hr>
 
 ## Carousel (캐러셀)
 
@@ -284,7 +286,7 @@ document
 
 **이전 버튼과 다음 버튼을** 활용할 때는 현재 상테에 대한 변수를 하나 두고 그 변수 값을 조정하며 코드를 짜도록 하자.
 
-<br><br>
+<hr>
 
 ## function() return 문법
 
@@ -308,7 +310,7 @@ console.log(변수);
 
 <br>
 
-> [!quote] 그래서 return 용도가 뭔데?
+> [!note] 그래서 return 용도가 뭔데?
 >
 >  자료를 넣으면 다른 자료가 나오는 변환기를 만들고 싶을 때 사용
   
@@ -326,7 +328,7 @@ function 부가세(가격) {
 
 `문자 -> 문자 변환기`, `숫자 -> true/false 변환기` 아무렇게나 제작 가능
 
-<br><br>
+<hr>
 
 ## 자바스크립트 소수점 다루기
 
@@ -376,6 +378,8 @@ console.log((55555 * 1.1).toFixed(2))
 // 61110.50
 ```
 
+<hr>
+
 ## +(플러스) 연산자 특징
 
 - `'문자' + 123 => '문자123'`
@@ -401,9 +405,7 @@ console.log(부가세(55555));
 // 61111.5
 ```
 
-<br><br>
-
-  
+<hr>
 
 ## 부동소수점 부가 설명
 
@@ -491,7 +493,7 @@ Math.ceil(num * precision) / precision
 
 숫자 1개당 32칸이 아닌 **64칸을 사용**한다. IEEE 부동소수 표현 설명에서 봤던 **배정도 표현**을 사용하는 것이다. 오차가 매우 작아지기 때문에 괜찮지만, 단점으로는 역시 메모리 용량을 2배 쓰는 것이니까 낭비일 수 있다.
 
-<br><br>
+<hr>
 
 ## scroll 이벤트 활용
 
@@ -648,7 +650,7 @@ window.addEventListener("scroll", function () {
 - div 화면높이 : `.clientHeight`
 - jQuery 페이지 스크롤 : `$(window).scrollTop()`
 
-<br><br>
+<hr>
 
 ## for 반복문, 탭기능 만들기
 
@@ -758,7 +760,7 @@ for (var i = 0; i < 탭버튼.length; i++) {
 
 <br>
 
-## var가 제대로 작동 안한 이유
+### var가 제대로 작동 안한 이유
 
 1. 코드를 위에서부터 한줄한줄 차례로 해석함
 
@@ -784,7 +786,7 @@ for (var i = 0; i < 탭버튼.length; i++) {
 
 <br>
 
-## 탭기능 함수 이용 축약
+### 탭기능 함수 이용 축약
 
 - 아래의 코드를 함수로 축약해보자.
 
@@ -846,7 +848,7 @@ function 탭열기(구멍) {
 }
 ```
 
-<br><br>
+<hr>
 
 ## 이벤트 버블링
 
@@ -900,7 +902,7 @@ document.querySelector(".black-bg").classList.remove("show-modal");
 
 <br>
 
-## 유용한 이벤트관련 함수들
+### 유용한 이벤트관련 함수들
 
 - 콜백함수 파라미터에 `e`를 넣어보자. 그러면 사용가능한 함수들이 있다.
 

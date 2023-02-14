@@ -2,10 +2,12 @@
 title: "All-in-One 중급모듈"
 date: "2023-02-12 16:35"
 enableToc: true
-tags: ["apple-html/css"]
+tags: ["코딩애플 HTML/CSS"]
 ---
 
 > 해당 게시글은 <a href='https://codingapple.com/course/html-basics/' target='_blank'>HTML/CSS All-in-one : 기초부터 Bootstrap, SASS, 고급 animation 까지</a> 강의를 정리한 내용입니다.
+
+<hr>
 
 ## 폰트 설정법
 
@@ -56,7 +58,7 @@ body {
 
 - css 적용 - `@import` 부분
 
-<br>
+<hr>
 
 ## 폰트 Anti-aliasing  
 
@@ -80,7 +82,7 @@ button {
 }
 ```
 
-<br>
+<hr>
 
 ## flex
 
@@ -161,12 +163,12 @@ button {
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/S9vcMgL.png" height="30%" width="50%"></p>
+<p align="center"><img src="https://i.imgur.com/S9vcMgL.png" height="30%" width="40%"></p>
 
 - <a href='https://studiomeal.com/archives/197' target='_blank'>1분 코딩 css-flex</a>
 - <a href='https://studiomeal.com/archives/533' target='_blank'>1분 코딩 css-grid</a>
 
-<br>
+<hr>
 
 ## HTML head 태그
 
@@ -240,7 +242,7 @@ button {
 
 - 그 박스에 보이는 이미지, 사이트 제목, 사이트 설명
 
-<p align="center"><img src="https://i.imgur.com/IAP6Xwh.png" height="30%" width="50%"></p>
+<p align="center"><img src="https://i.imgur.com/IAP6Xwh.png" height="30%" width="40%"></p>
 
 <br>  
 
@@ -266,7 +268,7 @@ button {
 
 - 혹은 favicon generator 검색하면 OS별로 알아서 만들어줌
 
-<br>
+<hr>
 
 ## **반응형 웹**
 
@@ -320,7 +322,7 @@ em (내 폰트 사이즈의 몇배)
 
 반응형 웹에서 breakpoint 기준은 **1200px, 992px, 768px, 576px** 단위를 많이 사용한다. 보통 1200px 부터 태블릿, 768px부터 모바일 이런식으로 많이 사용한다. breakpoint는 4개 이상으로 넘어가면 복잡해진다.
 
-<br><br>
+<hr>
 
 ## 크롬 개발자 도구 (디버깅)
 
@@ -338,7 +340,7 @@ em (내 폰트 사이즈의 몇배)
 
 - html의 태그를 css에서 셀렉터 이용 (1점)
 
-<br><br>
+<hr>
 
 ## Font Awesome
 
@@ -352,7 +354,7 @@ em (내 폰트 사이즈의 몇배)
 
 2. CDN 방식 : Content Delivery Network (콘텐츠 전송 네트워크) 방식으로 폰트 어썸이 호스팅하는 서버에서 아이콘들을 받아와서 사용하는 방식이다.
 
-> [!quote] Kit 방식 vs CDN 방식?
+> [!note] Kit 방식 vs CDN 방식?
 >
 > 사실 kit 방식과 cdn 방식이 어떤 차이인지 모르겠다.
 kit 방식은 회원가입 후 발급받은 킷을 이용했고
@@ -374,7 +376,7 @@ Font Awesome 사용할 때 css 파일에서 font-size를 조절 혹은 html의 s
 - <a href='https://nuknukhan.tistory.com/38' target='_blank'>FontAwesome 스타일링 간단 사용법</a>
 - <a href='https://fontawesome.com/docs/web/style/styling' target='_blank'>FontAwesome DOCS</a>
 
-<br><br>
+<hr>
 
 ## 애니메이션 만드는 원리
 
@@ -411,7 +413,7 @@ transition 세부 속성
 
 추가로 다른 사이트에서 애니메이션 작동원리 보려면 크롬 개발자 도구에서 마우스로 찍은 후에 점 세개 눌러서 more tools에서 animations 탭을 보면 어떤 속성이 어느 정도의 시간에 거쳐서 변화하는지 보여준다.
 
-<br>
+<hr>
 
 ## Bootstrap  
 
@@ -464,7 +466,7 @@ transition 세부 속성
 
 <br>
 
-## Bootstrap 수직정렬
+### Bootstrap 수직정렬
 
 <br>
 
@@ -487,6 +489,12 @@ transition 세부 속성
 추가로, flex 박스의 순서를 부여하고자 할 때는 `order`를 이용하도록 한다. 물론 order 클래스 역시 조건문을 달아서 반응형으로 제작 가능하다. `order-lg-3`의 형태로 !
 
 <br>
+
+### Bootstrap pill badge  
+
+부트스트랩에서 알약 모양 bill badge 썼을 때 알약이 깨지는 경우에는 `box-sizing: border-box;` 확인하자
+
+<hr>
 
 ## CSS 레거시 코드 수정 방법
 

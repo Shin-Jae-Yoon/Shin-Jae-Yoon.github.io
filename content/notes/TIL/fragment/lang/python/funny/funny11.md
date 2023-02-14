@@ -7,6 +7,8 @@ tags: ["잔재미코딩 파이썬"]
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 01. for문 기본 구조
 
 - 리스트, 튜플, 문자열 이용
@@ -101,7 +103,7 @@ for i in score:
 	print("%d번 학생 축하합니다. 합격입니다. " % student_number)
 ```
 
-<br><br>  
+<hr>
 
 ## 02. for문과 range 함수  
 
@@ -156,7 +158,7 @@ for i in range(2,10): # ①번 for문
 9 18 27 36 45 54 63 72 81
 ```
 
-<br><br>
+<hr>
 
 ## 03. 리스트 안에 for문 넣기 (리스트 내포)
   

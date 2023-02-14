@@ -7,6 +7,8 @@ tags: ["잔재미코딩 파이썬"]
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 01. 집합 자료형이란?
 
 <br>
@@ -26,7 +28,7 @@ tags: ["잔재미코딩 파이썬"]
 	- 추가 : 값 1개 추가 `add()`, 값 여러 개 추가 `update()`
 	- 삭제 : `remove()`
 
-<br><br>
+<hr>
 
 ## 02. 집합 다루기
 
@@ -158,7 +160,7 @@ print(smartphone ^ television)
 출력결과 : {'샤오미', '화웨이', '애플', '소니'}
 ```
 
-<br><br>
+<hr>
   
 ## 03. 집합 다양한 함수들
 
@@ -209,7 +211,7 @@ print('삼성' in smartphone)
 출력결과 : True
 ```
 
-<br><br>
+<hr>
 
 ## 04. 집합 응용
   

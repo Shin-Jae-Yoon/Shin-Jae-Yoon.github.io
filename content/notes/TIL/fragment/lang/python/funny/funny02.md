@@ -7,6 +7,8 @@ tags: ["잔재미코딩 파이썬"]
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 파이썬의 데이터구조
 
 <br>
@@ -20,7 +22,7 @@ tags: ["잔재미코딩 파이썬"]
 - 삭제
 - 수정
 
-<br>  
+<hr>
 
 ## 01. 출력과 입력  
 
@@ -130,7 +132,7 @@ print( int(data1) + int(data2))
 출력 결과 : 3 ( 정수형으로 형변환 되어 더해진 형태)
 ```
 
-<br><br>
+<hr>
 
 ## 02. 변수, 데이터 타입
 
@@ -186,7 +188,7 @@ if (str(type(a)) == "<class 'int'>"):
 print("정수 타입이 맞습니다.")
 ```
 
-<br><br>  
+<hr>
 
 ## 03. print() 문의 옵션
 

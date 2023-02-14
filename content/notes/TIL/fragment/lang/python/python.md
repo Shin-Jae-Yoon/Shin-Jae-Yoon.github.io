@@ -5,6 +5,12 @@ enableToc: true
 tags: [""]
 ---
 
+<hr>
+
+## 잔재미코딩
+
+<a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬입문과 크롤링기초 부트캠프 [쉽게! 견고한 자료까지!]</a>
+
 - [잔재미코딩 - 01. 파이썬 입문](notes/TIL/fragment/lang/python/funny/funny01)
 - [잔재미코딩 - 02. 파이썬 변수, 출력](notes/TIL/fragment/lang/python/funny/funny02)
 - [잔재미코딩 - 03. 파이썬 String](notes/TIL/fragment/lang/python/funny/funny03)

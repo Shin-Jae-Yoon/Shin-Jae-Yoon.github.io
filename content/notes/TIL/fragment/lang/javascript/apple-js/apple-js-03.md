@@ -7,6 +7,8 @@ tags: ["코딩애플 Javascript"]
 
 > 해당 게시글은 <a href='https://codingapple.com/course/javascript-jquery-ui/' target='_blank'>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## Array, Object
 
 <br>
@@ -91,7 +93,7 @@ ex) 쇼핑몰 제작 시, 상품 정보들을 10개, 20개 보관해야 한다�
 
 sol) object 쓰는게 좋을 듯. 예를 들어, 가격을 꺼낸다고 하면 몇 번째에서 꺼낼래? 순서보다 prcie 이름을 기억하고 자료를 꺼내는게 편함.
 
-<br>
+<hr>
 
 ## 웹서비스 방식
 
@@ -266,7 +268,7 @@ document.querySelectorAll('.form-select')[0].addEventListener('input', function 
 
 <br>
 
-> [!quote] Memo
+> [!note] Memo
 >
 > array 자료형이나 object 자료형의 자료를 전부 꺼내어서 사용하고 싶을 때 forEach, for in 반복문은 매우 유용하다. <br>
 > array 자료형에서 기본함수 .forEach() 말고 for in 같은 반복문 for of가 있다. 단, index를 얻지 못한다는 단점 있음  
@@ -369,7 +371,7 @@ for (let key in obj) {
 // 27
 ```
 
-<br>
+<hr>
 
 ## arrow function 맛보기
 
@@ -433,14 +435,16 @@ document.querySelectorAll('.form-select')[0].addEventListener('input', function 
 
 <br>
 
-> [!quote] Memo
+> [!note] Memo
 >
 > 이벤트리스너 콜백함수 안에서 this를 사용해야하면 **arrow function 사용 시에 의도와 다르게 동작할 수 있으니까** 그런데서 사용하지말고 조심해서 사용하자. <br>
 > 참고로, 브라우저 환경의 전역객체는 **window** node 환경의 전역객체는 **global**이다. 예시 코드에서 밖에 특별한 this가 없다면, 화살표 함수를 썼을 때 this는 window를 뜻하게 된다.
   
-<br><br>
+<hr>
 
 ## Ajax
+
+먼저 <a href='https://velog.io/@leehaeun0/Ajax-%EB%8A%94-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%9D%B8%EA%B0%80%EC%9A%94' target='_blank'>링크</a> 읽어보고 오기
 
 **서버**는 데이터 보내달라고 요청하면 데이터를 보내주는 것이다. 예를 들어, 네이버 웹툰 서버라고 하면 네이버 웹툰 달라고 하면 웹툰 보내주는 것이다. 서버는 데이터를 보내주기도 하고 유저 데이터를 받아서 DB에 저장하기도 하는 역할을 한다.
 
@@ -559,7 +563,7 @@ fetch('https://codingapple1.github.io/price.json')
 
 JSON으로 변환하면 문자형 자료라서 원하는 자료만 뽑아쓰기 힘들다. 그래서 JSON자료를 다시 object나 array로 변환해서 사용하면 뽑아쓰기 편하다. fetch를 사용할 때 `((res) => res.json())`이 응답받은 response를 json으로 변환해주는 과정이다. ajax는 자동으로 변환해주기 때문에 신경쓰지 않았다.
 
-<br><br>
+<hr>
 
 ## Array 자주 쓰는 함수
 
@@ -714,7 +718,7 @@ console.log(새어레이);
 // [28, 12, 20, 8, 160]
 ```
 
-<br><br>
+<hr>
 
 ## DOM
 
@@ -829,7 +833,7 @@ window.addEventListener('load', function () {
 
 이렇게 window에 붙혀도 된다.
 
-<br><br>
+<hr>
 
 ## localStorage
 
@@ -943,7 +947,7 @@ if (outItemIndex === -1) {
 }
 ```
 
-<br><br>
+<hr>
 
 ## scroll 애니메이션 심화
 
@@ -970,7 +974,7 @@ y = 1150 * a + b
 식 2개, 미지수 2개니까 값 구할 수 있음
 ```
 
-<br><br>
+<hr>
 
 ## 캐러셀 심화 (스와이프)  
 
@@ -1024,7 +1028,7 @@ y = 1150 * a + b
 <body ondragstart="return false"></body>
 ```
 
-<br><br>
+<hr>
 
 ## switch 문법  
 

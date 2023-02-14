@@ -7,6 +7,8 @@ tags: ["잔재미코딩 파이썬"]
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.
 
+<hr>
+
 ## 01. 튜플 자료형이란?
 
 <br>
@@ -48,7 +50,7 @@ e = 1, 2, 3 # 괄호를 생략해도 무방, 즉, 괄호가 없는 값의 나열
 f = ('a', 'b', ('ab', 'cd'))
 ```
 
-<br><br>
+<hr>
 
 ## 02. 튜플 다루기
 
@@ -98,7 +100,7 @@ print(type(data_tuple))
 출력결과 : tuple
 ```
 
-<br><br>
+<hr>
 
 ## 03. 튜플 응용
 

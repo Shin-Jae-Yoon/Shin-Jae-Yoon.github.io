@@ -2,10 +2,12 @@
 title: "All-in-One 고급모듈"
 date: "2023-02-12 16:35"
 enableToc: true
-tags: ["apple-html/css"]
+tags: ["코딩애플 HTML/CSS"]
 ---
 
 > 해당 게시글은 <a href='https://codingapple.com/course/html-basics/' target='_blank'>HTML/CSS All-in-one : 기초부터 Bootstrap, SASS, 고급 animation 까지</a> 강의를 정리한 내용입니다.
+
+<hr>
 
 ## Pseudo-element
 - pseudo-class (다른 상태일 때 스타일 줄 때) `.class:`
@@ -83,7 +85,7 @@ tags: ["apple-html/css"]
 
 - CSS만으로 영문 폰트 만들기 https://yusugomori.com/projects/css-sans/fonts
 
-<br>  
+<hr>  
 
 ## Shadow DOM
 
@@ -120,7 +122,7 @@ input[type='file']::-webkit-file-upload-button {
 
 <br>
 
-> [!quote]  실제 파일 업로드 버튼 만드는 것
+> [!note]  실제 파일 업로드 버튼 만드는 것
 >
 > 글자를 눌러도 버튼이 선택되게 스타일링한다.
 그리고 input태그는 display를 none 줘버린다.
@@ -203,7 +205,7 @@ progress::-moz-progress-bar {
 }
 ```
 
-<br>
+<hr>
 
 ## Sass
 
@@ -226,7 +228,7 @@ progress::-moz-progress-bar {
 
 <br>
 
-> [!quote] 하단에 바가 안보여서 watch sass를 찾을 수 없다면?
+> [!note] 하단에 바가 안보여서 watch sass를 찾을 수 없다면?
 >
 > View - Appearance - Status bar 켜기
 
@@ -482,7 +484,7 @@ h2 {
 
 <br>
 
-> [!quote] Memo
+> [!note] Memo
 >
 > 뭐 기본세팅 .scss 파일은 종속적인 파일이니까 굳이 매번 .css로 컴파일 할 필요가 없잖아? 그러니까 언더바(_) 붙혀서 컴파일 못하게 하자.
 
@@ -496,7 +498,7 @@ h2 {
 2. 다른 파일의 `@mixin` 사용
 	- `@include 파일명.mixin이름`
 
-<br><br>
+<hr>
 
 ## HTML video, audio
 
@@ -547,7 +549,7 @@ h2 {
 
 **audio**도 마찬가지, `<audio src="음악.mp3" controls></audio>` 추가로, autoplay 자동재생 기능은 애초에 안된다. 자바스크립트로 조작하면 가능
 
-<br>
+<hr>
 
 ## 궁극의 가운데 정렬
 
@@ -572,7 +574,7 @@ h2 {
 }
 ```
 
-<br>
+<hr>
 
 ## 애니메이션 만들기 심화 (@keyframes)
 
@@ -669,7 +671,21 @@ h2 {
 
 <br>
 
-## 애니메이션 성능 잡는 방법들
+### 3D 애니메이션 (사진 뒤집기)
+  
+- 앞면, 뒷면 배치는 `position: absolute` 사용해야함
+
+- inner 자체를 뒤집어버리는게 나음
+
+- `transform: rotate()`를 사용하는 것이라 처음에 뒷면을 미리 뒤집어놔야함
+
+- 뒷면의 모습이 안보이게 `transform-style: preserve-3d;`와 `front의 z-index 우선순위 높이기`, `backface-visibility: hidden;`
+
+- 내용은 <a href='https://github.com/Shin-Jae-Yoon/TILbefore/blob/master/Language/html_css/lecture/codding_apple/%EA%B3%A0%EA%B8%89%EB%AA%A8%EB%93%88/threeD_animation.html' target='_blank'>threeD_animation.html</a> 참고
+
+<br>
+
+### 애니메이션 성능 잡는 방법들
 
 1. `will-change` 사용
 
@@ -695,9 +711,11 @@ h2 {
 
 이와 같이 쓰면 3D 이동도 가능한데, 이때 GPU를 사용해서 연산한다. 그래서 이걸 이용한 꼼수인데 `translate3d(0, 0, 0)`으로 사용하면 아무곳으로 이동하지 않는 3D 이동 명령을 주고 뒤에 필요한 transform을 적용한다면 GPU를 이용해서 box 클래스가 가진 transform 속성들을 연산하는 원리이다.
 
-<br>
+<hr>
 
-## Css Grid
+## CSS 스킬 심화
+
+### CSS Grid
 
 - `display: grid`는 격자 모눈종이가 있다면 색칠해나가는 방식으로 생각
 
@@ -730,7 +748,7 @@ h2 {
 }
 ```
 
-<p align="center"><img src="https://i.imgur.com/1OMcnmg.png" height="30%" width="50%"></p>
+<p align="center"><img src="https://i.imgur.com/1OMcnmg.png" height="30%" width="30%"></p>
   
 <br>
 
@@ -769,7 +787,7 @@ grid 컨테이너에서 사용하기 좋은 단위는 **fr(fraction)** 이다. �
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/lEhjq3T.png" height="30%" width="50%"></p>  
+<p align="center"><img src="https://i.imgur.com/lEhjq3T.png" height="30%" width="40%"></p>  
 
 ```css
 .grid-nav {
@@ -779,7 +797,7 @@ grid 컨테이너에서 사용하기 좋은 단위는 **fr(fraction)** 이다. �
 
 `grid-row`은 가로 선을 의미한다. 이때 `display: grid`의 자식들에만 사용 가능하다. 따라서 여기서는 여러 div 박스를 의미한다. `1 / 3`가 의미하는 바는 가로선 1~3 만큼 차지해달라는 뜻이다.
 
-<p align="center"><img src="https://i.imgur.com/od9SQy1.png" height="30%" width="50%"></p>  
+<p align="center"><img src="https://i.imgur.com/od9SQy1.png" height="30%" width="40%"></p>  
 
 <br>
 
@@ -855,9 +873,9 @@ grid 컨테이너에서 사용하기 좋은 단위는 **fr(fraction)** 이다. �
 
 이미지 (img) 파일은 기본적으로 글자취급 받기 때문에 글자의 베이스라인처럼 이미지 밑에 하얀색 선이 거슬리게 나올 수 있다. 그때 반드시 `display: block;`을 줘서 없애도록 해보자!
 
-<br><br>  
+<br>
 
-## CSS 스킬 sticky
+### CSS 스킬 sticky
 
 - 스크롤해도 상단에 고정하고자 하는 속성에 `position: sticky;`
 
@@ -884,23 +902,3 @@ grid 컨테이너에서 사용하기 좋은 단위는 **fr(fraction)** 이다. �
 
 1. 스크롤을 할 만한 부모 박스가 있어야 함
 2. top 등 좌표속성과 함께 써야 제대로 보임
-
-<br><br>
-
-## 3D 애니메이션 (사진 뒤집기 예제)
-  
-- 앞면, 뒷면 배치는 `position: absolute` 사용해야함
-
-- inner 자체를 뒤집어버리는게 나음
-
-- `transform: rotate()`를 사용하는 것이라 처음에 뒷면을 미리 뒤집어놔야함
-
-- 뒷면의 모습이 안보이게 `transform-style: preserve-3d;`와 `front의 z-index 우선순위 높이기`, `backface-visibility: hidden;`
-
-- 내용은 <a href='https://github.com/Shin-Jae-Yoon/TILbefore/blob/master/Language/html_css/lecture/codding_apple/%EA%B3%A0%EA%B8%89%EB%AA%A8%EB%93%88/threeD_animation.html' target='_blank'>threeD_animation.html</a> 참고
-
-<br>
-
-## 부트스트랩의 pill badge  
-
-부트스트랩에서 알약 모양 bill badge 썼을 때 알약이 깨지는 경우에는 `box-sizing: border-box;` 확인하자

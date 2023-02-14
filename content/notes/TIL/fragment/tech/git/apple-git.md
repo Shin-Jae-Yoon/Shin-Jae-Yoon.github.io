@@ -5,11 +5,9 @@ enableToc: true
 tags: ["코딩애플 git"]
 ---
 
-<br>  
-
 > 해당 게시글은 <a href='https://codingapple.com/course/git-and-github/' target='_blank'>코딩애플의 git/github 강좌</a>의 필기와 제가 알던 지식을 정리한 글 입니다. 게시글의 그림은 강좌에 나오는 그림입니다.
 
-<br>
+<hr>
 
 ## git 세팅
 
@@ -85,7 +83,7 @@ git config --global core.autocrlf input # mac
     keepBackup = false
 ```
 
-<br>
+<hr>
 
 ## git 명령어
 
@@ -140,7 +138,7 @@ git difftool
 
 ### vscode git
 
-<p align="center"><img src="https://i.imgur.com/amsAiCC.png" height="50%" width="100%"></p>  
+<p align="center"><img src="https://i.imgur.com/amsAiCC.png" height="50%" width="80%"></p>  
 
 1. 1번 버튼 누르면 사용 가능
 
@@ -156,7 +154,7 @@ git difftool
 
 ### git branch
 
-<p align="center"><img src="https://i.imgur.com/4U4hyx9.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/4U4hyx9.png" height="50%" width="80%"></p>
 
 ```bash
 git branch 브랜치명 # 브랜치 생성
@@ -167,7 +165,7 @@ git merge 브랜치명 # 현재 위치(HEAD)에 브랜치명을 병합
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/pgh3IqH.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/pgh3IqH.png" height="50%" width="80%"></p>
 
 - 충돌이 났을 때, 어떤 것을 적용할 지 선택하고 꼭 git add, git commit 해주자.
 
@@ -221,7 +219,7 @@ git branch -M 브랜치명 # 기본 브랜치 변경
 git config --global alias.hist "log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %C(bold red)[[%an]]%C(reset) %C(blue)%d%C(reset)' --date=short"
 ```
 
-<p align="center"><img src="https://i.imgur.com/ep82msA.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/ep82msA.png" height="50%" width="70%"></p>
 
 - 날짜, 커밋명 간단히, 커밋내용, 커밋작성자, 브랜치 다 보인다.
 
@@ -229,15 +227,15 @@ git config --global alias.hist "log --graph --all --pretty=format:'%C(yellow)[%a
 
 - vim 환경이기 때문에 j가 아래 방향키, k가 위 방향키로 잘먹는다.  
 
-<br>
+<hr>
 
-## 법론
+## 방법론
   
 <br>
 
 ### 3-way merge
 
-<p align="center"><img src="https://i.imgur.com/JjWDckm.png" height="50%" width="100%"></p>  
+<p align="center"><img src="https://i.imgur.com/JjWDckm.png" height="50%" width="80%"></p>  
 
 - 신규 브랜치, merge 하고자 하는 중심 브랜치 각각에 새로운 commit이 있을 때 merge하면 두 브랜치의 코드를 합쳐서 새로운 commit을 자동으로 생성
 
@@ -263,7 +261,7 @@ git config --global alias.hist "log --graph --all --pretty=format:'%C(yellow)[%a
 
 ### fast-forward merge
 
-<p align="center"><img src="https://i.imgur.com/7NlcXvG.png" height="70%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/7NlcXvG.png" height="70%" width="80%"></p>
   
 - 신규 브랜치에만 새로운 commit이 있고 merge 하고자 하는 브랜치에는 새로운 commit이 없는 경우 사용하는 merge 방식
 
@@ -277,7 +275,7 @@ git config --global alias.hist "log --graph --all --pretty=format:'%C(yellow)[%a
 
 ### rebase and merge
 
-<p align="center"><img src="https://i.imgur.com/isYTTLj.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/isYTTLj.png" height="50%" width="80%"></p>
 
 - rebase는 브랜치의 시작점을 다른 commit으로 옮겨주는 것
 
@@ -310,7 +308,7 @@ git merge sub
 
 ### squash and merge
 
-<p align="center"><img src="https://i.imgur.com/9uHPO9k.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/9uHPO9k.png" height="50%" width="80%"></p>
 
 - 3-way merge가 너무 많아서 git log 보기 힘들까봐 주로 사용
 
@@ -342,7 +340,7 @@ git commit -m "메세지"
 
 - 혼자서 할 때는 대충 쓰세요.
 
-<br><br>
+<hr>
 
 ## git merge 실습
 
@@ -350,7 +348,7 @@ git commit -m "메세지"
 
 ### 3-way merge 실습
 
-<p align="center"><img src="https://i.imgur.com/oRAPZsl.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/oRAPZsl.png" height="50%" width="70%"></p>
 
 - 분기되었던 모습, 즉, merge된 흔적이 남아있다.
 
@@ -362,7 +360,7 @@ git commit -m "메세지"
 
 ### fast-forward 실습
 
-<p align="center"><img src="https://i.imgur.com/yXrRqUx.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/yXrRqUx.png" height="50%" width="70%"></p>
 
 - fast-forward 방식은 master 브랜치에 새로운 commit이 없으니까 master 브랜치의 HEAD만 fastforward 브랜치로 바뀐 모습이다.
 
@@ -376,17 +374,17 @@ git commit -m "메세지"
 
 ### rebase and fast-forward 실습  
 
-<p align="center"><img src="https://i.imgur.com/GsBAGnt.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/GsBAGnt.png" height="50%" width="70%"></p>
 
 - rebase 하기 전 모습
 
-<p align="center"><img src="https://i.imgur.com/JZynCQH.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/JZynCQH.png" height="50%" width="70%"></p>
 
 - rebase 이후 모습
 
 - 그래프에서 분기가 사라짐을 확인 가능하다.
 
-<p align="center"><img src="https://i.imgur.com/er40Ubr.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/er40Ubr.png" height="50%" width="70%"></p>
 
 - rebase 이후 fast-forward 한 모습
 
@@ -396,27 +394,25 @@ git commit -m "메세지"
 
 ### squash and merge 실습
 
-<p align="center"><img src="https://i.imgur.com/XIehIrZ.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/XIehIrZ.png" height="50%" width="70%"></p>
 
 - squash 하기 이전 모습
   
-<p align="center"><img src="https://i.imgur.com/JEhY3u6.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/JEhY3u6.png" height="50%" width="70%"></p>
 
 - squash를 하고 나서 squash는 되었지만, HEAD는 업데이트가 되지 않았다고 한다. commit을 추가적으로 하고 log를 확인해보면
 
-<p align="center"><img src="https://i.imgur.com/Ulw3b0i.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/Ulw3b0i.png" height="50%" width="70%"></p>
 
 - commit4가 정상적으로 생성된 모습이다. 하지만 squash 브랜치는 남아있다. 그래서 `git branch -D squash`로 브랜치를 삭제해보면
 
-<p align="center"><img src="https://i.imgur.com/r87rsTH.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/r87rsTH.png" height="50%" width="70%"></p>
   
 - 이와 같이 깔끔하게 merge 흔적이 사라진 모습이다.
 
 - squash로 merge하면 브랜치의 내용이 순간이동하는 개념이라 squash 브랜치는 아직 merge 되지 않았다고 나왔다. 그래서 `git branch -d squash`가 아닌 `git branch -D squash`로 삭제했다.
 
-<br>
-
-  
+<hr>
 
 ## git 되돌리기
 
@@ -448,7 +444,7 @@ git restore --staged 파일명
 
 - commit을 없애는 건 아니고 commit 하나를 취소한 commit을 하나 생성해줌
 
-<p align="center"><img src="https://i.imgur.com/cXdKb12.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/cXdKb12.png" height="50%" width="70%"></p>
 
 - 예를 들어, b파일을 만든 **244ef15** commit을 취소하고싶음.
 
@@ -477,7 +473,7 @@ git reset --hard 커밋아이디
 git push -f # 원격저장소에도 업데이트 하기
 ```
 
-<p align="center"><img src="https://i.imgur.com/20nSUUV.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/20nSUUV.png" height="50%" width="70%"></p>
 
 - git revert 예제에서 git reset --hard 한 모습
 
@@ -501,9 +497,7 @@ git reset --mixed 커밋아이디
 
 - 리셋이긴 한데, 변동사항을 지우지는 않고 staging area에도 올려놓지 않는다. 사용하려면 git add, git commit 둘다 해야함
 
-<br>
-
-  
+<hr>
 
 ## git push
 
@@ -535,7 +529,7 @@ git clone 원격저장소주소 # 원격저장소 받아오기
   
 예를 들어, `node_modules`는 깃허브에 올리지 않는다. 어차피 `package.json` 파일만 잘 있으면 `npm install` 했을 때 자동으로 `node_modules` 폴더가 생성되니까.
 
-<br>  
+<hr>
 
 ## github 이용 협업
 
@@ -577,7 +571,7 @@ git pull은 엄밀히 말하면 `git fetch + git merge`이다. 원격 저장소�
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/XNgAdku.png" height="50%" width="100%"></p>  
+<p align="center"><img src="https://i.imgur.com/XNgAdku.png" height="50%" width="70%"></p>  
 
 1. 로컬 환경에서 만든 다른 브랜치로 작업하고 `git push origin 만든브랜치` 해서 브랜치에서 작업한 내용을 원격 repository로 push
 
@@ -591,27 +585,27 @@ git pull은 엄밀히 말하면 `git fetch + git merge`이다. 원격 저장소�
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/hriVIwU.png" height="50%" width="100%"></p>  
+<p align="center"><img src="https://i.imgur.com/hriVIwU.png" height="50%" width="70%"></p>  
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/ZGJ2rZu.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/ZGJ2rZu.png" height="50%" width="70%"></p>
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/G1YX0Cm.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/G1YX0Cm.png" height="50%" width="80%"></p>
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/j15pOFe.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/j15pOFe.png" height="50%" width="80%"></p>
   
 <br>
 
-<p align="center"><img src="https://i.imgur.com/eykNwmI.png" height="50%" width="100%"></p>  
+<p align="center"><img src="https://i.imgur.com/eykNwmI.png" height="50%" width="80%"></p>  
 
 <br>
 
-<p align="center"><img src="https://i.imgur.com/FfXtYA7.png" height="50%" width="100%"></p>  
+<p align="center"><img src="https://i.imgur.com/FfXtYA7.png" height="50%" width="80%"></p>  
 
 merge 전략 3가지 역시 깃허브에 반영되어있음.
 
@@ -633,7 +627,7 @@ merge 전략 3가지 역시 깃허브에 반영되어있음.
 
 합쳐질 브랜치를 master 브랜치 최신 commit으로 rebase 하고 나서 fast-forward merge 같은 작동을 해준다. 결과는 squash and merge와 비슷한데, 합쳐질 브랜치의 commit 내역이 전부 보존된다. 하지만, git log에는 합쳐진 브랜치가 나오지 않는다.
 
-<br>
+<hr>
 
 ## 브랜치 전략
 
@@ -643,11 +637,11 @@ merge 전략 3가지 역시 깃허브에 반영되어있음.
 
 ### Git Flow 전략
 
-<p align="center"><img src="https://i.imgur.com/gjMpVnJ.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/gjMpVnJ.png" height="50%" width="80%"></p>
 
-<p align="center"><img src="https://i.imgur.com/hKXAyGe.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/hKXAyGe.png" height="50%" width="80%"></p>
 
-<p align="center"><img src="https://i.imgur.com/zFqh99w.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/zFqh99w.png" height="50%" width="80%"></p>
 
 **GitFlow** 개발 전략은 게임 개발 같이 항상 안정적인 release를 해야하는 경우에 사용하기 적합하다. 크게 5개 브랜치를 운영한다.
 
@@ -673,7 +667,7 @@ merge 전략 3가지 역시 깃허브에 반영되어있음.
 
 ### Trunk-based 전략
 
-<p align="center"><img src="https://i.imgur.com/AxgYt6e.png" height="50%" width="100%"></p>
+<p align="center"><img src="https://i.imgur.com/AxgYt6e.png" height="50%" width="80%"></p>
 
 코드 짠 것을 대충 배포해도 상관없거나 굳이 큰 업데이트가 없는 안정적인 프로그램의 경우, git flow 처럼 많은 브랜치를 만드는 것보다 해당하는 **Trunk-based 전략**이 더 적합할 수 있다. 그냥 main 브랜치와 기능추가용 feature 브랜치만 사용하면 된다. **github flow**도 해당하는 전략과 비슷하다.
 
@@ -687,7 +681,7 @@ merge 전략 3가지 역시 깃허브에 반영되어있음.
 
 **장점**은 코드를 한 브랜치에서만 관리하기에 편하다는 점이다. 이때 크게 개발하고 한 번에 merge 하는 것보다 작은 단위로 자주 merge 하는 것이 더 안전하다. **단점**은 역시 main 브랜치의 코드가 뻑이 나면 큰일나서 테스트나 코드 리뷰를 자주해야 한다. 그래서 테스트와 배포를 자동으로 하는 <a href='https://seosh817.tistory.com/104' target='_blank'>CI/CD</a>를 도입한 곳에서 자주 사용한다.
 
-<br><br>  
+<hr>
 
 ## git stash
 
