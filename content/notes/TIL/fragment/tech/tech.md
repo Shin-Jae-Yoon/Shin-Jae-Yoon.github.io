@@ -20,5 +20,3 @@ tags: [""]
 
 - 버전 관리를 위한 Git
 - [바로가기](notes/TIL/fragment/tech/git/git)
-
-<hr>
