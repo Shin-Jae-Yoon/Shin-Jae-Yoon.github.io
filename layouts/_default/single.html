@@ -26,7 +26,6 @@
            </li>
           {{ end }}
       </ul>
-      <hr>
       {{partial "toc.html" .}}
       {{partial "toc2.html" .}}
       {{ $hasHeaders := gt (len (findRE "<h\\d.*?>(.|\n)*?</h\\d>" .Content)) 0 }}
