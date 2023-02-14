@@ -5,6 +5,8 @@ enableToc: true
 tags: ["코딩애플 Javascript"]
 ---
 
+> 해당 게시글은 <a href='https://codingapple.com/course/javascript-jquery-ui/' target='_blank'>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.
+
 ## setTimeout, setInterval
 
 <br>

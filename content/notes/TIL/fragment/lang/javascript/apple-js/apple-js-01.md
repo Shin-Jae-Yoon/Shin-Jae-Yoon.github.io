@@ -5,6 +5,8 @@ enableToc: true
 tags: ["코딩애플 Javascript"]
 ---
 
+> 해당 게시글은 <a href='https://codingapple.com/course/javascript-jquery-ui/' target='_blank'>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.
+
 ## 자바스크립트 사용 목적
 
 JavaScript는 html 파일 내부에 숨어서 **html 조작과 변경**을 담당하는 언어이다.

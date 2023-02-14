@@ -5,6 +5,8 @@ enableToc: true
 tags: ["apple-html/css"]
 ---
 
+> 해당 게시글은 <a href='https://codingapple.com/course/html-basics/' target='_blank'>HTML/CSS All-in-one : 기초부터 Bootstrap, SASS, 고급 animation 까지</a> 강의를 정리한 내용입니다.
+
 ## HTML
 
 <br>
