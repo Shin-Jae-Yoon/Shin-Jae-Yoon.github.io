@@ -1,8 +1,8 @@
 ---
-title: "[잔재미] Condition"
+title: "Condition"
 date: "2023-02-14 01:45"
 enableToc: true
-tags: ["잔재미코딩 파이썬"]
+tags: ["🖥️ 잔재미코딩 파이썬"]
 ---
 
 > 해당 게시글은 <a href='https://www.inflearn.com/course/python-crawling-basic' target='_blank'>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.

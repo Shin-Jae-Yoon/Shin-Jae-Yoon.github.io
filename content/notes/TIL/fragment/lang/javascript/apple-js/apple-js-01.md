@@ -1,8 +1,8 @@
 ---
-title: "JS 입문과 웹 개발 01"
+title: "LEVEL 01"
 date: "2023-02-12 23:01"
 enableToc: true
-tags: ["코딩애플 Javascript"]
+tags: ["🖥️ 코딩애플 Javascript"]
 ---
 
 > 해당 게시글은 <a href='https://codingapple.com/course/javascript-jquery-ui/' target='_blank'>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.

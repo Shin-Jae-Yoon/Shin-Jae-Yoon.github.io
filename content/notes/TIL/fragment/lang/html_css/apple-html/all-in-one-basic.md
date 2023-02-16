@@ -1,8 +1,8 @@
 ---
-title: "All-in-One 기초모듈"
+title: "기초모듈"
 date: "2023-02-08 19:45"
 enableToc: true
-tags: ["코딩애플 HTML/CSS"]
+tags: ["🖥️ 코딩애플 HTML/CSS"]
 ---
 
 > 해당 게시글은 <a href='https://codingapple.com/course/html-basics/' target='_blank'>HTML/CSS All-in-one : 기초부터 Bootstrap, SASS, 고급 animation 까지</a> 강의를 정리한 내용입니다.

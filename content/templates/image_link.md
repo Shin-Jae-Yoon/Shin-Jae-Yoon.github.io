@@ -1,0 +1,1 @@
+[<img src="<% tp.file.cursor(0) %>" width="40%">]()

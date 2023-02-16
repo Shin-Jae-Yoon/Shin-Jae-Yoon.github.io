@@ -2,10 +2,10 @@
 title: "코딩애플 git"
 date: "2023-02-14 18:16"
 enableToc: true
-tags: ["코딩애플 git"]
+tags: ["🖥️ 코딩애플 git"]
 ---
 
-> 해당 게시글은 <a href='https://codingapple.com/course/git-and-github/' target='_blank'>코딩애플의 git/github 강좌</a>의 필기와 제가 알던 지식을 정리한 글 입니다. 게시글의 그림은 강좌에 나오는 그림입니다.
+> 해당 게시글은 <a href='https://codingapple.com/course/git-and-github/' target='_blank'>코딩애플의 git/github 강좌</a>의 필기와 제가 알던 지식을 정리한 글 입니다. 
 
 <hr>
 

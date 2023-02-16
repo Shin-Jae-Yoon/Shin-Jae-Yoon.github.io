@@ -1,6 +1,11 @@
 
 `cmd + k` : 링크 바로 걸 수 있음
 
+https://banner.godori.dev/ 배너 생성기
+- width : 700 , height : 200
+- font : Impact
+- color : 61AFEF
+
 > [!EXAMPLE] Examples
 >
 > Aliases: example
