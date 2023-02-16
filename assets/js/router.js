@@ -25,6 +25,7 @@ export const attachSPARouting = (init, rerender) => {
   })
   window.addEventListener("million:navigate", () => {
     render()
+    drawGraph()
     scroll_init()
     btn_init()
   })

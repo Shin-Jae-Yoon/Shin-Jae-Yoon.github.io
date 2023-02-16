@@ -291,9 +291,9 @@ blockquote {
   gap: 1.5em;
   justify-content: center;
 
-  .disabled {
-    opacity: 0.2;
-  }
+  // .disabled {
+  //   opacity: 0.2;
+  // }
 
   & > li {
     text-align: center;
@@ -304,7 +304,7 @@ blockquote {
     }
 
     & a[href$="#"], &.active a {
-      opacity: 0.2;
+      opacity: 0.4;
     }
   }
 }
@@ -325,7 +325,7 @@ article {
 
     &.internal-link {
       text-decoration: none;
-      background-color: transparentize(#8f9fa9, 0.85);
+      // background-color: transparentize(#8f9fa9, 0.85);
       padding: 0 0.1em;
       margin: auto -0.1em;
       border-radius: 3px;
