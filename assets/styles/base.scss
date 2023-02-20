@@ -26,6 +26,17 @@ html {
   @media all and (max-width: 1200px) {
     padding: 25px 5vw;
   }
+
+  & details {
+    & summary {
+      cursor: zoom-in;
+      color: var(--dark);
+    }
+
+    &[open] summary {
+      cursor: zoom-out;
+    }
+  }
 }
 
 
@@ -79,7 +90,7 @@ tbody, li, p {
   opacity: 0.7;
 
   & ul {
-    list-style:lower-greek;
+    list-style:none;
     margin-bottom: 1em;
     padding-inline-start: 0.5em;
     & li {
