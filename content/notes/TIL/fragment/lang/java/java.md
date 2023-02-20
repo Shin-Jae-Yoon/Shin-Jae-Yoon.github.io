@@ -26,7 +26,7 @@ tags: [""]
 
 <div align="center">
 
-[<img src="http://image.yes24.com/goods/112208302/XL" width="35%">](notes/TIL/fragment/lang/java/this-is-java/this-is-java)
+[<img src="http://image.yes24.com/goods/24259565/XL" width="35%">](notes/TIL/fragment/lang/java/java-jungseok/java-jungseok)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="http://image.yes24.com/goods/62281686/XL" width="35%">](notes/TIL/fragment/lang/java/do-it-java/do-it-java)
 

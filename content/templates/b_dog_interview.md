@@ -1,1 +1,1 @@
-notes/Interview/dog-week<% tp.file.cursor(0) %>
+notes/Interview/dog-study/dog-week<% tp.file.cursor(0) %>
