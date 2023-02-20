@@ -142,7 +142,7 @@ tags: ["불변 객체", "Checked Exception", "Unchecked Exception"]
 5. **인스턴스 필드에 가변객체가 포함된다면 방어적 복사를 이용하여 전달**
 
 <details>
-<summary>==코드 예시보기==</summary>
+<summary> ==<strong>코드 예시보기</strong>== </summary>
 
 <a href='https://dev-cool.tistory.com/23' target='_blank'>코드 출처</a>
 
