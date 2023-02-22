@@ -598,15 +598,35 @@ Spring MVC request life cycle을 보면, 아래와 같이 흐름이 생긴다.
 
 이 그림을 봤을 때, Filter 단에서 예외가 발생하면 애초에 ==스프링 영역으로 들어가지 못하고, 튕겨져 나온다.== 하지만, `@HandlerException`, `@ControllerAdvice`와 같은 예외 처리는 Spring에서 제공하는 애노테이션이라서 스프링 영역이 아닌 필터에서는 사용할 수 없다.
 
+<br>
+
+<p align="center"><img src="https://i.imgur.com/3JXXEhS.png" width="80%"></p>
+
 이러한 경우에는 ==Filter에서 try-catch 문으로 예외를 잡아서 처리한다.== 위 그림의 예시로는 `doFilter()` 메서드를 try-catch로 잡아서 그 시점에 발생한 예외를 곧바로 handling 하는 것이다.
 
 <br>
 
 ### Filter에서 처리하는 예외
 
-1. (가장중요) 모든 요청에 대한 로깅
+1. **(가장중요) 모든 요청에 대한 로깅**
 2. 보안 관련 공통 작업 (JWT)
 3. ServletRequest 커스터마이징
 4. 이미지/데이터 압축 및 문자열 인코딩
 
 이중, 모든 요청에 대한 로깅은 특히 중요한데, 말 그대로 request, response 등 모든 처리에 관하여 로깅할 수 있다.
+
+<br>
+
+### 참고자료
+
+- <a href='https://cheese10yun.github.io/spring-guide-exception/#null' target='_blank'>(가장 쓸만할 듯)프로젝트에 적용하면 좋을 실제 Spring 예외</a>
+- <a href='https://www.nextree.co.kr/p3239/' target='_blank'>자바에서의 Exception Handling 3가지 방법</a>
+- <a href='https://catsbi.oopy.io/92cfa202-b357-4d47-8de2-b9b3968dfb2e' target='_blank'>종합적인 예외처리 설명</a>
+- <a href='https://jaehun2841.github.io/2018/08/30/2018-08-25-spring-mvc-handle-exception/#ResponseStatusExceptionResolver' target='_blank'>Spring Handler Exception</a>
+- <a href='https://github.com/binghe819/TIL/blob/master/Spring/%EA%B8%B0%ED%83%80/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC%20%EA%B0%9C%EB%85%90%20%EB%B0%8F%20%EC%A0%84%EB%9E%B5.md' target='_blank'>스프링 예외처리 개념 전략</a>
+- <a href='https://velog.io/@backtony/면접-시리즈2-Spring-JPA' target='_blank'>Spring-JPA 면접시리즈</a>
+- <a href='https://terasolunaorg.github.io/guideline/5.3.0.RELEASE/en/ArchitectureInDetail/WebApplicationDetail/ExceptionHandling.html#exception-handling-basic-flow-label' target='_blank'>(원본)Exception Handling Guideline</a>
+- <a href='https://steady-coding.tistory.com/601' target='_blank'>Filter vs Interceptor</a>
+- <a href='https://velog.io/@wonizizi99/SpringSpring%EC%9D%98-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC-%ED%9D%90%EB%A6%84' target='_blank'>Spring에서의 예외 처리 흐름도</a>
+- <a href='https://jhkimmm.tistory.com/29' target='_blank'>Filter 내에서 발생한 예외 처리하기</a>
+- <a href='https://beemiel.tistory.com/11' target='_blank'>Spring Security JWT 토큰 검증시 Exception 처리</a>
