@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "4cdf58f6287f4b55",
+        "id": "36755c7cc57dba00",
         "type": "tabs",
         "children": [
           {
-            "id": "d924c4c07e53484e",
+            "id": "9eb86a1aa61b442d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/notes/TIL/TIL.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -68,8 +72,7 @@
           "state": {}
         }
       }
-    ],
-    "currentTab": 0
+    ]
   },
   "right": {
     "id": "fb7410b74aa11e36",
@@ -81,6 +84,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "content/notes/TIL/TIL.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -97,6 +101,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "content/notes/TIL/TIL.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -107,12 +112,17 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "content/notes/TIL/TIL.md"
+          }
         }
       }
     ],
     "currentTab": 0
   },
-  "active": "d924c4c07e53484e",
-  "lastOpenFiles": []
+  "active": "9eb86a1aa61b442d",
+  "lastOpenFiles": [
+    "content/notes/Interview/Interview.md",
+    "content/notes/TIL/TIL.md"
+  ]
 }

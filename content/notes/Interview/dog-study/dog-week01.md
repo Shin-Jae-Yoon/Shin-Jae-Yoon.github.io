@@ -435,5 +435,5 @@ Exception Handling에 관해서는 [2주차 스터디 참고](notes/Interview/do
 
 > [!note] Spring에서의 Rollback <br>
 > @Transactional 애노테이션에서는 의도해서 **모든** 경우의 수를 처리하지 않는 이상 롤백이 되지 않는다. 결국, Runtime Error를 발생시키지 않는다는 뜻이다. 정리하자면, 모든 경우의 수를 따져 try catch 해서 throw 하지 않으면 롤백이 되지 않아서, Runtime Error가 발생하지 않아 예외처리가 힘들다는 특징이 있다. (스터디 내용) <br><br>
-> Spring은 디폴트로 **UnCheckedException** 과 **Error**에 대해서 롤백 정책을 설정 - <a href='https://pjh3749.tistory.com/269' target='_blank'>참고링크</a><br>
+> Spring은 디폴트로 **UnCheckedException** 과 **Error**에 대해서 롤백 정책을 설정 - <a href='https://pjh3749.tistory.com/269' target='_blank'>참고링크1</a><br>, <a href='https://kdhyo.kr/31' target='_blank'>참고링크2</a>
 > 이 파트는 @Transactional 공부하고 다시 돌아오기

@@ -1,3 +1,2 @@
-> [!quote] Memo
->
-> memo
+> [!quote] <% tp.file.cursor(0) %> <br>
+> 
