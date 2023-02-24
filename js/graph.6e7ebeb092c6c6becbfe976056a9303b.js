@@ -114,6 +114,7 @@ async function drawGraph(baseUrl, isHome, pathColors, graphConfig) {
     .attr("width", width)
     .attr("height", height)
     .attr('viewBox', [-width / 2 / scale, -height / 2 / scale, width / scale, height / scale])
+    // .attr('viewBox', [-80, -80, 160, 160])
 
   if (enableLegend) {
     const legend = [{ Current: "var(--g-node-active)" }, { Note: "var(--g-node)" }, ...pathColors]
