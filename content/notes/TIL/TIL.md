@@ -14,4 +14,4 @@ tags: [""]
 > 두 번째 뇌를 만드는 것이 궁극적인 목표
 
 1. [단편적 지식](notes/TIL/fragment/fragment)들을 보는 공간
-2. [통합된 지식](notes/TIL/integrated/integrated)을 보는 공간
+2. [통합된 지식](integrated)을 보는 공간
