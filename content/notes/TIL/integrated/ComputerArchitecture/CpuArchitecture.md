@@ -2,7 +2,7 @@
 title: "CPU 아키텍처"
 date: "2023-02-24 22:28"
 enableToc: true
-tags: [""]
+tags: ["컴퓨터구조"]
 ---
 
 ==**CPU architecture(또는 Micro architecture)는 CPU나 GPU 같은 하드웨어가 작동하는 방식을 서술한 일종의 컴퓨터 설계도이다.**== 

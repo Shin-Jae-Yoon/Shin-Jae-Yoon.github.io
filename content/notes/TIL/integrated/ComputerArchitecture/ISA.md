@@ -2,7 +2,7 @@
 title: "ISA"
 date: "2023-02-24 18:07"
 enableToc: true
-tags: [""]
+tags: ["컴퓨터구조"]
 ---
 
 ==**ISA(Instruction Set Architecture, 명령어 집합 구조)는 마이크로프로세서가 인식해서 기능을 이해하고 실행할 수 있는 기계어 명령어를 의미한다.**== 즉, 이는 하드웨어와 소프트웨어 사이의 **Interface를 정의**하는 것이다.

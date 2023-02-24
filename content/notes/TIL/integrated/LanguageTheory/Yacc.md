@@ -2,7 +2,7 @@
 title: "Yacc"
 date: "2023-02-24 21:28"
 enableToc: true
-tags: [""]
+tags: ["프로그래밍 언어론"]
 ---
 
 <br>

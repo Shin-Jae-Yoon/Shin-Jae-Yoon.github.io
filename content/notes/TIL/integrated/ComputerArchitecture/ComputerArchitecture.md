@@ -2,7 +2,7 @@
 title: "컴퓨터구조"
 date: "2023-02-24 22:01"
 enableToc: true
-tags: [""]
+tags: ["컴퓨터구조"]
 ---
 
 ==**컴퓨터구조(Computer Architecture)는 하드웨어를 구성하는 각 장치의 특성과 동작 원리를 다루는 학문이다.**==
