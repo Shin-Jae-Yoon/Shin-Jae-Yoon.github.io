@@ -16,3 +16,8 @@ tags: [""]
 ## 2주차 스터디
 
 [<img src="https://i.imgur.com/d8Xzl60.png" width="100%">](notes/Interview/dog-study/dog-week02)
+
+## 3주차 스터디
+
+[<img src="https://i.imgur.com/4ogGvy3.png" width="100%">](notes/Interview/dog-study/dog-week03)
+
