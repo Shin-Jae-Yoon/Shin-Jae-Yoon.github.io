@@ -24,11 +24,11 @@
         padding-top: 2em;
         padding-bottom: 2em;
         justify-content: space-around;
+        align-items: center;
 
         .project-item-title {
-          min-width: 400px;
-          max-width: 400px;
-          height: 26em;
+          width: 50%;
+          height: 100%;
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
           margin-left: 2em;
 
@@ -124,12 +124,11 @@
     .project-page-container {
       .project-container {
         .project-item-title {
-          min-width: 300px !important;
-          max-width: 300px !important;
-          height: 20em;
+          min-width: 250px !important;
+          max-width: 250px !important;
 
           video {
-            height: 20em !important;
+            height: 15em !important;
           }
         }
         .project-item-content {
@@ -186,6 +185,13 @@
   @media screen and (max-width: 620px) {
     .project-container {
         .project-item {
+          .project-item-title {
+            .project-item-title-img-container {
+              img {
+                width: 100%;
+              }
+            }
+          }
           .project-item-content {
             width: 100% !important;
           }

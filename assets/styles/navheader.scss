@@ -324,8 +324,18 @@
 @media screen and (max-width: 576px) {
   .nav-header-container {
     header {
-      justify-content: space-around;
+      padding: 2.5em 0;
       font-size: 0.9rem;
+      min-width: 340px;
+
+      #page-title {
+        margin-left: 3em;
+      }
+
+      #search-icon {
+        margin-left: 0;
+        margin-right: 1em;
+      }
     }
   }
 
@@ -333,12 +343,14 @@
     .main-index-one {
       p {
         width: 30em;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
       }
     }
-  }
 
-  .flex-item {
-    width: 100%;
+    .main-index-three {
+      p {
+        font-size: 0.7rem;
+      }
+    }
   }
 }
