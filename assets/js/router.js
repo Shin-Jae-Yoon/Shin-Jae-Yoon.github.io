@@ -22,11 +22,13 @@ export const attachSPARouting = (init, rerender) => {
     router(".singlePage")
     render()
     scroll_init()
+    btn_init()
   })
   window.addEventListener("million:navigate", () => {
     render()
-    drawGraph()
     scroll_init()
     btn_init()
+    // drawGraph()
+    // global_init()
   })
 }

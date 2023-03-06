@@ -1,0 +1,42 @@
+{{/*  inspired by https://github.com/alex-shpak/hugo-book/blob/master/layouts/partials/docs/menu-filetree.html  */}}
+{{ $section := default "/brain" .Site.Params.BookSection  }}
+{{ if eq $section "*" }}
+  {{ $section = "/" }} {{/* Backward compatibility */}}
+{{ end }}
+
+{{ with .Site.GetPage $section }}
+  {{ template "folder-children" (dict "Section" . "CurrentPage" $) }}
+{{ end }}
+
+{{ define "folder-children" }}{{/* (dict "Section" .Section "CurrentPage" .CurrentPage) */}}
+  <ul>
+    {{ range (where .Section.Pages "Params.hidden" "ne" true) }}
+      {{ if .IsSection }}
+        <li class="folder">
+          <div class="wrapper">
+            <a href="javascript:void(0)" class="title">
+              {{- partial "title" .Page -}}
+            </a>
+            <div class="a-wrapper">
+              <div class="arrow"></div>
+            </div>
+          </div>
+          {{ template "folder-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ else if and .IsPage }}
+        <li>
+          {{ template "children-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ end }}
+
+{{ define "children-link" }}{{/* (dict "Page" .Page "CurrentPage" .CurrentPage) */}}
+  {{ $current := eq .CurrentPage .Page }}
+  <div class="wrapper-link">
+    <a href="{{ .Page.RelPermalink }}" class="page-link" style="display: block; width: 100%;">
+      {{- partial "title" .Page -}}
+    </a>
+  </div>
+{{ end }}

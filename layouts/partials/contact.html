@@ -1,3 +1,10 @@
+<script
+async
+src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+crossorigin="anonymous"
+></script>
+
 <!-- set data/config yaml file based on website language -->
 {{ $config := cond (eq $.Site.Language.Lang "ko") "config" (printf "config.%s" $.Site.Language.Lang) }}
 {{ $data := index $.Site.Data $config }}
@@ -6,14 +13,42 @@
     <footer>
         {{ $name := $data.name | default $.Site.Data.config.name }}
         {{ $year := dateFormat "2006" now }}
-        <p style="margin-bottom: 0;">{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
-        <p style="margin-top: 0;">
-            <a href="https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io">Dev Uni</a> has customized it by adding a few features.
-        </p>
-        <ul>
-            <li><a href="https://github.com/Shin-Jae-Yoon"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://jae-yoon.tistory.com/"><i class="fa-solid fa-tenge-sign"></i></a></li>
-            <li><a href="mailto:wlwhsvkdlxh@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
-        </ul>
+        <div class="contact-left">
+            <p style="margin-bottom: 0;">{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
+            <p style="margin-top: 0;">
+                <a href="https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io">Dev Uni</a> has customized it by adding a features.
+            </p>
+            <div class="contact-left-img">
+                <a href="https://pages.github.com/">
+                    <img src="/images/logo-ghpages.png">
+                </a>
+            </div>
+        </div>
+        <div class="contact-right">
+            <div class="contact-right-flex">
+                <div class="contact-right-mountain">
+                    <img src="/images/logo-contact.png">
+                </div>
+                <div class="contact-right-flexitem">
+                    <a href="https://github.com/Shin-Jae-Yoon">
+                        <img src="/images/logo-contact-github.png">
+                        <p>Github</p>
+                    </a>
+                </div>
+                <div class="contact-right-flexitem">
+                    <a href="https://jae-yoon.tistory.com/">
+                        <img src="/images/logo-contact-tistory.png">
+                        <p>Tistory</p>
+                    </a>
+                </div>
+                <div class="contact-right-flexitem">
+                    <a href="https://open.kakao.com/o/sBqoUA7e">
+                        <img src="/images/logo-message.png">
+                        <p>Message</p>
+                    </a>
+                </div>
+            </div>
     </footer>
 </div>
+{{ $js := resources.Get "js/graph.js" | resources.Fingerprint "md5" }}
+<script src="{{ $js.Permalink }}"></script>

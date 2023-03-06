@@ -51,9 +51,40 @@ function btn_init() {
     document.querySelector(".top-btn").addEventListener("click", () => {
       window.scrollTo({top:0, behavior:"smooth"})
     })
-  
-    document.querySelector(".bottom-btn").addEventListener("click", () => {
-      window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"})
-    })
+  }
+}
+
+function global_init() {
+  const expand_graph_container = document.getElementsByClassName("expand-graph-container")[0]
+  const blurElement = document.getElementsByClassName("blur-element")[0]
+  const expand_btn = document.getElementById("expand-btn")
+  const expand_btn2 = document.getElementById("expand-btn2")
+  const expand_close_btn = document.getElementById("expand-close-btn")
+
+  expand_btn.onclick = function (event) {
+    event.preventDefault()
+    event.stopPropagation()
+    expand_graph_container.style.visibility = "visible"
+    expand_graph_container.style.opacity = "1"
+  }
+
+  expand_btn2.onclick = function (event) {
+    event.stopPropagation()
+    expand_graph_container.style.visibility = "visible"
+    expand_graph_container.style.opacity = "1"
+  }
+
+  expand_close_btn.onclick = function (event) {
+    event.stopPropagation()
+    expand_graph_container.style.opacity = "0"
+    expand_graph_container.style.visibility = "hidden"
+    blurElement.classList.remove("enabled")
+  }
+
+  expand_graph_container.onclick = function (event) {
+    event.stopPropagation()
+    expand_graph_container.style.opacity = "0"
+    expand_graph_container.style.visibility = "hidden"
+    blurElement.classList.remove("enabled")
   }
 }

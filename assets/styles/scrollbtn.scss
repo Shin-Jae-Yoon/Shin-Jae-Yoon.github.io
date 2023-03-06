@@ -1,0 +1,68 @@
+.top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  z-index: 16;
+  background-color: var(--sidetextcolor);
+  border: none;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--sidetopbtn);
+      cursor: pointer;
+    }
+  }
+
+  .top-btn-img {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+.mobile-expand-btn {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  z-index: 15;
+  background-color: var(--sidetextcolor);
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 0.5em;
+  transition: all 0.2s ease-in-out;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      cursor: pointer;
+      background-color: var(--sidetopbtn);
+    }
+  }
+
+  i {
+    font-size: 1.5rem;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .top-btn {
+    bottom: 6rem;
+  }
+
+  .mobile-expand-btn {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .top-btn-img {
+    font-size: 3rem;
+  }
+}

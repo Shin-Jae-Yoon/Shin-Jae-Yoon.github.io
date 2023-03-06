@@ -1,0 +1,10 @@
+{{if $.Site.Data.config.enableExpandGraph}}
+<div class="expand-graph-container" id="footer2">
+  {{if $.Site.Data.config.enableFooter}}
+    <i class="fa-solid fa-x" id="expand-close-btn"></i>
+      <div>
+          {{ partial "graph-expand.html" . }}
+      </div>
+  {{end}}
+</div>
+{{end}}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+  {{ partial "head.html" . }}
+
+  <body>
+    {{partial "search.html" .}} {{partial "header.html" .}}
+    <div class="singlePage projectPage">
+      <div class="project-page-container">
+        <div class="project-header">
+          <h2></h2>
+        </div>
+        <div class="project-container">
+          <div class="project-item">
+            <div class="project-item-title">
+              <div class="project-item-title-img-container">
+                <video id="vid1" src="/images/project_01_video02.mp4"></video>
+                <video id="vid2" src="/images/project_01_video03.mp4"></video>
+              </div>
+            </div>
+            <div class="project-item-content">
+              <div class="project-item-content-title">
+                <h3 class="pict-header">FASHION BOOMER PROJECT<br /></h3>
+                <h3 class="pict-period">PERIOD 2022.10 ~ 2022.12<br /></h3>
+                <p class="pict-content">→ 누끼따기 활용 패션추천 시스템<br /></p>
+                <p class="pict-content">→ 2022 캡스톤디자인 장려상<br /></p>
+                <p class="pict-content">→ 2022 한국지능정보시스템학회 추계 학회 출품<br /></p>
+              </div>
+              <div class="project-item-content-footer">
+                <p class="pict-github">
+                  <a href="https://github.com/Shin-Jae-Yoon/FashionBoomer_android" target="_blank"
+                    >See the detailed code on github</a
+                  >
+                </p>
+                <p class="pict-copyright">COPYRIGHT © Shin-Jae-Yoon, Kim-Ji-Whan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-container">
+          <div class="project-item">
+            <div class="project-item-title">
+              <div class="project-item-title-img-container">
+                <img src="/images/project_02.png">
+              </div>
+            </div>
+            <div class="project-item-content">
+              <div class="project-item-content-title">
+                <h3 class="pict-header">SEARCH PHONE NUMBER<br /></h3>
+                <h3 class="pict-period">PERIOD 2022.04 ~ 2022.05<br /></h3>
+                <p class="pict-content">→ 휴대폰 번호 조회 프로젝트<br /></p>
+                <p class="pict-content">→ permission 기반 route<br /></p>
+                <p class="pict-content">→ front, aws, db 담당<br /></p>
+              </div>
+              <div class="project-item-content-footer">
+                <p class="pict-github">
+                  <a href="https://github.com/Shin-Jae-Yoon/Search_phoneNumber" target="_blank"
+                    >See the detailed code on github</a
+                  >
+                </p>
+                <p class="pict-copyright">COPYRIGHT © Shin-Jae-Yoon, Hwang-Jae-Hyun</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {{ $video := resources.Get "js/videoplay.js" | resources.Fingerprint "md5" }}
+      <script script src="{{ $video.Permalink }}"></script>
+    </div>
+    {{partial "contact.html" .}}
+  </body>
+</html>

@@ -1,13 +1,14 @@
-<div class="content-list">
-  <hr>
-  <h2>{{ i18n "recent_notes" }}</h2>
+<div class="content-list" style="margin-bottom: 2em;">
+  <h2 style="padding-bottom: 1em;">최근 업로드된 게시글</h2>
   <!--
   You can also configure this to find related pages!
   All you need to pass into the "page-list.html" partial
   is a collection of pages.
   https://gohugo.io/content-management/related/
   -->
-  {{$notes := .Site.RegularPages.ByLastmod.Reverse}}
-  {{partial "page-list.html" (first 5 $notes)}}
+  <div class="section-content-list">
+    {{$notes := .Site.RegularPages.ByLastmod.Reverse}}
+    {{partial "page-list.html" (first 6 $notes)}}
+  </div>
 </div>
 

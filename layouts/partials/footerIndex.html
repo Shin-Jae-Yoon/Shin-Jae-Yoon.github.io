@@ -1,7 +1,7 @@
 {{if $.Site.Data.config.enableFooter}} {{if $.Site.Data.graphConfig.enableGlobalGraph}}
 <div class="page-end" id="footer">
   <div>
-    <!-- {{partial "graph.html" .}} -->
+    {{partial "graph.html" .}}
     <script
       async
       src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
@@ -31,4 +31,4 @@
     {{partial "graph.html" .}}
   </div>
 </div>
-{{end}} {{end}} {{partial "contact.html" .}}
+{{end}} {{end}}

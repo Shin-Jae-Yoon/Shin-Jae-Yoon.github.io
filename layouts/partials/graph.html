@@ -4,12 +4,15 @@
   integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
   crossorigin="anonymous"
 ></script>
-<h3>{{ i18n "interactive_graph" }}</h3>
+<div class="graph-header">
+  <p>{{ i18n "interactive_graph" }}</p>
+  <button class="expand-btn" id="expand-btn"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+</div>
 <div id="graph-container"></div>
 <style>
   :root {
-    --g-node: var(--secondary);
-    --g-node-active: var(--primary);
+    --g-node: lightgray;
+    --g-node-active: var(--secondary);
     --g-node-inactive: var(--visited);
     --g-link: var(--outlinegray);
     --g-link-active: #5a7282;

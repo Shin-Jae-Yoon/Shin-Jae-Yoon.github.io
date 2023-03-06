@@ -1,0 +1,25 @@
+<div class="single-aside-box">
+    <aside class="single-aside">
+        {{if $.Site.Data.config.enableFooter}}
+        <div class="single-graph-container" id="footer">
+            <div>
+                {{ partial "graph.html" . }}
+            </div>
+        </div>
+        {{end}}
+
+        {{ $hasHeaders := gt (len (findRE "<h\\d.*?>(.|\n)*?</h\\d>" .Content)) 0 }}
+        {{ if (or (and (not $.Site.Data.config.enableToc) .Params.enableToc) (and $.Site.Data.config.enableToc (ne .Params.enableToc false) $hasHeaders)) }}
+            <aside class="asideTOC" id="asideTOC">
+                <div class="toc-header">
+                    <a href="#" id="asideTocTitle">{{ i18n "toc" }}</a>
+                </div>
+
+                {{ .TableOfContents }}
+            </aside>
+        {{ end }}
+    </aside>
+</div>
+<script>
+    scroll_init()
+</script>

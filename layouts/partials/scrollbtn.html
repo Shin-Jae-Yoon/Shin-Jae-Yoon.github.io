@@ -1,0 +1,15 @@
+<div class="btn-absolute">
+    <button class="top-btn">
+      <i class="top-btn-img fa-solid fa-arrow-up"></i>
+    </button>
+    <button class="mobile-expand-btn" id="expand-btn2">
+      <i class="fa-solid fa-diagram-project"></i>
+    </button>
+</div>
+<script>
+  btn_init()
+  document.querySelector(".top-btn").addEventListener("click", (e) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  })
+</script>

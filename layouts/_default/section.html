@@ -3,19 +3,29 @@
 {{ partial "head.html" . }}
 
 <body>
-{{partial "search.html" .}}
-<div class="singlePage">
-    <!-- Begin actual content -->
+    {{partial "search.html" .}}
     {{partial "header.html" .}}
-    <article>
-        <h1>{{ i18n "all_posts" . }}</h1>
-        {{with .Params.description}}
-            <p>{{.}}</p>
-        {{end}}
-        {{partial "page-list.html" .Paginator.Pages.ByLastmod.Reverse }}
-        {{ template "_internal/pagination.html" .}}
-    </article>
-    {{partial "contact.html" .}}
-</div>
+    <div class="singlePage" style="padding: 0; margin: 0; width: 100%;">
+        <div class="blur-element"></div>
+        <div class="section-container">
+            {{partial "docsmenu.html" . }}
+            
+            <div class="section-content">
+                {{if $.Site.Data.config.enableFooter}} {{if $.Site.Data.graphConfig.enableGlobalGraph}}
+                    <div class="global-graph-container" id="footer">
+                        <div>
+                            {{ partial "global-graph.html" . }}
+                        </div>
+                    </div>
+                {{end}} {{end}}
+        
+                {{if $.Site.Data.config.enableRecentNotes}}
+                    {{partial "recent.html" . }} 
+                {{end}}
+            </div>
+
+        </div>
+    </div>
+{{partial "contact.html" .}}
 </body>
 </html>

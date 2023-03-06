@@ -4,9 +4,8 @@
 
 <body>
 {{partial "search.html" .}}
+{{partial "header.html" .}}
 <div class="singlePage">
-    <!-- Begin actual content -->
-    {{partial "header.html" .}}
     <article>
         <h1>{{ i18n "all_posts" . }}</h1>
         {{with .Params.description}}
@@ -19,12 +18,12 @@
                 <p><b>{{ i18n "notes_count" }}{{ .Count }}{{ i18n "notes_count2" }}</b> {{if gt .Count 10}}({{ i18n "first_10"}}){{end}}</p>
             </div>
             {{ with ($.Site.GetPage (printf "/tags/%s" .Page.Title)) }}
-            {{partial "page-list.html" (first 10 .Pages.ByLastmod.Reverse)}}
+            {{partial "page-list.html" (first 0 .Pages.ByLastmod.Reverse)}}
             {{ end }}
             {{ end }}
         </div>
     </article>
-    {{partial "contact.html" .}}
 </div>
+{{partial "contact.html" .}}
 </body>
 </html>

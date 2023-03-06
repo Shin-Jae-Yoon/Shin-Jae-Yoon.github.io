@@ -4,9 +4,8 @@
 
 <body>
 {{partial "search.html" .}}
+{{partial "header.html" .}}
 <div class="singlePage">
-    <!-- Begin actual content -->
-    {{partial "header.html" .}}
     <article>
         <h1>{{ i18n "tag" }}: {{ .Title }}</h1>
         {{with .Params.description}}
@@ -15,7 +14,7 @@
         {{partial "page-list.html" .Paginator.Pages}}
         {{ template "_internal/pagination.html" . }}
     </article>
-    {{partial "contact.html" .}}
 </div>
+{{partial "contact.html" .}}
 </body>
 </html>

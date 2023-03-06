@@ -3,6 +3,7 @@ enableToc: true
 openToc: false
 enableLinkPreview: true
 enableLatex: true
+enableExpandGraph: true
 enableCodeBlockTitle: true
 enableCodeBlockCopy: true
 enableCallouts: true
@@ -20,9 +21,7 @@ search:
 description:
   단편적 지식들을 새롭고 통합된 지식으로
 page_title:
-  "개발자 유니 - 두 번째 뇌"
-page_title2:
-  "개발자 유니"
+  "Dev Uni"
 links:
   - link_name: Tistory
     link: https://jae-yoon.tistory.com/

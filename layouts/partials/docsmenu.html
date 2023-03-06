@@ -1,0 +1,26 @@
+<!-- <aside class="main-aside">
+    <div class="menu-content-header">
+        <a href="{{ $.Site.BaseURL}}brain/">🧠 Brain</a>
+        <button class="collapse-btn"><i class="fa-solid fa-arrow-down-up-across-line"></i></button>
+      </div>
+    {{ partial "menu-content" . }}
+</aside>
+{{ $jss := resources.Get "js/menu.js" | resources.Fingerprint "md5" }}
+<script src="{{ $jss.Permalink }}"></script> -->
+<div class="section-menu-btn"><i class="fa-solid fa-bars"></i></div>
+<div class="main-aside-box disabled">
+  <aside class="main-aside">
+    <div class="menu-nav-header">
+      <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
+      <li><a href="{{ $.Site.BaseURL}}about/">{{ i18n "about" }}</a></li>
+      <li><a href="{{ $.Site.BaseURL}}project/">{{ i18n "project" }}</a></li>
+    </div>
+    <div class="menu-content-header">
+        <a class="menu-content-header-btn" href="{{ $.Site.BaseURL}}brain/">📚 Brain</a>
+        <button class="collapse-btn"><i class="fa-solid fa-arrow-down-up-across-line"></i></button>
+      </div>
+    {{ partial "menu-content" . }}
+  </aside>
+  {{ $jss := resources.Get "js/menu.js" | resources.Fingerprint "md5" }}
+  <script src="{{ $jss.Permalink }}"></script>
+</div>

@@ -1,23 +1,17 @@
-<header style="margin-bottom: 0;">
-    {{ $config := cond (eq $.Site.Language.Lang "ko") "config" (printf "config.%s" $.Site.Language.Lang) }}
-    <img src="https://img1.daumcdn.net/thumb/C32x32/?scode=mtistory2&fname=https%3A%2F%2Ftistory3.daumcdn.net%2Ftistory%2F5252507%2F9f1447b3d8ac45ffa6c01c21fa6aec75"/>
-    <h1 style="margin-left: 0.2em;" id="page-title"><a href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a></h1>
-    <h1 style="margin-left: 0.2em;" id="page-title2"><a href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title2 | default $.Site.Data.config.page_title2 }}</a></h1>
-    <div class="spacer"></div>
-    <div id="search-icon">
-      <p>{{ i18n "search" }}</p>
-      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">{{ i18n "search_icon" }}</title><desc id="desc">{{ i18n "icon_search" }}</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
-    </div>
-    <div style="margin-left: 1em;"><a href="/tags"><i class="fa-solid fa-hashtag"></i></a></div>
-    {{partial "darkmode.html" .}}
-</header>
-<div style="margin-bottom: 3em;">
-	<ul class="header-nav">
-    <li style="margin-right: 1em;"><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
-    <li style="margin-right: 1em;"><a href="/about/">{{ i18n "about" }}</a></li>
-    <li style="margin-right: 1em;"><a href="{{ $.Site.BaseURL}}notes/TIL/TIL">{{ i18n "til" }}</a></li>
-    <li><a href="/notes/Interview/Interview">{{ i18n "interview" }}</a></li>
-    </ul>
+<div class="nav-header-container">
+  <header>
+      {{ $config := cond (eq $.Site.Language.Lang "ko") "config" (printf "config.%s" $.Site.Language.Lang) }}
+      <!-- <h1 id="page-title"><a href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a></h1> -->
+      <h1 id="page-title"><a href="{{ $.Site.BaseURL}}">Dev Uni</a></h1>
+      <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
+      <li><a href="{{ $.Site.BaseURL}}about/">{{ i18n "about" }}</a></li>
+      <li><a href="{{ $.Site.BaseURL}}brain/">{{ i18n "brain" }}</a></li>
+      <li><a href="{{ $.Site.BaseURL}}project/">{{ i18n "project" }}</a></li>
+      <div id="search-icon">
+        <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">{{ i18n "search_icon" }}</title><desc id="desc">{{ i18n "icon_search" }}</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+        <p>Search<span style="vertical-align: middle; margin-left: 1em;">⌘</span> + k</p>
+      </div>
+      </ul>
+  </header>
 </div>
-
 

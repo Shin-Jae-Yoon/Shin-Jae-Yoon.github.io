@@ -34,11 +34,11 @@ other = "Home"
 [about]
 other = "About"
 
-[til]
-other = "TIL"
+[brain]
+other = "Brain"
 
-[interview]
-other = "Interview"
+[project]
+other = "Project"
 
 [light_mode]
 other = "Light Mode"
@@ -50,7 +50,7 @@ other = "Dark Mode"
 other = "Edit Source"
 
 [interactive_graph]
-other = "연결된 그래프"
+other = "Interactive Graph"
 
 [search]
 other = "Search"
@@ -71,7 +71,7 @@ other = "first 3 {{ .notes }}"
 other = " 검색어를 입력하세요 "
 
 [toc]
-other = "CONTENTS"
+other = "ON THIS PAGE"
 
 [copyright]
 other = "Made by {{ .name }} using <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"

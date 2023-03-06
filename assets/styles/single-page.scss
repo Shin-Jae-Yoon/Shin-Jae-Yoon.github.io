@@ -1,0 +1,333 @@
+.expand-graph-container {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 30;
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: #676a6a9d;
+  transition: opacity 0.3s linear;
+
+  & #expand-close-btn {
+    position: fixed;
+    top: 22vh;
+    right: 16vw;
+    z-index: 40;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.408);
+
+    transition: color 0.2s ease-in-out;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        cursor: pointer;
+        color: var(--sidetextcolor);
+      }
+    }
+  }
+
+  & #graph-container2 {
+    background-color: white;
+    width: 70vw;
+    height: 70vh;
+    margin: auto;
+    margin-top: 20vh;
+    position: relative;
+    border: rgba(0, 0, 0, 0.408) 4px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    & > svg {
+      display: block;
+      z-index: 30;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+.section-container {
+  .single-content {
+    width: 100%;
+    padding: 3em 5em;
+    overflow-x: hidden;
+  }
+
+  &.single-container {
+    justify-content: space-between;
+  }
+}
+
+.single-aside-box {
+  position: sticky;
+  min-width: 250px;
+  max-width: 250px;
+  height: 100vh;
+  top: 0;
+  background-color: var(--navbackground);
+  border-left: 1px solid lightgray;
+  padding: 0 1em;
+  z-index: 15;
+
+  .single-graph-container {
+    .graph-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 1em;
+      padding-top: 1em;
+      border-bottom: 1px solid rgb(191, 191, 191);
+      margin-bottom: 1em;
+
+      p {
+        color: #7c7d7d;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-bottom: 1.5px solid var(--sidetextcolor);
+      }
+
+      .expand-btn {
+        display: block;
+        padding: 0;
+        background: none;
+        border: none;
+        color: #7c7d7d;
+        font-size: 1.2rem;
+        transition: all 0.2s ease-in-out;
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            cursor: pointer;
+            color: var(--sidetextcolor);
+          }
+        }
+      }
+    }
+
+    & #graph-container {
+      background-color: white;
+      position: relative;
+      border: var(--outlinegray) 1px solid;
+      border-radius: 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+      padding-top: calc(350 / 400 * 100%);
+
+      & > svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .toc-header {
+    margin: 0 1em;
+    padding-top: 1em;
+    border-bottom: 1px solid rgb(191, 191, 191);
+    margin-bottom: 1em;
+
+    #asideTocTitle {
+      color: #7c7d7d;
+      opacity: 1;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 0;
+      border-bottom: 1.5px solid var(--sidetextcolor);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--sidetextcolor) !important;
+        }
+      }
+    }
+  }
+
+  .asideTOC {
+    width: 100%;
+    height: calc(100vh - 300px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    ul {
+      list-style: none;
+    }
+
+    & a {
+      color: #7c7d7d;
+      opacity: 0.8;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--sidetextcolor) !important;
+          opacity: 1;
+        }
+      }
+    }
+
+    & p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    & ul {
+      padding-inline-start: 0em;
+      & li {
+        font-size: 1rem;
+        margin-left: 0.5em;
+        & li {
+          border-left: 1px solid var(--sidetextcolor);
+          padding-inline-start: 1em;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    &.asideTOC::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &.asideTOC::-webkit-scrollbar-thumb {
+      height: 1%; /* 스크롤바의 길이 */
+      background: #7d7d7d5f; /* 스크롤바의 색상 */
+      border-radius: 10px;
+    }
+
+    &.asideTOC::-webkit-scrollbar-track {
+      background: none; /*스크롤바 뒷 배경 색상*/
+    }
+  }
+
+  #TableOfContents > ul {
+    margin: 0 1em;
+  }
+
+  #TableOfContents > ul > li {
+    margin-bottom: 1em;
+  }
+
+  .text-trasition {
+    transition: all 100ms ease-in-out;
+  }
+
+  .text-active {
+    color: var(--sidetextcolor) !important;
+  }
+
+  #TableOfContents > ol {
+    counter-reset: section;
+    margin-left: 0;
+    padding-left: 1.5em;
+    & > li {
+      counter-increment: section;
+      & > ol {
+        counter-reset: subsection;
+        & > li {
+          counter-increment: subsection;
+          &::marker {
+            content: counter(section) "." counter(subsection) "  ";
+          }
+        }
+      }
+    }
+
+    & > li::marker {
+      content: counter(section) "  ";
+    }
+
+    & > li::marker,
+    & > li > ol > li::marker {
+      font-family: var(--font-body);
+      font-weight: 700;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .single-container {
+    .single-aside-box {
+      min-width: 200px;
+      max-width: 200px;
+
+      .single-graph-container {
+        .graph-header {
+          p {
+            font-size: 1rem;
+          }
+
+          .expand-btn {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .toc-header {
+      #asideTocTitle {
+        font-size: 1rem;
+      }
+    }
+
+    .asideTOC {
+      & ul {
+        & li {
+          font-size: 0.8rem;
+          & li {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+
+    .single-content {
+      width: 100%;
+      padding: 3em;
+      overflow-x: hidden;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .single-container {
+    .single-aside-box {
+      visibility: hidden;
+      opacity: 0;
+      min-width: 0;
+      max-width: 0;
+
+      & .expand-btn {
+        display: block;
+        position: fixed;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  .mainTOC {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .single-container {
+    .single-content {
+      width: 80%;
+    }
+  }
+
+}

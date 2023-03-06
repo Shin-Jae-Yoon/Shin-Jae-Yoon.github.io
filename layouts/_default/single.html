@@ -3,18 +3,22 @@
 {{ partial "head.html" . }}
 
 <body>
-{{partial "search.html" .}}
-<div class="singlePage">
-    <!-- Begin actual content -->
-    {{partial "header.html" .}}
-    <article>
-      {{if .Title}}<h1>{{ .Title }}</h1>{{end}}
-      <p class="meta">
-        {{ i18n "last_updated" }} - {{ partial "date-fmt.html" .}} 
-        {{partial "github.html" . }}
-      </p>
-
-      <ul class="tags">
+  {{partial "search.html" .}}
+  {{partial "header.html" .}}
+  <div class="singlePage" style="padding: 0; margin: 0; width: 100%;">
+    <div class="routerTrue"></div>
+    <div class="blur-element"></div>
+    <div class="section-container single-container">
+      {{partial "graph-tool.html" . }}
+      {{partial "docsmenu.html" . }}
+      
+      <div class="single-content">
+        {{if .Title}}<h1>{{ .Title }}</h1>{{end}}
+        <p class="meta">
+          {{ i18n "last_updated" }} - {{ partial "date-fmt.html" .}} 
+          {{partial "github.html" . }}
+        </p>
+        <ul class="tags">
           {{ range (.GetTerms "tags") }}
           <li><a href="{{ .Permalink }}">
           {{if (eq $.Site.Language.Lang "ko")}}
@@ -25,38 +29,18 @@
             </a>
            </li>
           {{ end }}
-      </ul>
-      {{partial "toc.html" .}}
-      {{partial "toc2.html" .}}
-      {{ $hasHeaders := gt (len (findRE "<h\\d.*?>(.|\n)*?</h\\d>" .Content)) 0 }}
-      {{ if (or (and (not $.Site.Data.config.enableToc) .Params.enableToc) (and $.Site.Data.config.enableToc (ne .Params.enableToc false) $hasHeaders)) }}
-        <div class="tpstyle-yes">
-          {{partial "textprocessing.html" . }}
-        </div>
-      {{ else }}
-        <div class="tpstyle-none">
-          {{partial "textprocessing.html" . }}
-        </div>
-      {{ end }}
-    </article>
-    {{partial "footer.html" .}}
-
-    <div class="top-btn">
-      <i class="top-btn-img fa-solid fa-circle-arrow-up"></i>
+        </ul>
+        {{partial "toc.html" . }}
+        {{partial "textprocessing.html" . }}
+      </div>
+      {{partial "singlemenu.html" . }}
     </div>
-    
-    <div class="bottom-btn">
-      <i class="bottom-btn-img fa-solid fa-circle-arrow-down"></i>
-    </div>
-</div>
-<script>
-  document.querySelector(".top-btn").addEventListener("click", () => {
-    window.scrollTo({top:0, behavior:"smooth"})
-  })
-
-  document.querySelector(".bottom-btn").addEventListener("click", () => {
-    window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"})
-  })
-</script>
+    {{partial "scrollbtn.html" .}}
+    <script>
+      global_init()
+    </script>
+  </div>
+  {{partial "contact.html" .}}
+  
 </body>
 </html>

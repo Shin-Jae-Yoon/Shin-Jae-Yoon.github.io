@@ -1,10 +1,8 @@
 // Add your own CSS here!
 
 :root {
-  --light: #faf8f8;
+  --light: #ffffff;
   --dark: #141021;
-  --secondary: #1a6ba2;
-  --tertiary: #91b8d2;
   --visited: #284b63;
   --primary: #f28482;
   --gray: #4e4e4e;
@@ -16,7 +14,32 @@
   --tocscrollbar: #c3ddf7;
   --tocscroll: #bed0db;
   --tocscrollactive: #284b63;
+  --headercolor: #0a1922;
+  --headersecondary: rgba(255, 255, 255, 0.677);
+  --headertertiary: #7d7d7d;
+  --indexblue: #59b6c1 !important;
   --basic: none;
+
+  --navbackground: #faf8f8;
+  --projectitembackground: #eceaea;
+
+  // lightblue version
+  --secondary: #2cabb9;
+  --secondaryopacity: #2cabb945;
+  --tertiary: #1e838e;
+  --sidetextcolor: #59b6c1 !important;
+  --sidetertiary: #93e6ef49!important;
+  --sidetopbtn: #5fddeb !important;
+
+  // 이쁜 초록색 version
+  // #16a085;
+
+  // pink version
+  // --secondary: #b25f5d;
+  // --tertiary: #f28482;
+  // --sidetextcolor: #f28482 !important;
+  // --sidetertiary: #f2848226 !important;
+  //--sidetopbtn: #ff58b4 !important;
 }
 
 [saved-theme="dark"] {
@@ -36,6 +59,3 @@
   --tocscrollactive: #89cefc !important;
   --basic: #ffffff;
 }
-
-
-

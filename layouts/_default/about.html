@@ -2,20 +2,18 @@
 <html lang="{{ .Lang }}">
   {{ partial "head.html" . }}
   <body>
-    <div class="singlePage">
-      {{partial "header.html" .}}
+    {{partial "search.html" .}}
+    {{partial "header.html" .}}
+    <div class="singlePage" style="padding-top: 0;">
       <article id="513f5236-82b4-4037-b026-84c3d97530d8" class="page sans">
-        <div class="page-body">
-          <hr id="40a8ce25-e648-498f-9738-30f8b0794376" />
+        <div class="page-body" style="margin-top: 2em;">
           <div id="696e708b-ce76-4c43-9b87-1307108ab408" class="column-list">
             <div id="93a41749-1357-4658-bc33-a7ddd4c41249" class="column">
               <figure id="e8a0aa81-0047-412d-b3e9-1c175c4245d3" class="image">
-                <a
-                  href="%E1%84%89%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A2%E1%84%8B%E1%85%B2%E1%86%AB%20(Uni)%20513f523682b44037b02684c3d97530d8/KakaoTalk_Photo_2023-02-04-02-15-19-modified.png"
-                  ><img
+                <img
                     style="width: 975px; min-width: 200px"
-                    src="https://i.imgur.com/Ok88E5F.png"
-                /></a>
+                    src="/images/about-profile.png"
+                />
               </figure>
               <p id="7e7f0e32-aa3b-414f-88a9-635c6795ee92" class=""></p>
             </div>
@@ -330,5 +328,6 @@
         </div>
       </article>
     </div>
+    {{partial "contact.html" .}}
   </body>
 </html>

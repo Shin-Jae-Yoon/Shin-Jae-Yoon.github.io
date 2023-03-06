@@ -3,13 +3,17 @@
 {{ partial "head.html" . }}
 
 <body>
+    {{partial "header.html" .}}
 <div class="singlePage">
-    {{partial "darkmode.html" .}}
     <div class="centered">
         <h1>404.</h1>
         <h3>{{ i18n "404_message" }}</h3>
         <a href="{{ .Site.BaseURL }}">{{ i18n "404_back" }}</a>
     </div>
 </div>
+{{ partial "contact.html" . }}
 </body>
+{{ $js := resources.Get "js/menu.js" }}
+<script src="{{ $js.Permalink }}"></script>
+{{/*  <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>  */}}
 </html>

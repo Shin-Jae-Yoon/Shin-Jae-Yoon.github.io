@@ -1,0 +1,150 @@
+#contact_buttons {
+    background-color: var(--headercolor);
+    height: 300px;
+  
+    footer {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+  
+      a {
+        color: var(--headersecondary);
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            color: var(--headertertiary) !important;
+          } 
+        }
+      }
+  
+      .contact-left {
+        width: 50%;
+        font-size: 1.2rem;
+        
+        .contact-left-img {
+          width: 10rem;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: #5a5a5a;
+          border-radius: 10px;
+          padding: 0.2em 1em;
+        }
+        img {
+          margin: 0;
+          padding: 0;
+          margin-top: 0.2em;
+        }
+      }
+      
+      .contact-right {
+        width: 50%;
+        text-align: middle;
+  
+        .contact-right-flex {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          text-align: center;
+  
+          .contact-right-mountain {
+            img {
+              height: 100px;
+              margin-right: 4em;
+            }
+          }
+    
+          .contact-right-flexitem {
+            margin-right: 2em;
+            border-radius: 10px;
+  
+            img {
+              padding: 0;
+              margin: 0;
+              width: 4.5rem;
+              margin-top: 1em;
+              transition: all 0.3s ease-in-out;
+            }
+    
+            p {
+              color: white;
+              margin-top: 0.25em;
+              transition: all 0.3s ease-in-out;
+            }
+  
+            @media (hover: hover) and (pointer: fine) {
+              a:hover {
+                cursor: pointer;
+                img {
+                  transform: scale(1.2);
+                }
+                p {
+                  transform: scale(1.2);
+                }
+              }
+            }
+  
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1200px){
+    #contact_buttons {
+      footer {
+  
+        .contact-right {
+          .contact-right-flex {
+            .contact-right-mountain {
+              width: 100%;
+              img {
+                margin-right: 0;
+                height: 80px;
+              }
+            }
+            .contact-right-flexitem {
+              margin-left: auto;
+              margin-right: auto;
+              img {
+                width: 4rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 830px){
+    #contact_buttons {
+      footer {
+        .contact-left {
+          margin-left: 1em;
+          p {
+            font-size: 0.9rem;
+          }
+        }
+  
+        .contact-right {
+          .contact-right-flex {
+            .contact-right-mountain {
+              width: 100%;
+              img {
+                margin-right: 0;
+                height: 80px;
+              }
+            }
+            .contact-right-flexitem {
+              margin-left: auto;
+              margin-right: auto;
+              img {
+                width: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

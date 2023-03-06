@@ -1,0 +1,322 @@
+.nav-header-container {
+  background-color: var(--headercolor);
+  height: 100px;
+  width: 100%;
+
+  header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 20rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .section-menu-btn {
+      display: none;
+      position: fixed;
+      top: 1.5em;
+      left: 1em;
+      padding: 0.5em;
+      background-color: var(--headercolor);
+      border-radius: 10px;
+      text-align: center;
+      z-index: 12;
+
+      i {
+        color: #faf8f8;
+        font-size: 2rem;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            cursor: pointer;
+            color: var(--headertertiary);
+          }
+        }
+      }
+    }
+
+    #page-title {
+      font-size: 1.5rem;
+
+      & a {
+        color: white;
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            color: var(--headertertiary) !important;
+          }
+        }
+      }
+    }
+
+    li {
+      list-style: none;
+      margin-left: 2.5em;
+
+      a {
+        color: var(--headersecondary);
+        font-size: 1.15rem;
+        font-weight: 400;
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            color: var(--headertertiary) !important;
+          }
+        }
+      }
+    }
+
+    #search-icon {
+      margin-left: 2.5em;
+      background-color: #0f2634;
+      border: 1px solid var(--basic);
+      border-radius: 20px;
+      height: 2em;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      & > p {
+        display: inline;
+        padding: 0 1em 0 0;
+        color: var(--headersecondary);
+      }
+    }
+
+    & svg {
+      cursor: pointer;
+      width: 18px;
+      min-width: 18px;
+      margin: 0 1em;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover .search-path {
+          stroke: var(--tertiary);
+        }
+      }
+
+      .search-path {
+        stroke: var(--headersecondary);
+        stroke-width: 2px;
+        transition: stroke 0.5s ease;
+      }
+    }
+  }
+}
+
+.main-index {
+  background-color: var(--headercolor);
+  height: 100%;
+  width: 100%;
+
+  .main-index-one {
+    background-color: var(--headercolor);
+    text-align: center;
+    padding-top: 2em;
+
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      display: inline-block;
+      border: 4px double rgba(255, 255, 255, 0.25);
+      border-width: 4px 0;
+      padding: 1.5em 0em;
+      width: 40em;
+
+      span {
+        font: 700 4em/1 "Oswald", sans-serif;
+        letter-spacing: 0;
+        padding: 0.25em 0 0.325em;
+        display: block;
+        margin: 0 auto;
+        text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+        /* Clip Background Image */
+        background: url(/images/main-animation.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        /* Animate Background Image */
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: aitf 80s linear infinite;
+
+        /* Activate hardware acceleration for smoother animations */
+
+        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+      }
+    }
+
+    /* Animate Background Image */
+
+    @-webkit-keyframes aitf {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+  }
+
+  .main-index-two {
+    margin-top: 3rem;
+    p {
+      font-size: 1.5rem;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .main-index-three {
+    p {
+      font-size: 1rem;
+      color: rgb(117, 117, 117);
+      text-align: center;
+    }
+  }
+
+  .main-index-four {
+    margin-top: 3em;
+    text-align: center;
+    button {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 3em;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background-color: var(--indexblue);
+      color: rgb(255, 255, 255);
+      transition: all 0.3s ease-in-out;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          cursor: pointer;
+          background-color: #0a8795;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.main-middle {
+  width: 100%;
+  margin-top: 5em;
+  text-align: center;
+
+  p {
+    color: var(--headercolor);
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+.flex-container {
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    margin-top: 1em;
+  }
+
+  p {
+    margin-top: 0.5em;
+  }
+
+  .flex-item-img {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1e4e6d;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+
+    img {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.flex-item {
+  width: 50%;
+  margin-top: 3em;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-header-container {
+    header {
+      padding-left: 5rem;
+    }
+  }
+
+  .main-index {
+    .main-index-one {
+      p {
+        width: 35em;
+        font-size: 1rem;
+      }
+    }
+
+    .main-index-two {
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  
+    .main-index-three {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .flex-container {
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .nav-header-container {
+    header {
+      justify-content: space-between;
+
+      li {
+        display: none;
+      }
+
+      #search-icon {
+        margin-right: 5rem;
+      }
+    }
+  }
+
+  .main-index {
+    .main-index-one {
+      p {
+        width: 30em;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .flex-item {
+    width: 100%;
+  }
+}

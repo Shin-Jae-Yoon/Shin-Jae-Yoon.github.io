@@ -65,7 +65,8 @@
   <link href="{{$lightSyntax.Permalink}}" rel="stylesheet" id="theme-link">
 
   <!-- Base scripts -->
-  {{$scripts := (slice "js/darkmode.js" "js/util.js" "js/scroll.js")}}
+  <!-- "js/darkmode.js" -->
+  {{$scripts := (slice "js/util.js" "js/scroll.js")}}
   {{range $scripts}}
   {{$scriptname := .}}
   {{ $s := resources.Get $scriptname | resources.ExecuteAsTemplate $scriptname . | resources.Fingerprint "md5" | resources.Minify }}
@@ -128,7 +129,7 @@
       // NOTE: everything within this callback will be executed for every page navigation. This is a good place to put JavaScript that loads or modifies data on the page, adds event listeners, etc. If you are only dealing with basic DOM replacement, use the init function
 
       const siteBaseURL = new URL(BASE_URL);
-      const pathBase = siteBaseURL.pathname;
+      const pathBase = siteBaseURL.pathname + "brain/";
       const pathWindow = window.location.pathname;
       const isHome = pathBase == pathWindow;
 
@@ -170,6 +171,27 @@
 
         }
       {{end}}
+
+      {{if $data.enableFooter | default $.Site.Data.config.enableFooter}}
+      const footer2 = document.getElementById("footer2")
+      if (footer2) {
+        const container2 = document.getElementById("graph-container2")
+        // retry if the graph is not ready
+        if (!container2) return requestAnimationFrame(render)
+        // clear the graph in case there is anything within it
+        container2.textContent = ""
+
+        const drawGlobal2 = isHome && {{$.Site.Data.graphConfig.enableGlobalGraph}};
+        drawGraph2(
+            {{strings.TrimRight "/" .Site.BaseURL}},
+            drawGlobal2,
+            {{$.Site.Data.graphConfig.paths}},
+            drawGlobal2 ? {{$.Site.Data.graphConfig.globalGraph}} : {{$.Site.Data.graphConfig.localGraph}}
+          );
+
+        }
+      {{end}}
+
 
       {{if $data.enableMermaid | default $.Site.Data.config.enableMermaid}}
         var els = document.getElementsByClassName("mermaid");
@@ -230,5 +252,9 @@
   </script>
   {{end}}
   <script src="https://kit.fontawesome.com/1f943b0307.js" crossorigin="anonymous"></script>
+  <link href="https://webfontworld.github.io/BMJua/BMJua.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 {{ template "_internal/google_analytics.html" . }}
