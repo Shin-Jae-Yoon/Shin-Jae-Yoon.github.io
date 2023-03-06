@@ -305,9 +305,14 @@
   .single-container {
     .single-aside-box {
       visibility: hidden;
+      position: fixed;
       opacity: 0;
       min-width: 0;
       max-width: 0;
+
+      p {
+        display: none;
+      }
 
       & .expand-btn {
         display: block;
@@ -325,9 +330,9 @@
 
 @media screen and (max-width: 730px) {
   .single-container {
+
     .single-content {
       width: 100%;
     }
   }
-
 }

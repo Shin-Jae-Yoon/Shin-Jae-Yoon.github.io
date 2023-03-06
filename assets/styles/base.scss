@@ -24,7 +24,6 @@ html {
 .singlePage {
   padding: 4em 25vw;
   min-height: calc(100% - 300px);
-  overflow-x: hidden;
   
   @media all and (max-width: 1200px) {
     padding: 25px 5vw;
