@@ -450,6 +450,12 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .section-content-list {
+    font-size: 0.8rem;
+  }
+}
+
 @keyframes left-right {
   from {
     width: 0;

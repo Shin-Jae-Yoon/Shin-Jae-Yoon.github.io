@@ -320,3 +320,25 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .nav-header-container {
+    header {
+      justify-content: space-around;
+      font-size: 0.9rem;
+    }
+  }
+
+  .main-index {
+    .main-index-one {
+      p {
+        width: 30em;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .flex-item {
+    width: 100%;
+  }
+}
