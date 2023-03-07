@@ -37,7 +37,7 @@
     overflow-x: hidden;
     background-color: var(--navbackground);
     border-right: 1px solid lightgray;
-    z-index: 15;
+    z-index: 10;
 
     &.disabled {
       min-width: 250px;
@@ -403,11 +403,13 @@
         display: block;
         z-index: 11;
         position: fixed;
-        width: 400px;
+        width: 300px;
         animation: left-right 0.5s;
 
         .menu-nav-header {
           display: flex;
+          font-size: 1.2rem;
+          margin-top: 0.7em;
         }
 
         .main-aside {
@@ -461,13 +463,13 @@
     width: 0;
   }
   to {
-    width: 400px;
+    width: 300px;
   }
 }
 
 @keyframes right-left {
   from {
-    width: 400px;
+    width: 300px;
   }
   to {
     width: 0;

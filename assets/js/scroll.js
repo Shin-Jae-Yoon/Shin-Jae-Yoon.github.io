@@ -70,6 +70,7 @@ function global_init() {
 
   expand_btn2.onclick = function (event) {
     event.stopPropagation()
+    event.preventDefault()
     expand_graph_container.style.visibility = "visible"
     expand_graph_container.style.opacity = "1"
   }

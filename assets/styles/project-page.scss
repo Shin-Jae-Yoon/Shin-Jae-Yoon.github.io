@@ -41,16 +41,20 @@
             video {
               height: 24em;
             }
+            img {
+              height: 24em;
+            }
           }
         }
 
         .project-item-content {
-          width: 50%;
-          height: 23em;
+          width: 60%;
+          height: 22em;
           transition: 0.3s ease;
           margin-left: 3em;
           margin-right: 0.5em;
           padding: 1.2em;
+          z-index: 1;
 
           &:hover {
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
@@ -130,26 +134,9 @@
           video {
             height: 15em !important;
           }
-        }
-        .project-item-content {
-          width: 60vw;
-          margin-left: 1em !important;
-          margin-top: 1em;
-          .project-item-content-title {
-            h3 {
-              &.pict-header {
-                font-size: 1.5rem !important;
-              }
-              &.pict-period {
-                font-size: 1.2rem !important;
-              }
-            }
 
-            p {
-              &.pict-content {
-                font-size: 1rem !important;
-              }
-            }
+          img {
+            height: 15em !important;
           }
         }
       }
@@ -167,9 +154,10 @@
             }
 
         .project-item-content {
-            height: 25em !important;
-            padding: 0 !important;
-            margin-left: 2em !important;
+          width: 60%;
+            height: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
           &:hover {
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
             transform: translateY(-5px) scale(1.02);
@@ -179,6 +167,27 @@
           }
         }
       }
+
+        .project-item-content {
+          margin-left: 1em !important;
+          margin-top: 1em;
+          .project-item-content-title {
+            h3 {
+              &.pict-header {
+                font-size: 1.3rem !important;
+              }
+              &.pict-period {
+                font-size: 1rem !important;
+              }
+            }
+
+            p {
+              &.pict-content {
+                font-size: 0.9rem !important;
+              }
+            }
+          }
+        }
     }
   }
 
@@ -188,12 +197,17 @@
           .project-item-title {
             .project-item-title-img-container {
               img {
-                width: 100%;
+                width: 90% !important;
+              }
+
+              video {
+                width: 100% !important;
               }
             }
           }
+
           .project-item-content {
-            width: 100% !important;
+            width: 85% !important;
           }
         }
       }
