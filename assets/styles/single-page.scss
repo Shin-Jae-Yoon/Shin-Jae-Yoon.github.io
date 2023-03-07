@@ -13,7 +13,7 @@
   & #expand-close-btn {
     position: fixed;
     top: 23vh;
-    right: 17vw;
+    right: 16vw;
     z-index: 40;
     font-size: 1.5rem;
     color: rgba(0, 0, 0, 0.408);
@@ -258,6 +258,12 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .expand-graph-container {
+    & #expand-close-btn {
+      right: 18vw;
+    }
+  }
+
   .single-container {
     .single-aside-box {
       min-width: 200px;
@@ -329,8 +335,13 @@
 }
 
 @media screen and (max-width: 730px) {
-  .single-container {
+  .expand-graph-container {
+    & #expand-close-btn {
+      right: 20vw;
+    }
+  }
 
+  .single-container {
     .single-content {
       width: 90%;
       padding: 3em 0;
