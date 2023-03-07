@@ -123,7 +123,7 @@
         .contact-left {
           margin-left: 1em;
           p {
-            font-size: 0.9rem;
+            font-size: 1rem;
           }
         }
   
@@ -141,6 +141,41 @@
               margin-right: auto;
               img {
                 width: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px){
+    #contact_buttons {
+      footer {
+        .contact-left {
+          margin-left: 1em;
+          p {
+            font-size: 0.75rem;
+            margin-bottom: 3em;
+          }
+          .contact-left-img {
+            width: 9rem;
+          }
+        }
+  
+        .contact-right {
+          .contact-right-flex {
+            .contact-right-mountain {
+              img {
+                height: 70px;
+              }
+            }
+            .contact-right-flexitem {
+              img {
+                width: 1.5rem;
+              }
+              p {
+                font-size: 0.8rem;
               }
             }
           }
