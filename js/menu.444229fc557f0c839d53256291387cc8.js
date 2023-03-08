@@ -27,8 +27,7 @@
     index++
   }
 
-  collapse_btn.addEventListener("click", () => {
-    blurElement.classList.remove("enabled")
+  collapse_btn.addEventListener("click", (e) => {
     for (const folder of folders) {
       if (folder.classList.contains("active")) {
         folder.classList.remove("active")
