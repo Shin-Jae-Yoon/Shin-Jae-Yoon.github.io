@@ -13,8 +13,12 @@
           <div class="project-item">
             <div class="project-item-title">
               <div class="project-item-title-img-container">
-                <video autoplay muted loop playsinline id="vid1" src="/images/project_01_video01.webm" type="video/webm"></video>
-                <video autoplay muted loop playsinline id="vid2" src="/images/project_01_video02.webm" type="video/webm"></video>
+                <video id="vid1" autoplay muted loop playsinline poster="/images/poster-video.png">
+                  <source src="/images/project_01_video01.mp4" type="video/mp4" />
+                </video>
+                <video id="vid2" autoplay muted loop playsinline poster="/images/poster-video.png">
+                  <source src="/images/project_01_video02.mp4" type="video/mp4" />
+                </video>
                 {{ $video := resources.Get "js/videoplay.js" | resources.Fingerprint "md5" }}
                 <script script src="{{ $video.Permalink }}"></script>
               </div>
