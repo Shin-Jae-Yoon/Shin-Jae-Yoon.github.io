@@ -13,8 +13,10 @@
           <div class="project-item">
             <div class="project-item-title">
               <div class="project-item-title-img-container">
-                <video id="vid1" src="/images/project_01_video02.mp4" autoplay muted loop></video>
-                <video id="vid2" src="/images/project_01_video03.mp4" autoplay muted loop></video>
+                <video autoplay muted loop playsinline id="vid1" src="/images/project_01_video01.webm" type="video/webm"></video>
+                <video autoplay muted loop playsinline id="vid2" src="/images/project_01_video02.webm" type="video/webm"></video>
+                {{ $video := resources.Get "js/videoplay.js" | resources.Fingerprint "md5" }}
+                <script script src="{{ $video.Permalink }}"></script>
               </div>
             </div>
             <div class="project-item-content">
@@ -41,7 +43,7 @@
           <div class="project-item">
             <div class="project-item-title">
               <div class="project-item-title-img-container">
-                <img src="/images/project_02.png">
+                <img src="/images/project_02.png" />
               </div>
             </div>
             <div class="project-item-content">
@@ -63,10 +65,7 @@
             </div>
           </div>
         </div>
-
       </div>
-      {{ $video := resources.Get "js/videoplay.js" | resources.Fingerprint "md5" }}
-      <script script src="{{ $video.Permalink }}"></script>
     </div>
     {{partial "contact.html" .}}
   </body>
