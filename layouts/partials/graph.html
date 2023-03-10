@@ -11,11 +11,11 @@
 <div id="graph-container"></div>
 <style>
   :root {
-    --g-node: lightgray;
-    --g-node-active: var(--secondary);
-    --g-node-inactive: var(--visited);
-    --g-link: var(--outlinegray);
-    --g-link-active: #5a7282;
+    --g-node: var(--graphNode);
+    --g-node-active: var(--graphNodeActive);
+    --g-node-inactive: var(--graphNodeInactive);
+    --g-link: var(--graphLink);
+    --g-link-active: var(--graphLinkActive);
   }
 </style>
 {{ $js := resources.Get "js/graph.js" | resources.Fingerprint "md5" }}
