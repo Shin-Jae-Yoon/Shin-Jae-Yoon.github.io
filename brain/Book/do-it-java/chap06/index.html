@@ -1,0 +1,472 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.3f3438dd4ebe6d25e78406f133ca055f.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.b27ffe1deac19f743aae4ae5f70adbea.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.3952cd759d70c866e2f0d3c006a2a7a1.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.73894697e0dda63fd1dd6edb89d30d97.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>JVM</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 네트워크</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 운영체제</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 공통</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring Basic</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-01/ class=page-link style=display:block;width:100%>스프링 입문 : 섹션0-섹션3</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - SpringBoot/JPA</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬입문과 크롤링기초 부트캠프</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>자바의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.083fe8cbdb34ff1b07c3e4c26dd42369.js></script></div><div class=single-content><h1>06.클래스와 객체 (2)</h1><p class=meta>Last updated -
+2023년 03월 10일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Book/do-it-java/chap06.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/Do-it-%EC%9E%90%EB%B0%94/>📚 Do it! 자바</a></li></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#this-예약어>this 예약어</a><ul><li><a href=#자신의-메모리를-가리키는-this>자신의 메모리를 가리키는 this</a></li><li><a href=#생성자에서-다른-생성자를-호출하는-this>생성자에서 다른 생성자를 호출하는 this</a></li><li><a href=#자신의-주소를-반환하는-this>자신의 주소를 반환하는 this</a></li></ul></li><li><a href=#객체-간-협력>객체 간 협력</a></li><li><a href=#static-변수>static 변수</a><ul><li><a href=#변수를-여러-클래스에서-공통으로-사용하려면>변수를 여러 클래스에서 공통으로 사용하려면?</a></li><li><a href=#static-변수의-정의와-사용-방법>static 변수의 정의와 사용 방법</a></li><li><a href=#클래스-변수>클래스 변수</a></li><li><a href=#클래스-메서드>클래스 메서드</a></li></ul></li><li><a href=#변수-유효-범위>변수 유효 범위</a><ul><li><a href=#지역-변수-유효범위>지역 변수 유효범위</a></li><li><a href=#멤버-변수-유효범위>멤버 변수 유효범위</a></li><li><a href=#정적-변수-유효범위>정적 변수 유효범위</a></li><li><a href=#변수-유형에-따른-용도>변수 유형에 따른 용도</a></li></ul></li><li><a href=#static-응용---싱글톤-패턴>static 응용 - 싱글톤 패턴</a><ul><li><a href=#디자인-패턴이란>디자인 패턴이란?</a></li><li><a href=#싱글톤-패턴이란>싱글톤 패턴이란?</a></li><li><a href=#싱글톤-패턴으로-회사-클래스-구현>싱글톤 패턴으로 회사 클래스 구현</a></li></ul></li></ul></nav></details></aside><br><blockquote><p>해당 게시글은 <strong>Do it! 자바 프로그래밍 입문</strong> 교재를 정리한 내용입니다.</p></blockquote><hr><a href=#chapter-06---클래스와-객체-2><h1 id=chapter-06---클래스와-객체-2><span class=hanchor arialabel=Anchor># </span>Chapter 06 - 클래스와 객체 (2)</h1></a><br><a href=#this-예약어><h2 id=this-예약어><span class=hanchor arialabel=Anchor># </span>this 예약어</h2></a><a href=#자신의-메모리를-가리키는-this><h3 id=자신의-메모리를-가리키는-this><span class=hanchor arialabel=Anchor># </span>자신의 메모리를 가리키는 this</h3></a><p>this : 생성된 인스턴스 자기 자신을 가리키는 예약어</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>BirthDay</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>year</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>month</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>day</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kt>void</span> <span class=nf>setYear</span><span class=o>(</span><span class=kt>int</span> <span class=n>year</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>this</span><span class=o>.</span><span class=na>year</span> <span class=o>=</span> <span class=n>year</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kt>void</span> <span class=nf>printThis</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ThisExample</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>BirthDay</span> <span class=n>bDay</span> <span class=o>=</span> <span class=k>new</span> <span class=n>BirthDay</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>bDay</span><span class=o>.</span><span class=na>setYear</span><span class=o>(</span><span class=n>2022</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>bDay</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bDay</span><span class=o>.</span><span class=na>printThis</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// chapter06.BirthDay@1b6d3586
+</span></span></span><span class=line><span class=cl><span class=c1>// chapter06.BirthDay@1b6d3586
+</span></span></span></code></pre></td></tr></table></div></div><p><img src=https://shin-jae-yoon.github.io//brain/image/chap06-1.png width=auto alt></p><ul><li><p>참조 변수 (bDay)를 출력한 결과 <code>클래스 이름@메모리 주소</code></p></li><li><p>printThis() 메서드를 실행하여 this 출력한 결과 <code>클래스 이름@메모리 주소</code></p></li><li><p>힙 메모리에 생성된 인스턴스를 가리키는 것을 확인 가능</p></li></ul><br><p>보통, 하나의 자바 파일에 하나의 클래스가 있는 것이 대부분이지만, 하나의 파일에 여러 클래스가 존재할 수 있다. 하지만 그때 public 클래스는 &ldquo;1개&rdquo; 뿐이라는 것을 명심! 간단한 클래스를 활용하는 경우 하나의 파일에 여러 클래스가 있을 수 있다.</p><br><a href=#생성자에서-다른-생성자를-호출하는-this><h3 id=생성자에서-다른-생성자를-호출하는-this><span class=hanchor arialabel=Anchor># </span>생성자에서 다른 생성자를 호출하는 this</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Person</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>String</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>age</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>	<span class=n>Person</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>(</span><span class=s>&#34;이름 없음&#34;</span><span class=o>,</span> <span class=n>1</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>	<span class=n>Person</span><span class=o>(</span><span class=n>String</span> <span class=n>name</span><span class=o>,</span> <span class=kt>int</span> <span class=n>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>name</span> <span class=o>=</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>age</span> <span class=o>=</span> <span class=n>age</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CallAnohterConst</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Person</span> <span class=n>noName</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Person</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>noName</span><span class=o>.</span><span class=na>name</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>noName</span><span class=o>.</span><span class=na>age</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 이름 없음
+</span></span></span><span class=line><span class=cl><span class=c1>// 1
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p>현재, <code>Person()</code> 디폴트 생성자, <code>Person(String, int)</code> 생성자 2개 존재</p></li><li><p>클래스 생성 시 <code>Person()</code> 디폴트 생성자 이용 : 디폴트 생성자가 호출되는 경우에는 초깃값으로 &ldquo;이름 없음"과 1을 대입하려고 this로 다른 생성자 호출한 것</p></li><li><p><code>Person(String, int)</code> 생성자는 매개변수 넣고 똑같이 사용하면 됨</p></li></ul><br><p><strong>주의 !!</strong> this로 다른 생성자 호출 시 this 코드 이전에 다른 코드 넣으면 오류 발생. 디폴트 생성자에서 생성이 완료되는 것이 아니라, this를 사용해 다른 생성자를 호출하기 때문에 this를 활용한 문장이 가장 먼저 와야함.</p><br><a href=#자신의-주소를-반환하는-this><h3 id=자신의-주소를-반환하는-this><span class=hanchor arialabel=Anchor># </span>자신의 주소를 반환하는 this</h3></a><p>인스턴스 주소 값을 반환할 때 this를 사용하고 반환형은 클래스 자료형을 사용하면 된다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Person</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>Person</span> <span class=nf>returnItSelf</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=k>this</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CallAnohterConst</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Person</span> <span class=n>noName</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Person</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>Person</span> <span class=n>p</span> <span class=o>=</span> <span class=n>noName</span><span class=o>.</span><span class=na>returnItSelf</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>p</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>noName</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// chapter06.Person@1b6d3586
+</span></span></span><span class=line><span class=cl><span class=c1>// chapter06.Person@1b6d3586
+</span></span></span></code></pre></td></tr></table></div></div><hr><a href=#객체-간-협력><h2 id=객체-간-협력><span class=hanchor arialabel=Anchor># </span>객체 간 협력</h2></a><p>결국, 객체지향 프로그래밍은 객체를 정의하고 객체 간 협력을 기반으로 만든다.</p><ul><li><p>학생 class (이름, 학년, 가진 돈)</p></li><li><p>버스 class (버스 번호, 승객 수, 수입)</p></li><li><p>지하철 class (노선 번호, 승객 수, 수입)</p></li><li><p>학생 -> 버스 : 버스를 탄다.</p></li><li><p>학생 -> 지하철 : 지하철을 탄다.</p></li></ul><p>즉, 객체가 필요한 멤버 변수를 선언하고, 생성자를 정의하고 객체 사이의 협력 기능을 구현한다. &ldquo;학생이 지하철을 탄다"는 <strong>학생 객체의 입장에서 사용한 문장</strong>이다. <strong>지하철 객체의 입장에서 생각해보면, 지하철에 학생이 탄다</strong>이다.</p><p><strong>두 객체에서 서로 다른 일이 발생하는 것이므로 이를 각각의 클래스에 메서드로 구현한다.</strong> 각 객체의 입장을 잘 생각해서 코드를 짜자. 코드는 <a href=https://github.com/Shin-Jae-Yoon/do-it-java/blob/master/src/chapter06/Student.java target=_blank>Student 클래스</a>, <a href=https://github.com/Shin-Jae-Yoon/do-it-java/blob/master/src/chapter06/Bus.java target=_blank>Bus 클래스</a>, <a href=https://github.com/Shin-Jae-Yoon/do-it-java/blob/master/src/chapter06/Subway.java target=_blank>Subway 클래스</a>, <a href=https://github.com/Shin-Jae-Yoon/do-it-java/blob/master/src/chapter06/Taxi.java target=_blank>Taxi 클래스</a>, 테스트 클래스인 <a href=https://github.com/Shin-Jae-Yoon/do-it-java/blob/master/src/chapter06/TakeTrans.java target=_blank>TakeTrans 클래스</a>를 참조한다.</p><hr><a href=#static-변수><h2 id=static-변수><span class=hanchor arialabel=Anchor># </span>static 변수</h2></a><a href=#변수를-여러-클래스에서-공통으로-사용하려면><h3 id=변수를-여러-클래스에서-공통으로-사용하려면><span class=hanchor arialabel=Anchor># </span>변수를 여러 클래스에서 공통으로 사용하려면?</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Student</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=n>studentID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=n>studentName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=n>grade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=n>address</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>위와 같은 학생 클래스가 예시로 있다. 만약 학생이 입학할 때 (=클래스가 생성되면) 학번이 자동으로 부여되도록 만들고 싶다. 생성된 인스턴스는 학번을 순서대로 가져야 한다.</p><p>이러한 경우, 각 인스턴스마다 따로 생성되는 변수가 아닌, <strong>클래스 전반에서 공통으로 사용할 수 있는 기준 변수</strong>가 있어야 한다.</p><blockquote><p>클래스에서 공통으로 사용하는 변수를 <strong>static 변수</strong>로 선언한다.</p></blockquote><br><a href=#static-변수의-정의와-사용-방법><h3 id=static-변수의-정의와-사용-방법><span class=hanchor arialabel=Anchor># </span>static 변수의 정의와 사용 방법</h3></a><p>static 변수는 정적 변수이다. 클래스 내부에 선언하고 자료형 앞에 static 예약어 사용</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>static</span> <span class=kt>int</span> <span class=n>serialNum</span><span class=o>;</span>
+</span></span></code></pre></td></tr></table></div></div><p>static 변수 (= 정적 변수)는 클래스 내부에 선언하지만, 다른 멤버 변수처럼 인스턴스가 생성될 때마다 새로 생성되는 변수가 아니다. static 변수는 프로그램이 실행되어 메모리에 올라갔을 때 딱 한 번 메모리 공간이 할당된다. 이 값은 <strong>모든 인스턴스가 공유한다.</strong></p><p>static으로 선언한 변수는 인스턴스 생성과 상관없이 <strong>먼저 생성</strong>되고 그 값을 모든 인스턴스가 공유하게 된다. 이러한 이유로 클래스스에 기반한 변수라고 하며 <strong>클래스 변수</strong>라고도 한다.</p><ul><li><p>static 변수 = 정적 변수 = 클래스 변수</p></li><li><p>딱 한 번 메모리 공간 메서드 영역에 할당</p></li><li><p>모든 인스턴스가 이 값을 공유</p></li></ul><p><br><br></p><p><strong>메모리 영역 정리</strong></p><ul><li><p>JVM은 메모리를 할당받고 용도에 따라 여러 영역으로 나누어 관리</p></li><li><p>대표적으로 3가지 (메서드 영역, 호출 스택, 힙)</p></li><li><p>메서드 영역 : 클래스파일(<code>.class</code>) 읽어서 분석하고 클래스에 대한 정보, 클래스 데이터, 클래스 변수 등</p></li><li><p>호출 스택 : 메서드의 작업에 필요한 메모리 공간 제공, 지역 변수, 매개변수 등</p></li><li><p>힙 : 인스턴스가 생성되는 공간, 인스턴스 변수</p></li></ul><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>StudentStatic</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>int</span> <span class=n>serialNum</span> <span class=o>=</span> <span class=n>1000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=n>studentID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=n>studentName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=n>grade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=n>address</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>StudentStatic</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>serialNum</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentID</span> <span class=o>=</span> <span class=n>serialNum</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getStudentName</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>studentName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setStudentName</span><span class=o>(</span><span class=n>String</span> <span class=n>studentName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>studentName</span> <span class=o>=</span> <span class=n>studentName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>StudentStaticTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>StudentStatic</span> <span class=n>studentLee</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StudentStatic</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentLee</span><span class=o>.</span><span class=na>setStudentName</span><span class=o>(</span><span class=s>&#34;이지원&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentLee</span><span class=o>.</span><span class=na>serialNum</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentLee</span><span class=o>.</span><span class=na>studentName</span> <span class=o>+</span> <span class=s>&#34; 학번 : &#34;</span> <span class=o>+</span> <span class=n>studentLee</span><span class=o>.</span><span class=na>studentID</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>StudentStatic</span> <span class=n>studentSon</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StudentStatic</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentSon</span><span class=o>.</span><span class=na>setStudentName</span><span class=o>(</span><span class=s>&#34;손수경&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentSon</span><span class=o>.</span><span class=na>serialNum</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentSon</span><span class=o>.</span><span class=na>studentName</span> <span class=o>+</span> <span class=s>&#34; 학번 : &#34;</span> <span class=o>+</span> <span class=n>studentSon</span><span class=o>.</span><span class=na>studentID</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 1001
+</span></span></span><span class=line><span class=cl><span class=c1>// 이지원 학번 : 1001
+</span></span></span><span class=line><span class=cl><span class=c1>// 1002
+</span></span></span><span class=line><span class=cl><span class=c1>// 손수경 학번 : 1002
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#클래스-변수><h3 id=클래스-변수><span class=hanchor arialabel=Anchor># </span>클래스 변수</h3></a><p>static 변수 = 정적 변수 = 클래스 변수는 인스턴스를 생성할 때마다 만들어지는 것이 아니다. 인스턴스 생성과는 별개이고 <strong>인스턴스보다 먼저 생성되어 메서드 영역에 저장</strong>된다. 그래서 위에 코드를 인스턴스말고 <strong>클래스 이름으로 직접 참조</strong>하도록 하여 serialNum을 가져올 수 있다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>StudentStaticTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>StudentStatic</span> <span class=n>studentLee</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StudentStatic</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentLee</span><span class=o>.</span><span class=na>setStudentName</span><span class=o>(</span><span class=s>&#34;이지원&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=c1>// 인스턴스 생성 안하고 그냥 가져올 수 있음
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>StudentStatic</span><span class=o>.</span><span class=na>serialNum</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentLee</span><span class=o>.</span><span class=na>studentName</span> <span class=o>+</span> <span class=s>&#34; 학번 : &#34;</span> <span class=o>+</span> <span class=n>studentLee</span><span class=o>.</span><span class=na>studentID</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>StudentStatic</span> <span class=n>studentSon</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StudentStatic</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentSon</span><span class=o>.</span><span class=na>setStudentName</span><span class=o>(</span><span class=s>&#34;손수경&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=c1>// 인스턴스 생성 안하고 그냥 가져올 수 있음
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>StudentStatic</span><span class=o>.</span><span class=na>serialNum</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentSon</span><span class=o>.</span><span class=na>studentName</span> <span class=o>+</span> <span class=s>&#34; 학번 : &#34;</span> <span class=o>+</span> <span class=n>studentSon</span><span class=o>.</span><span class=na>studentID</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#클래스-메서드><h3 id=클래스-메서드><span class=hanchor arialabel=Anchor># </span>클래스 메서드</h3></a><p>static 변수를 위한 메서드도 있다. 이것을 <strong>static 메서드</strong> 혹은 <strong>클래스 메서드</strong>라고 한다.</p><ul><li><p>외부 클래스에서 serialNum 직접 참조 못하게 private으로 선언</p></li><li><p>private으로 바꿨으니 StudentStaticTest 클래스에서 접근 못하니까 직접 참조 불가</p></li><li><p>serialNum에 대한 get(), set() 생성</p></li><li><p>get()으로 참조하기</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>StudentStaticMethod</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=kd>static</span> <span class=kt>int</span> <span class=n>serialNum</span> <span class=o>=</span> <span class=n>1000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>studentID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>String</span> <span class=n>studentName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>grade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>String</span> <span class=n>address</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>StudentStaticMethod</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>serialNum</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentID</span> <span class=o>=</span> <span class=n>serialNum</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getStudentName</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>studentName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setStudentName</span><span class=o>(</span><span class=n>String</span> <span class=n>studentName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>studentName</span> <span class=o>=</span> <span class=n>studentName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>int</span> <span class=nf>getSerialNum</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>serialNum</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>setSerialNum</span><span class=o>(</span><span class=kt>int</span> <span class=n>serialNum</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>StudentStaticMethod</span><span class=o>.</span><span class=na>serialNum</span> <span class=o>=</span> <span class=n>serialNum</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>StudentStaticMethodTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>StudentStaticMethod</span> <span class=n>studentLee</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StudentStaticMethod</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentLee</span><span class=o>.</span><span class=na>setStudentName</span><span class=o>(</span><span class=s>&#34;이지원&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>StudentStaticMethod</span><span class=o>.</span><span class=na>getSerialNum</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentLee</span><span class=o>.</span><span class=na>studentName</span> <span class=o>+</span> <span class=s>&#34; 학번 : &#34;</span> <span class=o>+</span> <span class=n>studentLee</span><span class=o>.</span><span class=na>studentID</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>StudentStaticMethod</span> <span class=n>studentSon</span> <span class=o>=</span> <span class=k>new</span> <span class=n>StudentStaticMethod</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>studentSon</span><span class=o>.</span><span class=na>setStudentName</span><span class=o>(</span><span class=s>&#34;손수경&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>StudentStaticMethod</span><span class=o>.</span><span class=na>getSerialNum</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>studentSon</span><span class=o>.</span><span class=na>studentName</span> <span class=o>+</span> <span class=s>&#34; 학번 : &#34;</span> <span class=o>+</span> <span class=n>studentSon</span><span class=o>.</span><span class=na>studentID</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>static 메서드 또한 static 변수처럼 <strong>인스턴스 참조 변수가 아닌 클래스 이름으로 직접 호출할 수 있음</strong>. 다음으로, <code>getSerialNum()</code> 메서드를 더 살펴보겠다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>static</span> <span class=kt>int</span> <span class=nf>getSerialNum</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>10</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>studentName</span> <span class=o>=</span> <span class=s>&#34;이지원&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=n>serialNum</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>int i = 10</code>은 메서드 내부에서 선언한 <strong>지역 변수</strong>이다. <code>getSerialNum()</code> 메서드 내부에서만 사용 가능하다.</p></li><li><p><code>return serialNum;</code>은 serialNum이 static 변수라서 static 메서드에서 사용 가능하다.</p></li><li><p>그러나, <code>studentName</code>은 인스턴스 변수라서 인스턴스가 생성될 때 만들어지는 변수라서 아직 인스턴스를 생성하고 이런 상태가 아니라서 사용할 수 없다. 오류발생</p></li></ul><blockquote><p>클래스 메서드, 클래스 변수는 인스턴스가 생성되지 않아도 클래스를 직접 참조하여 사용 가능하다.</p></blockquote><br><p>정리하자면, <strong>클래스 메서드 내부에서 지역 변수와 클래스 변수는 사용할 수 있지만, 인스턴스 변수는 사용할 수 없다.</strong> 반대로, 일반 메서드에서 클래스 변수를 사용하는 것은 문제 없다.</p><ul><li><p>일반 메서드 : 인스턴스 생성될 때 호출되는 메서드, 클래스 변수는 이미 만들어져있어서 호출 가능</p></li><li><p>클래스 메서드 : 이미 만들어져있는 클래스 변수는 사용 가능, 하지만 인스턴스 변수는 아직 생성 안되었으니까 사용 불가능 !</p></li></ul><hr><a href=#변수-유효-범위><h2 id=변수-유효-범위><span class=hanchor arialabel=Anchor># </span>변수 유효 범위</h2></a><p>변수는 어디에 어떻게 선언되느냐에 따라 <strong>유효범위(scope)</strong> 가 달라진다.</p><br><a href=#지역-변수-유효범위><h3 id=지역-변수-유효범위><span class=hanchor arialabel=Anchor># </span>지역 변수 유효범위</h3></a><ul><li><p>지역 변수(로컬 변수, local variable)는 함수나 메서드 내부에 선언, 함수 밖에서 사용 못함</p></li><li><p>지역 변수가 생성되는 메모리는 <strong>스택(stack)</strong></p></li><li><p>함수가 호출될 때 스택에 생성되었다가 함수가 반환되면 할당되었던 메모리 공간 해제하면서 없어짐</p></li></ul><br><a href=#멤버-변수-유효범위><h3 id=멤버-변수-유효범위><span class=hanchor arialabel=Anchor># </span>멤버 변수 유효범위</h3></a><ul><li><p>멤버 변수(인스턴스 변수)는 클래스의 어느 메서드에서나 사용 가능</p></li><li><p>멤버 변수가 생성되는 메모리는 <strong>힙(heap)</strong></p></li><li><p>힙에 생성된 인스턴스가 가비지 컬렉터(garbage collector)에 의해 수거되면 메모리에서 사라진다. 따라서 클래스 <strong>내부</strong>의 여러 메서드에서 사용할 변수는 멤버 변수로 선언하는 것이 좋음</p></li></ul><br><a href=#정적-변수-유효범위><h3 id=정적-변수-유효범위><span class=hanchor arialabel=Anchor># </span>정적 변수 유효범위</h3></a><ul><li><p>정적 변수(static 변수, 클래스 변수)는 private이 아니라면 클래스 외부에서도 객체 생성(인스턴스 생성)과 무관하게 사용 가능</p></li><li><p>정적 변수가 생성되는 메모리는 <strong>메서드 영역</strong></p></li><li><p>메서드 영역 (책에서는 데이터 영역이라고 표현)에는 상수, 문자열, static 변수가 생성된다. 따라서 클래스 생성과 상관 없이 처음부터 메모리에 올라가는 것</p></li><li><p>프로그램 실행이 끝난 뒤 메모리에서 내려가면 그때 static 변수가 소멸된다. 즉, 프로그램의 시작부터 끝까지 메모리에 상주하므로, 너무 큰 변수를 static으로 선언하는 것은 좋지 않다.</p></li></ul><br><a href=#변수-유형에-따른-용도><h3 id=변수-유형에-따른-용도><span class=hanchor arialabel=Anchor># </span>변수 유형에 따른 용도</h3></a><p><img src=https://shin-jae-yoon.github.io//brain/image/chap06-2.png width=auto alt></p><ul><li>클래스의 여러 메서드에서 사용할 변수</li></ul><p>이러한 상황에 지역 변수로 선언하면, 다른 메서드에서 사용할 일이 있을 때 지역 변수를 메서드의 매개변수로 전달해야해서 매우 번거로움</p><br><p>모든 변수를 멤버 변수나 static 변수로 선언하면 메모리가 낭비되고 코드의 가독성 떨어짐. 따라서, 정답은 없으니까 상황에 맞게 효율적으로 프로그래밍 해야함.</p><br><ul><li><p><input checked disabled type=checkbox> 함수에서 기능 구현을 위해 잠시 사용 -> 지역 변수</p></li><li><p><input checked disabled type=checkbox> 클래스의 속성을 나타내고 각 인스턴스 마다 다른 값 가짐 -> 멤버 변수</p></li><li><p><input checked disabled type=checkbox> 여러 인스턴스에서 공유해서 사용하도록 한 번만 생성 -> 정적 변수</p></li></ul><hr><a href=#static-응용---싱글톤-패턴><h2 id=static-응용---싱글톤-패턴><span class=hanchor arialabel=Anchor># </span>static 응용 - 싱글톤 패턴</h2></a><a href=#디자인-패턴이란><h3 id=디자인-패턴이란><span class=hanchor arialabel=Anchor># </span>디자인 패턴이란?</h3></a><ul><li><p>객체지향 프로그램을 구현할 때 더 유연하고 재활용성이 높은 프로그램을 만들 수 있도록 정리한 내용</p></li><li><p>프로그램 특성에 따른 설계 유형을 이론화 한 것</p></li><li><p>자바에만 한정 짓는 것이 아닌 다른 객체 지향 언어에도 적용 가능</p></li></ul><br><a href=#싱글톤-패턴이란><h3 id=싱글톤-패턴이란><span class=hanchor arialabel=Anchor># </span>싱글톤 패턴이란?</h3></a><p>프로그램 구현 시, 여러 개의 인스턴스가 필요한 경우, 단 하나의 인스턴스만 필요한 경우가 있는데, <strong>인스턴스를 단 하나만 생성하는 디자인 패턴을 싱클톤 패턴(singleton pattern)</strong> 이라고 함.</p><p>여기서 살펴볼 싱글톤 패턴은 <strong>static을 응용하여 프로그램 전반에서 사용하는 인스턴스를 하나만 구현하는 방식</strong></p><br><p>예시</p><ul><li><p>어떤 회사의 직원들을 객체 지향 프로그램으로 구현</p></li><li><p>회사는 하나, 직원은 여러명</p></li><li><p>회사 객체는 <strong>단 하나만 생성</strong></p></li><li><p>직원 인스턴스는 여러 개 생성</p></li></ul><br><a href=#싱글톤-패턴으로-회사-클래스-구현><h3 id=싱글톤-패턴으로-회사-클래스-구현><span class=hanchor arialabel=Anchor># </span>싱글톤 패턴으로 회사 클래스 구현</h3></a><ol><li><p>생성자를 private으로 만들기</p><ul><li><p>컴파일러가 만들어주는 디폴트 생성자는 항상 public</p></li><li><p>생성자가 public이면 외부 클래스에서 인스턴스 여러 개 생성 가능</p></li><li><p>싱글톤 패턴에서는 생성자를 <strong>반드시</strong> 명시적으로 만들고 접근 제어자 private으로</p></li></ul></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06.singleton</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Company</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=nf>Company</span><span class=o>()</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ol start=2><li><p>클래스 내부에 static으로 유일한 인스턴스 생성</p><ul><li><p>1단계에서 private으로 바꿔서 외부 인스턴스를 생성 못하게 바꿨음</p></li><li><p>하지만, 프로그램에서 사용할 인스턴스 <strong>단 하나</strong>는 필요</p></li><li><p>싱글톤 패턴으로 만든 클래스 내부에서 <strong>하나의 인스턴스 생성</strong></p></li><li><p>이 인스턴스가 프로그램 전체에서 사용할 유일한 인스턴스</p></li></ul></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06.singleton</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Company</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=kd>static</span> <span class=n>Company</span> <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Company</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=nf>Company</span><span class=o>()</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ol start=3><li><p>외부에서 참조할 수 있는 public 메서드 생성</p><ul><li><p>private으로 선언한 유일한 인스턴스를 외부에서 사용할 수 있도록 설정</p></li><li><p>위 작업을 위해 public 메서드 생성하고 유일하게 생성한 인스턴스 반환</p></li><li><p>인스턴스를 반환하는 메서드는 반드시 <strong>static</strong>으로 선언</p></li><li><p>static 선언 이유 : 인스턴스 생성과 상관없이 호출해야해서</p></li></ul></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06.singleton</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Company</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=kd>static</span> <span class=n>Company</span> <span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Company</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=nf>Company</span><span class=o>()</span> <span class=o>{}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=n>Company</span> <span class=nf>getInstance</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=o>(</span><span class=n>instance</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>instance</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Company</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>instance</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>이는 마치 private 변수 선언했을 때, 외부에서 사용하려고 public get() 메서드 구현한 것과 동일한 모습이다.</p><br><ol start=4><li><p>실제로 사용하는 코드 생성</p><ul><li><p>외부 클래스에서 Company 생성 불가능한 상태</p></li><li><p>따라서, static으로 제공되는 getInstance() 메서드를 호출</p></li><li><p><code>Company.getInstance();</code>로 호출하면 반환값으로 유일한 인스턴스 받음</p></li><li><p>아래 코드는 같은 주소인지 확인하여 유일한 인스턴스가 맞는지 증명하는 코드</p></li></ul></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter06.singleton</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CompanyTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Company</span> <span class=n>myComapny1</span> <span class=o>=</span> <span class=n>Company</span><span class=o>.</span><span class=na>getInstance</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>Company</span> <span class=n>myCompany2</span> <span class=o>=</span> <span class=n>Company</span><span class=o>.</span><span class=na>getInstance</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>myComapny1</span> <span class=o>==</span> <span class=n>myCompany2</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#this-예약어>this 예약어</a><ul><li><a href=#자신의-메모리를-가리키는-this>자신의 메모리를 가리키는 this</a></li><li><a href=#생성자에서-다른-생성자를-호출하는-this>생성자에서 다른 생성자를 호출하는 this</a></li><li><a href=#자신의-주소를-반환하는-this>자신의 주소를 반환하는 this</a></li></ul></li><li><a href=#객체-간-협력>객체 간 협력</a></li><li><a href=#static-변수>static 변수</a><ul><li><a href=#변수를-여러-클래스에서-공통으로-사용하려면>변수를 여러 클래스에서 공통으로 사용하려면?</a></li><li><a href=#static-변수의-정의와-사용-방법>static 변수의 정의와 사용 방법</a></li><li><a href=#클래스-변수>클래스 변수</a></li><li><a href=#클래스-메서드>클래스 메서드</a></li></ul></li><li><a href=#변수-유효-범위>변수 유효 범위</a><ul><li><a href=#지역-변수-유효범위>지역 변수 유효범위</a></li><li><a href=#멤버-변수-유효범위>멤버 변수 유효범위</a></li><li><a href=#정적-변수-유효범위>정적 변수 유효범위</a></li><li><a href=#변수-유형에-따른-용도>변수 유형에 따른 용도</a></li></ul></li><li><a href=#static-응용---싱글톤-패턴>static 응용 - 싱글톤 패턴</a><ul><li><a href=#디자인-패턴이란>디자인 패턴이란?</a></li><li><a href=#싱글톤-패턴이란>싱글톤 패턴이란?</a></li><li><a href=#싱글톤-패턴으로-회사-클래스-구현>싱글톤 패턴으로 회사 클래스 구현</a></li></ul></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></body></html>

@@ -1,0 +1,1086 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.3f3438dd4ebe6d25e78406f133ca055f.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.b27ffe1deac19f743aae4ae5f70adbea.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.3952cd759d70c866e2f0d3c006a2a7a1.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.73894697e0dda63fd1dd6edb89d30d97.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>JVM</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 네트워크</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 운영체제</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 공통</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring Basic</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-01/ class=page-link style=display:block;width:100%>스프링 입문 : 섹션0-섹션3</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - SpringBoot/JPA</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬입문과 크롤링기초 부트캠프</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>자바의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.083fe8cbdb34ff1b07c3e4c26dd42369.js></script></div><div class=single-content><h1>08.상속과 다형성</h1><p class=meta>Last updated -
+2023년 03월 10일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Book/do-it-java/chap08.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/Do-it-%EC%9E%90%EB%B0%94/>📚 Do it! 자바</a></li></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#상속이란>상속이란?</a><ul><li><a href=#클래스의-상속>클래스의 상속</a></li><li><a href=#상속을-사용하여-고객-관리-프로그램-구현>상속을 사용하여 고객 관리 프로그램 구현</a></li></ul></li><li><a href=#클래스-생성과-형-변환>클래스 생성과 형 변환</a><ul><li><a href=#하위-클래스가-생성되는-과정>하위 클래스가 생성되는 과정</a></li><li><a href=#super---부모를-부르는-예약어>super - 부모를 부르는 예약어</a></li><li><a href=#상위-클래스로-묵시적-클래스-형-변환-업캐스팅>상위 클래스로 묵시적 클래스 형 변환 (업캐스팅)</a></li></ul></li><li><a href=#메서드-오버라이딩>메서드 오버라이딩</a><ul><li><a href=#상위-클래스-메서드-재정의>상위 클래스 메서드 재정의</a></li><li><a href=#묵시적-클래스-형-변환과-메서드-재정의>묵시적 클래스 형 변환과 메서드 재정의</a></li><li><a href=#가상-메서드>가상 메서드</a></li></ul></li><li><a href=#다형성>다형성</a><ul><li><a href=#다형성이란>다형성이란?</a></li><li><a href=#다형성의-장점>다형성의 장점</a></li></ul></li><li><a href=#다형성-활용하기>다형성 활용하기</a><ul><li><a href=#새로운-상황-부여-ver-01>새로운 상황 부여 ver 01</a></li><li><a href=#상속은-언제-사용>상속은 언제 사용?</a></li><li><a href=#자바에는-다중-상속이-없어요>자바에는 다중 상속이 없어요</a></li></ul></li><li><a href=#다운-캐스팅과-instanceof>다운 캐스팅과 instanceof</a><ul><li><a href=#하위-클래스로-형-변환-다운-캐스팅>하위 클래스로 형 변환, 다운 캐스팅</a></li><li><a href=#instanceof>instanceof</a></li></ul></li></ul></nav></details></aside><br><blockquote><p>해당 게시글은 <strong>Do it! 자바 프로그래밍 입문</strong> 교재를 정리한 내용입니다.</p></blockquote><hr><a href=#chapter-08---상속과-다형성><h1 id=chapter-08---상속과-다형성><span class=hanchor arialabel=Anchor># </span>Chapter 08 - 상속과 다형성</h1></a><br><a href=#상속이란><h2 id=상속이란><span class=hanchor arialabel=Anchor># </span>상속이란?</h2></a><ul><li><p>객체 지향 프로그래밍의 중요한 특징인 상속(inheritance)</p></li><li><p>B클래스가 A클래스를 상속받으면 B클래스는 A클래스의 멤버 변수, 메서드 사용 가능</p></li><li><p>유지 보수, 프로그램 수정, 새로운 내용 추가에 굉장히 유연한데 그것이 상속 덕분 !</p></li></ul><br><a href=#클래스의-상속><h3 id=클래스의-상속><span class=hanchor arialabel=Anchor># </span>클래스의 상속</h3></a><p><img src=https://shin-jae-yoon.github.io//brain/image/chap08-1.png width=auto alt></p><ul><li><p>(상위 클래스) A 클래스</p><ul><li>A 클래스가 B 클래스에게 상속한다.</li></ul></li><li><p>(하위 클래스) B 클래스</p><ul><li>B 클래스가 A 클래스를 상속받는다.</li></ul></li><li><p><strong>화살표 방향</strong></p><ul><li><p><code>상속받는 클래스</code> -> <code>상속하는 클래스</code></p></li><li><p><code>하위 클래스</code> -> <code>상위 클래스</code></p></li><li><p><code>자식 클래스</code> -> <code>부모 클래스</code></p></li></ul></li></ul><br><p><strong>클래스 상속 문법</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>B</span> <span class=kd>extends</span> <span class=n>A</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>A가 가지고 있는 속성이나 기능을 추가로 <strong>확장</strong>하여 B 클래스 구현</p></li><li><p>일반적인 클래스 A에서 더 구체적인 클래스 B가 구현된다.</p></li></ul><br><a href=#상속을-사용하여-고객-관리-프로그램-구현><h3 id=상속을-사용하여-고객-관리-프로그램-구현><span class=hanchor arialabel=Anchor># </span>상속을 사용하여 고객 관리 프로그램 구현</h3></a><ul><li>Customer 클래스</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Customer</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=kt>int</span> <span class=n>customerID</span><span class=o>;</span> <span class=c1>// 고객 아이디
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kd>private</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>;</span> <span class=c1>// 고객 이름
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kd>private</span> <span class=n>String</span> <span class=n>customerGrade</span><span class=o>;</span> <span class=c1>// 고객 등급
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>int</span> <span class=n>bonusPoint</span><span class=o>;</span> <span class=c1>// 적립 포인트
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>double</span> <span class=n>bonusRatio</span><span class=o>;</span> <span class=c1>// 적립 비율
+</span></span></span><span class=line><span class=cl><span class=c1></span>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>Customer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;SILVER&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>01</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>calcPrice</span><span class=o>(</span><span class=kt>int</span> <span class=n>price</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusPoint</span> <span class=o>+=</span> <span class=n>price</span> <span class=o>*</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>price</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getCustomerInfo</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerName</span> <span class=o>+</span> <span class=s>&#34; 님의 등급은 &#34;</span> <span class=o>+</span> <span class=n>customerGrade</span> <span class=o>+</span> <span class=s>&#34;이며, 보너스 포인트는 &#34;</span> <span class=o>+</span> <span class=n>bonusPoint</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>Customer 클래스 설명</strong></p><br><table><thead><tr><th style=text-align:center>멤버 변수</th><th>설명</th></tr></thead><tbody><tr><td style=text-align:center>customerID</td><td>고객 아이디</td></tr><tr><td style=text-align:center>customerName</td><td>고객 이름</td></tr><tr><td style=text-align:center>customerGrade</td><td>고객 등급<br>기본 생성자에서 지정되는 기본 등급은 Silver</td></tr><tr><td style=text-align:center>bonusPoint</td><td> 고객의 보너스 포인트<br>- 고객이 제품을 구매할 경우 누적되는 보너스 포인트</td></tr><tr><td style=text-align:center>bonusRatio</td><td> 보너스 포인트 적립 비율<br>- 고객이 제품을 구매할 때 구매 금액의 일정 비율이 보너스 포인트로 적립됨. 이때 계산되는 적립 비율<br>- 기본 생성자에서 지정되는 적립 비율은 1%이다. 즉, 10,000원 짜리를 사면 100원이 적립</td></tr></tbody></table><ul><li><p>모든 멤버 변수 private으로 선언 안해도 됨</p></li><li><p>외부에 노출하고 싶지 않은 멤버 변수나 메서드만 private으로 생성 !</p></li></ul><br><table><thead><tr><th style=text-align:center>메서드</th><th>설명</th></tr></thead><tbody><tr><td style=text-align:center>Customer()</td><td>기본 생성자. 고객 한 명이 새로 생성되면 등급은 실버, 적립 비율 1%</td></tr><tr><td style=text-align:center>calcPrice(int price)</td><td>제품에 대해 지불해야 하는 금액 계산 후 반환. 할인되지 않으면 가격 그대로 반환. 가격에 대한 보너스 포인트 비율을 적용하여 보너스 포인트 적립</td></tr><tr><td style=text-align:center>getCustomerInfo()</td><td>고객 정보 출력. 고객 이름/등급/적립된 포인트</td></tr></tbody></table><br><p>지금까지는 단순한 객체 지향 프로그램. 여기서 특별한 상황 부여</p><br><blockquote class=note-callout><p>예제 시나리오</p><p>고객이 점점 늘어나고 파내가 많아져서 단골 고객 생김. 단골 고객은 회사 매출에 큰 기여를 하는 우수 고객이라 좋은 혜택을 주고 싶음. 우수 고객 등급은 VIP이고 아래와 같은 혜택 제공</p><ul><li>제품 살 때 항상 10% 할인</li><li>보너스 포인트 5% 적립</li><li>담당 전문 상담원 배정</li></ul></blockquote></p><p><p>기존의 Customer 클래스에 VIP 고객 추가로 구현해도 됨. 그러나, 단점</p><ol><li><p>Customer 클래스 코드 복잡해짐</p></li><li><p>일반 고객 인스턴스 생성할 때도 불편</p></li><li><p>한마디로 낭비가 발생</p></li></ol><p>따라서, VIPCustomer 클래스를 따로 구현하기로 결정. 대신, Customer 클래스와 겹치는 부분이 있을 것임 (예를 들어, 멤버 변수 customerID, customerGrade, bonusPoint, bonusRatio) 겹치는 부분은 상속 받아서 구현하는게 훨씬 편할 것 !!</p><br><p><strong>그러나, 상속 시 문제점</strong></p><ol><li><p>Customer 클래스의 멤버 변수를 private으로 선언해놔서 외부 클래스에서 접근 불가</p></li><li><p>VIP 고객에게 제공하는 혜택인 할인율과 세일 가격을 어떻게 적용할지?</p></li></ol><ul><li>두 번째 문제는 <a href=/brain/Book/do-it-java/chap08/#메서드-오버라이딩>메서드 오버라이딩</a>에서 해결</li></ul><br><p><strong>첫 번째 문제 해결 - proteted</strong></p><p>이전에
+<a href=/brain/Book/do-it-java/chap05/ rel=noopener class=internal-link data-src=/brain/Book/do-it-java/chap05/>클래스와 객체 (1)</a>의 정보은닉에서 배운 접근제어자 protected를 이용하자. protected 예약어는 상위 클래스에 작성한 멤버 변수, 메서드 중 외브 클래스에서 사용할 수는 없지만 (private의 기능) 하위 클래스에서는 사용할 수 있도록 하는 것 ! 따라서, Customer 클래스의 private을 protected로 바꾸면 VIPCustomer 클래스에서 사용할 수 있고, 추가로 외부 클래스에서 사용할 수 있도록 get(), set() 메서드를 구현해놓으면 VIPCustomer 클래스도 자연스레 상속받는다.</p><ul><li>Customer 클래스</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Customer</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>protected</span> <span class=kt>int</span> <span class=n>customerID</span><span class=o>;</span> <span class=c1>// 고객 아이디
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kd>protected</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>;</span> <span class=c1>// 고객 이름
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kd>protected</span> <span class=n>String</span> <span class=n>customerGrade</span><span class=o>;</span> <span class=c1>// 고객 등급
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>int</span> <span class=n>bonusPoint</span><span class=o>;</span> <span class=c1>// 적립 포인트
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>double</span> <span class=n>bonusRatio</span><span class=o>;</span> <span class=c1>// 적립 비율
+</span></span></span><span class=line><span class=cl><span class=c1></span>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>Customer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;SILVER&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>01</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>calcPrice</span><span class=o>(</span><span class=kt>int</span> <span class=n>price</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusPoint</span> <span class=o>+=</span> <span class=n>price</span> <span class=o>*</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=n>price</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>showCustomerInfo</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerName</span> <span class=o>+</span> <span class=s>&#34; 님의 등급은 &#34;</span> <span class=o>+</span> <span class=n>customerGrade</span> <span class=o>+</span> <span class=s>&#34;이며, 보너스 포인트는 &#34;</span> <span class=o>+</span> <span class=n>bonusPoint</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>getCustomerID</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setCustomerID</span><span class=o>(</span><span class=kt>int</span> <span class=n>customerID</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerID</span> <span class=o>=</span> <span class=n>customerID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getCustomerName</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setCustomerName</span><span class=o>(</span><span class=n>String</span> <span class=n>customerName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerName</span> <span class=o>=</span> <span class=n>customerName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getCustomerGrade</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerGrade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setCustomerGrade</span><span class=o>(</span><span class=n>String</span> <span class=n>customerGrade</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerGrade</span> <span class=o>=</span> <span class=n>customerGrade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>VIPCustomer 클래스</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// VIPCustomer 클래스는 Customer 클래스를 상속 받음
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>public</span> <span class=kd>class</span> <span class=nc>VIPCustomer</span> <span class=kd>extends</span> <span class=n>Customer</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=kt>int</span> <span class=n>agentID</span><span class=o>;</span> <span class=c1>// VIP 고객 상담원 ID
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>double</span> <span class=n>saleRatio</span><span class=o>;</span> <span class=c1>// VIP 할인율
+</span></span></span><span class=line><span class=cl><span class=c1></span>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>VIPCustomer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;VIP&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>05</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>saleRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>getAgentID</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>agentID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>CustomerTest 클래스</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CustomerTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerLee</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Customer</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerLee</span><span class=o>.</span><span class=na>setCustomerID</span><span class=o>(</span><span class=n>10010</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerLee</span><span class=o>.</span><span class=na>setCustomerName</span><span class=o>(</span><span class=s>&#34;이순신&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerLee</span><span class=o>.</span><span class=na>bonusPoint</span> <span class=o>=</span> <span class=n>1000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerLee</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>VIPCustomer</span> <span class=n>customerKim</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerKim</span><span class=o>.</span><span class=na>setCustomerID</span><span class=o>(</span><span class=n>10020</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerKim</span><span class=o>.</span><span class=na>setCustomerName</span><span class=o>(</span><span class=s>&#34;김유신&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerKim</span><span class=o>.</span><span class=na>bonusPoint</span> <span class=o>=</span> <span class=n>10000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerKim</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 이순신 님의 등급은 SILVER이며, 보너스 포인트는 1000입니다.
+</span></span></span><span class=line><span class=cl><span class=c1>// 김유신 님의 등급은 VIP이며, 보너스 포인트는 10000입니다.
+</span></span></span></code></pre></td></tr></table></div></div><hr><a href=#클래스-생성과-형-변환><h2 id=클래스-생성과-형-변환><span class=hanchor arialabel=Anchor># </span>클래스 생성과 형 변환</h2></a><ul><li>하위 클래스 생성 시 상위 클래스의 생성자가 <strong>먼저 호출</strong></li></ul><br><a href=#하위-클래스가-생성되는-과정><h3 id=하위-클래스가-생성되는-과정><span class=hanchor arialabel=Anchor># </span>하위 클래스가 생성되는 과정</h3></a><p><img src=https://shin-jae-yoon.github.io//brain/image/chap08-2.png width=auto alt></p><ul><li><p>단순히 생각해보면, 하위 클래스에서 상위 클래스의 변수나 메서드를 사용할 수 있다는 것은 이미 저장하고 있는 메모리가 존재한다는 말이다.</p></li><li><p>이를 테스트 해보고 싶으면, 각 클래스 생성자에 출력문 찍어보고 테스트</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=nf>Customer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;SILVER&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>01</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Customer() 생성자 호출&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=nf>VIPCustomer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;VIP&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>05</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>saleRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;VIPCustomer() 생성자 호출&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// Customer() 생성자 호출
+</span></span></span><span class=line><span class=cl><span class=c1>// VIPCustomer() 생성자 호출
+</span></span></span><span class=line><span class=cl><span class=c1>// 김유신 님의 등급은 VIP이며, 보너스 포인트는 10000입니다.
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#super---부모를-부르는-예약어><h3 id=super---부모를-부르는-예약어><span class=hanchor arialabel=Anchor># </span>super - 부모를 부르는 예약어</h3></a><ul><li><p>super는 하위 클래스에서 상위 클래스로 접근할 때 사용</p></li><li><p>하위 클래스는 상위 클래스의 주소(참조 값)를 알고 있음.</p></li><li><p>상위 클래스의 생성자를 호출할 때도 super를 사용</p></li><li><p>this : 자기 자신의 참조 값 보유</p></li><li><p>super : 부모의 참조 값 보유</p></li></ul><p>생성자 호출이 궁금하다면?
+<a href=/brain/Book/do-it-java/chap06/ rel=noopener class=internal-link data-src=/brain/Book/do-it-java/chap06/>클래스와 객체 (2)</a> 생성자에서 다른 생성자를 호출하는 this 참고</p><br><p><strong>상위 클래스 생성자 호출</strong></p><p>바로 위에 VIPCustomer() 생성자 호출한거 보면 Customer() 생성자도 같이 불러와졌는데, 이는 하위 클래스 생성자에서 <code>super();</code>가 디폴트로 설정되어 있어서 컴파일러에서 자동으로 불러온다.</p><br><p><strong>super로 매개변수 있는 생성자 호출</strong></p><ul><li><p>super는 상위 클래스의 <strong>매개변수 없는 디폴트 생성자</strong>를 받아온다.</p></li><li><p>만약, 묵시적으로 호출될 디폴트 생성자가 상위 클래스에 정의되어있지 않다면, 오류가 발생한다.</p></li><li><p>따라서, 반드시 명시적으로 다른 생성자를 호출해야한다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=nf>Customer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;SILVER&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>01</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Customer() 생성자 호출&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Customer 클래스에 위와 같이 정의되어 있으면 VIPCustomer 클래스에서 super()가 디폴트 생성자를 묵시적으로 불러와줌. 그러나, 디폴트 생성자가 없다면?</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=nf>Customer</span><span class=o>(</span><span class=kt>int</span> <span class=n>customerID</span><span class=o>,</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>this</span><span class=o>.</span><span class=na>customerID</span> <span class=o>=</span> <span class=n>customerID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>this</span><span class=o>.</span><span class=na>customerName</span> <span class=o>=</span> <span class=n>customerName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;SILVER&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>01</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;Customer(int, String) 생성자 호출&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=nf>VIPCustomer</span><span class=o>(</span><span class=kt>int</span> <span class=n>customerID</span><span class=o>,</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>,</span> <span class=kt>int</span> <span class=n>agentID</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>super</span><span class=o>(</span><span class=n>customerID</span><span class=o>,</span> <span class=n>customerName</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;VIP&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>05</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>saleRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;VIPCustomer(int, String) 생성자 호출&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>이런식으로 <code>super(매개변수)</code>라고 명시적으로 적어서 VIPCustomer 생성자를 실행하면, Customer 생성자를 실행하도록 해야 한다.</p><br><p><strong>상위 클래스의 멤버 변수나 메서드를 참조하는 super</strong></p><ul><li>VIPCustomer 클래스에서 상속받은 Customer 클래스의 showCustomerInfo() 메서드를 그냥 사용할 수 있지만, <code>showCustomerInfo() 메서드 기능 + 추가적인 기능</code>를 구현하고 싶다면?</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// VIPCustomer 클래스에 구현
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>public</span> <span class=n>String</span> <span class=nf>showVIPInfo</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=kd>super</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; VIP전용 담당 상담원 아이디는 &#34;</span> <span class=o>+</span> <span class=n>agentID</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// Customer 클래스 출력 비교
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerLee</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl><span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerKim</span><span class=o>.</span><span class=na>showVIPInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 이순신 님의 등급은 SILVER이며, 보너스 포인트는 1000입니다.
+</span></span></span><span class=line><span class=cl><span class=c1>// 김유신 님의 등급은 VIP이며, 보너스 포인트는 10000입니다. VIP전용 담당 상담원 아이디는 1입니다.
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p>굳이 super를 쓰는건 여기서는 super를 안써도 상위 클래스의 메서드 호출이 잘 되지만, <strong>하위 클래스가 상위 클래스와 동일한 이름의 메서드를 구현하는 경우</strong>라면 어떤가? super가 무조건 필요하겠지</p></li><li><p>이는 나중에 배울 <a href=/brain/Book/do-it-java/chap08/#메서드-오버라이딩>메서드 오버라이딩</a>관련된 내용!</p></li></ul><br><a href=#상위-클래스로-묵시적-클래스-형-변환-업캐스팅><h3 id=상위-클래스로-묵시적-클래스-형-변환-업캐스팅><span class=hanchor arialabel=Anchor># </span>상위 클래스로 묵시적 클래스 형 변환 (업캐스팅)</h3></a><ul><li><p>상속 공부할 때, 자료형 형 변환처럼 <strong>클래스 간 형 변환 개념</strong>이 매우 중요!</p></li><li><p>Customer는 일반적인 개념</p></li><li><p>VIPCustomer는 일반적인 개념 + 더 많은 기능</p></li><li><p>따라서, VIPCustomer는 VIPCustomer형 이면서, 동시에 Customer형!</p></li><li><p>VIPCustomer 클래스로 인스턴스 생성할 때, 인스턴스의 자료형을 <strong>Customer형으로 클래스 형 변환하여 선언 가능</strong></p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Customer</span> <span class=n>vc</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>();</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>Customer</code> : 선언된 클래스형 (상위 클래스형)</p></li><li><p><code>VIPCustomer()</code> : 생성된 인스턴스의 클래스형 (하위 클래스형)</p></li></ul><br><p><strong>최종 정리</strong></p><ul><li><p>하위 클래스 자료형 (더 많은 기능) -> 상위 클래스 자료형 (일반적인 기능) O</p></li><li><p>상위 클래스 자료형 (일반적인 기능) -> 하위 클래스 자료형 (더 많은 기능) X</p></li></ul><br><p><img src=https://shin-jae-yoon.github.io//brain/image/chap08-3.png width=auto alt></p><p>다시 이 그림을 보자. 위에서 <code>VIPCustomer()</code>로 VIPCustomer의 생성자를 이용하여 만들었다고 해도 <code>Customer</code>로 자료형을 선언했기에, 사용가능한 기능은 1번의 기능인 <code>Customer 클래스의 기능</code>만 사용 가능하다.</p><p>이렇게 클래스 형 변환 사용하는 이유 -> <a href=/brain/Book/do-it-java/chap08/#메서드-오버라이딩>메서드 오버라이딩</a>과 <a href=/brain/Book/do-it-java/chap08/#다형성>다형성</a> 때문<br></p><p>vc 참조 변수를 다시 VIPCustomer형으로 변환하는 것은 <a href=/brain/Book/do-it-java/chap08/#다운-캐스팅과-instanceof>다운 캐스팅과 instanceof</a></p><hr><a href=#메서드-오버라이딩><h2 id=메서드-오버라이딩><span class=hanchor arialabel=Anchor># </span>메서드 오버라이딩</h2></a><a href=#상위-클래스-메서드-재정의><h3 id=상위-클래스-메서드-재정의><span class=hanchor arialabel=Anchor># </span>상위 클래스 메서드 재정의</h3></a><p>VIPCustomer 클래스가 Customer 클래스 상속받을 시 언급했던 두 번째 문제점</p><ul><li><p>VIP 고객에게 제공하는 혜택인 할인율과 세일 가격을 어떻게 적용할지?</p></li><li><p>문제가 되는 이유 : 상속받은 메서드 calcPrice()가 일반 고객과 VIP 고객에게 다르게 적용되어야 함</p></li><li><p>따로 vip를 위한 계산을 구현하기에는 리소스 낭비. 10% 할인만 적용하면 되니까</p></li><li><p>따라서, 상위 클래스의 메서드를 하위 클래스 입맛에 맞게 메서드를 재정의해보자</p></li><li><p>이를 <strong>메서드 오버라이딩</strong>이라고 함</p></li><li><p><strong>오버라이딩 조건 : 반환형/메서드 이름/매개변수 개수/매개변수 자료형 반드시 동일</strong></p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// Customer 클래스의 calcPrice 메서드
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>public</span> <span class=kt>int</span> <span class=nf>calcPrice</span><span class=o>(</span><span class=kt>int</span> <span class=n>price</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>bonusPoint</span> <span class=o>+=</span> <span class=n>price</span> <span class=o>*</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=n>price</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// VIPCustomer 클래스의 calcPrice 메서드
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nd>@Override</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kt>int</span> <span class=nf>calcPrice</span><span class=o>(</span><span class=kt>int</span> <span class=n>price</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>bonusPoint</span> <span class=o>+=</span> <span class=n>price</span> <span class=o>*</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=c1>// 할인된 가격을 계산하여 반환
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>return</span> <span class=n>price</span> <span class=o>-</span> <span class=o>(</span><span class=kt>int</span><span class=o>)(</span><span class=n>price</span> <span class=o>*</span> <span class=n>saleRatio</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>@Override 애노테이션</code>은 &ldquo;이 메서드는 재정의된 메서드입니다.&ldquo;라고 컴파일러에게 명확하게 알려주기 위함!</p><br><blockquote class=note-callout><p>애노테이션(Annotation) ?</p><p>애노테이션은 해석해보면 &ldquo;주석"이다. &lsquo;@애노테이션 이름&rsquo;으로 표현 자바의 애노테이션은 컴파일러에게 특정한 정보를 제공 미리 정의되어 있는 애노테이션을 표준 애니테이션이라고 함</p></blockquote><br><table><thead><tr><th style=text-align:left>애노테이션</th><th style=text-align:left>설명</th></tr></thead><tbody><tr><td style=text-align:left>@Override</td><td style=text-align:left>재정의된 메서드라는 정보 제공</td></tr><tr><td style=text-align:left>@FunctionalInterface</td><td style=text-align:left>함수형 인터페이스라는 정보 제공</td></tr><tr><td style=text-align:left>@Deprecated</td><td style=text-align:left>이후 버전에서 사용되지 않을 수 있는 변수, 메서드에 사용됨</td></tr><tr><td style=text-align:left>@SuppressWarnings</td><td style=text-align:left>특정 경고가 나타나지 않도록 함</td></tr></tbody></table><br><a href=#묵시적-클래스-형-변환과-메서드-재정의><h3 id=묵시적-클래스-형-변환과-메서드-재정의><span class=hanchor arialabel=Anchor># </span>묵시적 클래스 형 변환과 메서드 재정의</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Customer</span> <span class=n>vc</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>(</span><span class=n>10030</span><span class=o>,</span> <span class=s>&#34;나몰라&#34;</span><span class=o>,</span> <span class=n>2000</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=n>vc</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>10000</span><span class=o>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>해당 코드는 묵시적 형 변환에 의해 VIPCustomer형이 Customer형으로 변환됨. 이 경우 calcPrice() 메서드는 오버라이딩 된 메서드인데, 어떤 클래스의 메서드를 호출하겠는가? Customer 클래스라면 지불해야하는 금액은 10000원, VIPCustomer 클래스라면 지불해야하는 금액은 9000원이다. 웃기게도.. VIPCustomer 결과가 나온다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>OverridingTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>vc</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>(</span><span class=n>10030</span><span class=o>,</span> <span class=s>&#34;나몰라&#34;</span><span class=o>,</span> <span class=n>2000</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>vc</span><span class=o>.</span><span class=na>bonusPoint</span> <span class=o>=</span> <span class=n>1000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>vc</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; 님이 지불해야하는 금액은 &#34;</span> <span class=o>+</span> <span class=n>vc</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>10000</span><span class=o>)</span> <span class=o>+</span> <span class=s>&#34;원입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 나몰라 님이 지불해야하는 금액은 9000원입니다.
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p>멤버 변수와 메서드 : 선언한 클래스형에 따라 호출</p></li><li><p>상속에서 상위와 하위에 같은 이름의 메서드가 존재할 때 : 인스턴스에 따라 결정</p></li></ul><p>메서드 오버라이딩을 한 경우에는 선언한 클래스 형이 아닌 <strong>생성된 인스턴스의 메서드를 호출</strong>한다. 이렇게 인스턴스의 메서드가 호출되는 기술을 <strong>가상 메서드(virtual method)</strong> 라고 한다.</p><br><a href=#가상-메서드><h3 id=가상-메서드><span class=hanchor arialabel=Anchor># </span>가상 메서드</h3></a><ul><li><p>자바의 클래스는 멤버 변수와 메서드로 이루어짐</p></li><li><p>인스턴스 변수는 힙 메모리에 위치하는거 이제 기억하지?</p></li><li><p>변수는 인스턴스가 생성될 때마다 힙 메모리에 새로 생성</p></li><li><p>메서드는 실행해야 할 명령 집합이라서 <strong>인스턴스가 달라도 같은 로직 수행</strong></p></li><li><p>즉, 인스턴스 여러 개 생성한다고 해도 메서드도 여러 개 생성되지는 않음. 또 애초에 메서드와 관련된 지역 변수와 매개 변수는 스택 메모리에 할당받고 메서드 끝나면 해제하잖아!</p></li><li><p>메서드의 명령 집합은 <strong>메서드 영역</strong>에 위치함</p></li></ul><br><p>자바의 모든 메서드는 가상 메서드이다.</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>TestA</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>num</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kt>void</span> <span class=nf>aaa</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;aaa() 출력&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>TestA</span> <span class=n>a1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>TestA</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>a1</span><span class=o>.</span><span class=na>aaa</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>TestA</span> <span class=n>a2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>TestA</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>a2</span><span class=o>.</span><span class=na>aaa</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// aaa() 출력
+</span></span></span><span class=line><span class=cl><span class=c1>// aaa() 출력
+</span></span></span></code></pre></td></tr></table></div></div><br><p><img src=https://shin-jae-yoon.github.io//brain/image/chap08-4.png width=auto alt></p><ul><li><p>main() 함수가 실행되면 지역 변수 스택에 위치</p></li><li><p>참조 변수 a1, a2가 가리키는 인스턴스 힙 메모리에 생성</p></li><li><p>메서드 aaa()의 명령 집합 메서드 영역에 생성</p></li><li><p>메서드 호출하면 콜 스택에서 메서드 영역의 주소를 참조하여 명령 실행</p></li><li><p><strong>따라서, 인스턴스 달라도 동일한 메서드 호출</strong></p></li></ul><br><p><strong>가상 메서드의 원리</strong></p><p>일반적으로 메서드를 호출한다는 것</p><ul><li>메서드를 호출 한다 = 메서드의 명령 집합이 있는 메모리 위치를 참조하여 명령 실행</li></ul><br><p>가상 메서드의 경우 (<strong>자바의 모든 메서드는 가상 메서드</strong>)</p><ul><li><p><strong>가상 메서드 테이블</strong>이 생성됨</p></li><li><p>각 메서드 이름, 실제 메모리 주소가 짝을 이룸</p></li><li><p>따라서, 어떤 메서드가 호출되면 가상 메서드 테이블에서 주소 값을 찾아서 해당 메서드의 명령을 수행</p></li></ul><br><p><img src=https://shin-jae-yoon.github.io//brain/image/chap08-5.png width=auto alt></p><ul><li><p>calcPrice() 메서드와 같이 재정의 된 메소드</p></li><li><p>실제 인스턴스에 해당하는 메서드가 호출</p></li><li><p>showCustomerInfo() 메서드와 같이 재정의 되지 않은 메소드</p></li><li><p>메서드 주소가 같으며 상위 클래스의 메서드가 호출</p></li></ul><p><br><br></p><p><strong>최종 정리</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>OverridingTest2</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kt>int</span> <span class=n>price</span> <span class=o>=</span> <span class=n>10000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerLee</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Customer</span><span class=o>(</span><span class=n>10010</span><span class=o>,</span> <span class=s>&#34;이순신&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerLee</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; 님이 지불해야하는 금액은 &#34;</span> <span class=o>+</span> <span class=n>customerLee</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>price</span><span class=o>)</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>VIPCustomer</span> <span class=n>customerKim</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>(</span><span class=n>10020</span><span class=o>,</span> <span class=s>&#34;김유신&#34;</span><span class=o>,</span> <span class=n>12345</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerKim</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; 님이 지불해야하는 금액은 &#34;</span> <span class=o>+</span> <span class=n>customerKim</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>price</span><span class=o>)</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>vc</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>(</span><span class=n>10030</span><span class=o>,</span> <span class=s>&#34;나몰라&#34;</span><span class=o>,</span> <span class=n>2000</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>vc</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; 님이 지불해야하는 금액은 &#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>		<span class=n>vc</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>price</span><span class=o>)</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 10000원
+</span></span></span><span class=line><span class=cl><span class=c1>// 9000원
+</span></span></span><span class=line><span class=cl><span class=c1>// 9000원
+</span></span></span></code></pre></td></tr></table></div></div><ol><li><p>Customer 형으로 선언하고 Customer 인스턴스 생성 -> Customer의 메서드 호출</p></li><li><p>VIPCustomer 형으로 선언하고 VIPCustomer 인스턴스 생성 -> VIPCustomer의 메서드 호출</p></li><li><p>Customer 형으로 선언하고 VIPCustomer 인스턴스 생성 -> 원래라면 Customer형 메서드가 호출되는 것이 맞지만, <strong>가상 메서드 방식에 의해 VIPCustomer의 인스턴스의 메서드가 호출</strong></p></li></ol><p><img src=https://shin-jae-yoon.github.io//brain/image/chap08-6.png width=auto alt></p><hr><a href=#다형성><h2 id=다형성><span class=hanchor arialabel=Anchor># </span>다형성</h2></a><a href=#다형성이란><h3 id=다형성이란><span class=hanchor arialabel=Anchor># </span>다형성이란?</h3></a><p>묵시적 클래스 형 변환 + 가상 메서드를 바탕으로 다형성을 이해해보자.</p><br><p>다형성(polymorphism) : 하나의 코드가 여러 자료형으로 구현되어 실행되는 것</p><ul><li>쉽게 말해서, 같은 코드에서 여러 실행결과가 나옴</li></ul><br><p>Animal 클래스를 상속받는 Human, Tiger, Eagle 클래스가 있다고 가정</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;동물이 움직입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Human</span> <span class=kd>extends</span> <span class=n>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;사람이 두 발로 걷습니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Tiger</span> <span class=kd>extends</span> <span class=n>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;호랑이가 네 발로 뜁니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Eagle</span> <span class=kd>extends</span> <span class=n>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;독수리가 하늘을 납니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>AnimalTest1</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>AnimalTest</span> <span class=n>aTest</span> <span class=o>=</span> <span class=k>new</span> <span class=n>AnimalTest</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>aTest</span><span class=o>.</span><span class=na>moveAnimal</span><span class=o>(</span><span class=k>new</span> <span class=n>Human</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=n>aTest</span><span class=o>.</span><span class=na>moveAnimal</span><span class=o>(</span><span class=k>new</span> <span class=n>Tiger</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=n>aTest</span><span class=o>.</span><span class=na>moveAnimal</span><span class=o>(</span><span class=k>new</span> <span class=n>Eagle</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>AnimalTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>moveAnimal</span><span class=o>(</span><span class=n>Animal</span> <span class=n>animal</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>animal</span><span class=o>.</span><span class=na>move</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>AnimalTest 클래스의 moveAnimal() 메서드는 어떤 인스턴스가 매개변수로 넘어와도 모두 Animal 형으로 형 변환 됨 (디테일한 하위 클래스 -> 일반적인 상위 클래스 이니까)</p></li><li><p>예를 들어, 매개 변수가 전잘되는 부분에 Human 인스턴스가 전달되었다면, Animal 형으로 선언한 곳에 Human 인스턴스가 들어온 것이니까 아래와 같다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Animal</span> <span class=n>animal</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Human</span><span class=o>();</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>가상 메서드 원리에 따라, <code>animal.move()</code> 메서드가 호출하는 메서드는 매개변수로 넘어온 <strong>실제 인스턴스의 메서드를 호출함</strong>.</p></li><li><p>그래서 Animal의 move가 아닌 Human, Tiger, Eagle의 move를 호출하는 것</p></li></ul><p><br><br></p><p><strong>최종 정리</strong></p><ol><li><p>Animal의 <code>move()</code> 메서드를 Human, Tiger, Eagle에서 메서드 오버라이딩 함</p></li><li><p>AnimalTest 클래스의 <code>moveAnimal()</code> 메서드의 매개 변수를 Animal 형으로 선언</p></li><li><p>따라서, 매개변수로 들어오는 Human, Tiger, Eagle은 Anmial 형으로 묵시적 형 변환 일어남</p></li><li><p>묵시적 형 변환이 일어났지만, <strong>가상 메서드의 원리</strong>에 의하여 <code>animal.move()</code> 메서드가 호출하는 메서드는 실제 인스턴스의 메서드를 호출</p></li><li><p>결과적으로 <code>animal.move()</code> 코드는 변함이 없지만, <strong>어떤 매개변수가 넘어왔느냐에 따라 결과가 달라짐</strong></p></li><li><p>하나의 코드가 여러 자료형으로 구현되어 실행됨. 이것이 다형성</p></li></ol><br><a href=#다형성의-장점><h3 id=다형성의-장점><span class=hanchor arialabel=Anchor># </span>다형성의 장점</h3></a><p>다른 동물이 새로 추가되어도, Animal 클래스를 상속받아 구현하면, <strong>모든 클래스를 Animal 자료형 하나로 쉽게 관리할 수 있을 것이다.</strong> 어차피, AnimalTest 클래스를 인스턴스 생성하고 AnimalTest의 메서드를 실행하는데 그 메서드는 매개변수로 Animal 자료형을 받기 때문이다.</p><p>각 자료형에 따라 코드를 다르게 구현한 것보다 코드가 훨씬 간단해지고 유지보수가 수월해진다. 자 그러면 느껴봐야지?</p><p><br><br></p><p><strong>다형성을 활용해 VIP 고객 클래스 리팩토링</strong></p><ul><li>Customer.java</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Customer</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>protected</span> <span class=kt>int</span> <span class=n>customerID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>protected</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>protected</span> <span class=n>String</span> <span class=n>customerGrade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>bonusPoint</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>double</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>Customer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>initCustomer</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=nf>Customer</span><span class=o>(</span><span class=kt>int</span> <span class=n>customerID</span><span class=o>,</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerID</span> <span class=o>=</span> <span class=n>customerID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerName</span> <span class=o>=</span> <span class=n>customerName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>initCustomer</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=c1>// 생성자에서만 호출하는 메서드니까 private으로 선언
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kd>private</span> <span class=kt>void</span> <span class=nf>initCustomer</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;SILVER&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>01</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>calcPrice</span><span class=o>(</span><span class=kt>int</span> <span class=n>price</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusPoint</span> <span class=o>+=</span> <span class=n>price</span> <span class=o>*</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>price</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>showCustomerInfo</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerName</span> <span class=o>+</span> <span class=s>&#34;님의 등급은 &#34;</span> <span class=o>+</span> <span class=n>customerGrade</span> <span class=o>+</span> <span class=s>&#34;이며, 보너스 포인트는 &#34;</span> <span class=o>+</span> <span class=n>bonusPoint</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>getCustomerID</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setCustomerID</span><span class=o>(</span><span class=kt>int</span> <span class=n>customerID</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerID</span> <span class=o>=</span> <span class=n>customerID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getCustomerName</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setCustomerName</span><span class=o>(</span><span class=n>String</span> <span class=n>customerName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerName</span> <span class=o>=</span> <span class=n>customerName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getCustomerGrade</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>customerGrade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setCustomerGrade</span><span class=o>(</span><span class=n>String</span> <span class=n>customerGrade</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>customerGrade</span> <span class=o>=</span> <span class=n>customerGrade</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>VIPCustomer.java</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>VIPCustomer</span> <span class=kd>extends</span> <span class=n>Customer</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=kt>int</span> <span class=n>agentID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>double</span> <span class=n>saleRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>VIPCustomer</span><span class=o>(</span><span class=kt>int</span> <span class=n>customerID</span><span class=o>,</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>,</span> <span class=kt>int</span> <span class=n>agentID</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kd>super</span><span class=o>(</span><span class=n>customerID</span><span class=o>,</span> <span class=n>customerName</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;VIP&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>05</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>saleRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>agentID</span> <span class=o>=</span> <span class=n>agentID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>calcPrice</span><span class=o>(</span><span class=kt>int</span> <span class=n>price</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusPoint</span> <span class=o>+=</span> <span class=n>price</span> <span class=o>*</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>price</span> <span class=o>-</span> <span class=o>(</span><span class=kt>int</span><span class=o>)(</span><span class=n>price</span> <span class=o>*</span> <span class=n>saleRatio</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>showCustomerInfo</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=kd>super</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; 담당 상담원 번호는 &#34;</span> <span class=o>+</span> <span class=n>agentID</span> <span class=o>+</span> <span class=s>&#34;입니다.&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>getAgentID</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>agentID</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>CustomerTest.java</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CustomerTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerLee</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Customer</span><span class=o>(</span><span class=n>10010</span><span class=o>,</span> <span class=s>&#34;이순신&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerLee</span><span class=o>.</span><span class=na>bonusPoint</span> <span class=o>=</span> <span class=n>1000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerLee</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerKim</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>(</span><span class=n>10020</span><span class=o>,</span> <span class=s>&#34;김유신&#34;</span><span class=o>,</span> <span class=n>12345</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerKim</span><span class=o>.</span><span class=na>bonusPoint</span> <span class=o>=</span> <span class=n>10000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerKim</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;----- 할인율과 보너스 포인트 계산 -----&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=kt>int</span> <span class=n>price</span> <span class=o>=</span> <span class=n>10000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=kt>int</span> <span class=n>leePrice</span> <span class=o>=</span> <span class=n>customerLee</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>price</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=kt>int</span> <span class=n>kimPrice</span> <span class=o>=</span> <span class=n>customerKim</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>price</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerLee</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34;님이 &#34;</span> <span class=o>+</span> <span class=n>leePrice</span> <span class=o>+</span> <span class=s>&#34;원 지불하셨습니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerLee</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerKim</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34;님이 &#34;</span> <span class=o>+</span> <span class=n>kimPrice</span> <span class=o>+</span> <span class=s>&#34;원 지불하셨습니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customerKim</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>핵심은 Customer 자료형 하나로 관리하는 모습이다. 자료형은 Customer 형으로 동일하지만, 할인율과 보너스 포인트는 각 인스턴스의 메서드에 맞게 계산했다. 재정의된 메서드는 각각 호출되고 서로 다른 역할을 구현하기 떄문이다. 다형성을 적절하게 이용했다.</p><hr><a href=#다형성-활용하기><h2 id=다형성-활용하기><span class=hanchor arialabel=Anchor># </span>다형성 활용하기</h2></a><a href=#새로운-상황-부여-ver-01><h3 id=새로운-상황-부여-ver-01><span class=hanchor arialabel=Anchor># </span>새로운 상황 부여 ver 01</h3></a><blockquote class=note-callout><p>예제 시나리오</p><p>고객이 늘어 VIP 고객까진 아니고 GOLD 등급 하나 추가하려함</p><ul><li>제품을 살 때는 항상 10% 할인 (VIP랑 동일)</li><li>보너스 포인트를 2% 적립 (SILVER는 1%, VIP는 5%)</li><li>담당 전문 상담원 없음</li></ul></blockquote><p><img src=https://shin-jae-yoon.github.io//brain/image/chap08-7.png width=auto alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>GoldCustomer</span> <span class=kd>extends</span> <span class=n>Customer</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kt>double</span> <span class=n>saleRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>GoldCustomer</span><span class=o>(</span><span class=kt>int</span> <span class=n>customerID</span><span class=o>,</span> <span class=n>String</span> <span class=n>customerName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kd>super</span><span class=o>(</span><span class=n>customerID</span><span class=o>,</span> <span class=n>customerName</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerGrade</span> <span class=o>=</span> <span class=s>&#34;GOLD&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>02</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>saleRatio</span> <span class=o>=</span> <span class=n>0</span><span class=o>.</span><span class=na>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>calcPrice</span><span class=o>(</span><span class=kt>int</span> <span class=n>price</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>bonusPoint</span> <span class=o>+=</span> <span class=n>price</span> <span class=o>*</span> <span class=n>bonusRatio</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>price</span> <span class=o>-</span> <span class=o>(</span><span class=kt>int</span><span class=o>)(</span><span class=n>price</span> <span class=o>*</span> <span class=n>saleRatio</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>배열로 고객 5명 구현하기</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.ArrayList</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CustomerTest2</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Customer</span><span class=o>&gt;</span> <span class=n>customerList</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Customer</span><span class=o>&gt;();</span> 
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerLee</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Customer</span><span class=o>(</span><span class=n>10010</span><span class=o>,</span> <span class=s>&#34;이순신&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerShin</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Customer</span><span class=o>(</span><span class=n>10020</span><span class=o>,</span> <span class=s>&#34;신사임당&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerHong</span> <span class=o>=</span> <span class=k>new</span> <span class=n>GoldCustomer</span><span class=o>(</span><span class=n>10030</span><span class=o>,</span> <span class=s>&#34;홍길동&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerYoul</span> <span class=o>=</span> <span class=k>new</span> <span class=n>GoldCustomer</span><span class=o>(</span><span class=n>10040</span><span class=o>,</span> <span class=s>&#34;이율곡&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>Customer</span> <span class=n>customerKim</span> <span class=o>=</span> <span class=k>new</span> <span class=n>VIPCustomer</span><span class=o>(</span><span class=n>10050</span><span class=o>,</span> <span class=s>&#34;김유신&#34;</span><span class=o>,</span> <span class=n>12345</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>customerList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>customerLee</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>customerShin</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>customerHong</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>customerYoul</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>customerList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>customerKim</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;----- 고객 정보 출력 -----&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=n>Customer</span> <span class=n>customer</span> <span class=o>:</span> <span class=n>customerList</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customer</span><span class=o>.</span><span class=na>showCustomerInfo</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;----- 할인율과 보너스 포인트 계산 -----&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=kt>int</span> <span class=n>price</span> <span class=o>=</span> <span class=n>10000</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span><span class=o>(</span><span class=n>Customer</span> <span class=n>customer</span> <span class=o>:</span> <span class=n>customerList</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=kt>int</span> <span class=n>cost</span> <span class=o>=</span> <span class=n>customer</span><span class=o>.</span><span class=na>calcPrice</span><span class=o>(</span><span class=n>price</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customer</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34;님이 &#34;</span> <span class=o>+</span> <span class=n>cost</span> <span class=o>+</span> <span class=s>&#34;원 지불하셨습니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>customer</span><span class=o>.</span><span class=na>getCustomerName</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34;님의 현재 보너스 포인트는 &#34;</span> <span class=o>+</span> <span class=n>customer</span><span class=o>.</span><span class=na>bonusPoint</span> <span class=o>+</span> <span class=s>&#34;점 입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><strong>Customer 형</strong>으로 객체 배열 ArrayList 선언</p></li><li><p><strong>Customer 형</strong>으로 선언하고 Customer, GoldCustomer, VIPCustomer 인스턴스 생성해서, 각 인스턴스 (하위) -> Custmer (상위)로 묵시적 형 변환</p></li><li><p>가상 메서드 원리에 의하여 <strong>Customer 형</strong>임에도 calcPrice() 메서드 호출 시 각 인스턴스의 메서드 호출하여 실행</p></li><li><p>배열의 요소를 <strong>Customer 형</strong> 변수에 넣음</p></li><li><p>이것이 바로 다형성 ~</p></li></ul><p>만약, 재정의한 (오버라이딩한) 메서드가 가상 메서드 방식에 의해 자동으로 호출되지 않는다면? -> if/else-if로 각 자료형에 적합한 코드를 하나하나 따로 구현해야함 -> 코드 길어짐, 유지보수 힘듬</p><br><a href=#상속은-언제-사용><h3 id=상속은-언제-사용><span class=hanchor arialabel=Anchor># </span>상속은 언제 사용?</h3></a><p>상속을 사용하여 이미 Customer 클래스가 있는 상태에서 (기본 뼈대) 추가적인 내용만 따로 구현 가능했다. 만약 상속을 사용하지 않는다면? 아래처럼 답 없이 짜야함</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=k>if</span> <span class=o>(</span><span class=n>customerGrade</span> <span class=o>==</span> <span class=s>&#34;VIP&#34;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// 할인해주고, 적립도 많이해주고
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>customerGrade</span> <span class=o>==</span> <span class=s>&#34;GOLD&#34;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// 할인해주고, 적립 적당히
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>customerGrade</span> <span class=o>==</span> <span class=s>&#34;SILVER&#34;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// 할인 없음, 적립만
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>그렇다면, 상속을 항상 사용하는 것이 좋은가?</strong></p><ul><li><p>아니다. 상속은 <mark>IS-A 관계(is a relationship; inheritance)</mark> 처럼 일반적인 개념과 구체적인 개념의 관계에서 사용하는 것이 가장 효율적이다.</p></li><li><p>일반 클래스를 점차 구체화하는 상황에서 사용하는 것이지 상속을 사용하면 <strong>하위 클래스가 상위 클래스형에 종속되기 때문에</strong> 이질적인 클래스 간에는 상속을 사용하지 않는 것이 좋다.</p></li></ul><br><p>예를 들어, 과목을 나타내는 Subject 클래스와 학생을 나타내는 Student 클래스가 있다고 하자. 모든 학생은 전공 과목(Subject)을 가지고 있으니까 Subject 클래스에서 제공하는 여러 메서드를 활용하면 좋을 것 같아서 상속받으면 될까?</p><p>Subject가 Student를 <strong>포괄</strong>하는 개념이 <strong>아니기</strong> 때문에 좋지 않다. 이런 경우에는 IS-A 관계가 아닌 <mark>HAS-A 관계(has a relationship; association)</mark> 로 표현한다. HAS-A 관계는 <strong>한 클래스가 다른 클래스를 소유한 관계</strong>이다.</p><ul><li><p>학생이 과목을 가지고 있다. HAS-A 관계</p></li><li><p>Subject는 Student에 포함되어 Student의 멤버 변수로 사용하는 것이 적절</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Student</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>Subject</span> <span class=n>majorSubject</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>최종 정리</strong></p><ul><li><p>상속은 무조건적인 코드 재사용 개념이 아니다.</p></li><li><p>상속을 사용하면 클래스 간의 결합도가 높아져서, 상위 클래스의 변화가 하위 클래스에 미치는 영향이 커진다.</p></li><li><p>일반적인 클래스와 구체적인(확장되는) 클래스, IS-A 관계에서 구현하는 것이 맞다.</p></li></ul><br><a href=#자바에는-다중-상속이-없어요><h3 id=자바에는-다중-상속이-없어요><span class=hanchor arialabel=Anchor># </span>자바에는 다중 상속이 없어요</h3></a><p>다중 상속 : 한 클래스가 여러 클래스를 상속 받는 것</p><ul><li><p>다중 상속에서 오는 장점이 있겠지만, 다중 상속으로 인한 모호성 때문에 자바에서는 다중 상속 지원 X</p></li><li><p>ex) 두 개 이상의 상위 클래스에 같은 이름의 메서드가 정의되어 있다면, 다중 상속을 받는 하위 클래스는 어떤 메서드를 상속받을지 모호해짐</p></li><li><p>객체 지향에서 다중 상속의 모호성에 대한 문제가 <strong>다이아몬드 문제(diamond problem)</strong></p></li><li><p>따라서, extends 예약어 뒤에 오는 클래스는 무조건 한 개</p></li></ul><hr><a href=#다운-캐스팅과-instanceof><h2 id=다운-캐스팅과-instanceof><span class=hanchor arialabel=Anchor># </span>다운 캐스팅과 instanceof</h2></a><a href=#하위-클래스로-형-변환-다운-캐스팅><h3 id=하위-클래스로-형-변환-다운-캐스팅><span class=hanchor arialabel=Anchor># </span>하위 클래스로 형 변환, 다운 캐스팅</h3></a><p>상위 클래스(일반적인 개념) -> 하위 클래스(구체적인 개념)으로 형 변환 되는 과정</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Animal</span> <span class=n>ani</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Human</span><span class=o>();</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>생성된 인스턴스 Human은 Anmial 자료형</p></li><li><p>업 캐스팅(하위->상위) 된 경우에는 상위 클래스에서 선언한 메서드나 멤버 변수만 사용 가능</p></li><li><p>다시 말해, Human 클래스에 더 많은 메서드, 다양한 멤버 변수가 있어도 Animal 클래스의 메서드와 멤버 변수만 사용 가능</p></li><li><p>필요에 따라 원래 인스턴스의 자료형(여기서 Human형)으로 되돌아가야하는 경우가 있음</p></li><li><p>이때 쓰는 것을 다운 캐스팅(down casting)</p></li></ul><br><a href=#instanceof><h3 id=instanceof><span class=hanchor arialabel=Anchor># </span>instanceof</h3></a><p>예를 들어, 상속 관계에서 모든 인간은 동물이지만, 모든 동물은 인간이 아니다. 따라서, 변환에서 생기는 오류를 막기 위하여, 다운 캐스팅 전 하위 클래스 -> 상위 클래스로 형 변환된 <strong>인스턴스의 원래 자료형을 확인하는 예약어가 instanceof</strong> 이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Animal</span> <span class=n>hAnimal</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Human</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span><span class=o>(</span><span class=n>hAnimal</span> <span class=k>instanceof</span> <span class=n>Human</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>Human</span> <span class=n>human</span> <span class=o>=</span> <span class=o>(</span><span class=n>Human</span><span class=o>)</span><span class=n>hAnimal</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>hAnimal instanceof Human</code> : hAnimal 인스턴스의 원래 자료형이 Human 형 이라면</p></li><li><p><code>Human human = (Human)hAnimal</code> : 인스턴스 hAnimal을 Human형으로 다운 캐스팅</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>Animal</span> <span class=n>ani</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Tiger</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=n>Human</span> <span class=n>h</span> <span class=o>=</span> <span class=o>(</span><span class=n>Human</span><span class=o>)</span><span class=n>ani</span><span class=o>;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>이렇게 코딩해도 컴파일 에러는 안남. 왜? Human형으로 자료형이 같으니까</p></li><li><p>대신 실행오류가 발생함</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>Chapter08.polymorphism</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.ArrayList</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;동물이 움직입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Human</span> <span class=kd>extends</span> <span class=n>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;사람이 두 발로 걷습니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>readBook</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;사람이 책을 읽습니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Tiger</span> <span class=kd>extends</span> <span class=n>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;호랑이가 네 발로 뜁니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>hunting</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;호랑이가 사냥을 합니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Eagle</span> <span class=kd>extends</span> <span class=n>Animal</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>move</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;독수리가 하늘을 납니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>flying</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;독수리가 날개를 쭉 펴고 멀리 날아갑니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>AnimalTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Animal</span><span class=o>&gt;</span> <span class=n>aniList</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Animal</span><span class=o>&gt;();</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>AnimalTest</span> <span class=n>aTest</span> <span class=o>=</span> <span class=k>new</span> <span class=n>AnimalTest</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>aTest</span><span class=o>.</span><span class=na>addAnimal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;원래 형으로 다운 캐스팅&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>aTest</span><span class=o>.</span><span class=na>testCasting</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>addAnimal</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>aniList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Human</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=n>aniList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Tiger</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=n>aniList</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Eagle</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=n>Animal</span> <span class=n>ani</span> <span class=o>:</span> <span class=n>aniList</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>ani</span><span class=o>.</span><span class=na>move</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>testCasting</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>aniList</span><span class=o>.</span><span class=na>size</span><span class=o>();</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>Animal</span> <span class=n>ani</span> <span class=o>=</span> <span class=n>aniList</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>			  
+</span></span><span class=line><span class=cl>			<span class=k>if</span> <span class=o>(</span><span class=n>ani</span> <span class=k>instanceof</span> <span class=n>Human</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>				<span class=n>Human</span> <span class=n>h</span> <span class=o>=</span> <span class=o>(</span><span class=n>Human</span><span class=o>)</span> <span class=n>ani</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>				<span class=n>h</span><span class=o>.</span><span class=na>readBook</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>			<span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>ani</span> <span class=k>instanceof</span> <span class=n>Tiger</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>				<span class=n>Tiger</span> <span class=n>t</span> <span class=o>=</span> <span class=o>(</span><span class=n>Tiger</span><span class=o>)</span> <span class=n>ani</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>				<span class=n>t</span><span class=o>.</span><span class=na>hunting</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>			<span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>ani</span> <span class=k>instanceof</span> <span class=n>Eagle</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>				<span class=n>Eagle</span> <span class=n>e</span> <span class=o>=</span> <span class=o>(</span><span class=n>Eagle</span><span class=o>)</span> <span class=n>ani</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>				<span class=n>e</span><span class=o>.</span><span class=na>flying</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>			<span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>				<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;지원되지 않는 형입니다.&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>			<span class=o>}</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 사람이 두 발로 걷습니다.
+</span></span></span><span class=line><span class=cl><span class=c1>// 호랑이가 네 발로 뜁니다.
+</span></span></span><span class=line><span class=cl><span class=c1>// 독수리가 하늘을 납니다.
+</span></span></span><span class=line><span class=cl><span class=c1>// 원래 형으로 다운 캐스팅
+</span></span></span><span class=line><span class=cl><span class=c1>// 사람이 책을 읽습니다.
+</span></span></span><span class=line><span class=cl><span class=c1>// 호랑이가 사냥을 합니다.
+</span></span></span><span class=line><span class=cl><span class=c1>// 독수리가 날개를 쭉 펴고 멀리 날아갑니다.
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p>배열 요소가 Animal 형이라서 각 인스턴스에서 제공하는 구체적인 메서드를 사용할 수 없음</p></li><li><p>따라서, 사용하려면 원래 자료형으로 다운캐스팅 되어야 함</p></li></ul><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#상속이란>상속이란?</a><ul><li><a href=#클래스의-상속>클래스의 상속</a></li><li><a href=#상속을-사용하여-고객-관리-프로그램-구현>상속을 사용하여 고객 관리 프로그램 구현</a></li></ul></li><li><a href=#클래스-생성과-형-변환>클래스 생성과 형 변환</a><ul><li><a href=#하위-클래스가-생성되는-과정>하위 클래스가 생성되는 과정</a></li><li><a href=#super---부모를-부르는-예약어>super - 부모를 부르는 예약어</a></li><li><a href=#상위-클래스로-묵시적-클래스-형-변환-업캐스팅>상위 클래스로 묵시적 클래스 형 변환 (업캐스팅)</a></li></ul></li><li><a href=#메서드-오버라이딩>메서드 오버라이딩</a><ul><li><a href=#상위-클래스-메서드-재정의>상위 클래스 메서드 재정의</a></li><li><a href=#묵시적-클래스-형-변환과-메서드-재정의>묵시적 클래스 형 변환과 메서드 재정의</a></li><li><a href=#가상-메서드>가상 메서드</a></li></ul></li><li><a href=#다형성>다형성</a><ul><li><a href=#다형성이란>다형성이란?</a></li><li><a href=#다형성의-장점>다형성의 장점</a></li></ul></li><li><a href=#다형성-활용하기>다형성 활용하기</a><ul><li><a href=#새로운-상황-부여-ver-01>새로운 상황 부여 ver 01</a></li><li><a href=#상속은-언제-사용>상속은 언제 사용?</a></li><li><a href=#자바에는-다중-상속이-없어요>자바에는 다중 상속이 없어요</a></li></ul></li><li><a href=#다운-캐스팅과-instanceof>다운 캐스팅과 instanceof</a><ul><li><a href=#하위-클래스로-형-변환-다운-캐스팅>하위 클래스로 형 변환, 다운 캐스팅</a></li><li><a href=#instanceof>instanceof</a></li></ul></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></body></html>

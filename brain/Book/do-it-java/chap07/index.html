@@ -1,0 +1,740 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.3f3438dd4ebe6d25e78406f133ca055f.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.b27ffe1deac19f743aae4ae5f70adbea.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.3952cd759d70c866e2f0d3c006a2a7a1.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.73894697e0dda63fd1dd6edb89d30d97.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>JVM</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 네트워크</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 운영체제</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 공통</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring Basic</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-01/ class=page-link style=display:block;width:100%>스프링 입문 : 섹션0-섹션3</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - SpringBoot/JPA</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬입문과 크롤링기초 부트캠프</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>자바의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.083fe8cbdb34ff1b07c3e4c26dd42369.js></script></div><div class=single-content><h1>07.배열과 ArrayList</h1><p class=meta>Last updated -
+2023년 03월 10일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Book/do-it-java/chap07.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/Do-it-%EC%9E%90%EB%B0%94/>📚 Do it! 자바</a></li></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#배열이란>배열이란?</a><ul><li><a href=#배열-선언과-초기화>배열 선언과 초기화</a></li><li><a href=#배열-사용하기>배열 사용하기</a></li><li><a href=#전체-배열-길이와-유효한-요소-값>전체 배열 길이와 유효한 요소 값</a></li><li><a href=#문자-저장-배열-만들기>문자 저장 배열 만들기</a></li><li><a href=#객체-배열-사용>객체 배열 사용</a></li><li><a href=#배열-복사하기>배열 복사하기</a></li><li><a href=#객체-배열-복사>객체 배열 복사</a></li><li><a href=#향상된-for문과-배열>향상된 for문과 배열</a></li></ul></li><li><a href=#다차원-배열>다차원 배열</a><ul><li><a href=#이차원-배열>이차원 배열</a></li></ul></li><li><a href=#arraylist-클래스-활용>ArrayList 클래스 활용</a><ul><li><a href=#기존-배열의-단점-그리고-arraylist>기존 배열의 단점, 그리고 ArrayList</a></li><li><a href=#arraylist-클래스-주요-메서드>ArrayList 클래스 주요 메서드</a></li><li><a href=#arraylist-클래스-활용-1>ArrayList 클래스 활용</a></li></ul></li></ul></nav></details></aside><br><blockquote><p>해당 게시글은 <strong>Do it! 자바 프로그래밍 입문</strong> 교재를 정리한 내용입니다.</p></blockquote><hr><a href=#chapter-07---배열과-arraylist><h1 id=chapter-07---배열과-arraylist><span class=hanchor arialabel=Anchor># </span>Chapter 07 - 배열과 ArrayList</h1></a><br><a href=#배열이란><h2 id=배열이란><span class=hanchor arialabel=Anchor># </span>배열이란?</h2></a><a href=#배열-선언과-초기화><h3 id=배열-선언과-초기화><span class=hanchor arialabel=Anchor># </span>배열 선언과 초기화</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>자료형</span><span class=o>[]</span> <span class=n>배열이름</span> <span class=o>=</span> <span class=k>new</span> <span class=n>자료형</span><span class=o>[</span><span class=n>개수</span><span class=o>];</span>
+</span></span><span class=line><span class=cl><span class=n>자료형</span> <span class=n>배열이름</span><span class=o>[]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>자료형</span><span class=o>[</span><span class=n>개수</span><span class=o>];</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span><span class=o>[]</span> <span class=n>studentsID</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[</span><span class=n>10</span><span class=o>];</span>
+</span></span></code></pre></td></tr></table></div></div><p>뭘 사용해도 되지만, 두잇자바 교재에서는 위 방식을 채택함</p><p>int형이니까 4바이트 이므로, 10칸 선언했으니 40바이트가 배열 전체의 크기이다. <strong>선언한 자료형과 배열 길이에 따라 메모리가 할당</strong>된다. 이때 <strong>선언과 동시에 요소의 값이 초기화</strong>된다.</p><ul><li><p>정수형 : 0</p></li><li><p>실수형 : 0.0</p></li><li><p>객체 : null</p></li></ul><br><p><strong>배열 선언 방법</strong></p><ul><li>개수 생략, 초기화 요소의 개수만큼 배열이 생성</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kt>int</span><span class=o>[]</span> <span class=n>studentIDs</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[]</span> <span class=o>{</span><span class=n>101</span><span class=o>,</span> <span class=n>102</span><span class=o>,</span> <span class=n>103</span><span class=o>};</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>위 케이스에서 <code>new int[]</code> 부분 생략 가능 (초기화 개수만큼 배열 생성)</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kt>int</span><span class=o>[]</span> <span class=n>studentIDs</span> <span class=o>=</span> <span class=o>{</span><span class=n>101</span><span class=o>,</span> <span class=n>102</span><span class=o>,</span> <span class=n>103</span><span class=o>};</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>위 케이스에서 new int 안에 개수 넣으면 오류 발생</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// 이거 오류 발생 !!!!!!
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span><span class=o>[]</span> <span class=n>studentIDs</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[</span><span class=n>3</span><span class=o>]</span> <span class=o>{</span><span class=n>101</span><span class=o>,</span> <span class=n>102</span><span class=o>,</span> <span class=n>103</span><span class=o>};</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>배열 자료형을 먼저 선언하고 초기화 하는 경우, new int 생략 불가</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kt>int</span><span class=o>[]</span> <span class=n>studentIDs</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=n>studentIDs</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[]</span> <span class=o>{</span><span class=n>101</span><span class=o>,</span> <span class=n>102</span><span class=o>,</span> <span class=n>103</span><span class=o>};</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#배열-사용하기><h3 id=배열-사용하기><span class=hanchor arialabel=Anchor># </span>배열 사용하기</h3></a><p>인덱스에 값 저장하거나 인덱스에서 값 뽑아오는거 말함</p><ul><li><p>배열의 물리적 위치 : 메모리에서 배열이 실제로 저장되는 곳</p></li><li><p>배열의 논리적 위치 : 이론상 배열 위치</p></li></ul><p>이게 무슨 말이냐면, 배열 이외의 자료구조는 논리적으로 바로 옆에 붙어있다고 해도 실제 메모리 위치는 아예 다를 수도 있음.</p><p>하지만, 배열은 논리적 위치에서 사용하는 실제 값도 바로 이웃한 메모리에 위치함. 예를 들어, 5칸짜리 배열이 있으면 그 5칸은 실제의 물리적 위치에서도 이웃하게 붙어있음. 주소값 출력 찍어보면 바로 암</p><br><a href=#전체-배열-길이와-유효한-요소-값><h3 id=전체-배열-길이와-유효한-요소-값><span class=hanchor arialabel=Anchor># </span>전체 배열 길이와 유효한 요소 값</h3></a><ul><li><p>배열 사용할 때 처음 선언한 배열 길이만큼 값을 저장해서 사용하는 경우는 많지 않음</p></li><li><p><code>전체 배열길이 != 현재 배열에 유효한 값이 저장되어 있는 배열 요소 개수</code></p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ArrayTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kt>double</span><span class=o>[]</span> <span class=n>data</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>double</span><span class=o>[</span><span class=n>5</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		<span class=n>data</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=n>10</span><span class=o>.</span><span class=na>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>data</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=n>20</span><span class=o>.</span><span class=na>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=n>data</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=n>30</span><span class=o>.</span><span class=na>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>data</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>data</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 10.0
+</span></span></span><span class=line><span class=cl><span class=c1>// 20.0
+</span></span></span><span class=line><span class=cl><span class=c1>// 30.0
+</span></span></span><span class=line><span class=cl><span class=c1>// 0.0
+</span></span></span><span class=line><span class=cl><span class=c1>// 0.0
+</span></span></span></code></pre></td></tr></table></div></div><p>전체 배열 길이 5에서 유효한 값은 3까지임. 그러면 유효한 값까지만 출력해보는 프로그램은 어떻게 만들까?</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ArrayTest2</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kt>double</span><span class=o>[]</span> <span class=n>data</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>double</span><span class=o>[</span><span class=n>5</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		<span class=c1>// 유효한 값이 저장된 배열 요소 개수를 저장할 변수
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=kt>int</span> <span class=n>size</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>	  
+</span></span><span class=line><span class=cl>		<span class=n>data</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=n>10</span><span class=o>.</span><span class=na>0</span><span class=o>;</span> <span class=n>size</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>		<span class=n>data</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=n>20</span><span class=o>.</span><span class=na>0</span><span class=o>;</span> <span class=n>size</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>		<span class=n>data</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=n>30</span><span class=o>.</span><span class=na>0</span><span class=o>;</span> <span class=n>size</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=c1>// 유효한 값이 저장된 배열 요소 개수만큼 반복문 실행
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=k>for</span><span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>size</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>data</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 10.0
+</span></span></span><span class=line><span class=cl><span class=c1>// 20.0
+</span></span></span><span class=line><span class=cl><span class=c1>// 30.0
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p>이렇게 추가적인 변수를 통하여 유효한 값만 뽑아올 수 있다.</p></li><li><p>ArrayList 객체 배열은 이런 부분을 미리 구현해서 메서드로 제공해줌 ㅎ</p></li></ul><br><a href=#문자-저장-배열-만들기><h3 id=문자-저장-배열-만들기><span class=hanchor arialabel=Anchor># </span>문자 저장 배열 만들기</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>CharArray</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kt>char</span><span class=o>[]</span> <span class=n>alphabets</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>char</span><span class=o>[</span><span class=n>26</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		<span class=kt>char</span> <span class=n>ch</span> <span class=o>=</span> <span class=sc>&#39;A&#39;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span><span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>alphabets</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++,</span> <span class=n>ch</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>alphabets</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>=</span> <span class=n>ch</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span><span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>alphabets</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>alphabets</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>+</span> <span class=s>&#34;, &#34;</span> <span class=o>+</span> <span class=o>(</span><span class=kt>int</span><span class=o>)</span><span class=n>alphabets</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>알파벳 문자는 실제 메모리에 아스키 코드 값으로 저장됨</p></li><li><p>예를 들어, 아스키 코드값 65는 대문자 &lsquo;A&rsquo;임</p></li><li><p>아스키 코드값을 1씩 증가시키면 A, B, C .. 이렇게 증가</p></li></ul><br><a href=#객체-배열-사용><h3 id=객체-배열-사용><span class=hanchor arialabel=Anchor># </span>객체 배열 사용</h3></a><ul><li><p>기본 자료형(int, double 등)이 아닌 참조 자료형으로 선언하는 방법</p></li><li><p>참조 자료형 변수는 클래스형으로 선언한 변수를 의미</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// Book 클래스
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Book</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=n>String</span> <span class=n>bookName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=n>String</span> <span class=n>author</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>Book</span> <span class=o>()</span> <span class=o>{};</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=nf>Book</span><span class=o>(</span><span class=n>String</span> <span class=n>bookName</span><span class=o>,</span> <span class=n>String</span> <span class=n>author</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>bookName</span> <span class=o>=</span> <span class=n>bookName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>author</span> <span class=o>=</span> <span class=n>author</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getBookName</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>bookName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setBookName</span><span class=o>(</span><span class=n>String</span> <span class=n>bookName</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>bookName</span> <span class=o>=</span> <span class=n>bookName</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getAuthor</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>author</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setAuthor</span><span class=o>(</span><span class=n>String</span> <span class=n>author</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>author</span> <span class=o>=</span> <span class=n>author</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>showBookInfo</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>bookName</span> <span class=o>+</span> <span class=s>&#34;, &#34;</span> <span class=o>+</span> <span class=n>author</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// BookArray 클래스
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>BookArray</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>library</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>5</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span><span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>library</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>library</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// null
+</span></span></span><span class=line><span class=cl><span class=c1>// null
+</span></span></span><span class=line><span class=cl><span class=c1>// null
+</span></span></span><span class=line><span class=cl><span class=c1>// null
+</span></span></span><span class=line><span class=cl><span class=c1>// null
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p><code>Book[] library = new Book[5];</code>은 Book 클래스의 인스턴스가 5개 생성된 것이 아님</p></li><li><p>인스턴스를 생성하면 그 인스턴스를 가리키는 주소 값이 있는데, 인스턴스 주소 값을 담을 공간 5개를 생성한다는 의미</p></li><li><p>그래서 Book 클래스 주소를 담을 공간 5개를 만들었고, 비어있으니까 null이 출력되는 것</p></li></ul><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// BookArray2 클래스
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>BookArray2</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>library</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>5</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;태백산맥&#34;</span><span class=o>,</span> <span class=s>&#34;조정래&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;데미안&#34;</span><span class=o>,</span> <span class=s>&#34;헤르만 헤세&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;어떻게 살 것 인가&#34;</span><span class=o>,</span> <span class=s>&#34;유시민&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>[</span><span class=n>3</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;토지&#34;</span><span class=o>,</span> <span class=s>&#34;박경리&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>[</span><span class=n>4</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;어린왕자&#34;</span><span class=o>,</span> <span class=s>&#34;생택쥐페리&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>library</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>library</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>library</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>library</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 태백산맥, 조정래
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것 인가, 유시민
+</span></span></span><span class=line><span class=cl><span class=c1>// 토지, 박경리
+</span></span></span><span class=line><span class=cl><span class=c1>// 어린왕자, 생택쥐페리
+</span></span></span><span class=line><span class=cl><span class=c1>// chapter07.Book@1b6d3586
+</span></span></span><span class=line><span class=cl><span class=c1>// chapter07.Book@4554617c
+</span></span></span><span class=line><span class=cl><span class=c1>// chapter07.Book@74a14482
+</span></span></span><span class=line><span class=cl><span class=c1>// chapter07.Book@1540e19d
+</span></span></span><span class=line><span class=cl><span class=c1>// chapter07.Book@677327b6
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p>참조 변수 library에 5칸의 인스턴스 주소값을 담을 공간을 생성</p></li><li><p>이후 Book 클래스에 매개변수로 값을 담은 상태</p></li><li><p>그 이후 showBookInfo 메서드로 내용을 출력해보고</p></li><li><p>그 이후 참조 변수에 저장된 주소 값을 출력해봄</p></li></ul><br><a href=#배열-복사하기><h3 id=배열-복사하기><span class=hanchor arialabel=Anchor># </span>배열 복사하기</h3></a><ul><li><p>기존 배열과 똑같은 배열을 만들고 싶거나, 자료가 꽉 차서 더 큰 배열을 만들어 <strong>기존 배열에 저장된 자료를 가져오고 싶을 때</strong> 복사해보자</p></li><li><p><code>01. for문을 사용하여 각 요소 값을 반복해서 복사</code></p></li><li><p><code>02. System.arraycopy() 메서드 이용</code></p></li></ul><p><code>System.arraycoppy(src, srcPos, dest, destPost, length) </code>매개 변수 형식</p><br><table><thead><tr><th>매개변수</th><th>설명</th></tr></thead><tbody><tr><td>src</td><td>복사할 배열 이름</td></tr><tr><td>srcPos</td><td>복사할 배열의 첫 번째 위치</td></tr><tr><td>dest</td><td>복사해서 붙여 넣을 대상 배열 이름</td></tr><tr><td>destPost</td><td>복사해서 대상 배열에 붙여 넣기를 시작할 첫 번째 위치</td></tr><tr><td>length</td><td>src에서 dest로 자료를 복사할 요소 개수</td></tr></tbody></table><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ArrayCopy</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kt>int</span><span class=o>[]</span> <span class=n>array1</span> <span class=o>=</span> <span class=o>{</span><span class=n>10</span><span class=o>,</span> <span class=n>20</span><span class=o>,</span> <span class=n>30</span><span class=o>,</span> <span class=n>40</span><span class=o>,</span> <span class=n>50</span><span class=o>};</span>
+</span></span><span class=line><span class=cl>		<span class=kt>int</span><span class=o>[]</span> <span class=n>array2</span> <span class=o>=</span> <span class=o>{</span><span class=n>1</span><span class=o>,</span> <span class=n>2</span><span class=o>,</span> <span class=n>3</span><span class=o>,</span> <span class=n>4</span><span class=o>,</span> <span class=n>5</span><span class=o>};</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>arraycopy</span><span class=o>(</span><span class=n>array1</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>array2</span><span class=o>,</span> <span class=n>1</span><span class=o>,</span> <span class=n>4</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=k>for</span><span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>array2</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>array2</span><span class=o>[</span><span class=n>i</span><span class=o>]);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 1
+</span></span></span><span class=line><span class=cl><span class=c1>// 10
+</span></span></span><span class=line><span class=cl><span class=c1>// 20
+</span></span></span><span class=line><span class=cl><span class=c1>// 30
+</span></span></span><span class=line><span class=cl><span class=c1>// 40
+</span></span></span></code></pre></td></tr></table></div></div><ul><li>복사할 대상 배열의 전체 길이 &lt; 복사할 요소 개수 = 오류</li></ul><br><a href=#객체-배열-복사><h3 id=객체-배열-복사><span class=hanchor arialabel=Anchor># </span>객체 배열 복사</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ObjectCopy1</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>bookArray1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>3</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>bookArray2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>3</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;태백산맥&#34;</span><span class=o>,</span> <span class=s>&#34;조정래&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;데미안&#34;</span><span class=o>,</span> <span class=s>&#34;헤르만 헤세&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;어떻게 살 것인가&#34;</span><span class=o>,</span> <span class=s>&#34;유시민&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>arraycopy</span><span class=o>(</span><span class=n>bookArray1</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>bookArray2</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>3</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray2</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>여기서 의문, bookArray2 배열의 인스턴스를 따로 만든건 아니고 주소 값 저장할 공간만 만들어놨는데 어떻게 출력이 잘 될까? (사실 벌써 감 오지? 주소 값 가리키는 포인터 개념이니까 ㅎ)</li></ul><br><p><strong>얕은 복사(shallow copy)</strong></p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ObjectCopy1</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>bookArray1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>3</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>bookArray2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>3</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;태백산맥&#34;</span><span class=o>,</span> <span class=s>&#34;조정래&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;데미안&#34;</span><span class=o>,</span> <span class=s>&#34;헤르만 헤세&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;어떻게 살 것인가&#34;</span><span class=o>,</span> <span class=s>&#34;유시민&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>arraycopy</span><span class=o>(</span><span class=n>bookArray1</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>bookArray2</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>3</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray2</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;bookArray2[0]의 내용을 변경&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray2</span><span class=o>[</span><span class=n>0</span><span class=o>].</span><span class=na>setBookName</span><span class=o>(</span><span class=s>&#34;나목&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray2</span><span class=o>[</span><span class=n>0</span><span class=o>].</span><span class=na>setAuthor</span><span class=o>(</span><span class=s>&#34;박완서&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--- bookArray1 출력 ---&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray1</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray1</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 태백산맥, 조정래
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것인가, 유시민
+</span></span></span><span class=line><span class=cl><span class=c1>// bookArray2[0]의 내용을 변경
+</span></span></span><span class=line><span class=cl><span class=c1>// --- bookArray1 출력 ---
+</span></span></span><span class=line><span class=cl><span class=c1>// 나목, 박완서
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것인가, 유시민
+</span></span></span></code></pre></td></tr></table></div></div><ul><li><p><code>bookArray2[0]</code>의 요소 값을 변경했는데, <code>bookArray[1]</code>의 요소 값도 같이 바뀜</p></li><li><p>객체 배열의 요소에 저장된 값 = 인스턴스의 주소 값</p></li><li><p>객체 배열의 요소에 저장된 값 != 인스턴스 자체</p></li><li><p>객체 배열을 복사할 때 인스턴스를 따로 생성하는게 아니라 <strong>기존 인스턴스의 주소 값만 복사</strong>하기 때문에 이런 일 발생</p></li></ul><br><p><strong>깊은 복사(deep copy)</strong></p><ul><li><p><code>System.arraycopy()</code> 메서드 사용 / 객체 배열 복사하면 <strong>항상 인스턴스 주소가 복사됨</strong></p></li><li><p>인스턴스를 따로 관리하고 싶으면 직접 인스턴스를 만들고 값을 복사해야함</p></li><li><p>즉, 인스턴스 생성 -> 배열 복사가 되어야 함</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>bookArray2</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=n>bookArray2</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=n>bookArray2</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray1</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>setBookName</span><span class=o>(</span><span class=n>bookArray1</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>getBookName</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>	<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>setAuthor</span><span class=o>(</span><span class=n>bookArray1</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>getAuthor</span><span class=o>());</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>전체 코드</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ObjectCopy2</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>bookArray1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>3</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		<span class=n>Book</span><span class=o>[]</span> <span class=n>bookArray2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>[</span><span class=n>3</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;태백산맥&#34;</span><span class=o>,</span> <span class=s>&#34;조정래&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;데미안&#34;</span><span class=o>,</span> <span class=s>&#34;헤르만 헤세&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;어떻게 살 것인가&#34;</span><span class=o>,</span> <span class=s>&#34;유시민&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>bookArray2</span><span class=o>[</span><span class=n>0</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray2</span><span class=o>[</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray2</span><span class=o>[</span><span class=n>2</span><span class=o>]</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Book</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray1</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>setBookName</span><span class=o>(</span><span class=n>bookArray1</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>getBookName</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>setAuthor</span><span class=o>(</span><span class=n>bookArray1</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>getAuthor</span><span class=o>());</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--- 인스턴스 생성 이후 값 복사한 bookArray2 ---&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray2</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span> <span class=nf>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>0</span><span class=o>].</span><span class=na>setBookName</span><span class=o>(</span><span class=s>&#34;나목&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>bookArray1</span><span class=o>[</span><span class=n>0</span><span class=o>].</span><span class=na>setAuthor</span><span class=o>(</span><span class=s>&#34;박완서&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--- bookArray1 ---&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray1</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray1</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--- bookArray2에 변경 끼쳤나 확인 ---&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>bookArray2</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>bookArray2</span><span class=o>[</span><span class=n>i</span><span class=o>].</span> <span class=nf>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// --- 인스턴스 생성 이후 값 복사한 bookArray2 ---
+</span></span></span><span class=line><span class=cl><span class=c1>// 태백산맥, 조정래
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것인가, 유시민
+</span></span></span><span class=line><span class=cl><span class=c1>// --- bookArray1 ---
+</span></span></span><span class=line><span class=cl><span class=c1>// 나목, 박완서
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것인가, 유시민
+</span></span></span><span class=line><span class=cl><span class=c1>// --- bookArray2에 변경 끼쳤나 확인 ---
+</span></span></span><span class=line><span class=cl><span class=c1>// 태백산맥, 조정래
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것인가, 유시민
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#향상된-for문과-배열><h3 id=향상된-for문과-배열><span class=hanchor arialabel=Anchor># </span>향상된 for문과 배열</h3></a><ul><li><p>배열의 처음에서 끝까지 모든 요소를 참조할 때 사용하면 편리함</p></li><li><p><strong>향상된 for문</strong>은 배열 요소 값을 순서대로 하나씩 가져와서 변수에 대입</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=k>for</span><span class=o>(</span><span class=n>변수</span> <span class=o>:</span> <span class=n>배열</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>반복</span> <span class=n>실행문</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>EnhancedForLoop</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>String</span><span class=o>[]</span> <span class=n>strArray</span> <span class=o>=</span> <span class=o>{</span><span class=s>&#34;Java&#34;</span><span class=o>,</span> <span class=s>&#34;Android&#34;</span><span class=o>,</span> <span class=s>&#34;C&#34;</span><span class=o>,</span> <span class=s>&#34;JavaScript&#34;</span><span class=o>,</span> <span class=s>&#34;Python&#34;</span><span class=o>};</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>		<span class=k>for</span><span class=o>(</span><span class=n>String</span> <span class=n>language</span> <span class=o>:</span> <span class=n>strArray</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>language</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// Java
+</span></span></span><span class=line><span class=cl><span class=c1>// Android
+</span></span></span><span class=line><span class=cl><span class=c1>// C
+</span></span></span><span class=line><span class=cl><span class=c1>// JavaScript
+</span></span></span><span class=line><span class=cl><span class=c1>// Python
+</span></span></span></code></pre></td></tr></table></div></div><hr><a href=#다차원-배열><h2 id=다차원-배열><span class=hanchor arialabel=Anchor># </span>다차원 배열</h2></a><a href=#이차원-배열><h3 id=이차원-배열><span class=hanchor arialabel=Anchor># </span>이차원 배열</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// 둘다 2 X 3 행렬
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span><span class=o>[][]</span> <span class=n>arr</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[</span><span class=n>2</span><span class=o>][</span><span class=n>3</span><span class=o>];</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span><span class=o>[][]</span> <span class=n>arr</span> <span class=o>=</span> <span class=o>{{</span><span class=n>1</span><span class=o>,</span> <span class=n>2</span><span class=o>,</span> <span class=n>3</span><span class=o>},</span> <span class=o>{</span><span class=n>4</span><span class=o>,</span> <span class=n>5</span><span class=o>,</span> <span class=n>6</span><span class=o>}};</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>이차원 배열은 중첩 for문 활용</p></li><li><p><code>arr.length</code> : 행의 길이</p></li><li><p><code>arr[0].length</code> : 열의 길이</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>TwoDimension</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=kt>int</span><span class=o>[][]</span> <span class=n>arr</span> <span class=o>=</span> <span class=o>{{</span><span class=n>1</span><span class=o>,</span> <span class=n>2</span><span class=o>,</span> <span class=n>3</span><span class=o>},</span> <span class=o>{</span><span class=n>4</span><span class=o>,</span> <span class=n>5</span><span class=o>,</span> <span class=n>6</span><span class=o>}};</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>arr</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=n>arr</span><span class=o>[</span><span class=n>i</span><span class=o>].</span><span class=na>length</span><span class=o>;</span> <span class=n>j</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>				<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>print</span><span class=o>(</span><span class=n>arr</span><span class=o>[</span><span class=n>i</span><span class=o>][</span><span class=n>j</span><span class=o>]</span> <span class=o>+</span> <span class=s>&#34; &#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>			<span class=o>}</span>
+</span></span><span class=line><span class=cl>			<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>// 1 2 3
+</span></span></span><span class=line><span class=cl><span class=c1>// 4 5 6
+</span></span></span></code></pre></td></tr></table></div></div><hr><a href=#arraylist-클래스-활용><h2 id=arraylist-클래스-활용><span class=hanchor arialabel=Anchor># </span>ArrayList 클래스 활용</h2></a><a href=#기존-배열의-단점-그리고-arraylist><h3 id=기존-배열의-단점-그리고-arraylist><span class=hanchor arialabel=Anchor># </span>기존 배열의 단점, 그리고 ArrayList</h3></a><ol><li><p>항상 배열 길이를 정하고 시작</p></li><li><p>당연히 배열 길이는 가변적으로 변할 것</p></li><li><p>혹은 중간에 배열 값이 빠지게 되면, 중간에 요소 비우면 안되니까 수정해야함</p></li></ol><p>그래서 자바는 객체 배열 더 쉽게 사용하게 ArrayList로 멤버 변수, 메서드 제공</p><a href=#arraylist-클래스-주요-메서드><h3 id=arraylist-클래스-주요-메서드><span class=hanchor arialabel=Anchor># </span>ArrayList 클래스 주요 메서드</h3></a><br><table><thead><tr><th>메서드</th><th>설명</th></tr></thead><tbody><tr><td>boolean add(E e)</td><td>요소 하나를 배열에 추가. E는 요소의 자료형</td></tr><tr><td>int size()</td><td>배열에 추가된 요소 전체 개수 반환</td></tr><tr><td>E get(int index)</td><td>배열의 index 위치에 있는 요소 값 반환</td></tr><tr><td>E remove(int index)</td><td>배열의 index 위치에 있는 요소 값 제거하고 그 값 반환</td></tr><tr><td>boolean isEmpty()</td><td>배열이 비어 있는지 확인</td></tr></tbody></table><br><p>추가</p><ul><li><code>add() 메서드</code> : 배열 길이와 상관없이 객체 추가 (배열 요소 개수가 부족하면 배열 크기 자동으로 키워줌 + 배열 중간에 요소 값 제거 되면 그 다음 요소 값 하나씩 앞으로 당겨줌)</li></ul><br><a href=#arraylist-클래스-활용-1><h3 id=arraylist-클래스-활용-1><span class=hanchor arialabel=Anchor># </span>ArrayList 클래스 활용</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=n>배열</span> <span class=n>이름</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;();</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>어떤 자료형 객체를 사용할 지 선언할 수 있음</p></li><li><p>ArrayList 클래스는 util 패키지에 있음. 쓰려면 import 해와야겠지?</p></li><li><p><code>&lt;E></code>는 제네릭 자료형</p></li><li><p><code>&lt;></code> 안에 객체의 자료형 쓰면 됨</p></li><li><p>예를 들어서, 위에서 한 Book 클래스형을 자료형으로 쓴다면</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Book</span><span class=o>&gt;</span> <span class=n>library</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Book</span><span class=o>&gt;();</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>chapter07</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.util.ArrayList</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ArrayListTest</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Book</span><span class=o>&gt;</span> <span class=n>library</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Book</span><span class=o>&gt;();</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;태백산맥&#34;</span><span class=o>,</span> <span class=s>&#34;조정래&#34;</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;데미안&#34;</span><span class=o>,</span> <span class=s>&#34;헤르만 헤세&#34;</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;어떻게 살 것인가&#34;</span><span class=o>,</span> <span class=s>&#34;유시민&#34;</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;토지&#34;</span><span class=o>,</span> <span class=s>&#34;박경리&#34;</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>		<span class=n>library</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>new</span> <span class=n>Book</span><span class=o>(</span><span class=s>&#34;어린왕자&#34;</span><span class=o>,</span> <span class=s>&#34;생텍쥐페리&#34;</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>library</span><span class=o>.</span><span class=na>size</span><span class=o>();</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>Book</span> <span class=n>book</span> <span class=o>=</span> <span class=n>library</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>book</span><span class=o>.</span><span class=na>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>		
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		  
+</span></span><span class=line><span class=cl>		<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;--- 향상된 for문 사용 ---&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span><span class=o>(</span><span class=n>Book</span> <span class=n>book</span> <span class=o>:</span> <span class=n>library</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>book</span><span class=o>.</span><span class=na>showBookInfo</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>		<span class=o>}</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 태백산맥, 조정래
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것인가, 유시민
+</span></span></span><span class=line><span class=cl><span class=c1>// 토지, 박경리
+</span></span></span><span class=line><span class=cl><span class=c1>// 어린왕자, 생텍쥐페리
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// --- 향상된 for문 사용 ---
+</span></span></span><span class=line><span class=cl><span class=c1>// 태백산맥, 조정래
+</span></span></span><span class=line><span class=cl><span class=c1>// 데미안, 헤르만 헤세
+</span></span></span><span class=line><span class=cl><span class=c1>// 어떻게 살 것인가, 유시민
+</span></span></span><span class=line><span class=cl><span class=c1>// 토지, 박경리
+</span></span></span><span class=line><span class=cl><span class=c1>// 어린왕자, 생텍쥐페리
+</span></span></span></code></pre></td></tr></table></div></div><br><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#배열이란>배열이란?</a><ul><li><a href=#배열-선언과-초기화>배열 선언과 초기화</a></li><li><a href=#배열-사용하기>배열 사용하기</a></li><li><a href=#전체-배열-길이와-유효한-요소-값>전체 배열 길이와 유효한 요소 값</a></li><li><a href=#문자-저장-배열-만들기>문자 저장 배열 만들기</a></li><li><a href=#객체-배열-사용>객체 배열 사용</a></li><li><a href=#배열-복사하기>배열 복사하기</a></li><li><a href=#객체-배열-복사>객체 배열 복사</a></li><li><a href=#향상된-for문과-배열>향상된 for문과 배열</a></li></ul></li><li><a href=#다차원-배열>다차원 배열</a><ul><li><a href=#이차원-배열>이차원 배열</a></li></ul></li><li><a href=#arraylist-클래스-활용>ArrayList 클래스 활용</a><ul><li><a href=#기존-배열의-단점-그리고-arraylist>기존 배열의 단점, 그리고 ArrayList</a></li><li><a href=#arraylist-클래스-주요-메서드>ArrayList 클래스 주요 메서드</a></li><li><a href=#arraylist-클래스-활용-1>ArrayList 클래스 활용</a></li></ul></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></body></html>

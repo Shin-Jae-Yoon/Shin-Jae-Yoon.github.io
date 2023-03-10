@@ -1,0 +1,664 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.3f3438dd4ebe6d25e78406f133ca055f.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.b27ffe1deac19f743aae4ae5f70adbea.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.3952cd759d70c866e2f0d3c006a2a7a1.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.73894697e0dda63fd1dd6edb89d30d97.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>JVM</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 네트워크</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 운영체제</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 공통</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring Basic</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-01/ class=page-link style=display:block;width:100%>스프링 입문 : 섹션0-섹션3</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - SpringBoot/JPA</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬입문과 크롤링기초 부트캠프</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>자바의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.083fe8cbdb34ff1b07c3e4c26dd42369.js></script></div><div class=single-content><h1>03 - String</h1><p class=meta>Last updated -
+2023년 03월 10일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Lecture/funny-python/funny03.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/%EF%B8%8F-%EC%9E%94%EC%9E%AC%EB%AF%B8%EC%BD%94%EB%94%A9-%ED%8C%8C%EC%9D%B4%EC%8D%AC/>🖥️ 잔재미코딩 파이썬</a></li></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#01-문자열-다루기-기본>01. 문자열 다루기 기본</a></li><li><a href=#02-코드-이용-포매팅>02. 코드 이용 포매팅</a></li><li><a href=#03-format-이용-포매팅>03. format 이용 포매팅</a></li><li><a href=#04-f-문자열-이용-포매팅>04. f 문자열 이용 포매팅</a></li><li><a href=#05-문자열-다양한-함수들>05. 문자열 다양한 함수들</a></li></ul></nav></details></aside><blockquote><p>해당 게시글은 <a href=https://www.inflearn.com/course/python-crawling-basic target=_blank>파이썬 입문과 크롤링기초 부트캠프</a> 강의를 정리한 내용입니다.</p></blockquote><hr><a href=#01-문자열-다루기-기본><h2 id=01-문자열-다루기-기본><span class=hanchor arialabel=Anchor># </span>01. 문자열 다루기 기본</h2></a><br><p>python은 문자열을 다루는데 특화된 프로그래밍 언어이다. 간결하면서 사용성은 매우 뛰어나다. 따라서, 크롤링을 공부하기에 매우 좋은 언어이다. 변수에 문자열을 지정할 때, <code>"내용"</code> 따옴표를 한 개씩만 넣었을 경우, 다음 줄로 넘어가면 EOF, End Of Line으로 한 줄을 넘어갔다고 오류가 발생할 수 있다. 그럴 경우, 당황하지 말고 <code>"""내용"""</code>와 같이 따옴표를 세 개씩 넣어주자. 이스케이프 문자 <code>\n</code>을 넣어서 표현할 수도 있으나, 따옴표를 연속적으로 쓰는 것이 깔끔하니 그렇게 사용하도록 하자.</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>context</span> <span class=o>=</span> <span class=s2>&#34;South Korean director Bong Joon-ho has won the Cannes film festival&#39;s most prestigious award. The Palme d&#39;Or was awarded for his film Parasite, a dark comedy thriller exploring social class dynamics. The festival came to a close this evening after 11 days of previews of new films and documentaries.&#34;</span>  
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>context</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=ne>SyntaxError</span><span class=p>:</span> <span class=n>EOL</span> <span class=k>while</span> <span class=n>scanning</span> <span class=n>string</span> <span class=n>literal</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>context</span> <span class=o>=</span> <span class=s2>&#34;&#34;&#34;South Korean director Bong Joon-ho has won the Cannes film festival&#39;s most prestigious award.
+</span></span></span><span class=line><span class=cl><span class=s2>The Palme d&#39;Or was awarded for his film Parasite, a dark comedy thriller exploring social class dynamics.
+</span></span></span><span class=line><span class=cl><span class=s2>The festival came to a close this evening after 11 days of previews of new films and documentaries.&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>context</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>context</span> <span class=n>안의</span> <span class=n>문자열</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>문자열을 더하거나 곱할 수 있다. 더하는 것은 말 그대로 더하는 것이지만 곱하는 것은 문자열끼리 곱하는 것이 아닌, 반복을 의미한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;Hello&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;World&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span> <span class=o>+</span> <span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span> <span class=o>*</span> <span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span> <span class=o>*</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>HelloWorld</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=ne>TypeError</span><span class=p>:</span> <span class=n>can</span><span class=s1>&#39;t multiply sequence by non-int of type &#39;</span><span class=nb>str</span><span class=s1>&#39;</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>HelloHello</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>문자열을 곱하는 것을 응용하면 아래와 같이 사용할 수 있다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;=&#34;</span> <span class=o>*</span> <span class=mi>20</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;안녕하세요. 깔끔하죠?&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;=&#34;</span> <span class=o>*</span> <span class=mi>20</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span>
+</span></span><span class=line><span class=cl><span class=o>====================</span>
+</span></span><span class=line><span class=cl><span class=n>안녕하세요</span><span class=o>.</span> <span class=n>깔끔하죠</span><span class=err>?</span>
+</span></span><span class=line><span class=cl><span class=o>====================</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>문자열 길이를 구하는 대표적인 함수는 <code>len()</code> 함수가 있다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;나는 뛰어난 주니어 개발자입니다.&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>string</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>18</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li><p><strong>인덱스 (index)</strong></p></li><li><p>인덱스는 특정 데이터를 가리키는 번호를 나타냄</p></li></ul><table><thead><tr><th style=text-align:center>p</th><th style=text-align:center>y</th><th style=text-align:center>t</th><th style=text-align:center>h</th><th style=text-align:center>o</th><th style=text-align:center>n</th></tr></thead><tbody><tr><td style=text-align:center>0</td><td style=text-align:center>1</td><td style=text-align:center>2</td><td style=text-align:center>3</td><td style=text-align:center>4</td><td style=text-align:center>5</td></tr><tr><td style=text-align:center>-6</td><td style=text-align:center>-5</td><td style=text-align:center>-4</td><td style=text-align:center>-3</td><td style=text-align:center>-2</td><td style=text-align:center>-1</td></tr></tbody></table><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>some_string</span> <span class=o>=</span> <span class=s2>&#34;python&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=mi>0</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=mi>1</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=o>-</span><span class=mi>1</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=o>-</span><span class=mi>6</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>p</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>y</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>n</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>p</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><strong>슬라이싱 (slicing)</strong></p></li><li><p>시작 인덱스 ~ 해당 인덱스 직전의 인덱스까지 출력</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>some_string</span> <span class=o>=</span> <span class=s2>&#34;python&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=mi>3</span><span class=p>:</span><span class=mi>5</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=mi>1</span><span class=p>:</span><span class=mi>5</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=mi>1</span><span class=p>:</span><span class=mi>2</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>ho</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>ytho</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>y</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>슬라이싱 응용</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>some_string</span> <span class=o>=</span> <span class=s2>&#34;python&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[:</span><span class=mi>6</span><span class=p>])</span> <span class=c1># 문자열 시작 ~ 지정 인덱스 전까지</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[</span><span class=mi>0</span><span class=p>:])</span> <span class=c1># 지정 인덱스 ~ 문자열 끝까지</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>some_string</span><span class=p>[:])</span> <span class=c1># 문자열 전체</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>python</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>python</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>python</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>슬라이싱 이용해서 문자열 나누기</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>today</span> <span class=o>=</span> <span class=s2>&#34;20220219Sunny&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>year</span> <span class=o>=</span> <span class=n>today</span><span class=p>[:</span><span class=mi>4</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>day</span> <span class=o>=</span> <span class=n>today</span><span class=p>[</span><span class=mi>4</span><span class=p>:</span><span class=mi>8</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=n>weather</span> <span class=o>=</span> <span class=n>today</span><span class=p>[</span><span class=mi>8</span><span class=p>:]</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>year</span><span class=p>,</span> <span class=n>day</span><span class=p>,</span> <span class=n>weather</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>2022</span> <span class=mi>0219</span> <span class=n>Sunny</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>슬라이싱 이용해서 문자열 바꾸기</li></ul><p>기본적으로 문자열 자료형은 그 요솟값을 바꿀 수 없는 immutable한 자료형이다. 이것이 의미하는 바는, python이라는 문자열이 있을 때, 아래와 같이 변경할 수 없다는 의미이다. 하지만, 슬라이싱 방법을 이용하면 가능하다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;python&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>python</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&#34;i&#34;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=ne>NameError</span><span class=p>:</span> <span class=n>name</span> <span class=s1>&#39;python&#39;</span> <span class=ow>is</span> <span class=ow>not</span> <span class=n>defined</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;python&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>new_string</span> <span class=o>=</span> <span class=n>string</span><span class=p>[:</span><span class=mi>1</span><span class=p>]</span> <span class=o>+</span> <span class=s2>&#34;i&#34;</span> <span class=o>+</span> <span class=n>string</span><span class=p>[</span><span class=mi>2</span><span class=p>:]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>new_string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>pithon</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#02-코드-이용-포매팅><h2 id=02-코드-이용-포매팅><span class=hanchor arialabel=Anchor># </span>02. 코드 이용 포매팅</h2></a><br><table><thead><tr><th style=text-align:center>코드</th><th style=text-align:center>설명</th></tr></thead><tbody><tr><td style=text-align:center>%s</td><td style=text-align:center>문자열(string)</td></tr><tr><td style=text-align:center>%c</td><td style=text-align:center>문자 1개(character)</td></tr><tr><td style=text-align:center>%d</td><td style=text-align:center>정수(integer)</td></tr><tr><td style=text-align:center>%f</td><td style=text-align:center>부동소수(floating-point)</td></tr><tr><td style=text-align:center>%o</td><td style=text-align:center>8진수</td></tr><tr><td style=text-align:center>%x</td><td style=text-align:center>16진수</td></tr><tr><td style=text-align:center>%%</td><td style=text-align:center>Literal % (문자 % 자체)</td></tr></tbody></table><br><ol><li>숫자나 문자열 직접 대입</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>%d</span><span class=s2> bananas.&#34;</span> <span class=o>%</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>%s</span><span class=s2> bananas.&#34;</span> <span class=o>%</span> <span class=s2>&#34;sweet&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=mi>3</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=n>sweet</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>변수 대입</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>number</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=n>three</span> <span class=o>=</span> <span class=s2>&#34;3&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>%d</span><span class=s2> bananas.&#34;</span> <span class=o>%</span> <span class=n>number</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>%d</span><span class=s2> bananas.&#34;</span> <span class=o>%</span> <span class=n>three</span>
+</span></span><span class=line><span class=cl><span class=n>string3</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>%c</span><span class=s2> bananas.&#34;</span> <span class=o>%</span> <span class=n>three</span>
+</span></span><span class=line><span class=cl><span class=n>string4</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>%s</span><span class=s2> bananas.&#34;</span> <span class=o>%</span> <span class=n>three</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string3</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string4</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=mi>3</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=ne>TypeError</span><span class=p>:</span> <span class=o>%</span><span class=n>d</span> <span class=nb>format</span><span class=p>:</span> <span class=n>a</span> <span class=n>number</span> <span class=ow>is</span> <span class=n>required</span><span class=p>,</span> <span class=ow>not</span> <span class=nb>str</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=mi>3</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=mi>3</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>두 개 이상의 값 대입</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>number1</span> <span class=o>=</span> <span class=mi>5</span>
+</span></span><span class=line><span class=cl><span class=n>number2</span> <span class=o>=</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=n>fruit</span> <span class=o>=</span> <span class=s2>&#34;bananas&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;I bought </span><span class=si>%d</span><span class=s2> </span><span class=si>%s</span><span class=s2>. But, </span><span class=si>%d</span><span class=s2> </span><span class=si>%s</span><span class=s2> were rotten.&#34;</span> <span class=o>%</span> <span class=p>(</span><span class=n>number1</span><span class=p>,</span> <span class=n>fruit</span><span class=p>,</span> <span class=n>number2</span><span class=p>,</span> <span class=n>fruit</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>bought</span> <span class=mi>5</span> <span class=n>bananas</span><span class=o>.</span> <span class=n>But</span><span class=p>,</span> <span class=mi>2</span> <span class=n>bananas</span> <span class=n>were</span> <span class=n>rotten</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>포맷팅 연산자와 함께 % 문자 삽입하는 방법</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;Error is </span><span class=si>%d</span><span class=s2>%.&#34;</span> <span class=o>%</span> <span class=mi>98</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;Error is </span><span class=si>%d%%</span><span class=s2>.&#34;</span> <span class=o>%</span> <span class=mi>98</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=ne>ValueError</span><span class=p>:</span> <span class=n>incomplete</span> <span class=nb>format</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>Error</span> <span class=ow>is</span> <span class=mi>98</span><span class=o>%.</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>포맷 코드와 숫자 함께 사용하기</strong></p><ul><li>정렬과 공백</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>%10s</span><span class=s2>&#34;</span> <span class=o>%</span> <span class=s2>&#34;hi&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>%-10s</span><span class=s2>&#34;</span> <span class=o>%</span> <span class=s2>&#34;hi&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span> <span class=p>(</span><span class=mi>10</span><span class=n>개의</span> <span class=n>공간에서</span> <span class=n>대입되는</span> <span class=n>값을</span> <span class=n>우측</span> <span class=n>정렬</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span> <span class=p>(</span><span class=mi>10</span><span class=n>개의</span> <span class=n>공간에서</span> <span class=n>대입되는</span> <span class=n>값을</span> <span class=n>좌측</span> <span class=n>정렬</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>소숫점 표현</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>%0.4f</span><span class=s2>&#34;</span> <span class=o>%</span> <span class=mf>3.42134234</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>%10.4f</span><span class=s2>&#34;</span> <span class=o>%</span> <span class=mf>3.42134234</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mf>3.4213</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mf>3.4213</span> <span class=p>(</span><span class=n>숫자를</span> <span class=n>소숫점</span> <span class=n>네</span> <span class=n>번째</span> <span class=n>자리까지만</span> <span class=n>표시하고</span> <span class=n>전체</span> <span class=mi>10</span><span class=n>개의</span> <span class=n>문자열</span> <span class=n>공간에서</span> <span class=n>오른쪽</span> <span class=n>정렬</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#03-format-이용-포매팅><h2 id=03-format-이용-포매팅><span class=hanchor arialabel=Anchor># </span>03. format 이용 포매팅</h2></a><br><ol><li>숫자나 문자열 직접 대입</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>{0}</span><span class=s2> bananas.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>{0}</span><span class=s2> bananas.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;sweet&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=mi>3</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=n>sweet</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>변수 대입</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>number</span> <span class=o>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=n>three</span> <span class=o>=</span> <span class=s2>&#34;3&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>{0}</span><span class=s2> bananas.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>number</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>{0}</span><span class=s2> bananas.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>three</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>string3</span> <span class=o>=</span> <span class=s2>&#34;I eat </span><span class=si>{0}</span><span class=s2> bananas.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;three&#34;</span><span class=p>)</span> <span class=c1># 이건 변수 대입이 아니겠지.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=mi>3</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=mi>3</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>eat</span> <span class=n>three</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>두 개 이상의 값 대입</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>number1</span> <span class=o>=</span> <span class=mi>5</span>
+</span></span><span class=line><span class=cl><span class=n>number2</span> <span class=o>=</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=n>fruit</span> <span class=o>=</span> <span class=s2>&#34;bananas&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;I bought </span><span class=si>{0}</span><span class=s2> </span><span class=si>{1}</span><span class=s2>. But, </span><span class=si>{2}</span><span class=s2> </span><span class=si>{3}</span><span class=s2> were rotten.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>number1</span><span class=p>,</span> <span class=n>fruit</span><span class=p>,</span> <span class=n>number2</span><span class=p>,</span> <span class=n>fruit</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;I bought </span><span class=si>{2}</span><span class=s2> </span><span class=si>{1}</span><span class=s2>. But, </span><span class=si>{0}</span><span class=s2> </span><span class=si>{3}</span><span class=s2> were rotten.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>number1</span><span class=p>,</span> <span class=n>fruit</span><span class=p>,</span> <span class=n>number2</span><span class=p>,</span> <span class=n>fruit</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>bought</span> <span class=mi>5</span> <span class=n>bananas</span><span class=o>.</span> <span class=n>But</span><span class=p>,</span> <span class=mi>2</span> <span class=n>bananas</span> <span class=n>were</span> <span class=n>rotten</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>bought</span> <span class=mi>2</span> <span class=n>bananas</span><span class=o>.</span> <span class=n>But</span><span class=p>,</span> <span class=mi>5</span> <span class=n>bananas</span> <span class=n>were</span> <span class=n>rotten</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>이름으로 대입</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;I bought </span><span class=si>{number}</span><span class=s2> </span><span class=si>{fruit}</span><span class=s2>.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>number</span><span class=o>=</span><span class=mi>5</span><span class=p>,</span> <span class=n>fruit</span><span class=o>=</span><span class=s2>&#34;bananas&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>bought</span> <span class=mi>5</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=5><li>인덱스와 이름 혼용</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;I bought </span><span class=si>{0}</span><span class=s2> </span><span class=si>{fruit}</span><span class=s2>.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=n>fruit</span><span class=o>=</span><span class=s2>&#34;bananas&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>bought</span> <span class=mi>5</span> <span class=n>bananas</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=6><li>왼쪽 정렬, 오른쪽 정렬, 가운데 정렬</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 문자열의 자릿수는 10으로 한 것</span>
+</span></span><span class=line><span class=cl><span class=n>left</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>{0:&lt;10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>right</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>{0:&gt;10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>center</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>{0:^10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>left</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>right</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>center</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=7><li>공백 채우기, &ldquo;{0: &lsquo;공백내용&rsquo; &lsquo;정렬방법&rsquo; &lsquo;자릿수&rsquo;}".format(&ldquo;문자열&rdquo;)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>{0:=^10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>{0:!&lt;10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=o>====</span><span class=n>hi</span><span class=o>====</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span><span class=err>!!!!!!!!</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=8><li>소숫점 표현하기</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>pi</span> <span class=o>=</span> <span class=mf>3.141592</span>
+</span></span><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>{0:0.4f}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>pi</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;</span><span class=si>{0:10.4f}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>pi</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>format</span><span class=p>(</span><span class=mf>3.141592</span><span class=p>,</span> <span class=s2>&#34;0.4f&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mf>3.1416</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mf>3.1416</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mf>3.1416</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=9><li><code>{</code> <code>}</code> 문자 사용하기</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;I bought </span><span class=si>{fruit}</span><span class=s2> and {{apple}}. </span><span class=si>{apple}</span><span class=s2> is delicious.&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>fruit</span><span class=o>=</span><span class=s2>&#34;banana&#34;</span><span class=p>,</span> <span class=n>apple</span><span class=o>=</span><span class=s2>&#34;Apple&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>I</span> <span class=n>bought</span> <span class=n>banana</span> <span class=ow>and</span> <span class=p>{</span><span class=n>apple</span><span class=p>}</span><span class=o>.</span> <span class=n>Apple</span> <span class=ow>is</span> <span class=n>delicious</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#04-f-문자열-이용-포매팅><h2 id=04-f-문자열-이용-포매팅><span class=hanchor arialabel=Anchor># </span>04. f 문자열 이용 포매팅</h2></a><ul><li>참고 : f 문자열 포맷팅</li></ul><p>python version 3.6부터 사용 가능한 기능</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>name</span> <span class=o>=</span> <span class=s2>&#34;신재윤&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>age</span> <span class=o>=</span> <span class=mi>27</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=sa>f</span><span class=s1>&#39;나의 이름은 </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s1>입니다. 나이는 </span><span class=si>{</span><span class=n>age</span><span class=si>}</span><span class=s1>입니다.&#39;</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;나의 이름은 </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s1>입니다. 나이는 </span><span class=si>{</span><span class=n>age</span><span class=si>}</span><span class=s1>입니다.&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;나의 이름은 </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s1>입니다. 나이는 </span><span class=si>{</span><span class=n>age</span><span class=o>+</span><span class=mi>3</span><span class=si>}</span><span class=s1>입니다.&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>나의</span> <span class=n>이름은</span> <span class=n>신재윤입니다</span><span class=o>.</span> <span class=n>나이는</span> <span class=mi>27</span><span class=n>입니다</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>나의</span> <span class=n>이름은</span> <span class=n>신재윤입니다</span><span class=o>.</span> <span class=n>나이는</span> <span class=mi>27</span><span class=n>입니다</span><span class=o>.</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>나의</span> <span class=n>이름은</span> <span class=n>신재윤입니다</span><span class=o>.</span> <span class=n>나이는</span> <span class=mi>30</span><span class=n>입니다</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>딕셔너리 이용 f 문자열 포맷팅</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>d</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;name&#34;</span> <span class=p>:</span> <span class=s2>&#34;신재윤&#34;</span><span class=p>,</span> <span class=s2>&#34;age&#34;</span> <span class=p>:</span> <span class=mi>27</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;나의 이름은 </span><span class=si>{</span><span class=n>d</span><span class=p>[</span><span class=s1>&#39;name&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>입니다. 나이는 </span><span class=si>{</span><span class=n>d</span><span class=p>[</span><span class=s1>&#39;age&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>입니다.&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>나의</span> <span class=n>이름은</span> <span class=n>신재윤입니다</span><span class=o>.</span> <span class=n>나이는</span> <span class=mi>27</span><span class=n>입니다</span><span class=o>.</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>f 문자열 포맷팅 이용 정렬</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># format 함수</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{0:&lt;10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{0:&gt;10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{0:^10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1># f 문자열 포맷팅</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=s2>&#34;hi&#34;</span><span class=si>:</span><span class=s1>&lt;10</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=s2>&#34;hi&#34;</span><span class=si>:</span><span class=s1>&gt;10</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=s2>&#34;hi&#34;</span><span class=si>:</span><span class=s1>^10</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>f 문자열 포맷팅 공백 채우기</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># format 함수</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{0:=&lt;10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{0:!&gt;10}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=s2>&#34;hi&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1># f 문자열 포맷팅</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=s2>&#34;hi&#34;</span><span class=si>:</span><span class=s1>=&lt;10</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=s2>&#34;hi&#34;</span><span class=si>:</span><span class=s1>!&gt;10</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span><span class=o>========</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=err>!!!!!!!!</span><span class=n>hi</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>f 문자열 포맷팅 소숫점 표현하기</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>pi</span> <span class=o>=</span> <span class=mf>3.141592</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1># format 함수</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{0:0.4f}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>pi</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=si>{0:10.4f}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>pi</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>format</span><span class=p>(</span><span class=n>pi</span><span class=p>,</span> <span class=s2>&#34;0.4f&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1># f 문자열 포맷팅</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pi</span><span class=si>:</span><span class=s1>0.4f</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;</span><span class=si>{</span><span class=n>pi</span><span class=si>:</span><span class=s1>10.4f</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mf>3.1416</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mf>3.1416</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#05-문자열-다양한-함수들><h2 id=05-문자열-다양한-함수들><span class=hanchor arialabel=Anchor># </span>05. 문자열 다양한 함수들</h2></a><br><ul><li>count()<ul><li>문자 개수 세기</li></ul></li><li>find()<ul><li>문자 위치 찾기</li></ul></li><li>index()<ul><li>문자 위치 찾기</li></ul></li><li>join()<ul><li>문자열 삽입</li></ul></li><li>upper()<ul><li>소문자를 대문자로</li></ul></li><li>lower()<ul><li>대문자를 소문자로</li></ul></li><li>lstrip()<ul><li>왼쪽 공백 제거</li></ul></li><li>rstrip()<ul><li>오른쪽 공백 제거</li></ul></li><li>strip()<ul><li>양쪽 공백 제거</li></ul></li><li>replace()<ul><li>문자열 변경</li></ul></li><li>split()<ul><li>문자열 나누기</li></ul></li></ul><br><blockquote class=warning-callout><p>주의 !</p><p>주의할 것은, 함수를 사용한다 해도 문자열 자체의 내용이 바뀌는 것은 아니다. 예를 들어 replace()를 이용해서 문자열을 변경한다는 것은 <code>print(string).replace("a", "b"))</code> 일 경우 출력하는 과정에서 <code>a</code>를 <code>b</code>로 치환해주는 개념인 것이지 string의 문자열 내용 자체가 바뀌는 것은 아니다.</p></blockquote><br><p><strong>count()</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;python&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>count</span><span class=p>(</span><span class=s1>&#39;p&#39;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>1</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>find(), index()</strong><br></p><p><code>find()</code>는 없는 값을 찾으면 -1을 반환하지만, <code>index()</code>는 없는 값을 찾으면 오류 값을 반환한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;Python is the best programming language.&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>find</span><span class=p>(</span><span class=s1>&#39;t&#39;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>find</span><span class=p>(</span><span class=s1>&#39;k&#39;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>index</span><span class=p>(</span><span class=s1>&#39;t&#39;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>index</span><span class=p>(</span><span class=s1>&#39;k&#39;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=o>-</span><span class=mi>1</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=ne>ValueError</span><span class=p>:</span> <span class=n>substring</span> <span class=ow>not</span> <span class=n>found</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>join()</strong><br></p><p><code>join()</code>는 문자열 뿐만이 아니라 리스트나 튜플에도 사용 가능하다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># 문자열 사용 예시</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;,&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=s1>&#39;abcd&#39;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 리스트 사용 예시</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;,&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=s1>&#39;a&#39;</span><span class=p>,</span> <span class=s1>&#39;b&#39;</span><span class=p>,</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span> <span class=s1>&#39;d&#39;</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>a</span><span class=p>,</span><span class=n>b</span><span class=p>,</span><span class=n>c</span><span class=p>,</span><span class=n>d</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>a</span><span class=p>,</span><span class=n>b</span><span class=p>,</span><span class=n>c</span><span class=p>,</span><span class=n>d</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>upper(), lower()</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string1</span> <span class=o>=</span> <span class=s2>&#34;hi&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string2</span> <span class=o>=</span> <span class=s2>&#34;HI&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string1</span><span class=o>.</span><span class=n>upper</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string2</span><span class=o>.</span><span class=n>lower</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>HI</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>lstrip(), rstrip(), strip()</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34; hi &#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>lstrip</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>rstrip</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>strip</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------#</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;,,,hi,,,&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>strip</span><span class=p>())</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>strip</span><span class=p>(</span><span class=s2>&#34;,&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>,,,</span><span class=n>hi</span><span class=p>,,,</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>hi</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>replace()</strong><br></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;Python is good programming language&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>string</span><span class=o>.</span><span class=n>replace</span><span class=p>(</span><span class=s2>&#34;Python&#34;</span><span class=p>,</span> <span class=s2>&#34;Java&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>replace</span><span class=p>(</span><span class=s2>&#34;Python&#34;</span><span class=p>,</span> <span class=s2>&#34;Java&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>Java</span> <span class=ow>is</span> <span class=n>good</span> <span class=n>programming</span> <span class=n>language</span>
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=n>Python</span> <span class=ow>is</span> <span class=n>good</span> <span class=n>programming</span> <span class=n>language</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><p><strong>split()</strong><br></p><p>괄호 안이 공백일 경우 &ldquo;탭&rdquo;, &ldquo;스페이스&rdquo;, &ldquo;엔터&rdquo; 기준으로 쪼갠다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;Python is good programming language&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>split</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=s1>&#39;Python&#39;</span><span class=p>,</span> <span class=s1>&#39;is&#39;</span><span class=p>,</span> <span class=s1>&#39;good&#39;</span><span class=p>,</span> <span class=s1>&#39;programming&#39;</span><span class=p>,</span> <span class=s1>&#39;language&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=c1>#-------------------------------#</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=o>=</span> <span class=s2>&#34;a:b:c:d:e&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>string</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s2>&#34;:&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=n>출력결과</span> <span class=p>:</span> <span class=p>[</span><span class=s1>&#39;a&#39;</span><span class=p>,</span> <span class=s1>&#39;b&#39;</span><span class=p>,</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span> <span class=s1>&#39;d&#39;</span><span class=p>,</span> <span class=s1>&#39;e&#39;</span><span class=p>]</span>
+</span></span></code></pre></td></tr></table></div></div><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#01-문자열-다루기-기본>01. 문자열 다루기 기본</a></li><li><a href=#02-코드-이용-포매팅>02. 코드 이용 포매팅</a></li><li><a href=#03-format-이용-포매팅>03. format 이용 포매팅</a></li><li><a href=#04-f-문자열-이용-포매팅>04. f 문자열 이용 포매팅</a></li><li><a href=#05-문자열-다양한-함수들>05. 문자열 다양한 함수들</a></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></body></html>
