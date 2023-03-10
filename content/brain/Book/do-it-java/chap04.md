@@ -386,7 +386,7 @@ public class pr11_BreakExample2 {
 // sum : 105
 ``` 
 
-<a href='/brain/Book//do-it-java/chap04/#for문-요소-생략하기'>조건식 생략</a>의 스킬을 이용하였고 for문 내부에 조건을 걸어줌으로써 break 시켜서 반복문을 아예 빠져나가게 했음
+<a href='/brain/Book/do-it-java/chap04/#for문-요소-생략하기'>조건식 생략</a>의 스킬을 이용하였고 for문 내부에 조건을 걸어줌으로써 break 시켜서 반복문을 아예 빠져나가게 했음
 
 <br>
 
