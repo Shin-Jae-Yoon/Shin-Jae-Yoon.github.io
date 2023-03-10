@@ -251,8 +251,8 @@ a {
   font-size: 1em;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.2s ease;
   color: var(--secondary);
+  transition: all 0.2s ease-in-out;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--tertiary) !important;

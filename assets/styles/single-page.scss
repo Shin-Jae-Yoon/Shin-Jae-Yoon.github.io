@@ -58,6 +58,17 @@
     width: 100%;
     padding: 3em 5em;
     overflow-x: hidden;
+
+    img {
+      width: 80%;
+      display: block;
+      margin: 0 auto;
+
+      &.book {
+        width: 50%;
+        border: 1px solid lightgray;
+      }
+    }
   }
 
   &.single-container {

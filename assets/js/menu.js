@@ -28,6 +28,7 @@
   }
 
   collapse_btn.addEventListener("click", (e) => {
+    e.preventDefault()
     for (const folder of folders) {
       if (folder.classList.contains("active")) {
         folder.classList.remove("active")

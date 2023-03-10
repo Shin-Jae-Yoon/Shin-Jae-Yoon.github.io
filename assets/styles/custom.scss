@@ -22,11 +22,17 @@
 
   --navbackground: #faf8f8;
   --projectitembackground: #eceaea;
+  // graph color
+  --graphNode: #59b6c1;
+  --graphNodeActive: #f28482;
+  --graphNodeInactive: #59b7c12f;
+  --graphLink: #dadada;
+  --graphLinkActive: #5a7282;
 
   // lightblue version
   --secondary: #2cabb9;
   --secondaryopacity: #2cabb945;
-  --tertiary: #1e838e;
+  --tertiary: #267783;
   --sidetextcolor: #59b6c1 !important;
   --sidetertiary: #93e6ef49!important;
   --sidetopbtn: #5fddeb !important;
