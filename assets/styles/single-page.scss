@@ -59,6 +59,15 @@
     padding: 3em 5em;
     overflow-x: hidden;
 
+    table {
+      thead {
+        background-color: var(--indexblue);
+        th {
+          color: rgba(255, 255, 255, 0.821);
+        }
+      }
+    }
+
     img {
       width: 80%;
       display: block;
