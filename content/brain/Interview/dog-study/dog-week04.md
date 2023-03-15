@@ -1,5 +1,5 @@
 ---
-title: "4주차 - Spring 기초"
+title: "4주차 - Spring 웹"
 date: "2023-03-11 02:50"
 enableToc: true
 tags: [""]
