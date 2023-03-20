@@ -8,8 +8,8 @@
     <div class="singlePage" style="padding: 0; margin: 0; width: 100%;">
         <div class="blur-element"></div>
         <div class="section-container">
+            {{partial "graph-tool.html" . }}
             {{partial "docsmenu.html" . }}
-            
             <div class="section-content">
                 {{if $.Site.Data.config.enableFooter}} {{if $.Site.Data.graphConfig.enableGlobalGraph}}
                     <div class="global-graph-container" id="footer">
