@@ -725,7 +725,198 @@ public class Setting {
 
 ## Spring MVC
 
+MVC 패턴은 디자인 패턴이다. 디자인 패턴이란, SW 개발 방법을 공식화 한 것으로 이해하자.
 
+==**MVC 패턴 : Model & View & Controller 애플리케이션을 3가지 역할로 구분한 개발 방법론**==
+
+<br>
+
+### 모델1
+
+MVC 패턴 이전에는 웹 애플리케이션 아키텍쳐로 모델 1을 주로 사용하였다.
+
+구성
+- JSP + JavaBean(Service)
+- 뷰와 로직이 섞인다.
+- JSP가 흔히 아는 View, JavaBean을 Model이라고 생각하자.
+
+장점
+- 구조가 단순하다.
+
+단점
+- 출력과 로직 코드가 섞여 JSP 코드가 복잡해진다.
+- 프론트엔드와 백엔드가 혼재되어 분업이 용이하지 않다.
+- 유지보수가 어렵다.
+
+<br>
+
+### 모델2 = MVC패턴
+
+모델1의 단점때문에 나오게 된 모델2이다.
+
+구성
+- JavaBean(Service) + JSP + 서블릿
+- JavaBean이 Model, JSP가 View, 서블릿이 Controller
+
+장점
+- 뷰와 로직의 분리로 모델1에 비해 덜 복잡하다.
+- 분업이 용이하다.
+- 유지보수가 쉽다.
+
+단점
+- 모델1에 비해 습득이 어렵고 작업량이 많다.
+
+<br>
+
+### MVC 흐름
+
+![](brain/image/dog-week05-3.png)
+
+1. 사용자는 원하는 기능을 처리하기 위한 모든 요청을 Controller에 보냄
+2. Controller는 Model을 사용하고, Model은 알맞은 비즈니스 로직 수행
+3. Controller는 사용자에게 보여줄 View를 선택
+4. 선택된 View는 사용자에게 알맞는 결과 화면을 보여준다. 이때, 사용자에게 보여줄 데이터는 Controller를 통해서 전달받는다.
+
+<br>
+
+**Model : 값과 기능을 가지고 있는 객체**
+
+<br>
+
+```java
+public class Triangle {
+	private static final int SIZE = 3;
+	private static final String NAME = "삼각형";
+	private List<Point> points;
+
+	Triangle(List<Point> points) {
+		this.points = points;	
+	}
+}
+```
+
+<br>
+
+**View : 모델에 포함된 데이터의 시각화**
+
+<br>
+
+**Controller : 모델 객체로의 데이터 흐름을 제어, 뷰와 모델의 역할을 분리**
+
+<br>
+
+```java
+public void run() {
+	try {
+		String inputPoints = InputView.inputCoordinates();
+		Figure figure = FigureFactory.create(generatePoints(inputPoints));
+		OutputView.showCoordinatePlane(figure.getXYCoordinates());
+		OutputView.print(figure.getAreaInfo());
+	} catch (Exception e) {
+		System.err.println(e);
+	}
+}
+```
+
+<br>
+
+### MVC 장점
+
+MVC는 개인용 컴퓨터에서 작동하는 애플리케이션의 개발을 목적으로 만들어진 패턴이지만, WWW(World Wide WEB) 애플리케이션을 사용하기 위한 용도로도 폭넓게 사용되고 있다.
+
+- 각 컴포넌트의 코드 결합도를 낮추기 위해
+- 코드의 재사용성을 높이기 위해
+- 구현자들 간의 커뮤니케이션 효율성을 높이기 위해
+
+<br>
+
+### MVC 주의 포인트
+
+1. Model에서 View에 접근하거나 View의 역할을 수행해버리는 경우
+	- 예를 들어, Model에서 toString을 쓰는데 출력 로직을 여기다가 사용해버리는 경우가 있다.
+
+2. View에서 일어나는 "과한" 값 검증과 예외 처리
+	- InputView에서 받은 값을 Presentation Layer에서 체크하지 않고 InputView에 입력 외의 역할을 부여하면 **단일책임원칙에 위반**되어, 추후에 입력 채널이 달라질 경우 유효성 체크 로직도 옮겨가야한다는 문제가 발생할 수 있다.
+	- 사용자의 권한, 논리적인 값(존재 여부, 일치 여부) 등은 Service Layer에서 체크하면 좋다.
+	- 값 형식은 유효하지만, 도메인 모델에서 확인해야할 부분들은 생성자에서 체크하는 것이 좋다. (예를 들어, player의 이름은 몇 글자 이상이어야한다 등)
+	- 생성자에서는 유효성 체크만 하고 다른 로직은 추가하지 않는 것이 좋다.
+
+3. View에서 일어나는 비즈니스 로직
+	- View에서 Model을 생성한다던가 Model끼리 연산 해버린다던가 등
+
+<br>
+
+**모범적인 컨트롤러 사용법**
+
+- View들을 컨트롤러가 연결만 하고 있다.
+- 비즈니스 로직은 없음!!
+- 어.. 그런데 여기서도 InputView에서 players와 rewards를 만들어서 사용하기 때문에 뺐으면 어땠을까? 하는 생각이 있다.
+
+<br>
+
+```java
+public static void main(String[] args) throws Exception {
+	Players players = InputView.createPlayers();
+	Rewards rewards = InputView.createRewards();
+
+	Ladder ladder = LadderFactory.createLadder(players.countOfPeople(), InputView.get);
+	OutputView.printLadder(players, ladder, rewards);
+
+	MatchingResult matchingResult = ladder.play();
+	LadderResult result = matchingResult.map(players, rewards);
+
+	OutputView.printResult(result);
+}
+```
+
+<br>
+
+### 서비스가 커질수록
+
+서비스 규모가 커질수록, 사실 생각대로 MVC를 점점 지키기 힘들어질 것이다. 예를 들어, 쇼핑몰이라고 한다면 게시판에서도 회원 정보를 보여주고, 상품목록 보기에서도 회원 정보를 보여줘야 한다면 회원 정보를 읽어오는 코드는 어떻게 해야할까?
+
+Controller에서 중복 발생 ! => 별도의 객체로 분리, 별도의 메서드로 분리
+
+<br>
+
+### Service
+
+==**Service : 비즈니스 로직(Business Logic)을 수행하는 메서드를 가지고 있는 객체**==
+
+비즈니스 메서드를 별도의 Service 객체에서 구현하도록 하고 컨트롤러는 Service 객체를 사용하도록 한다. 예를 들어, 컨트롤러 1, 컨트롤러 2, 컨트롤러 3이 있다고 하고 회원 Service, 상품 Service, 게시판 Service가 있다고 하면 컨트롤러 1,2,3이 이 서비스들을 막 사용하는 형태로!
+
+서비스는 하나의 트랜잭션을 가지게 된다.
+
+<br>
+
+**Transaction?**
+
+- 특징으로 ACID를 가진다.
+	1. 원자성 (Atomicity) : 하나의 원자 트랜잭션은 모두 성공하거나 or 모두 실패한다.
+	2. 일관성 (Consistency) : 트랜잭션 작업처리 결과가 항상 일관성이 있어야 한다.
+	3. 독립성 (Isolation) : 어느 하나의 트랜잭션이라도 다른 트랜잭션의 연산에 끼어들 수 없다.
+	4. 지속성 (Durability) : 트랜잭션이 성공적으로 완료되었을 경우, 결과는 영구적으로 반영되야 한다.
+
+<br>
+
+### Repository
+
+Repository : DAO(Data Access Object), 데이터 액세스 메서드를 별도의 Repository 객체에서 구현하는 것이다. Service는 Repository 객체를 사용한다.
+
+<details>
+<summary><strong>Repository, DAO 차이</strong></summary>
+
+Spring에서 Repository와 DAO의 차이점은 무엇일까?
+
+DAO(Data Access Object)와 Repository는 모두 데이터 영속성의 추상화 계층으로 사용되는 패턴이지만, 이 둘은 다른 추상화 계층이다. DAO는 데이터베이스와 더 가까우며, 주로 테이블 중심적인 구조를 가지는 반면에 Repository는 도메인에 더 가깝고, Aggregate Roots만 다루는 구조이다.
+
+DAO는 데이터 매핑 및 액세스 레이어로 작동하며, 못생긴 쿼리를 숨기기 위한 역할을 한다. DAO는 데이터 소스와의 연결 관리와 데이터 저장소에서 데이터를 가져오고 저장하는 데 필요한 액세스 메커니즘을 구현한다. 데이터 소스는 RDBMS와 같은 지속적인 저장소 또는 REST 또는 SOAP를 통해 액세스되는 비즈니스 서비스가 될 수 있다.
+
+Repository는 주로 비즈니스 레이어에서 사용되며, 호출 레이어에서 이해할 수 있는 개체만 반환한다. 즉, Repository는 비즈니스 객체를 출력하고, DAO는 데이터 액세스 메커니즘을 제공하는 객체를 반환한다. Repository는 DAO를 사용하여 구현할 수 있지만 그 반대는 성립하지 않는다.
+
+따라서 Spring에서 Repository와 DAO는 데이터 액세스를 추상화하는 패턴으로 사용되지만, 다른 추상화 계층을 가지며, 각각 비즈니스 객체와 데이터 액세스 메커니즘을 처리하는 역할의 차이가 있다. 
+
+</details>
 
 <br>
 
@@ -734,6 +925,22 @@ public class Setting {
 ==**레이어드 아키텍처 패턴은 소프트웨어 아키텍처의 일반적인 패턴 중 하나이다. 일반적으로 사용자 상호 작용 레이어, 비즈니스 로직 레이어, 데이터 액세스 레이어, 데이터베이스 레이어로 구성된다.**==
 
 레이어드 아키텍처 패턴은 백엔드 API 코드에 가장 널리 적용되는 패턴인데, **코드를 논리적인 부분 혹은 역할에 따라 독립된 모듈로 나누어서 구성하는 패턴**이다.
+
+**레이어드 아키텍처의 핵심 요소**
+- 단방향 의존성 : 각각의 레이어는 오직 자기보다 하위에 있는 레이어에만 의존
+- 각 레이어의 역할이 명확하다
+
+**레이어드 아키텍처의 장점**
+- 핵심 요소로 인하여, 각 레이어가 독립적이고 역할이 분명하다.
+- 이로 인하여, 코드의 확장성이 높아진다.
+- 코드의 구조를 파악하기 쉽고 재사용 가능성이 높아진다.
+- 역할이 명확하여 각 레이어를 테스트하는 테스트 코드의 작성이 수월해짐
+
+**레이어드 아키텍처 주의점 - 싱크홀 안티 패턴**
+- 아키텍처 싱크홀 안티 패턴을 조심하자.
+- 요청이 한 레이어에서 다른 레이어로 이동할 때 각 레이어가 아무 비즈니스 로직도 처리하지 않고 그냥 통과하는 것을 의미한다.
+-  이런 흐름은 불필요한 객체 초기화 및 처리를 빈번하게 유발하고 쓸데없이 메모리를 소모하며 성능에도 부정적인 영향을 준다.
+-  물론 싱크홀 안티패턴이 없을 순 없다. 전체 요청의 20%가 싱크홀인 정도면 그런대로 괜찮은 수준이다.
 
 ![](brain/image/dog-week05-2.png)
 
@@ -783,12 +990,28 @@ Spring도 레이어드 아키텍터로 구성된다. 레이어는 자신의 고�
 
 **따라서 시스템 전체를 수정하지 않고 특정한 레이어의 기능을 개선하거나 교체할 수 있기 때문에 재사용성이 좋고 유지 보수하기에도 유리하다.  또한, 레이어별로 테스트 구현이 편해지고 코드 가독성도 높아진다.**
 
+![](brain/image/dog-week05-4.png)
+
+<br>
+
+![](brain/image/dog-week05-5.png)
+
 - Presentation Layer
 	- Controller가 여기에 속한다. view를 담당하는 부분으로, 클라이언트와 직접적으로 맞닿는 부분이다.
 - Business Layer
 	- Service가 여기에 속한다. 비즈니스 핵심 로직을 처리하는 부분이기 때문인데, 이때 Service 객체라는 것은 **하나의 트랜잭션**으로 구성되어 작동한다.
 - Persistence Layer
 	- Repository가 여기에 속한다.
+
+<br>
+
+### 레이어드 아키텍처 확장
+
+만약, 레이어드 아키텍처를 가지는 서비스가 굉장히 커져서 확장을 해야한다는 상황이 온다고 가정하자. 어떤 고민들을 해볼래?
+
+1. 도메인 주도 설계(DDD)로 멀티모듈화하여 레이어드 아키텍처를 그대로 가져가는 방향
+2. 헥사고날 (이 부분은 추가공부 필요)
+3. MSA는,, 웬만하면 꺼내지는 말고 추가적인 공부는 해놓자.
 
 <br>
 
@@ -800,6 +1023,9 @@ Spring도 레이어드 아키텍터로 구성된다. 레이어는 자신의 고�
 - [Java Annotation](https://bangu4.tistory.com/199)
 - [Custom Annotation](https://ittrue.tistory.com/m/158)
 - [Spring Annotation 총정리](https://velog.io/@ruinak_4127/Annotation%EC%9D%B4%EB%9E%80#annotation-%EC%A2%85%EB%A5%98)
+- [우테코 10분 테코톡 - 해리&션의 MVC 패턴](https://www.youtube.com/watch?v=uoVNJkyXX0I)
 - [소프트웨어 아키텍처 패턴](https://velog.io/@vov3616/MVVM-MVC-MVP-MVI-%EB%AD%90%EA%B0%80-%EB%8B%A4%EB%A5%BC%EA%B9%8C)
 - [레이어드 아키텍처 패턴](https://kimjingo.tistory.com/159)
 - [스프링 부트 레이어드 아키텍처](https://www.javatpoint.com/spring-boot-architecture)
+- [싱크홀 안티 패턴](https://velog.io/@gmtmoney2357/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%A0%88%EC%9D%B4%EC%96%B4%EB%93%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98Layered-architecture)
+- [https://www.petrikainulainen.net/software-development/design/understanding-spring-web-application-architecture-the-classic-way](https://www.petrikainulainen.net/software-development/design/understanding-spring-web-application-architecture-the-classic-way)
