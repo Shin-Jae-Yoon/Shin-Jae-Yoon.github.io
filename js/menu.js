@@ -1,9 +1,4 @@
 ;(() => {
-  // main
-  const body = document.getElementsByTagName("body")[0]
-  const singlePage = document.getElementsByClassName("singlePage")[0]
-  // nav
-  const aside = document.getElementsByClassName("main-aside")[0]
   const aside_box = document.getElementsByClassName("main-aside-box")[0]
   const arrows_wrappers = document.getElementsByClassName("a-wrapper")
   const wrappers = document.getElementsByClassName("wrapper")
@@ -15,7 +10,19 @@
   const bar_btn = document.getElementsByClassName("section-menu-btn")[0]
   const pagesLink = document.getElementsByClassName("wrapper-link")
 
+  const expand_graph_container = document.getElementsByClassName("expand-graph-container")[0]
+
   let index = 0
+
+  window.onpopstate = function(event) {
+    expand_graph_container.style.opacity = "0"
+    expand_graph_container.style.visibility = "hidden"
+    blurElement.classList.remove("enabled")
+    aside_box.classList.add("disabled")
+    aside_box.classList.remove("fixed-position")
+    bar_btn.classList.remove("fixed-btn-color")
+    blurElement.classList.remove("enabled")
+  }
 
   for (const el of wrappers) {
     const folder = folders[index]
