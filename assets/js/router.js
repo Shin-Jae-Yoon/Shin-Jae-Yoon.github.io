@@ -24,6 +24,11 @@ export const attachSPARouting = (init, rerender) => {
     scroll_init()
     btn_init()
   })
+
+  window.onpopstate = function(event) {
+    location.reload()
+  }
+
   window.addEventListener("million:navigate", () => {
     render()
     scroll_init()
