@@ -1,4 +1,4 @@
 ---
-title: "김영한 - SpringBoot/JPA"
+title: "김영한 - JPA"
 weight: 2
 ---

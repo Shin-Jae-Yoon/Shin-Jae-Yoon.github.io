@@ -1,5 +1,5 @@
 ---
-title: "스프링 입문 : 섹션0-섹션3"
+title: "섹션0 - 섹션3"
 date: "2023-02-14 21:22"
 enableToc: true
 tags: ["🖥️ 김영한 스프링 입문"]
@@ -511,3 +511,335 @@ static class Hello {
 		- Gson (구글에서 만든거)
 	- 스프링은 기본적으로 잭슨 라이브러리를 채택!
 - 참고 : 클라이언트의 HTTP Accept 헤더와 서버의 컨트롤러 반환 타입 정보를 조합해서 `HttpMessageConverter`가 선택된다. 예를 들어, 클라이언트 쪽에서 XML을 요청하면 서버 쪽에서 XML 라이브러리를 끼워넣고 XML로 보낼 수 있다는 말이다. 근데 그냥 마음 편하게 json으로 하자 ^^ 다 json으로 한다.
+
+<hr>
+
+## 회원 관리 예제
+
+<br>
+
+### 비즈니스 요구사항
+
+- 굉장히 단순한 비즈니스 요구사항만 정하자.
+- 아직 데이터 저장소(DB)가 선장되지 않은 상황, 가상의 시나리오
+	- 데이터 : 회원ID, 이름
+	- 기능 : 회원 등록, 조회
+
+![](brain/image/spring-basic-01-9.png)
+
+- 컨트롤러 : 웹 MVC의 컨트롤러 역할
+	- API 만드는 것
+- 서비스 : 핵심 비즈니스 로직 구현
+	- 비즈니스 도메인 객체를 가지고 핵심 비즈니스 로직이 동작하도록 구현한 객체
+	- 예) 회원은 중복가입 안된다는 것
+- 도메인 : 비즈니스 도메인 객체
+	- 예) 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리되는 객체
+- 리포지토리 : 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리 
+
+<br>
+
+![](brain/image/spring-basic-01-10.png)
+
+- 회원 비즈니스 로직에는 MemberService
+- 회원을 저장하는 것은 MemberRepository
+	- 아직 데이터 저장소가 선정되지 않아서, 우선 인터페이스로 구현 클래스를 변경할 수 있도록 설계 (나중에 선정하고 바꿔끼우기 쉽게)
+	- 데이터 저장소는 RDB, NoSQL 등등 다양한 저장소를 고민중인 상황으로 가정
+	- 개발을 진행하기 위해서 초기 개발 단계에서는 구현체로 가벼운 메모리 기반의 데이터 저장소 사용
+
+<br>
+
+### 도메인, 리포지토리
+
+![](brain/image/spring-basic-01-11.png)
+
+- 회원 **도메인**과 회원 도메인 객체를 저장하고 불러올 수 있는 저장소라고 하는 **리포지토리** 객체를 만들어보자.
+
+<br>
+
+```java {title="domain/Member.java"}
+public class Member {  
+    // 시스템이 저장하는 임의의 id (데이터 구분 위해서)  
+    private Long id;  
+    private String name;  
+  
+    public Long getId() {  
+        return id;  
+    }  
+  
+    public void setId(Long id) {  
+        this.id = id;  
+    }  
+  
+    public String getName() {  
+        return name;  
+    }  
+  
+    public void setName(String name) {  
+        this.name = name;  
+    }  
+}
+```
+
+<br>
+
+```java {title="repository/MemberRepository.java"}
+public interface MemberRepository {  
+    Member save(Member Member);  
+    Optional<Member> findById(Long id);  
+    Optional<Member> findByName(String name);  
+    List<Member> findAll();  
+}
+```
+
+-   Optional은 Java8에 들어간 기능으로 findById나 findByName이 없으면 null이 반환될 수 있는데, 최근에는 Optional로 감싸서 반환하는 것을 선호  
+
+<br>
+
+```java {title="repository/MemoryMemberRepository.java"}
+public class MemoryMemberRepository implements MemberRepository {  
+    private static Map<Long, Member> store = new HashMap<>();  
+    private static long sequence = 0L;  
+    
+    @Override  
+    public Member save(Member member) {  
+        member.setId(++sequence);  
+        store.put(member.getId(), member);  
+        return member;  
+    }  
+  
+    @Override  
+    public Optional<Member> findById(Long id) {    
+        return Optional.ofNullable(store.get(id));  
+    }  
+  
+    @Override  
+    public Optional<Member> findByName(String name) {  
+        return store.values().stream()  
+                .filter(member -> member.getName().equals(name))  
+                .findAny();  
+    }  
+  
+    @Override  
+    public List<Member> findAll() {  
+        return new ArrayList<>(store.values());  
+    }  
+}
+```
+
+-  Key는 회원의 아이디 타입인 Long, Value는 Mamber. 실무에서는 동시성 문제가 발생할 수 있어서, 공유되는 변수일 때는 **ConcurrentHashMap**을 써야하는데, 예제니까 일단 단순하게 쓰자  
+-  sequence는 단순하게 0, 1, 2 키값 생성해주는 녀석이다. 얘도 동시성 고려할거면 **AtomicLong** 써야함
+- null이 될 가능성이 있다면 Optional.ofNullable()로 감싸서 반환
+
+<br>
+
+### 리포지토리 테스트 케이스
+
+![](brain/image/spring-basic-01-12.png)
+
+- 회원 리포지토리가 제대로 동작하는지 테스트 케이스를 만들어보자.
+- 개발한 기능을 실행해서 테스트 할 때 자바의 main 메서드를 통해서 실행하거나, 웹 애플리케이션의 컨트롤러를 통해서 해당 기능을 실행한다. 
+- 이러한 방법은 준비하고 실행하는데 오래 걸리고, 반복 실행하기 어렵고 여러 테스트를 한번에 실행하기 어렵다는 단점이 있다. 자바는 ==**JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결**==한다.
+
+<br>
+
+```java {title="MemoryMemberRepositoryTest.java"}
+import static org.assertj.core.api.Assertions.*;  
+  
+class MemoryMemberRepositoryTest {  
+    MemoryMemberRepository repository = new MemoryMemberRepository();  
+  
+    @AfterEach  
+    public void afterEach() {  
+        repository.clearStore();  
+    }  
+  
+    @Test  
+    public void save() {  
+        Member member = new Member();  
+        member.setName("spring");  
+  
+        repository.save(member);  
+        Member result = repository.findById(member.getId()).get();  
+		// Assertions.assertEquals(member, result);  
+		assertThat(member).isEqualTo(result);
+    }  
+  
+    @Test  
+    public void findByName() {  
+        Member member1 = new Member();  
+        member1.setName("spring1");  
+        repository.save(member1);  
+          
+        Member member2 = new Member();  
+        member2.setName("spring2");  
+        repository.save(member2);  
+  
+        Member result = repository.findByName("spring1").get();  
+        assertThat(result).isEqualTo(member1);  
+    }  
+  
+    @Test  
+    public void findAll() {  
+        Member member1 = new Member();  
+        member1.setName("spring1");  
+        repository.save(member1);  
+  
+        Member member2 = new Member();  
+        member2.setName("spring2");  
+        repository.save(member2);  
+  
+        List<Member> result = repository.findAll();  
+        assertThat(result.size()).isEqualTo(2);  
+    }  
+}
+```
+
+![](brain/image/spring-basic-01-13.png)
+
+- 어차피 테스트코드는 여기서만 쓰니까 `public class` 말고 그냥 `class`로 하자
+- `@Test` 애노테이션 붙이면 Junit이 테스트코드로 알아차림
+- Assertions을 사용하여 테스트 할 수 있는데 두 버전이 있음
+	- junit : `Assertions.assertEquals(member, result);`
+		- 테스트하고자 하는 값과 기대하는 값이 좀 헷갈림
+	- assertj : `Assertions.assertThat(member).isEqualTo(result);`
+		- 테스트하고자 하는 값과 기대하는 값이 직관적
+		- 위에 `import static org.assertj.core.api.Assertions.*;`로 static으로 import하면 그냥 `assertThat()`으로 바로 사용 가능
+			- `option + enter` 해서 만들면 됨
+- 한 번에 여러 테스트를 실행하면 메모리 DB에 직전 테스트의 결과가 남아있을 수도 있어서 이전 테스트 때문에 다음 테스트가 실패할 가능성이 있음. 이때 `@AfterEach`를 사용하면 각 테스트가 종료될 때마다 이 기능을 실행하는데, 여기에 메모리 DB에 저장된 데이터를 삭제하도록 할 수 있음
+- ==**테스트는 각각 독립적으로 실행되어야 한다. 테스트 순서에 의존관계가 있는 것은 좋은 테스트가 아니다.**==
+
+<br>
+
+### 서비스 개발
+
+- 실제 비즈니스 로직이 있는 회원 서비스를 만들어보자.
+
+```java {title="service/MemberService.java"}
+public class MemberService {  
+    private final MemberRepository memberRepository = new MemoryMemberRepository();  
+  
+    /**  
+     * 회원가입  
+     */  
+    public Long join(Member member) {  
+        // 같은 이름이 있는 중복 회원 X, 중복 회원 검증  
+        validateDuplicateMember(member);  
+        memberRepository.save(member);  
+        return member.getId();  
+    }  
+  
+    private void validateDuplicateMember(Member member) {  
+        memberRepository.findByName(member.getName())  
+                // null이 아니라 만약 값이 있으면 동작하는 로직  
+                .ifPresent(m -> {  
+                    throw new IllegalStateException("이미 존재하는 회원입니다.");  
+                });  
+    }  
+  
+    /**  
+     * 전체 회원 조회  
+     */  
+    public List<Member> findMembers() {  
+        return memberRepository.findAll();  
+    }  
+  
+    public Optional<Member> findOne(Long memberId) {  
+        return memberRepository.findById(memberId);  
+    }  
+}
+```
+
+<br>
+
+### 서비스 테스트
+
+- 비즈니스 로직이 있는 서비스가 잘 동작하는지 테스트 해보자.
+- 실제로 동작하는 코드는 한글로 적기 애매하지만, 솔직히 테스트 코드는 보기 편하기 위함이니까 한글로 `회원가입()` 이렇게 직관적으로 적어도 됨
+
+<br>
+
+```java
+public class MemberService {  
+    private final MemberRepository memberRepository = new MemoryMemberRepository();
+}
+```
+
+- 기존에는 회원 서비스가 메모리 회원 리포지토리를 직접 생성하게 했음
+- 그러나, 이렇게 하면 테스트 코드에서 생성하는 메모리 회원 리포지토리와 서비스의 메모리 회원 리포지토리는 같은 것이 아님
+- 그래서 회원 서비스에 의존성 주입(DI)을 하기로 함
+
+<br>
+
+```java
+public class MemberService {  
+  
+    private final MemberRepository memberRepository;  
+  
+    public MemberService(MemberRepository memberRepository) {  
+        this.memberRepository = memberRepository;  
+    }
+}
+```
+
+<br>
+
+```java
+class MemberServiceTest {  
+  
+    MemberService memberService;  
+    MemoryMemberRepository memberRepository;  
+    
+    @BeforeEach  
+    void beforeEach() {  
+        memberRepository = new MemoryMemberRepository();  
+        memberService = new MemberService(memberRepository);  
+    }  
+  
+    @AfterEach  
+    void afterEach() {  
+        memberRepository.clearStore();  
+    }  
+  
+    @Test  
+    void 회원가입() {  
+        // given  
+        Member member = new Member();  
+        member.setName("hello");  
+  
+        // when  
+        Long saveId = memberService.join(member);  
+  
+        // then  
+        Member findMember = memberService.findOne(saveId).get();  
+        assertThat(member.getName()).isEqualTo(findMember.getName());  
+    }  
+  
+    @Test  
+    void 중복_회원_예외() {  
+        // given  
+        Member member1 = new Member();  
+        member1.setName("spring");  
+  
+        Member member2 = new Member();  
+        member2.setName("spring");  
+  
+        // when  
+        memberService.join(member1);    
+        // 이 예외가 터져야한다.  
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));  
+        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");  
+    }  
+  
+    @Test  
+    void findMembers() {  
+    }  
+    @Test  
+    void findOne() {  
+    }
+}
+```
+
+- `@BeforeEach`를 이용하여 테스트 전에 의존성 주입을 시켜줌
+	- 각 테스트 실행 전에 호출되며, 테스트가 서로 영향이 없도록 항상 새로운 객체를 생성하고 의존관계도 새로 맺어준다.
+- 테스트 코드 작성할 때 ==**given -> when -> then**==으로 짜보자.
+	- 좀 더 직관적으로 알 수 있다.

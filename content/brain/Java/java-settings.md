@@ -118,6 +118,47 @@ export PATH=${PATH}:$JAVA_HOME/bin:
 
 <hr>
 
+## IntelliJ 단축키
+
+- `psvm` : public static void main
+
+- `sout` : System.out.println()
+
+- `soutv` : System.out.println( 여기다가 연관된 변수 같이 넣어줌 )
+
+- `cmd + D` : 드래그한거 밑에 복제해줌
+
+- `shift + F6` : 복제한거 변수 이름 똑같은거 편하게 바꿀 수 있음
+
+- `option + cmd + V` : 지금 쓰고 있던거 앞에 변수 추가해줌
+
+![](brain/image/화면-기록-2023-03-25-오후-2.47.26.gif)
+
+- `cmd + P` : 메서드 파라미터에 기대되는 값 보기
+
+- `cmd + E` : 최근 파일 목록 열기
+
+- `shift + shift` : 파일 검색
+
+- `control + shift + R` : 내가 찍은걸로 바꿔서 실행
+
+- `control + R` : 지금 찍혀있는걸로 실행
+
+- `control + enter` : Generator 열기
+
+- `/** + enter` : 이쁜 주석문
+
+- `cmd + X` : 한 줄 삭제
+
+- `control + T` : 리팩토링과 관련된 단축키. 예를 들어 method 뽑아낼 때 (검색도 가능)
+
+- `cmd + shift + T` : 테스트케이스 파일 편하게 만들어주기
+
+- `cmd + option + L` : 코드 정렬
+
+
+<hr>
+
 ## IntelliJ settings
 
 1. 인텔리제이 pro버전 다운로드 체크는 전부 다 체크하고 맨 밑에 association만 java파일 연관 체크

@@ -423,6 +423,14 @@ Exception Handling에 관해서는 [2주차 스터디 참고](brain/Interview/do
 > Spring은 디폴트로 **UnCheckedException** 과 **Error**에 대해서 롤백 정책을 설정 - <a href='https://pjh3749.tistory.com/269' target='_blank'>참고링크1</a><br>, <a href='https://kdhyo.kr/31' target='_blank'>참고링크2</a>
 > 이 파트는 @Transactional 공부하고 다시 돌아오기
 
+<br>
+
+(추가)
+
+- Checked Exception이 뜬다는거 자체가 컴파일 시점에 오류가 발생되는건데 @Transactional 애노테이션 붙인 트랜잭션 안에서 예외가 처리돼도 롤백되지 않는다. 왜냐하면, 스프링 기본 설정이 Unchecked와 Error에 관해서 롤백 정책을 결정하기 때문이다.
+
+- 결과적으로 체크드든 언체크든 throw 무조건 해주자 !
+
 
 ## 참고
 
