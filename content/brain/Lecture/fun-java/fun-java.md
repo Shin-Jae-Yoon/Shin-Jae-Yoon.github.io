@@ -17,3 +17,5 @@ Spring과 코딩테스트 문법을 공부하기 이전에 최대한 빠르게 1
 3. [03. 객체지향 1/3](brain/Lecture/fun-java/fun-java03)
 4. [04. 객체지향 2/3](brain/Lecture/fun-java/fun-java04)
 5. [05. 객체지향 3/3](brain/Lecture/fun-java/fun-java05)
+6. [06. 배열과 Arrays 클래스](brain/Lecture/fun-java/fun-java06)
+7. [07. 제네릭과 컬렉션 프레임워크](brain/Lecture/fun-java/fun-java07)
