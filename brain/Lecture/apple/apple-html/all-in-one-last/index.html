@@ -1,0 +1,736 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.457db6eb0cd3fc8992da6c4450ca2f65.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.925b49f4bf230c6f32905bb61fd762ea.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.6e73204c275d3c3c53f026889c6e4376.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.e4f749984b89f35680b8cfadddf2b482.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>JVM</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring 기본</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week04/ class=page-link style=display:block;width:100%>4주차 - Spring 웹</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week05/ class=page-link style=display:block;width:100%>5주차 - Spring 응용</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week06/ class=page-link style=display:block;width:100%>6주차 - Spring Data</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 네트워크</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 운영체제</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 공통</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-01/ class=page-link style=display:block;width:100%>섹션0 - 섹션3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-02/ class=page-link style=display:block;width:100%>섹션4 - 섹션8</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - JPA</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>부부개발단 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java/ class=page-link style=display:block;width:100%>개요. 즐거운 자바</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java01/ class=page-link style=display:block;width:100%>01. Java 시작</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java02/ class=page-link style=display:block;width:100%>02. Java 기본 문법</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java03/ class=page-link style=display:block;width:100%>03. 객체지향 1/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java04/ class=page-link style=display:block;width:100%>04. 객체지향 2/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java05/ class=page-link style=display:block;width:100%>05. 객체지향 3/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java06/ class=page-link style=display:block;width:100%>06. 배열과 Arrays 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java07/ class=page-link style=display:block;width:100%>07. 제네릭과 컬렉션</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java08/ class=page-link style=display:block;width:100%>08. 주석문, 예외처리, enum</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>패캠 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/ps/ class=page-link style=display:block;width:100%>문제풀이 현황</a></div></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 1 - Part 4</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch00/ class=page-link style=display:block;width:100%>Part1 - Part4 강의소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch01/ class=page-link style=display:block;width:100%>Part1 - Ch01 문자열</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch02/ class=page-link style=display:block;width:100%>Part1 - Ch02 시간복잡도</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 5 - 단기완성</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 6 - SQL</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬입문과 크롤링기초 부트캠프</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>자바의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.00c2c8e61ed4afe7893759f1132a5ec0.js></script></div><div class=single-content><h1>All-in-One 고급모듈</h1><p class=meta>Last updated -
+2023년 03월 31일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Lecture/apple/apple-html/all-in-one-last.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/%EF%B8%8F-%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C-HTML/CSS/>🖥️ 코딩애플 HTML/CSS</a></li></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#pseudo-element>Pseudo-element</a></li><li><a href=#shadow-dom>Shadow DOM</a></li><li><a href=#sass>Sass</a><ul><li><a href=#sass-문법>Sass 문법</a></li><li><a href=#문법01-값을-저장하고-사용하는-변수>문법01. 값을 저장하고 사용하는 변수</a></li><li><a href=#문법02-셀렉터-대신-사용하는-nesting>문법02. 셀렉터 대신 사용하는 Nesting</a></li><li><a href=#문법03-이미-있는-클래스를-확장하는-extend>문법03. 이미 있는 클래스를 확장하는 @extend</a></li><li><a href=#문법04-코드를-한-단어로-축약하는-mixin>문법04. 코드를 한 단어로 축약하는 @mixin</a></li><li><a href=#문법05-다른-파일에-있는-내용-가져오는-use-문법>문법05. 다른 파일에 있는 내용 가져오는 @use 문법</a></li></ul></li><li><a href=#html-video-audio>HTML video, audio</a></li><li><a href=#궁극의-가운데-정렬>궁극의 가운데 정렬</a></li><li><a href=#애니메이션-만들기-심화-keyframes>애니메이션 만들기 심화 (@keyframes)</a><ul><li><a href=#브라우저가-그림-그리는-순서-렌더링-과정>브라우저가 그림 그리는 순서 (렌더링 과정)</a></li><li><a href=#3d-애니메이션-사진-뒤집기>3D 애니메이션 (사진 뒤집기)</a></li><li><a href=#애니메이션-성능-잡는-방법들>애니메이션 성능 잡는 방법들</a></li></ul></li><li><a href=#css-스킬-심화>CSS 스킬 심화</a><ul><li><a href=#css-grid>CSS Grid</a></li><li><a href=#css-스킬-sticky>CSS 스킬 sticky</a></li></ul></li></ul></nav></details></aside><blockquote><p>해당 게시글은 <a href=https://codingapple.com/course/html-basics/ target=_blank>HTML/CSS All-in-one : 기초부터 Bootstrap, SASS, 고급 animation 까지</a> 강의를 정리한 내용입니다.</p></blockquote><hr><a href=#pseudo-element><h2 id=pseudo-element><span class=hanchor arialabel=Anchor># </span>Pseudo-element</h2></a><ul><li>pseudo-class (다른 상태일 때 스타일 줄 때) <code>.class:</code></li><li>pseudo-element (내부의 일부분만 스타일 줄 때) <code>.class::</code></li></ul><br><p>기초 모듈 수업에서 pseudo-class 가 무엇인지 학습했었다. <code>:hover</code>와 같이 특정 요소가 다른 상태일 때 (ex. 마우스 올렸을 때) 스타일 줄 수 있게 해주는 것이었다. pseudo-element는 콜론 2개 <code>::</code>를 입력하여 사용한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 이러면 pseudo 클래스의 첫 번째 글자만 빨간색으로 바뀜! */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>pseudo</span><span class=p>::</span><span class=nd>first-letter</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>font-size</span><span class=p>:</span> <span class=mi>2</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>보통 <code>::after (내부 맨 뒤에 뭔가 추가)</code>나 <code>::before (내부 맨 앞에 뭔가 추가)</code>를 어느정도 자주 사용하는 편이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 이러면 pseudo 클래스 맨 뒤에 &#39;안녕&#39; 글자 생김 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>pseudo</span><span class=p>::</span><span class=nd>after</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>content</span><span class=p>:</span> <span class=s1>&#39;안녕&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>font-size</span><span class=p>:</span> <span class=mi>2</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>만약, float를 사용해서 <code>clear: both;</code>를 하고 싶은 경우에 pseudo-element를 이용해서 빈 div 박스를 추가해줄 수 있다. (즉, 귀찮게 html 맨 밑에 div 박스 추가하고 style 줄 필요 없다는 말이지만, 나는 앞으로 float 안쓰고 flex 같은거 쓸거니깐&mldr; 그래도 혹시 모르니 메모 !)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>product-container</span><span class=p>::</span><span class=nd>after</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>content</span><span class=p>:</span> <span class=s1>&#39;&#39;</span><span class=p>;</span> <span class=c>/* 그냥 내용 없는거 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>clear</span><span class=p>:</span> <span class=kc>both</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>float</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><code>input 태그의 type이 file</code>인 경우 화면에 <code>파일 선택</code> 버튼 말고 <code>선택된 파일 없음</code>이라는 글자가 나온다. 아래에서 설명한 shadow dom인데 이 경우 단순히 input 태그를 조작하여서 버튼 색깔을 변경할 수는 없다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 이러면 &#34;선택된 파일 없음&#34; 여기 배경색이 바뀜 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>input_file</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>skyblue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>/* 이렇게 해야 &#34;파일 선택&#34; 버튼의 배경색이 바뀜 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>input_file</span><span class=p>::</span><span class=nd>file-selector-button</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>skyblue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>/* pseudo-element에 pseudo-class도 사용 가능 */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>input_file</span><span class=p>::</span><span class=nd>file-selector-button</span><span class=p>:</span><span class=nd>hover</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li><p>Pseudo-element 활용한 쓸데없는 짓들</p></li><li><p>CSS 만으로 버튼에 마우스 올리면 배경 어둡게하기
+<a href=https://codepen.io/css-tricks/pen/dxyfA rel=noopener>https://codepen.io/css-tricks/pen/dxyfA</a></p></li><li><p>CSS만으로 3D 느낌 리본모양만들기
+<a href=https://codepen.io/team/css-tricks/pen/mVZGKa rel=noopener>https://codepen.io/team/css-tricks/pen/mVZGKa</a></p></li><li><p>ol 태그의 숫자 스타일링하기
+<a href=https://www.456bereastreet.com/archive/201105/ rel=noopener>https://www.456bereastreet.com/archive/201105/</a> styling_ordered_list_numbers/</p></li><li><p>table 반응형으로 만드는 여러가지 방법
+<a href=https://css-tricks.com/responsive-data-tables/ rel=noopener>https://css-tricks.com/responsive-data-tables/</a></p></li><li><p>CSS만으로 영문 폰트 만들기
+<a href=https://yusugomori.com/projects/css-sans/fonts rel=noopener>https://yusugomori.com/projects/css-sans/fonts</a></p></li></ul><hr><a href=#shadow-dom><h2 id=shadow-dom><span class=hanchor arialabel=Anchor># </span>Shadow DOM</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;file&#34;</span> <span class=p>/&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>이와 같은 코드 입력 시, 화면에 <code>파일 선택</code> 버튼 말고 <code>선택된 파일 없음</code>이라는 글자가 나온다. 분명 태그 하나만 사용했는데 2개를 사용한 것처럼 보인다. 이것은 <strong>Shadow DOM</strong>이라는 숨겨진 요소 때문이다.</p><br><p>크롬 개발자 도구 설정에서 Elements의 <code>Show user agent shadow DOM</code>을 체크한 이후 input 태그의 내부를 살펴보면 shadow-root가 있고 그 안에 보면 <code>pseudo="-webkit-file-upload-button"</code>이 있을 것이다. 이것이 shadow DOM이다. input 태그 하나만 입력해도 span 태그인 선택된 파일 없음이 한 번에 입력되도록 개발자에게 편하려고 생긴 것이다.</p><br><p>그래서 결국, 버튼에 배경색을 주려면 위에서 했던 <code>.input_file::file-selector-button</code> 말고 어떻게 하지?</p><br><p><strong>input [type=file]</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>input</span><span class=o>[</span><span class=nt>type</span><span class=o>=</span><span class=s1>&#39;file&#39;</span><span class=o>]</span><span class=p>::</span><span class=nd>-webkit-file-upload-button</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>크롬 개발자 도구 열어서 pseudo 부분을 pseudo-element 부분에다가 넣고 스타일링 하면 된다. 왜냐면 pseudo-element 역할 자체가 <strong>내부의 일부분만 스타일 줄 때</strong> 사용하는 것이니까 내부의 버튼에만 스타일을 주고싶은 거니까 이렇게 사용하는 것이다.</p><br><p>추가로, <code>-webkit-</code>은 크롬, 사파리, Edge에서만 적용되는 스타일이다. Firefox는 <code>-moz</code>를 작성해야하고 Explorer는 <code>-ms-</code>를 사용한다. 즉, 브라우저마다 shadow DOM 까보면 살짝씩 다르다.</p><br><blockquote class=note-callout><p>실제 파일 업로드 버튼 만드는 것</p><p>글자를 눌러도 버튼이 선택되게 스타일링한다.
+그리고 input태그는 display를 none 줘버린다.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>label</span> <span class=na>for</span><span class=o>=</span><span class=s>&#34;sub&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	파일 업로드
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>input</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;sub&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;file&#34;</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;display: none&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>label</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div></p><p><p><strong>input placeholder</strong></p><p>input 태그의 <code>placeholder</code>도 div 박스 두 개의 형태 같지 않는가? shadow DOM인가? 까보면 역시 그렇다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 이러면 placeholder 안에 글자 색깔 빨간색으로 바뀜 */</span>
+</span></span><span class=line><span class=cl><span class=nt>input</span><span class=p>::</span><span class=nd>-webkit-input-placeholder</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>input [type=range]</strong></p><p>range 또한 마찬가지이다. range는 id가 track과 thumb 두 개가 있음을 확인 가능하다. 그런데 아마 손잡이 thumb는 pseudo 어쩌구가 없어서 선택 어떻게 해야하나 의문이 들 것이다. 눌러서 밑에 보면 <code>user agent stylesheet</code>가 보일 것인데 <strong>브라우저 기본 CSS</strong>를 의미한다. 우리가 스타일 주지 않아도 기본적으로 보이는 스타일이다. 따라서, 여기 <code>input[type='range']::-webkit-slider-thumb</code> 부분을 복사해오고 조작하면 된다. 따옴표나 i 이런건 지우고 사용한다. 이때, apperance가 기본 값이 auto라서 none으로 바꾸고 사용해야 한다. 손잡이 thumb의 apperance만 바꾸면 안되고 range 자체의 apperance를 바꿔야 적용될 것이다.</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>input</span><span class=o>[</span><span class=nt>type</span><span class=o>=</span><span class=s1>&#39;range&#39;</span><span class=o>]</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>appearance</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>background-color</span><span class=p>:</span> <span class=kc>lightgray</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-radius</span><span class=p>:</span> <span class=mi>1</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>input</span><span class=o>[</span><span class=nt>type</span><span class=o>=</span><span class=s1>&#39;range&#39;</span><span class=o>]</span><span class=p>::</span><span class=nd>-webkit-slider-thumb</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>appearance</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>background-color</span><span class=p>:</span> <span class=kc>green</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>1</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>1</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-radius</span><span class=p>:</span> <span class=mi>1</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>progress</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>progress</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=c>/*기본 배경은 없애주는게 좋습니다*/</span>
+</span></span><span class=line><span class=cl>	<span class=kp>-webkit-</span><span class=k>appearance</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kp>-moz-</span><span class=k>appearance</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>appearance</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c>/* IE10 호환성용 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>progress</span><span class=p>::</span><span class=nd>-webkit-progress-bar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background-color</span><span class=p>:</span> <span class=kc>lightgray</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-radius</span><span class=p>:</span> <span class=mi>1</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>progress</span><span class=p>::</span><span class=nd>-webkit-progress-value</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-radius</span><span class=p>:</span> <span class=mi>1</span><span class=kt>rem</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>/*파이어폭스 호환성을 위해*/</span>
+</span></span><span class=line><span class=cl><span class=nt>progress</span><span class=p>::</span><span class=nd>-moz-progress-bar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-radius</span><span class=p>:</span> <span class=mi>2</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#sass><h2 id=sass><span class=hanchor arialabel=Anchor># </span>Sass</h2></a><ul><li><p>CSS를 개선한 CSS 전처리언어 (Preprocessor) = SASS</p></li><li><p>Sass에는 조건문, 반복문, 변수, 함수 존재</p></li><li><p>즉, 문법이 존재한다는 의미 => 반복적인 부분 쉽게 처리 가능</p></li><li><p>SASS 파일은 <code>파일명.scss</code></p></li><li><p>웹 브라우저는 sass파일을 읽지 못하니까 css로 변환 작업이 필요하다. vscode extension에서 <code>Live Sass Compiler version 5 이상</code>을 설치한다. 그러면 vscode 하단에 <code>Watch Sass</code>가 보인다. 이를 누르면 scss에서 css로 변환이 된다.</p></li><li><p>같이 생성되는 <code>.map</code>파일은 크롬 개발자도구 디버깅 용도이다. 크롬에서는 scss 파일을 읽는 것이 아니라 css 파일을 읽을 것이다. <code>.map</code> 파일이 있으면 크롬에서 css가 아닌 scss 파일로 분석해준다.</p></li></ul><br><ol><li>코드를 scss에 작성</li><li>html에 파일 넣는건 css 파일 넣기</li></ol><br><blockquote class=note-callout><p>하단에 바가 안보여서 watch sass를 찾을 수 없다면?</p><p>View - Appearance - Status bar 켜기</p></blockquote><br><p>파일 확장명에 따른 차이</p><ul><li>sass 문법을 작성해서 만든 파일명은 2개가 있음</li><li><code>.scss</code> : 중괄호 써야 하는거 (보통 이거 많이 사용)</li><li><code>.sass</code> : 중괄호 안써도 되는거</li></ul><p><br><br></p><a href=#sass-문법><h3 id=sass-문법><span class=hanchor arialabel=Anchor># </span>Sass 문법</h3></a><br><a href=#문법01-값을-저장하고-사용하는-변수><h3 id=문법01-값을-저장하고-사용하는-변수><span class=hanchor arialabel=Anchor># </span>문법01. 값을 저장하고 사용하는 변수</h3></a><ul><li>어려운 단어 기억해야할 때 변수 문법을 사용한다. <code>$변수명 : 저장해서 사용할 값;</code></li><li>규칙적인 스타일 만들 때도 변수를 사용하는 것은 도움이 된다.</li><li>사칙연산 바로 가능 (단, %에서 px 빼는 행위는 하지 말고 같은 단위끼리 하자.)</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 기존 css 코드 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>background</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background-color</span><span class=p>:</span> <span class=mh>#2a4cb2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=mh>#2a4cb2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=c1>// 변수 사용 scss 코드
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nv>$메인컬러</span><span class=o>:</span> <span class=mh>#2a4cb2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.background</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>background-color</span><span class=o>:</span> <span class=nv>$메인컬러</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=c1>// scss 응용하기 좋은거
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nv>$메인컬러</span><span class=o>:</span> <span class=mh>#2a4cb2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$서브컬러</span><span class=o>:</span> <span class=mh>#eeeeee</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$기본사이즈</span><span class=o>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.background</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>background-color</span><span class=o>:</span> <span class=nv>$메인컬러</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>font-size</span><span class=o>:</span> <span class=nv>$기본사이즈</span> <span class=o>-</span> <span class=mi>2</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>color</span><span class=o>:</span> <span class=nv>$서브컬러</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>font-size</span><span class=o>:</span> <span class=nv>$기본사이즈</span> <span class=o>+</span> <span class=mi>2</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>위 코드는 font-size를 기본사이즈에서 빼고 더함으로써 <strong>상대적인 크기</strong>를 결정했다. 그래서 나중에 수정하기에 용이하다. 즉, 규칙적인 스타일 만들 때도 변수를 사용하는 것은 도움이 된다는 의미이다.</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=c1>// 괄호를 치는 것이 좋은 습관 !
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nv>$기본사이즈</span><span class=o>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>font-size</span><span class=o>:</span> <span class=nv>$기본사이즈</span> <span class=o>+</span> <span class=mi>2</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>width</span><span class=o>:</span> <span class=p>(</span><span class=mi>100</span><span class=kt>px</span> <span class=o>*</span> <span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=na>height</span><span class=o>:</span> <span class=p>(</span><span class=mi>300</span><span class=kt>px</span> <span class=o>/</span> <span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p>사실 CSS 기본 문법에도 변수 문법 이용 가능하고 사칙연산도 사용 가능하다. 근데 귀찮음</p><br><a href=#문법02-셀렉터-대신-사용하는-nesting><h3 id=문법02-셀렉터-대신-사용하는-nesting><span class=hanchor arialabel=Anchor># </span>문법02. 셀렉터 대신 사용하는 Nesting</h3></a><ul><li>관련있는 class들을 묶어서 사용할 때 편함</li><li>nesting 안에다가 또 nesting 가능하지만, 보통 2개 이상 중첩하지는 않음</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* CSS 문법 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>navbar</span> <span class=nt>ul</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>navbar</span> <span class=nt>li</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=c1>// sass 문법
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nc>.navbar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>ul</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=na>width</span><span class=o>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nt>li</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=na>color</span><span class=o>:</span> <span class=no>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=c1>// sass 문법으로 hover 사용법
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nc>.navbar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nd>:hover</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=na>color</span><span class=o>:</span> <span class=no>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.navbar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>&amp;</span><span class=nd>:hover</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=na>color</span><span class=o>:</span> <span class=no>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>위의 방식은 <code>.navbar :hover</code></li><li>밑의 방식은 <code>.navbar:hover</code></li><li>즉 <code>&</code>기호를 붙히면 셀렉터를 스페이스바 없이 붙힐 수 있음</li></ul><br><a href=#문법03-이미-있는-클래스를-확장하는-extend><h3 id=문법03-이미-있는-클래스를-확장하는-extend><span class=hanchor arialabel=Anchor># </span>문법03. 이미 있는 클래스를 확장하는 @extend</h3></a><ul><li>반복되는 코드 없애고 싶을 때 사용</li><li>class 전체를 복사해주는 문법이 <code>@extend</code></li><li><code>%</code>는 <code>.</code> 대신 사용할 수 있는 임시 클래스</li><li>css에서 클래스로 컴파일하고 싶지 않을 때 사용</li><li>컴파일 하고나면 <code>%</code> 안에 있는 것들은 모두 사라짐</li></ul><ol><li>중복된 스타일이 많으면 클래스로 묶는다</li><li><code>@extend</code>로 필요할 때 복사한다.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=o>%</span><span class=nc>btn</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>width</span><span class=o>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>height</span><span class=o>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>padding</span><span class=o>:</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.btn-green</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>@extend</span> <span class=o>%</span><span class=nc>btn</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>color</span><span class=o>:</span> <span class=no>green</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.btn-red</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>@extend</span> <span class=o>%</span><span class=nc>btn</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>color</span><span class=o>:</span> <span class=no>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 위의 scss에서 컴파일된 css 결과 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>btn-green</span><span class=o>,</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>btn-red</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>padding</span><span class=p>:</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>btn-green</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>green</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>btn-red</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#문법04-코드를-한-단어로-축약하는-mixin><h3 id=문법04-코드를-한-단어로-축약하는-mixin><span class=hanchor arialabel=Anchor># </span>문법04. 코드를 한 단어로 축약하는 @mixin</h3></a><ul><li>약간 함수 같은 느낌</li><li><code>@mixin</code>으로 선언, <code>@include</code>로 불러오기, <code>$ 변수 사용해서 파라미터</code></li><li><code>@extend</code>와 비슷해보이지만 파라미터 때문에 <code>@mixin</code>을 더 많이 사용함</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=k>@mixin</span><span class=nf> 버튼기본디자인</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>font-size</span><span class=o>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>padding</span><span class=o>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.btn-green</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>@include</span><span class=nd> 버튼기본디자인</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>	<span class=na>background</span><span class=o>:</span> <span class=no>green</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=k>@mixin</span><span class=nf> 버튼기본디자인</span><span class=p>(</span><span class=nv>$구멍1</span><span class=o>,</span> <span class=nv>$구멍2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>font-size</span><span class=o>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>padding</span><span class=o>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>background</span><span class=o>:</span> <span class=nv>$구멍1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=na>color</span><span class=o>:</span> <span class=nv>$구멍2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nc>.btn-green</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>@include</span><span class=nd> 버튼기본디자인</span><span class=p>(</span><span class=no>green</span><span class=o>,</span> <span class=no>black</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 컴파일된 css 파일 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>btn-green</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>font-size</span><span class=p>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>padding</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>background</span><span class=p>:</span> <span class=kc>green</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>만약, 글자 중간에 <code>$변수</code> 혹은 <code>$파라미터</code> 넣고 싶으면 <code>#{ $변수명 }</code>을 사용한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=k>@mixin</span><span class=nf> 폰트기본스타일</span><span class=p>(</span><span class=nv>$구멍1</span><span class=o>,</span> <span class=nv>$구멍2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=na>font-size</span><span class=o>:</span> <span class=nv>$구멍1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=si>#{</span> <span class=nv>$구멍2</span> <span class=si>}</span><span class=nd>:</span> <span class=o>-</span><span class=nt>1px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>h2</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>@include</span><span class=nd> 폰트기본스타일</span><span class=p>(</span><span class=mi>40</span><span class=kt>px</span><span class=o>,</span> <span class=n>letter-spacing</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 컴파일 된 css */</span>
+</span></span><span class=line><span class=cl><span class=nt>h2</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>font-size</span><span class=p>:</span> <span class=mi>40</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>letter-spacing</span><span class=p>:</span> <span class=mi>-1</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#문법05-다른-파일에-있는-내용-가져오는-use-문법><h3 id=문법05-다른-파일에-있는-내용-가져오는-use-문법><span class=hanchor arialabel=Anchor># </span>문법05. 다른 파일에 있는 내용 가져오는 @use 문법</h3></a><ul><li>파이썬의 <code>@import</code>같은 느낌이다.</li><li>예를 들어, 여러 파일에 공통적으로 사용되는 css 기본 세팅같은거 파일 저장해놓고 불러와서 사용</li><li>css 기본 문법에도 <code>@import</code> 있음 scss에서는 <code>@use</code> 쓰는거</li><li>컴파일을 원하지 않는 파일은 <code>_파일명.scss</code>로 작명한다.</li><li><code>@use '파일명'</code> 할 때 컴파일 안되게 언더바 붙힌 파일에서 언더바는 빼도 된다</li><li>예를 들어, <code>sass01.scss</code> 파일에서 <code>_reset.scss</code> 파일 <code>@use</code>할 때, <code>@use 'reset'</code> 이까지만 적어도 되는거</li></ul><br><blockquote class=note-callout><p>Memo</p><p>뭐 기본세팅 .scss 파일은 종속적인 파일이니까 굳이 매번 .css로 컴파일 할 필요가 없잖아? 그러니까 언더바(_) 붙혀서 컴파일 못하게 하자.</p></blockquote><br><p>파일을 불러오면 거기에 있던 <code>@mixin</code>, <code>$변수</code> 이런거 다 사용 가능</p><ol><li><p>다른 파일의 <code>$변수</code> 사용</p><ul><li><code>파일명.$변수</code></li></ul></li><li><p>다른 파일의 <code>@mixin</code> 사용</p><ul><li><code>@include 파일명.mixin이름</code></li></ul></li></ol><hr><a href=#html-video-audio><h2 id=html-video-audio><span class=hanchor arialabel=Anchor># </span>HTML video, audio</h2></a><ul><li><code>&lt;video src="영상.mp4">&lt;/video></code>의 형태로 넣음</li><li><code>&lt;video src="영상.mp4" controls>&lt;/video></code> 하면 재생버튼 생김 <strong>controls</strong></li><li>근데 영상 넣을때 <code>source</code>를 따로 넣는게 더 나</li></ul><br><p><strong>source 태그</strong>를 이용해서 따로 넣는 방식의 장점은 <strong>호환성을 챙길 수 있다</strong>는 것이다. 비디오의 형식이 mp4, webM, mkv 등 브라우저마다 지원하는 비디오 확장자가 다르다. 따라서, 아래와 같은 코드로 작성하면 위에거 틀어보고 안되면 밑에거 틀어보세요~ 이런 말이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=c>&lt;!-- 보통 용량이 작은 확장자부터 위에 작성한다. --&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>video</span> <span class=na>controls</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>source</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;영상-m.webm&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;video/mp4&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>source</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;영상-m.???&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;video/mp4&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>source</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;영상.mp4&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;video/mp4&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>video</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>autoplay</strong>는 크롬 브라우저에서 자동재생 정책상 그냥 <code>autoplay</code> 작성하면 안되고 <code>autoplay muted</code>해야 된다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>video</span> <span class=na>controls</span> <span class=na>autoplay</span> <span class=na>muted</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>source</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;영상.mp4&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;video/mp4&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>video</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>preload</strong>는 브라우저 로딩 시 영상을 미리 다운받을지, 말지, 적당히 받을지에 관한 속성 <code>&lt;video preload="metadata"></code></p><ul><li><code>preload="none"</code> : 미리 다운로드 X</li><li><code>preload="auto"</code> : 미리 다운로드 O</li><li><code>preload="metadata"</code> : 미리 다운로드 적당히, 초반 썸네일과 영상 초반부 약간 로딩. 제일 추천</li></ul><br><p><strong>poster</strong>는 비디오 썸네일 결정 가능 <code>&lt;video poster="이미지.jpg">&lt;/video></code></p><br><p><strong>loop</strong>은 비디오 무한 재생 <code>&lt;video loop>&lt;/video></code></p><br><p><strong>audio</strong>도 마찬가지, <code>&lt;audio src="음악.mp3" controls>&lt;/audio></code> 추가로, autoplay 자동재생 기능은 애초에 안된다. 자바스크립트로 조작하면 가능</p><hr><a href=#궁극의-가운데-정렬><h2 id=궁극의-가운데-정렬><span class=hanchor arialabel=Anchor># </span>궁극의 가운데 정렬</h2></a><p>어떤 요소를 진짜 극한으로 가운데 정렬할 때 사용하는 방법</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 어떤 요소 위 빈 박스 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>500</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>overflow</span><span class=p>:</span> <span class=kc>hidden</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>top</span><span class=p>:</span> <span class=mi>50</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>left</span><span class=p>:</span> <span class=mi>50</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>transform</span><span class=p>:</span> <span class=nb>translate</span><span class=p>(</span><span class=mi>-50</span><span class=kt>%</span><span class=p>,</span> <span class=mi>-50</span><span class=kt>%</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>z-index</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#애니메이션-만들기-심화-keyframes><h2 id=애니메이션-만들기-심화-keyframes><span class=hanchor arialabel=Anchor># </span>애니메이션 만들기 심화 (@keyframes)</h2></a><p><a href=/brain/Lecture/apple/apple-html/all-in-one-mid/ rel=noopener class=internal-link data-src=/brain/Lecture/apple/apple-html/all-in-one-mid/>중급 모듈</a> 애니메이션 만들기에서 one-way 애니메이션 만드는 방법을 배웠었다. 그때는 a에서 b로만 가능했다. 아래와 같이 복잡한 애니메이션은 <code>@keyframes</code>로 구현한다. <code>transition</code>은 one-way 밖에 안되서이다.</p><ol><li>a -> b -> c</li><li>a -> b -> a</li><li>a -> 1초정지 -> b</li></ol><br><p>먼저, <strong>transform</strong>에 관하여 알아야한다.</p><ul><li><p><code>transform: rotate(숫자deg)</code> : 각도만큼 회전</p></li><li><p><code>transform: translateX(숫자px)</code>: 숫자px 만큼 X축 좌표이동 (animation 줄 경우 margin-left 같은걸로 이동하는 것보다 부드럽게 이동함)</p></li><li><p><code>transform: scale(숫자)</code> 숫자만큼 크기 변화 줌, 2라고 하면 2배 키워줌</p></li><li><p><code>transform: skew(숫자deg)</code> : 각도만큼 비틀기</p></li></ul><br><p><strong>왜 복잡한 애니메이션을 만드는데 transform을 쓰면 좋다는 것인가?</strong> 간단하다. 성능이 좋아서이다. 애니메이션이 느리고 버벅이면 역효과 일으키기 때문이다. 즉, <code>@keyframes</code>안에다가 transform을 안쓰고 margin을 쓰더라도 애니메이션을 만들 수 있겠지만, margin 변경은 transform에 비하여 느리다.</p><br><p><strong>transform의 성능이 좋은 이유가 뭘까?</strong> 웹브라우저는 HTML, CSS 코드를 2D 그래픽으로 바꿔주는 간단한 프로그램인데, 이때 브라우저가 그림 그리는 순서가 있다. 첫번째로 HTML, CSS를 쭉 읽으면서 Render Tree를 만든다. Render tree는 그림 그리기 전 CSS를 쭉 정리한 참고자료 느낌이다. 이걸보고 그림그리기 시작한다. 먼저 박스를 그리며 어디에 위치하는지 Layout을 잡고 다음으로 픽셀 하나하나에 색을 입히는 Paint를 하고 쓸데없는 Composite 단계의 css 속성들을 처리한다.</p><br><p>정리하자면 1단계 Rander tree 그리면서 css 속성들 정리 2단계 Layout 잡기에 margin, padding, width, height 같은 속성들을 처리하고 3단계 Paint에서 background-color 같은거 처리하고 4단계 Composite 처리 단계에서 transform, opacity 같은거 처리한다.</p><br><a href=#브라우저가-그림-그리는-순서-렌더링-과정><h3 id=브라우저가-그림-그리는-순서-렌더링-과정><span class=hanchor arialabel=Anchor># </span>브라우저가 그림 그리는 순서 (렌더링 과정)</h3></a><ol><li><p>Render tree</p></li><li><p>Layout 잡기</p></li><li><p>Paint 하기</p></li><li><p>Composite 처리</p></li></ol><br><p>그러면, 만약 margin을 갑자기 변경했다고 하자. 그럼 브라우저는 margin을 변경하기 위하여 2단계 Layout 잡기 단계를 해야한다. 그러면 3단계, 4단계도 다시 해야하는 것이다. 즉, 다시 <strong>렌더링</strong> 된다는 말이다. 그러면 transform을 갑자기 변경하면? <strong>4단계 composite 처리만 다시 하면 되니까 부담이 훨씬 덜하게 되는 것</strong>이다. 결과적으로 transform의 성능이 margin보다 좋은 것이다. 특히, 자바스크립트가 너무 많은 사이트는 애니메이션을 항상 transform으로 줘야한다.</p><br><p>추가로, <strong>transform이 더 빠른 두 번째 이유</strong>가 있다. 원래 웹 브라우저는 HTML, CSS 처리건 자바스크립트 실행이건 쓰레드 1개만 사용한다. 그런데, composite 처리 단계에 있는 css 속성들은 <strong>다른 쓰레드에서 처리해준다.</strong> 자바스크립트가 아무리 많아도 애초에 다른 쓰레드에서 처리하기 때문에 transform이 빠른 것이다.</p><br><p>다음으로, <strong>keyframes</strong>는 몇 퍼센트 진행했는지 진행도에 따라 나눠서 코드를 작성하면 된다. 그 이후, 사용하고자 하는 클래스에 <code>animation-name: 작명;</code> , <code>animation-duration: 몇초;</code>와 같은 식으로 작성하면 된다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>@</span><span class=k>keyframes</span> <span class=nt>작명</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nt>0</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nt>50</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nt>100</span><span class=o>%</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>animation 관련 속성</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>box</span><span class=p>:</span><span class=nd>hover</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>animation-name</span><span class=p>:</span> <span class=err>움찔움찔</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>animation-duration</span><span class=p>:</span> <span class=mi>1</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* 베지어 주기 (처음에 실행할 지 나중에 실행할 지) */</span>
+</span></span><span class=line><span class=cl>	<span class=k>animation-timing-function</span><span class=p>:</span> <span class=kc>linear</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* 시작 전 딜레이 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>animation-delay</span><span class=p>:</span> <span class=mi>1</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* 몇회 반복할것인가 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>animation-iteration-count</span><span class=p>:</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* 애니메이션을 멈추고 싶은 경우 자바스크립트로 이거 조정 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>animation-play-state</span><span class=p>:</span> <span class=kc>paused</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=c>/* 애니메이션 끝난 후에 원상복구 하지말고 정지 */</span>
+</span></span><span class=line><span class=cl>	<span class=k>animation-fill-mode</span><span class=p>:</span> <span class=kc>forwards</span><span class=p>;</span> 
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#3d-애니메이션-사진-뒤집기><h3 id=3d-애니메이션-사진-뒤집기><span class=hanchor arialabel=Anchor># </span>3D 애니메이션 (사진 뒤집기)</h3></a><ul><li><p>앞면, 뒷면 배치는 <code>position: absolute</code> 사용해야함</p></li><li><p>inner 자체를 뒤집어버리는게 나음</p></li><li><p><code>transform: rotate()</code>를 사용하는 것이라 처음에 뒷면을 미리 뒤집어놔야함</p></li><li><p>뒷면의 모습이 안보이게 <code>transform-style: preserve-3d;</code>와 <code>front의 z-index 우선순위 높이기</code>, <code>backface-visibility: hidden;</code></p></li><li><p>내용은 <a href=https://github.com/Shin-Jae-Yoon/TILbefore/blob/master/Language/html_css/lecture/codding_apple/%EA%B3%A0%EA%B8%89%EB%AA%A8%EB%93%88/threeD_animation.html target=_blank>threeD_animation.html</a> 참고</p></li></ul><br><a href=#애니메이션-성능-잡는-방법들><h3 id=애니메이션-성능-잡는-방법들><span class=hanchor arialabel=Anchor># </span>애니메이션 성능 잡는 방법들</h3></a><ol><li><code>will-change</code> 사용</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>will-change</span><span class=p>:</span> <span class=k>transform</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>애니메이션을 주는 <code>.box</code>가 약간 느리게 동작할 때 <code>will-change: 애니메이션 줄 속성</code>을 써놓으면 성능개선이 가능하다. 이는 <strong>바뀔 내용을 미리 렌더링 해주는 속성</strong>이기 때문이다. 애니메이션이 이상하게 버벅이면 사용하고 잘 작동하면 굳이 쓸 필요는 없다. 왜냐하면 많이쓰면 오히려 더 느려질 수 있기 때문이다. 이와 관련된 내용과 will-change에 관한 추가적인 내용은 <a href=https://dev.opera.com/articles/ko/css-will-change-property/ target=_blank>여기</a>에 있다.</p><br><ol start=2><li>하드웨어 가속</li></ol><p>애니메이션이 많아서 CPU만으로 연산이 불가능하면 GPU의 도움을 받으면 된다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>transform</span><span class=p>:</span> <span class=nb>translate3d</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>이와 같이 쓰면 3D 이동도 가능한데, 이때 GPU를 사용해서 연산한다. 그래서 이걸 이용한 꼼수인데 <code>translate3d(0, 0, 0)</code>으로 사용하면 아무곳으로 이동하지 않는 3D 이동 명령을 주고 뒤에 필요한 transform을 적용한다면 GPU를 이용해서 box 클래스가 가진 transform 속성들을 연산하는 원리이다.</p><hr><a href=#css-스킬-심화><h2 id=css-스킬-심화><span class=hanchor arialabel=Anchor># </span>CSS 스킬 심화</h2></a><a href=#css-grid><h3 id=css-grid><span class=hanchor arialabel=Anchor># </span>CSS Grid</h3></a><ul><li><p><code>display: grid</code>는 격자 모눈종이가 있다면 색칠해나가는 방식으로 생각</p></li><li><p>부모 div에 <code>display: grid</code>, <code>grid-template-columns: </code>, <code>grid-template-rows:</code> 주면 자식들은 모눈종이가 된다.</p></li><li><p>rows는 가로칸 갯수, 사이즈 columns는 세로칸 갯수, 사이즈</p></li><li><p><code>grid-gap: </code>은 격자 간격</p></li></ul><br><p>가로 2칸, 세로 3칸짜리 모눈종이</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;grid-container&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=k>grid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-rows</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://shin-jae-yoon.github.io//brain/image/all-in-one-last-1.png width=auto alt></p><br><p>grid 컨테이너에서 사용하기 좋은 단위는 <strong>fr(fraction)</strong> 이다. 그리드 트랙 사이즈로 사용 되는 fr 단위는 유연한 단위로 그리드 컨테이너의 여유 공간을 비율로 나눠 설정한다. 퍼센트(%) 단위와 유사해 보일 수 있으나, 퍼센트 값과 다르게 길이가 아니다. <strong>fr은 몇 배수</strong>로 이해한다.</p><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* 이러면 전체 가로에 대해 1배, 1배, 1배 */</span>
+</span></span><span class=line><span class=cl><span class=c>/* rows는 높이의 개념이라 height 속성이 있어야 fr 먹을거임 */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=k>grid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>1</span><span class=n>fr</span> <span class=mi>1</span><span class=n>fr</span> <span class=mi>1</span><span class=n>fr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-rows</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>grid 이용한 레이아웃 만들 때</strong></p><ol><li>내부 박스 크기 조절</li><li>그냥 부모 건드리기</li></ol><br><p><strong>1번 방법</strong>. 자식 div 높이와 폭을 조정하는 방법이다. 내부 박스에게 그냥 <code>grid-column</code>이나 <code>grid-row</code>를 줘본다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-nav</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-column</span><span class=p>:</span> <span class=mi>1</span> <span class=o>/</span> <span class=mi>4</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>grid-column</code>은 세로 선을 의미한다. 이때 <code>display: grid</code>의 자식들에만 사용 가능하다. 따라서 여기서는 여러 div 박스를 의미한다. <code>1 / 4</code>가 의미하는 바는 세로선 1~4 만큼 차지해달라는 뜻이다.</p><br><p><img src=https://shin-jae-yoon.github.io//brain/image/all-in-one-last-2.png width=auto alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-nav</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-row</span><span class=p>:</span> <span class=mi>1</span> <span class=o>/</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>grid-row</code>은 가로 선을 의미한다. 이때 <code>display: grid</code>의 자식들에만 사용 가능하다. 따라서 여기서는 여러 div 박스를 의미한다. <code>1 / 3</code>가 의미하는 바는 가로선 1~3 만큼 차지해달라는 뜻이다.</p><p><img src=https://shin-jae-yoon.github.io//brain/image/all-in-one-last-3.png width=auto alt></p><br><p>이런식으로 작성하고 최종적으로 나머지 div박스 지운다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;grid-container&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;grid-nav&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;grid-sidebar&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;grid-content&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=k>grid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-rows</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl> 
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-container</span> <span class=nt>div</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>border</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-nav</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-column</span><span class=p>:</span> <span class=mi>1</span> <span class=o>/</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-sidebar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-row</span><span class=p>:</span> <span class=mi>2</span> <span class=o>/</span> <span class=mi>4</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-content</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-column</span><span class=p>:</span> <span class=mi>2</span> <span class=o>/</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-row</span><span class=p>:</span> <span class=mi>2</span> <span class=o>/</span> <span class=mi>4</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>2번 방법</strong>. 자식에 이름 쓰고 부모는 색칠하기</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-nav</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-area</span><span class=p>:</span> <span class=err>헤더</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-sidebar</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-area</span><span class=p>:</span> <span class=err>사이드</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>grid-area: </code>는 자식에 이름짓는 속성이다. 그리고 이후에 <code>grid-template-areas: " "</code> 형태로 배치해주면 된다. 배치할 때 기억자 같이 배치는 안되고 사각형 모양으로만 가능하다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>grid-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=k>grid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-rows</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>grid-template-areas</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=s1>&#39;헤더 헤더 헤더 헤더&#39;</span>
+</span></span><span class=line><span class=cl>	<span class=s1>&#39;사이드 . . .&#39;</span>
+</span></span><span class=line><span class=cl>	<span class=s1>&#39;사이드 . . .&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>Grid 숙제 관련</strong></p><br><p>이미지 (img) 파일은 기본적으로 글자취급 받기 때문에 글자의 베이스라인처럼 이미지 밑에 하얀색 선이 거슬리게 나올 수 있다. 그때 반드시 <code>display: block;</code>을 줘서 없애도록 해보자!</p><br><a href=#css-스킬-sticky><h3 id=css-스킬-sticky><span class=hanchor arialabel=Anchor># </span>CSS 스킬 sticky</h3></a><ul><li><p>스크롤해도 상단에 고정하고자 하는 속성에 <code>position: sticky;</code></p></li><li><p>주고 나서 어느 위치에 고정될 지도 정해준다. ex) top, bottom</p></li><li><p>sticky는 마치 fixed와 유사하다.</p></li><li><p>fixed는 viewport에다가 div 박스나 이미지를 고정시킬 때 쓰는 속성이었다. 그래서 fixed 해버리면 스크롤 해도 그 화면에 딱 고정된다.</p></li><li><p>즉, sticky는 조건부 fixed이다. 그냥 스크롤 하다가 sticky 부여된 녀석을 만났을 때 조건적으로 fixed 되는 것이다.</p></li><li><p>부모 박스 넘어서면 sticky는 해제된다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>image</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>float</span><span class=p>:</span> <span class=kc>right</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>400</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>position</span><span class=p>:</span> <span class=kc>sticky</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>top</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>정리하자면, <code>position: sticky</code></p><ol><li>스크롤을 할 만한 부모 박스가 있어야 함</li><li>top 등 좌표속성과 함께 써야 제대로 보임</li></ol><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#pseudo-element>Pseudo-element</a></li><li><a href=#shadow-dom>Shadow DOM</a></li><li><a href=#sass>Sass</a><ul><li><a href=#sass-문법>Sass 문법</a></li><li><a href=#문법01-값을-저장하고-사용하는-변수>문법01. 값을 저장하고 사용하는 변수</a></li><li><a href=#문법02-셀렉터-대신-사용하는-nesting>문법02. 셀렉터 대신 사용하는 Nesting</a></li><li><a href=#문법03-이미-있는-클래스를-확장하는-extend>문법03. 이미 있는 클래스를 확장하는 @extend</a></li><li><a href=#문법04-코드를-한-단어로-축약하는-mixin>문법04. 코드를 한 단어로 축약하는 @mixin</a></li><li><a href=#문법05-다른-파일에-있는-내용-가져오는-use-문법>문법05. 다른 파일에 있는 내용 가져오는 @use 문법</a></li></ul></li><li><a href=#html-video-audio>HTML video, audio</a></li><li><a href=#궁극의-가운데-정렬>궁극의 가운데 정렬</a></li><li><a href=#애니메이션-만들기-심화-keyframes>애니메이션 만들기 심화 (@keyframes)</a><ul><li><a href=#브라우저가-그림-그리는-순서-렌더링-과정>브라우저가 그림 그리는 순서 (렌더링 과정)</a></li><li><a href=#3d-애니메이션-사진-뒤집기>3D 애니메이션 (사진 뒤집기)</a></li><li><a href=#애니메이션-성능-잡는-방법들>애니메이션 성능 잡는 방법들</a></li></ul></li><li><a href=#css-스킬-심화>CSS 스킬 심화</a><ul><li><a href=#css-grid>CSS Grid</a></li><li><a href=#css-스킬-sticky>CSS 스킬 sticky</a></li></ul></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></body></html>

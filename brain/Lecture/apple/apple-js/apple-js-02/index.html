@@ -1,0 +1,748 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.457db6eb0cd3fc8992da6c4450ca2f65.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.925b49f4bf230c6f32905bb61fd762ea.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.6e73204c275d3c3c53f026889c6e4376.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.e4f749984b89f35680b8cfadddf2b482.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>JVM</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring 기본</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week04/ class=page-link style=display:block;width:100%>4주차 - Spring 웹</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week05/ class=page-link style=display:block;width:100%>5주차 - Spring 응용</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week06/ class=page-link style=display:block;width:100%>6주차 - Spring Data</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 네트워크</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 운영체제</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 공통</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-01/ class=page-link style=display:block;width:100%>섹션0 - 섹션3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-02/ class=page-link style=display:block;width:100%>섹션4 - 섹션8</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - JPA</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>부부개발단 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java/ class=page-link style=display:block;width:100%>개요. 즐거운 자바</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java01/ class=page-link style=display:block;width:100%>01. Java 시작</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java02/ class=page-link style=display:block;width:100%>02. Java 기본 문법</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java03/ class=page-link style=display:block;width:100%>03. 객체지향 1/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java04/ class=page-link style=display:block;width:100%>04. 객체지향 2/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java05/ class=page-link style=display:block;width:100%>05. 객체지향 3/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java06/ class=page-link style=display:block;width:100%>06. 배열과 Arrays 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java07/ class=page-link style=display:block;width:100%>07. 제네릭과 컬렉션</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java08/ class=page-link style=display:block;width:100%>08. 주석문, 예외처리, enum</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>패캠 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/ps/ class=page-link style=display:block;width:100%>문제풀이 현황</a></div></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 1 - Part 4</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch00/ class=page-link style=display:block;width:100%>Part1 - Part4 강의소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch01/ class=page-link style=display:block;width:100%>Part1 - Ch01 문자열</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch02/ class=page-link style=display:block;width:100%>Part1 - Ch02 시간복잡도</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 5 - 단기완성</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 6 - SQL</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬입문과 크롤링기초 부트캠프</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>자바의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.00c2c8e61ed4afe7893759f1132a5ec0.js></script></div><div class=single-content><h1>LEVEL 02</h1><p class=meta>Last updated -
+2023년 03월 31일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Lecture/apple/apple-js/apple-js-02.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/%EF%B8%8F-%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C-Javascript/>🖥️ 코딩애플 Javascript</a></li></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#settimeout-setinterval>setTimeout, setInterval</a><ul><li><a href=#settimeout>setTimeout</a></li><li><a href=#setinterval>setInterval</a></li><li><a href=#cleartimeout>clearTimeout</a></li></ul></li><li><a href=#js-문법-vs-브라우저-사용법>JS 문법 vs 브라우저 사용법</a></li><li><a href=#정규식>정규식</a><ul><li><a href=#includes>includes()</a></li><li><a href=#정규식-파헤치기>정규식 파헤치기</a></li></ul></li><li><a href=#carousel-캐러셀>Carousel (캐러셀)</a></li><li><a href=#function-return-문법>function() return 문법</a></li><li><a href=#자바스크립트-소수점-다루기>자바스크립트 소수점 다루기</a><ul><li><a href=#소수점-반올림>소수점 반올림</a></li></ul></li><li><a href=#플러스-연산자-특징>+(플러스) 연산자 특징</a></li><li><a href=#부동소수점-부가-설명>부동소수점 부가 설명</a><ul><li><a href=#1-ram>1. RAM</a></li><li><a href=#2-부동소수-표현-저장>2. 부동소수 표현 저장</a></li><li><a href=#3-순환소수-문제>3. 순환소수 문제</a></li><li><a href=#4-문제-발생>4. 문제 발생</a></li><li><a href=#5-결론>5. 결론</a></li></ul></li><li><a href=#scroll-이벤트-활용>scroll 이벤트 활용</a><ul><li><a href=#jquery로-scroll-이벤트>jQuery로 scroll 이벤트</a></li><li><a href=#div-박스-스크롤바-내린-높이-실제-높이>div 박스 스크롤바 내린 높이, 실제 높이</a></li><li><a href=#div-박스말고-현재페이지-끝까지-스크롤-체크는>div 박스말고 현재페이지 끝까지 스크롤 체크는?</a></li><li><a href=#scroll-내린-만큼-상단에-진행바-스크롤퍼센트>scroll 내린 만큼 상단에 진행바 (스크롤퍼센트)</a></li><li><a href=#scroll-다룰-때-주의점>scroll 다룰 때 주의점</a></li><li><a href=#결론>결론</a></li></ul></li><li><a href=#for-반복문-탭기능-만들기>for 반복문, 탭기능 만들기</a><ul><li><a href=#탭기능>탭기능</a></li><li><a href=#for-반복문>for 반복문</a></li><li><a href=#var가-제대로-작동-안한-이유>var가 제대로 작동 안한 이유</a></li><li><a href=#탭기능-함수-이용-축약>탭기능 함수 이용 축약</a></li></ul></li><li><a href=#이벤트-버블링>이벤트 버블링</a><ul><li><a href=#유용한-이벤트관련-함수들>유용한 이벤트관련 함수들</a></li><li><a href=#이벤트버블링-응용>이벤트버블링 응용</a></li><li><a href=#datasest>Datasest</a></li></ul></li></ul></nav></details></aside><blockquote><p>해당 게시글은 <a href=https://codingapple.com/course/javascript-jquery-ui/ target=_blank>JavaScript 입문과 웹 UI 개발</a> 강의를 정리한 내용입니다.</p></blockquote><hr><a href=#settimeout-setinterval><h2 id=settimeout-setinterval><span class=hanchor arialabel=Anchor># </span>setTimeout, setInterval</h2></a><br><a href=#settimeout><h3 id=settimeout><span class=hanchor arialabel=Anchor># </span>setTimeout</h3></a><ul><li>몇 초 <strong>후</strong> 코드 실행하기 위한 자바스크립트 기본 내장 함수</li><li>1000ms = 1초</li><li>콜백함수자리에 만들어둔 함수 당연히 넣을 수 있음</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>setTimeout</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>실행할코드</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>},</span> <span class=nx>ms</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 콜백함수에 함수 넣으면?
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>setTimeout</span><span class=p>(</span><span class=nx>알림창제거</span><span class=p>,</span> <span class=mi>3000</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>알림창제거</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nb>document</span><span class=p>.</span><span class=nx>querySelectorAll</span><span class=p>(</span><span class=s1>&#39;.alert&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>].</span><span class=nx>style</span><span class=p>.</span><span class=nx>display</span> <span class=o>=</span> <span class=s1>&#39;none&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>대신 만든 함수 넣을 때 <code>함수()</code> 말고 <code>함수</code>만 넣으셈</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>setTimeout</span><span class=p>(</span><span class=nx>알림창제거</span><span class=p>(),</span> <span class=mi>3000</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>setTimeout은 함수로의 참조를 받아올 것이라 예상한다. 위의 <code>알림창제거()</code>는 함수를 실행시킨다. 그리고 실행의 결과가 setTimeout으로 전달된다. 우리가 코딩했던 것들을 살펴봤을 때, 알림창제거()의 결과는 undefined (아무것도 리턴하지 않는 함수)이다.그러므로 아무것도 스케쥴되지 않으니까 <code>알림창제거</code>만 넣어라.</p><ul><li>타이머를 변수에 담아서 사용 가능!</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>타이머</span> <span class=o>=</span> <span class=nx>setTimeout</span><span class=p>(</span><span class=nx>어쩌구</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#setinterval><h3 id=setinterval><span class=hanchor arialabel=Anchor># </span>setInterval</h3></a><ul><li>몇 초 <strong>마다</strong> 코드 실행하기 위한 자바스크립트 기본 내장 함수</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>setInterval</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>실행할코드</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>},</span> <span class=nx>ms</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#cleartimeout><h3 id=cleartimeout><span class=hanchor arialabel=Anchor># </span>clearTimeout</h3></a><ul><li><p>타이머를 삭제하고 싶으면 타이머를 변수에 담고 clearTimeout 하면 된다.</p></li><li><p><code>clearTimeout()</code>, <code>clearInterval()</code> 상호교환 가능하다. 허나, 명확성을 위하여 그렇게 하지말라고 <a href=https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout target=_blank>공식 문서</a>에서 표기하고 있다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>콘솔출력</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;안녕&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>타이머</span> <span class=o>=</span> <span class=nx>setTimeout</span><span class=p>(</span><span class=nx>콘솔출력</span><span class=p>,</span> <span class=mi>1000</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>clearTimeout</span><span class=p>(</span><span class=nx>타이머</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#js-문법-vs-브라우저-사용법><h2 id=js-문법-vs-브라우저-사용법><span class=hanchor arialabel=Anchor># </span>JS 문법 vs 브라우저 사용법</h2></a><ul><li><p>자바스크립트 문법 : <code>if, var, function</code></p></li><li><p>브라우저 사용법 : <code>document.querySelector(), setTimeout(), alert()</code></p></li><li><p>자바스크립트 문법은 브라우저 사용할 경우 프로그래밍적인 기능을 더하고 싶을 때 사용하는 것이다. (ex. 조건 분기, 잠깐 보관, 코드가 길때 축약 등)</p></li><li><p>웹 브라우저 사용법은 정확하게 <strong>Web Browser API 사용법</strong> 이라고 한다.</p></li></ul><hr><a href=#정규식><h2 id=정규식><span class=hanchor arialabel=Anchor># </span>정규식</h2></a><ul><li><p>정규식(Regular Expression)</p></li><li><p>공백 검사 말고도 유저가 입력한게 이메일 형식인지 맞는지 검사하고 싶다면 정규식을 사용해보도록 하자.</p></li><li><p><a href=https://regexr.com/ target=_blank>regex test</a> 사이트를 통해 표현이 맞는지 검사해보자.</p></li></ul><br><a href=#includes><h3 id=includes><span class=hanchor arialabel=Anchor># </span>includes()</h3></a><ul><li><p>문자 검사하는 쉬운 방법이다.</p></li><li><p>한계 : 왼쪽 문자에 한글이 들어있냐, 영어가 들어있냐, A로 끝나냐, 숫자가 1회 출현하냐 이런 것을 검사할 수 없다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=s1>&#39;abc&#39;</span><span class=p>.</span><span class=nx>includes</span><span class=p>(</span><span class=s1>&#39;a&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=s1>&#39;abc&#39;</span><span class=p>.</span><span class=nx>includes</span><span class=p>(</span><span class=s1>&#39;d&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// false
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#정규식-파헤치기><h3 id=정규식-파헤치기><span class=hanchor arialabel=Anchor># </span>정규식 파헤치기</h3></a><ul><li><code>/ /</code>안에 문자를 넣고 정규식을 사용한다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=sr>/a/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;abcde&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div><br><p><strong>정규식으로 범위 지정 가능</strong></p><p><code>/[a-z]/</code> : a ~ z 중 아무 글자 1개, 즉 범위 지정 가능</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=sr>/[a-z]/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;abcde&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=sr>/[a-z]/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;바보&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=sr>/[A-Z]/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;abcde&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=sr>/[A-Z]/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;abcdA&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div><br><ul><li><p><code>/[a-zA-z]/</code> : 아무 알파벳 1개</p></li><li><p><code>/[ㄱ-ㅎ가-힣ㅏ-ㅣ]/</code> : 아무 한글문자 1개</p></li><li><p><code>/[0-9]/</code> : 아무 숫자 1개</p></li><li><p><code>/\S/</code> : 아무 문자 <strong>1개</strong>, 특수기호까지 포함</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=sr>/[ㄱ-ㅎ가-힣]/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;안녕&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=sr>/[ㄱ-ㅎ가-힣]/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;ㅏㅏㅏ&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=sr>/[ㄱ-ㅎ가-힣ㅏ-ㅣ]/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;ㅏㅏ&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div><br><blockquote class=note-callout><p>Memo</p><p>주의할 게, 지금 문자 1개를 찾는 것이다. /a/는 a 문자 1개"만" 찾는 것이다. 여러 개 찾고 싶으면 /a+/ 형태로 +를 사용하자. +는 왼쪽 문자 반복 검색</p></blockquote><p></p><p><br></p><p><strong>정규식으로 시작<code>(^)</code>/끝문자<code>($)</code> 검사</strong></p><ul><li><p><code>/^a/</code> : a로 문자 시작하냐</p></li><li><p><code>/a$/</code> : a로 문자 끝나냐</p></li><li><p><code>/a|b/</code> : a 또는(or) b 있냐</p></li><li><p><code>/(a|b)/</code> : 괄호 사용 가능, 정규식에서 괄호는 묶어서 계산해줌</p></li></ul><br><p><strong>정규식으로 이메일형식 검사</strong></p><ul><li><p><code>.</code> : 정규식의 특별한 문법, 따로 dot을 사용하고 싶으면 <code>\</code> 써주기</p></li><li><p><code>+</code> : 왼쪽 문자 반복 검색</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=sr>/\S@\S\.\S/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;aaa@bbb.ccc&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1>// 모든문자 1개 + 골뱅이 + 모든문자 1개 + . + 모든문자 1개
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=sr>/\S@\S\.\S/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;a@b.c&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=sr>/\S+@\S+\.\S+/</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=s1>&#39;aaa@bbb.ccc&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div><hr><a href=#carousel-캐러셀><h2 id=carousel-캐러셀><span class=hanchor arialabel=Anchor># </span>Carousel (캐러셀)</h2></a><ul><li>carousel, 회전목마라는 뜻인데 간단히 이미지 슬라이드라고 이해하자.</li><li>one-way 애니메이션 기반 UI 이다.</li></ul><ol><li>애니메이션 시작 전 화면 제작</li><li>애니메이션 종료 후 화면 제작</li><li>언제 종료화면으로 변할지 JS 코드짜기</li><li>transition 추가</li></ol><br><ol><li><strong>시작 전 화면</strong></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>slide-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>300</span><span class=kt>vw</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>slide-box</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>vw</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>slide-box</span> <span class=nt>img</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>이런 느낌으로 컨테이너 전체 너비를 <code>캐러셀 이미지 개수 * 100vw</code> 정도로 해놓는다.</li><li>그리고 박스의 폭 각각을 <code>100vw</code>로 설정한다.</li><li>이미지 너비를 <code>100%</code>로 하고 박스에 꽉차게 설정한다.</li><li>현재 슬라이드 컨테이너 너비가 300vw라서 좌우 스크롤이 생길 것이다. 그를 막기 위해 slide-container를 감싸는 div 박스를 하나 만들고 <code>style="overflow: hidden"</code> 줘서 흐르는걸 숨겨준다.</li></ul><br><ol start=2><li><strong>시작 후 화면</strong></li></ol><ul><li>margin-left 속성을 줘도 되지만, 성능 때문에 <code>transform: translateX()</code> 속성을 사용하자. 현재 상황에서 <code>-100vw</code>를 해주면 전체적으로 왼쪽으로 이동하니 두번째 캐러셀 이미지가 보일 것이다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>slide-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>300</span><span class=kt>vw</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>transform</span><span class=p>:</span> <span class=nb>translateX</span><span class=p>(</span><span class=mi>-100</span><span class=kt>vw</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ol start=3><li>언제 종료화면으로 변할지 JS 코드 짜기</li></ol><ul><li>버튼을 클릭했을 때 이미지에 translateX() 속성 주는 방식</li><li>해당하는 캐러셀 이미지에 가도록 X축 조절하면 됨</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.slide-2&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.slide-container&#34;</span><span class=p>).</span><span class=nx>style</span><span class=p>.</span><span class=nx>transform</span> <span class=o>=</span>
+</span></span><span class=line><span class=cl>		<span class=s2>&#34;translateX(-100vw)&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><br><ol start=4><li><strong>transition</strong></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>slide-container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>300</span><span class=kt>vw</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>transition</span><span class=p>:</span> <span class=kc>all</span> <span class=mi>1</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><p><strong>이전 버튼과 다음 버튼을</strong> 활용할 때는 현재 상테에 대한 변수를 하나 두고 그 변수 값을 조정하며 코드를 짜도록 하자.</p><hr><a href=#function-return-문법><h2 id=function-return-문법><span class=hanchor arialabel=Anchor># </span>function() return 문법</h2></a><p><a href=/brain/Lecture/apple-js/apple-js-01 target=_blank>JS 입문과 웹 개발 01</a>에서 설명한 자바스크립트 함수는 긴 코드를 축약하는 것과 파라미터를 추가해서 사용하는 것에 장점이 있었다. <strong>return은 함수쓰고 그 자리에 뭔가 뱉고 싶으면 쓰는 것이다.</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>함수</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=mi>123</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>함수</span><span class=p>();</span> <span class=c1>// 이 자리에 123 퉤! 하고 뱉음
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// 확인해보자
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>변수</span> <span class=o>=</span> <span class=nx>함수</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>변수</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>반환할 때 숫자, 문자, 수식 다 가능하다.</p></li><li><p>return은 함수종료 기능도 있다. return 밑에는 더이상 실행되지 않는다.</p></li></ul><br><blockquote class=note-callout><p>그래서 return 용도가 뭔데?</p><p>자료를 넣으면 다른 자료가 나오는 변환기를 만들고 싶을 때 사용</p></blockquote><br><p>쇼핑몰을 만드는 예시에서 가격 밑에 부가세를 표현해주고 싶다고 하자. 그럼 함수를 만들고 가격(자료)을 넣으면 부가세(다른 자료) 나오는 계산기를 만들고 싶은 것이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>부가세</span><span class=p>(</span><span class=nx>가격</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>가격</span> <span class=o>*</span> <span class=mf>0.1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>부가세</span><span class=p>(</span><span class=mi>50000</span><span class=p>);</span> <span class=c1>// 5000
+</span></span></span></code></pre></td></tr></table></div></div><p><code>문자 -> 문자 변환기</code>, <code>숫자 -> true/false 변환기</code> 아무렇게나 제작 가능</p><hr><a href=#자바스크립트-소수점-다루기><h2 id=자바스크립트-소수점-다루기><span class=hanchor arialabel=Anchor># </span>자바스크립트 소수점 다루기</h2></a><p>자바스크립트에서 소수점 있는 숫자연산시 주의해야한다. 약간의 오차가 발생할 수 있다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=mi>55555</span> <span class=o>*</span> <span class=mf>1.1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// 61110.50000000001
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=mf>1.1</span> <span class=o>+</span> <span class=mf>0.3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// 1.4000000000000001
+</span></span></span></code></pre></td></tr></table></div></div><p>컴퓨터는 2진법으로 설계되어있기 때문에, <code>10 + 20</code>이라고 하면 숫자 10과 숫자 20을 더하는 것이 아니라 2진법으로 변환하여 <code>1010 + 10100</code>을 계산한다. 이때, 소수점을 2진법으로 변환 시 문제가 발생한다.</p><br><p><code>1.1 -> 1.00011001100110011001100....</code> 이렇게 무한히 <code>1100</code>이 반복되는 모습을 확인가능하다. 무한한 숫자를 저장하기에 저장공간이 작아서 중간에 자르고 반올림 시켜버린다.</p><br><p>매우 작은 오차라서 평소엔 무시해도 되지만, 조금 정확한 연산을 원한다면</p><ol><li><p>애초에 소수점을 사용하지 말든가</p><ul><li>소수점을 전부 10곱해서 연산하고 10으로 나누기</li></ul></li><li><p>소수점 정확하게 계산해주는 라이브러리 쓰든가</p></li><li><p>연산결과를 반올림해서 쓰든가</p></li></ol><br><a href=#소수점-반올림><h3 id=소수점-반올림><span class=hanchor arialabel=Anchor># </span>소수점 반올림</h3></a><ul><li><code>숫자.toFixed(몇째 자리 까지)</code></li><li>참고로 toFixed 붙혀주면 <strong>문자로 반환됨</strong></li><li>크롬 콘솔탭에서 색깔이 검은색이면 문자라고 생각하셈, 숫자는 파란색인듯</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>((</span><span class=mi>55555</span> <span class=o>*</span> <span class=mf>1.1</span><span class=p>).</span><span class=nx>toFixed</span><span class=p>(</span><span class=mi>1</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=c1>// 61110.5
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>((</span><span class=mi>55555</span> <span class=o>*</span> <span class=mf>1.1</span><span class=p>).</span><span class=nx>toFixed</span><span class=p>(</span><span class=mi>2</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=c1>// 61110.50
+</span></span></span></code></pre></td></tr></table></div></div><hr><a href=#플러스-연산자-특징><h2 id=플러스-연산자-특징><span class=hanchor arialabel=Anchor># </span>+(플러스) 연산자 특징</h2></a><ul><li><code>'문자' + 123 => '문자123'</code></li><li><code>'문자' + '문자' => '문자문자'</code></li><li>숫자끼리 더하고 싶으면 <code>parseInt()</code>, <code>parseFloat()</code> 사용</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>부가세</span><span class=p>(</span><span class=nx>가격</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>result</span> <span class=o>=</span> <span class=p>(</span><span class=nx>가격</span> <span class=o>*</span> <span class=mf>1.1</span><span class=p>).</span><span class=nx>toFixed</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>result</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>부가세</span><span class=p>(</span><span class=mi>55555</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=c1>// 61110.51
+</span></span></span><span class=line><span class=cl><span class=c1>// toFixed 써서 result가 문자니까 문자 + 1 = 문자1이 된 것
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>부가세</span><span class=p>(</span><span class=nx>가격</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>result</span> <span class=o>=</span> <span class=p>(</span><span class=nx>가격</span> <span class=o>*</span> <span class=mf>1.1</span><span class=p>).</span><span class=nx>toFixed</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nb>parseFloat</span><span class=p>(</span><span class=nx>result</span><span class=p>)</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>부가세</span><span class=p>(</span><span class=mi>55555</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=c1>// 61111.5
+</span></span></span></code></pre></td></tr></table></div></div><hr><a href=#부동소수점-부가-설명><h2 id=부동소수점-부가-설명><span class=hanchor arialabel=Anchor># </span>부동소수점 부가 설명</h2></a><p><a href=https://youtu.be/-GsrYvZoAdA target=_blank>코딩애플 유튜브 영상</a>을 참조하여 정리했다. 모든 그림의 저작권은 <a href=https://codingapple.com/ target=_blank>코딩애플</a>님에게 있습니다. 추가로 참고하기 좋은 <a href=https://codetorial.net/articles/floating_point.html target=_blank>링크</a>입니다.</p><ul><li>코드를 보면, <code>1.1 + 0.1</code>이 <code>1.2</code>와 동일하지 않고 약간 크다고 한다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=mf>1.1</span> <span class=o>+</span> <span class=mf>0.1</span> <span class=o>==</span> <span class=mf>1.2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=mf>1.1</span> <span class=o>+</span> <span class=mf>0.1</span> <span class=o>&gt;</span> <span class=mf>1.2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div><a href=#1-ram><h3 id=1-ram><span class=hanchor arialabel=Anchor># </span>1. RAM</h3></a><p>컴퓨터에서 5라는 숫자를 저장하려면 <strong>RAM</strong>에 저장한다. 0과 1의 이진수 형태로 저장하게 된다. 칸은 하나당 bit라고 한다.</p><p><img src=https://shin-jae-yoon.github.io//brain/image/apple-js-02-1.png width=auto alt></p><p>숫자는 보통 8칸 정도를 마련하여 저장한다. 더 큰 수를 저장하고 싶으면 16칸도 할당한다. 16칸은 (-32768 ~ 32767) 까지 저장 가능하다.</p><br><a href=#2-부동소수-표현-저장><h3 id=2-부동소수-표현-저장><span class=hanchor arialabel=Anchor># </span>2. 부동소수 표현 저장</h3></a><p>소수 저장은 아무렇게나 하는 것이 아니라, 덧셈이나 뺄셈과 같은 연산을 편하게 하기 위하여 <a href="https://docs.microsoft.com/ko-kr/cpp/build/ieee-floating-point-representation?view=msvc-170" target=_blank>IEEE 표준 표현방식</a>을 따른다.<br></p><p>예를 들어, <code>5.125</code>라는 수를 저장하기 위하여 메모리에 넉넉히 32칸을 준비한다. 이때, 32비트를 사용하는 방식을 <strong>단정도(single precision)</strong> 라고 한다. <strong>배정도 표현</strong>에서는 64비트를 사용한다.</p><ul><li>맨 첫번째 칸 : 부호 저장 (양수 = 0, 음수 = 1)</li><li>저장할 숫자를 2진법으로 변환 ( <strong>5.125 -> 101.001</strong> )</li><li>점을 왼쪽 끝까지 이동 ( <strong>1.01001 * 2<sup>2</sup></strong> )</li><li>01001 부분을 <strong>mantissa</strong>라고 하는데 여기는 맨 뒤 23칸에 밀어넣는다.</li><li>지수 부분에 127을 더하고 앞에 8칸에 저장한다. (지수는 2<sup>2</sup> 에서 위에꺼를 의미. 2<sup>4</sup>이면 4가 지수)</li><li>여기서 127은 bias이다. bias는 2<sup>k-1</sup>인데 여기서 k는 지수부의 비트 수인 8이다. (8칸)</li></ul><br><p>단정도 표현은 <strong>부호부 (1칸) + 지수부 (8칸) + 가수부 (23칸)</strong> 으로 이루어진다.</p><br><a href=#3-순환소수-문제><h3 id=3-순환소수-문제><span class=hanchor arialabel=Anchor># </span>3. 순환소수 문제</h3></a><p>이러한 저장 방식에는 순환소수 문제가 있다. 예를 들어, <code>10진수 0.125</code>는 <code>2진수 0.001</code>로 깔끔하게 나누어떨어진다. 그런데, <code>10진수 0.1</code> 같은 숫자는 깔끔하게 떨어지지 않고 <code>2진수 0.000110011001100110011001100110011001...</code> 무한히 반복하게 된다. 이러한 경우 32칸에 저장할 수 없어서 뒷부분을 잘라버리고 저장한다. 그렇다면 자른 뒷 부분의 오차가 발생하게 되는 것이다. 한마디로 <strong>정확히 0.1을 저장한 것이 아니라 0.1에 근접한 수를 저장한 것이다.</strong></p><br><a href=#4-문제-발생><h3 id=4-문제-발생><span class=hanchor arialabel=Anchor># </span>4. 문제 발생</h3></a><p>이 사소한 오차가 큰 문제인가? 실제로, 걸프전 당시 미군이 운영하던 패트리어트 (Patriot Missile Defense)라는 미사일 요격 장비가 있었는데, 미사일 요격에 실패하여 28명의 군인이 전사한 사건이 있었다. 패트리어트를 구동하기 위한 프로그램에서 <strong>시간을 0.1초 단위로 측정했다.</strong></p><br><p>여기서 패트리어트는 숫자 1개에 24칸을 사용했다. 그러면 0.1을 표현할 때 오차가 생기는게 단정도 표현 방식보다 더 컸을 것이다. 보통 1시간 마다 0.0034초 오차가 발생했다고 한다. 사소해보이지만, <a href=http://nifty.stanford.edu/2003/pests/2002/lectures/07.1_FloatingPoint/Patriot.html target=_blank>사고 report</a>를 보면 해당 기기를 100시간 가동시키니 <strong>0.34초</strong> 오차가 발생했다. 이렇게 봐도 작아보이는가 ?</p><br><p>1500 m/s 속력의 미사일 요격시 이 0.34초 오차 때문에 500m 정도 빗나갔다. 이래서 요격에 실패하여 비극을 일으킨 것이다.</p><br><a href=#5-결론><h3 id=5-결론><span class=hanchor arialabel=Anchor># </span>5. 결론</h3></a><p>그래서, 소수는 어디에 사용되는가?<br><br></p><ul><li>5-1. 정확히 계산해야하는 자료는 <strong>정수</strong>로 저장<br></li></ul><p>돈 같은 경우 5.1 달러를 저장하고 싶으면 float를 사용하여 저장하면 안되고 <strong>정수</strong>의 형태로 저장해야 한다. 즉, 5.1달러가 아닌 5100센트로 저장해야 한다.<br></p><br><ul><li>5-2. 굳이 float 써야할 때는 <strong>반올림 문법</strong><br></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>precision</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>pow</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=nx>precision</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>Math</span><span class=p>.</span><span class=nx>ceil</span><span class=p>(</span><span class=nx>num</span> <span class=o>*</span> <span class=nx>precision</span><span class=p>)</span> <span class=o>/</span> <span class=nx>precision</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>5-3. <strong>double 자료형 사용</strong>하여 더 정확하게 저장<br></li></ul><p>숫자 1개당 32칸이 아닌 <strong>64칸을 사용</strong>한다. IEEE 부동소수 표현 설명에서 봤던 <strong>배정도 표현</strong>을 사용하는 것이다. 오차가 매우 작아지기 때문에 괜찮지만, 단점으로는 역시 메모리 용량을 2배 쓰는 것이니까 낭비일 수 있다.</p><hr><a href=#scroll-이벤트-활용><h2 id=scroll-이벤트-활용><span class=hanchor arialabel=Anchor># </span>scroll 이벤트 활용</h2></a><p>window 객체를 활용하여 scroll 이벤트를 사용할 수 있다.</p><ol><li>스크롤바 조작할 때마다 코드실행 가능</li><li>박스의 실제 높이 / 보이는 높이 구할 수 있음</li><li>스크롤 얼마나 했는지 스크롤양 구할 수 있음</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>window</span><span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s1>&#39;scroll&#39;</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>this</span><span class=p>.</span><span class=nb>window</span><span class=p>.</span><span class=nx>scrollY</span> <span class=o>~</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>왼쪽이 스크롤 될 때 마다 안에 코드 실행해줌</p></li><li><p>현재 그냥 html 페이지 그 자체를 의미하는건 window, DOM이 있다.</p></li><li><p>스크롤 이벤트를 감지하고 싶으면 보통 window에 이벤트리스너 부착</p></li><li><p>추가로 html에서 임의로 스크롤 만들거면 <code>overflow-y</code> 다루셈 혹은 <code>height 굉장히 큰 div박스</code> 만들던가</p></li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/apple-js-02-2.png width=auto alt></p><ul><li><code>window.scrollY</code> 하면 스크롤 얼마나 했는지 알려줌. 가로 스크롤은 <code>window.scrollX</code></li><li><code>window.scrollTo(x,y)</code>는 지정한 위치로 강제로 스크롤함. 원래는 반짝! 순간이동해야하는데 부트스트랩 쓰면 스크롤을 스무스하게 이동시키는게 자동 설정임 이거 해결하려면 css 파일 열어서 아래 코드 작성</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>scroll-behavior</span><span class=p>:</span> <span class=kc>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>window.scrollBy(x,y)</code>는 현재 위치부터 강제로 스크롤함.</li></ul><br><a href=#jquery로-scroll-이벤트><h3 id=jquery로-scroll-이벤트><span class=hanchor arialabel=Anchor># </span>jQuery로 scroll 이벤트</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=nb>window</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;scroll&#39;</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>$</span><span class=p>(</span><span class=nb>window</span><span class=p>).</span><span class=nx>scrollY</span> <span class=o>~</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>$(window).scrollTop()</code> : jQuery 내장, 현재 스크롤바 위치 출력, scrollY랑 똑같은 기능인데 <code>scrollTop(숫자)</code> 하면 scrollTo 기능도 되는거임.</li></ul><br><a href=#div-박스-스크롤바-내린-높이-실제-높이><h3 id=div-박스-스크롤바-내린-높이-실제-높이><span class=hanchor arialabel=Anchor># </span>div 박스 스크롤바 내린 높이, 실제 높이</h3></a><ol><li><p>div 박스는 scrollY 사용 불가능함. scrollY는 window에만 가능. 박스는 <code>scrollTop</code> 사용해야함. 실제 높이는 <code>셀렉터.scrollHeight</code> 사용</p></li><li><p>하지만, 스크롤을 끝까지 내려도 스크롤양과 실제높이가 같지 않을 수 있다. 이는 <code>scrollTop</code>의 특징 때문이다. 위에서부터 얼마나 스크롤바를 내렸는지 알려주기는 하지만, 전체를 내린 것은 아니기 때문이다. 현재 위치부터 내린 양을 계산하기 때문에 <code>눈에 보이는 div 박스 높이 + 스크롤양 = 실제높이</code>가 되는 것이다.</p></li><li><p>눈에 보이는 div 박스 높이도 css에 적힌 그 높이가 아니라 정확하게 구해보면 <code>clientHeight</code>를 사용하면 된다.</p></li></ol><p><img src=https://shin-jae-yoon.github.io//brain/image/apple-js-02-3.png width=auto alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.lorem&#34;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s2>&#34;scroll&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>스크롤양</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.lorem&#34;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>실제높이</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.lorem&#34;</span><span class=p>).</span><span class=nx>scrollHeight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>눈높이</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.lorem&#34;</span><span class=p>).</span><span class=nx>clientHeight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>스크롤양</span><span class=p>,</span> <span class=nx>실제높이</span><span class=p>,</span> <span class=nx>눈높이</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>188.29 + 100 = 288?</code> 같이 약간 오차가 생길 수 있고 OS 마다 부정확해서 등호(<code>==</code>)를 이용하여 비교하기 보다 (끝까지 스크롤 내렸는지 비교하기 보다) <strong>여유를 가지고 비교하는 것이 좋다.</strong> 맨 밑에서부터 10px 정도 남기고 스크롤 했는지?처럼</li></ul><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=nx>스크롤양</span> <span class=o>+</span> <span class=nx>눈높이</span> <span class=o>&gt;</span> <span class=nx>실제높이</span> <span class=o>-</span> <span class=mi>10</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>alert</span><span class=p>(</span><span class=s2>&#34;약관을 모두 읽으셨네요!&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>console을 찍어보면, clientHeight와 scrollHeight는 고정인데 scrollTop의 값이 변하는 것을 확인 가능. 즉, 위에 <code>눈에 보이는 div 박스 높이 + 스크롤양 = 실제높이</code>는 끝까지 내렸을 때 성립하는 공식임</li></ul><br><a href=#div-박스말고-현재페이지-끝까지-스크롤-체크는><h3 id=div-박스말고-현재페이지-끝까지-스크롤-체크는><span class=hanchor arialabel=Anchor># </span>div 박스말고 현재페이지 끝까지 스크롤 체크는?</h3></a><ul><li><p>html 문서의 그냥 html 태그의 높이를 이용하여 구한다.</p></li><li><p>페이지의 scrollHeight는 페이지 로드가 다되고 나서야 정확해서 <code>&lt;body></code> 끝나기 전에 넣는게 좋은 관습이다.</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>window</span><span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s2>&#34;scroll&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>페이지실제높이</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;html&#34;</span><span class=p>).</span><span class=nx>scrollHeight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>페이지눈높이</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;html&#34;</span><span class=p>).</span><span class=nx>clientHeight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>페이지스크롤양</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;html&#34;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=nx>페이지스크롤양</span> <span class=o>+</span> <span class=nx>페이지눈높이</span> <span class=o>&gt;</span> <span class=nx>페이지실제높이</span> <span class=o>-</span> <span class=mi>10</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>alert</span><span class=p>(</span><span class=s2>&#34;페이지 끝이지롱!&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>document.documentElement</code> 이거나 <code>document.querySelector('html')</code> 이거나 같음</li></ul><br><a href=#scroll-내린-만큼-상단에-진행바-스크롤퍼센트><h3 id=scroll-내린-만큼-상단에-진행바-스크롤퍼센트><span class=hanchor arialabel=Anchor># </span>scroll 내린 만큼 상단에 진행바 (스크롤퍼센트)</h3></a><ul><li><strong>스크롤퍼센트 = (페이지스크롤양 / (페이지실제높이 - 페이지눈높이)) * 100</strong></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;page_progress&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>고정시켜야해서 <code>position: fixed</code> 이런거 필요한데 navbar에 붙히는게 나은듯</p></li><li><p>navbar 맨위에 고정시킬 때 <code>position: fixed; width: 100%; z-index: 5;</code> 알지?</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>page_progress</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>background-color</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>width</span><span class=p>:</span> <span class=mi>0</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>height</span><span class=p>:</span> <span class=mi>3</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>transition</span><span class=p>:</span> <span class=kc>all</span> <span class=mf>0.1</span><span class=kt>s</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>window</span><span class=p>.</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s2>&#34;scroll&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>페이지실제높이</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;html&#34;</span><span class=p>).</span><span class=nx>scrollHeight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>페이지눈높이</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;html&#34;</span><span class=p>).</span><span class=nx>clientHeight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>페이지스크롤양</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;html&#34;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>스크롤퍼센트</span> <span class=o>=</span> <span class=p>(</span><span class=nx>페이지스크롤양</span> <span class=o>/</span> <span class=p>(</span><span class=nx>페이지실제높이</span> <span class=o>-</span> <span class=nx>페이지눈높이</span><span class=p>))</span> <span class=o>*</span> <span class=mi>100</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=k>this</span><span class=p>.</span><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.page_progress&#34;</span><span class=p>).</span><span class=nx>style</span><span class=p>.</span><span class=nx>width</span> <span class=o>=</span> <span class=nx>스크롤퍼센트</span> <span class=o>+</span> <span class=s2>&#34;%&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#scroll-다룰-때-주의점><h3 id=scroll-다룰-때-주의점><span class=hanchor arialabel=Anchor># </span>scroll 다룰 때 주의점</h3></a><ol><li><p>scroll 이벤트리스너 안의 코드는 1초에 60번 이상 실행됨</p><ul><li>컴퓨터에 부담을 줄 수 있어서 너무 많이 쓰면 안됨</li></ul></li><li><p>바닥체크도 여러 번 중복으로 할 것</p></li></ol><br><a href=#결론><h3 id=결론><span class=hanchor arialabel=Anchor># </span>결론</h3></a><ul><li>페이지 스크롤 : <code>window.scrollY</code></li><li>div 스크롤 : <code>.scrollTop</code></li><li>div 실제높이 : <code>.scrollHeight</code></li><li>div 화면높이 : <code>.clientHeight</code></li><li>jQuery 페이지 스크롤 : <code>$(window).scrollTop()</code></li></ul><hr><a href=#for-반복문-탭기능-만들기><h2 id=for-반복문-탭기능-만들기><span class=hanchor arialabel=Anchor># </span>for 반복문, 탭기능 만들기</h2></a><br><a href=#탭기능><h3 id=탭기능><span class=hanchor arialabel=Anchor># </span>탭기능</h3></a><ul><li><p>탭은 위에 버튼 누르면 그에 걸맞는 div 박스 내용 보이게 하는거</p></li><li><p>역시 탭을 만들 때도 하나하나 display: none~ block~ 하는것보다 <code>show</code>라는 클래스 하나 만들어서 탈부착하는 방식으로 만들기</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;container mt-5&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>ul</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;list&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button&#34;</span><span class=p>&gt;</span>Products<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button orange&#34;</span><span class=p>&gt;</span>Information<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button&#34;</span><span class=p>&gt;</span>Shipping<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-content&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>상품설명입니다. Product<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-content show&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>스펙설명입니다. Information<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-content&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>배송정보입니다. Shipping<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=nt>ul</span><span class=p>.</span><span class=nc>list</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>list-style-type</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>padding</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-bottom</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#ccc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>tab-button</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>padding</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span> <span class=mi>20</span><span class=kt>px</span> <span class=mi>10</span><span class=kt>px</span> <span class=mi>20</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>margin-right</span><span class=p>:</span> <span class=mi>-1</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>margin-bottom</span><span class=p>:</span> <span class=mi>-1</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>grey</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>text-decoration</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>cursor</span><span class=p>:</span> <span class=kc>pointer</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>orange</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-top</span><span class=p>:</span> <span class=mi>2</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>orange</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-right</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#ccc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-bottom</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>white</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>border-left</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#ccc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>color</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>margin-top</span><span class=p>:</span> <span class=mi>-2</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>tab-content</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>padding</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>show</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ol><li>tab-button 누르면 모든 버튼에서 orange 클래스 제거</li><li>누른 버튼에 orange 클래스 부착</li><li>모든 tab-content에서 show 클래스 제거</li><li>누른 버튼의 tab-content에 show 클래스 부착</li></ol><ul><li>해당하는 기능을 바닐라js로 짜든, jQuery로 짜든, 반복되는 부분이 굉장히 많이 나올 것이다. 이때, <strong>자주쓰는 셀렉터는 변수에 넣어쓰자. 셀렉터 문법은 느리다.</strong> 그리고 여기서 필요한 것이 반복문이다.</li></ul><br><a href=#for-반복문><h3 id=for-반복문><span class=hanchor arialabel=Anchor># </span>for 반복문</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=nx>i</span><span class=o>++&gt;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>반복할</span> <span class=nx>코드</span> <span class=o>~</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>탭만들기를 예제로, 반복문 이용하여 코드 짜보면</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>var</span> <span class=nx>탭버튼</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-button&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>탭내용</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-content&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=nx>탭버튼</span><span class=p>.</span><span class=nx>length</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>이러면, 코드가 잘 돌아가지 않을 것이다. <strong>var가 아닌 let을 사용하면 잘 될 것이다.</strong></p><br><a href=#var가-제대로-작동-안한-이유><h3 id=var가-제대로-작동-안한-이유><span class=hanchor arialabel=Anchor># </span>var가 제대로 작동 안한 이유</h3></a><ol><li><p>코드를 위에서부터 한줄한줄 차례로 해석함</p></li><li><p>for문을 만나서 내부 코드를 반복실행 하려고함</p></li><li><p>이벤트리스너 만남. 이벤트리스너 내부의 코드는 바로 실행되는 코드가 아니고 이벤트가 발생해야 실행되는 코드임</p></li><li><p><strong>이벤트리스너 내부 코드 실행되지 않고 넘어감</strong></p></li><li><p>이 상태로 반복문 3번 실행</p></li><li><p>한참 뒤 사용자가 버튼 클릭 (현재 <code>var i = 3</code>인 상태)</p></li><li><p><code>var i = 3</code>인 상태지만, var 범위는 for문 밖에도 적용이 됨</p></li><li><p>그래서 <code>eq(i)</code>에 3을 대입하려고 함. 하지만, 4번 버튼은 없으니까 에러</p></li></ol><br><p><img src=https://shin-jae-yoon.github.io//brain/image/apple-js-02-4.png width=auto alt></p><p><a href=/brain/Lecture/apple-js/apple-js-01 target=_blank>JS 입문과 웹 개발 01</a>에서에서 var와 let의 범위를 보면, <strong>let은 block-scoped 범위</strong>이다. 따라서, 반복문 안에서 선언한 var i는 반복문이 끝났음에도 i의 값에 영향을 끼치는 상태이지만, let은 반복문 안에서만 영향을 끼치고 밖에서는 영향을 끼치지 못해서 괜찮은 것이다. c언어에서 배웠던 상식적인 반복문 내부 변수 선언의 범위가 let인 것으로 생각하자.</p><br><a href=#탭기능-함수-이용-축약><h3 id=탭기능-함수-이용-축약><span class=hanchor arialabel=Anchor># </span>탭기능 함수 이용 축약</h3></a><ul><li>아래의 코드를 함수로 축약해보자.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>탭버튼</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-button&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>탭내용</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-content&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=nx>탭버튼</span><span class=p>.</span><span class=nx>length</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭내용</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭내용</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>축약한 코드</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>탭버튼</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-button&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>탭내용</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-content&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=nx>탭버튼</span><span class=p>.</span><span class=nx>length</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭열기</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>탭열기</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>하지만, 이렇게 작성하면 함수 탭열기에 변수 i를 따로 선언한 적이 없기 때문에 코드가 제대로 돌아가지 않을 것이다. <strong>축약할 코드에 변수가 있으면 변수를 파라미터로 바꿔야 잘 작동한다.</strong></p><br><ul><li>파라미터 넣은 코드</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>탭버튼</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-button&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>탭내용</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-content&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=nx>탭버튼</span><span class=p>.</span><span class=nx>length</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>i</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭열기</span><span class=p>(</span><span class=nx>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>탭열기</span><span class=p>(</span><span class=nx>구멍</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>구멍</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>구멍</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><hr><a href=#이벤트-버블링><h2 id=이벤트-버블링><span class=hanchor arialabel=Anchor># </span>이벤트 버블링</h2></a><p>lesson.html의 로그인 모달창에서 검은 배경을 눌러도 닫히도록 코드를 짜보자.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>// 검은배경 누르면 모달창 닫기 버튼
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>classList</span><span class=p>.</span><span class=nx>remove</span><span class=p>(</span><span class=s2>&#34;show-modal&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p>이때, 검은 배경이 아닌 그냥 모달창 아무데나 눌러도 모달창이 닫히는 것을 확인할 수 있다. 이는 이벤트 버블링 때문이다. <strong>모든 브라우저는 이벤트 버블링이 일어난다.</strong></p><ul><li>이벤트 버블링(event bubbling) : 이벤트가 <strong>상위 html로 퍼지는</strong> 현상</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;black-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;white-bg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>h4</span><span class=p>&gt;</span>로그인하세요<span class=p>&lt;/</span><span class=nt>h4</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>form</span> <span class=na>action</span><span class=o>=</span><span class=s>&#34;./success.html&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;my-3&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>				<span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;form-control&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;email&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>			<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>			
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;my-3&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>				<span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;password&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;form-control&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;pw&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>			<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>			
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>button</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;submit&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;btn btn-primary&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;send&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>				전송
+</span></span><span class=line><span class=cl>			<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>			<span class=p>&lt;</span><span class=nt>button</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;button&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;btn btn-danger&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;close&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>				닫기
+</span></span><span class=line><span class=cl>			<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;/</span><span class=nt>form</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>white-bg 클릭 시 : white-bg, black-bg 2번 클릭한거임</p></li><li><p>h4 클릭 시 : h4, white-bg, black-bg 3번 클릭한거임</p></li></ul><p>현재, js 코드를 <code>black-bg</code> 클릭 시 모달창이 닫히도록 코드를 짜놨다. 그러면 만약 input 태그를 클릭했다고 하면 div.my-3도 눌리고 div.white-bg도 눌리고 div.black-bg도 눌린 효과가 되어서 결국 모달창이 닫히는 것이다.</p><br><p>맨 처음 누른 요쇼가 진짜 black-bg 이면 모달창이 닫히도록 코드를 짜면 된다.</p><br><a href=#유용한-이벤트관련-함수들><h3 id=유용한-이벤트관련-함수들><span class=hanchor arialabel=Anchor># </span>유용한 이벤트관련 함수들</h3></a><ul><li>콜백함수 파라미터에 <code>e</code>를 넣어보자. 그러면 사용가능한 함수들이 있다.</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>classList</span><span class=p>.</span><span class=nx>remove</span><span class=p>(</span><span class=s2>&#34;show-modal&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>e.target;</code> : 이벤트 발생한 곳 (ex. 유저가 실제로 클릭한 곳)</p></li><li><p><code>e.currentTarget;</code> : 이벤트리스너 달린 곳 (<code>=this</code>)</p></li><li><p><code>e.preventDefault();</code> : 이벤트 기본동작 막아줌, 이벤트 발생 안한것처럼</p></li><li><p><code>e.stopPropagation();</code> : 내 상위요소로 이벤트 버블링 막아줌</p></li></ul><br><p>최종본</p><ul><li>javascript</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>addEventListener</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>target</span> <span class=o>==</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>classList</span><span class=p>.</span><span class=nx>remove</span><span class=p>(</span><span class=s2>&#34;show-modal&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>jQuery</li></ul><p>jQuery는 애초에 셀렉터끼리 비교가 불가능해서 <code>if ( $(e.target) == $('.black-bg') )</code>는 안된다. <code>is()</code>를 이용하여 <code>if ( $(e.target).is($(".black-bg")) )</code> 이렇게 작성하자.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>target</span><span class=p>).</span><span class=nx>is</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>)))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.black-bg&#34;</span><span class=p>).</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;show-modal&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><a href=#이벤트버블링-응용><h3 id=이벤트버블링-응용><span class=hanchor arialabel=Anchor># </span>이벤트버블링 응용</h3></a><ul><li>탭기능 다르게 만들기 (이벤트리스너 1개만 사용)</li></ul><p>위에서 만들었던 탭기능은 반복문을 사용해서 이벤트리스너를 3개 사용했다. 이벤트리스너 1개를 쓸 때 마다 램 용량을 차지하기 때문에 성능적인 이점을 가지기 위하여 줄여보겠다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ul</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;list&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button&#34;</span><span class=p>&gt;</span>Products<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button orange&#34;</span><span class=p>&gt;</span>Information<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button&#34;</span><span class=p>&gt;</span>Shipping<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>해당하는 코드의 <code>.list</code> 1개에만 이벤트리스너를 부착한다고 하자. 이벤트버블링은 항상 일어나니까 <code>.tab-button</code> 무엇을 클릭하든 <code>.list</code>를 클릭한 효과가 생긴다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>// 이벤트리스너 1개 버전
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>탭버튼</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-button&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>탭내용</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.tab-content&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>탭열기</span><span class=p>(</span><span class=nx>구멍</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>구멍</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;orange&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>removeClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭내용</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=nx>구멍</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s2>&#34;show&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.list&#34;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>target</span><span class=p>).</span><span class=nx>is</span><span class=p>(</span><span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=mi>0</span><span class=p>)))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭열기</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>target</span><span class=p>).</span><span class=nx>is</span><span class=p>(</span><span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=mi>1</span><span class=p>)))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>탭열기</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>target</span><span class=p>).</span><span class=nx>is</span><span class=p>(</span><span class=nx>탭버튼</span><span class=p>.</span><span class=nx>eq</span><span class=p>(</span><span class=mi>2</span><span class=p>)))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭열기</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p><br><br></p><a href=#datasest><h3 id=datasest><span class=hanchor arialabel=Anchor># </span>Datasest</h3></a><ul><li><p><code>data-자료이름=값</code>을 이용하여 html 태그에 몰래 정보숨기기 가능하다.</p></li><li><p><code>셀렉터.dataset.자료이름</code>을 이용하여 숨겼던 자료 출력 가능</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button&#34;</span> <span class=na>data-id</span><span class=o>=</span><span class=s>&#34;0&#34;</span><span class=p>&gt;</span>Products<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s1>&#39;.tab-button&#39;</span><span class=p>).</span><span class=nx>dataset</span><span class=p>.</span><span class=nx>id</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>// 0
+</span></span></span></code></pre></td></tr></table></div></div><ul><li>dataset 이용하여 탭기능 코드 줄이기</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ul</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;list&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button&#34;</span> <span class=na>data-id</span><span class=o>=</span><span class=s>&#34;0&#34;</span><span class=p>&gt;</span>Products<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button orange&#34;</span> <span class=na>data-id</span><span class=o>=</span><span class=s>&#34;1&#34;</span><span class=p>&gt;</span>Information<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>li</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;tab-button&#34;</span> <span class=na>data-id</span><span class=o>=</span><span class=s>&#34;2&#34;</span><span class=p>&gt;</span>Shipping<span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;.list&#34;</span><span class=p>).</span><span class=nx>on</span><span class=p>(</span><span class=s2>&#34;click&#34;</span><span class=p>,</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>탭열기</span><span class=p>(</span><span class=nb>parseInt</span><span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>target</span><span class=p>.</span><span class=nx>dataset</span><span class=p>.</span><span class=nx>id</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>내가 누른 것에 숨겨져있는 dataset이 id인 녀석의 값을 가져오는 것을 이용</li></ul><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#settimeout-setinterval>setTimeout, setInterval</a><ul><li><a href=#settimeout>setTimeout</a></li><li><a href=#setinterval>setInterval</a></li><li><a href=#cleartimeout>clearTimeout</a></li></ul></li><li><a href=#js-문법-vs-브라우저-사용법>JS 문법 vs 브라우저 사용법</a></li><li><a href=#정규식>정규식</a><ul><li><a href=#includes>includes()</a></li><li><a href=#정규식-파헤치기>정규식 파헤치기</a></li></ul></li><li><a href=#carousel-캐러셀>Carousel (캐러셀)</a></li><li><a href=#function-return-문법>function() return 문법</a></li><li><a href=#자바스크립트-소수점-다루기>자바스크립트 소수점 다루기</a><ul><li><a href=#소수점-반올림>소수점 반올림</a></li></ul></li><li><a href=#플러스-연산자-특징>+(플러스) 연산자 특징</a></li><li><a href=#부동소수점-부가-설명>부동소수점 부가 설명</a><ul><li><a href=#1-ram>1. RAM</a></li><li><a href=#2-부동소수-표현-저장>2. 부동소수 표현 저장</a></li><li><a href=#3-순환소수-문제>3. 순환소수 문제</a></li><li><a href=#4-문제-발생>4. 문제 발생</a></li><li><a href=#5-결론>5. 결론</a></li></ul></li><li><a href=#scroll-이벤트-활용>scroll 이벤트 활용</a><ul><li><a href=#jquery로-scroll-이벤트>jQuery로 scroll 이벤트</a></li><li><a href=#div-박스-스크롤바-내린-높이-실제-높이>div 박스 스크롤바 내린 높이, 실제 높이</a></li><li><a href=#div-박스말고-현재페이지-끝까지-스크롤-체크는>div 박스말고 현재페이지 끝까지 스크롤 체크는?</a></li><li><a href=#scroll-내린-만큼-상단에-진행바-스크롤퍼센트>scroll 내린 만큼 상단에 진행바 (스크롤퍼센트)</a></li><li><a href=#scroll-다룰-때-주의점>scroll 다룰 때 주의점</a></li><li><a href=#결론>결론</a></li></ul></li><li><a href=#for-반복문-탭기능-만들기>for 반복문, 탭기능 만들기</a><ul><li><a href=#탭기능>탭기능</a></li><li><a href=#for-반복문>for 반복문</a></li><li><a href=#var가-제대로-작동-안한-이유>var가 제대로 작동 안한 이유</a></li><li><a href=#탭기능-함수-이용-축약>탭기능 함수 이용 축약</a></li></ul></li><li><a href=#이벤트-버블링>이벤트 버블링</a><ul><li><a href=#유용한-이벤트관련-함수들>유용한 이벤트관련 함수들</a></li><li><a href=#이벤트버블링-응용>이벤트버블링 응용</a></li><li><a href=#datasest>Datasest</a></li></ul></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></body></html>
