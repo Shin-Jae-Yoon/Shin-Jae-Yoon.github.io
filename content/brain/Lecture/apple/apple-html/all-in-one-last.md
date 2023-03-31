@@ -579,7 +579,7 @@ h2 {
 
 ## 애니메이션 만들기 심화 (@keyframes)
 
-[중급 모듈](brain/Lecture/apple-html/all-in-one-mid) 애니메이션 만들기에서 one-way 애니메이션 만드는 방법을 배웠었다. 그때는 a에서 b로만 가능했다. 아래와 같이 복잡한 애니메이션은 `@keyframes`로 구현한다. `transition`은 one-way 밖에 안되서이다.
+[중급 모듈](brain/Lecture/apple/apple-html/all-in-one-mid) 애니메이션 만들기에서 one-way 애니메이션 만드는 방법을 배웠었다. 그때는 a에서 b로만 가능했다. 아래와 같이 복잡한 애니메이션은 `@keyframes`로 구현한다. `transition`은 one-way 밖에 안되서이다.
 
 1. a -> b -> c
 2. a -> b -> a

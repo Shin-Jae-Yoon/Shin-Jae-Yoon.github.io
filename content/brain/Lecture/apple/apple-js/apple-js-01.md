@@ -358,9 +358,9 @@ $('#close').on('click', function () {
   
 위의 예제 코드에서 addClass와 removeClass 대신에 fadeIn과 fadeOut을 넣으면 애니메이션을 넣을 수 있지만, 자바스크립트에 애니메이션을 넣는 것은 성능 때문에 좋은 관습은 아니고 css에 넣는 것이 좋다.
 
-- <a href='/brain/Lecture/apple-html/all-in-one-mid' target='_blank'>one-way-animation</a>
+- <a href='/brain/Lecture/apple/apple-html/all-in-one-mid' target='_blank'>one-way-animation</a>
 
-- <a href='/brain/Lecture/apple-html/all-in-one-last' target='_blank'>animation 심화</a>
+- <a href='/brain/Lecture/apple/apple-html/all-in-one-last' target='_blank'>animation 심화</a>
 
 추가로, 애니메이션 제작 시 `display: none;` 보다 `visibility: hidden;`이 낫다.
 

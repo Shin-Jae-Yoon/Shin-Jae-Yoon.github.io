@@ -19,6 +19,6 @@ weight: 1
 
 ## 목차
 
-- [코딩애플 All-in-One 기초모듈](brain/Lecture/apple-html/all-in-one-basic)
-- [코딩애플 All-in-One 중급모듈](brain/Lecture/apple-html/all-in-one-mid)
-- [코딩애플 All-in-One 고급모듈](brain/Lecture/apple-html/all-in-one-last)
+- [코딩애플 All-in-One 기초모듈](brain/Lecture/apple/apple-html/all-in-one-basic)
+- [코딩애플 All-in-One 중급모듈](brain/Lecture/apple/apple-html/all-in-one-mid)
+- [코딩애플 All-in-One 고급모듈](brain/Lecture/apple/apple-html/all-in-one-last)

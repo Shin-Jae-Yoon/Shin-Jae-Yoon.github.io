@@ -1,4 +1,4 @@
 ---
 title: "코딩애플 - Git"
-weight: 4
+weight: 1
 ---

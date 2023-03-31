@@ -1,4 +1,4 @@
 ---
 title: "잔재미코딩 - Python"
-weight: 7
+weight: 8
 ---

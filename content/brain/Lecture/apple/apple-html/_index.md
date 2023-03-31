@@ -1,4 +1,4 @@
 ---
 title: "코딩애플 - HTML/CSS"
-weight: 5
+weight: 2
 ---

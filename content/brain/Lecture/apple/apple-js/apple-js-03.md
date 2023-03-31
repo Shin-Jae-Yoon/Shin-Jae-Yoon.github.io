@@ -116,7 +116,7 @@ level3.html 실습에서 `let car2 = { name: '소나타', price: [50000, 3000, 4
 
 ### Select 01 : 인풋 다루기
 
-기본적으로 ,`<select>` 사용법은 <a href='/brain/Lecture/apple-js/apple-js-01' target='_blank'>JS 입문과 웹 개발 01</a>에서 설명한 input 태그 사용법과 동일하다. input 대신 select를 사용하는 이유는, input은 자유로운 반면 **select는 선택지를 제공해줘서 데이터를 쉽게 관리**할 수 있기 때문이다.
+기본적으로 ,`<select>` 사용법은 <a href='/brain/Lecture/apple/apple-js/apple-js-01' target='_blank'>JS 입문과 웹 개발 01</a>에서 설명한 input 태그 사용법과 동일하다. input 대신 select를 사용하는 이유는, input은 자유로운 반면 **select는 선택지를 제공해줘서 데이터를 쉽게 관리**할 수 있기 때문이다.
 
 <br>
 
@@ -1013,7 +1013,7 @@ y = 1150 * a + b
 
 - `e.changedTouches[0].clientX` : touchend에는 `touches[0]`이 아닌 `changedTouches[0]`을 해줘야 함
 
-실습 예제는 <a href='/brain/Lecture/apple-js/apple-js-02' target='_blank'>JS 입문과 웹 개발 02</a>를 참고하도록 하자.
+실습 예제는 <a href='/brain/Lecture/apple/apple-js/apple-js-02' target='_blank'>JS 입문과 웹 개발 02</a>를 참고하도록 하자.
 
 <br>
 

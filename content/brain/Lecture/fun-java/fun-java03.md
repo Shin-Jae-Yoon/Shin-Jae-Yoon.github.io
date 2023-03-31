@@ -101,6 +101,8 @@ Book b = new Book();
 
 ### 클래스 다이어그램
 
+![](brain/image/fun-java07-2.png)
+
 ![](brain/image/fun-java03-3.png)
 
 <br>

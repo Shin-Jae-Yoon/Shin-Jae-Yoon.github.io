@@ -18,7 +18,7 @@ weight: 1
 
 ## 목차
 
-- [코딩애플 JS 입문과 웹 개발 01](brain/Lecture/apple-js/apple-js-01)
-- [코딩애플 JS 입문과 웹 개발 02](brain/Lecture/apple-js/apple-js-02)
-- [코딩애플 JS 입문과 웹 개발 03](brain/Lecture/apple-js/apple-js-03)
-- [코딩애플 JS 라이브러리](brain/Lecture/apple-js/js-library)
+- [코딩애플 JS 입문과 웹 개발 01](brain/Lecture/apple/apple-js/apple-js-01)
+- [코딩애플 JS 입문과 웹 개발 02](brain/Lecture/apple/apple-js/apple-js-02)
+- [코딩애플 JS 입문과 웹 개발 03](brain/Lecture/apple/apple-js/apple-js-03)
+- [코딩애플 JS 라이브러리](brain/Lecture/apple/apple-js/js-library)
