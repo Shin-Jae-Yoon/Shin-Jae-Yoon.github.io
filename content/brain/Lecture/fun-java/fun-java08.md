@@ -57,7 +57,20 @@ public class Book {
 | `@exception`   | 발생할 수 있는 Exception 정의                           |
 | ...            | ...                                                     | 
 
+<br>
 
+### JavaDoc 장점
+
+- JavaDoc 주석문을 활용하여 Java Document를 만들 수 있다.
+
+인텔리제이에서 JavaDoc 생성하기
+1. shift 키를 2번 연속 누른다.
+2. generate javaDoc을 입력
+3. custom scope를 선택한 후 JavaDoc을 생성할 패키지, 클래스, 인터페이스 등을 선택한다. exclude를 선택해서 생성하지 않을 것들도 지정할 수 있다.
+4. output directory에서 JavaDoc이 생성할 경로를 지정한다.
+5. other command line arguments에는 다음을 입력한다.
+	- `-encoding UTF-8 -charset UTF-8 -docencoding UTF-8`
+6. OK 버튼 누르고 생성
 
 
 <hr>

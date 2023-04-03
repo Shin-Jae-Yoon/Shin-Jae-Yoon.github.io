@@ -14,3 +14,4 @@ weight: 1
 - [4주차 스터디](brain/Interview/dog-study/dog-week04)
 - [5주차 스터디](brain/Interview/dog-study/dog-week05)
 - [6주차 스터디](brain/Interview/dog-study/dog-week06)
+- [7주차 스터디](brain/Interview/dog-study/dog-week07)
