@@ -72,6 +72,18 @@ public class Book {
 	- `-encoding UTF-8 -charset UTF-8 -docencoding UTF-8`
 6. OK 버튼 누르고 생성
 
+![](brain/image/fun-java08-1.png)
+
+![](brain/image/fun-java08-2.png)
+
+<br>
+
+### 주석문을 잘 작성하는 법
+
+- 주석문이 없어도 이해할 수 있도록 클래스, 메서드, 변수 이름을 작성하는 것이다.
+- 즉, 주석문을 최소한으로 작성하라는 것이다.
+- 정~ 주석문을 쓸거면 JavaDoc 주석문을 잘 작성하자.
+
 
 <hr>
 
