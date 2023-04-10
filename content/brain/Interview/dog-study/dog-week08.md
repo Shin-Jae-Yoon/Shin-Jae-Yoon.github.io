@@ -67,3 +67,23 @@ OSIV는 왜 나오게 되었을까? 아래를 한 번 살펴보자.
 
 <hr>
 
+## JPA
+
+==**JPA(Java Persistence API)는 RDBMS와 OOP 객체 사이의 불일치에서 오는 패러다임을 해결하기 위해 자바에서 만들어낸 ORM(Object-Relational Mapping) 기술의 표준 명세이다.**==
+
+- Java에서 제공하는 API이다. Spring에서 제공하는 것이 아니다.
+- [6주차 스터디](/brain/Interview/dog-study/dog-week06)에서 언급한 것처럼, Spring Framework의 PSA(Portable Service Abstraction)에 의해 POJO를 사용하면서 특정 기술인 ORM을 사용하기 위해 정해둔 표준 인터페이스이다.
+- SQL을 매핑하지 않고 ==**자바 클래스와 DB 테이블을 매핑**==
+	- 객체가 테이블이 되도록 매핑시켜주는 것
+
+![](brain/image/dog-week08-1.png)
+
+<br>
+
+
+
+<hr>
+
+## 참고
+
+- <a href='https://velog.io/@modsiw/JPAJava-Persistence-API%EC%9D%98-%EA%B0%9C%EB%85%90' target='_blank'>modsiw님의 JPA 정리 게시글</a>
