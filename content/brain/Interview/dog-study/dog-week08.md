@@ -25,7 +25,7 @@ tags: [""]
 - Spring에서 Presentation Layer(View, Controller)에는 트랜잭션이 없기 때문에 엔티티를 수정할 수는 없다.
 - **Spring에서는 OSIV 기능이 default로 켜져있다.** 따라서, View 단을 렌더링 하면서 쿼리가 나갈 수 있다고 WARN을 띄워주는데 이를 없애려면 명시적으로 OSIV 기능을 설정하면 된다.
 	- 영속성 컨택스트를 요청이 들어올 때 미리 만들고, 응답할 때까지 유지시켜준다.
-	- 서블릿의 필터 혹은 스프링의 인터셉터에서 미리 영속성 컨택스트를 만들어서 사용한다.
+	- **서블릿의 필터** 혹은 **스프링의 인터셉터**에서 미리 영속성 컨택스트를 만들어서 사용한다.
 - OSIV 덕분에 영속성 컨택스트가 살아있어서 **Lazy Loading이 가능**하다.
 	- 이로 인해 Service에 초기화를 위한 코드를 작성하지 않아도 된다.
 
@@ -69,16 +69,21 @@ OSIV는 왜 나오게 되었을까? 아래를 한 번 살펴보자.
 
 ## JPA
 
-==**JPA(Java Persistence API)는 RDBMS와 OOP 객체 사이의 불일치에서 오는 패러다임을 해결하기 위해 자바에서 만들어낸 ORM(Object-Relational Mapping) 기술의 표준 명세이다.**==
+==**JPA(Java Persistence API)는 RDBMS와 OOP 객체 사이의 불일치에서 오는 패러다임을 해결하기 위해 자바 진영에서 만들어낸 ORM(Object-Relational Mapping) 기술의 표준 명세이다.**==
 
 - Java에서 제공하는 API이다. Spring에서 제공하는 것이 아니다.
 - [6주차 스터디](/brain/Interview/dog-study/dog-week06)에서 언급한 것처럼, Spring Framework의 PSA(Portable Service Abstraction)에 의해 POJO를 사용하면서 특정 기술인 ORM을 사용하기 위해 정해둔 표준 인터페이스이다.
 - SQL을 매핑하지 않고 ==**자바 클래스와 DB 테이블을 매핑**==
 	- 객체가 테이블이 되도록 매핑시켜주는 것
 
+![](brain/image/dog-week08-2.png)
+
 ![](brain/image/dog-week08-1.png)
 
 <br>
+
+### JPA 사용 이유
+
 
 
 
@@ -87,3 +92,5 @@ OSIV는 왜 나오게 되었을까? 아래를 한 번 살펴보자.
 ## 참고
 
 - <a href='https://velog.io/@modsiw/JPAJava-Persistence-API%EC%9D%98-%EA%B0%9C%EB%85%90' target='_blank'>modsiw님의 JPA 정리 게시글</a>
+- <a href='https://incheol-jung.gitbook.io/docs/study/jpa/2020-04-07-jpa-chap1' target='_blank'>Incheol님의 김영한님 JPA 책 정리 게시글</a>
+- <a href='https://ultrakain.gitbooks.io/jpa/content/chapter1/chapter1.3.html' target='_blank'>ultrakain gitbooks - JPA</a>

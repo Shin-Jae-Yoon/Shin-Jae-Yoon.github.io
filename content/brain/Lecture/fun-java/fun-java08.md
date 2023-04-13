@@ -1,5 +1,5 @@
 ---
-title: "08. 주석문, 예외처리, enum"
+title: "08. 예외처리, enum"
 date: "2023-03-31 01:26"
 enableToc: true
 tags: [""]
