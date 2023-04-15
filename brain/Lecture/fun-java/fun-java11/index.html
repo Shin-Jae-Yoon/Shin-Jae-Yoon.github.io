@@ -1,0 +1,788 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.457db6eb0cd3fc8992da6c4450ca2f65.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.7d382857a3e26b9d1012c05e6f3a9b18.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.adda4136552d2c08fc21ee67fff39adb.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.5,scale:.4}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.e4f749984b89f35680b8cfadddf2b482.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>JVM</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring 기본</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week04/ class=page-link style=display:block;width:100%>4주차 - Spring 웹</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week05/ class=page-link style=display:block;width:100%>5주차 - Spring 응용</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week06/ class=page-link style=display:block;width:100%>6주차 - Spring Data</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week07/ class=page-link style=display:block;width:100%>7주차 - Spring 트랜잭션</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week08/ class=page-link style=display:block;width:100%>8주차 - Spring JPA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 네트워크</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 운영체제</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 - 공통</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-01/ class=page-link style=display:block;width:100%>섹션0 - 섹션3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/kim-spring/spring-basic/spring-basic-02/ class=page-link style=display:block;width:100%>섹션4 - 섹션8</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - JPA</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>부부개발단 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java/ class=page-link style=display:block;width:100%>개요. 즐거운 자바</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java01/ class=page-link style=display:block;width:100%>01. Java 시작</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java02/ class=page-link style=display:block;width:100%>02. Java 기본 문법</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java03/ class=page-link style=display:block;width:100%>03. 객체지향 1/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java04/ class=page-link style=display:block;width:100%>04. 객체지향 2/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java05/ class=page-link style=display:block;width:100%>05. 객체지향 3/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java06/ class=page-link style=display:block;width:100%>06. 배열과 Arrays 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java07/ class=page-link style=display:block;width:100%>07. 제네릭과 컬렉션</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java08/ class=page-link style=display:block;width:100%>08. 예외처리, enum</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java09/ class=page-link style=display:block;width:100%>09. Java I/O</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java10/ class=page-link style=display:block;width:100%>10. Java Thread</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fun-java/fun-java11/ class=page-link style=display:block;width:100%>11. Java Network</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>패캠 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 1 - Part 4</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch00/ class=page-link style=display:block;width:100%>Part1 - Part4 강의소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch01/ class=page-link style=display:block;width:100%>Part1 - Ch01 문자열</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch02/ class=page-link style=display:block;width:100%>Part1 - Ch02 시간복잡도</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part1-4/p1-ch03/ class=page-link style=display:block;width:100%>Part1 - Ch03 배열</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 5 - 단기완성</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part5/p5-ch00/ class=page-link style=display:block;width:100%>Part5 - Ch00 강의준비</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/fastcampus-algo/part5/p5-ch01/ class=page-link style=display:block;width:100%>Part5 - Ch01 완전탐색</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 6 - SQL</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/apple/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬입문과 크롤링기초 부트캠프</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>자바의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.00c2c8e61ed4afe7893759f1132a5ec0.js></script></div><div class=single-content><h1>11. Java Network</h1><p class=meta>Last updated -
+2023년 04월 16일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Lecture/fun-java/fun-java11.md rel=noopener>Edit Source</a></p><ul class=tags></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#네트워크-프로그래밍>네트워크 프로그래밍</a><ul><li><a href=#기초-용어>기초 용어</a></li><li><a href=#java-네트워크>Java 네트워크</a></li><li><a href=#클라이언트-서버>클라이언트-서버</a></li><li><a href=#예제-실습>예제 실습</a></li><li><a href=#웹서버-동작>웹서버 동작</a></li></ul></li><li><a href=#채팅-프로그램-예제>채팅 프로그램 예제</a><ul><li><a href=#구현-스케치>구현 스케치</a></li><li><a href=#실습-코드---서버>실습 코드 - 서버</a></li><li><a href=#실습코드---클라>실습코드 - 클라</a></li></ul></li></ul></nav></details></aside><a href=#네트워크-프로그래밍><h2 id=네트워크-프로그래밍><span class=hanchor arialabel=Anchor># </span>네트워크 프로그래밍</h2></a><a href=#기초-용어><h3 id=기초-용어><span class=hanchor arialabel=Anchor># </span>기초 용어</h3></a><p><strong>IP 주소와 Port</strong></p><ul><li><strong>IP</strong> : 컴퓨터를 구분하는 주소</li><li><strong>Port</strong> : 컴퓨터 안에 있는 서버들을 구분하는 값<ul><li>FTP서버, 웹서버 등 다양한 서버들이 컴퓨터에 실행될 수 있으니까</li></ul></li></ul><br><table><thead><tr><th>구분</th><th>범위</th><th>설명</th></tr></thead><tbody><tr><td>Well Known Port 번호</td><td>0 ~ 1023</td><td>국제 인터넷 주소 관리 기구 (ICANN)에서 미리 예약해둔 포트</td></tr><tr><td>Registered Port 번호</td><td>1024 ~ 49151</td><td>개인 또는 회사에서 사용하는 포트</td></tr><tr><td>Dynamic 또는 Private Port 번호</td><td>49152 ~ 65535</td><td>OS가 부여하는 동적 포트, 개인적인 목적으로 사용할 수 있는 포트</td></tr></tbody></table><br><p><strong>127.0.0.1</strong></p><ul><li>컴퓨터 자신의 IP</li></ul><br><p><strong>도메인(Domain) 주소</strong></p><ul><li><code>https://www.naver.com</code>에서 <code>www.naver.com</code>은 도메인 주소이다.</li></ul><br><p><strong>도메인 네임 서버 (DNS, Domain Name Server)</strong></p><ul><li>도메인 주소를 IP로 변환한다.</li><li><code>nslookup 도메인주소</code><ul><li>이 명령으로 도메인에 해당하는 IP 주소를 알아낼 수 있음</li></ul></li></ul><br><p><strong>Mac, Linux에서 DNS 설정</strong></p><ul><li><code>/etc/resolv.conf</code> 파일에서 설정</li><li>보통 nameserver는 2개를 사용하는데, 하나가 죽었을 때 다른 것을 사용하기 위함</li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-1.png width=auto alt></p><br><p><strong>localhost</strong></p><ul><li>컴퓨터 자신의 도메인</li></ul><br><a href=#java-네트워크><h3 id=java-네트워크><span class=hanchor arialabel=Anchor># </span>Java 네트워크</h3></a><p><strong>IP 주소 알아내기</strong> : InetAddress로 알아냄</p><ul><li>사용자 컴퓨터의 IP 주소 알아내기</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>InetAddress</span> <span class=n>ia</span> <span class=o>=</span> <span class=n>InetAddress</span><span class=o>.</span><span class=na>getLocalHost</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ia</span><span class=o>.</span><span class=na>getHostAddress</span><span class=o>());</span>
+</span></span></code></pre></td></tr></table></div></div><br><ul><li>google의 IP 주소 알아내기<ul><li>하나의 도메인은 여러 개의 IP 주소와 매핑될 수 있으니까 배열로 받았음</li></ul></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>InetAddress</span><span class=o>[]</span> <span class=n>iaArr</span> <span class=o>=</span> <span class=n>InetAddress</span><span class=o>.</span><span class=na>getAllByName</span><span class=o>(</span><span class=s>&#34;www.google.com&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=o>(</span><span class=n>InetAddress</span> <span class=n>ia</span> <span class=o>:</span> <span class=n>iaArr</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ia</span><span class=o>.</span><span class=na>getHostAddress</span><span class=o>());</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight title=IpAddressExam><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.InetAddress</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.UnknownHostException</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>IpAddressExam</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>InetAddress</span> <span class=n>ia</span> <span class=o>=</span> <span class=n>InetAddress</span><span class=o>.</span><span class=na>getLocalHost</span><span class=o>();</span> <span class=c1>// 내 컴퓨터의 IP 정보를 구함  
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ia</span><span class=o>.</span><span class=na>getHostAddress</span><span class=o>());</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>UnknownHostException</span> <span class=n>ue</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>ue</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>InetAddress</span><span class=o>[]</span> <span class=n>iaArray</span> <span class=o>=</span> <span class=n>InetAddress</span><span class=o>.</span><span class=na>getAllByName</span><span class=o>(</span><span class=s>&#34;www.google.com&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=o>(</span><span class=n>InetAddress</span> <span class=n>ia</span> <span class=o>:</span> <span class=n>iaArray</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>ia</span><span class=o>.</span><span class=na>getHostAddress</span><span class=o>());</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>UnknownHostException</span> <span class=n>ue</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>ue</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 127.0.0.1
+</span></span></span><span class=line><span class=cl><span class=c1>// 142.250.206.228
+</span></span></span><span class=line><span class=cl><span class=c1>// 2404:6800:400a:805:0:0:0:2004
+</span></span></span></code></pre></td></tr></table></div></div><br><a href=#클라이언트-서버><h3 id=클라이언트-서버><span class=hanchor arialabel=Anchor># </span>클라이언트-서버</h3></a><p><mark><strong>Client & Server 프로그래밍</strong></mark></p><ul><li>Socket : Server에 접속하는 역할</li><li>ServerSocket : Client의 접속 요청을 기다리는 역할<ul><li>Client 요청을 기다리다가 접속하면 Socket을 반환</li></ul></li><li>Socket과 Socket 간에는 IO 객체를 이용하여 통신할 수 있다.</li></ul><br><p>사용자가 웹 브라우저에 <code>www.naver.com</code>을 입력하면</p><ol><li>접속</li><li>클라이언트가 서버에게 요청 정보 보냄</li><li>서버가 클라이언트에게 응답 정보 보냄</li><li>접속 close</li></ol><p>이러한 방식으로 통신하겠다고 약속했다. 이것을 <mark><strong>HTTP 프로토콜(규약)</strong></mark>이라고 한다.</p><br><p><mark><strong>Java에서 Socket으로 통신하는 방법</strong></mark></p><ol><li>Port를 가지는 ServerSocket 인스턴스를 서버에서 생성</li><li><code>accept()</code> 메서드를 사용해서 클라이언트를 기다림<ul><li>이렇게 기다리는 메서드를 <strong>blocking 메서드</strong>라고 함</li></ul></li><li>IP와 Port를 가지는 Socket 인스턴스를 클라이언트에서 생성</li><li>클라이언트가 생성한 Socket 인스턴스로 서버의 ServerSocket에 접속<ul><li><code>accept()</code> 메서드가 return 값으로 Socket을 반환</li><li>서버에서 반환된 Socket과 클라이언트의 Socket이 연결된 상태</li><li>IO 객체를 이용하여 통신할 수 있으니 InputStream, OutputStream 등 이용 가능</li></ul></li></ol><p>동시에 읽고 쓰려면 어떻게 해야할까? 앞에서 생각한 Thread를 생각하기 !</p><br><a href=#예제-실습><h3 id=예제-실습><span class=hanchor arialabel=Anchor># </span>예제 실습</h3></a><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.ServerSocket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.Socket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>VerySimpleWebServer</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 9090 포트로 대기  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>ServerSocket</span> <span class=n>ss</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ServerSocket</span><span class=o>(</span><span class=n>9090</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 클라이언트를 대기  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=c1>// 클라이언트가 접속하는 순간, 클라이언트와 통신할 수 있는 socket을 반환  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;클라이언트 접속 대기중 ...&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Socket</span> <span class=n>socket</span> <span class=o>=</span> <span class=n>ss</span><span class=o>.</span><span class=na>accept</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 웹 브라우저(클라이언트)에서 http://127.0.0.1:9090에 접속하는 순간 출력됨  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>socket</span><span class=o>.</span><span class=na>toString</span><span class=o>());</span>  
+</span></span><span class=line><span class=cl>          
+</span></span><span class=line><span class=cl>        <span class=n>ss</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;서버가 종료됩니다 ...&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 클라이언트 접속 대기중 ...
+</span></span></span><span class=line><span class=cl><span class=c1>// Socket[addr=/127.0.0.1,port=51531,localport=9090]
+</span></span></span><span class=line><span class=cl><span class=c1>// 서버가 종료됩니다 ...
+</span></span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.ServerSocket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.Socket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>VerySimpleWebServer</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>ServerSocket</span> <span class=n>ss</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ServerSocket</span><span class=o>(</span><span class=n>9090</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;클라이언트 접속 대기중 ...&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Socket</span> <span class=n>socket</span> <span class=o>=</span> <span class=n>ss</span><span class=o>.</span><span class=na>accept</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// Client와 읽고 쓸 수 있는 InputStream, OutputStream 반환됨  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>OutputStream</span> <span class=n>out</span> <span class=o>=</span> <span class=n>socket</span><span class=o>.</span><span class=na>getOutputStream</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>InputStream</span> <span class=n>in</span> <span class=o>=</span> <span class=n>socket</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// HTTP 프로토콜은 클라이언트가 정보를 서버에게 보내준다. (요청 정보)  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kt>byte</span><span class=o>[]</span> <span class=n>buffer</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>byte</span><span class=o>[</span><span class=n>512</span><span class=o>];</span>  
+</span></span><span class=line><span class=cl>        <span class=kt>int</span> <span class=n>readCount</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>((</span><span class=n>readCount</span> <span class=o>=</span> <span class=n>in</span><span class=o>.</span><span class=na>read</span><span class=o>(</span><span class=n>buffer</span><span class=o>))</span> <span class=o>!=</span> <span class=o>-</span><span class=n>1</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>write</span><span class=o>(</span><span class=n>buffer</span><span class=o>,</span> <span class=n>0</span><span class=o>,</span> <span class=n>readCount</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>   
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>socket</span><span class=o>.</span><span class=na>toString</span><span class=o>());</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>ss</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;서버가 종료됩니다 ...&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>클라이언트 접속 대기중 ...
+</span></span><span class=line><span class=cl>GET / HTTP/1.1
+</span></span><span class=line><span class=cl>Host: 127.0.0.1:9090
+</span></span><span class=line><span class=cl>Connection: keep-alive
+</span></span><span class=line><span class=cl>sec-ch-ua: &#34;Google Chrome&#34;;v=&#34;111&#34;, &#34;Not(A:Brand&#34;;v=&#34;8&#34;, &#34;Chromium&#34;;v=&#34;111&#34;
+</span></span><span class=line><span class=cl>sec-ch-ua-mobile: ?0
+</span></span><span class=line><span class=cl>sec-ch-ua-platform: &#34;macOS&#34;
+</span></span><span class=line><span class=cl>Upgrade-Insecure-Requests: 1
+</span></span><span class=line><span class=cl>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+</span></span><span class=line><span class=cl>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+</span></span><span class=line><span class=cl>Sec-Fetch-Site: none
+</span></span><span class=line><span class=cl>Sec-Fetch-Mode: navigate
+</span></span><span class=line><span class=cl>Sec-Fetch-User: ?1
+</span></span><span class=line><span class=cl>Sec-Fetch-Dest: document
+</span></span><span class=line><span class=cl>Accept-Encoding: gzip, deflate, br
+</span></span><span class=line><span class=cl>Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Socket[addr=/127.0.0.1,port=51560,localport=9090]
+</span></span><span class=line><span class=cl>서버가 종료됩니다 ...
+</span></span></code></pre></td></tr></table></div></div><ul><li>GET 요청 확인 가능 (<code>/</code>)로 들어왔네</li><li>Host ~ 빈 줄 전까지는 <mark><strong>브라우저가 보내주는 헤더 정보</strong></mark></li><li><mark><strong>어떤 요청 방식인지 + 요청 보내는 쪽 정보</strong></mark></li></ul><br><div class=highlight title=VerySimpleWebServer.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>VerySimpleWebServer</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>ServerSocket</span> <span class=n>ss</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ServerSocket</span><span class=o>(</span><span class=n>9090</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;클라이언트 접속 대기중 ...&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Socket</span> <span class=n>socket</span> <span class=o>=</span> <span class=n>ss</span><span class=o>.</span><span class=na>accept</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>InputStream</span> <span class=n>in</span> <span class=o>=</span> <span class=n>socket</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>BufferedReader</span> <span class=n>br</span> <span class=o>=</span> <span class=k>new</span> <span class=n>BufferedReader</span><span class=o>(</span><span class=k>new</span> <span class=n>InputStreamReader</span><span class=o>(</span><span class=n>in</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>firstLine</span> <span class=o>=</span> <span class=n>br</span><span class=o>.</span><span class=na>readLine</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>headers</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>line</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 빈 줄을 만나면 while문 종료  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>while</span> <span class=o>(!(</span><span class=n>line</span> <span class=o>=</span> <span class=n>br</span><span class=o>.</span><span class=na>readLine</span><span class=o>()).</span><span class=na>equals</span><span class=o>(</span><span class=s>&#34;&#34;</span><span class=o>))</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>headers</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>line</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>firstLine</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>headers</span><span class=o>.</span><span class=na>size</span><span class=o>();</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>headers</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 서버가 클라이언트에게 응답메시지 보내기  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>OutputStream</span> <span class=n>out</span> <span class=o>=</span> <span class=n>socket</span><span class=o>.</span><span class=na>getOutputStream</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>PrintWriter</span> <span class=n>pw</span> <span class=o>=</span> <span class=k>new</span> <span class=n>PrintWriter</span><span class=o>(</span><span class=k>new</span> <span class=n>OutputStreamWriter</span><span class=o>(</span><span class=n>out</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;HTTP/1.1 200 OK&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;name : shin jae yoon&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;email : jaeyoon@email.com&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;&lt;html&gt;&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;&lt;h1&gt;Hello!!!&lt;/h1&gt;&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;&lt;/html&gt;&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>socket</span><span class=o>.</span><span class=na>toString</span><span class=o>());</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>ss</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;서버가 종료됩니다 ...&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>응답 메시지는 <a href=https://developer.mozilla.org/ko/docs/Web/HTTP/Messages#http_%EC%9D%91%EB%8B%B5 target=_blank>Mdn web docs</a>에 명시된 응답 메시지 형태로 작성해서 보냈음</li></ul><br><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-2.png width=auto alt></p><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-3.png width=auto alt></p><br><a href=#웹서버-동작><h3 id=웹서버-동작><span class=hanchor arialabel=Anchor># </span>웹서버 동작</h3></a><ul><li>위에서는 요청-응답 한 번 씩만 하고 종료되었다. 이것을 유지되도록 하면 어떻게 해야할까?</li><li><code>while (true)</code>로 무한 루프 돌려야겠지. 그래야 요청-응답, 요청-응답 하니까!</li><li>그런데, 하나의 과정이 끝나기 이전에 다른 요청이 들어오면 어떻게 처리할거임?<ul><li><mark><strong>그래서, 스레드를 사용하는 작업이 필요</strong></mark></li></ul></li></ul><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>com.example.net.webserver</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.io.*</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.ServerSocket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>java.net.Socket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>WebServer</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 클라이언트가 접속할 때까지 대기  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>ServerSocket</span> <span class=n>serverSocket</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ServerSocket</span><span class=o>(</span><span class=n>10000</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 클라이언트가 접속하면 클라이언트와 통신하는 clientSocket 반환  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;1 - 클라이언트 접속 대기&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=k>while</span> <span class=o>(</span><span class=kc>true</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>Socket</span> <span class=n>clientSocket</span> <span class=o>=</span> <span class=n>serverSocket</span><span class=o>.</span><span class=na>accept</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>                <span class=n>ClientThread</span> <span class=n>ct</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ClientThread</span><span class=o>(</span><span class=n>clientSocket</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>                <span class=n>ct</span><span class=o>.</span><span class=na>start</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>serverSocket</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>ClientThread</span> <span class=kd>extends</span> <span class=n>Thread</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>Socket</span> <span class=n>clientSocket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>ClientThread</span><span class=o>(</span><span class=n>Socket</span> <span class=n>clientSocket</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>clientSocket</span> <span class=o>=</span> <span class=n>clientSocket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>InputStream</span> <span class=n>inputStream</span> <span class=o>=</span> <span class=n>clientSocket</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>BufferedReader</span> <span class=n>br</span> <span class=o>=</span> <span class=k>new</span> <span class=n>BufferedReader</span><span class=o>(</span><span class=k>new</span> <span class=n>InputStreamReader</span><span class=o>(</span><span class=n>inputStream</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>OutputStream</span> <span class=n>out</span> <span class=o>=</span> <span class=n>clientSocket</span><span class=o>.</span><span class=na>getOutputStream</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>PrintWriter</span> <span class=n>pw</span> <span class=o>=</span> <span class=k>new</span> <span class=n>PrintWriter</span><span class=o>(</span><span class=k>new</span> <span class=n>OutputStreamWriter</span><span class=o>(</span><span class=n>out</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;2 - 클라이언트 접속 성공&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>String</span> <span class=n>firstLine</span> <span class=o>=</span> <span class=n>br</span><span class=o>.</span><span class=na>readLine</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>String</span> <span class=n>msg</span> <span class=o>=</span> <span class=s>&#34;&#34;</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>firstLine</span><span class=o>.</span><span class=na>indexOf</span><span class=o>(</span><span class=s>&#34;/hello&#34;</span><span class=o>)</span> <span class=o>&gt;=</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>msg</span> <span class=o>=</span> <span class=s>&#34;hello&#34;</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>firstLine</span><span class=o>.</span><span class=na>indexOf</span><span class=o>(</span><span class=s>&#34;/hi&#34;</span><span class=o>)</span> <span class=o>&gt;=</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>msg</span> <span class=o>=</span> <span class=s>&#34;hi&#34;</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>firstLine</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>String</span> <span class=n>line</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>            <span class=k>while</span> <span class=o>(!(</span><span class=n>line</span> <span class=o>=</span> <span class=n>br</span><span class=o>.</span><span class=na>readLine</span><span class=o>()).</span><span class=na>equals</span><span class=o>(</span><span class=s>&#34;&#34;</span><span class=o>))</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>line</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;3 - 응답한다.&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;HTTP/1.1 200 OK&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;name : shin jae yoon&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;email : jaeyoon@email.com&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;&lt;html&gt;&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>firstLine</span> <span class=o>+</span> <span class=s>&#34;!!!&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;&lt;/html&gt;&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>flush</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>br</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>pw</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>clientSocket</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>e</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><hr><a href=#채팅-프로그램-예제><h2 id=채팅-프로그램-예제><span class=hanchor arialabel=Anchor># </span>채팅 프로그램 예제</h2></a><br><a href=#구현-스케치><h3 id=구현-스케치><span class=hanchor arialabel=Anchor># </span>구현 스케치</h3></a><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-4.png width=auto alt></p><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-5.png width=auto alt></p><ul><li>채팅은 클라이언트가 메시지를 보내면, 서버가 연결된 모든 클라이언트에게 메시지를 보내야 한다.<ul><li>이게 <mark><strong>BroadCast</strong></mark></li></ul></li><li>클라이언트가 접속할 때마다 서버는 스레드를 생성한다.</li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-7.png width=auto alt></p><ul><li>서버의 스레드마다 소켓을 가지고 스레드 각각은 클라이언트와 연결</li><li>이때, 서버가 연결된 모든 클라이언트에게 메시지를 보내기 위해 공유 객체도 사용<ul><li>공유 객체에서 스레드에 안전한 리스트를 생성</li><li>스레드 객체가 생성될 때마다 while 문 밖의 outList를 생성자로 하나씩 넣어줌</li><li>스레드가 10개 생성되면, outList라는 하나의 객체를 공유!!</li><li><code>List&lt;PrintWriter> outList = Collections.synchronizedList(new ArrayList&lt;>());</code></li><li><mark><strong>Collections.synchronizedList()</strong></mark></li></ul></li></ul><br><a href=#실습-코드---서버><h3 id=실습-코드---서버><span class=hanchor arialabel=Anchor># </span>실습 코드 - 서버</h3></a><br><div class=highlight title=ChatServer.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ChatServer</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>ServerSocket</span> <span class=n>serverSocket</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ServerSocket</span><span class=o>(</span><span class=n>8888</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>          
+</span></span><span class=line><span class=cl>		<span class=c1>// 공유 객체에서 스레드에 안전한 리스트를 생성  
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=c1>// 스레드 객체가 생성될 때마다 while 문 밖의 outList를 생성자로 하나씩 넣어줌  
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=c1>// 스레드가 10개 생성되면, outList라는 하나의 객체를 공유!!
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>List</span><span class=o>&lt;</span><span class=n>ChatThread</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=n>Collections</span><span class=o>.</span><span class=na>synchronizedList</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;());</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>while</span> <span class=o>(</span><span class=kc>true</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>Socket</span> <span class=n>socket</span> <span class=o>=</span> <span class=n>serverSocket</span><span class=o>.</span><span class=na>accept</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=n>ChatThread</span> <span class=n>chatClient</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ChatThread</span><span class=o>(</span><span class=n>socket</span><span class=o>,</span> <span class=n>list</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=n>chatClient</span><span class=o>.</span><span class=na>start</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight title=ChatThread.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ChatThread</span> <span class=kd>extends</span> <span class=n>Thread</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>String</span> <span class=n>name</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>BufferedReader</span> <span class=n>br</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>PrintWriter</span> <span class=n>pw</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>Socket</span> <span class=n>socket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=n>List</span><span class=o>&lt;</span><span class=n>ChatThread</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>ChatThread</span><span class=o>(</span><span class=n>Socket</span> <span class=n>socket</span><span class=o>,</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>ChatThread</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>socket</span> <span class=o>=</span> <span class=n>socket</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>        <span class=n>BufferedReader</span> <span class=n>br</span> <span class=o>=</span> <span class=k>new</span> <span class=n>BufferedReader</span><span class=o>(</span><span class=k>new</span> <span class=n>InputStreamReader</span><span class=o>(</span><span class=n>socket</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>()));</span>  
+</span></span><span class=line><span class=cl>        <span class=n>PrintWriter</span> <span class=n>pw</span> <span class=o>=</span> <span class=k>new</span> <span class=n>PrintWriter</span><span class=o>(</span><span class=k>new</span> <span class=n>OutputStreamWriter</span><span class=o>(</span><span class=n>socket</span><span class=o>.</span><span class=na>getOutputStream</span><span class=o>()));</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>br</span> <span class=o>=</span> <span class=n>br</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>pw</span> <span class=o>=</span> <span class=n>pw</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>name</span> <span class=o>=</span> <span class=n>br</span><span class=o>.</span><span class=na>readLine</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>list</span> <span class=o>=</span> <span class=n>list</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>list</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>sendMessage</span><span class=o>(</span><span class=n>String</span> <span class=n>msg</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>msg</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>flush</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// broadcast  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=c1>// ChatThread 는 사용자가 보낸 메시지를 읽어들여서  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=c1>// 접속된 모든 클라이언트에게 메시지를 보냄  
+</span></span></span><span class=line><span class=cl><span class=c1></span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 나를 제외한 모든 사용자에게 &#34;OO 님이 연결되었습니다.&#34; 보내기  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=c1>// 현재 ChatThread 를 제외하고 보내기  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>broadcast</span><span class=o>(</span><span class=n>name</span> <span class=o>+</span> <span class=s>&#34;님이 연결되었습니다.&#34;</span><span class=o>,</span> <span class=kc>false</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=n>String</span> <span class=n>line</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>            <span class=k>while</span> <span class=o>((</span><span class=n>line</span> <span class=o>=</span> <span class=n>br</span><span class=o>.</span><span class=na>readLine</span><span class=o>())</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=s>&#34;/quit&#34;</span><span class=o>.</span><span class=na>equals</span><span class=o>(</span><span class=n>line</span><span class=o>))</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                    <span class=k>break</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>                <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>                <span class=c1>// 나를 포함한 ChatTrhead 에게 메시지 보냄  
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=n>broadcast</span><span class=o>(</span><span class=n>name</span> <span class=o>+</span> <span class=s>&#34; : &#34;</span> <span class=o>+</span> <span class=n>line</span><span class=o>,</span> <span class=kc>true</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span> <span class=c1>// Exception이 발생한건 ChatThread가 연결이 끊어진 결  
+</span></span></span><span class=line><span class=cl><span class=c1></span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>broadcast</span><span class=o>(</span><span class=n>name</span> <span class=o>+</span> <span class=s>&#34;님이 연결이 끊어졌습니다.&#34;</span><span class=o>,</span> <span class=kc>false</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=k>this</span><span class=o>.</span><span class=na>list</span><span class=o>.</span><span class=na>remove</span><span class=o>(</span><span class=k>this</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>br</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>            <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>pw</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>            <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>socket</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>void</span> <span class=nf>broadcast</span><span class=o>(</span><span class=n>String</span> <span class=n>msg</span><span class=o>,</span> <span class=kt>boolean</span> <span class=n>includeMe</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>ChatThread</span><span class=o>&gt;</span> <span class=n>chatThreads</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>  
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=k>this</span><span class=o>.</span><span class=na>list</span><span class=o>.</span><span class=na>size</span><span class=o>();</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>chatThreads</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>list</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>chatThreads</span><span class=o>.</span><span class=na>size</span><span class=o>();</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>ChatThread</span> <span class=n>chatThread</span> <span class=o>=</span> <span class=n>chatThreads</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>i</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(!</span><span class=n>includeMe</span><span class=o>)</span> <span class=o>{</span>   <span class=c1>// 나 자신은 포함하지 않기  
+</span></span></span><span class=line><span class=cl><span class=c1></span>                    <span class=k>if</span> <span class=o>(</span><span class=n>chatThreads</span> <span class=o>==</span> <span class=k>this</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                        <span class=k>continue</span><span class=o>;</span> <span class=c1>// break?  
+</span></span></span><span class=line><span class=cl><span class=c1></span>                    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>                <span class=o>}</span>  
+</span></span><span class=line><span class=cl>                <span class=n>chatThread</span><span class=o>.</span><span class=na>sendMessage</span><span class=o>(</span><span class=n>msg</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>e</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#실습코드---클라><h3 id=실습코드---클라><span class=hanchor arialabel=Anchor># </span>실습코드 - 클라</h3></a><ul><li>configuration 설정</li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-9.png width=auto alt></p><ol><li>Application 누르면 Add new configuration 나옴</li><li>하나 생성하고 돌릴 코드위치 넣어주고</li><li>Modify options에서 ALLOW MULTIPLE INSTANCES 추가하기</li></ol><br><ul><li>결과</li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/fun-java11-8.png width=auto alt></p><ul><li>옆에 점 세개 누르면 바로 args 정할 수 있음</li></ul><br><div class=highlight title=ChatClient.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ChatClient</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>args</span><span class=o>.</span><span class=na>length</span> <span class=o>!=</span> <span class=n>1</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;사용법 : 닉네임 설정&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=k>return</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>String</span> <span class=n>name</span> <span class=o>=</span> <span class=n>args</span><span class=o>[</span><span class=n>0</span><span class=o>];</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Socket</span> <span class=n>socket</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Socket</span><span class=o>(</span><span class=s>&#34;127.0.0.1&#34;</span><span class=o>,</span> <span class=n>8888</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>BufferedReader</span> <span class=n>br</span> <span class=o>=</span> <span class=k>new</span> <span class=n>BufferedReader</span><span class=o>(</span><span class=k>new</span> <span class=n>InputStreamReader</span><span class=o>(</span><span class=n>socket</span><span class=o>.</span><span class=na>getInputStream</span><span class=o>()));</span>  
+</span></span><span class=line><span class=cl>        <span class=n>PrintWriter</span> <span class=n>pw</span> <span class=o>=</span> <span class=k>new</span> <span class=n>PrintWriter</span><span class=o>(</span><span class=k>new</span> <span class=n>OutputStreamWriter</span><span class=o>(</span><span class=n>socket</span><span class=o>.</span><span class=na>getOutputStream</span><span class=o>()));</span>  
+</span></span><span class=line><span class=cl>        <span class=n>BufferedReader</span> <span class=n>keyboard</span> <span class=o>=</span> <span class=k>new</span> <span class=n>BufferedReader</span><span class=o>(</span><span class=k>new</span> <span class=n>InputStreamReader</span><span class=o>(</span><span class=n>System</span><span class=o>.</span><span class=na>in</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 닉네임 전송  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>name</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>pw</span><span class=o>.</span><span class=na>flush</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 백그라운드로 서버가 보내준 메시지를 읽어서 화면에 출력  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>ClientInputThread</span> <span class=n>clientInputThread</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ClientInputThread</span><span class=o>(</span><span class=n>br</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>clientInputThread</span><span class=o>.</span><span class=na>start</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 클라이언트트 읽어들인 메시지를 서버에게 전송  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>String</span> <span class=n>line</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>            <span class=k>while</span> <span class=o>((</span><span class=n>line</span> <span class=o>=</span> <span class=n>keyboard</span><span class=o>.</span><span class=na>readLine</span><span class=o>())</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=o>(</span><span class=s>&#34;/quit&#34;</span><span class=o>.</span><span class=na>equals</span><span class=o>(</span><span class=n>line</span><span class=o>))</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                    <span class=k>break</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>                <span class=o>}</span>  
+</span></span><span class=line><span class=cl>                <span class=n>pw</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>line</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>                <span class=n>pw</span><span class=o>.</span><span class=na>flush</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>e</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>socket</span><span class=o>.</span><span class=na>close</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight title=ClientInputThread.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ClientInputThread</span> <span class=kd>extends</span> <span class=n>Thread</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=n>BufferedReader</span> <span class=n>br</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>ClientInputThread</span><span class=o>(</span><span class=n>BufferedReader</span> <span class=n>br</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>br</span> <span class=o>=</span> <span class=n>br</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>String</span> <span class=n>line</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>            <span class=k>while</span> <span class=o>((</span><span class=n>line</span> <span class=o>=</span> <span class=n>br</span><span class=o>.</span><span class=na>readLine</span><span class=o>())</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>line</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>            <span class=o>}</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>Exception</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;연결이 종료되었습니다.&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#네트워크-프로그래밍>네트워크 프로그래밍</a><ul><li><a href=#기초-용어>기초 용어</a></li><li><a href=#java-네트워크>Java 네트워크</a></li><li><a href=#클라이언트-서버>클라이언트-서버</a></li><li><a href=#예제-실습>예제 실습</a></li><li><a href=#웹서버-동작>웹서버 동작</a></li></ul></li><li><a href=#채팅-프로그램-예제>채팅 프로그램 예제</a><ul><li><a href=#구현-스케치>구현 스케치</a></li><li><a href=#실습-코드---서버>실습 코드 - 서버</a></li><li><a href=#실습코드---클라>실습코드 - 클라</a></li></ul></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.6705788a3699b0ba2156c57e629980a4.js></script></body></html>
