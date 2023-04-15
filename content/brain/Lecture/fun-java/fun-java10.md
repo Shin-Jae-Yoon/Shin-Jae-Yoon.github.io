@@ -198,7 +198,7 @@ Java에서 스레드를 생성하는 방법은 2가지가 있다.
 ```java
 class Xxx extends Thread {
 	public void run() {
-		// 동시에 실행될 코드 작성
+		// 동시에 실행될 드 작성
 	}
 }
 ```
@@ -356,3 +356,6 @@ public class MyThreadExam2 {
     }  
 }
 ```
+
+<br>
+
