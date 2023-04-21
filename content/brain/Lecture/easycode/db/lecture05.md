@@ -31,9 +31,9 @@ SELECT name, position FROM employee WHERE id = 9;
 - **projection condition : 관심있어 하는 속성 리스트**
 	- `SELECT name, position`
 
-<br>
+<br><br>
 
-==**project 2002를 리딩(leading)하고 있는 임직원의 ID와 이름과 직군 조회**==
+**ex) project 2002를 리딩(leading)하고 있는 임직원의 ID와 이름과 직군 조회**
 
 ![](brain/image/lecture05-1.png)
 
@@ -91,24 +91,23 @@ WHERE project.id = 2002 and project.leader_id = employee.id;
 SELECT DISTINCT 속성명 FROM 테이블
 ```
 
-<br>
+<br><br>
 
-==**예를 들어, 디자이너들이 참여하고 있는 프로젝트들의 ID와 이름을 알고싶음**==
-- `WORKS_ON` 테이블이 나머지 두 테이블을 연결해주는 연결고리 역할
-
-<br>
+**ex) 디자이너들이 참여하고 있는 프로젝트들의 ID와 이름을 알고싶음**
 
 ![](brain/image/lecture05-9.png)
+
+- `WORKS_ON` 테이블이 나머지 두 테이블을 연결해주는 연결고리 역할
 
 ![](brain/image/lecture05-11.png)
 
 - 근데 결과를 보면 중복이 발생. 이때 DISTINCT 사용!
 
-<br>
-
 ![](brain/image/lecture05-12.png)
 
 <br>
+
+<hr>
 
 ### LIKE
 
@@ -144,25 +143,27 @@ WHERE 속성 LIKE 'N _ _ _';
 - `%`로 시작하거나 `_`로 끝나는 프로젝트 이름을 찾고싶다면?
 - `SELECT name FROM project WHERE name LIKE '\%%' or name LIKE '%\_';`
 
-<br>
+<br><br>
 
-==**예를 들어, 이름이 N으로 시작하거나 N으로 끝나는 임직원들의 이름 알고싶음**==
+**ex) 이름이 N으로 시작하거나 N으로 끝나는 임직원들의 이름 알고싶음**
 
 ![](brain/image/lecture05-13.png)
 
-<br>
+<br><br>
 
-==**예를 들어, 이름에 NG가 들어가는 임직원들의 이름을 알고싶음**==
+**ex) 이름에 NG가 들어가는 임직원들의 이름을 알고싶음**
 
 ![](brain/image/lecture05-14.png)
 
-<br>
+<br><br>
 
-==**예를 들어, 이름이 J로 시작하는, 총 네 글자의 이름을 가지는 임직원들의 이름 알고싶음**==
+**ex) 이름이 J로 시작하는, 총 네 글자의 이름을 가지는 임직원들의 이름 알고싶음**
 
 ![](brain/image/lecture05-15.png)
 
 <br>
+
+<hr>
 
 ### asterisk
 

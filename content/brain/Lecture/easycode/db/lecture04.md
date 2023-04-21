@@ -62,6 +62,8 @@ SELECT * FROM 테이블명;
 
 <br>
 
+<hr>
+
 ### 데이터 수정
 
 <br>
@@ -72,9 +74,9 @@ SET 속성1 = 값1
 [WHERE 조건];
 ```
 
-<br>
+<br><br>
 
-==**만약, 개발팀 (dept_id가 1003)의 연봉을 2배 인상하려고 한다면?**==
+**ex) 개발팀 (dept_id가 1003)의 연봉을 2배 인상하려고 한다면?**
 
 ```sql
 UPDATE employee
@@ -82,9 +84,9 @@ SET salary = salary * 2
 WHERE dept_id = 1003;
 ```
 
-<br>
+<br><br>
 
-==**만약, 프로젝트 ID 2003에 참여한 임직원의 연봉을 2배 인상하려고 한다면?**==
+**ex) 프로젝트 ID 2003에 참여한 임직원의 연봉을 2배 인상하려고 한다면?**
 
 ![](brain/image/lecture04-8.png)
 
@@ -108,6 +110,8 @@ WHERE employee.id = works_on.empl_id and works_on.proj_id = 2003;
 
 <br>
 
+<hr>
+
 ### 데이터 삭제
 
 <br>
@@ -119,9 +123,9 @@ DELETE FROM 테이블명
 
 - WHERE 절이 없으면 테이블의 모~든 튜플이 사라지는거라서 주의하자.
 
-<br>
+<br><br>
 
-==**예를 들어, John이 퇴사해서 employee 테이블에서 John 정보 삭제해야함**==
+**ex) John이 퇴사해서 employee 테이블에서 John 정보 삭제해야함**
 - John의 employee ID = 8, 현재 John은 project 2001에 참여 중
 
 <br>
@@ -140,17 +144,17 @@ DELETE FROM employee WHERE id = 8;
 
 - `WORKS_ON` 테이블의 설정이 CASCADE로 되어있어서 `employee` 테이블만 지워도 반영됨
 
-<br>
+<br><br>
 
-==**예를 들어, Dingyo가 두 개의 프로젝트 참여 중인데 하나에서 빠지기로 했으면?**==
+**ex) Dingyo가 두 개의 프로젝트 참여 중인데 하나에서 빠지기로 했으면?**
 
 ```sql
 DELETE FROM works_on WHERE impl_id = 5 and proj_id = 2002;
 ```
 
-<br>
+<br><br>
 
-==**예를 들어, Dingyo가 2001 프로젝트만 집중하고 나머지는 다 빠지려면?**==
+**ex) Dingyo가 2001 프로젝트만 집중하고 나머지는 다 빠지려면?**
 
 ```sql
 DELETE FROM works_on WHERE impl_id = 5 and proj_id <> 2001;

@@ -14,6 +14,8 @@ weight: 1
 4. [04. 데이터 추가/수정/삭제](brain/Lecture/easycode/db/lecture04)
 5. [05. 데이터 조회](brain/Lecture/easycode/db/lecture05)
 6. [06. 서브쿼리](brain/Lecture/easycode/db/lecture06)
+7. [07. three-valued logic](brain/Lecture/easycode/db/lecture07)
+8. [08. Join](brain/Lecture/easycode/db/lecture08)
 
 <br>
 
