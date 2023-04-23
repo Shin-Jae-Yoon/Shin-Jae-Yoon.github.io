@@ -19,6 +19,8 @@ weight: 1
 9. [09. 통계함수](brain/Lecture/easycode/db/lecture09)
 10. [10. stored function](brain/Lecture/easycode/db/lecture10)
 11. [11. stored procedure](brain/Lecture/easycode/db/lecture11)
+12. [12. 실무에서 프로시저](brain/Lecture/easycode/db/lecture12)
+13. [13. trigger](brain/Lecture/easycode/db/lecture13)
 
 <br>
 
