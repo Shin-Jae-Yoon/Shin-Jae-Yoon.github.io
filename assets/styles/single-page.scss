@@ -276,10 +276,10 @@
   }
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1750px) {
   .single-container {
     .single-content {
-      padding: 3em 5em;
+      padding: 3em 10em;
 
       img {
         width: 90%;
@@ -292,6 +292,20 @@
         }
       }
       
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .single-container {
+    .single-content {
+      padding: 3em 5em;
+
+      img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+      }
     }
   }
 }
