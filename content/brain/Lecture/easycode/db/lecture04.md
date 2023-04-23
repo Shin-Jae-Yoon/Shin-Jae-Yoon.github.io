@@ -12,6 +12,8 @@ weight: 5
 
 ## 데이터 다루기
 
+[이전 강의](brain/Lecture/easycode/db/lecture03)에서 DB를 만들었으니 이제 다뤄보자.
+
 <br>
 
 ### 데이터 추가

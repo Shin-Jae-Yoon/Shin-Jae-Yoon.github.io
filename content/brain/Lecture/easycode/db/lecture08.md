@@ -15,7 +15,7 @@ weight: 9
 <br>
 
 ==**SQL에게 JOIN이란?**==
-- 두 개 이상의 table들에 있는 데이터를 한 번에 조회하는 것
+- 두 개 이상의 table들에 있는 데이터를 한 번에 [조회](brain/Lecture/easycode/db/lecture05)하는 것
 - 여러 종류의 JOIN 존재
 
 <br><br>

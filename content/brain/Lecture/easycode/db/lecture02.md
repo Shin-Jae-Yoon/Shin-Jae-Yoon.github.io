@@ -62,7 +62,8 @@ weight: 3
 
 ## relational data model
 
-수학에서의 relation이 어떤 의미인지는 봤고, **관계형 데이터 모델(relational data model)** 에서 이 개념이 어떻게 적용될까?
+수학에서의 relation이 어떤 의미인지는 봤고, **관계형 데이터 모델(relational data model)** 에서 이 개념이 어떻게 적용될까? 
+=> 데이터 모델 복습은 [1강](brain/Lecture/easycode/db/lecture01)에서
 
 ![](brain/image/lecture02-5.png)
 

@@ -14,7 +14,7 @@ weight: 7
 
 ### Subquery 기본
 
-- ==**subquery**==(nested query / inner query) : SELECT, INSERT, UPDATE, DELETE에 포함된 쿼리
+- ==**subquery**==(nested query / inner query) : [SELECT](brain/Lecture/easycode/db/lecture05), INSERT, UPDATE, DELETE에 포함된 쿼리
 	- subquery는 `()`안에 기술됨
 - ==**outer query**==(main query) : subquery를 포함하는 쿼리
 - 서브쿼리는 WHERE 절에 있을 수도, FROM 절에 있을 수도 있다

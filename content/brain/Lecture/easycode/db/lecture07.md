@@ -14,7 +14,7 @@ weight: 8
 
 ### NULL의 의미
 
-==**SQL에서 NULL의 의미**== : SQL에서는 다양한 의미를 하나의 NULL로 표시
+==**SQL에서 NULL의 의미**== : SQL [조회](brain/Lecture/easycode/db/lecture05)에서는 다양한 의미를 하나의 NULL로 표시
 
 - unknown
 	- 알려지지 않음

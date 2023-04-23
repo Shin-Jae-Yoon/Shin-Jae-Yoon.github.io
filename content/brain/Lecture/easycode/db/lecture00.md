@@ -17,6 +17,8 @@ weight: 1
 7. [07. three-valued logic](brain/Lecture/easycode/db/lecture07)
 8. [08. Join](brain/Lecture/easycode/db/lecture08)
 9. [09. 통계함수](brain/Lecture/easycode/db/lecture09)
+10. [10. stored function](brain/Lecture/easycode/db/lecture10)
+11. [11. stored procedure](brain/Lecture/easycode/db/lecture11)
 
 <br>
 

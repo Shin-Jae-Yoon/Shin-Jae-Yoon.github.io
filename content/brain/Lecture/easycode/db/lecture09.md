@@ -197,7 +197,7 @@ FROM 테이블(들)
 <br>
 
 ==**SELECT 개념적인 실행 순서**==
-- select 쿼리에서 각 절(phase)의 실행 순서는 **개념적인 순서**이다.
+- [select](brain/Lecture/easycode/db/lecture05) 쿼리에서 각 절(phase)의 실행 순서는 **개념적인 순서**이다.
 - select 쿼리의 실제 실행 순서는 각 RDBMS에서 어떻게 구현했는지에 따라 다름
 
 1. **FROM** : 어떤 테이블로부터 조회할 것인지 혹은 join이 된 테이블들
