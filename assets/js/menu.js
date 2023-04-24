@@ -1,3 +1,4 @@
+var lastClickedLink = null;
 ;(() => {
   const aside_box = document.getElementsByClassName("main-aside-box")[0]
   const arrows_wrappers = document.getElementsByClassName("a-wrapper")
@@ -49,7 +50,7 @@
     }
   })
 
-  let lastClickedLink = null
+  lastClickedLink = null
   for (const el of pagesLink) {
     el.addEventListener("click", (e) => {
       // 기존의 클릭된 링크의 스타일을 제거합니다.

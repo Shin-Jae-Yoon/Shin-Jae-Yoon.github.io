@@ -170,6 +170,9 @@ async function drawGraph(baseUrl, isHome, pathColors, graphConfig) {
     .on("click", (_, d) => {
       // SPA navigation
       window.Million.navigate(new URL(`${baseUrl}${decodeURI(d.id).replace(/\s+/g, "-")}/`), ".singlePage")
+      if (lastClickedLink) {
+        lastClickedLink.classList.remove("clicked")
+      }
     })
     .on("mouseover", function (_, d) {
       d3.selectAll(".node").transition().duration(100).attr("fill", "var(--g-node-inactive)")

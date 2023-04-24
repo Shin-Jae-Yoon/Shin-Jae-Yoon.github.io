@@ -5,7 +5,7 @@
       <h1 id="page-title"><a href="{{ $.Site.BaseURL}}">Dev Uni</a></h1>
       <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
       <li><a href="{{ $.Site.BaseURL}}about/">{{ i18n "about" }}</a></li>
-      <li><a href="{{ $.Site.BaseURL}}brain/">{{ i18n "brain" }}</a></li>
+      <li><a href="{{ $.Site.BaseURL}}brain/" id="brainHeader">{{ i18n "brain" }}</a></li>
       <li><a href="{{ $.Site.BaseURL}}project/">{{ i18n "project" }}</a></li>
       <div id="search-icon">
         <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">{{ i18n "search_icon" }}</title><desc id="desc">{{ i18n "icon_search" }}</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
@@ -14,4 +14,8 @@
       </ul>
   </header>
 </div>
-
+<script>
+  document.getElementById('brainHeader').addEventListener('click', (e) => {
+    window.Million.navigate()
+  })
+</script>
