@@ -243,7 +243,8 @@ s1 == s3; // false
 	- String pool에 String 객체 존재 X (new 연산자로 생성한 경우)
 		- 호출된 String 객체를 String pool에 추가하고 객체의 reference를 return
 
-> String pool, Constant pool, Constant String pool 같은 의미인듯
+> String pool, Constant String pool 은 같은 의미
+> Constant Pool, Runtime Constant Pool 등을 이해하려면 <a href='https://jae-yoon.tistory.com/17' target='_blank'>블로그 게시글</a> 참고
 
 <br>
 

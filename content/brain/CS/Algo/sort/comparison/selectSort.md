@@ -18,15 +18,15 @@ weight: 2
 	- **최선** : $O(n^2)$, **평균** : $O(n^2)$, **최악** :  $O(n^2)$
 	- 외부 루프를 n-1번 도는 동안, 각 자리에 와야하는 값을 구하기 위해 n-1, n-2, ... , 1번 비교
 	- $T(n) = (n-1) + (n-2) + ... + 1 = (n-1) * \frac{n}{2}$
-- ==**공간복잡도 : $O(n)$**==
-	- 교환(swap)을 통해 정렬이 수행되므로, n만큼 배열 공간 필요
+- ==**공간복잡도 : $O(1)$**==
+	- 교환(swap)을 통해 정렬이 수행되므로, 추가적인 배열 공간 필요없음
 - ==**안정성&제자리성 : 불안정 정렬(Unstable-sort), 제자리 정렬(In-place sort)**==
 	- 동일한 값을 지니는 경우, 원소들의 본래 순서가 무작위 → 불안정
 	- 기존 배열 이외의 추가적인 메모리를 거의 사용하지 않고 배열 안에서 교환 → 제자리
 
 <br>
 
-![](https://raw.githubusercontent.com/GimunLee/tech-refrigerator/master/Algorithm/resources/selection-sort-001.gif)
+![](brain/image/gif/selectionSort.gif)
 
 <br><hr>
 

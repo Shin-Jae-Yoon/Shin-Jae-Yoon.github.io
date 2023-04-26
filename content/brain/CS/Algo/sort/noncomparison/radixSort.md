@@ -5,3 +5,5 @@ enableToc: true
 tags: [""]
 weight: 1
 ---
+
+![](brain/image/gif/radixSort.gif)

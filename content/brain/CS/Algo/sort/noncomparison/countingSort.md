@@ -5,3 +5,5 @@ enableToc: true
 tags: [""]
 weight: 2
 ---
+
+![](brain/image/gif/countingSort.gif)

@@ -16,15 +16,15 @@ weight: 1
 	- **최선** : $O(n)$ (이미 정렬된 경우 + 최적화), **평균** : $O(n^2)$, **최악** : $O(n^2)$
 	- 외부 루프를 n-1번 도는 동안, n-1, n-2, ... , 1번 인접한 원소를 비교
 	- $T(n) = (n-1) + (n-2) + ... + 1 = (n-1) * \frac{n}{2}$
-- ==**공간복잡도 : $O(n)$**==
-	- 교환(swap)을 통해 정렬이 수행되므로, n만큼 배열 공간 필요
+- ==**공간복잡도 : $O(1)$**==
+	- 교환(swap)을 통해 정렬이 수행되므로, 추가적인 배열 공간 필요없음
 - ==**안정성&제자리성 : 안정정렬(Stable-sort), 제자리 정렬(In-place sort)**==
 	- 동일한 값을 지니는 경우, 원소들의 본래 순서가 유지됨 → 안정
 	- 기존 배열 이외의 추가적인 메모리를 거의 사용하지 않고 배열 안에서 교환 → 제자리
 
 <br>
 
-![bubble-sort-001.gif](https://github.com/GimunLee/tech-refrigerator/blob/master/Algorithm/resources/bubble-sort-001.gif?raw=true)
+![](brain/image/gif/bubbleSort.gif)
 
 <br><hr>
 

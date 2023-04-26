@@ -179,7 +179,7 @@ Q. **그러면 드는 생각이, WAS가 어차피 다 해주는 Web Server가 �
 Filter
 -   Dispatcher Servlet에 요청이 전달되기 전/후에 url 패턴에 맞는 모든 요청에 대해 부가작업을 처리하는 기능을 제공하는 것
 -   톰캣과 같은 웹 컨테이너(웹 애플리케이션 WAS 단)에서 동작 하기 때문에 Spring과 무관한 자원에 대해 동작
--   Spring Context 외부에서 동작하므로 ErrorController 에서 예외 처리
+-   Spring Context 외부에서 동작하는 것
 
 <br>
 
