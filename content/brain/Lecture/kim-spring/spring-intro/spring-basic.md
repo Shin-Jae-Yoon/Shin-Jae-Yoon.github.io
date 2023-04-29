@@ -18,5 +18,5 @@ weight: 1
 
 ## 목차
 
-- [스프링 입문 : 섹션0 - 섹션3](brain/Lecture/kim-spring/spring-basic/spring-basic-01)
-- [스프링 입문 : 섹션4 - 섹션8](brain/Lecture/kim-spring/spring-basic/spring-basic-02)
+- [스프링 입문 : 섹션0 - 섹션3](brain/Lecture/kim-spring/spring-intro/spring-basic-01)
+- [스프링 입문 : 섹션4 - 섹션8](brain/Lecture/kim-spring/spring-intro/spring-basic-02)
