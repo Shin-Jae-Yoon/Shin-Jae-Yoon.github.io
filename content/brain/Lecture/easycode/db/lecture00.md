@@ -21,6 +21,8 @@ weight: 1
 11. [11. stored procedure](brain/Lecture/easycode/db/lecture11)
 12. [12. 실무에서 프로시저](brain/Lecture/easycode/db/lecture12)
 13. [13. trigger](brain/Lecture/easycode/db/lecture13)
+14. [14. transaction](brain/Lecture/easycode/db/lecture14)
+15. [15. concurrency control](brain/Lecture/easycode/db/lecture15)
 
 <br>
 
