@@ -195,8 +195,8 @@ class BinarySearchTree {
     private void preorder(Node root) {  
         if (root != null) {  
             System.out.print(root.data + " ");  
-            inorder(root.left);  
-            inorder(root.right);  
+            preorder(root.left);  
+            preorder(root.right);  
         }  
     }  
   
@@ -223,8 +223,8 @@ class BinarySearchTree {
   
     private void postorder(Node root) {  
         if (root != null) {  
-            inorder(root.left);  
-            inorder(root.right);  
+            postorder(root.left);  
+            postorder(root.right);  
             System.out.print(root.data + " ");  
         }  
     }  
@@ -254,4 +254,11 @@ public class BinarySearchTreeTest {
 // 1 2 3 4 5 6 7 
 // ---후위순회---
 // 1 2 3 5 6 7 4
+
+// ---전위순회---
+// 4 2 1 3 6 5 7 
+// ---중위순회---
+// 1 2 3 4 5 6 7 
+// ---후위순회---
+// 1 3 2 5 7 6 4 
 ```
