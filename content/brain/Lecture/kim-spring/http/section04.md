@@ -198,7 +198,7 @@ Content-Type: application/json
 
 <br>
 
-> [위에서](/brain/Lecture/kim-spring/http/section04/#http-api-제작)는, URI는 리소스만 식별하여 명사를 사용하라고 했는데, POST의 예시로 만든 URI는 동사의 형태가 있다. 이는, 실무에서는 이상적으로 리소스인 명사만 구별할 수 없는 상황도 있기 때문이다. <br><br>
+> <a href='/brain/Lecture/kim-spring/http/section04/#http-api-제작'>위에서</a>는, URI는 리소스만 식별하여 명사를 사용하라고 했는데, POST의 예시로 만든 URI는 동사의 형태가 있다. 이는, 실무에서는 이상적으로 리소스인 명사만 구별할 수 없는 상황도 있기 때문이다. <br><br>
 > 이렇게 동사 URI가 나올 수 있고, 이를 **컨트롤 URI**라고 한다. 기본적으로, 리소스를 가지고 최대한 URI를 설계하되, 어쩔 수 없는 경우에 컨트롤 URI를 사용한다.
 
 <br><br>
