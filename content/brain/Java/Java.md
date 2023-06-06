@@ -1,5 +1,5 @@
 ---
-title: "Java"
+title: "Java 특징"
 date: "2023-02-23 20:50"
 enableToc: false
 tags: ["Java"]

@@ -1,5 +1,5 @@
 ---
-title: "자바의 정석"
+title: "Java의 정석"
 date: "2023-02-20 20:11"
 enableToc: false
 tags: [""]
@@ -15,9 +15,13 @@ tags: [""]
 > 🏆 **학습 목표** <br>
 > Java에 대한 구체적인 학습
 
-## 목차
+<br>
 
-  
+<img class="book" src="http://image.yes24.com/goods/24259565/XL">
+
+<br>
+
+## 목차
 
 **메소드(method) 영역**
 

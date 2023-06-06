@@ -3,7 +3,7 @@ title: "Java 환경설정"
 date: "2023-02-12 16:27"
 enableToc: true
 tags: ["Java"]
-weight: 2
+weight: 3
 ---
 
 <hr>
