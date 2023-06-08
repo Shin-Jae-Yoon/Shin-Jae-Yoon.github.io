@@ -156,6 +156,17 @@ export PATH=${PATH}:$JAVA_HOME/bin:
 
 - `cmd + option + L` : 코드 정렬
 
+- `command + 1` : 왼쪽 메뉴 창으로 이동, esc키 누르면 다시 코드
+
+- `command + N` : 새로운 파일 생성 (패키지든 클래스든)
+	- 이걸 코드창에서 쓰면 Generator 열기
+
+- 번역 플러그인 (Translation) 설치
+	- `ctrl + cmd + i` : 번역기 팝업 띄우기
+	- `ctrl + cmd + u` : 영어 → 한글 번역
+	- `ctrl + cmd + o` : 한글 → 영어 번역 (변수명 지을 때 편함)
+
+- `command + B` : 정의된 곳으로 이동
 
 <hr>
 
