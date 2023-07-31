@@ -10,11 +10,18 @@ weight: 3
 
 <hr>
 
-## OSI 7 Layer, 식별자
+### OSI 7 Layer, 식별자
 
 ![](brain/image/section0-1.png)
 
-![](brain/image/section1-2.png)
+![](brain/image/section1-6.png)
+
+- 보통 논리적인 것을 IT 에서는 ==**가상(Virtual)**==로 많이 표현함
+	- 가상에 관련된 기술은 꼭 구름모양으로 해놓더라 ㅋㅋ 팁
+- 하드웨어를 소프트웨어 형태로 구현이 가능한가? → 가능하다.
+	- ex) CPU를 Machine이라고 하는데, 하드웨어인 CPU를 소프트웨어 형태로 구현했으니까 Virtual이네? 따라서 ==**Virtual Machine이 되는 것**==
+	- 하드웨어를 소프트웨어로 구현하는 기술을 ==**가상화 기술**==이라고 함
+
 <br>
 
 **OSI 7계층에서의 식별자**
@@ -48,7 +55,7 @@ weight: 3
 
 <hr>
 
-## Host
+### Host
 
 <br>
 
@@ -71,7 +78,7 @@ weight: 3
 
 <hr>
 
-## Switch
+### Switch
 
 <br>
 
@@ -115,7 +122,7 @@ L3 네트워크 계층이라고 생각해보자.
 
 <hr>
 
-## L3 switch / Router
+### L3 switch / Router
 
 원래, 보통 알고 있는 스위치는 L2 switch로 MAC address를 기준으로 가는 것으로 많이 이해한다. L2의 스위치 기능과 L3의 라우터 기능을 모두 갖춘 장비가 바로 L3 switch 이다.
 
