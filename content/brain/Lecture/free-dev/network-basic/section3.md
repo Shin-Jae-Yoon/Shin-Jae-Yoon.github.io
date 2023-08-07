@@ -92,8 +92,13 @@ weight: 5
 
 ![](brain/image/section3-7.png)
 
-- Stream은 열리고 닫히기 전까지니까 데이터 크기가 클 것
+- Socket Stream은 열리고 닫히기 전까지니까 데이터 크기가 클 것
 	- 따라서, Stream을 데이터의 단위라고 하기에는 애매하다 ~
 - 예를 들어서, 4MB라고 해보자. Segment 최대 단위인 MSS (Maximum Segment Size) 보다 크니까, ==**Stream이 Segment화 되는 과정에서 데이터를 잘라낸다.**==
 - 이 과정을 ==**Segmentation (세그멘테이션), 즉, 분할**==이라고 한다.
 - TCP 말고 **UDP 에서는 Datagram이라는 데이터 단위를 사용**한다.
+
+<br><hr>
+
+### TCP/IP 송수신 구조
+
