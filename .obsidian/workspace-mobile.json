@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "36755c7cc57dba00",
+        "id": "86726f4380a65389",
         "type": "tabs",
         "children": [
           {
-            "id": "9eb86a1aa61b442d",
+            "id": "bf4b882932cce1bf",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -67,6 +67,14 @@
           "type": "starred",
           "state": {}
         }
+      },
+      {
+        "id": "28ff644a70e0c79c",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
       }
     ],
     "currentTab": 0
@@ -81,6 +89,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "content/private/데브코스/2주차/계산기 과제.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -97,6 +106,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "content/private/데브코스/2주차/계산기 과제.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -107,7 +117,9 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "content/private/데브코스/2주차/계산기 과제.md"
+          }
         }
       }
     ],
@@ -125,7 +137,42 @@
   },
   "active": "c1d6dec0f94fa90d",
   "lastOpenFiles": [
-    "content/notes/Interview/Interview.md",
-    "content/notes/TIL/TIL.md"
+    "content/private/데브코스/1주차/JAVA 01강.md",
+    "content/brain/Book/dinosaur/dinosaur.md",
+    "content/brain/image/apple-git-15.png",
+    "content/brain/image/apple-git-4.png",
+    "content/brain/image/Compiler-4.png",
+    "content/brain/image/chap09-2.png",
+    "content/brain/image/dog-week01-1.png",
+    "content/brain/image/apple-git-8.png",
+    "content/brain/image/apple-git-10.png",
+    "content/brain/image/chap08-5.png",
+    "content/brain/image/apple-js-02-2.png",
+    "content/brain/image/apple-git-9.png",
+    "content/brain/Java/GC.md",
+    "content/brain/Common/API.md",
+    "content/brain/CS/OS/Scheduling.md",
+    "content/brain/Lecture/apple/apple-git/_index.md",
+    "content/brain/Lecture/funny-python/funny03.md",
+    "content/brain/Interview/dog-study/dog-week05.md",
+    "content/brain/Lecture/funny-python/funny07.md",
+    "content/brain/Lecture/funny-python/funny10.md",
+    "content/brain/Book/do-it-java/chap04.md",
+    "content/brain/Lecture/kim-spring/spring-intro/_index.md",
+    "content/brain/Interview/dog-study/_index.md",
+    "content/brain/Lecture/funny-python/funny02.md",
+    "content/brain/Lecture/funny-python/funny04.md",
+    "content/brain/Lecture/apple/apple-js/apple-js-03.md",
+    "content/brain/Lecture/apple/apple-html/all-in-one-last.md",
+    "content/brain/Lecture/apple/apple-js/apple-js.md",
+    "content/brain/Interview/dog-study/dog-week03.md",
+    "content/brain/Lecture/funny-python/funny05.md",
+    "content/brain/Lecture/funny-python/funny01.md",
+    "content/brain/Lecture/funny-python/funny08.md",
+    "content/brain/Lecture/funny-python/funny11.md",
+    "content/brain/Lecture/funny-python/funny06.md",
+    "content/brain/Book/do-it-java/chap08.md",
+    "content/brain/CS/LT/Yacc.md",
+    "Untitled.canvas"
   ]
 }
