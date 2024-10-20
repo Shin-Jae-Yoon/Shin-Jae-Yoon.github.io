@@ -9,6 +9,40 @@
         <div class="project-header">
           <h2></h2>
         </div>
+
+        <div class="project-container">
+          <div class="project-item">
+            <div class="project-item-title">
+              <div class="project-item-title-img-container">
+                <video id="vid1" autoplay muted loop playsinline poster="/images/poster-video.png">
+                  <source src="/images/project_moabam_video01.mp4" type="video/mp4" />
+                </video>
+                <video id="vid2" autoplay muted loop playsinline poster="/images/poster-video.png">
+                  <source src="/images/project_moabam_video02.mp4" type="video/mp4" />
+                </video>
+                {{ $video := resources.Get "js/videoplay.js" | resources.Fingerprint "md5" }}
+                <script script src="{{ $video.Permalink }}"></script>
+              </div>
+            </div>
+            <div class="project-item-content">
+              <div class="project-item-content-title">
+                <h3 class="pict-header">MOABAM PROJECT<br /></h3>
+                <h3 class="pict-period">PERIOD 2023.10 ~ 2024.03<br /></h3>
+                <p class="pict-content">→ 루틴 수행 동기 강화 서비스<br /></p>
+                <p class="pict-content">→ 백엔드 데브코스 4기 개발부문 1등 (16팀 중)<br /></p>
+              </div>
+              <div class="project-item-content-footer">
+                <p class="pict-github">
+                  <a href="https://github.com/team-moabam/moabam-BE" target="_blank"
+                    >See the detailed code on github</a
+                  >
+                </p>
+                <p class="pict-copyright">COPYRIGHT © Moabam Team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="project-container">
           <div class="project-item">
             <div class="project-item-title">
