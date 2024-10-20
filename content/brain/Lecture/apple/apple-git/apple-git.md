@@ -238,7 +238,7 @@ git config --global alias.hist "log --graph --all --pretty=format:'%C(yellow)[%a
 
 - 3-way merge 방식은 merge 했다는 흔적이 남게 된다.
 
-- 3-way 방식이 싫은 경우 강제로 <a href='/brain/Lecture/apple-git/apple-git/#rebase-and-merge'>rebase하여 fast-forward 방식</a>을 사용하거나 <a href='/brain/Lecture/apple-git/apple-git/#squash-and-merge'>squash and merge 방식</a>을 사용한다.
+- 3-way 방식이 싫은 경우 강제로 <a href='/brain/Lecture/apple/apple-git/apple-git/#rebase-and-merge'>rebase하여 fast-forward 방식</a>을 사용하거나 <a href='/brain/Lecture/apple/apple-git/apple-git/#squash-and-merge'>squash and merge 방식</a>을 사용한다.
 
 <br>  
 
