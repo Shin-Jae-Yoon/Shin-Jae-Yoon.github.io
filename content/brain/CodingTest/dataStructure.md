@@ -6,6 +6,9 @@ tags: [""]
 weight: 5
 ---
 
+코드트리(Codetree)의 <a href='https://www.codetree.ai/curriculums/6' target='_blank'>Novice High - 자료구조 알고리즘</a>을 정리한 내용입니다.
+- 그림은 해당 내용을 참고하여 그렸습니다.
+
 <hr>
 
 ## ArrayList
