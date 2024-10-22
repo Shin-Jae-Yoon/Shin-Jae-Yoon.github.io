@@ -19,6 +19,7 @@
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 
       .project-item {
+        width: 100%;
         display: flex;
         flex-direction: row;
         padding-top: 2em;
@@ -40,7 +41,7 @@
             align-items: center;
             video {
               height: 24em;
-              width: 13em;
+              
             }
             img {
               height: 24em;
@@ -195,10 +196,11 @@
   @media screen and (max-width: 620px) {
     .project-container {
         .project-item {
+          width: 85% !important;
           .project-item-title {
             .project-item-title-img-container {
               img {
-                width: 90% !important;
+                width: 100% !important;
               }
 
               video {
