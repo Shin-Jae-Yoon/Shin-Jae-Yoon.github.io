@@ -651,7 +651,7 @@ function bst.insert(x)
     
     if parent == null            // Case 1. 비어있는 tree이면
         bst.root = node(x)       // root를 node(x)로 설정.
-    else if parent.value > x     // Case 2. parent의 값 < x이면
+    else if parent.value < x     // Case 2. parent의 값 < x이면
         parent.left = node(x)    // parent의 왼쪽에 node(x) 삽입
     else                         // Case 3. parent의 값 > x
         parent.right = node(x)   // parent의 오른쪽에 node(x) 삽입

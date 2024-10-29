@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/brain/CodingTest/math.md",
+                "file": "content/brain/CodingTest/dataStructure.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "math"
+              "title": "dataStructure"
+            }
+          },
+          {
+            "id": "f986585823065103",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/brain/Lecture/fastcampus-algo/part1-4/p1-ch03.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "p1-ch03"
             }
           }
         ]
@@ -105,7 +119,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "content/brain/CodingTest/math.md",
+            "file": "content/brain/CodingTest/dataStructure.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -124,7 +138,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "content/brain/CodingTest/math.md",
+            "file": "content/brain/CodingTest/dataStructure.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -138,7 +152,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "content/brain/CodingTest/math.md"
+            "file": "content/brain/CodingTest/dataStructure.md"
           },
           "icon": "lucide-list",
           "title": "Outline"
@@ -159,20 +173,23 @@
   },
   "active": "bf4b882932cce1bf",
   "lastOpenFiles": [
+    "content/brain/Lecture/fastcampus-algo/part1-4/p1-ch03.md",
+    "content/brain/Lecture/fastcampus-algo/part1-4/p1-ch00.md",
     "content/brain/CodingTest/dataStructure.md",
+    "content/brain/CodingTest/math.md",
+    "static/images/project_fashion_01.png",
+    "static/images/project_fashion_02.png",
+    "content/brain/image/graph-11.png",
+    "content/brain/image/graph-39.png",
+    "content/brain/image/graph-38.png",
+    "content/brain/image/graph-10.png",
+    "content/brain/image/graph-12.png",
+    "content/brain/image/graph-9.png",
+    "content/brain/image/graph-8.png",
+    "content/brain/image/graph-13.png",
     "content/brain/CodingTest/inputoutput.md",
     "content/private/데브코스/1주차/JAVA 01강.md",
     "content/brain/Book/dinosaur/dinosaur.md",
-    "content/brain/image/apple-git-15.png",
-    "content/brain/image/apple-git-4.png",
-    "content/brain/image/Compiler-4.png",
-    "content/brain/image/chap09-2.png",
-    "content/brain/image/dog-week01-1.png",
-    "content/brain/image/apple-git-8.png",
-    "content/brain/image/apple-git-10.png",
-    "content/brain/image/chap08-5.png",
-    "content/brain/image/apple-js-02-2.png",
-    "content/brain/image/apple-git-9.png",
     "content/brain/Java/GC.md",
     "content/brain/Common/API.md",
     "content/brain/CS/OS/Scheduling.md",
@@ -192,9 +209,6 @@
     "content/brain/Interview/dog-study/dog-week03.md",
     "content/brain/Lecture/funny-python/funny05.md",
     "content/brain/Lecture/funny-python/funny01.md",
-    "content/brain/Lecture/funny-python/funny08.md",
-    "content/brain/Lecture/funny-python/funny11.md",
-    "content/brain/Lecture/funny-python/funny06.md",
     "Untitled.canvas"
   ]
 }
