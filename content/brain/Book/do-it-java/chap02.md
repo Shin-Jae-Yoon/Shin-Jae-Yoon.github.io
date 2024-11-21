@@ -165,7 +165,7 @@ public class DoubleEx2 {
 ```
 
 
-정확하게 1001로 떨어지지 않는 이유는 순환소수 문제이다. 다음 [코딩애플 자바스크립트 LEVEL2](brain/Lecture/apple/apple-js/apple-js-02)의 부동소수점 부가 설명을 참고하도록 하자.
+정확하게 1001로 떨어지지 않는 이유는 순환소수 문제이다. 다음 [코딩애플 자바스크립트 LEVEL2](brain/Lecture/frontend/apple-js/apple-js-02.md)의 부동소수점 부가 설명을 참고하도록 하자.
 
 <br>
 
