@@ -1,0 +1,653 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="단편적 지식을 통합된 지식으로"><meta property="og:type" content="website"><meta property="og:url" content="https://shin-jae-yoon.github.io/"><meta property="og:site_name" content="개발자 유니의 두 번째 뇌"><meta property="og:title" content="개발자 유니의 두 번째 뇌"><meta property="og:description" content="단편적 지식을 통합된 지식으로"><meta property="og:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta property="og:article:author" content="유니"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@TISTORY"><meta property="twitter:title" content="개발자 유니의 두 번째 뇌"><meta property="twitter:description" content="단편적 지식을 통합된 지식으로"><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F5252507%2Fattach%2F9c3ad58fd9d24ab486b8a4258ba525d2"><meta name=naver-site-verification content="9e162597b5777707f80d8478ef502c5224430d43"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GJFBQJ80N7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GJFBQJ80N7")</script><title>개발자 유니의 두 번째 뇌</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://shin-jae-yoon.github.io//icon.png><link href=https://shin-jae-yoon.github.io/styles.ea545bd70669104037db7960e250246c.min.css rel=stylesheet><link href=https://shin-jae-yoon.github.io/styles/_light_syntax.b3cdc1af6c90d5fc7e05ca6e6e6f3e60.min.css rel=stylesheet id=theme-link><script src=https://shin-jae-yoon.github.io/js/util.9f16e8e6e851e38941fee1829bbdba7e.min.js></script>
+<script src=https://shin-jae-yoon.github.io/js/scroll.52aeab67b8d227b2efd1fac96d97bde6.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://shin-jae-yoon.github.io/js/popover.b71dd27f329bec6e58788f7b5d4fc3f7.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://shin-jae-yoon.github.io/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://shin-jae-yoon.github.io/",fetchData=Promise.all([fetch("https://shin-jae-yoon.github.io/indices/linkIndex.2a4ca77335cfab9eec403ebb25b5b586.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://shin-jae-yoon.github.io/indices/contentIndex.1891b26c59bdd1a964e16c291a32b4a4.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const t=new URL(BASE_URL),n=t.pathname+"brain/",s=window.location.pathname,e=n==s;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://shin-jae-yoon.github.io",!0);const o=document.getElementById("footer");if(o){const t=document.getElementById("graph-container");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.07,scale:.6}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}const i=document.getElementById("footer2");if(i){const t=document.getElementById("graph-container2");if(!t)return requestAnimationFrame(render);t.textContent="";const n=e&&!0;drawGraph2("https://shin-jae-yoon.github.io",n,[{"/moc":"#4388cc"}],n?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:.07,scale:.6}:{centerForce:5,depth:2,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:2.5,repelForce:1,scale:1.5})}var a=document.getElementsByClassName("mermaid");a.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/shin-jae-yoon.github.io\/js\/router.e4f749984b89f35680b8cfadddf2b482.min.js"
+    attachSPARouting(init, render)
+  </script><script src=https://kit.fontawesome.com/1f943b0307.js crossorigin=anonymous></script>
+<link href=https://webfontworld.github.io/BMJua/BMJua.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel=stylesheet></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder=" 검색어를 입력하세요 "><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://shin-jae-yoon.github.io/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=nav-header-container><header><h1 id=page-title><a href=https://shin-jae-yoon.github.io/>Dev Uni</a></h1><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/brain/ id=brainHeader>Brain</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li><div id=search-icon><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg><p>Search<span style=vertical-align:middle;margin-left:1em>⌘</span> + k</p></div></ul></header></div><script>document.getElementById("brainHeader").addEventListener("click",e=>{window.Million.navigate()})</script><div class=singlePage style=padding:0;margin:0;width:100%><div class=blur-element></div><div class="section-container single-container"><div class=expand-graph-container id=footer2><i class="fa-solid fa-x" id=expand-close-btn></i><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=graph-container2></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.c7d31393238aa9f7cc8094b9bcd520cf.js></script></div></div><div class=section-menu-btn><i class="fa-solid fa-bars"></i></div><div class="main-aside-box disabled"><aside class=main-aside><div class=menu-nav-header><li><a href=https://shin-jae-yoon.github.io/>Home</a></li><li><a href=https://shin-jae-yoon.github.io/about/>About</a></li><li><a href=https://shin-jae-yoon.github.io/project/>Project</a></li></div><div class=menu-content-header><a class=menu-content-header-btn href=https://shin-jae-yoon.github.io/brain/>📚 Brain</a>
+<button class=collapse-btn><i class="fa-solid fa-arrow-down-up-across-line"></i></button></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Design Pattern</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Creational</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Structural</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Behavioral</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li></ul></li><li><div class=wrapper-link><a href=/brain/Java/Java/ class=page-link style=display:block;width:100%>Java 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaVersion/ class=page-link style=display:block;width:100%>Java 버전별 특징</a></div></li><li><div class=wrapper-link><a href=/brain/Java/java-settings/ class=page-link style=display:block;width:100%>Java 환경설정</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JavaExecute/ class=page-link style=display:block;width:100%>Java 실행원리</a></div></li><li><div class=wrapper-link><a href=/brain/Java/JVM/ class=page-link style=display:block;width:100%>Java Virtual Machine</a></div></li><li><div class=wrapper-link><a href=/brain/Java/GC/ class=page-link style=display:block;width:100%>Garbage Collector</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Infra</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Common</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Common/API/ class=page-link style=display:block;width:100%>API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTAPI/ class=page-link style=display:block;width:100%>REST API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/RESTfulAPI/ class=page-link style=display:block;width:100%>RESTful API</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Library/ class=page-link style=display:block;width:100%>라이브러리</a></div></li><li><div class=wrapper-link><a href=/brain/Common/Framework/ class=page-link style=display:block;width:100%>프레임워크</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Science</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Principle</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Algo/principle/divideConquer/ class=page-link style=display:block;width:100%>분할 정복</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/principle/binarySearch/ class=page-link style=display:block;width:100%>이진 탐색</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Sorting</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Comparison</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/comparison/bubbleSort/ class=page-link style=display:block;width:100%>버블 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/comparison/selectSort/ class=page-link style=display:block;width:100%>선택 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/comparison/insertSort/ class=page-link style=display:block;width:100%>삽입 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/comparison/mergeSort/ class=page-link style=display:block;width:100%>합병 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/comparison/quickSort/ class=page-link style=display:block;width:100%>퀵 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/comparison/heapSort/ class=page-link style=display:block;width:100%>힙 정렬</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Non-Comparison</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/noncomparison/radixSort/ class=page-link style=display:block;width:100%>기수 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/noncomparison/countingSort/ class=page-link style=display:block;width:100%>계수 정렬</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>분류 방법</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/etcsort/comparisonSort/ class=page-link style=display:block;width:100%>비교정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/etcsort/noncomparisonSort/ class=page-link style=display:block;width:100%>비교하지 않는 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/etcsort/stableSort/ class=page-link style=display:block;width:100%>안정정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/etcsort/unstableSort/ class=page-link style=display:block;width:100%>불안정정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/etcsort/internalSort/ class=page-link style=display:block;width:100%>내부 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/etcsort/externalSort/ class=page-link style=display:block;width:100%>외부 정렬</a></div></li><li><div class=wrapper-link><a href=/brain/CS/Algo/sort/etcsort/inplaceSort/ class=page-link style=display:block;width:100%>제자리 정렬</a></div></li></ul></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/DS/stack/ class=page-link style=display:block;width:100%>Stack</a></div></li><li><div class=wrapper-link><a href=/brain/CS/DS/queue/ class=page-link style=display:block;width:100%>Queue</a></div></li><li><div class=wrapper-link><a href=/brain/CS/DS/bst/ class=page-link style=display:block;width:100%>Binary Search Tree</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/Network/Socket/ class=page-link style=display:block;width:100%>소켓</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Computer Architecture</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/CA/ComputerArchitecture/ class=page-link style=display:block;width:100%>컴퓨터구조</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/CpuArchitecture/ class=page-link style=display:block;width:100%>CPU 아키텍처</a></div></li><li><div class=wrapper-link><a href=/brain/CS/CA/ISA/ class=page-link style=display:block;width:100%>ISA</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/OS/Scheduling/ class=page-link style=display:block;width:100%>스케줄링</a></div></li><li><div class=wrapper-link><a href=/brain/CS/OS/SystemCall/ class=page-link style=display:block;width:100%>시스템콜</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Language Theory</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CS/LT/LanguageTheory/ class=page-link style=display:block;width:100%>프로그래밍 언어론</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/BNF/ class=page-link style=display:block;width:100%>BNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/EBNF/ class=page-link style=display:block;width:100%>EBNF</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Lex/ class=page-link style=display:block;width:100%>Lex</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Yacc/ class=page-link style=display:block;width:100%>Yacc</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/SyntaxTable/ class=page-link style=display:block;width:100%>구문도표</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Interpreter/ class=page-link style=display:block;width:100%>인터프리터</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compile/ class=page-link style=display:block;width:100%>컴파일</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/Compiler/ class=page-link style=display:block;width:100%>컴파일러</a></div></li><li><div class=wrapper-link><a href=/brain/CS/LT/ParseTree/ class=page-link style=display:block;width:100%>파스 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Interview</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>개발바닥 면접스터디</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-study/ class=page-link style=display:block;width:100%>개발바닥 면접스터디</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week01/ class=page-link style=display:block;width:100%>1주차 - 불변객체, Exception</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week02/ class=page-link style=display:block;width:100%>2주차 - Exception Handling</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week03/ class=page-link style=display:block;width:100%>3주차 - Spring 기본</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week04/ class=page-link style=display:block;width:100%>4주차 - Spring 웹</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week05/ class=page-link style=display:block;width:100%>5주차 - Spring 응용</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week06/ class=page-link style=display:block;width:100%>6주차 - Spring Data</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week07/ class=page-link style=display:block;width:100%>7주차 - Spring 트랜잭션</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week08/ class=page-link style=display:block;width:100%>8주차 - Spring JPA</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/dog-study/dog-week09/ class=page-link style=display:block;width:100%>9주차 - Spring 심화</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>기술면접 대비</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Interview/iv/java/ class=page-link style=display:block;width:100%>면접 - Java</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/iv/spring/ class=page-link style=display:block;width:100%>면접 - Spring</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/iv/db/ class=page-link style=display:block;width:100%>면접 - 데이터베이스</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/iv/dsAlgo/ class=page-link style=display:block;width:100%>면접 - 자료구조/알고리즘</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/iv/network/ class=page-link style=display:block;width:100%>면접 - 네트워크</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/iv/os/ class=page-link style=display:block;width:100%>면접 - 운영체제</a></div></li><li><div class=wrapper-link><a href=/brain/Interview/iv/web/ class=page-link style=display:block;width:100%>면접 - 웹/공통</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>강의</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Algorithm</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>패캠 - 알고리즘</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 1 - Part 4</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part1-4/p1-ch00/ class=page-link style=display:block;width:100%>Part1 - Part4 강의소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part1-4/p1-ch01/ class=page-link style=display:block;width:100%>Ch01 - 문자열</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part1-4/p1-ch02/ class=page-link style=display:block;width:100%>Ch02 - 시간복잡도</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part1-4/p1-ch03/ class=page-link style=display:block;width:100%>Ch03 - 배열</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part1-4/p1-ch04/ class=page-link style=display:block;width:100%>Ch04 - 완탐/시뮬</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 5 - 단기완성</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part5/p5-ch00/ class=page-link style=display:block;width:100%>Part5 - 단기완성</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part5/p5-ch01/ class=page-link style=display:block;width:100%>Ch01 - 완전탐색</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part5/p5-ch02/ class=page-link style=display:block;width:100%>Ch02 - 정렬</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Part 6 - SQL</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part6/p6-ch00/ class=page-link style=display:block;width:100%>Part6 - SQL 코테</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part6/p6-ch01/ class=page-link style=display:block;width:100%>SQL코테 - 문법설명</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/algo/fastcampus-algo/part6/p6-ch02/ class=page-link style=display:block;width:100%>SQL코테 - 문제풀이</a></div></li></ul></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Backend</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>김영한 - Spring</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>스프링 입문</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/spring-intro/spring-basic/ class=page-link style=display:block;width:100%>스프링 입문 - 목차</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/spring-intro/spring-basic-01/ class=page-link style=display:block;width:100%>섹션0 - 섹션3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/spring-intro/spring-basic-02/ class=page-link style=display:block;width:100%>섹션4 - 섹션8</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>HTTP 웹</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section00/ class=page-link style=display:block;width:100%>HTTP 강좌 - 소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section01/ class=page-link style=display:block;width:100%>인터넷 네트워크</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section02/ class=page-link style=display:block;width:100%>URI & Web</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section03/ class=page-link style=display:block;width:100%>HTTP 기본</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section04/ class=page-link style=display:block;width:100%>HTTP 메서드</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section05/ class=page-link style=display:block;width:100%>HTTP 메서드 활용</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section06/ class=page-link style=display:block;width:100%>HTTP 상태코드</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section07/ class=page-link style=display:block;width:100%>HTTP 헤더 - 일반</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/backend/kim-spring/http/section08/ class=page-link style=display:block;width:100%>HTTP 헤더 - 캐시</a></div></li></ul></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Database</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Hussein DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>쉬운코드 DB</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture00/ class=page-link style=display:block;width:100%>강의소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture01/ class=page-link style=display:block;width:100%>01. DB 개론</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture02/ class=page-link style=display:block;width:100%>02. RDBMS</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture03/ class=page-link style=display:block;width:100%>03. DB/table 생성</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture04/ class=page-link style=display:block;width:100%>04. Data 추가/수정/삭제</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture05/ class=page-link style=display:block;width:100%>05. Data 조회</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture06/ class=page-link style=display:block;width:100%>06. 서브쿼리</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture07/ class=page-link style=display:block;width:100%>07. three-valued logic</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture08/ class=page-link style=display:block;width:100%>08. Join</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture09/ class=page-link style=display:block;width:100%>09. 통계함수</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture10/ class=page-link style=display:block;width:100%>10. stored function</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture11/ class=page-link style=display:block;width:100%>11. stored procedure</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture12/ class=page-link style=display:block;width:100%>12. 실무에서 프로시저</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture13/ class=page-link style=display:block;width:100%>13. trigger</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture14/ class=page-link style=display:block;width:100%>14. transaction</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/db/easy-db/lecture15/ class=page-link style=display:block;width:100%>15. 동시성 제어 1부</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Data Structure</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>쉬운코드 자료구조</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/dataStructure/easy-ds/lecture00/ class=page-link style=display:block;width:100%>강의소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/dataStructure/easy-ds/lecture07/ class=page-link style=display:block;width:100%>07. 트리, 이진트리</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/dataStructure/easy-ds/lecture08/ class=page-link style=display:block;width:100%>08. 이진탐색트리 BST</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/dataStructure/easy-ds/lecture09/ class=page-link style=display:block;width:100%>09. AVL 트리</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Frontend</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - HTML/CSS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-html/all-in-one/ class=page-link style=display:block;width:100%>All-in-One 강의노트</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-html/all-in-one-basic/ class=page-link style=display:block;width:100%>All-in-One 기초모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-html/all-in-one-mid/ class=page-link style=display:block;width:100%>All-in-One 중급모듈</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-html/all-in-one-last/ class=page-link style=display:block;width:100%>All-in-One 고급모듈</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - JavaScript</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-js/apple-js/ class=page-link style=display:block;width:100%>Javascript 입문과 웹 UI 개발</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-js/apple-js-01/ class=page-link style=display:block;width:100%>LEVEL 01</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-js/apple-js-02/ class=page-link style=display:block;width:100%>LEVEL 02</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-js/apple-js-03/ class=page-link style=display:block;width:100%>LEVEL 03</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/frontend/apple-js/js-library/ class=page-link style=display:block;width:100%>js-library</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Network</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>널널한개발자</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>네트워크 핵심 - 기초</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/network/free-dev/network-basic/intro/ class=page-link style=display:block;width:100%>네트워크 기초</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/network/free-dev/network-basic/section0/ class=page-link style=display:block;width:100%>section 0 - intro</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/network/free-dev/network-basic/section1/ class=page-link style=display:block;width:100%>section 1 - network</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/network/free-dev/network-basic/section2/ class=page-link style=display:block;width:100%>section 2 - L2</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/network/free-dev/network-basic/section3/ class=page-link style=display:block;width:100%>section 3 - L3</a></div></li></ul></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Operating System</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>쉬운코드 OS</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/os/easy-os/lecture00/ class=page-link style=display:block;width:100%>강의소개</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/os/easy-os/lecture01/ class=page-link style=display:block;width:100%>01. 프로세스/스레드</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/os/easy-os/lecture02/ class=page-link style=display:block;width:100%>02. 컨택스트 스위칭</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/os/easy-os/lecture03/ class=page-link style=display:block;width:100%>03. CPU/IO bound</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Programming Language</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>부부개발단 - Java</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java/ class=page-link style=display:block;width:100%>개요. 즐거운 자바</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java01/ class=page-link style=display:block;width:100%>01. Java 시작</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java02/ class=page-link style=display:block;width:100%>02. Java 기본 문법</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java03/ class=page-link style=display:block;width:100%>03. 객체지향 1/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java04/ class=page-link style=display:block;width:100%>04. 객체지향 2/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java05/ class=page-link style=display:block;width:100%>05. 객체지향 3/3</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java06/ class=page-link style=display:block;width:100%>06. 배열과 Arrays 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java07/ class=page-link style=display:block;width:100%>07. 제네릭과 컬렉션</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java08/ class=page-link style=display:block;width:100%>08. 예외처리, enum</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java09/ class=page-link style=display:block;width:100%>09. Java I/O</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java10/ class=page-link style=display:block;width:100%>10. Java Thread</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/fun-java/fun-java11/ class=page-link style=display:block;width:100%>11. Java Network</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>잔재미코딩 - Python</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny/ class=page-link style=display:block;width:100%>파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny01/ class=page-link style=display:block;width:100%>01 - 파이썬 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny02/ class=page-link style=display:block;width:100%>02 - 변수,출력</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny03/ class=page-link style=display:block;width:100%>03 - String</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny04/ class=page-link style=display:block;width:100%>04 - List</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny05/ class=page-link style=display:block;width:100%>05 - Tuple</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny06/ class=page-link style=display:block;width:100%>06 - Dictionary</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny07/ class=page-link style=display:block;width:100%>07 - Set</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny08/ class=page-link style=display:block;width:100%>08 - Bool</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny09/ class=page-link style=display:block;width:100%>09 - 변수심화</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny10/ class=page-link style=display:block;width:100%>10 - Condition</a></div></li><li><div class=wrapper-link><a href=/brain/Lecture/pl/funny-python/funny11/ class=page-link style=display:block;width:100%>11 - for문</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>ETC</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩애플 - Git</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Lecture/etc/apple-git/apple-git/ class=page-link style=display:block;width:100%>코딩애플 git</a></div></li></ul></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>도서</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Java의 정석</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/java-jungseok/java-jungseok/ class=page-link style=display:block;width:100%>Java의 정석</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>Do it! 자바 프로그래밍</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/do-it-java/do-it-java/ class=page-link style=display:block;width:100%>Do it! 자바 프로그래밍 입문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap01/ class=page-link style=display:block;width:100%>01.자바 프로그래밍</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap02/ class=page-link style=display:block;width:100%>02.변수와 자료형</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap03/ class=page-link style=display:block;width:100%>03.자바의 연산자</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap04/ class=page-link style=display:block;width:100%>04.제어문</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap05/ class=page-link style=display:block;width:100%>05.클래스와 객체 (1)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap06/ class=page-link style=display:block;width:100%>06.클래스와 객체 (2)</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap07/ class=page-link style=display:block;width:100%>07.배열과 ArrayList</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap08/ class=page-link style=display:block;width:100%>08.상속과 다형성</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap09/ class=page-link style=display:block;width:100%>09.추상 클래스</a></div></li><li><div class=wrapper-link><a href=/brain/Book/do-it-java/chap10/ class=page-link style=display:block;width:100%>10.인터페이스</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>헤드퍼스트 디자인패턴</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/headfirst/headfirst/ class=page-link style=display:block;width:100%>헤드퍼스트 디자인패턴</a></div></li><li><div class=wrapper-link><a href=/brain/Book/headfirst/chap01/ class=page-link style=display:block;width:100%>01. 소개와 전략패턴</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>운영체제 - 공룡책</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/Book/dinosaur/dinosaur/ class=page-link style=display:block;width:100%>운영체제 -공룡책</a></div></li><li><div class=wrapper-link><a href=/brain/Book/dinosaur/chap01/ class=page-link style=display:block;width:100%>01. 서론</a></div></li></ul></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>데브코스</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/DevCourse/001/ class=page-link style=display:block;width:100%>[1주차] 2023-06-02</a></div></li><li><div class=wrapper-link><a href=/brain/DevCourse/002/ class=page-link style=display:block;width:100%>[2주차] 2023-06-05</a></div></li><li><div class=wrapper-link><a href=/brain/DevCourse/003/ class=page-link style=display:block;width:100%>[2주차] 2023-06-06</a></div></li><li><div class=wrapper-link><a href=/brain/DevCourse/004/ class=page-link style=display:block;width:100%>[2주차] 2023-06-07</a></div></li><li><div class=wrapper-link><a href=/brain/DevCourse/005/ class=page-link style=display:block;width:100%>[2주차] 2023-06-08</a></div></li></ul></li><li class=folder><div class=wrapper><a href=javascript:void(0) class=title>코딩테스트</a><div class=a-wrapper><div class=arrow></div></div></div><ul><li><div class=wrapper-link><a href=/brain/CodingTest/basic/ class=page-link style=display:block;width:100%>개요</a></div></li><li><div class=wrapper-link><a href=/brain/CodingTest/inputoutput/ class=page-link style=display:block;width:100%>입출력</a></div></li><li><div class=wrapper-link><a href=/brain/CodingTest/math/ class=page-link style=display:block;width:100%>수학</a></div></li><li><div class=wrapper-link><a href=/brain/CodingTest/string/ class=page-link style=display:block;width:100%>문자열</a></div></li><li><div class=wrapper-link><a href=/brain/CodingTest/dataStructure/ class=page-link style=display:block;width:100%>자료구조</a></div></li><li><div class=wrapper-link><a href=/brain/CodingTest/dp/ class=page-link style=display:block;width:100%>DP</a></div></li><li><div class=wrapper-link><a href=/brain/CodingTest/graph/ class=page-link style=display:block;width:100%>그래프 탐색</a></div></li><li><div class=wrapper-link><a href=/brain/CodingTest/binarySearch/ class=page-link style=display:block;width:100%>이진탐색</a></div></li></ul></li></ul></aside><script src=https://shin-jae-yoon.github.io/js/menu.d84e1187b49e17fe6a272092d9397aba.js></script></div><div class=single-content><h1>섹션0 - 섹션3</h1><p class=meta>Last updated -
+2024년 11월 21일
+<a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io/tree/hugo/content/brain/Lecture/backend/kim-spring/spring-intro/spring-basic-01.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://shin-jae-yoon.github.io/tags/%EF%B8%8F-%EA%B9%80%EC%98%81%ED%95%9C-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/>🖥️ 김영한 스프링 입문</a></li></ul><aside class=mainTOC><details><summary>ON THIS PAGE</summary><nav id=TableOfContents><ul><li><a href=#프로젝트-환경설정>프로젝트 환경설정</a><ul><li><a href=#프로젝트-생성>프로젝트 생성</a></li><li><a href=#라이브러리-살펴보기>라이브러리 살펴보기</a></li><li><a href=#view-환경설정>View 환경설정</a></li><li><a href=#빌드하고-실행하기>빌드하고 실행하기</a></li></ul></li><li><a href=#스프링-웹-개발-기초>스프링 웹 개발 기초</a><ul><li><a href=#정적-컨텐츠>정적 컨텐츠</a></li><li><a href=#mvc와-템플릿-엔진>MVC와 템플릿 엔진</a></li><li><a href=#api>API</a></li></ul></li><li><a href=#회원-관리-예제>회원 관리 예제</a><ul><li><a href=#비즈니스-요구사항>비즈니스 요구사항</a></li><li><a href=#도메인-리포지토리>도메인, 리포지토리</a></li><li><a href=#리포지토리-테스트-케이스>리포지토리 테스트 케이스</a></li><li><a href=#서비스-개발>서비스 개발</a></li><li><a href=#서비스-테스트>서비스 테스트</a></li></ul></li></ul></nav></details></aside><blockquote><p>해당 게시글은 김영한님 <a href=https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8 target=_blank>스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술</a>강좌의 섹션0부터 섹션3까지 정리한 내용입니다.</p></blockquote><hr><a href=#프로젝트-환경설정><h2 id=프로젝트-환경설정><span class=hanchor arialabel=Anchor># </span>프로젝트 환경설정</h2></a><br><a href=#프로젝트-생성><h3 id=프로젝트-생성><span class=hanchor arialabel=Anchor># </span>프로젝트 생성</h3></a><ol><li><a href=https://start.spring.io/ rel=noopener>https://start.spring.io/</a> 스프링 프로젝트 생성<ul><li>프로젝트 생성</li><li>Project : Gradle<ul><li>Spring Boot : (SNAPSHOT), (M~)는 정식 버전 아니니까 아무 것도 없고 숫자만 써진 버전으로 설정</li><li>Language : Java</li><li>Packaging : Jar</li><li>Java : 11</li></ul></li><li>Project Metadata<ul><li>Group : 보통 기업 도메인명 적어줌. 임의로 hello 적음</li><li>Artifact : 프로젝트명</li></ul></li><li>Dependencies<ul><li>어떤 라이브러리를 당겨와서 사용할 것이냐</li><li>Spring Web 추가</li><li>Thymeleaf 추가 (프리마커 쓰는 회사도 있음)</li></ul></li></ul></li></ol><br><ol start=2><li>인텔리제이로 프로젝트 오픈</li></ol><ul><li>자바11로 프로젝트 생성했으니, 인텔리제이도 세팅 변경<ul><li>프로젝트 JDK 설정<ul><li>File - Project Structure - Project Settings - Project</li><li>SDK : 11 Oracle OpenJDK version 11.0.16<ul><li>Language level : SDK default</li></ul></li><li>Platform Settings - SDKs - 1.8이 아닌 11로 설정</li></ul></li></ul></li><li>Gradle JDK 설정<ul><li>File - Build, Execution, Deployment - Build Tools - Gradle<ul><li>Build and run using : Gradle -> IntelliJ (속도향상)</li><li>Run tests using : Gradle -> IntelliJ (속도향상)</li><li>Gradle JVM : 11 Oracle OpenJDK</li></ul></li></ul></li></ul><br><ol start=3><li>프로젝트 내용물 설명</li></ol><ul><li>gradle/wrapper : gradle 관련하여 사용하는 폴더</li><li>src : 기본적으로 main/test 두 갈래 생성</li><li>src/test : 최근 트렌드인 test 코드 관련, Junit5 기반</li><li>src/main/resources : 실제 java 코드 제외한 xml, properties, html 등 나머지 전부</li><li>gitignore : github에 올릴 때 제외할 파일들</li><li>gradlew, bradlew.bat, settings.gradle : 그래들 설정 관련</li><li>build.gradle : 예전에는 실제로 타이핑하고 코드 짰으나, 최근에는 start.spring.io와 같은 스프링부트 덕에 설정 파일이 제공됨</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>plugins</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// 선택한 스프링부트 버전과 자바 언어 등
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=n>id</span> <span class=err>&#39;</span><span class=n>org</span><span class=o>.</span><span class=na>springframework</span><span class=o>.</span><span class=na>boot</span><span class=err>&#39;</span> <span class=n>version</span> <span class=err>&#39;</span><span class=n>2</span><span class=o>.</span><span class=na>7</span><span class=o>.</span><span class=na>4</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl>	<span class=n>id</span> <span class=err>&#39;</span><span class=n>io</span><span class=o>.</span><span class=na>spring</span><span class=o>.</span><span class=na>dependency</span><span class=o>-</span><span class=n>management</span><span class=err>&#39;</span> <span class=n>version</span> <span class=err>&#39;</span><span class=n>1</span><span class=o>.</span><span class=na>0</span><span class=o>.</span><span class=na>14</span><span class=o>.</span><span class=na>RELEASE</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl>	<span class=n>id</span> <span class=err>&#39;</span><span class=n>java</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span> 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>group</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>hello</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl><span class=n>version</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>0</span><span class=o>.</span><span class=na>0</span><span class=o>.</span><span class=na>1</span><span class=o>-</span><span class=n>SNAPSHOT</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl><span class=c1>// 자바 11버전을 의미
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>sourceCompatibility</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>11</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>repositories</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// mavenCentral이라는 공개된 사이트에서 라이브러리 다운 받아오기
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=n>mavenCentral</span><span class=o>()</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>dependencies</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// start.spring.io에서 설정했던 의존관계
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=n>implementation</span> <span class=err>&#39;</span><span class=n>org</span><span class=o>.</span><span class=na>springframework</span><span class=o>.</span><span class=na>boot</span><span class=o>:</span><span class=n>spring</span><span class=o>-</span><span class=n>boot</span><span class=o>-</span><span class=n>starter</span><span class=o>-</span><span class=n>thymeleaf</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl>	<span class=n>implementation</span> <span class=err>&#39;</span><span class=n>org</span><span class=o>.</span><span class=na>springframework</span><span class=o>.</span><span class=na>boot</span><span class=o>:</span><span class=n>spring</span><span class=o>-</span><span class=n>boot</span><span class=o>-</span><span class=n>starter</span><span class=o>-</span><span class=n>web</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl>	<span class=n>testImplementation</span> <span class=err>&#39;</span><span class=n>org</span><span class=o>.</span><span class=na>springframework</span><span class=o>.</span><span class=na>boot</span><span class=o>:</span><span class=n>spring</span><span class=o>-</span><span class=n>boot</span><span class=o>-</span><span class=n>starter</span><span class=o>-</span><span class=n>test</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>tasks</span><span class=o>.</span><span class=na>named</span><span class=o>(</span><span class=err>&#39;</span><span class=n>test</span><span class=err>&#39;</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>useJUnitPlatform</span><span class=o>()</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ol start=4><li><p>생성한 프로젝트 실행</p><ul><li>src/main/java/hello/hellospring/HelloSpringApplication.java 메인 메서드 그냥 실행</li><li><code>@SpringBootApplication</code> 애노테이션이 있는 것이 스프링부트 실행 파일</li><li><code>localhost:8080</code> 들어가서 Whitelabel Error Page 뜨면 성공</li></ul></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>package</span> <span class=nn>hello.hellospring</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.boot.SpringApplication</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.boot.autoconfigure.SpringBootApplication</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@SpringBootApplication</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>HelloSpringApplication</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>HelloSpringApplication</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><ol start=5><li><p>스프링부트 실행 오류</p><ul><li>8080포트 이미 열려있어서 안되는 경우</li><li>cmd 관리자 권한으로 실행</li><li><code>netstat -ano | findstr 8080</code>으로 열려있는 포트 확인</li><li><code>taskkill /F /pid [process_id]</code>로 8080포트 닫기</li></ul></li></ol><br><a href=#라이브러리-살펴보기><h3 id=라이브러리-살펴보기><span class=hanchor arialabel=Anchor># </span>라이브러리 살펴보기</h3></a><ul><li><p>Maven, Gradle 같은 빌드 툴은 의존관계를 관리해준다. 실제 우리가 추가한 의존관계는 <code>Spring Web, Thymeleaf</code>인데, 외부 라이브러리를 확인해보면 수많은 라이브러리가 다운받아져있다. <strong>의존관계에 따라 자기가 필요한 라이브러리들을 알아서 당겨온다.</strong></p></li><li><p>인텔리제이 우측에 작은 Gradle 클릭해보면, 여러 의존관계 살펴볼 수 있음</p></li></ul><p><br><br></p><p><strong>compileClassPath : 스프링 부트 라이브러리</strong></p><ul><li>spring-boot-starter-web<ul><li>spring-boot-starter-tomcat : 웹서버</li><li>spring-webmvc : 웹 MVC</li></ul></li><li>spring-boot-starter-thymeleaf : 타임리프 템플릿 엔진 (View)<ul><li>spring-boot-starter<ul><li>spring-boot<ul><li>spring-boog-core</li></ul></li><li>spring-boot-starter-logging<ul><li>logback</li><li>slf4j</li></ul></li></ul></li></ul></li></ul><br><ul><li><p>톰캣은 WAS(Web-Application-Server)이다.</p><ul><li><p>예전에는 서버에 톰캣같은 웹서버를 설치해놓고 거기에 자바 코드를 밀어놓는 식으로 개발했음. 웹서버와 개발 라이브러리가 완전히 분리되어 있었음</p></li><li><p>최근에는 소스 라이브러리에서 이런 웹서버를 알아서 들고있음(임베디드, 내장) 그래서 자바 메인 메서드만 실행해도 따로 설정 필요없이 웹서버가 뜬다. 8080포트로 들어갈 수도 있음</p></li></ul></li><li><p>실무에서, <code>system.out.println()</code> 방식으로 출력하지 않고 log를 사용한다.</p><ul><li><p>심각한 로그를 따로 관리하거나, 로그 파일이 관리가 됨</p></li><li><p>slf4j는 인터페이스이고 logback은 실제 로그를 어떤 구현체로 출력할 지</p></li><li><p>최근에는 slf4j + logback 조합을 보통 사용한다. 성능도 빠르고 지원하는 기능 많음</p></li></ul></li></ul><p><br><br></p><p><strong>testCompileClasspath : 테스트 라이브러리</strong></p><ul><li>spring-boot-starter-test<ul><li>junit : 테스트 프레임워크 (최근에는 junit 5버전 사용, 핵심)</li><li>mockito : 목 라이브러리</li><li>assertj : 테스트 코드 작성을 더 쉽게 해주는 라이브러리</li><li>spring-test : 스프링 통합 테스트 지원</li></ul></li></ul><p><br><br></p><a href=#view-환경설정><h3 id=view-환경설정><span class=hanchor arialabel=Anchor># </span>View 환경설정</h3></a><p><strong>Welcome Page 만들기</strong><br></p><p><code>resources/static/</code> 경로에 <code>index.html</code> 파일을 추가하면, welcome page의 기능을 한다. 이는 단순한 정적 페이지이다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>// resources/static/index.html
+</span></span><span class=line><span class=cl><span class=cp>&lt;!DOCTYPE html&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Hello<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>meta</span> <span class=na>http-equiv</span><span class=o>=</span><span class=s>&#34;Content-Type&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;text/html; charset=UTF-8&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		Hello
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;/hello&#34;</span><span class=p>&gt;</span>hello<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><a href=https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web.servlet.spring-mvc.welcome-page target=_blank>spring boot docs - welcomepage</a></p></li><li><p><a href=https://spring.io/guides/gs/serving-web-content/ target=_blank>스프링 공식 튜토리얼</a></p></li></ul><p><br><br></p><p><strong>thymeleaf 템플릿 엔진</strong><br></p><p>템플릿 엔진을 사용하여, 동적인 페이지를 구현할 수 있다.</p><ul><li><p><a href=https://www.thymeleaf.org/index.html target=_blank>thymeleaf official hompage</a></p></li><li><p><a href=https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web.servlet.spring-mvc.template-engines target=_blank>스프링부트 템플릿 엔진 메뉴얼</a></p></li></ul><p><br><br></p><p>웹 어플리케이션에서 첫 번째 진입점이 바로 <strong>Controller, 컨트롤러</strong>이다.</p><ol><li><p><code>hello/hellospring/controller</code> 패키지 생성</p></li><li><p>패키지에 <code>HelloController.java</code> 생성</p></li><li><p><code>resources/templates/hello.html</code> 생성</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// src/main/java/hello/hellospring/controller/HelloController.java
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kn>package</span> <span class=nn>hello.hellospring.controller</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.stereotype.Controller</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.ui.Model</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>org.springframework.web.bind.annotation.GetMapping</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@Controller</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>HelloController</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	<span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;hello&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>hello</span><span class=o>(</span><span class=n>Model</span> <span class=n>model</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=n>model</span><span class=o>.</span><span class=na>addAttribute</span><span class=o>(</span><span class=s>&#34;data&#34;</span><span class=o>,</span> <span class=s>&#34;hello!!&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=s>&#34;hello&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>@GetMapping("hello")</code> : get/post 방식 말할 때 그 get이다. <code>localhost:8080/hello</code>와 mapping</p></li><li><p>model의 속성으로 키 : data, 값 : hello!!를 넘긴다.</p></li><li><p><code>return "hello"</code>로 <code>/resources/templates/hello</code>를 찾아서 렌더링 함</p></li></ul><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>// resources/templates/hello.html
+</span></span><span class=line><span class=cl><span class=cp>&lt;!DOCTYPE html&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>html</span> <span class=na>xmlns:th</span><span class=o>=</span><span class=s>&#34;http://www.thymeleaf.org&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Hello<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>meta</span> <span class=na>http-equiv</span><span class=o>=</span><span class=s>&#34;Content-Type&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;text/html; charset=UTF-8&#34;</span> <span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>p</span> <span class=na>th:text</span><span class=o>=</span><span class=s>&#34;&#39;안녕하세요. &#39; + ${data}&#34;</span><span class=p>&gt;</span>안녕하세요. 손님<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>http://www.thymeleaf.org</code>를 추가함으로써 타임리프 문법 사용 가능</li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-1.png width=auto alt></p><ol><li>웹 브라우저에서 <code>localhost:8080/hello</code>로 get 요청</li><li>내장된 톰캣이 웹서버의 역할을 하여 받아서 controller로 전달</li><li>스프링이 컨트롤러에 맵핑된 <code>hello</code>가 있나 찾아봄.</li><li>controller인 helloController의 메서드가 실행된다. 이때 스프링이 Model을 만들어서 model을 controller에 넣어준다.</li><li>controller는 이 model에다가 키 : data, 값 : hello!!를 넣는다.</li><li><code>/resources/templeates/hello</code>를 찾고 model을 화면에 넘기면서 화면을 렌더링해라<ul><li>즉, 컨트롤러에서 리턴 값으로 문자를 반환하면 뷰 리졸버( viewResolver )가 화면을 찾아서 처리하게 된다.</li><li>뷰 리졸버는 View를 찾아주고 템플릿 엔진 연결시켜주는 녀석</li><li>찾을 때, 스프링 부트 템플릿 엔진 기본 viewName에 매핑</li><li><code>resources:templates/</code> + {ViewName} + <code>.html</code></li></ul></li></ol><p><br><br></p><p><strong>서버 재시작 없이 View 파일 리로드</strong></p><ol><li><code>build.gradle</code>에 의존성 추가 (spring-boot-devtools 라이브러리 설치해준 것)<ul><li><code>developmentOnly 'org.springframework.boot:spring-boot-devtools'</code></li></ul></li><li><code>/resources/application.properties</code>에 아래 코드 추가 (필수는 아님)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>spring</span><span class=o>.</span><span class=na>devtools</span><span class=o>.</span><span class=na>livereload</span><span class=o>.</span><span class=na>enabled</span><span class=o>=</span><span class=kc>true</span>
+</span></span><span class=line><span class=cl><span class=n>spring</span><span class=o>.</span><span class=na>devtools</span><span class=o>.</span><span class=na>restart</span><span class=o>.</span><span class=na>enabled</span><span class=o>=</span><span class=kc>true</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li><p>File - Settings - Advanced Settings - Compiler에서 <code>Allow auto-make to start~</code> 체크</p></li><li><p>File - Settings - Build, Execution~ - Compiler에서 <code>Build project automatically</code> 체크</p></li></ol><p>이제 View 파일 수정하면 한 5초 뒤에 서버가 알아서 리로드 되면서 크롬 가서 새로고침 해보면 확인 가능하다. 만약, 새로고침 없이 보고 싶으면 크롬 확장 프로그램 Livereload 설치하셈</p><p><br><br></p><a href=#빌드하고-실행하기><h3 id=빌드하고-실행하기><span class=hanchor arialabel=Anchor># </span>빌드하고 실행하기</h3></a><p>빌드하고자 하는 프로젝트 폴더로 이동하고 거기서 마우스 우클릭으로 <code>Git Bash Here</code> 혹은 <code>터미널에서 열기</code> 클릭! WSL2 java 관련 설정은
+<a href=/brain/Java/java-settings/ rel=noopener class=internal-link data-src=/brain/Java/java-settings/>Java Settings</a> 참고</p><ol><li><code>./gradlew build</code></li><li><code>cd build/libs</code></li><li><code>java -jar hello-spring-0.0.1-SNAPSHOT.jar</code></li></ol><p>이러면 서버 실행 완료된 것! 종료 하려면 <code>Ctrl + C</code></p><ul><li>빌드 폴더 깔끔하게 지우기 <code>./gradlew clean</code></li></ul><hr><a href=#스프링-웹-개발-기초><h2 id=스프링-웹-개발-기초><span class=hanchor arialabel=Anchor># </span>스프링 웹 개발 기초</h2></a><p>웹을 개발한다는 것은 크게 3가지 방법이 있다.</p><ul><li><p>정적 컨텐츠 : welcomepage처럼 서버에서 하는 것 없이 파일을 그대로 웹 브라우저에게 내리는 것</p></li><li><p>MVC와 템플릿 엔진 : jsp, php가 흔히 말하는 템플릿 엔진인데 html을 그냥 주는 것이 아니라 서버에서 프로그래밍 해서 html을 동적으로 바꿔서 내리는 것. 이 작업을 하기 위하여 Model, View, Controller 패턴으로 개발</p></li><li><p>API : JSON 형식으로 데이터를 전달해주는 방식</p></li></ul><br><p>사실 정적 컨텐츠 방식을 제외하면, 이렇게 생각하면 된다.</p><ul><li><p>MVC 방식처럼 View를 찾아서 템플릿 엔진을 통해 화면을 렌더링해서 HTML을 변환하여 HTML 파일을 웹 브라우저에 넘겨주는 방식, <strong>HTML을 내리냐</strong></p></li><li><p>API를 사용하여 <strong>데이터를 바로 내리냐</strong></p></li></ul><br><a href=#정적-컨텐츠><h3 id=정적-컨텐츠><span class=hanchor arialabel=Anchor># </span>정적 컨텐츠</h3></a><p>스프링 부트는 정적 컨텐츠를 <a href=https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web.servlet.spring-mvc.static-content target=_blank>제공</a>하고 있다. <code>/resources/static</code> 폴더에 아무 html 파일을 만들면 그대로 반환해준다. 만약 <code>hello-static.html</code> 파일을 만들었다면, <code>localhost:8080/hello-static.html</code>로 들어가면 나온다.</p><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-2.png width=auto alt></p><ol><li><p>웹브라우저에서 <code>localhost:8080/hello-static.html</code>로 get 요청</p></li><li><p>내장 톰캣 서버가 요청을 받고 스프링에게 넘김</p></li><li><p>스프링은 컨트롤러 쪽에서 <code>hello-static</code>과 맵핑된 컨트롤러 있나 찾아봄</p></li><li><p>없으면 <code>resources: statc/hello-static.html</code>을 찾고 있으면 반환해줌</p></li></ol><br><a href=#mvc와-템플릿-엔진><h3 id=mvc와-템플릿-엔진><span class=hanchor arialabel=Anchor># </span>MVC와 템플릿 엔진</h3></a><p>MVC : Model, View, Controller</p><p>과거에는 컨트롤러와 뷰를 따로 분리하지 않고 JSP 같은걸로 뷰에 모든 걸 다했다. 이것이 <strong>Model 1 방식</strong>이다. 하지만, 지금은 MVC 패턴으로 많이 한다. 그 이유는 <strong>관심사의 분리, 역할과 책임</strong> 때문이다.</p><p>View는 화면을 그리는 것에 모든 역량을 집중해야 하고, Controller나 Model과 관련된 부분은 비즈니스 로직과 관련있거나 내부적인 걸 처리하는 것에 집중해야 한다.</p><br><p><code>HelloController.java</code>에 내용 추가</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;hello-mvc&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=n>String</span> <span class=nf>helloMvc</span><span class=o>(</span><span class=nd>@RequestParam</span><span class=o>(</span><span class=s>&#34;name&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>name</span><span class=o>,</span> <span class=n>Model</span> <span class=n>model</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>model</span><span class=o>.</span><span class=na>addAttribute</span><span class=o>(</span><span class=s>&#34;name&#34;</span><span class=o>,</span> <span class=n>name</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=s>&#34;hello-template&#34;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>hello-mvc</code> get 요청에 맵핑</p></li><li><p>외부, 웹에서 파라미터를 받기 위하여 <code>@RequestParam()</code>을 사용</p></li><li><p>당연히 Model은 넘겨줘야지</p></li><li><p><code>addAttribute</code>에서 파라미터로 넘어온 name을 넘긴다.</p></li></ul><br><p><code>resources/templates/hello-static.html</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>html</span> <span class=na>xmlns:th</span><span class=o>=</span><span class=s>&#34;http://www.thymeleaf.org&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>		<span class=p>&lt;</span><span class=nt>p</span> <span class=na>th:text</span><span class=o>=</span><span class=s>&#34;&#39;hello &#39; + ${name}&#34;</span><span class=p>&gt;</span>hello! empty<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>	<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>템플릿 엔진으로써 잘 동작하면 th:text의 값인 <code>'hello ' + ${name}</code>로 우측의 내용(hello! empty)이 치환이 된다.</li></ul><br><p>타임리프 템플릿의 장점은 html을 쓰고 서버 없이 파일을 열어서 껍데기를 볼 수 있는 것이다. <code>템플릿 파일명 우클릭 - Copy Path/References.. - Absolute Path 복사</code>하고 웹 브라우저 링크에 치면 볼 수 있다.</p><br><p>여기까지 하고 <code>localhost:8080/hello-mvc</code>를 입력하면!? <code>Required request parameter 'name' for method parameter type String is not present]</code>라는 오류가 콘솔창에 뜬다. 파라미터를 입력해주지 않았기 때문이다. 인텔리제이에서 필요한 파라미터가 무엇인지 볼 때 <code>Ctrl + P</code>를 누르면 뜬다.</p><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-3.png width=auto alt></p><p><code>boolean required() default true</code>인 것으로 보아 반드시 값이 필요한게 디폴트 설정이다. 따라서, 웹 브라우저 창에 <code>localhost:8080/hello-mvc?name=name에 들어갈 문자열</code>을 넣어주면 된다. 그러면 결과로 <code>'hello ' + ${name}</code>이니까 <code>hello name에 들어갈 문자열</code>이라는 모습이 보일 것이다.</p><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-4.png width=auto alt></p><p>다시 한번, <strong>달러($) 사인에 들어가는 것은 Model에서 뽑아온 key에 해당하는 value이다.</strong> <code>model.addAttribute("name", name);</code>이라고 했으니까 <code>name</code>이라는 key에서 <code>name</code>이라는 value를 가져오는 것!</p><br><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-5.png width=auto alt></p><ol><li><p>웹브라우저에서 <code>localhost:8080/hello-mvc</code>로 get 요청</p></li><li><p>내장 톰캣 서버가 요청을 받고 스프링에게 넘김</p></li><li><p>스프링은 컨트롤러 쪽에서 <code>hello-mvc</code>와 맵핑된 컨트롤러 있나 찾아봄</p></li><li><p>있으니까 <code>hello-template</code>으로 넘기고 <code>model(name:문자열)</code>을 넘김.</p></li><li><p>뷰 리졸버 (viewResolver)가 return의 <code>hello-template</code>와 같은<code>templates/hello-template.html</code>를 찾아서 타임리프 템플릿 엔진에 처리해달라고 넘김</p></li><li><p>템플릿 엔진이 렌더링해서 변환한 HTML 파일을 웹 브라우저에 반환</p></li></ol><br><a href=#api><h3 id=api><span class=hanchor arialabel=Anchor># </span>API</h3></a><p>MVC 방식과는 다르게 (HTML 파일을 내리는 방식과는 다르게) API는 데이터를 바로 내리는 방식이다.</p><br><p><code>HelloController.java</code>에 내용 추가</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;hello-string&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=nd>@ResponseBody</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=n>String</span> <span class=nf>helloString</span><span class=o>(</span><span class=nd>@RequestParam</span><span class=o>(</span><span class=s>&#34;name&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=s>&#34;hello &#34;</span> <span class=o>+</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p><code>hello-string</code> get 요청에 맵핑</p></li><li><p><code>@ResponseBody</code>의 body는 html의 <code>&lt;body>&lt;/body></code>를 의미하는 것이 아니라 HTTP의 <code>헤더부와 바디부</code>를 의미하는 것이다. HTTP의 응답 body에 이 내용을 직접 넣어주겠다는 의미이다.</p></li><li><p>템플릿 엔진과는 다르게 view 이런게 없어서 저 return 문자가 그대로 내려간다.</p></li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-6.png width=auto alt></p><p>이렇게 페이지 소스보기 해보면 html 태그 같은거 안뜨고 <strong>문자 데이터 자체</strong>가 그대로 왔다. 그러면, 본격적으로 api를 사용해보도록 하자. 객체를 만들어서 JSON 형식(<code>key : value</code>)으로 데이터를 보내보자.</p><br><p><code>HelloController.java</code>에 내용 추가</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;hello-api&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=nd>@ResponseBody</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=n>Hello</span> <span class=nf>helloApi</span><span class=o>(</span><span class=nd>@RequestParam</span><span class=o>(</span><span class=s>&#34;name&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=n>Hello</span> <span class=n>hello</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Hello</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>	<span class=n>hello</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=n>name</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=n>hello</span><span class=o>;</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>static</span> <span class=kd>class</span> <span class=nc>Hello</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>private</span> <span class=n>String</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=n>String</span> <span class=nf>getName</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl>	  
+</span></span><span class=line><span class=cl>	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>setName</span><span class=o>(</span><span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>		<span class=k>this</span><span class=o>.</span><span class=na>name</span> <span class=o>=</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>	<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><p>static은 기억나지? 힙에 올리는게 아니라 그냥 클래스 변수로 만들어서 올리고 아무데서나 사용할 수 있게 만들었던거</p></li><li><p>private으로 해놨으니까 getter, setter 만들어준거고.</p></li><li><p>helloApi에서 hello 객체 만들고 setName으로 들어온 리퀘스트 파라미터인 name 넣어준거고!</p></li><li><p>마지막으로 hello 객체를 반환해줌</p></li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-7.png width=auto alt></p><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-8.png width=auto alt></p><ol><li>웹브라우저에서 <code>localhost:8080/hello-api</code>로 get 요청</li><li>내장 톰캣 서버가 요청을 받고 스프링에게 넘김</li><li>스프링은 컨트롤러 쪽에서 <code>hello-api</code>와 맵핑된 컨트롤러 있나 찾아봄</li><li>있네. 근데 <code>@ResponseBody</code> 애노테이션이 붙어있네?<ul><li>저게 없으면, viewResolver에게 던져서 view에 맞는 템플릿 엔진 연결해줬잖아</li><li>얘는 HTTP body 응답에 이걸 그대로 넘겨야겠구나 라고 생각</li><li>근데, 문자였으면 바로 넣어서 주면 끝인데, 객체일 경우는 어떻게 해야할까?</li><li>객체가 오면, 기본 default가 json 방식으로 데이터를 만들어서 HTTP 응답에 반환하겠다가 기본 정책!</li></ul></li><li><code>viewResolver</code>가 아닌, <code>HttpMessageConverter</code>가 동작</li><li>단순 문자면 <code>StringConverter</code>가 동작. 객체이면 <code>JsonConverter</code>가 동작</li><li>이것을 응답으로 웹 브라우저에</li></ol><br><ul><li>기본 문자처리 : <code>StringHttpMessageConverter</code></li><li>기본 객체처리 : <code>MappingJackson2HttpMessageConverter</code><ul><li>객체를 json으로 변환해주는 유명한 라이브러리 대표적인 2개<ul><li>Jackson version 2</li><li>Gson (구글에서 만든거)</li></ul></li><li>스프링은 기본적으로 잭슨 라이브러리를 채택!</li></ul></li><li>참고 : 클라이언트의 HTTP Accept 헤더와 서버의 컨트롤러 반환 타입 정보를 조합해서 <code>HttpMessageConverter</code>가 선택된다. 예를 들어, 클라이언트 쪽에서 XML을 요청하면 서버 쪽에서 XML 라이브러리를 끼워넣고 XML로 보낼 수 있다는 말이다. 근데 그냥 마음 편하게 json으로 하자 ^^ 다 json으로 한다.</li></ul><hr><a href=#회원-관리-예제><h2 id=회원-관리-예제><span class=hanchor arialabel=Anchor># </span>회원 관리 예제</h2></a><br><a href=#비즈니스-요구사항><h3 id=비즈니스-요구사항><span class=hanchor arialabel=Anchor># </span>비즈니스 요구사항</h3></a><ul><li>굉장히 단순한 비즈니스 요구사항만 정하자.</li><li>아직 데이터 저장소(DB)가 선장되지 않은 상황, 가상의 시나리오<ul><li>데이터 : 회원ID, 이름</li><li>기능 : 회원 등록, 조회</li></ul></li></ul><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-9.png width=auto alt></p><ul><li>컨트롤러 : 웹 MVC의 컨트롤러 역할<ul><li>API 만드는 것</li></ul></li><li>서비스 : 핵심 비즈니스 로직 구현<ul><li>비즈니스 도메인 객체를 가지고 핵심 비즈니스 로직이 동작하도록 구현한 객체</li><li>예) 회원은 중복가입 안된다는 것</li></ul></li><li>도메인 : 비즈니스 도메인 객체<ul><li>예) 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리되는 객체</li></ul></li><li>리포지토리 : 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리</li></ul><br><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-10.png width=auto alt></p><ul><li>회원 비즈니스 로직에는 MemberService</li><li>회원을 저장하는 것은 MemberRepository<ul><li>아직 데이터 저장소가 선정되지 않아서, 우선 인터페이스로 구현 클래스를 변경할 수 있도록 설계 (나중에 선정하고 바꿔끼우기 쉽게)</li><li>데이터 저장소는 RDB, NoSQL 등등 다양한 저장소를 고민중인 상황으로 가정</li><li>개발을 진행하기 위해서 초기 개발 단계에서는 구현체로 가벼운 메모리 기반의 데이터 저장소 사용</li></ul></li></ul><br><a href=#도메인-리포지토리><h3 id=도메인-리포지토리><span class=hanchor arialabel=Anchor># </span>도메인, 리포지토리</h3></a><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-11.png width=auto alt></p><ul><li>회원 <strong>도메인</strong>과 회원 도메인 객체를 저장하고 불러올 수 있는 저장소라고 하는 <strong>리포지토리</strong> 객체를 만들어보자.</li></ul><br><div class=highlight title=domain/Member.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Member</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=c1>// 시스템이 저장하는 임의의 id (데이터 구분 위해서)  
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>private</span> <span class=n>Long</span> <span class=n>id</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>String</span> <span class=n>name</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Long</span> <span class=nf>getId</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>id</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>setId</span><span class=o>(</span><span class=n>Long</span> <span class=n>id</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>id</span> <span class=o>=</span> <span class=n>id</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>String</span> <span class=nf>getName</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>name</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>setName</span><span class=o>(</span><span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>name</span> <span class=o>=</span> <span class=n>name</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight title=repository/MemberRepository.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>MemberRepository</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=n>Member</span> <span class=nf>save</span><span class=o>(</span><span class=n>Member</span> <span class=n>Member</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=n>Optional</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findById</span><span class=o>(</span><span class=n>Long</span> <span class=n>id</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=n>Optional</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findByName</span><span class=o>(</span><span class=n>String</span> <span class=n>name</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=n>List</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findAll</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>Optional은 Java8에 들어간 기능으로 findById나 findByName이 없으면 null이 반환될 수 있는데, 최근에는 Optional로 감싸서 반환하는 것을 선호</li></ul><br><div class=highlight title=repository/MemoryMemberRepository.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>MemoryMemberRepository</span> <span class=kd>implements</span> <span class=n>MemberRepository</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=n>Map</span><span class=o>&lt;</span><span class=n>Long</span><span class=o>,</span> <span class=n>Member</span><span class=o>&gt;</span> <span class=n>store</span> <span class=o>=</span> <span class=k>new</span> <span class=n>HashMap</span><span class=o>&lt;&gt;();</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>static</span> <span class=kt>long</span> <span class=n>sequence</span> <span class=o>=</span> <span class=n>0L</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Member</span> <span class=nf>save</span><span class=o>(</span><span class=n>Member</span> <span class=n>member</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member</span><span class=o>.</span><span class=na>setId</span><span class=o>(++</span><span class=n>sequence</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>store</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>member</span><span class=o>.</span><span class=na>getId</span><span class=o>(),</span> <span class=n>member</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>member</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Optional</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findById</span><span class=o>(</span><span class=n>Long</span> <span class=n>id</span><span class=o>)</span> <span class=o>{</span>    
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>Optional</span><span class=o>.</span><span class=na>ofNullable</span><span class=o>(</span><span class=n>store</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>id</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Optional</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findByName</span><span class=o>(</span><span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>store</span><span class=o>.</span><span class=na>values</span><span class=o>().</span><span class=na>stream</span><span class=o>()</span>  
+</span></span><span class=line><span class=cl>                <span class=o>.</span><span class=na>filter</span><span class=o>(</span><span class=n>member</span> <span class=o>-&gt;</span> <span class=n>member</span><span class=o>.</span><span class=na>getName</span><span class=o>().</span><span class=na>equals</span><span class=o>(</span><span class=n>name</span><span class=o>))</span>  
+</span></span><span class=line><span class=cl>                <span class=o>.</span><span class=na>findAny</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findAll</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;(</span><span class=n>store</span><span class=o>.</span><span class=na>values</span><span class=o>());</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>Key는 회원의 아이디 타입인 Long, Value는 Mamber. 실무에서는 동시성 문제가 발생할 수 있어서, 공유되는 변수일 때는 <strong>ConcurrentHashMap</strong>을 써야하는데, 예제니까 일단 단순하게 쓰자</li><li>sequence는 단순하게 0, 1, 2 키값 생성해주는 녀석이다. 얘도 동시성 고려할거면 <strong>AtomicLong</strong> 써야함</li><li>null이 될 가능성이 있다면 Optional.ofNullable()로 감싸서 반환</li></ul><br><a href=#리포지토리-테스트-케이스><h3 id=리포지토리-테스트-케이스><span class=hanchor arialabel=Anchor># </span>리포지토리 테스트 케이스</h3></a><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-12.png width=auto alt></p><ul><li>회원 리포지토리가 제대로 동작하는지 테스트 케이스를 만들어보자.</li><li>개발한 기능을 실행해서 테스트 할 때 자바의 main 메서드를 통해서 실행하거나, 웹 애플리케이션의 컨트롤러를 통해서 해당 기능을 실행한다.</li><li>이러한 방법은 준비하고 실행하는데 오래 걸리고, 반복 실행하기 어렵고 여러 테스트를 한번에 실행하기 어렵다는 단점이 있다. 자바는 <mark><strong>JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결</strong></mark>한다.</li></ul><br><div class=highlight title=MemoryMemberRepositoryTest.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import static</span> <span class=nn>org.assertj.core.api.Assertions.*</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>MemoryMemberRepositoryTest</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=n>MemoryMemberRepository</span> <span class=n>repository</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MemoryMemberRepository</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@AfterEach</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>afterEach</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>repository</span><span class=o>.</span><span class=na>clearStore</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Test</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>save</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>member</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;spring&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>repository</span><span class=o>.</span><span class=na>save</span><span class=o>(</span><span class=n>member</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>result</span> <span class=o>=</span> <span class=n>repository</span><span class=o>.</span><span class=na>findById</span><span class=o>(</span><span class=n>member</span><span class=o>.</span><span class=na>getId</span><span class=o>()).</span><span class=na>get</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>		<span class=c1>// Assertions.assertEquals(member, result);  
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=n>assertThat</span><span class=o>(</span><span class=n>member</span><span class=o>).</span><span class=na>isEqualTo</span><span class=o>(</span><span class=n>result</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Test</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>findByName</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>member1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member1</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;spring1&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>repository</span><span class=o>.</span><span class=na>save</span><span class=o>(</span><span class=n>member1</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>          
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>member2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member2</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;spring2&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>repository</span><span class=o>.</span><span class=na>save</span><span class=o>(</span><span class=n>member2</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>result</span> <span class=o>=</span> <span class=n>repository</span><span class=o>.</span><span class=na>findByName</span><span class=o>(</span><span class=s>&#34;spring1&#34;</span><span class=o>).</span><span class=na>get</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>assertThat</span><span class=o>(</span><span class=n>result</span><span class=o>).</span><span class=na>isEqualTo</span><span class=o>(</span><span class=n>member1</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Test</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>findAll</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>member1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member1</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;spring1&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>repository</span><span class=o>.</span><span class=na>save</span><span class=o>(</span><span class=n>member1</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>member2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member2</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;spring2&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>repository</span><span class=o>.</span><span class=na>save</span><span class=o>(</span><span class=n>member2</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=n>result</span> <span class=o>=</span> <span class=n>repository</span><span class=o>.</span><span class=na>findAll</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>assertThat</span><span class=o>(</span><span class=n>result</span><span class=o>.</span><span class=na>size</span><span class=o>()).</span><span class=na>isEqualTo</span><span class=o>(</span><span class=n>2</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://shin-jae-yoon.github.io//brain/image/spring-basic-01-13.png width=auto alt></p><ul><li>어차피 테스트코드는 여기서만 쓰니까 <code>public class</code> 말고 그냥 <code>class</code>로 하자</li><li><code>@Test</code> 애노테이션 붙이면 Junit이 테스트코드로 알아차림</li><li>Assertions을 사용하여 테스트 할 수 있는데 두 버전이 있음<ul><li>junit : <code>Assertions.assertEquals(member, result);</code><ul><li>테스트하고자 하는 값과 기대하는 값이 좀 헷갈림</li></ul></li><li>assertj : <code>Assertions.assertThat(member).isEqualTo(result);</code><ul><li>테스트하고자 하는 값과 기대하는 값이 직관적</li><li>위에 <code>import static org.assertj.core.api.Assertions.*;</code>로 static으로 import하면 그냥 <code>assertThat()</code>으로 바로 사용 가능<ul><li><code>option + enter</code> 해서 만들면 됨</li></ul></li></ul></li></ul></li><li>한 번에 여러 테스트를 실행하면 메모리 DB에 직전 테스트의 결과가 남아있을 수도 있어서 이전 테스트 때문에 다음 테스트가 실패할 가능성이 있음. 이때 <code>@AfterEach</code>를 사용하면 각 테스트가 종료될 때마다 이 기능을 실행하는데, 여기에 메모리 DB에 저장된 데이터를 삭제하도록 할 수 있음</li><li><mark><strong>테스트는 각각 독립적으로 실행되어야 한다. 테스트 순서에 의존관계가 있는 것은 좋은 테스트가 아니다.</strong></mark></li></ul><br><a href=#서비스-개발><h3 id=서비스-개발><span class=hanchor arialabel=Anchor># </span>서비스 개발</h3></a><ul><li>실제 비즈니스 로직이 있는 회원 서비스를 만들어보자.</li></ul><div class=highlight title=service/MemberService.java><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>MemberService</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>final</span> <span class=n>MemberRepository</span> <span class=n>memberRepository</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MemoryMemberRepository</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=cm>/**  
+</span></span></span><span class=line><span class=cl><span class=cm>     * 회원가입  
+</span></span></span><span class=line><span class=cl><span class=cm>     */</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Long</span> <span class=nf>join</span><span class=o>(</span><span class=n>Member</span> <span class=n>member</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// 같은 이름이 있는 중복 회원 X, 중복 회원 검증  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>validateDuplicateMember</span><span class=o>(</span><span class=n>member</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=n>memberRepository</span><span class=o>.</span><span class=na>save</span><span class=o>(</span><span class=n>member</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>member</span><span class=o>.</span><span class=na>getId</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kt>void</span> <span class=nf>validateDuplicateMember</span><span class=o>(</span><span class=n>Member</span> <span class=n>member</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>memberRepository</span><span class=o>.</span><span class=na>findByName</span><span class=o>(</span><span class=n>member</span><span class=o>.</span><span class=na>getName</span><span class=o>())</span>  
+</span></span><span class=line><span class=cl>                <span class=c1>// null이 아니라 만약 값이 있으면 동작하는 로직  
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=o>.</span><span class=na>ifPresent</span><span class=o>(</span><span class=n>m</span> <span class=o>-&gt;</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>                    <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalStateException</span><span class=o>(</span><span class=s>&#34;이미 존재하는 회원입니다.&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>                <span class=o>});</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=cm>/**  
+</span></span></span><span class=line><span class=cl><span class=cm>     * 전체 회원 조회  
+</span></span></span><span class=line><span class=cl><span class=cm>     */</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findMembers</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>memberRepository</span><span class=o>.</span><span class=na>findAll</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>Optional</span><span class=o>&lt;</span><span class=n>Member</span><span class=o>&gt;</span> <span class=nf>findOne</span><span class=o>(</span><span class=n>Long</span> <span class=n>memberId</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>memberRepository</span><span class=o>.</span><span class=na>findById</span><span class=o>(</span><span class=n>memberId</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><a href=#서비스-테스트><h3 id=서비스-테스트><span class=hanchor arialabel=Anchor># </span>서비스 테스트</h3></a><ul><li>비즈니스 로직이 있는 서비스가 잘 동작하는지 테스트 해보자.</li><li>실제로 동작하는 코드는 한글로 적기 애매하지만, 솔직히 테스트 코드는 보기 편하기 위함이니까 한글로 <code>회원가입()</code> 이렇게 직관적으로 적어도 됨</li></ul><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>MemberService</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>final</span> <span class=n>MemberRepository</span> <span class=n>memberRepository</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MemoryMemberRepository</span><span class=o>();</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li>기존에는 회원 서비스가 메모리 회원 리포지토리를 직접 생성하게 했음</li><li>그러나, 이렇게 하면 테스트 코드에서 생성하는 메모리 회원 리포지토리와 서비스의 메모리 회원 리포지토리는 같은 것이 아님</li><li>그래서 회원 서비스에 의존성 주입(DI)을 하기로 함</li></ul><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>MemberService</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=kd>final</span> <span class=n>MemberRepository</span> <span class=n>memberRepository</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>MemberService</span><span class=o>(</span><span class=n>MemberRepository</span> <span class=n>memberRepository</span><span class=o>)</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>memberRepository</span> <span class=o>=</span> <span class=n>memberRepository</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><br><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>class</span> <span class=nc>MemberServiceTest</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=n>MemberService</span> <span class=n>memberService</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    <span class=n>MemoryMemberRepository</span> <span class=n>memberRepository</span><span class=o>;</span>  
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=nd>@BeforeEach</span>  
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>beforeEach</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>memberRepository</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MemoryMemberRepository</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>memberService</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MemberService</span><span class=o>(</span><span class=n>memberRepository</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@AfterEach</span>  
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>afterEach</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=n>memberRepository</span><span class=o>.</span><span class=na>clearStore</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Test</span>  
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>회원가입</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// given  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>Member</span> <span class=n>member</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;hello&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// when  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>Long</span> <span class=n>saveId</span> <span class=o>=</span> <span class=n>memberService</span><span class=o>.</span><span class=na>join</span><span class=o>(</span><span class=n>member</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// then  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>Member</span> <span class=n>findMember</span> <span class=o>=</span> <span class=n>memberService</span><span class=o>.</span><span class=na>findOne</span><span class=o>(</span><span class=n>saveId</span><span class=o>).</span><span class=na>get</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>assertThat</span><span class=o>(</span><span class=n>member</span><span class=o>.</span><span class=na>getName</span><span class=o>()).</span><span class=na>isEqualTo</span><span class=o>(</span><span class=n>findMember</span><span class=o>.</span><span class=na>getName</span><span class=o>());</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Test</span>  
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>중복_회원_예외</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>        <span class=c1>// given  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>Member</span> <span class=n>member1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member1</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;spring&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=n>Member</span> <span class=n>member2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Member</span><span class=o>();</span>  
+</span></span><span class=line><span class=cl>        <span class=n>member2</span><span class=o>.</span><span class=na>setName</span><span class=o>(</span><span class=s>&#34;spring&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>        <span class=c1>// when  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>memberService</span><span class=o>.</span><span class=na>join</span><span class=o>(</span><span class=n>member1</span><span class=o>);</span>    
+</span></span><span class=line><span class=cl>        <span class=c1>// 이 예외가 터져야한다.  
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>IllegalStateException</span> <span class=n>e</span> <span class=o>=</span> <span class=n>assertThrows</span><span class=o>(</span><span class=n>IllegalStateException</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=o>()</span> <span class=o>-&gt;</span> <span class=n>memberService</span><span class=o>.</span><span class=na>join</span><span class=o>(</span><span class=n>member2</span><span class=o>));</span>  
+</span></span><span class=line><span class=cl>        <span class=n>assertThat</span><span class=o>(</span><span class=n>e</span><span class=o>.</span><span class=na>getMessage</span><span class=o>()).</span><span class=na>isEqualTo</span><span class=o>(</span><span class=s>&#34;이미 존재하는 회원입니다.&#34;</span><span class=o>);</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Test</span>  
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>findMembers</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>  
+</span></span><span class=line><span class=cl>    <span class=nd>@Test</span>  
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>findOne</span><span class=o>()</span> <span class=o>{</span>  
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>@BeforeEach</code>를 이용하여 테스트 전에 의존성 주입을 시켜줌<ul><li>각 테스트 실행 전에 호출되며, 테스트가 서로 영향이 없도록 항상 새로운 객체를 생성하고 의존관계도 새로 맺어준다.</li></ul></li><li>테스트 코드 작성할 때 <mark><strong>given -> when -> then</strong></mark>으로 짜보자.<ul><li>좀 더 직관적으로 알 수 있다.</li></ul></li></ul><style>.github-comment{border-top:1px solid rgba(128,128,128,.344);margin-top:7em}.utterances{margin-top:2em!important}</style><div class=github-comment><blockquote><h3>Comment</h3></blockquote><script src=https://utteranc.es/client.js repo=Shin-Jae-Yoon/Shin-Jae-Yoon.github.io issue-term=pathname label=utterances theme=github-light crossorigin=anonymous async></script></div></div><div class=single-aside-box><aside class=single-aside><div class=single-graph-container id=footer><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div class=graph-header><p>Interactive Graph</p><button class=expand-btn id=expand-btn><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></div><div id=graph-container></div><style>:root{--g-node:var(--graphNode);--g-node-active:var(--graphNodeActive);--g-node-inactive:var(--graphNodeInactive);--g-link:var(--graphLink);--g-link-active:var(--graphLinkActive)}</style><script src=https://shin-jae-yoon.github.io/js/graph.c7d31393238aa9f7cc8094b9bcd520cf.js></script></div></div><aside class=asideTOC id=asideTOC><div class=toc-header><a href=# id=asideTocTitle>ON THIS PAGE</a></div><nav id=TableOfContents><ul><li><a href=#프로젝트-환경설정>프로젝트 환경설정</a><ul><li><a href=#프로젝트-생성>프로젝트 생성</a></li><li><a href=#라이브러리-살펴보기>라이브러리 살펴보기</a></li><li><a href=#view-환경설정>View 환경설정</a></li><li><a href=#빌드하고-실행하기>빌드하고 실행하기</a></li></ul></li><li><a href=#스프링-웹-개발-기초>스프링 웹 개발 기초</a><ul><li><a href=#정적-컨텐츠>정적 컨텐츠</a></li><li><a href=#mvc와-템플릿-엔진>MVC와 템플릿 엔진</a></li><li><a href=#api>API</a></li></ul></li><li><a href=#회원-관리-예제>회원 관리 예제</a><ul><li><a href=#비즈니스-요구사항>비즈니스 요구사항</a></li><li><a href=#도메인-리포지토리>도메인, 리포지토리</a></li><li><a href=#리포지토리-테스트-케이스>리포지토리 테스트 케이스</a></li><li><a href=#서비스-개발>서비스 개발</a></li><li><a href=#서비스-테스트>서비스 테스트</a></li></ul></li></ul></nav></aside></aside></div><script>scroll_init()</script></div><div class=btn-absolute><button class=top-btn>
+<i class="top-btn-img fa-solid fa-arrow-up"></i></button>
+<button class=mobile-expand-btn id=expand-btn2>
+<i class="fa-solid fa-diagram-project"></i></button></div><script>btn_init(),document.querySelector(".top-btn").addEventListener("click",e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})</script><script>global_init()</script></div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><div id=contact_buttons><footer><div class=contact-left><p style=margin-bottom:0>Made by Dev Uni using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2024</p><p style=margin-top:0><a href=https://github.com/Shin-Jae-Yoon/Shin-Jae-Yoon.github.io>Dev Uni</a> has customized it by adding a features.</p><div class=contact-left-img><a href=https://pages.github.com/><img src=/images/logo-ghpages.png></a></div></div><div class=contact-right><div class=contact-right-flex><div class=contact-right-mountain><img src=/images/logo-contact.png></div><div class=contact-right-flexitem><a href=https://github.com/Shin-Jae-Yoon><img src=/images/logo-contact-github.png><p>Github</p></a></div><div class=contact-right-flexitem><a href=https://jae-yoon.tistory.com/><img src=/images/logo-contact-tistory.png><p>Tistory</p></a></div><div class=contact-right-flexitem><a href=https://open.kakao.com/o/sBqoUA7e><img src=/images/logo-message.png><p>Message</p></a></div></div></footer></div><script src=https://shin-jae-yoon.github.io/js/graph.c7d31393238aa9f7cc8094b9bcd520cf.js></script></body></html>
