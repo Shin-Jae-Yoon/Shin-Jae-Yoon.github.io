@@ -50,66 +50,26 @@ function initPopover(baseURL, useContextualBacklinks) {
             })
           }
 
-          let animationFrame;
-
           li.addEventListener("mouseover", () => {
-            cancelAnimationFrame(animationFrame); // 이전 애니메이션 취소
-            document.body.appendChild(el);
-          
+            // fix tooltip positioning
             window.FloatingUIDOM.computePosition(li, el, {
               middleware: [
-                window.FloatingUIDOM.offset(10),
-                window.FloatingUIDOM.inline(),
-                window.FloatingUIDOM.shift(),
-              ],
-              placement: 'right',
+                window.FloatingUIDOM.offset(10), 
+                window.FloatingUIDOM.inline(), 
+                window.FloatingUIDOM.shift()],
+                placement: 'right',
             }).then(({ x, y }) => {
               Object.assign(el.style, {
-                position: 'absolute',
                 left: `${x}px`,
                 top: `${y}px`,
-              });
-            });
-          
-            el.classList.add("visible");
-          });
-          
+              })
+            })
+
+            el.classList.add("visible")
+          })
           li.addEventListener("mouseout", () => {
-            animationFrame = requestAnimationFrame(() => {
-              el.classList.remove("visible");
-              li.appendChild(el);
-            });
-          });
-          
-          el.addEventListener("mouseover", () => {
-            cancelAnimationFrame(animationFrame); // Popover에서 빠르게 이동해도 취소
-          });
-          
-          el.addEventListener("mouseout", () => {
-            animationFrame = requestAnimationFrame(() => {
-              el.classList.remove("visible");
-              li.appendChild(el);
-            });
-          });
-          
-          
-
-          // li.addEventListener("mouseover", () => {
-          //   // fix tooltip positioning
-          //   window.FloatingUIDOM.computePosition(li, el, {
-          //     middleware: [window.FloatingUIDOM.offset(10), window.FloatingUIDOM.inline(), window.FloatingUIDOM.shift()],
-          //   }).then(({ x, y }) => {
-          //     Object.assign(el.style, {
-          //       left: `${x}px`,
-          //       top: `${y}px`,
-          //     })
-          //   })
-
-          //   el.classList.add("visible")
-          // })
-          // li.addEventListener("mouseout", () => {
-          //   el.classList.remove("visible")
-          // })
+            el.classList.remove("visible")
+          })
         }
       })
   })
