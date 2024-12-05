@@ -50,8 +50,10 @@ function initPopover(baseURL, useContextualBacklinks) {
             })
           }
 
+          let animationFrame;
+
           li.addEventListener("mouseover", () => {
-            // Popover 기준점을 body로 설정
+            cancelAnimationFrame(animationFrame); // 이전 애니메이션 취소
             document.body.appendChild(el);
           
             window.FloatingUIDOM.computePosition(li, el, {
@@ -60,10 +62,10 @@ function initPopover(baseURL, useContextualBacklinks) {
                 window.FloatingUIDOM.inline(),
                 window.FloatingUIDOM.shift(),
               ],
-              placement: 'right', // Popover 기본 위치를 top으로 설정
+              placement: 'right',
             }).then(({ x, y }) => {
               Object.assign(el.style, {
-                position: 'absolute', // body 기준으로 위치 설정
+                position: 'absolute',
                 left: `${x}px`,
                 top: `${y}px`,
               });
@@ -73,17 +75,24 @@ function initPopover(baseURL, useContextualBacklinks) {
           });
           
           li.addEventListener("mouseout", () => {
-            el.classList.remove("visible");
-            // Popover를 다시 부모로 이동
-            li.appendChild(el);
-          });
-
-          li.addEventListener("click", () => {
-            if (el.classList.contains("visible")) {
+            animationFrame = requestAnimationFrame(() => {
               el.classList.remove("visible");
-              li.appendChild(el); // Popover를 원래 위치로 복구
-            }
+              li.appendChild(el);
+            });
           });
+          
+          el.addEventListener("mouseover", () => {
+            cancelAnimationFrame(animationFrame); // Popover에서 빠르게 이동해도 취소
+          });
+          
+          el.addEventListener("mouseout", () => {
+            animationFrame = requestAnimationFrame(() => {
+              el.classList.remove("visible");
+              li.appendChild(el);
+            });
+          });
+          
+          
 
           // li.addEventListener("mouseover", () => {
           //   // fix tooltip positioning

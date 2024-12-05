@@ -1,2 +1,2 @@
-> [!note] <% tp.file.cursor(0) %> <br>
+> [!note] **<% tp.file.cursor(0) %>** <br>
 > 

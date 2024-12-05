@@ -97,6 +97,10 @@ strong {
   color: var(--dark);
 }
 
+thead strong {
+  color: rgba(255, 255, 255, 0.821);
+}
+
 .hanchor {
   font-family: var(--font-header);
   opacity: 0.8;
@@ -153,7 +157,7 @@ blockquote {
 
 .note-callout {
   p {
-    color: #2cabb9 !important;
+    color: var(--gray) !important;
   }
 }
 
@@ -535,7 +539,7 @@ hr {
 }
 
 .single-content p a,
-.single-content li a {
+.single-content li a:not(.tags li a) {
   font-size: 1em;
   font-weight: 700;
   text-decoration: none;
