@@ -51,6 +51,8 @@ html {
       top: 0;
     }
   }
+
+
 }
 
 
@@ -63,7 +65,21 @@ body {
   background-color: var(--light);
 }
 
-h1, h2, h3, h4, h5, h6, thead {
+h1 {
+  font-family: var(--font-header);
+  color: var(--headFirst);
+  font-weight: revert;
+  margin: 2rem 0 0;
+  padding: 2rem auto 1rem;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover > .hanchor {
+      color: var(--tertiary);
+    }
+  }
+}
+
+h2, h3, h4, h5, h6, thead {
   font-family: var(--font-header);
   color: var(--dark);
   font-weight: revert;
@@ -72,9 +88,13 @@ h1, h2, h3, h4, h5, h6, thead {
 
   @media (hover: hover) and (pointer: fine) {
     &:hover > .hanchor {
-      color: var(--secondary);
+      color: var(--tertiary);
     }
   }
+}
+
+strong {
+  color: var(--dark);
 }
 
 .hanchor {
@@ -129,6 +149,12 @@ blockquote {
   border-left: 3px solid var(--secondary);
   padding-left: 1em;
   transition: border-color 0.2s ease;
+}
+
+.note-callout {
+  p {
+    color: #2cabb9 !important;
+  }
 }
 
 .footnotes p {
@@ -272,7 +298,8 @@ code {
   font-size: 0.85em;
   padding: 0.15em 0.3em;
   border-radius: 5px;
-  background: var(--lightgray);
+  background: #f2f2f2;
+  color: #228995;
 }
 
 @keyframes fadeIn {
@@ -507,31 +534,77 @@ hr {
   }
 }
 
+.single-content p a,
+.single-content li a {
+  font-size: 1em;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+
+  position: relative; // 위치 기준 설정
+  display: inline-block; // 크기를 내용에 맞춤
+  padding-right: 16px; // 아이콘 오른쪽 여백 추가
+  margin-right: 2px;
+
+  &::after {
+    content: ''; // 밑줄 가상 요소
+    position: absolute; // a 태그 기준 위치
+    left: 0; // 밑줄 시작 위치
+    bottom: -2px; // 텍스트 아래에 위치
+    height: 2px; // 밑줄 두께
+    background-color: var(--secondary); // 밑줄 색상
+    width: 0; // 기본 상태에서 보이지 않게
+    transition: width 0.3s ease-in-out; // 밑줄 애니메이션
+  }
+
+  &::before {
+    content: ''; // 아이콘 가상 요소
+    display: inline-block;
+    width: 16px; // 아이콘 너비
+    height: 16px; // 아이콘 높이
+    background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke-width=%221.5%22 stroke=%22%232cabb9%22%3E%3Cpath stroke-linecap=%22round%22 stroke-linejoin=%22round%22 d=%22M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25%22 /%3E%3C/svg%3E');
+    background-size: contain; // 아이콘 크기 맞춤
+    background-repeat: no-repeat; // 반복 제거
+    color: var(--secondary);
+    position: absolute; // a 태그 기준 위치
+    right: 0; // 오른쪽 정렬
+    top: 40%; // 세로 가운데 정렬
+    transform: translateY(-50%); // 세로 정렬
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--tertiary) !important; // 텍스트 색상 변경
+    }
+
+    &:hover::after {
+      width: 90%; // 호버 시 밑줄이 전체 길이로
+    }
+  }
+}
+
 .popover {
-  z-index: 10;
-  position: absolute;
+  z-index: 100; // Popover가 항상 위에 나타나도록 보장
+  position: absolute; // 위치를 동적으로 조정
   width: 20rem;
-  display: none;
   background-color: var(--light);
   padding: 1rem;
-  margin: 1rem;
+  margin: 0; // margin 제거
   border: 1px solid var(--outlinegray);
   border-radius: 5px;
   pointer-events: none;
+  opacity: 0; // 기본적으로 숨김
+  visibility: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease;
   user-select: none;
   overflow-wrap: anywhere;
-  box-shadow: 6px 6px 36px 0 rgba(0,0,0,0.25);
-
-  @media all and (max-width: 600px) {
-    display: none !important;
-  }
+  box-shadow: 6px 6px 36px 0 rgba(0, 0, 0, 0.25);
 
   &.visible {
     opacity: 1;
     visibility: visible;
-    display: inline-block;
-    animation: dropin 0.2s ease;
+    pointer-events: auto;
   }
 
   & > h3 {
@@ -558,8 +631,61 @@ hr {
   }
 }
 
+
+// .popover {
+//   z-index: 10;
+//   position: absolute;
+//   width: 20rem;
+//   display: none;
+//   background-color: var(--light);
+//   padding: 1rem;
+//   margin: 1rem;
+//   border: 1px solid var(--outlinegray);
+//   border-radius: 5px;
+//   pointer-events: none;
+//   transition: opacity 0.2s ease, transform 0.2s ease;
+//   user-select: none;
+//   overflow-wrap: anywhere;
+//   box-shadow: 6px 6px 36px 0 rgba(0,0,0,0.25);
+
+//   @media all and (max-width: 600px) {
+//     display: none !important;
+//   }
+
+//   &.visible {
+//     opacity: 1;
+//     visibility: visible;
+//     display: inline-block;
+//     animation: dropin 0.2s ease;
+//   }
+
+//   & > h3 {
+//     font-size: 1rem;
+//     margin: 0.25rem 0;
+//   }
+
+//   & .meta {
+//     margin-top: 0.25rem;
+//     opacity: 0.5;
+//     font-family: var(--font-mono);
+//     font-size: 0.8rem;
+//   }
+
+//   & > p {
+//     margin: 0;
+//     padding: 0.5rem 0;
+//   }
+
+//   & > p, & > a {
+//     font-size: 1rem;
+//     font-weight: 400;
+//     user-select: none;
+//   }
+// }
+
 mark {
-  background-color: var(--highlighted);
+  // background-color: var(--highlighted);
+  background-color: rgba(0, 0, 0, 0);
   color: var(--gray);
 }
 

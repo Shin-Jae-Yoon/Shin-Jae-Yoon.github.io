@@ -51,21 +51,56 @@ function initPopover(baseURL, useContextualBacklinks) {
           }
 
           li.addEventListener("mouseover", () => {
-            // fix tooltip positioning
+            // Popover 기준점을 body로 설정
+            document.body.appendChild(el);
+          
             window.FloatingUIDOM.computePosition(li, el, {
-              middleware: [window.FloatingUIDOM.offset(10), window.FloatingUIDOM.inline(), window.FloatingUIDOM.shift()],
+              middleware: [
+                window.FloatingUIDOM.offset(10),
+                window.FloatingUIDOM.inline(),
+                window.FloatingUIDOM.shift(),
+              ],
+              placement: 'right', // Popover 기본 위치를 top으로 설정
             }).then(({ x, y }) => {
               Object.assign(el.style, {
+                position: 'absolute', // body 기준으로 위치 설정
                 left: `${x}px`,
                 top: `${y}px`,
-              })
-            })
-
-            el.classList.add("visible")
-          })
+              });
+            });
+          
+            el.classList.add("visible");
+          });
+          
           li.addEventListener("mouseout", () => {
-            el.classList.remove("visible")
-          })
+            el.classList.remove("visible");
+            // Popover를 다시 부모로 이동
+            li.appendChild(el);
+          });
+
+          li.addEventListener("click", () => {
+            if (el.classList.contains("visible")) {
+              el.classList.remove("visible");
+              li.appendChild(el); // Popover를 원래 위치로 복구
+            }
+          });
+
+          // li.addEventListener("mouseover", () => {
+          //   // fix tooltip positioning
+          //   window.FloatingUIDOM.computePosition(li, el, {
+          //     middleware: [window.FloatingUIDOM.offset(10), window.FloatingUIDOM.inline(), window.FloatingUIDOM.shift()],
+          //   }).then(({ x, y }) => {
+          //     Object.assign(el.style, {
+          //       left: `${x}px`,
+          //       top: `${y}px`,
+          //     })
+          //   })
+
+          //   el.classList.add("visible")
+          // })
+          // li.addEventListener("mouseout", () => {
+          //   el.classList.remove("visible")
+          // })
         }
       })
   })

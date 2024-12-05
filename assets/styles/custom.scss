@@ -2,14 +2,15 @@
 
 :root {
   --light: #ffffff;
-  --dark: #141021;
+  --dark: #2cabb9;
   --visited: #284b63;
   --primary: #f28482;
   --gray: #4e4e4e;
   --lightgray: #f0f0f0;
   --outlinegray: #dadada;
   --million-progress-bar-color: var(--secondary);
-  --highlighted: #f5dfaf88;
+  // --highlighted: #f5dfaf88;
+  --highlighted: #a4c9ff3b;
   --toctitle: #284b63;
   --tocscrollbar: #c3ddf7;
   --tocscroll: #bed0db;
@@ -19,6 +20,8 @@
   --headertertiary: #7d7d7d;
   --indexblue: #59b6c1 !important;
   --basic: none;
+  --headFirst: #0a1922;
+  --headSecond: #0a1922;
 
   --navbackground: #faf8f8;
   --projectitembackground: #eceaea;
@@ -30,9 +33,11 @@
   --graphLinkActive: #5a7282;
 
   // lightblue version
+  // --secondary: #2cabb9;
   --secondary: #2cabb9;
-  --secondaryopacity: #2cabb945;
-  --tertiary: #267783;
+  --linkColor: #23565c;
+  --secondaryopacity: #2cabb947;
+  --tertiary: #155f6a;
   --sidetextcolor: #59b6c1 !important;
   --sidetertiary: #93e6ef49!important;
   --sidetopbtn: #5fddeb !important;

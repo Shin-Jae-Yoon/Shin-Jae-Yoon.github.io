@@ -8,12 +8,12 @@ weight: 1
 
 코딩테스트를 진행함에 있어서, 잊어버리기 쉬운 기본 내용 정리
 
-- [입출력](brain/CodingTest/inputoutput)
-- [수학](brain/CodingTest/math)
-- [문자열](brain/CodingTest/string)
-- [자료구조](brain/CodingTest/dataStructure)
-- [DP](brain/CodingTest/dp)
-- [그래프 탐색](brain/CodingTest/graph)
+- [입출력](brain/CodeTree/inputoutput.md)
+- [수학](brain/CodeTree/math.md)
+- [문자열](brain/CodeTree/string.md)
+- [자료구조](brain/CodeTree/dataStructure.md)
+- [DP](brain/CodeTree/dp.md)
+- [그래프 탐색](brain/CodeTree/graph.md)
 
 <hr>
 
