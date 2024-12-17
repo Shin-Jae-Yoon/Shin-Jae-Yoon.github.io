@@ -48,6 +48,25 @@ weight: 3
     }
 ```
 
+- 완전 쉬운 반복
+	- 최소공배수는 `LCM = (n * m) / GCD`
+
+```java
+private static int gcd(int n, int m) {
+	int max = 1;
+
+	for (int i = 2; i <= Math.min(n, m); i++) {
+		if (n % i == 0 && m % i == 0) {
+			max = i;
+		}
+	}
+
+	return max;
+}
+```
+
+
+
 <br>
 
 <hr>

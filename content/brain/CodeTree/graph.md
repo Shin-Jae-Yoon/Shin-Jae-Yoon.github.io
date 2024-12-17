@@ -3,6 +3,7 @@ title: "그래프 탐색"
 date: "2024-10-15 23:31"
 enableToc: true
 tags: [""]
+weight: 8
 ---
 
 코드트리(Codetree)의 <a href='https://www.codetree.ai/curriculums/6' target='_blank'>Novice High - 자료구조 알고리즘</a>을 정리한 내용입니다.

@@ -3,7 +3,7 @@ title: "자료구조"
 date: "2024-08-14 22:44"
 enableToc: true
 tags: [""]
-weight: 5
+weight: 6
 ---
 
 코드트리(Codetree)의 <a href='https://www.codetree.ai/curriculums/6' target='_blank'>Novice High - 자료구조 알고리즘</a>을 정리한 내용입니다.
@@ -43,6 +43,12 @@ public class Main {
 > - 탐색 : ==**$O(1)$**==
 > - Index 기반으로 접근할 시 원하는 원소에 바로 접근할 수 있기 때문에 ==**$O(1)$** ==
 > - Data 기반으로 접근할 시 조건에 만족하는 Data를 찾지 못한다면 모든 원소를 한번씩 탐색해야 하기 때문에 ==**$O(N)$**==
+
+<br>
+
+> [!note] **Array vs ArrayList vs LinkedList** <br>
+> ![](brain/image/dataStructure-47.png)
+> - 해당 <a href='https://stonage.tistory.com/229' target='_blank'>게시글</a> 참조
 
 
 <br>

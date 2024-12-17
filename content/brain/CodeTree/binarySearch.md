@@ -3,6 +3,7 @@ title: "이진탐색"
 date: "2024-10-28 22:56"
 enableToc: true
 tags: [""]
+weight: 9
 ---
 
 코드트리(Codetree)의 <a href='https://www.codetree.ai/curriculums/6' target='_blank'>Novice High - 자료구조 알고리즘</a>을 정리한 내용입니다.

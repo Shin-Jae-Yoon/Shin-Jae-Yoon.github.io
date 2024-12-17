@@ -6,11 +6,12 @@ tags: [""]
 weight: 1
 ---
 
-코딩테스트를 진행함에 있어서, 잊어버리기 쉬운 기본 내용 정리
+코딩테스트를 진행함에 있어서, 잊어버리기 쉬운 기본 내용 정리 및 코드트리 정리
 
 - [입출력](brain/CodeTree/inputoutput.md)
 - [수학](brain/CodeTree/math.md)
 - [문자열](brain/CodeTree/string.md)
+- [정렬](brain/CodeTree/array.md)
 - [자료구조](brain/CodeTree/dataStructure.md)
 - [DP](brain/CodeTree/dp.md)
 - [그래프 탐색](brain/CodeTree/graph.md)
@@ -46,8 +47,8 @@ $N <= 500$
 $N <= 1,000$
 - 시간 복잡도 $O(N^2)$, $O(N^2 logN)$
 
-==$N <= 100,000$==
-- ==시간 복잡도 $O(N)$, $O(N log N)$, $O(log N)$, $O(1)$==
+**$N <= 100,000$**
+- **시간 복잡도 $O(N)$, $O(N log N)$, $O(log N)$, $O(1)$**
 
 <hr>
 
