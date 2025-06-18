@@ -87,8 +87,8 @@ public class Main {
 	- 삽입 : ==**$O(1)$**==
 	- 삭제 : ==**$O(1)$**==
 	- 탐색 : ==**$O(N)$**==
-- <a href='/brain/CodingTest/dataStructure/#single-linked-list'>단일 연결리스트 (Single Linked List)</a>
-- <a href='/brain/CodingTest/dataStructure/#double-linked-list'>이중 연결리스트 (Double Linked List)</a>
+- <a href='/brain/CodeTree/dataStructure/#single-linked-list'>단일 연결리스트 (Single Linked List)</a>
+- <a href='/brain/CodeTree/dataStructure/#double-linked-list'>이중 연결리스트 (Double Linked List)</a>
 
 <br>
 

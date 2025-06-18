@@ -80,6 +80,10 @@
     }
   }
 
+  .single-content::-webkit-scrollbar {
+    width: 0;
+  }
+
   &.single-container {
     justify-content: space-between;
   }

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/brain/CodingTest/dataStructure.md",
-                "mode": "preview",
+                "file": "content/private/데브코스/2주차/JAVA 02강.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "dataStructure"
+              "title": "JAVA 02강"
             }
           },
           {
@@ -50,7 +50,8 @@
         "state": {
           "type": "file-explorer",
           "state": {
-            "sortOrder": "alphabetical"
+            "sortOrder": "alphabetical",
+            "autoReveal": false
           },
           "icon": "lucide-folder-closed",
           "title": "Files"

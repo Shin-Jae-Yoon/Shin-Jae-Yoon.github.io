@@ -1,4 +1,4 @@
 ---
 title: "패캠 - 알고리즘"
-weight: 
+weight: 2
 ---
