@@ -23,3 +23,4 @@ weight: 1
 - [Chapter 03 - 카프카 프로듀서: 카프카에 메시지 쓰기](brain/Book/kafka/chap03)
 - [Chapter 04 - 카프카 컨슈머: 카프카에서 데이터 읽기](brain/Book/kafka/chap04)
 - [Chapter 05 - AdminClient](brain/Book/kafka/chap05)
+- [Chapter 07 - 신뢰성 있는 데이터 전달](brain/Book/kafka/chap07)
