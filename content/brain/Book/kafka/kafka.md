@@ -25,3 +25,4 @@ weight: 1
 - [Chapter 05 - AdminClient](brain/Book/kafka/chap05)
 - [Chapter 07 - 신뢰성 있는 데이터 전달](brain/Book/kafka/chap07)
 - [Chapter 08 - 정확히 한 번의 의미 구조](brain/Book/kafka/chap08)
+- [Chapter 09 - 데이터 파이프라인 구축](brain/Book/kafka/chap09)
