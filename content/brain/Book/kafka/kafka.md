@@ -27,3 +27,4 @@ weight: 1
 - [Chapter 08 - 정확히 한 번의 의미 구조](brain/Book/kafka/chap08)
 - [Chapter 09 - 데이터 파이프라인 구축](brain/Book/kafka/chap09)
 - [Chapter 10 - 클러스터간 데이터 미러링하기](brain/Book/kafka/chap10)
+- [Chapter 14 - 스트림 처리](brain/Book/kafka/chap14)
