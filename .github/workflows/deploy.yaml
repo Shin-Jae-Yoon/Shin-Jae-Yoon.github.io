@@ -1,0 +1,84 @@
+name: Deploy to GitHub Pages
+
+# Quartz v5 는 Node 로 빌드하고 결과를 Pages 아티팩트로 바로 올린다.
+# Hugo 시절처럼 산출물을 master 브랜치에 밀어 넣지 않는다.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# 배포는 한 번에 하나만. 진행 중인 것을 끊지는 않는다.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # 문서의 생성/수정 날짜를 git 이력에서 읽는다. 얕게 받으면 전부 빌드 시각이 된다.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up pinned Node toolchain
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22.22.2
+          cache: npm
+
+      # .npmrc 가 engine-strict 라 package.json 의 engines 와 정확히 맞아야 설치가 된다.
+      - name: Install exact npm
+        run: npm install --global npm@10.9.7
+
+      - name: Verify exact toolchain
+        run: |
+          test "$(node --version)" = "v22.22.2"
+          test "$(npm --version)" = "10.9.7"
+
+      - name: Clean install
+        run: npm ci
+
+      # `npx quartz plugin install` 이 아니라 이 스크립트여야 한다. 플러그인을 받은 뒤
+      # tooling/plugins 의 Dev Uni 패치 네 개를 이어서 적용한다. 순정으로 깔면 노트
+      # 탐색 정렬과 접힘, 리프 폴더 링크, 그래프 투영, SPA 이동이 전부 사라진다.
+      - name: Install pinned plugins and apply Dev Uni patches
+        run: npm run install-plugins
+
+      - name: Build
+        run: npx quartz build
+
+      - name: Check internal links
+        run: node ./tooling/brain/knowledge-links.mjs knowledge
+
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ./public
+
+  deploy:
+    name: Deploy to Pages
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
