@@ -27,7 +27,7 @@ new BufferedReader(new InputStreamReader(System.in))
 
 `System.in`은 바이트를 읽는 기본 스트림이고, `InputStreamReader`가 감싸서 바이트를 문자로 바꾸고, `BufferedReader`가 다시 감싸서 버퍼링을 더한다.
 
-바깥쪽 객체는 안쪽 객체가 무엇인지 모른다. 그저 같은 인터페이스를 구현한 무언가일 뿐이다. 그래서 원하는 기능만 골라 원하는 순서로 쌓을 수 있다. [[I/O 스트림]]의 클래스가 그렇게 많은 이유이자, 그럼에도 조합이 자유로운 이유다.
+바깥쪽 객체는 안쪽 객체가 무엇인지 모른다. 그저 같은 인터페이스를 구현한 무언가일 뿐이다. 그래서 원하는 기능만 골라 원하는 순서로 쌓을 수 있다. [[io-stream|I/O 스트림]]의 클래스가 그렇게 많은 이유이자, 그럼에도 조합이 자유로운 이유다.
 
 ## Composite와의 차이
 
@@ -41,7 +41,7 @@ Composite는 여러 객체를 하나처럼 다루는 패턴이다. 트리 구조
 
 ## 관련
 
-- [[I/O 스트림]]
+- [[io-stream|I/O 스트림]]
 - [[design-pattern|디자인 패턴]]
 - [[inheritance-vs-composition|상속과 합성]]
 

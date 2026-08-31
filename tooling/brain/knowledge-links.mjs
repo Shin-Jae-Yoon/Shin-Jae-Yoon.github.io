@@ -46,11 +46,13 @@ export async function findBrokenLinks(scope = "") {
 
   const known = new Set(all.map((f) => nfc(path.relative(publicRoot, f).split(path.sep).join("/"))))
 
-  // 최상위 리다이렉트 스텁. 여기로 가는 링크는 SPA에서 빈 페이지에 멈춘다.
+  // 리다이렉트 스텁. 여기로 가는 링크는 SPA에서 빈 페이지에 멈춘다.
+  //
+  // 최상위만 보면 안 된다. alias 에 슬래시가 들어 있으면 스텁이 하위 경로에 생긴다.
+  // `I/O 스트림` 은 `i/o-스트림` 이 되어 한 칸 아래에 놓였고, 그래서 오래 숨어 있었다.
   const stubs = new Set()
   for (const file of all) {
     const rel = nfc(path.relative(publicRoot, file).split(path.sep).join("/"))
-    if (rel.includes("/")) continue
     const head = (await readFile(file, "utf8")).slice(0, 900)
     if (head.includes('http-equiv="refresh"')) stubs.add(rel.replace(/\.html$/, ""))
   }

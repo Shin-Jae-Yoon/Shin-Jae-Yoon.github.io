@@ -53,7 +53,7 @@ Socket socket = server.accept();                // 연결을 기다린다
 Socket socket = new Socket(host, port);         // 클라이언트: 연결한다
 ```
 
-연결이 맺어지면 양쪽 모두 `Socket`에서 [[I/O 스트림]]을 꺼내 읽고 쓴다. 네트워크 통신이 파일 입출력과 같은 모양이 되는 것이 소켓 추상화가 주는 이득이다.
+연결이 맺어지면 양쪽 모두 `Socket`에서 [[io-stream|I/O 스트림]]을 꺼내 읽고 쓴다. 네트워크 통신이 파일 입출력과 같은 모양이 되는 것이 소켓 추상화가 주는 이득이다.
 
 `accept()`는 연결이 올 때까지 블로킹된다. 여러 클라이언트를 받으려면 연결마다 [[thread|스레드]]를 만들어야 한다. 채팅 서버가 그 구조다.
 
@@ -77,7 +77,7 @@ Well Known 구간에는 FTP의 20과 21, TELNET의 23, HTTP의 80, HTTPS의 443�
 
 - [[tcp-udp|TCP와 UDP]]
 - [[port-and-dns|포트와 DNS]]
-- [[I/O 스트림]]
+- [[io-stream|I/O 스트림]]
 - [[web-server-and-was|Web Server와 WAS]]
 
 ## 출처

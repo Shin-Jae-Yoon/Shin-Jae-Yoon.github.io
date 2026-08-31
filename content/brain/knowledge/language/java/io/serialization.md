@@ -51,7 +51,7 @@ User user = (User) in.readObject();
 
 ## 관련
 
-- [[I/O 스트림]]
+- [[io-stream|I/O 스트림]]
 - [[shallow-and-deep-copy|얕은 복사와 깊은 복사]]
 - [[annotation|어노테이션]]
 - [[kafka-architecture|카프카 구조]]

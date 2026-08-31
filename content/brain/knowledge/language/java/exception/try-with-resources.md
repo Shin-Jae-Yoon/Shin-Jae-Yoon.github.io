@@ -56,7 +56,7 @@ public interface AutoCloseable {
 ## 관련
 
 - [[exception-strategy|예외 처리 전략]]
-- [[I/O 스트림]]
+- [[io-stream|I/O 스트림]]
 - [[interface|인터페이스]]
 
 ## 출처
