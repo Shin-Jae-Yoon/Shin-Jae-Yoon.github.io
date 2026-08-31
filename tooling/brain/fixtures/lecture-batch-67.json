@@ -1,0 +1,1084 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-67",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-66",
+    "applied_state": "1276 approved knowledge concepts after lecture-batch-66 mined the eighth week."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+        "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a"
+      },
+      {
+        "path": "content/brain/notes/Interview/dog-study/index.md",
+        "source_sha256": "45b3c563a4757fde9721426fb13a1bc246dbdd54de952c3359b68d8236c7bcc1"
+      }
+    ],
+    "line_range": "dog-week09 L7-L501, index whole",
+    "series": "면접 스터디 dog-study 9주차 - Querydsl, Spring Batch, 모놀리식과 MSA, DDD"
+  },
+  "overlap_analysis": {
+    "finding": "The last week of the study and the widest - a typed query builder, a batch framework nothing applied touches, and the two architectural questions the layered pattern runs into when it stops scaling, which batch 63 recorded as directions to consider and this file actually works through.",
+    "disposition": "Four applied concepts gain edges, chief among them the layered extension concept that named these directions. New: the query builder and what it answers, eight concepts covering batch processing from what it is to how large a chunk should be, and five covering the architectural choice and the design approach."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7-L13, L36, L55, L149-L153, L216-L218, L246-L250, L264, L274, L282, L290, L312, L329-L330, L338-L340, L366, L388, L421, L434-L444, L453-L470 partial, L479, L489-L501; index whole",
+        "reason_code": "topic-header-figure-caption-worked-example-or-index",
+        "detail": "The topic list the week was set, the captions above each diagram and code listing, the walkthrough of a development process used to introduce the shared-vocabulary point which the concept states, the intermediate code illustrating data-driven design, the closing reference list, and the study's own index page."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in dog-week09 contributes at least one cited locator. The index contributes none, listing the nine weeks."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 24245,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 235,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 20,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 18,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 23,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes dog-study - nine weekly files over batches 58 to 67, the fifth having been split across two. Only the study's index page is uncited.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 23,
+  "candidates": [
+    {
+      "concept_id": "spring.jpa.jpa-drawback",
+      "title": "JPA의 단점",
+      "aliases": [
+        "러닝 커브",
+        "통계성 복잡한 쿼리",
+        "의도하지 않은 쿼리가 나간다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/jpa-drawback.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of costs - it takes long to learn, it is poor at the complicated aggregate queries that have to fall back to native or its own query language, and the queries it writes are the ones the mapping implies rather than the ones intended, of which the repeated-query problem is the standing example",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-67"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.jpa-benefit",
+        "spring.jpa.n-plus-one",
+        "spring.db.sql-mapper",
+        "spring.jpa.foreign-key-in-practice",
+        "spring.jpa.querydsl",
+        "spring.jpa.orm-faq"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### JPA",
+          "start_line": 168,
+          "end_line": 177
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.layered-extension",
+      "title": "레이어드 아키텍처가 한계에 닿으면",
+      "aliases": [
+        "DDD 멀티모듈",
+        "헥사고날",
+        "MSA는 신중하게"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/layered-extension.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of directions to consider when the layered structure stops scaling - splitting by domain into modules while keeping the layers, moving to a ports-and-adapters shape, or separating into services, the last being the one not to reach for first",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "software-domain",
+        "lecture-batch-67"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.layered-architecture",
+        "software.architecture.data-service",
+        "software.architecture.three-tier",
+        "software.architecture.monolithic",
+        "software.architecture.msa",
+        "software.architecture.ddd"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### 레이어드 아키텍처 확장",
+          "start_line": 1017,
+          "end_line": 1021
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.encapsulation",
+      "title": "캡슐화",
+      "aliases": [
+        "Encapsulation",
+        "관련된 것을 모아 가지기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/encapsulation.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single act of gathering what belongs together into one place, which is what raises cohesion and is the other side of information hiding",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-67",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.information-hiding",
+        "java.oop.cohesion-coupling",
+        "java.oop.abstraction",
+        "software.architecture.data-driven-design",
+        "software.architecture.ddd"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 캡슐화",
+          "start_line": 344,
+          "end_line": 347
+        }
+      ]
+    },
+    {
+      "concept_id": "software.deploy.rolling-restart",
+      "title": "순차 재기동이 버그 피해를 줄인다",
+      "aliases": [
+        "하나 바꾸고 모니터링",
+        "배포 중 롤백",
+        "피해 범위 축소"
+      ],
+      "canonical_path": "content/brain/knowledge/software/deploy/rolling-restart.md",
+      "tags": [
+        "software",
+        "deploy"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single upside of the inconvenient deployment - replacing servers one at a time and watching between each means an unforeseen bug reaches only the fraction already switched and can be rolled back there, whereas a body swapped transparently in the data tier is live for all traffic at once and rolling back does not undo what it already did",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain",
+        "lecture-batch-67",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.deploy.transparency",
+        "db.sql.procedure-drawback",
+        "software.ops.app-server-scaling",
+        "software.architecture.monolithic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### transparent 항상좋음?",
+          "start_line": 213,
+          "end_line": 215
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점 > ### 버그 피해 최소화",
+          "start_line": 312,
+          "end_line": 320
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.querydsl",
+      "title": "Querydsl",
+      "aliases": [
+        "쿼리를 코드로 작성",
+        "정적 타입 빌더",
+        "원하는 필드만 DTO로"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/querydsl.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single library for writing queries as typed code rather than as text - which means the compiler catches a mistake, the editor completes the column names, a fragment can be extracted into a method and reused, and a projection into a transfer object is expressible directly",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.querydsl-motivation",
+        "spring.jpa.querydsl-usage",
+        "spring.jpa.jpa-drawback",
+        "spring.arch.dto"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Querydsl",
+          "start_line": 19,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Querydsl > ### 사용 이유",
+          "start_line": 25,
+          "end_line": 32
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.querydsl-motivation",
+      "title": "문자열 쿼리의 문제",
+      "aliases": [
+        "컴파일 시점에 오류를 알 수 없다",
+        "동적 쿼리가 읽히지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/querydsl-motivation.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single weakness the typed builder answers - a query written as a string is only checked when it runs, so a misspelling survives compilation, and a query assembled from conditions at runtime becomes unreadable, which is what drove people to the mapper libraries instead",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.querydsl",
+        "spring.db.sql-mapper",
+        "spring.jpa.jpa-drawback",
+        "java.exception.error-vs-exception"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Querydsl > ### 사용 이유",
+          "start_line": 66,
+          "end_line": 66
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Querydsl > ### 사용 이유",
+          "start_line": 70,
+          "end_line": 72
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.querydsl-usage",
+      "title": "Querydsl을 쓰는 법",
+      "aliases": [
+        "QClass",
+        "JPAQueryFactory",
+        "BooleanExpression"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/querydsl-usage.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single setup - a compilation step generates a query class from each mapped entity, a factory built over the entity manager issues the queries against those classes, and a dynamic condition is best expressed as a reusable boolean expression rather than a chain of branches",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.querydsl",
+        "spring.jpa.entity",
+        "spring.jpa.entity-manager",
+        "spring.jpa.querydsl-motivation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Querydsl > ### 사용 방법",
+          "start_line": 78,
+          "end_line": 81
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Querydsl > ### 사용 방법",
+          "start_line": 112,
+          "end_line": 113
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.orm-faq",
+      "title": "ORM을 쓰면 SQL을 몰라도 되는가",
+      "aliases": [
+        "오히려 더 잘 알아야 한다",
+        "복잡한 통계 쿼리는"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/orm-faq.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three standing answers - mapping objects to queries requires knowing both rather than neither, the mapping used well exposes more tuning points rather than fewer, and the genuinely complicated aggregate is projected straight into a transfer object or, failing that, written natively through a mapper",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.querydsl",
+        "spring.jpa.jpa-drawback",
+        "spring.db.sql-mapper",
+        "db.sql.aggregate-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Querydsl > ### 많이하는 질문",
+          "start_line": 139,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.batch-processing",
+      "title": "배치 처리",
+      "aliases": [
+        "상호작용 없이 이어지는 실행",
+        "웹과 지향점이 다르다",
+        "절대적인 속도"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/batch-processing.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single mode of running work with nobody watching it - which puts it opposite the interactive application in every respect, wanting absolute throughput rather than perceived responsiveness and being far harder to check by hand, since there is no screen to look at",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.batch.batch-application",
+        "spring.batch.batch-vs-scheduler",
+        "cs.os.cpu-bound-io-bound"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 애플리케이션",
+          "start_line": 155,
+          "end_line": 164
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.batch-application",
+      "title": "배치 애플리케이션",
+      "aliases": [
+        "단발성 대용량 처리",
+        "일 매출 집계",
+        "웹으로 하면 낭비인 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/batch-application.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single kind of program that processes a defined body of work all at once - wanted where something runs on a schedule or over more data than can be handled live - and which is not written as a web endpoint because doing so would occupy the serving application for the duration, build an interface for something called once a day, and leave no way to resume after a failure partway",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.batch.batch-processing",
+        "spring.batch.batch-requirements",
+        "spring.batch.chunk",
+        "spring.server.multiple-was"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 애플리케이션",
+          "start_line": 168,
+          "end_line": 172
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 애플리케이션",
+          "start_line": 176,
+          "end_line": 179
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 애플리케이션",
+          "start_line": 185,
+          "end_line": 187
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.batch-requirements",
+      "title": "배치 애플리케이션의 조건",
+      "aliases": [
+        "사용자 개입 없이",
+        "잘못된 데이터에도 멈추지 않게",
+        "정해진 시간 안에"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/batch-requirements.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of five things such a program must do - handle volume, run without anyone present, survive bad data without crashing, leave enough trace to find out what went wrong, and finish within its window without disturbing whatever else is running",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.batch.batch-application",
+        "spring.batch.batch-execution",
+        "java.logging.slf4j-logback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 애플리케이션",
+          "start_line": 193,
+          "end_line": 197
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.batch-vs-scheduler",
+      "title": "배치와 스케줄러는 다르다",
+      "aliases": [
+        "일괄 처리와 정해진 시각에 실행",
+        "스케줄러가 배치를 실행한다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/batch-vs-scheduler.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction commonly confused - one library decides what a bulk job is made of and the other decides when something runs; neither does the other's work, which is why they are used together, the scheduler firing the batch job",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.batch.batch-processing",
+        "spring.batch.batch-execution",
+        "spring.batch.batch-application"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 vs 스케쥴러",
+          "start_line": 203,
+          "end_line": 212
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.batch-domain",
+      "title": "배치의 도메인 용어",
+      "aliases": [
+        "Job과 Step",
+        "JobInstance와 JobExecution",
+        "ItemReader Processor Writer"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/batch-domain.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single vocabulary the framework is described in - the job being the whole piece of work, an instance of it distinguished by its parameters and an execution being one attempt at that instance; the step being one sequential stage of it with its own execution record and context, which is what makes a restart possible; and the reader, processor and writer being what a step does to each item",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.batch.chunk",
+        "spring.batch.batch-application",
+        "spring.batch.reader-paging",
+        "spring.batch.batch-execution"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 도메인 용어",
+          "start_line": 220,
+          "end_line": 232
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### 배치 도메인 용어",
+          "start_line": 238,
+          "end_line": 242
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.chunk",
+      "title": "청크 지향 처리",
+      "aliases": [
+        "커밋되는 행 수",
+        "실패하면 청크 단위로 롤백",
+        "읽고 처리하고 쓴다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/chunk.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unit the work is committed in - a number of rows read, optionally transformed and written together inside one transaction, so a failure rolls back that many and no more, which is what lets a long job be resumed rather than restarted",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.batch.batch-domain",
+        "spring.batch.reader-paging",
+        "spring.batch.chunk-sizing",
+        "db.transaction.atomicity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Spring Batch 활용",
+          "start_line": 256,
+          "end_line": 259
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Spring Batch 활용",
+          "start_line": 266,
+          "end_line": 270
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.reader-paging",
+      "title": "커서 대신 페이징으로 읽기",
+      "aliases": [
+        "커서는 모두 메모리에 올린다",
+        "페이징 크기와 청크 크기를 맞춘다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/reader-paging.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice in how a large read is done - a cursor holds one connection and the whole result in memory until it finishes and cannot be shared across threads, while paging fetches a page at a time, holding only that much and reconnecting per page; and the page size should equal the commit size, or one transaction costs several queries",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.batch.chunk",
+        "spring.db.connection-pool",
+        "spring.jpa.fetch-join-paging",
+        "spring.batch.chunk-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Spring Batch 활용",
+          "start_line": 275,
+          "end_line": 279
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Spring Batch 활용",
+          "start_line": 283,
+          "end_line": 286
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.batch-execution",
+      "title": "배치를 실행하고 관리하는 방법",
+      "aliases": [
+        "CommandLineRunner",
+        "Quartz와 관리자 페이지",
+        "CI 도구로 실행"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/batch-execution.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of ways to start and oversee a batch job - from the command line or from within the application - where exposing it as an endpoint is discouraged and the practical arrangement is a continuous integration tool, which already has notification, history, logs, a dashboard, several trigger modes, per-account permissions and pipelines; and a pipeline of single-step jobs is preferred to one job of many steps, since a job that runs alone is easier to maintain",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.batch.batch-vs-scheduler",
+        "spring.batch.batch-requirements",
+        "spring.batch.batch-domain",
+        "git.strategy.trunk-based"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Batch 실행",
+          "start_line": 292,
+          "end_line": 294
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Batch 실행",
+          "start_line": 298,
+          "end_line": 308
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Batch 실행",
+          "start_line": 314,
+          "end_line": 325
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.batch.chunk-sizing",
+      "title": "청크 크기를 정할 때",
+      "aliases": [
+        "가이드가 없다",
+        "다른 배치의 메모리를 뺏는다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/batch/chunk-sizing.md",
+      "tags": [
+        "spring",
+        "batch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single absence of a rule for the commit size - it follows from the particular work, and the constraint is that a chunk is held in memory, so a large one takes memory from whatever else is running",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.batch.chunk",
+        "spring.batch.reader-paging",
+        "spring.db.pool-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## Spring Batch > ### Chunk 최적화",
+          "start_line": 331,
+          "end_line": 334
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.monolithic",
+      "title": "모놀리식 아키텍처",
+      "aliases": [
+        "한 프로젝트에 모두 통합",
+        "확장하려면 전체를 확장",
+        "멀티 모듈로 분리"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/monolithic.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement with everything in one project and one process, so meeting demand on any part of it means scaling all of it, usually by making the machine bigger - which is loosened within the pattern by splitting into modules, and whose slow deployment is worked around by releasing without downtime, by parallel environments, by a gradual rollout or by replacing instances one at a time",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.msa",
+        "software.architecture.layered-extension",
+        "software.deploy.rolling-restart",
+        "software.ops.app-server-scaling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### 모놀리식 아키텍처",
+          "start_line": 342,
+          "end_line": 346
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### 모놀리식 아키텍처",
+          "start_line": 350,
+          "end_line": 352
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### 모놀리식 아키텍처",
+          "start_line": 356,
+          "end_line": 362
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.msa",
+      "title": "마이크로 서비스 아키텍처",
+      "aliases": [
+        "MSA",
+        "작은 서비스 단위로 쪼갠다",
+        "경량 API로 통신"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/msa.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement splitting one application into small services that each do one business function and talk to each other over defined interfaces - whose characteristic difficulties are answered by collecting the scattered logs into one searchable place, and by giving up distributed transactions in favour of compensating actions, a composite service, or a use case that verifies the result",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.monolithic",
+        "software.architecture.monolithic-vs-msa",
+        "software.architecture.data-service",
+        "db.transaction.atomicity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### MSA",
+          "start_line": 368,
+          "end_line": 373
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### MSA",
+          "start_line": 377,
+          "end_line": 379
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### MSA",
+          "start_line": 383,
+          "end_line": 386
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.monolithic-vs-msa",
+      "title": "모놀리식과 MSA의 맞교환",
+      "aliases": [
+        "빌드와 배포 시간",
+        "일부의 오류가 전체에 미치는가",
+        "네트워크를 타는 비용"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/monolithic-vs-msa.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trade running through every comparison of the two - one environment is simpler to build, test end to end and call within, but grows until nobody understands it and one fault takes everything down; separate services are each understandable, deployable and scalable on their own and fail in isolation, at the cost of being hard to manage, to test, to keep transactional and to query across, with every call now crossing a network",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.architecture.monolithic",
+        "software.architecture.msa",
+        "software.architecture.layered-extension",
+        "cs.network.persistent-connection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### 모놀리식 vs MSA",
+          "start_line": 390,
+          "end_line": 416
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.ddd",
+      "title": "도메인 주도 설계",
+      "aliases": [
+        "DDD",
+        "Domain-Driven-Design",
+        "유비쿼터스 언어"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/ddd.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single approach putting the business problem at the centre of the design rather than the data - and whose practical demand is one vocabulary shared by the people who know the business and the people writing the code, used identically in conversation, in documents and in the code itself, since a model the developer was not part of building is a model that will not survive being implemented",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.data-driven-design",
+        "software.architecture.ddd-purpose",
+        "software.architecture.business-logic",
+        "software.architecture.layered-extension"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## DDD",
+          "start_line": 423,
+          "end_line": 430
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## DDD",
+          "start_line": 446,
+          "end_line": 449
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.data-driven-design",
+      "title": "데이터 주도 설계의 문제",
+      "aliases": [
+        "객체가 가질 데이터부터 정한다",
+        "과도한 접근자와 수정자"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/data-driven-design.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure mode of designing from the data outward - what an object will hold is decided before what it will do, so where it is used cannot be known and accessors are written for everything, which exposes the implementation, breaks the encapsulation and couples it tightly to whatever reaches in",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.ddd",
+        "java.oop.encapsulation",
+        "java.oop.cohesion-coupling",
+        "java.oop.autonomous-responsibility"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## DDD",
+          "start_line": 453,
+          "end_line": 455
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## DDD",
+          "start_line": 472,
+          "end_line": 475
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.ddd-purpose",
+      "title": "DDD가 노리는 것",
+      "aliases": [
+        "도메인 지식을 구현 코드에",
+        "결합도를 낮추고 응집도를 높인다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/ddd-purpose.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single aim behind the approach - to carry the model all the way into the code so that what the business knows is what the code says, which comes down to the same objective as every other structural decision, less coupling between modules and more cohesion within them",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.architecture.ddd",
+        "java.oop.cohesion-coupling",
+        "software.architecture.layered-extension"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## DDD > ### DDD 사용 이유",
+          "start_line": 481,
+          "end_line": 484
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

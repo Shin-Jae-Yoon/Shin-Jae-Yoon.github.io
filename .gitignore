@@ -1,9 +1,17 @@
 .DS_Store
+.gitignore
+node_modules
+node_modules.nosync
 public
-resources
-.idea
-content/.obsidian
-assets/indices/linkIndex.json
-assets/indices/contentIndex.json
-linkmap
-content/private
+prof
+tsconfig.tsbuildinfo
+.obsidian
+.quartz-cache
+private/
+.replit
+replit.nix
+.quartz/
+quartz/cli/tui/dist/
+
+# iCloud 가 동기화 충돌 때 만드는 사본. 원본과 바이트가 같다.
+public [0-9]*/

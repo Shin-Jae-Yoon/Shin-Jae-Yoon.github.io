@@ -1,0 +1,1263 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-03",
+  "lane": "book",
+  "phase": 5,
+  "mode": "source-inventory-only",
+  "candidates_authored": false,
+  "status": "ready_for_candidate_authoring_after_revision_2_repair",
+  "review_gate": "U3",
+  "produced_by": "phase5-book-inventory-lane (read/analyze + manifest only)",
+  "produced_at_note": "This manifest carries no wall-clock timestamp on purpose: every field is derived from repository bytes so the whole document is reproducible from the working tree alone.",
+  "revision": {
+    "revision": 3,
+    "revision_3": {
+      "reason": "second bounded repair, after a further HOLD in .omx/reviews/brain-phase5-book-batch-03-inventory-independent-verification.md (SHA-256 2a3717dd5854f407ac0654131ae3a108b0b13b5b06997b078f31cf40a274b656). Two findings: the repaired touch-point set still omitted the applied java.oop.method even though its exact title 메서드 occurs in citable prose at chap04 L95; and the java.entry-point.main-method entry recorded 9 main signatures where the live count is 17.",
+      "corrections_applied": [
+        "existing_touch_points expanded 14 -> 15 with java.oop.method (applied title 메서드, aliases Method / 멤버 함수, three approved chap05 locators, current_kind merge), evidence chap04 L95 inside the prose-bearing scope L47-131 span c6b64dce1838dc08d1a422a3b8c74270308d407a70da42d336090b73f5acfff0, disposition no_op with an explicit disposition_justification and collision_handling.",
+        "disposition_summary now totals 15 = 3 update + 6 update-or-no_op + 6 no_op.",
+        "메서드 / method / 멤버 함수 added to namespace_interaction.occupied_normalized_keys_in_selected_prose (11 -> 12 entries) and P7 restated to cover seven title/alias-present applied concepts instead of six.",
+        "java.entry-point.main-method occurrence count corrected 9 -> 17, with a full occurrence_accounting block: 17 occurrences over 16 distinct scopes (chap01 1, chap02 5, chap03 2, chap04 9 occurrences in 8 scopes because L340-407 holds two), exact line numbers, exact scope list, and the proof that the separately recorded 17 `static` tokens are the same 17 lines.",
+        "verified_absent_overlap disambiguated: the zero-hit term is the compound 가상 메서드, not the bare token 메서드, which occurs once at chap04 L95."
+      ],
+      "data_unchanged": "Source bytes, all 27 corpus hashes, book_corpus_sha256, batch_baseline_sha256, approved_knowledge_tree_sha256, all 44 scopes and span hashes, the F1-F3 repairs from revision 2, the 4+0+23=27 coverage partition, positive_prose 30 / prose_bearing_exclusive 18 / 18+12+3+11=44, and candidates_authored:false are all unchanged. The extraction surface and the corpus lock are byte-unchanged: no revision-3 finding touches a scope measurement or a corpus row.",
+      "audit_preservation": "The latest verifier wrote its HOLD report to .omx/reviews/brain-phase5-book-batch-03-inventory-independent-verification.md although the requested path was .omx/reviews/brain-phase5-book-batch-03-inventory-repair-independent-verification.md. Revision 3 copied it byte-for-byte to the requested path; both files hash to 2a3717dd5854f407ac0654131ae3a108b0b13b5b06997b078f31cf40a274b656 and neither was edited."
+    },
+    "revision_2_reason": "bounded repair of findings F1-F3 from .omx/reviews/brain-phase5-book-batch-03-inventory-independent-verification.md (verdict HOLD). F1: the applied-concept touch-point inventory was materially incomplete. F2: the '2 of 126 aliases' figure used an unstated case-sensitive identity and was used to argue semantic non-overlap. F3: `prose_bearing` mixed an inclusive tally with an exclusive class name.",
+    "revision_2_data_unchanged": "Source selection, all 27 corpus source_sha256 and byte counts, batch_baseline_sha256, book_corpus_sha256, approved_knowledge_tree_sha256, all 44 heading-scope bounds/chains/span hashes/prose/code/substantive values, the 11 scope-level rejection probes, the 3 code-only scopes, the 12 low-evidence scopes, the 4+0+23=27 coverage partition, and candidates_authored:false are all byte-identical to revision 1. No source, production knowledge, engine, or corpus-lock byte changed.",
+    "revision_2_corrections_applied": [
+      "F1 — existing_touch_points expanded from 6 to 14 entries, adding java.oop.class, java.oop.object, java.oop.object-collaboration, java.language.package, java.keyword.final, java.variable.scope, software.programming.function and java.variable.static-variable, each with applied title, applied aliases, applied sources, evidence span and a collision_handling disposition. A collision_handling_rule and a derived disposition_summary were added.",
+      "F2 — alias_scan_semantics added, reporting BOTH the literal case-sensitive scan (2 of 126) and the collision-normalized NFKC+lowercase scan matching knowledge-index.mjs normalizedKey() (6 of 126: OS, 동적 메모리, Package, Class, Function, Class Variable). Per-hit prose/code/artifact anchoring is recorded, and the broad absence-of-overlap inference is explicitly withdrawn.",
+      "F3 — the inclusive tally is renamed positive_prose (30) and the exclusive evidence_class member count prose_bearing_exclusive (18) is stored alongside it, in both the fixture and the extraction surface, with exclusive_class_partition asserting 18 + 12 + 3 + 11 = 44. The candidate-volume forecast now names positive_prose as its base explicitly."
+    ],
+    "revision_2_files_rewritten": [
+      "tooling/brain/fixtures/book-batch-03-sources.json",
+      ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json",
+      ".omx/reviews/brain-phase5-book-batch-03-inventory.md"
+    ],
+    "revision_3_files_rewritten": [
+      "tooling/brain/fixtures/book-batch-03-sources.json",
+      ".omx/reviews/brain-phase5-book-batch-03-inventory.md",
+      ".omx/reviews/brain-phase5-book-batch-03-inventory-repair-independent-verification.md (new byte-for-byte audit copy of the HOLD report; created, never edited)"
+    ],
+    "files_not_rewritten_in_revision_3": [
+      ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json — no revision-3 finding touches a scope measurement, so it stays at SHA-256 30026171e502173812a3b2586b67d11ddde8716c39ae0a6cecc52113d1ce2a72.",
+      ".omx/artifacts/brain-restructure/book-batch-03/book-corpus-lock.json — carries no prose/alias/touch-point field, unchanged since revision 1 at SHA-256 181e00ce84be52339a86eee04436a253a111e67d8096409ee119ca98876e5b15.",
+      ".omx/reviews/brain-phase5-book-batch-03-inventory-independent-verification.md — the verifier report itself, left byte-exact at SHA-256 2a3717dd5854f407ac0654131ae3a108b0b13b5b06997b078f31cf40a274b656."
+    ]
+  },
+  "predecessor_state": {
+    "note": "Unlike batch 02, batch 03 is NOT blocked on an unresolved predecessor. Both prior Book batches are applied, so the approved concept index this batch must be authored against is fixed and knowable today.",
+    "book_batch_01": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-01-u3-v2",
+      "status": "applied",
+      "run_state": "completed",
+      "applied_count": 17,
+      "rejected_candidate_count": 5
+    },
+    "book_batch_02": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-02-u3-v2",
+      "status": "applied",
+      "run_state": "completed",
+      "applied_count": 34,
+      "rejected_candidate_count": 12,
+      "approved_review_sha256": "99ed5e27418b9455cc4c8120e80fe54b84901d1be0a20ef0589f481e2055fdcb",
+      "before_knowledge_tree_sha256": "b5d471476dc045a4813ce5559bef815e4e36ee5c8314deb1d6a038979649fd85",
+      "after_knowledge_tree_sha256": "db8bef805b1182af0b8df00042e26caabe06ef917852d496ba23f565e7c9e35d"
+    }
+  },
+  "contract": {
+    "consumer": "Intended upstream input for a separate candidate-authoring step whose output would be a batch manifest for `node tooling/brain/knowledge.mjs propose --batch`.",
+    "consumer_status": "NOT DIRECTLY EXECUTABLE. `propose --batch` requires a `candidates[]` array (concept_id, title, aliases, tags, canonical_path, proposal_kind, locators, ...). This file deliberately has none, so handing it to the engine fails closed with `batch manifest must contain a candidates array` and writes nothing.",
+    "engine_surface_verified": "tooling/brain/knowledge.mjs sha256 f2af802a06750b4f9d3b6727e12e89629a0f5855b873a7e12b15bfd122ceaad6 exposes propose (--pilot | --batch), sample, verify, apply, promote and rollback. Batch mode requires >= 1 candidate and a batch_id matching /^[a-z0-9]+(?:[._-][a-z0-9]+)*$/, which `book-batch-03` satisfies.",
+    "forbidden": "This file must not be read as a candidate fixture. It contains no concept_id, title, alias, canonical_path, tag, proposal_kind, locator or excerpt for any NEW concept. Applied concept ids appear only inside expected_candidate_profile.existing_touch_points, as ids of documents that already exist."
+  },
+  "ordering": {
+    "rule": "repo-relative POSIX path, ascending byte-wise (LC_ALL=C) UTF-8 comparison",
+    "grouping": "extraction sources first, then rejection probes; each group independently byte-sorted. Batch 03 has no file-level probes, so the extraction group is the whole ordered set.",
+    "order_index_is_authoritative": true,
+    "reproduce": "find content/brain/books -type f -name '*.md' | LC_ALL=C sort"
+  },
+  "hash_lock": {
+    "algorithm": "sha256",
+    "encoding": "lowercase hex over complete raw-layer file bytes",
+    "batch_baseline_sha256": "2a7a1a9153a68127999aed4af2ada6dc10b91f943ec81fd8a3e87993c1b70da0",
+    "batch_baseline_recipe": "sha256 of the UTF-8 concatenation of `<role>\\t<path>\\t<source_sha256>\\n` for every entry in order_index order",
+    "batch_baseline_reproduce": "{ for f in content/brain/books/do-it-java/chap01.md content/brain/books/do-it-java/chap02.md content/brain/books/do-it-java/chap03.md content/brain/books/do-it-java/chap04.md; do printf 'extraction\\t%s\\t%s\\n' \"$f\" \"$(shasum -a 256 \"$f\" | cut -d' ' -f1)\"; done; } | shasum -a 256",
+    "book_corpus_sha256": "c39bbdf5c72911e23fe08364762ffdc143dc4ce1c2edda8e47896b5f68183c88",
+    "book_corpus_recipe": "sha256 of the UTF-8 concatenation of `<path>\\t<source_sha256>\\n` for all 27 content/brain/books Markdown files in LC_ALL=C path order",
+    "approved_knowledge_tree_sha256_at_inventory": "db8bef805b1182af0b8df00042e26caabe06ef917852d496ba23f565e7c9e35d",
+    "batch_baseline_role": "deterministic source baseline and sample-seed INPUT. It is NOT the AC-15 `sample.json` seed.",
+    "seed_use": "batch_baseline_sha256 pins the exact source bytes this inventory measured, so any source drift invalidates the inventory and everything derived from it. It is NOT the U3 sample seed. computeBatchSample() in tooling/brain/knowledge.mjs derives that seed as sha256 of stable JSON over { batch_id, approved_knowledge_tree_sha256, batch_manifest_sha256, proposal_manifest_sha256 }; the baseline reaches it only transitively, by sitting inside the future batch manifest, and the real seed cannot exist until candidate authoring and proposal generation produce a proposal manifest. Let `knowledge.mjs sample` derive the seed; never hand-substitute the baseline for it.",
+    "drift_policy": "fail-closed. Re-verify every source_sha256 and approved_knowledge_tree_sha256_at_inventory immediately before propose and again before apply; a mismatch aborts. `apply` independently refuses with `approved knowledge content changed after proposal generation` if the knowledge tree moved."
+  },
+  "line_count_definition": "physical lines. A terminal newline terminates the last line and does not begin another; line_count is NOT `split(\"\\n\").length`. All four extraction sources end without a terminal newline, so their counts (95 / 364 / 186 / 488) are unchanged under this definition.",
+  "evidence_class_definition": "EXCLUSIVE classes, identical to the extraction surface: prose-bearing (prose_lines > 3), low-evidence-prose (0 < prose_lines <= 3), code-only (prose_lines = 0 AND code_lines > 0), zero-evidence (prose_lines = 0 AND code_lines = 0).",
+  "scope_class_accounting": {
+    "rule": "every scope belongs to exactly one evidence_class; the four exclusive class counts sum to the scope total",
+    "prose-bearing": 18,
+    "low-evidence-prose": 12,
+    "code-only": 3,
+    "zero-evidence": 11,
+    "sum": 44,
+    "equation": "18 + 12 + 3 + 11 = 44",
+    "positive_prose_is_not_a_class": "positive_prose = 30 is the INCLUSIVE count of scopes with prose_lines > 0, i.e. prose-bearing (18) + low-evidence-prose (12). It is a forecasting base, not an evidence_class, and must never be added to the partition."
+  },
+  "positive_prose_definition": "INCLUSIVE tally of scopes with prose_lines > 0 = prose-bearing (18) + low-evidence-prose (12) = 30. It OVERLAPS the low-evidence class, is not an evidence_class, and is never summed into the partition. Every per-file `positive_prose_scope_count` and the forecasting base below use this inclusive definition, matching how batch 01 (31 of 37) and batch 02 (53 of 65) were measured.",
+  "alias_scan_semantics": {
+    "purpose": "F2 repair. Alias overlap is reported under BOTH scan identities, with the identity stated, because the two disagree and only one of them matches the engine's collision behaviour.",
+    "applied_alias_identities": 126,
+    "applied_concepts": 57,
+    "key_naming_note": "Every alias list in this block and in existing_touch_points is keyed `alias_identities` or `applied_aliases`, never `aliases`. The bare key `aliases` is reserved for authored candidate frontmatter, and the established inventory-purity scan asserts it is absent from this file. All alias strings recorded here belong to ALREADY-APPLIED concepts; none is authored.",
+    "literal_scan": {
+      "identity": "case-sensitive UTF-8 byte substring, no normalization",
+      "hits": 2,
+      "of": 126,
+      "alias_identities": [
+        "OS",
+        "동적 메모리"
+      ],
+      "caveat": "This is a byte metric only. It does NOT model the engine's collision identity and must not be used to argue semantic non-overlap."
+    },
+    "collision_normalized_scan": {
+      "identity": "normalizedKey() from tooling/brain/knowledge-index.mjs: String(value).normalize('NFKC').trim().toLocaleLowerCase('en-US'), applied to both the alias and the source text, then substring-matched. This is the identity collisionReport() uses for the title_or_alias bucket.",
+      "hits": 6,
+      "of": 126,
+      "alias_identities": [
+        "OS",
+        "Package",
+        "동적 메모리",
+        "Class",
+        "Class Variable",
+        "Function"
+      ],
+      "prose_anchored_hits": 5,
+      "substring_artifact_hits": 1,
+      "note": "6 of 126 normalized hits, which is at least the 5 identified by independent verification (OS, 동적 메모리, Package, Class, Function). The sixth, `Class Variable`, is a pure substring artifact and is classified as IGNORE below."
+    },
+    "hits": [
+      {
+        "alias": "OS",
+        "normalized_key": "os",
+        "concept_id": "cs.os.operating-system",
+        "files": [
+          "content/brain/books/do-it-java/chap01.md"
+        ],
+        "literal_hit": true,
+        "anchor": "prose",
+        "evidence": "chap01 L33 `현재 사용하는 컴퓨터의 OS에 맞는 자바 실행 환경 (Java Runtime Environment, JRE)...`",
+        "disposition": "no_op — the assertion is about platform independence, a NEW concept, not about the operating system."
+      },
+      {
+        "alias": "Package",
+        "normalized_key": "package",
+        "concept_id": "java.language.package",
+        "files": [
+          "content/brain/books/do-it-java/chap01.md",
+          "content/brain/books/do-it-java/chap02.md",
+          "content/brain/books/do-it-java/chap03.md",
+          "content/brain/books/do-it-java/chap04.md"
+        ],
+        "literal_hit": false,
+        "anchor": "prose+code",
+        "evidence": "chap01 L78 `- 패키지(package) : 프로그램 소스의 묶음으로 클래스를 만드는 데 만드시 필요...` and L82 `src 폴더 -> package 생성 -> class 생성`; also `package <name>;` declarations inside fenced code in all four chapters",
+        "disposition": "UPDATE or no_op on the applied java.language.package (title 패키지). Must NOT be authored as a new concept."
+      },
+      {
+        "alias": "동적 메모리",
+        "normalized_key": "동적 메모리",
+        "concept_id": "java.memory.heap",
+        "files": [
+          "content/brain/books/do-it-java/chap01.md"
+        ],
+        "literal_hit": true,
+        "anchor": "prose",
+        "evidence": "chap01 L53 and L57 (garbage collector periodically reclaims unused 동적 메모리)",
+        "disposition": "update or no_op on java.memory.heap; the claim is about GC reclamation, so the evidence more likely folds into java.memory.garbage-collection."
+      },
+      {
+        "alias": "Class",
+        "normalized_key": "class",
+        "concept_id": "java.oop.class",
+        "files": [
+          "content/brain/books/do-it-java/chap01.md",
+          "content/brain/books/do-it-java/chap02.md",
+          "content/brain/books/do-it-java/chap03.md",
+          "content/brain/books/do-it-java/chap04.md"
+        ],
+        "literal_hit": false,
+        "anchor": "prose+code",
+        "evidence": "chap01 L76 `- 클래스(class) : 객체를 소스 코드로 나타낸 것` and L82 `class 생성`; also `public class <Name>` inside fenced code in all four chapters",
+        "disposition": "UPDATE or no_op on the applied java.oop.class (title 클래스). Must NOT be authored as a new concept."
+      },
+      {
+        "alias": "Class Variable",
+        "normalized_key": "class variable",
+        "concept_id": "java.variable.static-variable",
+        "files": [
+          "content/brain/books/do-it-java/chap02.md"
+        ],
+        "literal_hit": false,
+        "anchor": "substring-artifact",
+        "evidence": "chap02 L26 `public class Variable1 {` normalizes to `public class variable1`, which contains the substring `class variable`. There is no assertion about class variables anywhere in chap01-04.",
+        "disposition": "IGNORE. Pure substring artifact of the normalized scan; not a semantic overlap with java.variable.static-variable. Recorded so a later verifier reproducing the 6-hit count does not mistake it for evidence."
+      },
+      {
+        "alias": "Function",
+        "normalized_key": "function",
+        "concept_id": "software.programming.function",
+        "files": [
+          "content/brain/books/do-it-java/chap02.md"
+        ],
+        "literal_hit": false,
+        "anchor": "prose",
+        "evidence": "chap02 L191 `자바스크립트의 var은 function 스코프였는데, 자바의 var는 block 스코프이다`",
+        "disposition": "no_op on software.programming.function (title 함수). The token names JavaScript's function scope in a contrast, not the applied 함수 concept."
+      }
+    ],
+    "withdrawn_inference": {
+      "withdrawn_claim": "Revision 1 stated that only 2 of 126 applied aliases occur anywhere in chap01-04 and used that, together with a keyword scan, to conclude that the applied java.oop.*, java.array.*, java.pattern.*, java.keyword.* and java.collection.* concepts 'are not expected to be touched by batch 03'.",
+      "why_withdrawn": "The 2/126 figure is correct only under an unstated case-sensitive byte scan. Under the engine's own NFKC+lowercase collision identity the count is 6/126, and three of those (Package, Class, Function) are prose-anchored hits on applied concepts. The keyword scan was also too narrow: it tested Korean OOP vocabulary but not the Korean applied TITLES 클래스, 객체, 패키지 and final 예약어, all of which occur in the selected prose. No absence-of-overlap conclusion is drawn from either scan any more.",
+      "what_replaces_it": "An explicit per-concept disposition table (existing_touch_points) covering every applied concept with evidence in the selected bytes, plus the narrow, still-true negative statement recorded in verified_absent_overlap."
+    }
+  },
+  "extraction_sources": [
+    {
+      "order_index": 0,
+      "role": "extraction",
+      "path": "content/brain/books/do-it-java/chap01.md",
+      "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+      "bytes": 3839,
+      "line_count": 95,
+      "body_bytes_after_frontmatter": 3726,
+      "heading_scope_count": 7,
+      "positive_prose_scope_count": 5,
+      "prose_bearing_exclusive_scope_count": 3,
+      "low_evidence_scope_count": 2,
+      "code_only_scope_count": 0,
+      "zero_evidence_scope_count": 2,
+      "engine_substantive_scope_count": 5,
+      "extraction_surface_ref": ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json"
+    },
+    {
+      "order_index": 1,
+      "role": "extraction",
+      "path": "content/brain/books/do-it-java/chap02.md",
+      "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+      "bytes": 10221,
+      "line_count": 364,
+      "body_bytes_after_frontmatter": 10111,
+      "heading_scope_count": 15,
+      "positive_prose_scope_count": 12,
+      "prose_bearing_exclusive_scope_count": 8,
+      "low_evidence_scope_count": 4,
+      "code_only_scope_count": 0,
+      "zero_evidence_scope_count": 3,
+      "engine_substantive_scope_count": 12,
+      "extraction_surface_ref": ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json"
+    },
+    {
+      "order_index": 2,
+      "role": "extraction",
+      "path": "content/brain/books/do-it-java/chap03.md",
+      "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+      "bytes": 4298,
+      "line_count": 186,
+      "body_bytes_after_frontmatter": 4188,
+      "heading_scope_count": 8,
+      "positive_prose_scope_count": 5,
+      "prose_bearing_exclusive_scope_count": 3,
+      "low_evidence_scope_count": 2,
+      "code_only_scope_count": 0,
+      "zero_evidence_scope_count": 3,
+      "engine_substantive_scope_count": 5,
+      "extraction_surface_ref": ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json"
+    },
+    {
+      "order_index": 3,
+      "role": "extraction",
+      "path": "content/brain/books/do-it-java/chap04.md",
+      "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+      "bytes": 8675,
+      "line_count": 488,
+      "body_bytes_after_frontmatter": 8575,
+      "heading_scope_count": 14,
+      "positive_prose_scope_count": 8,
+      "prose_bearing_exclusive_scope_count": 4,
+      "low_evidence_scope_count": 4,
+      "code_only_scope_count": 3,
+      "zero_evidence_scope_count": 3,
+      "engine_substantive_scope_count": 11,
+      "extraction_surface_ref": ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json"
+    }
+  ],
+  "rejection_probes": [],
+  "rejection_probe_policy": {
+    "file_level_probes": 0,
+    "justification": "The Book corpus contains four frontmatter-only Markdown files (body_bytes_after_frontmatter = 0): headfirst/chap01.md, kafka/chap03.md, kafka/chap04.md and the root landing page books/index.md. The three CHAPTER files are the only file-level probe candidates, and batch 02 scheduled batch 03 to re-adopt them ONLY IF book-batch-01 was rejected. Book batch 01 APPLIED instead (run_state completed, 17/17 applied), and its applied packet records all three as rejected candidates with reason_code insufficient-source-evidence and proposal_created false. Whole-document negative coverage on the Book corpus is therefore already discharged against these exact, still-unchanged bytes. Re-adopting them would re-litigate a satisfied obligation and would double-claim source files already bound by an applied packet, so batch 03 takes no file-level probe.",
+    "discharged_by": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-01-u3-v2",
+      "artifact": "rejected-candidates.json",
+      "run_state": "completed",
+      "probes": [
+        {
+          "concept_id": "book.rejected.headfirst-chap01",
+          "path": "content/brain/books/headfirst/chap01.md",
+          "source_sha256_at_batch_01": "5bc76a52b84de82b431eca3153eb88b7b46c8e97182f4acfcc5cf2a96a912934",
+          "reason_code": "insufficient-source-evidence",
+          "proposal_created": false,
+          "source_unchanged_at_batch_03": true
+        },
+        {
+          "concept_id": "book.rejected.kafka-chap03",
+          "path": "content/brain/books/kafka/chap03.md",
+          "source_sha256_at_batch_01": "415a2aa0a323e2a13946beb6cc01fd4a2a5d4136761647d1212b2db57676d36e",
+          "reason_code": "insufficient-source-evidence",
+          "proposal_created": false,
+          "source_unchanged_at_batch_03": true
+        },
+        {
+          "concept_id": "book.rejected.kafka-chap04",
+          "path": "content/brain/books/kafka/chap04.md",
+          "source_sha256_at_batch_01": "61c9540d0ce99d8de40b8b1fc156344d32ba4b72935b3846a2ecaaa378b28c79",
+          "reason_code": "insufficient-source-evidence",
+          "proposal_created": false,
+          "source_unchanged_at_batch_03": true
+        }
+      ]
+    },
+    "frontmatter_only_files": {
+      "markdown_total": 4,
+      "chapter_probe_candidates": 3,
+      "chapter_files": [
+        "content/brain/books/headfirst/chap01.md",
+        "content/brain/books/kafka/chap03.md",
+        "content/brain/books/kafka/chap04.md"
+      ],
+      "non_probe_file": "content/brain/books/index.md",
+      "non_probe_reason": "structural-landing-page; a root landing page is not a valid extraction or probe candidate under the evidence rule."
+    },
+    "substitute": "scope_level_rejection_probes",
+    "substitute_rationale": "Batch 03 carries 11 zero-evidence heading scopes inside its own hash-locked bytes. Each is non-substantive under the engine's own substantiveBodyText() gate, so each must be rejected with insufficient-source-evidence, giving in-source negative coverage without borrowing another packet's files.",
+    "coverage_gap": "none. File-level negative coverage is discharged by the applied book-batch-01 packet, and scope-level negative coverage is supplied in-batch."
+  },
+  "scope_level_rejection_probes": {
+    "definition": "heading scope whose body is non-substantive under the engine's substantiveBodyText() gate. For all 11 batch-03 probes this coincides with prose_lines = 0 AND code_lines = 0 (pure section dividers), and the engine gate is the authoritative criterion.",
+    "expected_outcome": "rejected",
+    "expected_reason_code": "insufficient-source-evidence",
+    "count": 11,
+    "scopes": [
+      {
+        "path": "content/brain/books/do-it-java/chap01.md",
+        "heading_chain": "# Chapter 01 - 자바 프로그래밍",
+        "start_line": 13,
+        "end_line": 16,
+        "span_sha256": "c304965d2a923aa71874c5f03375eddd4f9edcba662f4a5df1b02d9574e2e656",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap01.md",
+        "heading_chain": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징",
+        "start_line": 17,
+        "end_line": 20,
+        "span_sha256": "a36ea9f9f12feb0d47a901357b385b2af7bcbceef6b0f7d3829f61339e066d64",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap02.md",
+        "heading_chain": "# Chapter 02 - 변수와 자료형",
+        "start_line": 13,
+        "end_line": 16,
+        "span_sha256": "b3b0c1d9ffc9176f4f21390e6a5e36a17295c423bf559daefc97add6bb33f5bd",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap02.md",
+        "heading_chain": "# Chapter 02 - 변수와 자료형 > ## Java 변수",
+        "start_line": 17,
+        "end_line": 18,
+        "span_sha256": "c975a1b72f123a9457bb8eb82912ceb6ca4e34d1c4c0b759d5a4774c38a23fe6",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap02.md",
+        "heading_chain": "# Chapter 02 - 변수와 자료형 > ## Java 자료형",
+        "start_line": 67,
+        "end_line": 70,
+        "span_sha256": "4e1f1ea5eb7d66468d41fbd71feac5a3226e323d3ede17f5ac1ee49c2e3eb6d7",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap03.md",
+        "heading_chain": "# Chapter 03 - 자바의 여러 가지 연산자",
+        "start_line": 13,
+        "end_line": 17,
+        "span_sha256": "3da0ba973909dc83391d5acb265101883e1c0158be66129805dda8c53a0ae4e6",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap03.md",
+        "heading_chain": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자",
+        "start_line": 18,
+        "end_line": 19,
+        "span_sha256": "b7b2476ea5f4d93616dd524e4bd2ff89f27d07f01daf0e1c3abed18f5dd24ea1",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap03.md",
+        "heading_chain": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 비트 연산자",
+        "start_line": 110,
+        "end_line": 111,
+        "span_sha256": "84375e22cd9bfbcf9035d15b690960fb1453edd0daf2f47bd96733e14bc1338c",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap04.md",
+        "heading_chain": "# Chapter 04 - 자바의 제어문",
+        "start_line": 13,
+        "end_line": 16,
+        "span_sha256": "aa2cc40063e6900481f1a18cd371f535ea347e57102abba19f5830f6c30a1689",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap04.md",
+        "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 조건문",
+        "start_line": 17,
+        "end_line": 18,
+        "span_sha256": "b46489db3d3e13ffcb90e767cbc6387609e17eb5848acc6a2d9135c2131b8ba8",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap04.md",
+        "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 반복문",
+        "start_line": 132,
+        "end_line": 133,
+        "span_sha256": "1ec4793f3798b68eee78ed1baf3d35d86639d86bac07992bfcc1d45579df3d3b",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      }
+    ]
+  },
+  "code_only_scopes": {
+    "definition": "heading scope with prose_lines = 0 AND code_lines > 0",
+    "count": 3,
+    "engine_verdict": "SUBSTANTIVE. The engine's substantiveBodyText() excludes fence DELIMITER lines but not the code content between them, so a span over a code-only scope passes validatedEvidenceSpan(). These scopes are citable evidence and must NOT be treated as rejection probes.",
+    "authoring_warning": "New structural case in batch 03; batch 01 and batch 02 contained zero code-only scopes. A concept backed solely by a code-only scope has a machine-valid locator but no author-written assertion in the source, so the excerpt a reviewer sees is program text. Prefer pairing such a scope with a prose-bearing sibling scope, or accept a stub, rather than asserting prose the source never states.",
+    "scopes": [
+      {
+        "path": "content/brain/books/do-it-java/chap04.md",
+        "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### while문",
+        "start_line": 134,
+        "end_line": 170,
+        "span_sha256": "2ecb608e0d3cb78591c251aa9ffac68627db1cc2b2bdbd90cfb409d0faa5f7ff",
+        "prose_lines": 0,
+        "code_lines": 27,
+        "engine_substantive": true
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap04.md",
+        "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### do-while문",
+        "start_line": 171,
+        "end_line": 204,
+        "span_sha256": "81ba98515a223354a9d848460fbbe89bf16f1117675b8e319b4bd15ea17f8b74",
+        "prose_lines": 0,
+        "code_lines": 24,
+        "engine_substantive": true
+      },
+      {
+        "path": "content/brain/books/do-it-java/chap04.md",
+        "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### for문",
+        "start_line": 205,
+        "end_line": 216,
+        "span_sha256": "75a278eb5848696c6dd5c8c30865f45dc1239eb00fea51ddd40dc080471561d7",
+        "prose_lines": 0,
+        "code_lines": 5,
+        "engine_substantive": true
+      }
+    ]
+  },
+  "selection_rationale": {
+    "scheduling_hint": "The book-batch-02 inventory scheduled batch 03 explicitly as `do-it-java/chap01-04.md` (language basics). This lane executes that scheduled slice.",
+    "primary": "chap01-04 (자바 프로그래밍, 변수와 자료형, 연산자, 제어문) are the language-basics arc BELOW the applied OOP layer. The 57 applied concepts define objects, classes, inheritance, interfaces, arrays and collections but never define a variable, a primitive type, an operator, or a loop, so the knowledge layer currently presupposes vocabulary it does not own.",
+    "path_coverage": "Batch 03 leads with `create` under namespaces the approved index has barely touched: java.operator.* (none applied), java.type.* (1 applied: reference-type), java.variable.* (2 applied: scope, static-variable), java.control-flow.* (1 applied: enhanced-for), plus likely java.literal.* / java.runtime.* / java.encoding.*. It also exercises a SECOND stub-promotion path: software.paradigm.object-oriented-programming is currently a stub and chap01 L42-48 carries an independent assertion about it. REVISION 2 CORRECTION: it is NOT purely a create batch. chap01 L68-95 and chap02 L191/L201-232 assert directly against six already-applied documents (java.oop.class, java.oop.object, java.oop.object-collaboration, java.language.package, java.keyword.final, java.variable.scope), so a meaningful share of the batch is update/no_op rather than create. See existing_touch_points.",
+    "bounded": "Four extraction files, 27,033 bytes, 44 heading scopes of which 30 carry prose and 33 are engine-substantive. This is roughly 0.47x batch 02 by bytes and 0.68x by scope count - deliberately the smallest slice since batch 01, because chap01-04 is code-dense rather than prose-dense.",
+    "probes": "No file-level probes (discharged by the applied batch 01); 11 in-source zero-evidence scopes provide negative coverage. See rejection_probe_policy.",
+    "rejected_alternatives": [
+      "Re-adopting the three frontmatter-only chapter files as probes: batch 02 conditioned that on a batch-01 REJECTION, which did not happen. Batch 01 applied and already discharged them; re-adopting would double-claim files bound by an applied packet.",
+      "Adding kafka chapters to reach a larger batch: different series, no adjacency to the applied Java index, and batch 04+ already owns them split by byte budget.",
+      "Splitting chap01-04 into 03a/03b: batch 03 is already the smallest slice since batch 01 (44 scopes vs batch-02's 65), so splitting would add packet overhead without reducing a real review burden.",
+      "A consolidation pass over chap05-10 and the pilot chapters instead: worth doing, but it is re-mining applied sources rather than filling the language-basics hole, and it stays scheduled separately."
+    ]
+  },
+  "expected_candidate_profile": {
+    "disclaimer": "Ranges, kinds and touch points only. No concept_id, title, canonical_path, alias, or tag is authored here for any new concept.",
+    "heading_scopes": 44,
+    "positive_prose_heading_scopes": 30,
+    "prose_bearing_exclusive_heading_scopes": 18,
+    "engine_substantive_heading_scopes": 33,
+    "forecast_base": "positive_prose (INCLUSIVE, prose_lines > 0) = 30. This is the same base batch 01 (31 of 37) and batch 02 (53 of 65) were measured on, so the ratios below are comparable. It is NOT the exclusive prose-bearing class count of 18.",
+    "expected_accepted_candidate_range": [
+      14,
+      21
+    ],
+    "range_derivation": "Batch 01 realised 17 accepted proposals from 31 positive-prose scopes (0.548 each) and batch 02 realised 34 from 53 (0.642). The batch-01 inventory's original forecast band was 0.452-0.710. Applying the wide band to batch-03's 30 positive-prose scopes gives 13.6-21.3, i.e. 14-21; the two realised ratios put the midpoint near 18. All three ratios use the INCLUSIVE positive-prose base (F3 repair: the base is stated explicitly rather than left ambiguous between 30 and the exclusive 18). CONFIDENCE IS LOWER THAN FOR BATCH 02 for two independent reasons: the band was calibrated on prose-dense OOP chapters while chap01-04 is code-dense (30 positive-prose scopes across 27,033 bytes versus batch-02's 53 across 57,373, and only 18 exclusive prose-bearing scopes versus batch-02's 37); and several of the strongest chap01-04 assertions land on ALREADY-APPLIED concepts (see existing_touch_points), so they resolve to update/no_op rather than to new accepted candidates. The realistic centre is therefore at or below 18, and the practical ceiling rises by at most 3 if each code-only scope yields a concept.",
+    "expected_kinds": {
+      "create": "still the majority, but SMALLER than revision 1 implied. Expected families, described by topic only: platform independence / JVM / JRE and the write-once-run-anywhere claim, open-source library breadth (chap01); variable declaration and initialisation, integer types, character type and Unicode, floating-point types, boolean type, type inference, literals, implicit widening and explicit narrowing conversion (chap02); operand-and-operator terminology, short-circuit logical evaluation, the conditional operator, bitwise logical operators, bit-shift operators (chap03); if, switch-case, while, do-while, for and its omissible clauses, continue, break and their difference (chap04). REMOVED from the revision-1 create list because they are already applied: class, object, package (chap01 L76/L78) and the constant/final surface (chap02 L201-232, applied as java.keyword.final). See existing_touch_points before authoring any of these.",
+      "update": "expected against already-applied concept ids only; see existing_touch_points, which now lists 14 entries with per-entry dispositions. The strongest are java.keyword.final (chap02 L203 uses the applied title verbatim), software.paradigm.object-oriented-programming (currently a stub), java.memory.garbage-collection (additive 4th locator), and the chap01 L68-95 cluster of java.oop.class / java.oop.object / java.language.package.",
+      "merge": "weaker signals than batch 02. The clearest is 형 변환 documented as one L249-260 overview plus two sibling subtrees (L261-298 묵시적, L299-364 명시적); whether that is one concept with three locators or three concepts is an authoring judgement, not a manifest decision.",
+      "stub": "expected from the 12 low-evidence scopes, concentrated in the prose=1 and prose=2 cases, and possibly from code-only scopes if a reviewer accepts program text as the sole evidence.",
+      "no_op": "expected on rerun; AC-14 requires rerun no-op.",
+      "rejected": "expected on the 11 zero-evidence scopes, reason_code insufficient-source-evidence. No file-level rejection probe: see rejection_probe_policy."
+    },
+    "existing_touch_points": {
+      "note": "These concept ids already exist and are applied under content/brain/knowledge/. They are recorded as expected UPDATE / no_op / IGNORE targets, not authored here. Measured against the post-batch-02 approved tree db8bef80... Every entry carries the applied title and alias set, so an author can check a proposed new title against the exact strings collisionReport() would key on.",
+      "revision_note": "F1 repair. Revision 1 listed six touch points and then inferred that the applied java.oop.*, java.keyword.*, java.array.*, java.pattern.* and java.collection.* families would not be touched. That inference was false on current bytes: chap01 L76/L78 and chap02 L191/L203 assert directly against the applied java.oop.class, java.oop.object, java.language.package, java.keyword.final, java.variable.scope and software.programming.function documents. Eight entries were added and the inference was withdrawn.",
+      "applied_concept_count": 57,
+      "applied_concepts_citing_batch_03_sources": 0,
+      "applied_alias_hits_literal_case_sensitive": 2,
+      "applied_alias_hits_collision_normalized": 6,
+      "alias_scan_ref": "alias_scan_semantics",
+      "collision_handling_rule": "For every entry classified `update`, `update-or-no_op` or `no_op`, candidate authoring MUST reuse the existing concept_id and canonical_path rather than mint a new one. collisionReport() keys title_or_alias under NFKC+lowercase, so a new concept titled 클래스, 객체, 패키지 or `final 예약어` — or aliased Class, Object, Package, Function — would collide and fail the proposal build. The current approved index has 0 collisions; keeping it at 0 is the authoring constraint, not a hoped-for outcome.",
+      "touch_points": [
+        {
+          "concept_id": "java.oop.class",
+          "applied_title": "클래스",
+          "applied_aliases": [
+            "Class",
+            "자바 클래스"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md:39-76"
+          ],
+          "current_kind": "create",
+          "expected": "update or no_op",
+          "confidence": "high",
+          "evidence": "chap01 L76 `- 클래스(class) : 객체를 소스 코드로 나타낸 것` — a direct definition of the applied concept, inside the citable `## Hello Java` scope L68-95. chap01 L82 `src 폴더 -> package 생성 -> class 생성` gives the source-layout relation.",
+          "collision_handling": "MUST NOT be authored as a new concept. The applied title 클래스 and alias Class both normalize to keys already in the index; a new 클래스 concept collides on title_or_alias."
+        },
+        {
+          "concept_id": "java.oop.object",
+          "applied_title": "객체",
+          "applied_aliases": [
+            "Object"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md:13-28"
+          ],
+          "current_kind": "create",
+          "expected": "update or no_op",
+          "confidence": "high",
+          "evidence": "chap01 L44 characterizes 객체 as the unit of OOP collaboration (쇼핑몰 예시에서 회원, 상품, 주문, 배송 등이 객체), and chap01 L76 defines 클래스 in terms of 객체. Both lines sit inside citable scopes (L42-48 low-evidence-prose, L68-95 prose-bearing).",
+          "collision_handling": "MUST NOT be authored as a new concept; applied title 객체 normalizes to an occupied key."
+        },
+        {
+          "concept_id": "java.oop.object-collaboration",
+          "applied_title": "객체 간 협력",
+          "applied_aliases": [
+            "Object Collaboration",
+            "객체 협력"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap06.md:138-157"
+          ],
+          "current_kind": "create",
+          "expected": "update or no_op",
+          "confidence": "medium-high",
+          "evidence": "chap01 L44 `여러 객체의 협력을 통해 프로그램을 구현하는 것, 각 객체의 상호 관계를 이용하여 프로그래밍 하는 것` is the applied concept stated almost verbatim. Not named by the independent verification, found while repairing F1.",
+          "collision_handling": "The applied alias 객체 협력 is a normalized prefix-free key; a new 객체 협력 concept collides. Reuse the applied id."
+        },
+        {
+          "concept_id": "java.language.package",
+          "applied_title": "패키지",
+          "applied_aliases": [
+            "Java Package",
+            "Package"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md:118-136"
+          ],
+          "current_kind": "create",
+          "expected": "update or no_op",
+          "confidence": "high",
+          "evidence": "chap01 L78 `- 패키지(package) : 프로그램 소스의 묶음으로 클래스를 만드는 데 만드시 필요, 패키지 이름은 항상 소문자로 쓴다.` — a definition plus a naming rule the applied chap05 source may not carry. chap01 L82 gives the package/class creation order. Both inside the citable L68-95 scope.",
+          "collision_handling": "MUST NOT be authored as a new concept. Alias `Package` is a collision-normalized hit (see alias_scan_semantics)."
+        },
+        {
+          "concept_id": "java.keyword.final",
+          "applied_title": "final 예약어",
+          "applied_aliases": [
+            "final keyword",
+            "final 키워드"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap09.md:652-663",
+            "content/brain/books/do-it-java/chap09.md:664-734",
+            "content/brain/books/do-it-java/chap09.md:735-740",
+            "content/brain/books/do-it-java/chap09.md:741-752"
+          ],
+          "current_kind": "create",
+          "expected": "update",
+          "confidence": "high",
+          "evidence": "chap02 L203 `- 자바스크립트에서는 const 썼는데, **자바에서는 final 예약어 사용**` uses the applied title verbatim; L205 `- 재선언, 재할당 당연히 불가. 처음에 할당 안하고 써도 오류` states the reassignment/redeclaration constraint. The whole `## Java 상수` scope L201-232 is citable (low-evidence-prose, prose=2, code=20).",
+          "collision_handling": "The L201-232 scope MUST NOT be treated purely as a new `constant` surface. If a distinct 상수 concept is authored it must cite final by relation and must not restate final's own assertions, and its title must avoid the normalized key `final 예약어`."
+        },
+        {
+          "concept_id": "java.variable.scope",
+          "applied_title": "변수 유효 범위",
+          "applied_aliases": [
+            "Variable Scope",
+            "지역 변수 유효범위",
+            "정적 변수 유효범위"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap06.md:386-391",
+            "content/brain/books/do-it-java/chap06.md:392-401",
+            "content/brain/books/do-it-java/chap06.md:424-445"
+          ],
+          "current_kind": "create",
+          "expected": "update or no_op",
+          "confidence": "medium-high",
+          "evidence": "chap02 L191 `지역 변수는 프로그램의 \\`{}\\`의 내에서 사용할 수 있는 변수이다. 즉, 자바스크립트의 var은 function 스코프였는데, 자바의 var는 block 스코프이다.` — a block-scope vs function-scope distinction and a 지역 변수 definition, inside the citable prose-bearing scope L181-200 (자료형 추론).",
+          "revision_note": "Revision 1 mentioned this id only in the namespace-shape warning; the evidence-bearing touch-point list omitted it. Now recorded with its span.",
+          "collision_handling": "A batch-03 variable-scope concept would collide with the applied 변수 유효 범위 / Variable Scope keys. Fold the chap02 L191 evidence into the applied document as an update, or take no_op."
+        },
+        {
+          "concept_id": "software.programming.function",
+          "applied_title": "함수",
+          "applied_aliases": [
+            "Function",
+            "함수 시그니처",
+            "Function Signature"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md:143-150",
+            "content/brain/books/do-it-java/chap05.md:151-162",
+            "content/brain/books/do-it-java/chap05.md:163-214",
+            "content/brain/books/do-it-java/chap05.md:232-243"
+          ],
+          "current_kind": "create",
+          "expected": "no_op",
+          "confidence": "high",
+          "evidence": "chap02 L191 contains `function 스코프` — a collision-normalized hit on the applied alias `Function`. The token names JavaScript's function scope inside a contrast with Java's block scope; it asserts nothing about the applied 함수 concept.",
+          "collision_handling": "IGNORE as evidence, but record: any batch-03 concept aliased `Function` would collide with the applied document. Explicitly classified no_op rather than left unlisted."
+        },
+        {
+          "concept_id": "java.oop.method",
+          "applied_title": "메서드",
+          "applied_aliases": [
+            "Method",
+            "멤버 함수"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md:95-117",
+            "content/brain/books/do-it-java/chap05.md:137-142",
+            "content/brain/books/do-it-java/chap05.md:244-276"
+          ],
+          "current_kind": "merge",
+          "expected": "no_op",
+          "confidence": "high",
+          "evidence": "chap04 L95 `- 이전에는 원래 \\`equals()\\` 메서드를 이용해서 비교했어야함` contains the applied title 메서드 verbatim, inside the prose-bearing scope L47-131 (`### Java switch-case문`, span c6b64dce1838dc08d1a422a3b8c74270308d407a70da42d336090b73f5acfff0). The sentence uses `메서드` referentially, to explain that String comparison USED to require equals() before Java 7 allowed String in switch-case; it asserts nothing about what a method is. The applied document is a merge of three chap05 spans that define methods proper, so there is nothing here to add to it.",
+          "disposition_justification": "no_op rather than update-or-no_op: an update requires the selected span to assert something about the concept, and chap04 L95 does not — it names 메서드 only to date a String-comparison idiom. Adding L47-131 as a locator on java.oop.method would attach a switch-case excerpt to the method document with no method assertion in it, which is exactly the provenance defect the substantive-evidence gate exists to prevent.",
+          "collision_handling": "The normalized keys `메서드` and `method` are OCCUPIED. If a distinct String-equality or switch-case-on-String concept is authored from this scope, it must relate to java.oop.method rather than restate it, and its title and aliases must avoid `메서드` / `Method` / `멤버 함수`. Note `equals()` is not an applied title or alias, so a String-equality concept has room to exist under its own name.",
+          "added_in_revision": 3
+        },
+        {
+          "concept_id": "java.variable.static-variable",
+          "applied_title": "정적 변수",
+          "applied_aliases": [
+            "Static Variable",
+            "Class Variable",
+            "클래스 변수"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap06.md:160-180",
+            "content/brain/books/do-it-java/chap06.md:181-266",
+            "content/brain/books/do-it-java/chap06.md:267-292",
+            "content/brain/books/do-it-java/chap06.md:412-423"
+          ],
+          "current_kind": "create",
+          "expected": "no_op",
+          "confidence": "high",
+          "evidence": "SUBSTRING ARTIFACT ONLY. The applied alias `Class Variable` normalizes to `class variable`, which occurs inside chap02 L26 `public class Variable1 {` once normalized. There is no assertion about class or static variables anywhere in chap01-04; `static` occurs 17 times, all inside `public static void main` boilerplate in fenced code.",
+          "collision_handling": "IGNORE. Recorded so a verifier reproducing the 6-hit normalized count does not mistake this for evidence."
+        },
+        {
+          "concept_id": "software.paradigm.object-oriented-programming",
+          "applied_title": "객체 지향 프로그래밍",
+          "applied_aliases": [
+            "Object-Oriented Programming",
+            "OOP",
+            "객체지향 프로그래밍"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md:31-38"
+          ],
+          "current_kind": "stub",
+          "expected": "update",
+          "confidence": "medium-high",
+          "evidence": "chap01 L42-48 `### 02. 객체지향 언어라서 유지보수가 쉽고 확장성이 좋음` (prose = 1). The applied document is a stub sourced only from chap05; chap01 L44 states the maintainability/extensibility and collaboration claim independently. This is the batch-03 analogue of batch-02's GC stub promotion.",
+          "collision_handling": "Reuse the applied id. A new 객체지향 프로그래밍 concept would collide on the normalized alias key."
+        },
+        {
+          "concept_id": "java.memory.garbage-collection",
+          "applied_title": "가비지 컬렉션",
+          "applied_aliases": [
+            "Garbage Collection",
+            "자동 메모리 관리"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md",
+            "content/brain/books/do-it-java/chap06.md",
+            "content/brain/notes/Java/java-features.md"
+          ],
+          "current_kind": "update",
+          "expected": "update",
+          "confidence": "high",
+          "evidence": "chap01 L49-60 `### 03. 프로그램이 안정적임` states that the programmer does not reclaim 동적 메모리 and that the 가비지 컬렉터 periodically collects unused dynamic memory (L53, L57). The applied document already carries three locators; this would be a fourth, still strictly additive.",
+          "collision_handling": "Reuse the applied id; additive locator only."
+        },
+        {
+          "concept_id": "java.memory.heap",
+          "applied_title": "힙 메모리",
+          "applied_aliases": [
+            "Heap Memory",
+            "Java Heap",
+            "동적 메모리"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md"
+          ],
+          "current_kind": "create",
+          "expected": "update or no_op",
+          "confidence": "medium",
+          "evidence": "The applied alias `동적 메모리` occurs at chap01 L53 and L57 (literal AND collision-normalized hit). The chap01 claim is about GC reclaiming dynamic memory rather than about heap structure, so this may resolve to no_op with the evidence folded into garbage-collection instead.",
+          "collision_handling": "Reuse the applied id if updated; do not mint a 동적 메모리 concept."
+        },
+        {
+          "concept_id": "cs.os.operating-system",
+          "applied_title": "운영체제",
+          "applied_aliases": [
+            "Operating System",
+            "OS"
+          ],
+          "applied_sources": [
+            "content/brain/books/dinosaur/chap01.md"
+          ],
+          "current_kind": "create",
+          "expected": "no_op",
+          "confidence": "low",
+          "evidence": "The applied alias `OS` occurs once at chap01 L33, inside the JRE/JVM installation sentence (literal AND collision-normalized hit). The assertion is about platform independence, which is a NEW concept, not about the operating system itself.",
+          "collision_handling": "no_op. A new platform-independence concept is fine provided its title and aliases avoid the normalized keys `os` and `operating system`."
+        },
+        {
+          "concept_id": "java.entry-point.main-method",
+          "applied_title": "main 메서드",
+          "applied_aliases": [
+            "main()",
+            "Java Entry Point",
+            "프로그램 시작 메서드"
+          ],
+          "applied_sources": [
+            "content/brain/books/do-it-java/chap05.md"
+          ],
+          "current_kind": "create",
+          "expected": "no_op",
+          "confidence": "low",
+          "evidence": "`public static void main(String[] args)` appears **17** times across chap01-04, distributed over **16** distinct heading scopes, always as boilerplate inside code fences and never as a prose assertion about the entry point. The applied document is already sourced from chap05, where the entry point is explained in prose.",
+          "occurrence_accounting": {
+            "note": "CORRECTED in revision 3. Revision 2 recorded 9 occurrences; the live count is 17. The error was a miscount of the earlier grep, not a source change: the four source files are byte-identical to their revision-1 and revision-2 hashes.",
+            "total_occurrences": 17,
+            "distinct_scopes": 16,
+            "per_file_occurrences": {
+              "chap01.md": 1,
+              "chap02.md": 5,
+              "chap03.md": 2,
+              "chap04.md": 9
+            },
+            "per_file_distinct_scopes": {
+              "chap01.md": 1,
+              "chap02.md": 5,
+              "chap03.md": 2,
+              "chap04.md": 8
+            },
+            "occurrences_exceed_scopes_because": "chap04 scope L340-407 (`### break문`) contains two signatures, at L348 and L371. Every other occurrence is alone in its scope, so 17 occurrences map onto 16 scopes.",
+            "lines": {
+              "content/brain/books/do-it-java/chap01.md": [
+                89
+              ],
+              "content/brain/books/do-it-java/chap02.md": [
+                27,
+                124,
+                153,
+                218,
+                349
+              ],
+              "content/brain/books/do-it-java/chap03.md": [
+                57,
+                97
+              ],
+              "content/brain/books/do-it-java/chap04.md": [
+                109,
+                156,
+                190,
+                280,
+                327,
+                348,
+                371,
+                423,
+                462
+              ]
+            },
+            "scopes": [
+              "content/brain/books/do-it-java/chap01.md:68-95",
+              "content/brain/books/do-it-java/chap02.md:19-66",
+              "content/brain/books/do-it-java/chap02.md:106-133",
+              "content/brain/books/do-it-java/chap02.md:134-171",
+              "content/brain/books/do-it-java/chap02.md:201-232",
+              "content/brain/books/do-it-java/chap02.md:299-364",
+              "content/brain/books/do-it-java/chap03.md:45-82",
+              "content/brain/books/do-it-java/chap03.md:83-109",
+              "content/brain/books/do-it-java/chap04.md:47-131",
+              "content/brain/books/do-it-java/chap04.md:134-170",
+              "content/brain/books/do-it-java/chap04.md:171-204",
+              "content/brain/books/do-it-java/chap04.md:217-312",
+              "content/brain/books/do-it-java/chap04.md:313-339",
+              "content/brain/books/do-it-java/chap04.md:340-407",
+              "content/brain/books/do-it-java/chap04.md:416-453",
+              "content/brain/books/do-it-java/chap04.md:454-488"
+            ],
+            "relation_to_static_count": "The separately recorded `static occurs 17 times, all fenced boilerplate` is correct and is the SAME 17 lines: a line-level scan finds 0 occurrences of `static` in chap01-04 that are not part of a `public static void main(String[] args)` signature. The two 17s coincide by construction, not by accident."
+          },
+          "collision_handling": "no_op; no new entry-point concept should be authored."
+        },
+        {
+          "concept_id": "cross-domain.program",
+          "applied_title": "프로그램",
+          "applied_aliases": [
+            "Program"
+          ],
+          "applied_sources": [
+            "content/brain/books/dinosaur/chap01.md:97-100",
+            "content/brain/notes/Common/API.md:21-22"
+          ],
+          "current_kind": "merge",
+          "expected": "no_op",
+          "confidence": "low",
+          "evidence": "chap01 L68-95 `## Hello Java` is a complete first program (prose = 6, code = 9) and L74 calls a 프로젝트 `개발자가 만드는 하나의 프로그램 단위`, but both demonstrate rather than define a program. The applied document is sourced from dinosaur/chap01 and notes/Common/API.md.",
+          "collision_handling": "no_op; the normalized key `프로그램` is occupied."
+        }
+      ],
+      "disposition_summary": {
+        "total_touch_points": 15,
+        "by_expected_disposition": {
+          "update or no_op": 6,
+          "update": 3,
+          "no_op": 6
+        },
+        "substring_artifact_entries": 1,
+        "entries_with_collision_handling": 15,
+        "note": "Derived from the touch_points array at build time, not hand-counted. Per-entry `expected` and `collision_handling` values are authoritative."
+      },
+      "verified_absent_overlap": "NARROWED (F1/F2 repair, extended in revision 3). The only negative statements this inventory makes are the ones that survive the engine's own NFKC+lowercase identity: (a) ZERO of the 57 applied concepts cite chap01-04 as a source; (b) a scan for 상속, 다형성, 오버라이딩, `가상 메서드`, 인터페이스, 추상, 생성자, 배열, ArrayList, 접근 제어자, 싱글톤, 디자인 패턴, this, 힙, 스택, 인스턴스 returns ZERO hits case-sensitively AND normalized, so the applied java.oop.* inheritance/polymorphism/interface/abstract family, the 5 java.array.*, the 2 java.pattern.* and the 1 java.collection.* concepts have no evidence in chap01-04; (c) `static` occurs 17 times, all inside fenced `public static void main` boilerplate, with zero prose occurrences, and java.method.static-method therefore has no applied title/alias hit and no prose assertion. IMPORTANT DISAMBIGUATION (revision 3): the zero-hit term in list (b) is the COMPOUND `가상 메서드` (virtual method), not the bare token `메서드`. The bare applied title `메서드` DOES occur, once, at chap04 L95, and java.oop.method is now recorded as a no_op touch point above. The BROADER claim made in revision 1 — that the applied java.oop.* and java.keyword.* families as a whole would not be touched — remains WITHDRAWN."
+    },
+    "namespace_interaction": {
+      "note": "Batch 03 is not blocked on any unresolved packet, so this records namespace SHAPE risk during authoring, not evidence contention.",
+      "thin_or_empty_namespaces_batch_03_will_fill": {
+        "java.operator.*": 0,
+        "java.type.*": 1,
+        "java.variable.*": 2,
+        "java.control-flow.*": 1,
+        "java.language.*": 1
+      },
+      "risk": "java.variable.* already holds scope and static-variable, and java.control-flow.* already holds enhanced-for. A batch-03 `for문` concept must not collide with the applied java.control-flow.enhanced-for, and a batch-03 variable-declaration concept must not restate java.variable.scope. Both are id-shape and semantic-duplication risks, caught by the engine's collision report only when ids or paths actually collide; semantic duplication remains a U3 review judgement.",
+      "occupied_normalized_keys_in_selected_prose": {
+        "note": "F1/F2 repair. These normalized title/alias keys are ALREADY in the approved index AND are asserted in the selected chap01-04 prose. Minting a new concept under any of them fails the collision report at proposal-build time.",
+        "keys": [
+          "클래스 / class (java.oop.class)",
+          "객체 / object (java.oop.object)",
+          "객체 협력 (java.oop.object-collaboration)",
+          "패키지 / package / java package (java.language.package)",
+          "final 예약어 / final keyword / final 키워드 (java.keyword.final)",
+          "변수 유효 범위 / variable scope (java.variable.scope)",
+          "메서드 / method / 멤버 함수 (java.oop.method) — chap04 L95, added in revision 3",
+          "함수 / function (software.programming.function)",
+          "동적 메모리 (java.memory.heap)",
+          "os / operating system (cs.os.operating-system)",
+          "객체 지향 프로그래밍 / oop (software.paradigm.object-oriented-programming)",
+          "프로그램 / program (cross-domain.program)"
+        ],
+        "current_index_collisions": 0,
+        "constraint": "The approved index currently reports 0 collisions across concept_id, title_or_alias, canonical_path and folder_route. Candidate authoring must keep it at 0 by reusing these ids rather than re-minting them."
+      }
+    },
+    "expected_flagged_for_full_review": {
+      "rule": "plan §5.1 requires 100% review of conflict / low-confidence / provenance-warning proposals; REVIEW_FLAGS in knowledge.mjs is exactly {conflict, low-confidence, provenance-warning}.",
+      "low_evidence_rule": "0 < prose_lines <= 3",
+      "low_evidence_scope_count": 12,
+      "low_evidence_scopes": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "heading_chain": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 02. 객체지향 언어라서 유지보수가 쉽고 확장성이 좋음",
+          "start_line": 42,
+          "end_line": 48,
+          "prose_lines": 1,
+          "code_lines": 0
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "heading_chain": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 04. 풍부한 기능을 제공하는 오픈소스",
+          "start_line": 61,
+          "end_line": 67,
+          "prose_lines": 1,
+          "code_lines": 0
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "heading_chain": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 정수형",
+          "start_line": 71,
+          "end_line": 87,
+          "prose_lines": 1,
+          "code_lines": 10
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "heading_chain": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 논리형",
+          "start_line": 172,
+          "end_line": 180,
+          "prose_lines": 2,
+          "code_lines": 0
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "heading_chain": "# Chapter 02 - 변수와 자료형 > ## Java 상수",
+          "start_line": 201,
+          "end_line": 232,
+          "prose_lines": 2,
+          "code_lines": 20
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "heading_chain": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환",
+          "start_line": 249,
+          "end_line": 260,
+          "prose_lines": 3,
+          "code_lines": 0
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "heading_chain": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자 > ### 논리 연산 주의점",
+          "start_line": 45,
+          "end_line": 82,
+          "prose_lines": 3,
+          "code_lines": 27
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "heading_chain": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자 > ### 조건 연산자",
+          "start_line": 83,
+          "end_line": 109,
+          "prose_lines": 3,
+          "code_lines": 14
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java if문",
+          "start_line": 19,
+          "end_line": 46,
+          "prose_lines": 1,
+          "code_lines": 16
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### break, continue 차이",
+          "start_line": 408,
+          "end_line": 415,
+          "prose_lines": 2,
+          "code_lines": 0
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### 연습문제 2번",
+          "start_line": 416,
+          "end_line": 453,
+          "prose_lines": 2,
+          "code_lines": 28
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "heading_chain": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### 연습문제 3번",
+          "start_line": 454,
+          "end_line": 488,
+          "prose_lines": 2,
+          "code_lines": 26
+        }
+      ],
+      "code_only_flag_expectation": "The 3 code-only scopes should additionally be expected to carry low-confidence or provenance-warning flags if any concept is backed solely by them, because their excerpt is program text rather than an authored assertion.",
+      "sample_quota_recipe": "computeBatchSample() sets quota = min(unflagged_pool, max(5, ceil(0.10 x unflagged_pool))) over the UNFLAGGED pool, not 10% of total proposals, and category coverage can add one extra draw per proposal kind missing from the quota slice, so the discretionary count is a floor.",
+      "estimated_u3_review_load": "ESTIMATE ONLY, not a mechanical derivation. Under the explicit and unproven assumption that each of the 12 low-evidence scopes yields exactly one flagged proposal and the accepted count lands near the 18 midpoint, the unflagged pool is ~18 - 12 = 6, the quota is max(5, ceil(0.10 x 6)) = 5, and the reviewed set is ~12 mandatory + 5 discretionary ~= 17 proposals plus category-coverage top-ups. Batch 01 is the counterexample that bounds this: 6 low-evidence scopes produced 12 flagged proposals out of 17, so scopes do not map 1:1 to proposals. Batch-02's realised sample was 18 selected of 34."
+    }
+  },
+  "preconditions": [
+    {
+      "id": "P1",
+      "severity": "informational",
+      "statement": "Both predecessor Book batches are applied, so candidate authoring for batch 03 is NOT sequencing-blocked. This is the material difference from the batch-02 inventory, which was blocked by its own B1.",
+      "consequence": "Batch-03 authoring can proceed against a fixed, knowable approved index of 57 concepts at tree db8bef80..., rather than against a contested view.",
+      "required_before": "candidate authoring",
+      "resolution": "Bind approved_knowledge_tree_sha256_at_inventory into the future batch manifest and re-verify it immediately before propose and before apply."
+    },
+    {
+      "id": "P2",
+      "severity": "blocking",
+      "statement": "The approved knowledge tree must not move between this inventory and batch-03 apply. It is currently db8bef805b1182af0b8df00042e26caabe06ef917852d496ba23f565e7c9e35d (58 files, 57 concepts).",
+      "consequence": "If any other packet applies first, `apply` refuses batch 03 with `approved knowledge content changed after proposal generation` and the packet must be regenerated. This is a fail-closed guard, not a corruption risk.",
+      "required_before": "propose and apply",
+      "resolution": "Sequence batch 03 as the only in-flight Book packet, or regenerate after any intervening apply."
+    },
+    {
+      "id": "P3",
+      "severity": "warning",
+      "statement": "The raw layer is uncommitted. All four extraction sources are untracked in git, so drift cannot be caught by git alone; the hash lock is the only guard.",
+      "consequence": "Undetected source drift would silently invalidate every span hash in this inventory.",
+      "required_before": "propose and apply",
+      "resolution": "Re-verify all 27 corpus source_sha256 immediately before propose and again before apply; fail closed on mismatch."
+    },
+    {
+      "id": "P4",
+      "severity": "warning",
+      "statement": "Tag policy. Raw book frontmatter carries display tags such as `📚 Do it! 자바`. Knowledge tags[] must equal the canonical_path folder segments; `brain` and `knowledge` are reserved.",
+      "consequence": "A copied display tag fails validateCandidateShape() at propose time.",
+      "required_before": "candidate authoring",
+      "resolution": "Derive tags from canonical_path folders only."
+    },
+    {
+      "id": "P5",
+      "severity": "warning",
+      "statement": "Alias policy H-1. Knowledge aliases are search-only; `aliases`/`alias`/`permalink` are forbidden in knowledge frontmatter because Quartz emits one public redirect route per entry.",
+      "consequence": "A public alias route fails the alias policy gate and the canonical verifier.",
+      "required_before": "candidate authoring",
+      "resolution": "Use the knowledge_aliases frontmatter key plus the KNOWLEDGE_ALIASES body block, as all 57 applied concepts do."
+    },
+    {
+      "id": "P6",
+      "severity": "warning",
+      "statement": "Code-only scopes are new in batch 03 and pass the engine's substantive-evidence gate on program text alone.",
+      "consequence": "A concept backed solely by a code-only scope produces a machine-valid locator whose reviewer-visible excerpt is source code, with no authored assertion to check it against.",
+      "required_before": "candidate authoring",
+      "resolution": "Pair a code-only scope with a prose-bearing sibling, or author a stub, and expect a low-confidence flag. See code_only_scopes."
+    },
+    {
+      "id": "P7",
+      "severity": "blocking",
+      "statement": "SEVEN already-applied concepts have their exact applied title or alias present in the selected prose: java.oop.class, java.oop.object and java.language.package (chap01 L76/L78/L82), java.oop.object-collaboration (chap01 L44), java.keyword.final (chap02 L203/L205), java.variable.scope (chap02 L191), and java.oop.method (chap04 L95, added in revision 3). Their applied titles 클래스 / 객체 / 객체 간 협력 / 패키지 / `final 예약어` / 변수 유효 범위 / 메서드 and aliases Class / Object / Package / Method / 멤버 함수 are live keys in the approved index. The full occupied-key list is namespace_interaction.occupied_normalized_keys_in_selected_prose (12 entries).",
+      "consequence": "Authoring any of them as a NEW concept fails the collision report at proposal-build time and wastes a regeneration cycle; authoring a near-synonym under a non-colliding id passes the automated gates and produces a semantic duplicate that only U3 review can catch.",
+      "required_before": "candidate authoring",
+      "resolution": "Work the existing_touch_points table first. For every entry classified update / update-or-no_op / no_op, reuse the applied concept_id and canonical_path or take no_op; do not mint a new id. For java.oop.method specifically the disposition is no_op: chap04 L95 names 메서드 referentially inside a switch-case discussion and asserts nothing about methods, so a String-equality or switch-case-on-String concept authored from that scope must RELATE to java.oop.method under its own distinct title rather than restate it. Added in revision 2 as the F1 repair; extended in revision 3 to cover 메서드."
+    },
+    {
+      "id": "P8",
+      "severity": "warning",
+      "statement": "Alias overlap must be assessed under the engine's collision identity (NFKC + trim + lowercase), not under a case-sensitive byte scan. The two disagree: 2 of 126 versus 6 of 126.",
+      "consequence": "A case-sensitive scan under-reports overlap and can be mistaken for evidence of semantic non-overlap, which is how revision 1 reached a false authoring-safety conclusion.",
+      "required_before": "candidate authoring",
+      "resolution": "Use alias_scan_semantics. Note that normalized substring matching also produces artifacts (`Class Variable` matching `public class Variable1`), so each hit needs a prose/code/artifact anchor before it is treated as evidence. Added in revision 2 as the F2 repair."
+    }
+  ],
+  "exclusions": [
+    {
+      "path": "content/brain/books/dinosaur/chap01.md",
+      "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+      "bytes": 20564,
+      "reason_code": "consumed-by-applied-u2-pilot",
+      "reason": "Applied U2 pilot source: 6 locators across applied concepts (cs.*, cross-domain.program). A consolidation pass over applied-source chapters is scheduled separately (see next_batch_recommendation.consolidation); this exclusion does not claim the chapter is exhaustively mined."
+    },
+    {
+      "path": "content/brain/books/dinosaur/index.md",
+      "source_sha256": "a8120f7707ebf9337aa6e39266cdfa818cb7bac0f461d9780ce35e629e1c8628",
+      "bytes": 434,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap05.md",
+      "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+      "bytes": 22791,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied (run_state completed, 34/34 applied): 27 locators from this chapter are live in the approved knowledge tree."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap06.md",
+      "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+      "bytes": 18202,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 17 locators from this chapter are live in the approved knowledge tree."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap07.md",
+      "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+      "bytes": 16380,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 12 locators from this chapter are live in the approved knowledge tree."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap08.md",
+      "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+      "bytes": 36552,
+      "reason_code": "consumed-by-applied-u2-pilot",
+      "reason": "Applied U2 pilot source: 4 locators across applied java.oop.* concepts. Consolidation is a separate scheduled pass; this exclusion does not claim exhaustive mining."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap09.md",
+      "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+      "bytes": 21207,
+      "reason_code": "consumed-by-applied-book-batch-01",
+      "reason": "Book batch 01 applied (run_state completed, 17/17 applied): 14 locators from this chapter are live in the approved knowledge tree. Re-mining belongs to the consolidation pass, not batch 03."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap10.md",
+      "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+      "bytes": 26270,
+      "reason_code": "consumed-by-applied-book-batch-01",
+      "reason": "Book batch 01 applied: 22 locators from this chapter are live in the approved knowledge tree. Re-mining belongs to the consolidation pass, not batch 03."
+    },
+    {
+      "path": "content/brain/books/do-it-java/index.md",
+      "source_sha256": "2ebcf0fdf49f2e33bcfee437b577a69d81badfaf241d7d5dc0b9dc9b31f55433",
+      "bytes": 1067,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/headfirst/chap01.md",
+      "source_sha256": "5bc76a52b84de82b431eca3153eb88b7b46c8e97182f4acfcc5cf2a96a912934",
+      "bytes": 132,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter file (body_bytes_after_frontmatter = 0). It served as a file-level rejection probe in book-batch-01, which APPLIED with this file recorded in rejected-candidates.json as book.rejected.headfirst-chap01 / insufficient-source-evidence / proposal_created false. Whole-document negative coverage is therefore already discharged against these exact bytes; re-adopting it in batch 03 would duplicate a satisfied obligation."
+    },
+    {
+      "path": "content/brain/books/headfirst/index.md",
+      "source_sha256": "0a494323844cf13491e90daeede77b9b10d8ad87e2f3cf042800a7a88ecf2378",
+      "bytes": 531,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/index.md",
+      "source_sha256": "0e16821f89bb88ce2d9ab35393e622e1af7584106fd5d767994ffb8db206be46",
+      "bytes": 34,
+      "reason_code": "structural-landing-page",
+      "reason": "Root landing page for the Book layer. Frontmatter-only, but a landing page is not a valid extraction or probe candidate under the evidence rule."
+    },
+    {
+      "path": "content/brain/books/kafka/chap01.md",
+      "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+      "bytes": 25915,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka: The Definitive Guide substantive chapter. Different series from the Do it! Java language arc; scheduled for batch 04+ split by byte budget."
+    },
+    {
+      "path": "content/brain/books/kafka/chap02.md",
+      "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+      "bytes": 29652,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka substantive chapter; batch 04+."
+    },
+    {
+      "path": "content/brain/books/kafka/chap03.md",
+      "source_sha256": "415a2aa0a323e2a13946beb6cc01fd4a2a5d4136761647d1212b2db57676d36e",
+      "bytes": 126,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter file (body 0 bytes). Discharged as book.rejected.kafka-chap03 / insufficient-source-evidence inside the applied book-batch-01 packet; source bytes are unchanged since that lock."
+    },
+    {
+      "path": "content/brain/books/kafka/chap04.md",
+      "source_sha256": "61c9540d0ce99d8de40b8b1fc156344d32ba4b72935b3846a2ecaaa378b28c79",
+      "bytes": 123,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter file (body 0 bytes). Discharged as book.rejected.kafka-chap04 / insufficient-source-evidence inside the applied book-batch-01 packet; source bytes are unchanged since that lock."
+    },
+    {
+      "path": "content/brain/books/kafka/chap05.md",
+      "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+      "bytes": 35954,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka substantive chapter; batch 04+."
+    },
+    {
+      "path": "content/brain/books/kafka/chap07.md",
+      "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+      "bytes": 36294,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka substantive chapter; batch 04+."
+    },
+    {
+      "path": "content/brain/books/kafka/chap08.md",
+      "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+      "bytes": 60639,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka substantive chapter; batch 04+."
+    },
+    {
+      "path": "content/brain/books/kafka/chap09.md",
+      "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+      "bytes": 26990,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka substantive chapter; batch 04+."
+    },
+    {
+      "path": "content/brain/books/kafka/chap10.md",
+      "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+      "bytes": 58072,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka substantive chapter; batch 04+."
+    },
+    {
+      "path": "content/brain/books/kafka/chap14.md",
+      "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+      "bytes": 58148,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka substantive chapter; batch 04+."
+    },
+    {
+      "path": "content/brain/books/kafka/index.md",
+      "source_sha256": "18a829ca948932c7c9279afb1d0b9f4f6a0547d83740f136932772b12d41a2bf",
+      "bytes": 1104,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    }
+  ],
+  "coverage": {
+    "book_markdown_total": 27,
+    "extraction_sources": 4,
+    "rejection_probes": 0,
+    "exclusions": 23,
+    "accounted_for": 27,
+    "unaccounted": 0
+  },
+  "next_batch_recommendation": {
+    "batch_04_plus": "kafka substantive chapters (chap01, chap02, chap05, chap07, chap08, chap09, chap10, chap14), split by byte budget. This is the last unmined Book series.",
+    "consolidation": "a dedicated pass over dinosaur/chap01.md, do-it-java/chap05-chap10.md and the pilot chapters, whose spans are applied but not necessarily exhaustively mined. After batch 03 and batch 04 the Book corpus has no unclaimed file left, so consolidation is the only remaining Book work.",
+    "note": "After batch 03 applies, 23 of 27 Book Markdown files will have been claimed by an applied packet or excluded as structural, leaving only the 8 Kafka substantive chapters unmined."
+  }
+}

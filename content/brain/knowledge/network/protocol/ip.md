@@ -1,0 +1,48 @@
+---
+title: IP
+aliases:
+  - Internet Protocol
+  - IP 주소
+  - IPv4
+  - 패킷
+tags:
+  - network
+origin:
+  verified: 2026-08-30
+---
+
+지정한 주소로 패킷을 전달하는 프로토콜. 인터넷 통신의 바닥에 있고, 메시지를 그냥 흘려보내는 것이 아니라 출발지 IP와 목적지 IP를 담은 패킷에 실어 보낸다.
+
+## 주소의 두 부분
+
+IPv4 주소는 32비트이고 8비트씩 넷으로 끊어 점으로 구분한다. `192.168.0.10` 같은 모양이다. 주소는 Network ID와 Host ID 두 부분으로 나뉜다. 택배로 치면 Network ID가 가까운 물류센터까지 데려다주고 Host ID가 거기서 우리 집을 찾아준다. 네트워크에 먼저 진입하고 그 안에서 호스트를 특정한다.
+
+## 네 층을 내려가며 씌우기
+
+인터넷 프로토콜 스택은 네 층으로 본다. [[osi-7-layer|OSI 7계층]]과는 층을 나눈 방식이 다르다. 위에서부터 HTTP와 FTP가 있는 애플리케이션 계층, TCP와 UDP가 있는 전송 계층, IP가 있는 인터넷 계층, 랜카드와 랜 드라이버가 있는 네트워크 인터페이스 계층이다.
+
+데이터를 보낼 때는 이 순서를 따라 내려가며 겹겹이 감싼다. 소켓 라이브러리로 OS 계층에 데이터를 넘기면 TCP 정보를 씌우고, 그 위에 IP 패킷을 씌우고, 마지막으로 이더넷 프레임까지 씌워 내보낸다.
+
+## 못 하는 세 가지
+
+IP는 세 가지를 못 한다. 이 한계들이 나머지 프로토콜이 존재하는 이유다.
+
+비연결성 때문에 받을 대상이 없거나 서비스 불능 상태여도 패킷을 그냥 보낸다. 도착했는지 알 방법이 없다.
+
+비신뢰성 때문에 중간에 패킷이 사라져도 모른다. 순서대로 도착한다는 보장도 없는데, 패킷마다 다른 경로로 갈 수 있기 때문이다.
+
+프로그램을 구분하지 못한다. 같은 IP를 쓰는 서버에서 애플리케이션이 둘 이상이면 어느 쪽에 줘야 할지 알 수 없다.
+
+앞의 둘을 [[tcp-udp|TCP]]가, 마지막을 [[brain/knowledge/network/protocol/socket|포트 번호]]가 해결한다. 사람이 IP를 외울 수 없다는 문제는 [[port-and-dns|DNS]]가 맡는다.
+
+## 관련
+
+- [[tcp-udp|TCP와 UDP]]
+- [[port-and-dns|DNS]]
+- [[brain/knowledge/network/protocol/socket|소켓 프로그래밍]]
+- [[osi-7-layer|OSI 7계층]]
+
+## 출처
+
+- [[brain/lectures/backend/kim-spring/http/section01|김영한 HTTP 1강 - IP]]
+- [[brain/lectures/network/free-dev/network-basic/section3|널널한 개발자 네트워크 기초 3강]]

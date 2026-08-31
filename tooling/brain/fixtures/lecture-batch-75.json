@@ -1,0 +1,1168 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-75",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-74",
+    "applied_state": "1383 approved knowledge concepts after the Java note folder closed."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/CS/Algo/sort/comparison/bubbleSort.md",
+        "source_sha256": "63408565e89b72971113be5aa57fdcea6beef2ab5117bd132412966cbd126112"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/comparison/insertSort.md",
+        "source_sha256": "f8947ce6a002a0105e5b2c043c7de35fb8516331b1f71253af4bb471399243ba"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/comparison/mergeSort.md",
+        "source_sha256": "bf6a70ecda1b1133988984d9351bfbbf48a16a3cdcd62597441c8406de4208a2"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/comparison/quickSort.md",
+        "source_sha256": "35b75ddbc50b1e8013571e12bb43c26bfdd590518112cd861b1bd8aa4c0a0e85"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/comparison/selectSort.md",
+        "source_sha256": "fae43547b811c6e00b4a0e638e33e58df4e29f7ec635a57f6d88594f1a102243"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+        "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/externalSort.md",
+        "source_sha256": "b9bc38879840eed8c2cb52d5e2edf6396284dd59e59b1bfe37854346a6efb831"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/inplaceSort.md",
+        "source_sha256": "644b20f59a8bc18da4a16aee61b2458cc7bbb7a772ec7d2b6766a6be902bf5d1"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/internalSort.md",
+        "source_sha256": "5fa10d94aab193b6072a7d01b5f6b2f2a66f4491931dc4c8e781f4c449c3dd91"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/noncomparisonSort.md",
+        "source_sha256": "fb1f5615e5f3c7bf3f61b1a479ee33bd099ddfc66d74c9d291e1efa3791c9340"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/stableSort.md",
+        "source_sha256": "2e2d0542541d574e8b121b941666612b2e7d02c9933a269a0f889f30340b732e"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/unstableSort.md",
+        "source_sha256": "3f3b820c94dba4c276bec9131f596bfd648c845ad18f3a8d1378f7f450020ccb"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/comparison/heapSort.md",
+        "source_sha256": "a2b24659cb69106e7cf29c1cfdfe8fb844af932f10d1dc39436f12a727b33f19"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/noncomparison/countingSort.md",
+        "source_sha256": "bf8fca2abf507d8a78f52630fc3ef2c9db401c54a80adc5688c7715fe99237e0"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/noncomparison/radixSort.md",
+        "source_sha256": "4fa23ab8e2d9308fbf096cac3a98a2cdd1be62265f3e89b4ef3f3eaca5cf2328"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/index.md",
+        "source_sha256": "e46372e0872dde044163cb0365bd4048b306bc922faf56e572db5e186810f36d"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/comparison/index.md",
+        "source_sha256": "9782088eeb8cd57eb9cb118443c5d84e9c05b0c51a91be816f6f231f12ce8b8b"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/etcsort/index.md",
+        "source_sha256": "25af4e1bec9429ba50fc419e0b7505f6ee12045022c26622b9d2d2dfed1e1231"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/sort/noncomparison/index.md",
+        "source_sha256": "8ddb13ba872a0008d8fb7f0a707c4ac2c226bf879f0695ffd805e335dc26a8b1"
+      }
+    ],
+    "line_range": "whole files",
+    "series": "CS 노트 - 정렬 알고리즘"
+  },
+  "multi_source_note": "Nineteen files, seven of them empty stubs or index pages, are mined together; locators carry an `s` index into the source list.",
+  "overlap_analysis": {
+    "finding": "Only one of these sorts had been applied - the insertion sort, mined from an algorithm lecture as a problem-solving technique rather than as a sort. This folder is the corpus's systematic treatment: five comparison sorts each with its complexity, memory and stability stated, the three classification axes those statements refer to, and the decision-tree proof that no comparison sort can do better.",
+    "disposition": "Seven applied concepts gain evidence or edges. Fourteen new concepts, of which the lower-bound proof is the one the rest of the folder is arranged around."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All seven update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "bubbleSort L61; insertSort L16; mergeSort L16 partial; quickSort L31-L37, L47-L54, L66, L158; comparisonSort L53-L70, L87; stableSort/unstableSort L16 partial",
+        "reason_code": "code-caption-figure-caption-external-link-or-displayed-equation",
+        "detail": "The captions above each implementation and diagram, the link to a practice problem and to a video, and the displayed formulas of the lower-bound derivation, whose conclusion the cited prose states."
+      },
+      {
+        "span": "heapSort.md, countingSort.md, radixSort.md and four index pages",
+        "reason_code": "empty-stub-or-index",
+        "detail": "Seven files carrying no prose - three sorts named throughout the folder but never written up, and the folder indexes."
+      }
+    ],
+    "coverage_statement": "Every heading scope carrying prose contributes at least one cited locator, except the implementation sections, which carry code and its captions only."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 41300,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 183,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 30,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 22,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 21,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 21,
+  "candidates": [
+    {
+      "concept_id": "algo.sort.insertion-sort",
+      "title": "삽입 정렬",
+      "aliases": [
+        "insertion sort",
+        "자기보다 큰 첫 원소 앞에 끼워넣기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/insertion-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single sort that places each element by walking the already-sorted part for the first one larger than it and inserting there, everything from that point shifting back - which is why it is quadratic, and why the number of shifts can be counted without sorting at all when that count is what the question asks for",
+      "pilot_strata": [
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-75",
+        "CS/Algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.insert-shift-direction",
+        "algo.array.operation-complexity",
+        "algo.complexity.time-complexity",
+        "java.util.arrays-sort",
+        "algo.sort.selection-sort",
+        "algo.sort.stable-sort",
+        "algo.sort.comparison-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 10431번 문제",
+          "start_line": 260,
+          "end_line": 261
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 10431번 문제",
+          "start_line": 294,
+          "end_line": 297
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 10431번 문제",
+          "start_line": 299,
+          "end_line": 306
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/insertSort.md",
+          "source_sha256": "f8947ce6a002a0105e5b2c043c7de35fb8516331b1f71253af4bb471399243ba",
+          "heading": "### 삽입정렬 개념",
+          "start_line": 12,
+          "end_line": 26
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/insertSort.md",
+          "source_sha256": "f8947ce6a002a0105e5b2c043c7de35fb8516331b1f71253af4bb471399243ba",
+          "heading": "### 삽입정렬 - 최적화 반복1",
+          "start_line": 104,
+          "end_line": 106
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/insertSort.md",
+          "source_sha256": "f8947ce6a002a0105e5b2c043c7de35fb8516331b1f71253af4bb471399243ba",
+          "heading": "### 삽입정렬 - 최적화 반복2",
+          "start_line": 139,
+          "end_line": 140
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.arrays-sort",
+      "title": "Arrays.sort()",
+      "aliases": [
+        "DualPivotQuickSort",
+        "배열 오름차순 정렬",
+        "최악의 경우 O(n제곱)"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/arrays-sort.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single in-place ascending sort implemented as a dual-pivot quicksort that splits into three regions and mixes in insertion sort, running in n log n on average and quadratic at worst",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "lecture-batch-71",
+        "CodeTree",
+        "lecture-batch-75",
+        "CS/Algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-class",
+        "java.oop.comparable",
+        "java.oop.comparator",
+        "java.util.arrays-binary-search",
+        "algo.sort.insertion-sort",
+        "algo.array.counting-array",
+        "algo.complexity.time-complexity",
+        "java.util.collections-sort",
+        "java.util.primitive-descending-sort",
+        "algo.sort.quick-sort",
+        "algo.sort.comparison-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### sort()",
+          "start_line": 550,
+          "end_line": 559
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 10989번 문제",
+          "start_line": 407,
+          "end_line": 409
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 13,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.collections-sort",
+      "title": "Collections.sort와 Tim Sort",
+      "aliases": [
+        "객체를 정렬한다",
+        "Tim Sort",
+        "삽입과 합병을 섞은 정렬",
+        "reverseOrder"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/collections-sort.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single counterpart to the array sort - it orders objects rather than primitives and uses a hybrid of insertion and merge sorting, which unlike the array's quicksort variant is log-linear in the worst case as well as the average; the same class also supplying the reversal of a list and the comparator that orders any wrapper type downward",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain",
+        "lecture-batch-75",
+        "CS/Algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-sort",
+        "java.collection.collections-class",
+        "java.util.primitive-descending-sort",
+        "algo.sort.insertion-sort",
+        "algo.sort.merge-sort",
+        "algo.sort.stable-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 31,
+          "end_line": 31
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 37,
+          "end_line": 43
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.space-complexity",
+      "title": "공간 복잡도",
+      "aliases": [
+        "512MB는 int 1.2억 개",
+        "메모리 제한 읽기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/space-complexity.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single relation between input size and memory needed, which the problem's memory limit turns into a count - a common limit holding on the order of a hundred million four-byte integers, which is what decides whether an array of that size may be allocated at all",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-75",
+        "CS/Algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.array.counting-array",
+        "cs.data.bit-and-byte",
+        "algo.sort.in-place-sort",
+        "algo.sort.internal-external-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 공간 복잡도",
+          "start_line": 67,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.binary-tree",
+      "title": "이진 트리",
+      "aliases": [
+        "binary tree",
+        "자녀는 최대 두 개",
+        "왼쪽 자녀와 오른쪽 자녀"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/binary-tree.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single restriction to at most two children per node, which are distinguished as the left and the right rather than merely counted",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-75",
+        "CS/Algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.tree",
+        "algo.tree.binary-tree-kinds",
+        "algo.tree.bst",
+        "algo.sort.comparison-sort-lower-bound"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 187,
+          "end_line": 189
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.array.counting-array",
+      "title": "카운트 배열",
+      "aliases": [
+        "값을 인덱스로 쓰기",
+        "음수는 오프셋을 더해서",
+        "값의 범위가 크면 못 쓴다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/array/counting-array.md",
+      "tags": [
+        "algo",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single technique of counting occurrences by using the value itself as an index, which trades time for space - and so only works while the range of values is small enough to allocate, a billion possible values needing gigabytes, with a negative range handled by adding an offset",
+      "pilot_strata": [
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-75",
+        "CS/Algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.array-memory-layout",
+        "algo.complexity.n-range-table",
+        "algo.array.two-sum-scan",
+        "algo.sort.insertion-sort",
+        "algo.sort.non-comparison-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 10989번 문제",
+          "start_line": 437,
+          "end_line": 442
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.heap.heap",
+      "title": "힙",
+      "aliases": [
+        "heap",
+        "완전 이진 트리 모양",
+        "최대 힙과 최소 힙"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/heap/binary-heap.md",
+      "tags": [
+        "algo",
+        "heap"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single special shape of the binary tree - every level filled from the left with no gaps, which fixes the height at the logarithm of the count - ordered so that one extreme sits at the root, which is what makes finding the largest or the smallest constant and keeps every change logarithmic",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain",
+        "lecture-batch-70",
+        "lecture-batch-75",
+        "CS/Algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.binary-tree-kinds",
+        "algo.heap.max-heap",
+        "algo.heap.heapify",
+        "algo.tree.binary-tree-array",
+        "algo.graph.dijkstra",
+        "algo.graph.prim",
+        "algo.sort.unstable-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 718,
+          "end_line": 723
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 731,
+          "end_line": 731
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.bubble-sort",
+      "title": "버블 정렬",
+      "aliases": [
+        "Bubble Sort",
+        "인접한 두 원소를 비교해 교환",
+        "안정이며 제자리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/bubble-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sort that walks the array comparing each neighbouring pair and swapping them when they are the wrong way round, repeated until nothing moves - quadratic in every case but the already-sorted one, needing no memory beyond the array because it only ever exchanges, and leaving equal elements in the order they arrived",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.bubble-sort-optimization",
+        "algo.sort.selection-sort",
+        "algo.sort.comparison-sort",
+        "algo.sort.stable-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/bubbleSort.md",
+          "source_sha256": "63408565e89b72971113be5aa57fdcea6beef2ab5117bd132412966cbd126112",
+          "heading": "### 버블정렬 개념",
+          "start_line": 12,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.bubble-sort-optimization",
+      "title": "버블 정렬의 두 가지 최적화",
+      "aliases": [
+        "교환이 없으면 끝난 것",
+        "맨 뒤는 이미 정렬됐다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/bubble-sort-optimization.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of savings available to the neighbour-swapping sort - a pass in which nothing was exchanged means the array is already in order, so the loop can stop, which is what makes its best case linear; and each pass settles one more element at the end, so the next need not look that far",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.sort.bubble-sort",
+        "algo.complexity.best-worst-average"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/bubbleSort.md",
+          "source_sha256": "63408565e89b72971113be5aa57fdcea6beef2ab5117bd132412966cbd126112",
+          "heading": "### 버블정렬 - 최적화 반복",
+          "start_line": 133,
+          "end_line": 136
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.selection-sort",
+      "title": "선택 정렬",
+      "aliases": [
+        "Selection Sort",
+        "자리를 정하고 값을 고른다",
+        "최선도 제곱"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/selection-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sort in which the position is fixed and the value for it is looked for - each pass scans the unsorted remainder for its smallest and puts it in place - so unlike the others it gains nothing from the input already being ordered and is quadratic in every case; it exchanges rather than copies, and the exchange is what makes it lose the original order of equal elements",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.bubble-sort",
+        "algo.sort.insertion-sort",
+        "algo.sort.unstable-sort",
+        "algo.sort.in-place-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/selectSort.md",
+          "source_sha256": "fae43547b811c6e00b4a0e638e33e58df4e29f7ec635a57f6d88594f1a102243",
+          "heading": "### 선택정렬 개념",
+          "start_line": 12,
+          "end_line": 24
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.merge-sort",
+      "title": "합병 정렬",
+      "aliases": [
+        "Merge Sort",
+        "균등하게 분할한다",
+        "임시 배열이 필요하다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/merge-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single divide-and-conquer sort that splits the array into two equal halves, sorts each the same way and merges the results - log-linear in every case including the worst, which is what distinguishes it from the other advanced sort - at the price of memory for the merge, which is the reason to prefer the other when memory is what matters",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.quick-sort",
+        "algo.sort.merge-sort-recursion",
+        "algo.sort.stable-sort",
+        "algo.sort.in-place-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/mergeSort.md",
+          "source_sha256": "bf6a70ecda1b1133988984d9351bfbbf48a16a3cdcd62597441c8406de4208a2",
+          "heading": "### 합병정렬 개념",
+          "start_line": 12,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.merge-sort-recursion",
+      "title": "언제까지 쪼갤 것인가",
+      "aliases": [
+        "시작과 끝 인덱스가 같아지면",
+        "방이 하나 남은 상태"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/merge-sort-recursion.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single stopping condition for the recursive split - when the two bounds meet, the piece holds one element and cannot be divided further, which is also the point at which it is trivially sorted and the merging can begin",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.sort.merge-sort",
+        "cs.memory.call-stack",
+        "algo.sort.quick-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/mergeSort.md",
+          "source_sha256": "bf6a70ecda1b1133988984d9351bfbbf48a16a3cdcd62597441c8406de4208a2",
+          "heading": "### 합병정렬 원리",
+          "start_line": 37,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/mergeSort.md",
+          "source_sha256": "bf6a70ecda1b1133988984d9351bfbbf48a16a3cdcd62597441c8406de4208a2",
+          "heading": "### 합병정렬 원리",
+          "start_line": 54,
+          "end_line": 54
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.quick-sort",
+      "title": "퀵 정렬",
+      "aliases": [
+        "Quick Sort",
+        "pivot 앞에는 작은 값 뒤에는 큰 값",
+        "불균등하게 분할된다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/quick-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single divide-and-conquer sort that picks one element, moves it to where it belongs with everything smaller before and everything larger after, and repeats on the two sides - which unlike the merging sort divides unevenly and so is quadratic when the choice is repeatedly the extreme, but is in practice the faster of the two and needs only the recursion's own space",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.merge-sort",
+        "algo.sort.quick-sort-partition",
+        "java.util.arrays-sort",
+        "algo.sort.unstable-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/quickSort.md",
+          "source_sha256": "35b75ddbc50b1e8013571e12bb43c26bfdd590518112cd861b1bd8aa4c0a0e85",
+          "heading": "### 퀵정렬 개념",
+          "start_line": 12,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.quick-sort-partition",
+      "title": "퀵 정렬의 파티셔닝",
+      "aliases": [
+        "양쪽에서 걸어 들어와 교환한다",
+        "두 인덱스가 엇갈리면 끝"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/quick-sort-partition.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single procedure that separates the array around the chosen element - one index walks forward past everything smaller and stops at something larger, another walks backward past everything larger and stops at something smaller, the two are exchanged, and this repeats until they cross, at which point everything is on the correct side",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.sort.quick-sort",
+        "algo.sort.merge-sort",
+        "algo.array.insert-shift-direction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/quickSort.md",
+          "source_sha256": "35b75ddbc50b1e8013571e12bb43c26bfdd590518112cd861b1bd8aa4c0a0e85",
+          "heading": "### 퀵정렬 파티셔닝",
+          "start_line": 64,
+          "end_line": 64
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/quickSort.md",
+          "source_sha256": "35b75ddbc50b1e8013571e12bb43c26bfdd590518112cd861b1bd8aa4c0a0e85",
+          "heading": "### 퀵정렬 파티셔닝",
+          "start_line": 70,
+          "end_line": 76
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/quickSort.md",
+          "source_sha256": "35b75ddbc50b1e8013571e12bb43c26bfdd590518112cd861b1bd8aa4c0a0e85",
+          "heading": "### 퀵정렬 파티셔닝",
+          "start_line": 82,
+          "end_line": 82
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.comparison-sort",
+      "title": "비교 정렬",
+      "aliases": [
+        "Comparison Sort",
+        "상대적 크기 관계만 이용한다",
+        "기본 정렬과 고급 정렬"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/comparison-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of sorts that use nothing about the data except which of two values is larger - split by speed into the quadratic ones and the log-linear ones - and classified along two further axes, how much extra memory they take and whether they preserve the order of equal elements",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.comparison-sort-lower-bound",
+        "algo.sort.non-comparison-sort",
+        "algo.sort.in-place-sort",
+        "algo.sort.stable-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 개념",
+          "start_line": 12,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 개념",
+          "start_line": 20,
+          "end_line": 26
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.comparison-sort-lower-bound",
+      "title": "비교 정렬은 n log n보다 빠를 수 없다",
+      "aliases": [
+        "의사 결정 트리",
+        "리프는 n! 개",
+        "트리의 높이가 곧 비교 횟수"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/comparison-sort-lower-bound.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single proof that no sort built on comparisons can beat log-linear in the worst case - each comparison is a two-way branch, so any such sort is a binary tree whose leaves are the possible orderings; there are factorially many of those, a binary tree with that many leaves has height at least the logarithm of that number, and by the standard approximation that logarithm is log-linear",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.comparison-sort",
+        "algo.sort.non-comparison-sort",
+        "algo.tree.binary-tree",
+        "algo.complexity.best-worst-average"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 한계",
+          "start_line": 32,
+          "end_line": 32
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 한계",
+          "start_line": 34,
+          "end_line": 34
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 한계",
+          "start_line": 42,
+          "end_line": 42
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 한계",
+          "start_line": 46,
+          "end_line": 51
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 한계",
+          "start_line": 75,
+          "end_line": 75
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.non-comparison-sort",
+      "title": "비교하지 않는 정렬",
+      "aliases": [
+        "Non-Comparison Sort",
+        "데이터의 특수한 성질을 이용한다",
+        "적용에 제한이 있다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/non-comparison-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way past the comparison bound - stop comparing, and use instead some property the data happens to have, such as being integers within a known range - which buys linear time at the cost of only working when the data has that property",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.comparison-sort-lower-bound",
+        "algo.sort.comparison-sort",
+        "algo.array.counting-array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/noncomparisonSort.md",
+          "source_sha256": "fb1f5615e5f3c7bf3f61b1a479ee33bd099ddfc66d74c9d291e1efa3791c9340",
+          "heading": "### 비교하지 않는 정렬 개념",
+          "start_line": 12,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/noncomparisonSort.md",
+          "source_sha256": "fb1f5615e5f3c7bf3f61b1a479ee33bd099ddfc66d74c9d291e1efa3791c9340",
+          "heading": "### 비교하지 않는 정렬 개념",
+          "start_line": 20,
+          "end_line": 24
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/comparisonSort.md",
+          "source_sha256": "b2a35ac07b4ad9ee523d89cd51fdd0039b2e4e9ed02ec9baef3f25829ac410c7",
+          "heading": "### 비교정렬 개선",
+          "start_line": 81,
+          "end_line": 81
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.in-place-sort",
+      "title": "제자리 정렬",
+      "aliases": [
+        "in-place sort",
+        "무시할 만한 추가 공간만 쓴다",
+        "합병정렬은 제자리가 아니다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/in-place-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single classification by memory - a sort qualifies when whatever it needs beyond the array itself is negligible against the number of elements, a little being allowed; which covers all of the quadratic ones and the partitioning sort, and excludes the merging sort, whose temporary array grows with the input",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.internal-external-sort",
+        "algo.sort.merge-sort",
+        "algo.complexity.space-complexity",
+        "algo.sort.comparison-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/inplaceSort.md",
+          "source_sha256": "644b20f59a8bc18da4a16aee61b2458cc7bbb7a772ec7d2b6766a6be902bf5d1",
+          "heading": "### 제자리 정렬 개념",
+          "start_line": 12,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.internal-external-sort",
+      "title": "내부 정렬과 외부 정렬",
+      "aliases": [
+        "Internal Sort",
+        "External Sort",
+        "메모리에 다 올릴 수 있는가"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/internal-external-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single split by whether the data fits in memory - when it does the whole thing is sorted there and it is fast, and when it does not the data is cut into pieces, each sorted in memory and written back, and the sorted pieces merged, which is slower but is the only thing that works at that size",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.in-place-sort",
+        "algo.sort.merge-sort",
+        "spring.batch.chunk",
+        "algo.complexity.space-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/internalSort.md",
+          "source_sha256": "5fa10d94aab193b6072a7d01b5f6b2f2a66f4491931dc4c8e781f4c449c3dd91",
+          "heading": "### 내부정렬 개념",
+          "start_line": 12,
+          "end_line": 14
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/externalSort.md",
+          "source_sha256": "b9bc38879840eed8c2cb52d5e2edf6396284dd59e59b1bfe37854346a6efb831",
+          "heading": "### 외부정렬 개념",
+          "start_line": 12,
+          "end_line": 14
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.stable-sort",
+      "title": "안정 정렬",
+      "aliases": [
+        "Stable Sort",
+        "중복된 값의 입력 순서가 유지된다",
+        "두 번 정렬해도 앞의 기준이 남는다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/stable-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single guarantee that elements comparing equal come out in the order they went in - which matters when data already ordered by one key is re-sorted by another, since only a stable sort leaves the first ordering intact within each group of the second",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.unstable-sort",
+        "algo.sort.merge-sort",
+        "algo.sort.bubble-sort",
+        "java.util.collections-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/stableSort.md",
+          "source_sha256": "2e2d0542541d574e8b121b941666612b2e7d02c9933a269a0f889f30340b732e",
+          "heading": "### 안정정렬 개념",
+          "start_line": 12,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/stableSort.md",
+          "source_sha256": "2e2d0542541d574e8b121b941666612b2e7d02c9933a269a0f889f30340b732e",
+          "heading": "### 안정정렬 예시",
+          "start_line": 24,
+          "end_line": 27
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/stableSort.md",
+          "source_sha256": "2e2d0542541d574e8b121b941666612b2e7d02c9933a269a0f889f30340b732e",
+          "heading": "### 안정정렬 예시",
+          "start_line": 33,
+          "end_line": 39
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.unstable-sort",
+      "title": "불안정 정렬",
+      "aliases": [
+        "Unstable Sort",
+        "중복된 값이 무작위로 뒤섞인다",
+        "선택 퀵 힙"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/unstable-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single absence of that guarantee - equal elements may come out in any order, because the sort moves elements across long distances rather than past their neighbours, which is what the selecting, partitioning and heap-based sorts all do",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.stable-sort",
+        "algo.sort.selection-sort",
+        "algo.sort.quick-sort",
+        "algo.heap.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/unstableSort.md",
+          "source_sha256": "3f3b820c94dba4c276bec9131f596bfd648c845ad18f3a8d1378f7f450020ccb",
+          "heading": "### 불안정정렬 개념",
+          "start_line": 12,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/sort/etcsort/unstableSort.md",
+          "source_sha256": "3f3b820c94dba4c276bec9131f596bfd648c845ad18f3a8d1378f7f450020ccb",
+          "heading": "### 불안정정렬 예시",
+          "start_line": 24,
+          "end_line": 27
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

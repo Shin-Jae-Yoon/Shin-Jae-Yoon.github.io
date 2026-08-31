@@ -1,0 +1,960 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-54",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-53",
+    "applied_state": "1093 approved knowledge concepts after lecture-batch-53 closed the free-dev network series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny.md",
+        "source_sha256": "c6028587bff530deab008a1e5a354ad83ab5b3361e992c26ebb9d9bd9fedc594"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny01.md",
+        "source_sha256": "716d15cfc296dac882931097e830705f34771867beeca2b36e299182adb05243"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny02.md",
+        "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny03.md",
+        "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276"
+      }
+    ],
+    "line_range": "funny L11-L31, funny01 L12-L91, funny02 L12-L280, funny03 L12-L624",
+    "series": "잔재미코딩 파이썬 입문 00~03"
+  },
+  "overlap_analysis": {
+    "finding": "This opens the python namespace. Most of the first file is the author's own reasoning about which language to learn and how to install it, which carries no claim worth keeping; the string chapter, by contrast, is the longest treatment of formatting anywhere in the tree and lands next to the java and SQL formatting concepts already applied.",
+    "disposition": "New namespace python, under env, basic and string. Two applied concepts gain edges to their python counterparts - the printf codes, which are the same codes, and the javascript template literal, which is what the f string is."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "alias_avoidance_note": {
+    "keys": [
+      "슬라이싱",
+      "불변"
+    ],
+    "incumbents": [
+      "js.data.array",
+      "java.util.string-class"
+    ],
+    "disposition": "The python slicing concept is titled 인덱스와 잘라내기 and states immutability in its own words, since both terms already belong to concepts in the javascript and java namespaces that make the same point about their own languages."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "funny01 L8, L16-L22, L42-L45, L61, L69, L81-L91; funny02 L8, L104, L262-L273; funny03 L8, L202-L235, L296-L313, L521-L622 partial; funny L11-L31",
+        "reason_code": "course-link-personal-reasoning-setup-instruction-or-carried-by-owner",
+        "detail": "The course link, the author's account of why they chose this language over another, the install links and the notebook keyboard shortcuts, the cross-references forward to the string chapter, the worked substitutions repeating what the format concept already states, the per-method examples below the list that names them, and the course index with its study log."
+      },
+      {
+        "span": "funny01 whole file",
+        "reason_code": "mostly-setup-and-reflection",
+        "detail": "Of this file's twenty-four prose lines only three spans state something general: what running the language requires, what the notebook is good for, and how a file is run from the terminal. They are cited onto one concept and the rest is personal or dated."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in funny02 and funny03 contributes at least one cited locator. funny01 contributes one concept from three of its five scopes; funny is an index."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 27958,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 160,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 17,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 16,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. Files 04 through 11 - the collection types, booleans, conditions and loops - are left to the next batch.",
+  "candidates_authored": 16,
+  "candidates": [
+    {
+      "concept_id": "java.util.printf-format",
+      "title": "포맷 코드로 출력하기",
+      "aliases": [
+        "printf",
+        "%02d",
+        "%d %s %f"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/printf-format.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of codes standing for the kind of value being printed - string, character, integer, floating point, octal, hexadecimal, and the escape for the sign itself - with a width and a padding digit written between the sign and the code, which is how a number is padded to two places with a leading zero",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "java-domain",
+        "lecture-batch-54",
+        "pl/funny-python"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "algo.math.unit-normalization",
+        "algo.test.java-io-setup",
+        "python.string.percent-formatting",
+        "python.string.format-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 486,
+          "end_line": 494
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 502,
+          "end_line": 504
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.template-literal",
+      "title": "백틱으로 문자에 변수 넣기",
+      "aliases": [
+        "템플릿 리터럴",
+        "달러 중괄호"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/template-literal.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single string form written in backticks, inside which a variable is placed with a dollar sign and braces rather than by concatenating",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-54",
+        "pl/funny-python"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.variable",
+        "js.dom.element-selector",
+        "python.string.f-string"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### 문자 중간에 변수 쉽게 넣기",
+          "start_line": 767,
+          "end_line": 769
+        }
+      ]
+    },
+    {
+      "concept_id": "python.env.toolchain",
+      "title": "파이썬을 실행하는 환경",
+      "aliases": [
+        "jupyter notebook",
+        "텍스트 에디터",
+        "python3 파일이름.py"
+      ],
+      "canonical_path": "content/brain/knowledge/python/env/toolchain.md",
+      "tags": [
+        "python",
+        "env"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice of how the language is run - a notebook that compiles each cell as it is written and shows the result beside it, which suits learning and note-taking, or an ordinary editor with a file run from the terminal, which is how a program is actually written",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.basic.interpreter",
+        "python.basic.data-structure-operations"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny01.md",
+          "source_sha256": "716d15cfc296dac882931097e830705f34771867beeca2b36e299182adb05243",
+          "heading": "## 02. Python 설치",
+          "start_line": 30,
+          "end_line": 36
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny01.md",
+          "source_sha256": "716d15cfc296dac882931097e830705f34771867beeca2b36e299182adb05243",
+          "heading": "## 03. Python IDE > ### **anaconda - jupyter**",
+          "start_line": 55,
+          "end_line": 59
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny01.md",
+          "source_sha256": "716d15cfc296dac882931097e830705f34771867beeca2b36e299182adb05243",
+          "heading": "## 03. Python IDE > ### **pycharm, vs code**",
+          "start_line": 67,
+          "end_line": 71
+        }
+      ]
+    },
+    {
+      "concept_id": "python.basic.data-structure-operations",
+      "title": "자료형마다 다섯 가지를 본다",
+      "aliases": [
+        "선언과 입력 읽기 추가 삭제 수정",
+        "파이썬의 자료형 목록"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/data-structure-operations.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single frame the course puts every data type through - how it is declared and filled, read, added to, deleted from and changed - applied in turn to numbers, strings, lists, tuples, dictionaries, sets and booleans",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.basic.dynamic-typing",
+        "python.string.string-basics",
+        "python.env.toolchain"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 파이썬의 데이터구조",
+          "start_line": 16,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "concept_id": "python.basic.interpreter",
+      "title": "파이썬은 인터프리터 언어",
+      "aliases": [
+        "줄마다 번역하고 실행",
+        "세미콜론이 없다",
+        "따옴표는 어느 쪽이든"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/interpreter.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the source being translated and run line by line rather than built first - the line needs no terminator, and either quotation mark opens a string",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.env.toolchain",
+        "python.basic.dynamic-typing",
+        "python.basic.arithmetic-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 29,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 45,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "python.basic.arithmetic-operator",
+      "title": "파이썬 산술 연산자",
+      "aliases": [
+        "몫은 슬래시 두 개",
+        "제곱은 별표 두 개"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/arithmetic-operator.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of operators where the single slash divides and the doubled one takes the quotient, the percent takes the remainder, and the doubled asterisk raises to a power",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.basic.rounding",
+        "python.basic.interpreter",
+        "algo.math.ceiling-division"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 65,
+          "end_line": 65
+        }
+      ]
+    },
+    {
+      "concept_id": "python.basic.rounding",
+      "title": "파이썬의 반올림",
+      "aliases": [
+        "round(값, 자릿수)",
+        "차이가 같으면 짝수로",
+        "소수점 자리 맞추는 세 가지 방법"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/rounding.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single catch in the rounding function - when the value sits exactly between two, it goes to the even one rather than always up - and the three ways of showing a set number of decimal places, the function itself, the percent formatting code and the format method",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.basic.arithmetic-operator",
+        "python.string.percent-formatting",
+        "python.string.format-method",
+        "js.number.to-fixed"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 67,
+          "end_line": 67
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 88,
+          "end_line": 90
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 94,
+          "end_line": 96
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 100,
+          "end_line": 102
+        }
+      ]
+    },
+    {
+      "concept_id": "python.basic.input",
+      "title": "input()이 돌려주는 것은 문자열",
+      "aliases": [
+        "숫자를 입력해도 문자열",
+        "형변환이 필요하다"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/input.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trap in reading from the keyboard - whatever is typed arrives as text, so a digit is not a number until it is converted",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.basic.dynamic-typing",
+        "python.basic.interpreter",
+        "algo.test.problem-format"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 108,
+          "end_line": 108
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 01. 출력과 입력",
+          "start_line": 119,
+          "end_line": 119
+        }
+      ]
+    },
+    {
+      "concept_id": "python.basic.dynamic-typing",
+      "title": "변수형을 적지 않는다",
+      "aliases": [
+        "값을 넣으면 타입이 정해진다",
+        "type()으로 확인",
+        "int float str bool"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/dynamic-typing.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference from the languages that declare a type - the variable takes its type from what is put in it, which is checked by asking rather than by reading the declaration, and the four that appear at this stage are the integer, the floating point number, the string and the boolean",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.basic.input",
+        "java.type.primitive-type",
+        "java.type.type-inference",
+        "python.basic.data-structure-operations"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 02. 변수, 데이터 타입",
+          "start_line": 141,
+          "end_line": 141
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 02. 변수, 데이터 타입",
+          "start_line": 153,
+          "end_line": 153
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 02. 변수, 데이터 타입",
+          "start_line": 169,
+          "end_line": 183
+        }
+      ]
+    },
+    {
+      "concept_id": "python.basic.print-option",
+      "title": "print()의 sep와 end",
+      "aliases": [
+        "구분자",
+        "줄바꿈하지 않고 이어서"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/print-option.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of arguments controlling what goes between the values printed and what goes after the last one - the first replacing the space that separates them, the second replacing the newline that ends the line",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.string.string-methods",
+        "python.string.format-method",
+        "python.basic.interpreter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 03. print() 문의 옵션",
+          "start_line": 197,
+          "end_line": 197
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 03. print() 문의 옵션",
+          "start_line": 199,
+          "end_line": 205
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 03. print() 문의 옵션",
+          "start_line": 222,
+          "end_line": 224
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 03. print() 문의 옵션",
+          "start_line": 240,
+          "end_line": 251
+        }
+      ]
+    },
+    {
+      "concept_id": "python.string.string-basics",
+      "title": "문자열 더하기와 곱하기",
+      "aliases": [
+        "곱하기는 반복",
+        "len()으로 길이"
+      ],
+      "canonical_path": "content/brain/knowledge/python/string/string-basics.md",
+      "tags": [
+        "python",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of arithmetic operators given a meaning on text - addition joins two strings and multiplication repeats one a number of times, which is how a separator line is drawn - with the length taken by a function rather than a method",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.string.index-slicing",
+        "python.string.string-methods",
+        "python.basic.arithmetic-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 16,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 41,
+          "end_line": 41
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 57,
+          "end_line": 57
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 72,
+          "end_line": 72
+        }
+      ]
+    },
+    {
+      "concept_id": "python.string.index-slicing",
+      "title": "인덱스와 잘라내기",
+      "aliases": [
+        "음수 인덱스",
+        "시작부터 끝 직전까지",
+        "요소를 바꿀 수 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/python/string/index-slicing.md",
+      "tags": [
+        "python",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of reaching into a string by position, counted from the front or from the back with negative numbers, and of taking a range that runs from the first index up to but not including the second - which is also the only way to change a string, since its characters cannot be assigned to and a new string has to be built from the pieces",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.string.string-basics",
+        "java.util.string-class",
+        "js.data.array",
+        "algo.string.index-bound-check"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 83,
+          "end_line": 90
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 107,
+          "end_line": 109
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 122,
+          "end_line": 122
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 135,
+          "end_line": 135
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 147,
+          "end_line": 149
+        }
+      ]
+    },
+    {
+      "concept_id": "python.string.percent-formatting",
+      "title": "% 포매팅",
+      "aliases": [
+        "포맷 코드",
+        "정렬과 공백 자릿수"
+      ],
+      "canonical_path": "content/brain/knowledge/python/string/percent-formatting.md",
+      "tags": [
+        "python",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single formatting style inherited from C - a code per kind of value standing in the string and the values supplied after a percent sign, with a width written before the code to pad or align and a precision after a point to fix the decimal places",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.printf-format",
+        "python.string.format-method",
+        "python.basic.rounding"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 02. 코드 이용 포매팅",
+          "start_line": 177,
+          "end_line": 185
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 02. 코드 이용 포매팅",
+          "start_line": 189,
+          "end_line": 189
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 02. 코드 이용 포매팅",
+          "start_line": 249,
+          "end_line": 264
+        }
+      ]
+    },
+    {
+      "concept_id": "python.string.format-method",
+      "title": "format 포매팅",
+      "aliases": [
+        "중괄호 자리표시자",
+        "이름으로 대입",
+        "왼쪽 가운데 오른쪽 정렬"
+      ],
+      "canonical_path": "content/brain/knowledge/python/string/format-method.md",
+      "tags": [
+        "python",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single formatting style in which braces mark where values go and the method supplies them, referred to by position or by name, with alignment, a fill character, a width and a decimal precision written inside the braces, and the brace itself escaped by doubling",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.string.percent-formatting",
+        "python.string.f-string",
+        "python.basic.rounding"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 03. format 이용 포매팅",
+          "start_line": 283,
+          "end_line": 283
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 03. format 이용 포매팅",
+          "start_line": 329,
+          "end_line": 329
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 03. format 이용 포매팅",
+          "start_line": 338,
+          "end_line": 338
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 03. format 이용 포매팅",
+          "start_line": 347,
+          "end_line": 347
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 03. format 이용 포매팅",
+          "start_line": 364,
+          "end_line": 364
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 03. format 이용 포매팅",
+          "start_line": 376,
+          "end_line": 376
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 03. format 이용 포매팅",
+          "start_line": 392,
+          "end_line": 392
+        }
+      ]
+    },
+    {
+      "concept_id": "python.string.f-string",
+      "title": "f 문자열 포매팅",
+      "aliases": [
+        "3.6부터",
+        "변수를 문자열 안에 직접"
+      ],
+      "canonical_path": "content/brain/knowledge/python/string/f-string.md",
+      "tags": [
+        "python",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single formatting style added in a later version where the expression is written inside the string itself rather than supplied afterwards, taking the same alignment, fill, width and precision as the method form",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.string.format-method",
+        "js.basic.template-literal",
+        "python.string.percent-formatting"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 04. f 문자열 이용 포매팅",
+          "start_line": 406,
+          "end_line": 408
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 04. f 문자열 이용 포매팅",
+          "start_line": 424,
+          "end_line": 424
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 04. f 문자열 이용 포매팅",
+          "start_line": 433,
+          "end_line": 433
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 04. f 문자열 이용 포매팅",
+          "start_line": 451,
+          "end_line": 451
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 04. f 문자열 이용 포매팅",
+          "start_line": 466,
+          "end_line": 466
+        }
+      ]
+    },
+    {
+      "concept_id": "python.string.string-methods",
+      "title": "문자열 함수들",
+      "aliases": [
+        "count find index join",
+        "upper lower strip",
+        "replace split"
+      ],
+      "canonical_path": "content/brain/knowledge/python/string/string-methods.md",
+      "tags": [
+        "python",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of methods over text - counting occurrences, finding a position with one form returning minus one when absent and the other raising an error, joining a sequence with a separator, changing case, stripping whitespace from either or both ends, substituting and splitting - none of which change the string they are called on, since the result is a new one",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.string.index-slicing",
+        "algo.string.index-of-search",
+        "db.sql.string-function",
+        "python.basic.print-option"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 05. 문자열 다양한 함수들",
+          "start_line": 490,
+          "end_line": 511
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 05. 문자열 다양한 함수들",
+          "start_line": 515,
+          "end_line": 517
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 05. 문자열 다양한 함수들",
+          "start_line": 534,
+          "end_line": 534
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 05. 문자열 다양한 함수들",
+          "start_line": 553,
+          "end_line": 553
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 05. 문자열 다양한 함수들",
+          "start_line": 624,
+          "end_line": 624
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

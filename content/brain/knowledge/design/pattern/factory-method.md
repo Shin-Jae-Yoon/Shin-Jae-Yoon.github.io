@@ -1,0 +1,77 @@
+---
+title: 팩토리 메서드 패턴
+aliases:
+  - 팩토리 메서드 패턴
+  - 팩토리
+tags:
+  - design
+  - java
+origin:
+  verified: 2026-08-30
+  scouted: 2026-08-30
+---
+
+생성 메서드를 상위 클래스가 열어두고 무엇을 만들지는 서브클래스가 정하게 하는 생성 패턴. 쓰는 쪽은 완성된 인스턴스만 받고 어떤 구체 클래스가 왔는지 모른다.
+
+## 생성을 감추는 이유
+
+자동차를 사는 고객은 그 자동차가 만들어지는 과정이 궁금하지 않다. 객체를 쓰는 코드도 마찬가지여서, 복잡한 생산 과정을 감추고 완성된 인스턴스만 받으면 된다. `Bus bus = new Bus();`라고 직접 적는 순간 그 코드는 `Bus`라는 구체 클래스에 묶이기 때문이다.
+
+팩토리는 혼자 있는 것이 아니라 의존을 점점 느슨하게 만드는 과정의 한 단계다. 로그인 기능을 예로 하면 이렇게 진행된다.
+
+1. 구상체 타입이 아니라 추상 타입으로 선언한다. `Login login = new KakaoLogin();`이면 타입에서만큼은 카카오 로그인과의 결합이 떨어진다
+2. 생성을 팩토리에 맡긴다. 쓰는 곳의 코드를 고치지 않고 팩토리에 정의된 메서드만 수정하면 되고, 새 로그인이 추가되어도 호출부는 그대로다
+3. 무엇을 만들지 문자열이나 숫자로 넘기지 말고 enum으로 정의해 팩토리에 넘긴다. 오타가 컴파일 시점에 잡히고 가능한 값이 한눈에 보인다
+4. 결정을 호스트 코드로 미룬다. 팩토리조차 부르지 않고 밖에서 완성된 것을 받는 [[dependency-injection|의존성 주입]]이 가장 강한 형태이고, 그것이 [[dip|DIP]]다
+
+구상체에 의존하면 결합이 강해지고, 추상체에 의존하면서 의존성을 주입받으면 결합도가 낮아진다. 팩토리는 그 중간 단계로, 생성 자체를 없앨 수 없을 때 생성이 일어나는 곳을 한 군데로 모은다.
+
+## 생성 메서드의 오버라이딩
+
+상위 클래스가 생성 메서드를 추상으로 남기고, 서브클래스가 그것을 오버라이딩해 어떤 구체 클래스를 만들지 결정한다.
+
+```java
+abstract class LoginProcess {
+    abstract Login createLogin();      // 무엇을 만들지는 서브클래스가 정한다
+
+    void run() {
+        Login login = createLogin();   // 흐름은 여기서 고정된다
+        login.login();
+    }
+}
+
+class KakaoLoginProcess extends LoginProcess {
+    Login createLogin() { return new KakaoLogin(); }
+}
+```
+
+`run()`은 어떤 로그인이 만들어지는지 모른 채 돌아간다. 흐름을 상위가 쥐고 달라지는 한 단계만 자식이 채운다는 점에서 [[template-method|템플릿 메서드 패턴]]과 뼈대가 같고, 그 한 단계가 생성인 경우다. 결정을 상속 계층 아래로 미루는 구조라서 생성 메서드를 `static`으로 만들면 오버라이딩할 수 없어 패턴이 성립하지 않는다.
+
+## Simple Factory와 정적 팩토리
+
+한 클래스가 매개변수를 보고 조건 분기로 무엇을 만들지 고르는 형태는 Simple Factory이고, 그 메서드가 `static`이면 정적 팩토리다.
+
+```java
+Login login = LoginFactory.create(type);   // 한 곳에서 타입 분기
+```
+
+싱글턴으로 만든 `BeanFactory`가 `getBus()`로 `new Bus()`를 돌려주는 것도 같은 부류다. 생성을 감춘다는 목적은 같지만 결정하는 주체가 다르다. 팩토리 메서드는 서브클래스가 오버라이딩으로 결정하고, Simple Factory는 팩토리 클래스 안의 분기가 결정한다. 새 제품이 늘 때 앞은 클래스를 추가하면 되고, 뒤는 팩토리의 분기를 고쳐야 한다.
+
+클래스 이름을 문자열로 받아 [[reflection|리플렉션]]으로 인스턴스를 만들면 새 구현을 추가할 때 팩토리조차 고치지 않아도 된다. 대신 컴파일 시점 검사를 잃는다.
+
+## 참고
+
+원본 두 곳은 `LoginFactory.create(type)`과 `BeanFactory.getBus()`를 팩토리 메서드 패턴이라고 불렀는데, 둘 다 한 클래스가 생성을 감추는 Simple Factory이자 정적 팩토리이지 GoF의 팩토리 메서드가 아니다. GoF의 팩토리 메서드는 상속에 기대는 패턴이라, 생성 메서드를 `static`으로 만들면 서브클래스에서 확장할 수 없어 패턴의 목적 자체가 사라진다. [Refactoring.Guru, Factory Comparison](https://refactoring.guru/design-patterns/factory-comparison)
+
+## 관련
+
+- [[dependency-injection|의존성 주입]]
+- [[dip|DIP]]
+- [[design-pattern|디자인 패턴]]
+- [[polymorphism|다형성]]
+- [[template-method|템플릿 메서드 패턴]]
+
+## 출처
+
+- [[brain/notes/DevCourse/003|데브코스 회고 3편 - 예시를 통해 알아보자]]
+- [[brain/lectures/pl/fun-java/fun-java05|재미있는 자바 5강 - 팩토리 메서드 패턴]]

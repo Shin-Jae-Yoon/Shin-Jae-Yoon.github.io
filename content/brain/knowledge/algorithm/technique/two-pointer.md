@@ -1,0 +1,55 @@
+---
+title: 투 포인터
+aliases:
+  - 투 포인터
+tags:
+  - algorithm
+  - java
+origin:
+  verified: 2026-08-30
+  scouted: 2026-08-30
+---
+
+배열에 포인터 두 개를 두고 조건에 따라 한쪽씩 좁혀가는 방법. 이중 반복문으로 O(N²)이 나오는 문제를 O(N)으로 줄인다.
+
+## 양 끝에서 좁혀오기
+
+합이 x가 되는 쌍을 세는 BOJ 3273이 대표적이다. 정렬된 배열에서 양 끝에 포인터를 두고 시작한다.
+
+```java
+Arrays.sort(nums);
+int left = 0, right = n - 1, count = 0;
+
+while (left < right) {
+    int sum = nums[left] + nums[right];
+    if (sum == x)      { count++; left++; right--; }
+    else if (sum < x)  { left++; }
+    else               { right--; }
+}
+```
+
+정렬이 전제다. 정렬되어 있으니 합이 작으면 키워야 하고 키우는 유일한 방법은 왼쪽을 오른쪽으로 미는 것이며, 합이 크면 줄여야 하고 오른쪽을 왼쪽으로 당기는 수밖에 없다.
+
+## 한 번의 비교가 걸러내는 것
+
+한 번의 비교로 후보 하나가 아니라 한 줄이 통째로 걸러진다. `left`를 옮기는 순간 지금의 left와 right보다 왼쪽인 모든 짝이 전부 x보다 작다는 것이 확정되기 때문이다. 포인터가 각각 한 방향으로만 움직이므로 전체 이동 횟수가 N을 넘지 않고, 정렬 비용 O(N log N)이 오히려 지배적이다.
+
+## 카운트 배열과 고르는 기준
+
+같은 문제를 [[counting-array|카운트 배열]]로도 푼다. 등장 여부를 배열에 표시해두고 `x - num`이 이미 나왔는지 보는 방식이다.
+
+카운트 배열은 정렬이 필요 없어 O(N)으로 끝나지만 값의 범위가 좁아야 한다. 범위가 크면 배열을 그만큼 잡아야 하니 [[space-complexity|공간복잡도]]가 터진다. 투 포인터는 정렬만 되어 있으면 값이 얼마나 크든 상관없고, 대신 O(N log N)을 낸다.
+
+## 참고
+
+원본 노트의 투 포인터 풀이는 `left <= right`로 되어 있다. 두 포인터가 같은 자리에서 만나면 한 원소를 자기 자신과 짝지어 세므로 `{1, 2, 3}`에 `x = 4`면 답이 1인데 2가 나온다. 강의 원문에는 투 포인터 풀이가 아예 없고 카운트 배열 풀이만 있으니, 그 코드는 노트를 쓰면서 직접 얹은 것이다. [바킹독 0x03강 - 배열](https://blog.encrypted.gg/927)
+
+## 관련
+
+- [[counting-array|카운트 배열]]
+- [[brain/knowledge/algorithm/data-structure/array|배열]]
+- [[time-complexity|시간복잡도]]
+
+## 출처
+
+- [[brain/lectures/algo/barkingdog/0x03|바킹독 0x03강 - BOJ 3273]]

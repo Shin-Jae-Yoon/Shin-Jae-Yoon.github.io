@@ -1,0 +1,1036 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-61",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-60",
+    "applied_state": "1185 approved knowledge concepts after lecture-batch-60 mined the third week of the study."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+        "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4"
+      }
+    ],
+    "line_range": "L10-L422 (whole file)",
+    "series": "면접 스터디 dog-study 4주차 - 웹 서버와 WAS, 서블릿, 필터와 인터셉터, AOP"
+  },
+  "overlap_analysis": {
+    "finding": "This week fills in what sits underneath everything the spring lane recorded - the container the framework runs inside, the single servlet it installs there, and the two kinds of hook around it. It closes with the third of spring's three pillars, which nothing applied covered at all.",
+    "disposition": "Five applied concepts gain edges. New: the server distinction and the reasons for the pair, the reverse proxy, the servlet and its container, the front controller, the filter-interceptor comparison and their order, and seven concepts covering aspect-oriented programming from its vocabulary to the self-invocation trap that explains why an annotation silently does nothing."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All five update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L10-L16, L29, L37, L51, L56, L65-L67, L154, L161, L219, L231, L255, L265, L295, L322, L328-L330, L339-L343 partial, L349, L359, L365-L384, L400, L407, L416-L422",
+        "reason_code": "topic-header-section-caption-figure-code-or-carried-by-owner",
+        "detail": "The topic list the week was set, the captions naming each part before the block that explains it, the question lines introducing a section, the code listing demonstrating the self-invocation failure whose conclusion is cited, the note that the comparison table's rows are explained below it, and the closing reference list."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 23335,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 225,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 16,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 21,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 21,
+  "candidates": [
+    {
+      "concept_id": "spring.web.filter-role",
+      "title": "필터가 맡는 일",
+      "aliases": [
+        "모든 요청에 대한 로깅",
+        "JWT 같은 보안 공통 작업",
+        "인코딩과 압축"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/filter-role.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of jobs that belong before the application rather than in it - logging every request and response, the security work common to all of them such as checking a token, adjusting the request object itself, and encoding or compressing what passes through",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-61"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.exception.filter-exception",
+        "spring.web.controller",
+        "java.logging.slf4j-logback",
+        "spring.web.filter-vs-interceptor",
+        "spring.web.filter-interceptor-order"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Filter에서 처리하는 예외",
+          "start_line": 612,
+          "end_line": 617
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.client-server-architecture",
+      "title": "클라이언트-서버 구조",
+      "aliases": [
+        "Request Response 구조",
+        "요청과 응답",
+        "독립적으로 발전"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/client-server-architecture.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single arrangement HTTP assumes - the client sends a request message and waits, the server builds a response message from the result - whose point is the separation itself, since putting the business logic and the data on the server leaves the client free to be about the interface, and each side can then evolve on its own",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain",
+        "lecture-batch-61",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.http-protocol",
+        "software.architecture.three-tier",
+        "software.architecture.business-logic",
+        "cs.network.web-server-vs-was",
+        "cs.network.reverse-proxy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 클라이언트-서버 구조",
+          "start_line": 57,
+          "end_line": 57
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 클라이언트-서버 구조",
+          "start_line": 61,
+          "end_line": 63
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 클라이언트-서버 구조",
+          "start_line": 67,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.controller",
+      "title": "컨트롤러",
+      "aliases": [
+        "Controller",
+        "웹 애플리케이션의 첫 진입점",
+        "@GetMapping"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/controller.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single entry point a web request reaches first, whose method is bound to a path by an annotation naming the HTTP method, and which puts what the view will need into the model before returning the name of the view",
+      "pilot_strata": [
+        "lecture-batch-38",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-61",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.view-resolver",
+        "cs.network.http-get",
+        "spring.web.mvc-template-engine",
+        "spring.arch.layered-structure",
+        "spring.web.dispatcher-servlet",
+        "spring.web.servlet"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 프로젝트 환경설정 > ### View 환경설정",
+          "start_line": 214,
+          "end_line": 214
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 프로젝트 환경설정 > ### View 환경설정",
+          "start_line": 243,
+          "end_line": 247
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.application-transaction",
+      "title": "애플리케이션 코드에서의 트랜잭션",
+      "aliases": [
+        "setAutoCommit(false)",
+        "@Transactional",
+        "트랜잭션 코드 감추기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/application-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single way the pattern appears in code - turning autocommit off on the connection both starts the transaction and must be undone afterwards because connections are reused, and the bookkeeping is better hidden behind an annotation such as @Transactional so only the business logic is left to read",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "lecture-batch-61",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.autocommit",
+        "db.transaction.usage-pattern",
+        "software.architecture.business-logic",
+        "spring.test.transactional-rollback",
+        "spring.aop.self-invocation",
+        "spring.aop.aop"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용패턴",
+          "start_line": 122,
+          "end_line": 126
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용패턴",
+          "start_line": 132,
+          "end_line": 132
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.exception.filter-exception",
+      "title": "필터에서 난 예외는 스프링이 못 잡는다",
+      "aliases": [
+        "요청은 필터를 먼저 지난다",
+        "필터 안에서 try-catch"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/exception/filter-exception.md",
+      "tags": [
+        "spring",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single consequence of the request order - the container hands the request to the filters before the front controller sees it, so an exception thrown in a filter never enters spring's territory and no handler annotation applies to it, leaving the filter to catch its own",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-61"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.exception.exception-scope",
+        "spring.web.filter-role",
+        "spring.exception.handler-exception-resolver",
+        "spring.web.filter-vs-interceptor",
+        "spring.web.filter-interceptor-order"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 외부에서",
+          "start_line": 590,
+          "end_line": 594
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 외부에서",
+          "start_line": 600,
+          "end_line": 606
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.web-server-vs-was",
+      "title": "웹 서버와 WAS",
+      "aliases": [
+        "정적인 페이지만",
+        "동적인 페이지 가능",
+        "웹 서버 + 웹 컨테이너"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/web-server-vs-was.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single question separating the two - whether what is returned can depend on the moment; a web server answers a request with a file it already has, while an application server runs code that can reach a database and build the answer, being a web server with a container for that code inside it",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.client-server-architecture",
+        "spring.server.embedded-was",
+        "spring.web.servlet",
+        "js.render.ssr-csr"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS",
+          "start_line": 24,
+          "end_line": 25
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS",
+          "start_line": 31,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS",
+          "start_line": 39,
+          "end_line": 47
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS",
+          "start_line": 53,
+          "end_line": 59
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.server.web-server-in-front",
+      "title": "WAS 앞에 웹 서버를 두는 이유",
+      "aliases": [
+        "정적은 앞에서 동적은 뒤에서",
+        "로드밸런싱",
+        "Health check",
+        "리버스 프록시로 감추기"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/server/web-server-in-front.md",
+      "tags": [
+        "spring",
+        "server"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of four reasons to keep a plain web server in front of the application server even though the latter could serve everything - files are answered without occupying a thread that could be running business logic, requests can be spread across several application servers, those servers can be polled periodically and taken out of rotation when they stop answering, and the machine holding the database credentials never faces the internet directly",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.web-server-vs-was",
+        "cs.network.reverse-proxy",
+        "spring.server.multiple-was",
+        "software.ops.app-server-scaling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS > ### WAS 앞 단에 Web Server",
+          "start_line": 71,
+          "end_line": 73
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS > ### WAS 앞 단에 Web Server",
+          "start_line": 75,
+          "end_line": 77
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS > ### WAS 앞 단에 Web Server",
+          "start_line": 79,
+          "end_line": 86
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS > ### WAS 앞 단에 Web Server",
+          "start_line": 88,
+          "end_line": 93
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.reverse-proxy",
+      "title": "리버스 프록시",
+      "aliases": [
+        "서버 정보를 클라이언트에게 감춘다",
+        "실제 서버라고 생각하게 만든다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/reverse-proxy.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single machine standing where the server appears to be - the client addresses it believing it is the server, and it forwards to the servers it knows about, so their addresses are never exposed; it can also cache and spread the load while it is there",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.server.web-server-in-front",
+        "cs.network.web-server-vs-was",
+        "software.architecture.data-service"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS > ### WAS 앞 단에 Web Server",
+          "start_line": 97,
+          "end_line": 104
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.server.multiple-was",
+      "title": "WAS를 여러 대 두면",
+      "aliases": [
+        "fail over와 fail back",
+        "무중단 운영",
+        "다른 종류의 WAS도 함께"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/server/multiple-was.md",
+      "tags": [
+        "spring",
+        "server"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of gains from running more than one application server - the load divides, a failed one is taken over by the others and put back once it recovers, the service stays up through a deployment, and different servers can even run applications written in different languages behind the same address",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.server.web-server-in-front",
+        "software.ops.app-server-scaling",
+        "cs.network.stateless"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Web Server, WAS > ### 여러 대의 WAS 장점",
+          "start_line": 110,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.servlet",
+      "title": "서블릿과 서블릿 컨테이너",
+      "aliases": [
+        "init service destroy",
+        "요청 메시지 파싱을 대신해준다",
+        "서블릿도 싱글톤"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/servlet.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single server-side program inside the application server that produces the dynamic page, which exists so that parsing the request message and the rest of the plumbing is not written by hand - and the container that owns its lifecycle, initialising it once, dispatching each request to the method matching the HTTP method, and destroying it at the end, keeping one shared instance throughout",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.web-server-vs-was",
+        "spring.web.servlet-request-flow",
+        "spring.web.dispatcher-servlet",
+        "java.pattern.singleton"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Servlet, Servlet Container",
+          "start_line": 124,
+          "end_line": 132
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.servlet-request-flow",
+      "title": "요청 하나가 처리되는 과정",
+      "aliases": [
+        "쓰레드 풀에서 쓰레드를 꺼낸다",
+        "request와 response 객체 생성"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/servlet-request-flow.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sequence the container runs per request - take a thread from the pool, build the request and response objects, work out from the address which servlet is meant, initialise it if it is not there already, call its service method, and write the answer into the response object",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.servlet",
+        "cs.os.thread-count-io-bound",
+        "spring.web.dispatcher-servlet",
+        "cs.network.packet-lifecycle"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Servlet, Servlet Container",
+          "start_line": 138,
+          "end_line": 148
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.dispatcher-servlet",
+      "title": "디스패처 서블릿",
+      "aliases": [
+        "서블릿 하나로 충분해진 이유",
+        "Handler Mapping과 Handler Adapter",
+        "프론트 컨트롤러"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/dispatcher-servlet.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single servlet standing in front of all the others - before it there was one per address and the view was forced upon the response, and after it the request arrives once, a mapping finds which controller it belongs to, an adapter hands it over, the business logic runs, and the return value comes back through the adapter to the client",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.servlet",
+        "spring.web.controller",
+        "spring.exception.handler-exception-resolver",
+        "spring.web.mvc-template-engine"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Servlet, Servlet Container > ### Dispatcher Servlet",
+          "start_line": 156,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Servlet, Servlet Container > ### Dispatcher Servlet",
+          "start_line": 163,
+          "end_line": 170
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.filter-vs-interceptor",
+      "title": "필터와 인터셉터",
+      "aliases": [
+        "웹 컨테이너와 스프링 컨테이너",
+        "doFilter",
+        "preHandle postHandle afterCompletion"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/filter-vs-interceptor.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of hooks that look alike and sit in different worlds - the filter runs in the servlet container before and after the front controller and knows nothing of spring, while the interceptor runs inside spring around the controller and can therefore be handled by the framework's exception machinery; the filter can replace the request and response objects outright and the interceptor can only modify what it is given",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.filter-role",
+        "spring.exception.filter-exception",
+        "spring.web.dispatcher-servlet",
+        "spring.web.filter-interceptor-order"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 178,
+          "end_line": 181
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 186,
+          "end_line": 194
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 198,
+          "end_line": 201
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 206,
+          "end_line": 215
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor > ### 둘의 차이",
+          "start_line": 233,
+          "end_line": 237
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor > ### 둘의 차이",
+          "start_line": 241,
+          "end_line": 249
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.filter-interceptor-order",
+      "title": "필터와 인터셉터의 실행 순서",
+      "aliases": [
+        "필터 안에 인터셉터 안에 컨트롤러",
+        "돌아올 때는 역순"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/filter-interceptor-order.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single nesting the request passes through - the filter first, then the front controller, then the interceptor's before-hook, then the controller, and back out through the interceptor's after-hook and the filter again",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.web.filter-vs-interceptor",
+        "spring.aop.aop-vs-interceptor",
+        "spring.web.dispatcher-servlet"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor > ### 실행과정",
+          "start_line": 223,
+          "end_line": 227
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.aop",
+      "title": "관점 지향 프로그래밍",
+      "aliases": [
+        "AOP",
+        "횡단 관심사",
+        "공통 관심사와 핵심 관심사의 분리"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/aspect-oriented-programming.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of separating what cuts across the code - logging, transactions, permission checks, timing - from what the code is actually about, by gathering the repeated infrastructure into a module of its own rather than leaving it scattered through every method",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.aop.terminology",
+        "spring.basic.spring-definition",
+        "software.architecture.business-logic",
+        "spring.aop.spring-aop-vs-aspectj"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP",
+          "start_line": 257,
+          "end_line": 261
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.terminology",
+      "title": "AOP 용어",
+      "aliases": [
+        "Aspect와 Advice",
+        "Join point와 Pointcut",
+        "Weaving",
+        "AOP 프록시"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/terminology.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single vocabulary the subject is described in - the aspect being the module gathering the concern, the advice the added behaviour itself, the join point any place advice could go, the pointcut the specification of where it actually does, the target the object being advised, the weaving the act of applying it, and the proxy the object standing in to make it happen - where the framework's proxy approach narrows every join point to a method call",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.aop.aop",
+        "spring.aop.weaving-time",
+        "spring.aop.spring-aop-implementation",
+        "spring.aop.self-invocation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### AOP 용어",
+          "start_line": 267,
+          "end_line": 291
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.weaving-time",
+      "title": "언제 끼워 넣는가",
+      "aliases": [
+        "컴파일 시점",
+        "클래스 로딩 시점",
+        "런타임 시점"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/weaving-time.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice of when the added behaviour is put in - while compiling, which reaches everywhere but needs its own compiler; while loading the class, which also reaches everywhere but needs the loader manipulated; or at runtime through a proxy, which reaches only methods on managed objects but needs nothing beyond the framework, and is what spring uses",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.aop.terminology",
+        "spring.aop.spring-aop-vs-aspectj",
+        "spring.aop.self-invocation",
+        "java.runtime.reflection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### AOP 적용 방식",
+          "start_line": 297,
+          "end_line": 310
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.spring-aop-implementation",
+      "title": "스프링에서 AOP를 쓰는 법",
+      "aliases": [
+        "@Aspect",
+        "프록시로 감싼다",
+        "Aspect Advice Pointcut 순서로"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/spring-aop-implementation.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way it is written in practice - a class marked as an aspect, an advice method inside it, and a pointcut saying where it applies - which the framework realises by wrapping the target in a proxy that runs the advice around the call",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.aop.terminology",
+        "spring.aop.weaving-time",
+        "spring.di.component-scan",
+        "spring.aop.self-invocation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### Spring에서 AOP 구현",
+          "start_line": 316,
+          "end_line": 324
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.spring-aop-vs-aspectj",
+      "title": "스프링 AOP와 AspectJ",
+      "aliases": [
+        "메서드 레벨만 지원",
+        "빈에만 적용 가능",
+        "완벽한 AOP와 간단한 AOP"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/spring-aop-vs-aspectj.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single comparison between the framework's own facility and the full implementation - the former weaves only at runtime, advises only methods, and only on objects the container manages, which follows from its being built on the container at all; the latter reaches constructors and fields on any object, at the cost of its own toolchain",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.aop.weaving-time",
+        "spring.aop.aop",
+        "spring.di.spring-bean",
+        "spring.aop.spring-aop-implementation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### Spring AOP vs AspectJ",
+          "start_line": 332,
+          "end_line": 343
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.aop-vs-interceptor",
+      "title": "AOP와 인터셉터의 차이",
+      "aliases": [
+        "메서드 전후를 자유롭게",
+        "주소가 아니라 애노테이션으로도 지정",
+        "파라미터가 다르다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/aop-vs-interceptor.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference in what each can target - the interceptor and the filter select by address, while an aspect selects by address, parameter or annotation and applies around any method rather than around the controller; and what each is handed, the aspect receiving the join point and the interceptor the request and response objects",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.web.filter-vs-interceptor",
+        "spring.aop.terminology",
+        "spring.web.filter-interceptor-order"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### AOP vs Interceptor",
+          "start_line": 351,
+          "end_line": 355
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.self-invocation",
+      "title": "자기 자신을 호출하면 AOP가 걸리지 않는다",
+      "aliases": [
+        "프록시를 거치지 않는 내부 호출",
+        "private 메서드의 @Transactional이 안 먹는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/self-invocation.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the proxy approach that catches everyone - the advice lives on the proxy, so a call arriving from outside passes through it while a call the target makes to its own method does not, which is why an annotation on an inner or private method has no effect; the transaction annotation is an aspect like any other and fails the same way",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.aop.terminology",
+        "spring.aop.weaving-time",
+        "db.transaction.application-transaction",
+        "spring.tx.rollback-policy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### (심화) AOP 적용 안되는 경우",
+          "start_line": 361,
+          "end_line": 363
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### (심화) AOP 적용 안되는 경우",
+          "start_line": 385,
+          "end_line": 388
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### (심화) AOP 적용 안되는 경우",
+          "start_line": 392,
+          "end_line": 403
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### @Transactional 문제도 여기!?",
+          "start_line": 409,
+          "end_line": 412
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

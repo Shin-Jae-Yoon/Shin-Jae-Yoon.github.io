@@ -1,0 +1,1100 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-66",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-65",
+    "applied_state": "1259 approved knowledge concepts after lecture-batch-65 mined the seventh week."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+        "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d"
+      }
+    ],
+    "line_range": "L7-L386 (whole file)",
+    "series": "면접 스터디 dog-study 8주차 - OSIV, JPA, N+1, fetch join의 한계, 상속관계 매핑"
+  },
+  "overlap_analysis": {
+    "finding": "The sixth week named the mapping standard in passing and the seventh built the transaction machinery underneath it; this week is the mapping itself, and almost all of it is new - the context objects live in, when associations are fetched, and the failures that follow from getting either wrong.",
+    "disposition": "Four applied concepts gain evidence or edges - the entity manager whose close is what ends the open context, the abstraction the standard is an instance of, the two hooks the context is opened at, and the pool the open context holds a connection from. Everything else is new under spring.jpa."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7-L17, L43, L88-L89, L147, L179-L181, L183 partial, L195-L197, L206, L214, L233-L234, L251-L253, L264-L266, L273, L284, L292, L297-L301 partial, L304-L306, L322, L335, L350-L352, L361-L375, L382-L386",
+        "reason_code": "topic-header-question-number-figure-caption-or-carried-by-owner",
+        "detail": "The topic list the week was set, the numbered question headers the answers hang off, the captions above each strategy's diagram, the questions from a study partner whose answers restate concepts cited elsewhere in the file, and the closing reference list."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 22258,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 223,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 14,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 14,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 21,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 21,
+  "candidates": [
+    {
+      "concept_id": "spring.jpa.entity-manager",
+      "title": "엔티티 매니저",
+      "aliases": [
+        "엔티티를 관리하는 역할",
+        "flush 시점에 DB에 반영"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/entity-manager.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object that manages the mapped entities, whose flush is when a change to one of them actually reaches the database",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-66"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.entity",
+        "spring.jpa.entity-dto-separation",
+        "db.transaction.commit",
+        "spring.jpa.persistence-context",
+        "spring.jpa.osiv-write-restriction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### EntityManager",
+          "start_line": 479,
+          "end_line": 480
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OSIV",
+          "start_line": 126,
+          "end_line": 126
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.psa",
+      "title": "PSA",
+      "aliases": [
+        "Portable Service Abstraction",
+        "서비스 추상화",
+        "JPA는 표준 인터페이스"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/psa.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single answer to how an object can use a technology without depending on it - a standard interface is defined and the implementations become interchangeable behind it, so the code names the abstraction and the particular library underneath can be replaced without touching it",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-66"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.basic.pojo-framework",
+        "software.principle.dip",
+        "spring.jpa.entity",
+        "spring.db.persistence-framework",
+        "spring.jpa.jpa",
+        "spring.jpa.jpa-benefit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### PSA와 JPA",
+          "start_line": 156,
+          "end_line": 160
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## JPA",
+          "start_line": 74,
+          "end_line": 74
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.filter-vs-interceptor",
+      "title": "필터와 인터셉터",
+      "aliases": [
+        "웹 컨테이너와 스프링 컨테이너",
+        "doFilter",
+        "preHandle postHandle afterCompletion"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/filter-vs-interceptor.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair of hooks that look alike and sit in different worlds - the filter runs in the servlet container before and after the front controller and knows nothing of spring, while the interceptor runs inside spring around the controller and can therefore be handled by the framework's exception machinery; the filter can replace the request and response objects outright and the interceptor can only modify what it is given",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-66"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.filter-role",
+        "spring.exception.filter-exception",
+        "spring.web.dispatcher-servlet",
+        "spring.web.filter-interceptor-order",
+        "spring.jpa.osiv"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 178,
+          "end_line": 181
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 186,
+          "end_line": 194
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 198,
+          "end_line": 201
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor",
+          "start_line": 206,
+          "end_line": 215
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor > ### 둘의 차이",
+          "start_line": 233,
+          "end_line": 237
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## Filter, Interceptor > ### 둘의 차이",
+          "start_line": 241,
+          "end_line": 249
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.connection-pool",
+      "title": "커넥션 풀",
+      "aliases": [
+        "커넥션 생성 비용이 크다",
+        "미리 만들어두고 빌려 쓴다",
+        "DBCP",
+        "접속 수를 제한할 수 있다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/connection-pool.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single arrangement for the cost of opening a database connection - a number of them are opened in advance and lent out as needed rather than made and destroyed per request",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-65",
+        "lecture-batch-66"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.db.datasource",
+        "spring.db.jdbc",
+        "spring.di.bean-lifecycle",
+        "cs.os.thread-count-io-bound",
+        "spring.db.hikaricp-flow",
+        "spring.db.pool-sizing",
+        "spring.tx.transaction-synchronization",
+        "spring.jpa.osiv-tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DAO > ### DAO vs Repository",
+          "start_line": 192,
+          "end_line": 192
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool",
+          "start_line": 41,
+          "end_line": 43
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool",
+          "start_line": 45,
+          "end_line": 55
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool > ### DBCP의 과정",
+          "start_line": 61,
+          "end_line": 63
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool > ### DBCP 특징/고려사항",
+          "start_line": 88,
+          "end_line": 91
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.persistence-context",
+      "title": "영속성 컨텍스트",
+      "aliases": [
+        "엔티티를 영구 저장하는 환경",
+        "트랜잭션과 함께 생겼다 사라진다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/persistence-context.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single environment in which mapped objects are kept managed, created when a transaction begins and gone once it commits - which is why an object handed past that point is no longer connected to anything",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.entity-manager",
+        "spring.jpa.osiv",
+        "spring.jpa.eager-lazy-loading",
+        "db.transaction.transaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## OSIV",
+          "start_line": 31,
+          "end_line": 32
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.eager-lazy-loading",
+      "title": "즉시 로딩과 지연 로딩",
+      "aliases": [
+        "연관된 것까지 한 번에",
+        "필요할 때 프록시를 초기화"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/eager-lazy-loading.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice of when an object's associations are fetched - with it, or only when they are first touched, the field until then holding a stand-in that fetches on access",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.persistence-context",
+        "spring.jpa.n-plus-one",
+        "spring.jpa.osiv",
+        "spring.aop.terminology"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## OSIV",
+          "start_line": 36,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### N+1문제",
+          "start_line": 191,
+          "end_line": 193
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.osiv",
+      "title": "OSIV",
+      "aliases": [
+        "Open Session In View",
+        "영속성 컨텍스트를 뷰까지",
+        "요청이 끝날 때까지 유지"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/osiv.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single setting, on by default, that opens the persistence context at the filter or interceptor before the transaction and closes it only when the response leaves - which exists because an object carried out to the controller would otherwise fail the moment a lazy association is touched, the context that would have loaded it having gone with the transaction",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.persistence-context",
+        "spring.jpa.osiv-tradeoff",
+        "spring.jpa.osiv-write-restriction",
+        "spring.web.filter-vs-interceptor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## OSIV",
+          "start_line": 23,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## OSIV > ### OSIV의 필요성, 단점",
+          "start_line": 49,
+          "end_line": 53
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## OSIV > ### OSIV의 필요성, 단점",
+          "start_line": 57,
+          "end_line": 57
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OSIV",
+          "start_line": 92,
+          "end_line": 96
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OSIV",
+          "start_line": 115,
+          "end_line": 119
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.osiv-tradeoff",
+      "title": "OSIV를 켤 것인가 끌 것인가",
+      "aliases": [
+        "커넥션을 응답까지 붙잡는다",
+        "실시간 트래픽이면 끄고 관리자면 켠다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/osiv-tradeoff.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trade the setting makes - keeping the context open keeps the database connection open with it, from the first query until the response is written, so lazy loading works anywhere at the cost of holding a connection through anything slow the controller does; turning it off frees the connection and forces every lazy load back inside a transaction, which is why it stays on for an internal tool and comes off where traffic is real",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.osiv",
+        "spring.db.connection-pool",
+        "spring.db.pool-sizing",
+        "spring.jpa.eager-lazy-loading"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## OSIV > ### OSIV의 필요성, 단점",
+          "start_line": 61,
+          "end_line": 65
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OSIV",
+          "start_line": 99,
+          "end_line": 111
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OSIV",
+          "start_line": 134,
+          "end_line": 139
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### 선학님 질문",
+          "start_line": 358,
+          "end_line": 359
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.osiv-write-restriction",
+      "title": "뷰까지 열려 있어도 수정은 안 된다",
+      "aliases": [
+        "트랜잭션 없이 읽기",
+        "플러시를 호출해도 예외",
+        "닫을 때 플러시하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/osiv-write-restriction.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single limit that keeps the open context safe - the presentation layer may read, lazily or otherwise, but the context is closed without flushing at the end of the request and a flush forced there raises rather than writes, so a change made outside a transaction never reaches the database unless a transactional call happens to follow it",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.osiv",
+        "spring.jpa.entity-manager",
+        "spring.tx.transaction-boundary",
+        "spring.jpa.osiv-tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OSIV",
+          "start_line": 122,
+          "end_line": 130
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OSIV",
+          "start_line": 143,
+          "end_line": 143
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.jpa",
+      "title": "JPA",
+      "aliases": [
+        "Java Persistence API",
+        "ORM 기술 표준 인터페이스",
+        "클래스와 테이블을 매핑"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/java-persistence-api.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single java standard for object-relational mapping, answering the mismatch between how objects and tables model the same thing - it maps the class to the table rather than the query to the object, and belongs to the language rather than to any framework",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.basic.psa",
+        "spring.jpa.entity",
+        "spring.db.sql-mapper",
+        "spring.jpa.jpa-benefit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## JPA",
+          "start_line": 71,
+          "end_line": 76
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### JPA",
+          "start_line": 149,
+          "end_line": 149
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.jpa-benefit",
+      "title": "JPA를 쓰는 이유",
+      "aliases": [
+        "1차 캐시와 동일성 보장",
+        "쓰기 지연",
+        "스키마가 바뀌면 엔티티만"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/jpa-benefit.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of gains from mapping rather than querying - the same object is returned within a transaction so identity holds and a repeat read costs nothing, writes accumulate until the commit and go out together, associations can be deferred, the code names no product so it survives changing one, and a schema change is made in the entity rather than in every query that touched it",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.jpa",
+        "spring.jpa.persistence-context",
+        "spring.jpa.jpa-drawback",
+        "spring.basic.psa"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### JPA",
+          "start_line": 152,
+          "end_line": 165
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.jpa-drawback",
+      "title": "JPA의 단점",
+      "aliases": [
+        "러닝 커브",
+        "통계성 복잡한 쿼리",
+        "의도하지 않은 쿼리가 나간다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/jpa-drawback.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of costs - it takes long to learn, it is poor at the complicated aggregate queries that have to fall back to native or its own query language, and the queries it writes are the ones the mapping implies rather than the ones intended, of which the repeated-query problem is the standing example",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.jpa-benefit",
+        "spring.jpa.n-plus-one",
+        "spring.db.sql-mapper",
+        "spring.jpa.foreign-key-in-practice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### JPA",
+          "start_line": 168,
+          "end_line": 177
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.n-plus-one",
+      "title": "N+1 문제",
+      "aliases": [
+        "쿼리 하나를 기대했는데 N개가 더 나간다",
+        "즉시 로딩이든 지연 로딩이든 발생한다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/n-plus-one.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure where fetching a collection of objects costs one query for them and one more for each one's association - which happens under eager loading because the associations are fetched right after the first query, and under lazy loading because they are fetched the moment the loop touches them, the query language ignoring the global strategy either way",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.eager-lazy-loading",
+        "spring.jpa.n-plus-one-solution",
+        "spring.jpa.jpa-drawback",
+        "algo.complexity.operation-budget"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### N+1문제",
+          "start_line": 184,
+          "end_line": 189
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### N+1문제",
+          "start_line": 199,
+          "end_line": 203
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### N+1문제",
+          "start_line": 208,
+          "end_line": 212
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.n-plus-one-solution",
+      "title": "N+1을 줄이는 세 방법",
+      "aliases": [
+        "fetch join",
+        "@EntityGraph",
+        "Batch Size"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/n-plus-one-solution.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three answers - joining the association into the first query, naming the fields to fetch eagerly for that call alone, or leaving the extra queries in place but batching them, so a hundred of them become one query with a list of keys rather than none, up to a batch limit around a thousand",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.n-plus-one",
+        "spring.jpa.fetch-join-paging",
+        "spring.jpa.fetch-join-vs-join",
+        "db.sql.inner-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### N+1문제",
+          "start_line": 216,
+          "end_line": 230
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.fetch-join-paging",
+      "title": "일대다 fetch join과 페이징",
+      "aliases": [
+        "행 수가 맞지 않는다",
+        "distinct로 중복 제거",
+        "메모리에서 페이징해 OOM"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/fetch-join-paging.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single limit of joining a to-many association - the join multiplies the rows, so two parents with three children each come back as six rows and there is no longer a unit to page by; the duplicates can be collapsed in the query language, but paging cannot be pushed to the database at all and is done in memory over everything fetched, which is where it runs out",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.n-plus-one-solution",
+        "spring.jpa.multiple-bag-fetch",
+        "db.sql.distinct",
+        "db.sql.inner-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### fetch join 한계 - OneToMany fetch join 페이징 쿼리 성능 이슈",
+          "start_line": 236,
+          "end_line": 238
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### fetch join 한계 - OneToMany fetch join 페이징 쿼리 성능 이슈",
+          "start_line": 241,
+          "end_line": 248
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.multiple-bag-fetch",
+      "title": "MultipleBagFetchException",
+      "aliases": [
+        "일대다 두 개를 동시에 fetch join하면",
+        "N 관계는 하나만 조인하고 나머지는 배치로"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/multiple-bag-fetch.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure when two to-many associations are joined at once, and the arrangement that avoids it - join all the to-one associations, join at most the largest to-many one, and let the global batch setting handle the rest as list queries",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.fetch-join-paging",
+        "spring.jpa.n-plus-one-solution",
+        "spring.jpa.one-to-one-lazy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### fetch join 한계 - MultipleBagFetchException",
+          "start_line": 254,
+          "end_line": 254
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### fetch join 한계 - MultipleBagFetchException",
+          "start_line": 258,
+          "end_line": 262
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.one-to-one-lazy",
+      "title": "일대일 양방향에서 지연 로딩이 안 되는 쪽",
+      "aliases": [
+        "외래키를 가진 쪽만 지연 로딩",
+        "null인지 알 수 없어서 프록시를 못 만든다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/one-to-one-lazy.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single asymmetry in a bidirectional one-to-one - the side holding the foreign key can defer, because it knows from the key whether there is anything there, while the other side cannot know without querying and so fetches immediately; the ways out are to reconsider whether the association need be bidirectional or one-to-one at all, or to join it or batch it",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.eager-lazy-loading",
+        "spring.jpa.one-to-many-lazy",
+        "spring.jpa.n-plus-one-solution",
+        "db.key.foreign-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OneToOne 양방향 관계 Lazy 로딩 문제",
+          "start_line": 267,
+          "end_line": 271
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### OneToOne 양방향 관계 Lazy 로딩 문제",
+          "start_line": 274,
+          "end_line": 282
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.one-to-many-lazy",
+      "title": "일대다는 왜 지연 로딩이 되는가",
+      "aliases": [
+        "컬렉션은 빈 것으로 표현할 수 있다",
+        "null을 돌려줄 필요가 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/one-to-many-lazy.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason the one side of a to-many association can defer although it holds no key - the field is a collection, so a stand-in can always be made and simply return an empty one if nothing is there, which the single-object case cannot do without returning null",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.one-to-one-lazy",
+        "spring.jpa.eager-lazy-loading",
+        "java.collection.collection-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### **@OneToMany는 괜찮나?**",
+          "start_line": 286,
+          "end_line": 290
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.inheritance-mapping",
+      "title": "상속관계 매핑",
+      "aliases": [
+        "조인 전략",
+        "단일 테이블 전략",
+        "구현 클래스마다 테이블"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/inheritance-mapping.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three ways to store an inheritance hierarchy in tables that have none - a table per class joined on read, which normalises and keeps the constraints at the cost of joins and two inserts; one table for everything, which is fastest to read but forces every subtype column to allow nothing and grows wide; and a table per concrete class, which allows the not-null constraints but makes querying across the hierarchy impractical and is not recommended",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.entity",
+        "java.oop.inheritance",
+        "db.relational.relation-schema",
+        "db.constraint.not-null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### 상속관계 매핑",
+          "start_line": 294,
+          "end_line": 302
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### 상속관계 매핑",
+          "start_line": 311,
+          "end_line": 320
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### 상속관계 매핑",
+          "start_line": 327,
+          "end_line": 333
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### 상속관계 매핑",
+          "start_line": 340,
+          "end_line": 348
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.fetch-join-vs-join",
+      "title": "fetch join과 일반 join의 차이",
+      "aliases": [
+        "영속화까지 하느냐",
+        "조회 주체만 가져오느냐"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/fetch-join-vs-join.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference between the two joins in the query language - the plain one fetches only the object being queried and leaves the association to be loaded later, while the fetch form brings the association back in the same query and manages it too",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.n-plus-one-solution",
+        "spring.jpa.persistence-context",
+        "db.sql.inner-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### 선학님 질문",
+          "start_line": 353,
+          "end_line": 355
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.foreign-key-in-practice",
+      "title": "실무에서 외래키를 거는가",
+      "aliases": [
+        "샤딩에 방해가 된다",
+        "회사마다 다르다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/foreign-key-in-practice.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single practice that varies by organisation - the database-level constraint costs performance and stands in the way of splitting the data across machines, so large projects often keep the association in the code without declaring the key in the schema",
+      "pilot_strata": [
+        "lecture-batch-66",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.foreign-key",
+        "db.ops.db-server-scaling",
+        "spring.jpa.jpa-drawback",
+        "db.constraint.referential-action"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## 질문내용 > ### 선학님 질문",
+          "start_line": 377,
+          "end_line": 378
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

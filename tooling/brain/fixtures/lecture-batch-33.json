@@ -1,0 +1,867 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-33",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-32",
+    "applied_state": "698 approved knowledge concepts after lecture-batch-32 added the subquery, three-valued logic and join surface from lectures 06 to 08."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture09.md",
+        "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture10.md",
+        "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture11.md",
+        "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204"
+      }
+    ],
+    "line_range": "lecture09 L12-L207, lecture10 L12-L192, lecture11 L12-L117 (three whole files)",
+    "series": "쉬운코드 DB (easy-db) 9~11/15 — 통계함수, stored function, stored procedure"
+  },
+  "overlap_analysis": {
+    "finding": "lecture09 closes the SELECT arc that batches 31 and 32 opened, ending with the conceptual clause order that puts every clause introduced so far in sequence. lectures 10 and 11 then leave the query language for routines stored in the DBMS, and they are a pair - lecture11 is written as a comparison against lecture10.",
+    "disposition": "Only two applied concepts absorb evidence here: db.sql.select gains the edges to the clauses that surround it, and db.sql.asterisk gains the counting reading of the same symbol. One candidate leaves the db namespace - the three-tier architecture the course uses to argue where a stored function belongs is a software concept, not a database one, so it is filed under software.architecture."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture09 L8, L23-31, L35-37, L64-66, L72-74, L81-83, L89-94, L111-113, L125-127, L135-155, L163-169, L173-175; lecture10 L8, L74-79, L83-87, L91-95, L102-104, L108-112, L119-121, L140-144, L152-154, L190-192; lecture11 L8, L48-50, L54-58, L62-66, L70-78, L86-88, L100-104, L109, L112",
+        "reason_code": "lecture-preamble-figure-caption-or-carried-by-owner",
+        "detail": "The channel link, the 'ex)' example headers whose query lives in the screenshot below them, and the walk-through lines whose claim is already stated inside the cited span of the owning concept."
+      },
+      {
+        "span": "lecture09 L156, L159",
+        "reason_code": "single-line-aside-below-concept-threshold",
+        "detail": "ROUND() rounding off the decimals, and a note that a result was sorted by proj_id, are one-line captions on example screenshots with no development around them."
+      },
+      {
+        "span": "lecture11 L117",
+        "reason_code": "forward-pointer-to-next-lecture",
+        "detail": "'실무에서 stored procedure를 사용하는 일은 잘 없다' is stated as a pointer to lecture12, where the reason is given; the claim is left for the batch that mines that file."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across the three files contributes at least one cited locator, either to a create or to an update, except lecture10's '위에서 구현한 함수 예시' which holds only a screenshot."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 14728,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 151,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 19,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 16,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 18,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. lecture11's closing line about stored procedures being rare in practice is deliberately left uncited so the concept can be built where the reason is actually given, in lecture12.",
+  "alias_yield_note": {
+    "key": "그룹별 집계",
+    "incumbent": "kafka.stream.local-state-aggregation",
+    "disposition": "db.sql.group-by yields the bare phrase and uses 그룹으로 나눠 집계하기 instead. Neither concept owns the words outright, and the Kafka one had them first."
+  },
+  "candidates_authored": 18,
+  "candidates": [
+    {
+      "concept_id": "db.sql.select",
+      "title": "SELECT",
+      "aliases": [
+        "selection condition",
+        "projection condition",
+        "데이터 조회"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/select.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single statement reading tuples out of a table, made of two parts worth naming separately - the selection condition in WHERE that decides which tuples, and the projection condition in the attribute list that decides which attributes",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-33"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.language.dml",
+        "db.sql.join-condition",
+        "db.sql.asterisk",
+        "db.sql.select-clause-order",
+        "db.sql.order-by",
+        "db.sql.group-by",
+        "db.sql.aggregate-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### SELECT",
+          "start_line": 18,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.asterisk",
+      "title": "asterisk",
+      "aliases": [
+        "애스터리스크",
+        "모든 attribute 조회"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/asterisk.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single shorthand standing for every attribute of the selected tuples",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-33"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.select",
+        "db.relational.attribute",
+        "db.sql.count"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### asterisk",
+          "start_line": 169,
+          "end_line": 169
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 집계 > ### COUNT",
+          "start_line": 68,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.order-by",
+      "title": "ORDER BY",
+      "aliases": [
+        "ASC",
+        "DESC",
+        "조회 결과 정렬"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/order-by.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single clause sorting the result by one or more attributes, ascending unless DESC is written, applying each attribute in the order listed so the second only breaks ties in the first - and treating NULL as the smallest value in MySQL, which puts those tuples first",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.constraint.null",
+        "db.sql.select-clause-order"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 정렬 > ### ORDER BY",
+          "start_line": 16,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 정렬 > ### ORDER BY",
+          "start_line": 39,
+          "end_line": 41
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.aggregate-function",
+      "title": "집계 함수",
+      "aliases": [
+        "Aggregate function",
+        "SUM",
+        "MAX",
+        "MIN",
+        "AVG"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/aggregate-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of functions summarising many tuples into one value - COUNT, SUM, MAX, MIN and AVG - applied to the attribute of interest and computed with NULL values left out",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.count",
+        "db.sql.group-by",
+        "db.constraint.null",
+        "db.sql.select"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 집계",
+          "start_line": 49,
+          "end_line": 54
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.count",
+      "title": "COUNT",
+      "aliases": [
+        "COUNT(*)",
+        "튜플 수 세기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/count.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single aggregate whose argument decides what is counted - the asterisk counts tuples, while an attribute counts its values including duplicates but excluding NULL, which is why counting tuples is better written with the asterisk",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.aggregate-function",
+        "db.sql.asterisk",
+        "db.constraint.null",
+        "db.sql.distinct"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 집계 > ### COUNT",
+          "start_line": 60,
+          "end_line": 60
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 집계 > ### COUNT",
+          "start_line": 76,
+          "end_line": 77
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 집계 > ### COUNT",
+          "start_line": 85,
+          "end_line": 85
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.group-by",
+      "title": "GROUP BY",
+      "aliases": [
+        "grouping attribute",
+        "그룹으로 나눠 집계하기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/group-by.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single clause splitting the tuples into groups by the grouping attributes and applying the aggregate function once per group, where tuples holding NULL in a grouping attribute form a group of their own and the grouping attribute belongs in the SELECT list so each row can be told apart",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.aggregate-function",
+        "db.sql.having",
+        "db.constraint.null",
+        "db.sql.select-clause-order"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 그룹 > ### GROUP BY",
+          "start_line": 104,
+          "end_line": 107
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.having",
+      "title": "HAVING",
+      "aliases": [
+        "그룹 필터링",
+        "집계 결과로 거르기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/having.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single clause filtering whole groups by the value an aggregate function produced for them, usable only alongside GROUP BY",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.group-by",
+        "db.sql.aggregate-function",
+        "db.sql.where-vs-having"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 그룹 > ### HAVING",
+          "start_line": 119,
+          "end_line": 121
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.where-vs-having",
+      "title": "WHERE와 HAVING 중 어디에 조건을 둘 것인가",
+      "aliases": [
+        "조건의 위치 판단",
+        "그룹핑 전후의 조건"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/where-vs-having.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single decision that changes what a query means rather than just how it reads - a condition in WHERE removes tuples before grouping, so the aggregate is computed over what survived, while the same condition in HAVING removes groups after the aggregate was computed over everything",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.having",
+        "db.sql.group-by",
+        "db.sql.where-selects-true-only",
+        "db.sql.select-clause-order"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 예제",
+          "start_line": 165,
+          "end_line": 165
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 예제",
+          "start_line": 177,
+          "end_line": 179
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.select-clause-order",
+      "title": "SELECT 절의 개념적 실행 순서",
+      "aliases": [
+        "FROM WHERE GROUP BY HAVING ORDER BY SELECT",
+        "쿼리 실행 순서"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/select-clause-order.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single order in which a SELECT statement's clauses are to be understood - FROM, then WHERE, then GROUP BY, then HAVING, then ORDER BY, then SELECT - which is conceptual only, since the order each RDBMS actually executes them in is its own implementation's business",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.sql.group-by",
+        "db.sql.having",
+        "db.sql.order-by",
+        "db.sql.join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 예제 > ### SELECT 최종 정리",
+          "start_line": 187,
+          "end_line": 194
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 예제 > ### SELECT 최종 정리",
+          "start_line": 198,
+          "end_line": 207
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.stored-function",
+      "title": "스토어드 함수",
+      "aliases": [
+        "Stored function",
+        "사용자 정의 함수",
+        "DROP FUNCTION"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/stored-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single user-defined function stored in the DBMS itself and callable from a SELECT, INSERT, UPDATE or DELETE statement, which exists to modularise a query written over and over, and which can loop, branch on a value and raise or handle errors - created in whichever database is currently selected unless the name is qualified, and removed with DROP FUNCTION",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.stored-procedure",
+        "db.sql.delimiter",
+        "db.sql.function-sql-option",
+        "db.sql.database-command"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function",
+          "start_line": 14,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function",
+          "start_line": 22,
+          "end_line": 25
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function",
+          "start_line": 59,
+          "end_line": 60
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function",
+          "start_line": 64,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.delimiter",
+      "title": "DELIMITER",
+      "aliases": [
+        "딜리미터",
+        "DELIMITER $$"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/delimiter.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single temporary reassignment of the statement terminator, needed while defining a routine so that the semicolons inside its body are not mistaken for the end of the definition",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.stored-function",
+        "db.sql.stored-procedure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function",
+          "start_line": 29,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.function-sql-option",
+      "title": "함수의 SQL 접근 옵션",
+      "aliases": [
+        "CONTAINS SQL",
+        "NO SQL",
+        "READS SQL DATA",
+        "MODIFIES SQL DATA"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/function-sql-option.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single declaration of how far a routine reaches into the data - NO SQL for a body with no SQL at all, CONTAINS SQL for one that runs SQL without reading or writing data, READS SQL DATA for one that only reads, and MODIFIES SQL DATA for one that can write",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.stored-function",
+        "db.language.dml"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function",
+          "start_line": 49,
+          "end_line": 58
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.session-variable",
+      "title": "@ 변수",
+      "aliases": [
+        "세션 변수",
+        "DECLARE 없이 쓰는 변수"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/session-variable.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single variable recognised by its leading @, which needs no DECLARE before it is used",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.sql.stored-function",
+        "db.sql.stored-procedure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function > ### 예제",
+          "start_line": 97,
+          "end_line": 98
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function > ### 예제",
+          "start_line": 114,
+          "end_line": 115
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.function-introspection",
+      "title": "등록된 함수 파악하기",
+      "aliases": [
+        "SHOW FUNCTION STATUS",
+        "SHOW CREATE FUNCTION"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/function-introspection.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of statements for finding out what a database already holds - one listing its functions, the other printing a named function's source - which is how someone joining a project reads the routines that are already there",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.stored-function",
+        "db.basic.metadata"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## Stored function > ### 파악하기",
+          "start_line": 127,
+          "end_line": 135
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.three-tier",
+      "title": "3계층 아키텍처",
+      "aliases": [
+        "Three-tier architecture",
+        "Presentation tier",
+        "Logic tier",
+        "Data tier"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/three-tier.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division of a client-server system into three tiers - the presentation tier the user sees, built from HTML, javascript, CSS or a native app; the logic tier holding the business rules, written with something like Java and Spring or Python and Django; and the data tier that stores and serves the data, a MySQL, Oracle, PostgreSQL or MongoDB",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.basic.dbms",
+        "db.sql.stored-function-placement",
+        "software.api.api"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## 언제 쓰면 좋을까? > ### three-tier architecture",
+          "start_line": 158,
+          "end_line": 175
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.stored-function-placement",
+      "title": "스토어드 함수를 어디까지 쓸 것인가",
+      "aliases": [
+        "비즈니스 로직은 Logic tier에",
+        "util 함수로는 적합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/stored-function-placement.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single judgement about where a stored function belongs - fine as a utility, but poor as a home for business logic, because that logic is the logic tier's job and splitting it into the data tier means maintaining one rule in two places as the service grows",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.architecture.three-tier",
+        "db.sql.stored-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## 언제 쓰면 좋을까? > ### 그래서 언제 사용?",
+          "start_line": 182,
+          "end_line": 186
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.stored-procedure",
+      "title": "스토어드 프로시저",
+      "aliases": [
+        "Stored procedure",
+        "IN 파라미터",
+        "OUT 파라미터",
+        "INOUT 파라미터"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/stored-procedure.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single user-defined procedure stored in the RDBMS that carries out one concrete task, whose parameters are marked IN to be read, OUT to be returned or INOUT for both - IN being the default and so omissible, OUT never - and whose body may branch, loop and raise or handle errors",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.stored-function",
+        "db.sql.procedure-vs-function",
+        "db.sql.delimiter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure",
+          "start_line": 14,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure",
+          "start_line": 31,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure",
+          "start_line": 39,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-vs-function",
+      "title": "프로시저와 함수의 차이",
+      "aliases": [
+        "OUT 파라미터 vs RETURN",
+        "SQL문 안에서 호출 가능한 쪽"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-vs-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of differences between the two stored routines - a procedure hands its result back through an OUTPUT parameter while a function returns it with RETURN, which is what lets only the function be called inside a SQL statement - with further differences in whether one may call another routine, return a resultset, be precompiled into an execution plan, or use try-catch",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.stored-procedure",
+        "db.sql.stored-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure > ### function과의 차이",
+          "start_line": 90,
+          "end_line": 96
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure > ### function과의 차이",
+          "start_line": 105,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure > ### function과의 차이",
+          "start_line": 110,
+          "end_line": 113
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

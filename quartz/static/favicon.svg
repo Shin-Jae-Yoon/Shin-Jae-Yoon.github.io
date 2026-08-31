@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="개발자 유니의 두 번째 뇌">
+  <rect width="512" height="512" rx="112" fill="#0a1922" />
+  <path
+    d="M148 158v116c0 72 44 116 108 116s108-44 108-116V158"
+    fill="none"
+    stroke="#67c8d0"
+    stroke-linecap="round"
+    stroke-width="38"
+  />
+  <path d="M256 214v176" fill="none" stroke="#f4f8f8" stroke-linecap="round" stroke-width="24" />
+  <circle cx="148" cy="150" r="34" fill="#f4f8f8" />
+  <circle cx="364" cy="150" r="34" fill="#67c8d0" />
+  <circle cx="256" cy="214" r="22" fill="#f4f8f8" />
+  <circle cx="256" cy="390" r="28" fill="#67c8d0" stroke="#f4f8f8" stroke-width="12" />
+</svg>

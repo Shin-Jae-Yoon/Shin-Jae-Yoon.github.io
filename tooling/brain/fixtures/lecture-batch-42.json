@@ -1,0 +1,1496 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-42",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-41",
+    "applied_state": "891 approved knowledge concepts after lecture-batch-41 added timers, regular expressions, scrolling and event bubbling."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+        "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f"
+      }
+    ],
+    "line_range": "L13-L1063 (whole file)",
+    "series": "코딩애플 - Javascript 입문과 웹 UI 개발 3/3"
+  },
+  "overlap_analysis": {
+    "finding": "The last file of the course is where its pieces meet the rest of the knowledge base - the request concepts land next to the HTTP methods from the kim-spring lane, JSON next to the message converter, and the array methods next to the java collection concepts that do the same jobs.",
+    "disposition": "All new under js, in the new subdomains data, render, ajax, array and storage. Four applied js concepts gain edges or a locator, chief among them js.basic.script-position, whose reason is finally given here - the document is parsed top to bottom into the DOM."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7-L9, L119, L262, L272-L275 partial, L425, L448, L643, L676, L835, L953-L955 partial, L1016",
+        "reason_code": "course-link-cross-reference-or-carried-by-owner",
+        "detail": "The course link, the pointers back to the earlier files of the same course and to the MDN reference, the figure lead-ins, and the claims already stated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 32140,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 176,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 28,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 26,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 31,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes apple-js - three lecture files over batches 40 to 42 plus the library appendix. Only index.md is uncited, being a table of contents.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 31,
+  "candidates": [
+    {
+      "concept_id": "js.dom.element-selector",
+      "title": "id와 class로 요소 가져오기",
+      "aliases": [
+        "getElementById",
+        "getElementsByClassName",
+        "innerHTML"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/element-selector.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single sentence shape every DOM edit follows - take the document, get the element by its id, say which part of it, and assign the new value - where fetching by class returns however many matched, so one has to be picked by index",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-42"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.dom.query-selector",
+        "js.basic.purpose",
+        "js.dom.class-list-toggle",
+        "js.dom.dom",
+        "js.dom.create-element"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 사용 목적",
+          "start_line": 25,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 사용 목적",
+          "start_line": 45,
+          "end_line": 49
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.script-position",
+      "title": "script 태그를 아래에 두는 이유",
+      "aliases": [
+        "렌더링 순서",
+        "조작할 html 하단에"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/script-position.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single consequence of the page being read top to bottom - a script placed above the elements it touches runs before they exist, so it goes below them instead",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-42"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.purpose",
+        "js.debug.common-error",
+        "js.library.jquery",
+        "js.dom.script-loading",
+        "js.dom.dom"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 초창기 겪는 문제들, 오류들",
+          "start_line": 135,
+          "end_line": 137
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 771,
+          "end_line": 771
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.for-loop",
+      "title": "자바스크립트 반복문",
+      "aliases": [
+        "같은 코드를 개수만큼",
+        "반복문에는 let"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/for-loop.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single construct repeating a block a counted number of times, whose counter has to be declared with let rather than var when anything inside the loop runs later than the loop itself",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-42"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.var-let-const",
+        "js.basic.closure-var-trap",
+        "js.ui.tab",
+        "java.control-flow.for-statement",
+        "js.basic.for-each",
+        "js.basic.for-in"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### for 반복문",
+          "start_line": 760,
+          "end_line": 760
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.function",
+      "title": "자바스크립트 함수",
+      "aliases": [
+        "긴 코드를 줄일 때",
+        "camelCase 작명"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/function.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single way to give a stretch of code a name, worth doing when it is long or used more than once, named starting lowercase and in camel case rather than with underscores",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-42"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.programming.function",
+        "js.event.callback",
+        "js.basic.variable",
+        "js.basic.arrow-function",
+        "js.basic.return"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 function",
+          "start_line": 108,
+          "end_line": 115
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 function",
+          "start_line": 127,
+          "end_line": 127
+        }
+      ]
+    },
+    {
+      "concept_id": "js.data.array",
+      "title": "Array 자료형",
+      "aliases": [
+        "대괄호로 만드는 자료",
+        "슬라이싱",
+        "순서가 있는 자료"
+      ],
+      "canonical_path": "content/brain/knowledge/js/data/array.md",
+      "tags": [
+        "js",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of putting many values in one variable in a definite order, which is what makes them sortable, sliceable between two positions, searchable and appendable at either end",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.data.object",
+        "js.data.array-vs-object",
+        "js.array.sort",
+        "java.collection.array-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array, Object > ### Array 자료형",
+          "start_line": 19,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array, Object > ### Array 자료형",
+          "start_line": 36,
+          "end_line": 36
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array, Object > ### Array 자료형",
+          "start_line": 47,
+          "end_line": 48
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array, Object > ### Array 자료형",
+          "start_line": 56,
+          "end_line": 56
+        }
+      ]
+    },
+    {
+      "concept_id": "js.data.object",
+      "title": "Object 자료형",
+      "aliases": [
+        "중괄호로 만드는 자료",
+        "key와 value",
+        "이름을 붙여 저장"
+      ],
+      "canonical_path": "content/brain/knowledge/js/data/object.md",
+      "tags": [
+        "js",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of storing values under names rather than in an order, where only the value is really the data and the key is the name it is reached by",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.data.array",
+        "js.data.array-vs-object",
+        "js.basic.for-in",
+        "java.collection.map-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array, Object > ### Object 자료형",
+          "start_line": 62,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "concept_id": "js.data.array-vs-object",
+      "title": "Array와 Object 중 무엇을 쓸까",
+      "aliases": [
+        "순서로 꺼낼 것인가 이름으로 꺼낼 것인가"
+      ],
+      "canonical_path": "content/brain/knowledge/js/data/array-vs-object.md",
+      "tags": [
+        "js",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single question that decides between them - whether the data will be reached by position or by name, so a product's price is better kept under the name price than at some remembered index",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.data.array",
+        "js.data.object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array, Object > ### array / object 차이",
+          "start_line": 89,
+          "end_line": 95
+        }
+      ]
+    },
+    {
+      "concept_id": "js.render.ssr-csr",
+      "title": "서버 렌더링과 클라이언트 렌더링",
+      "aliases": [
+        "server-side rendering",
+        "client-side rendering",
+        "빈 html에 데이터를 채운다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/render/ssr-csr.md",
+      "tags": [
+        "js",
+        "render"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice in what the server actually sends - a finished html page with the values already filled in, or an empty page together with the data, leaving the browser's javascript to put the two together",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.dom.create-element",
+        "cs.network.browser-request-flow",
+        "spring.web.three-ways",
+        "js.library.spa-framework"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식",
+          "start_line": 101,
+          "end_line": 113
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.create-element",
+      "title": "자바스크립트로 html 만들기",
+      "aliases": [
+        "createElement와 appendChild",
+        "insertAdjacentHTML",
+        "beforeend"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/create-element.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative to hardcoding markup that would otherwise have to be edited whenever the data changes - either build the element, fill it, name its class and append it, or write the markup as a string and insert it at a named position; both add to what is there, so replacing the contents outright is the other option",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.render.ssr-csr",
+        "js.dom.element-selector",
+        "js.basic.for-each",
+        "js.dom.select-input"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 02 : JS로 html 생성",
+          "start_line": 163,
+          "end_line": 163
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 02 : JS로 html 생성",
+          "start_line": 167,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 02 : JS로 html 생성",
+          "start_line": 187,
+          "end_line": 193
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 02 : JS로 html 생성",
+          "start_line": 205,
+          "end_line": 205
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 02 : JS로 html 생성",
+          "start_line": 256,
+          "end_line": 256
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.select-input",
+      "title": "select 태그 다루기",
+      "aliases": [
+        "select의 value",
+        "select와 change 이벤트"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/select-input.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single element read the same way as a text input - its chosen option comes out of its value, and it fires the same input and change events",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "js.event.input-change",
+        "js.form.form-tag",
+        "js.dom.create-element"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 01 : 인풋 다루기",
+          "start_line": 123,
+          "end_line": 123
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.for-each",
+      "title": "forEach",
+      "aliases": [
+        "array 뒤에 붙이는 반복",
+        "요소와 인덱스 두 파라미터"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/for-each.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method on an array that runs a callback once per element, handing it the element itself and, if asked for, the index counting up from zero",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.data.array",
+        "js.basic.for-in",
+        "js.basic.for-loop",
+        "js.event.callback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 03 : forEach, for in 반복문",
+          "start_line": 266,
+          "end_line": 266
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### forEach 반복문",
+          "start_line": 281,
+          "end_line": 287
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.for-in",
+      "title": "for in",
+      "aliases": [
+        "object를 도는 반복",
+        "for of는 인덱스를 못 얻는다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/for-in.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single loop over an object's entries as many times as it has them, naming the key each round so both key and value can be reached - as against the of form, which walks an array's values but gives no index",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.data.object",
+        "js.basic.for-each",
+        "js.basic.for-loop"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 03 : forEach, for in 반복문",
+          "start_line": 268,
+          "end_line": 268
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 03 : forEach, for in 반복문",
+          "start_line": 274,
+          "end_line": 275
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### for in 반복문",
+          "start_line": 350,
+          "end_line": 354
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.arrow-function",
+      "title": "화살표 함수",
+      "aliases": [
+        "arrow function",
+        "파라미터가 하나면 괄호 생략"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/arrow-function.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shorter syntax for writing a function, identical to the ordinary form except in how it treats this, most often used where a callback is wanted, and shortened further to just the parameter and the arrow when there is only one parameter",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.function",
+        "js.basic.this-binding",
+        "js.event.callback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## arrow function 맛보기",
+          "start_line": 379,
+          "end_line": 389
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## arrow function 맛보기",
+          "start_line": 403,
+          "end_line": 403
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.this-binding",
+      "title": "함수와 화살표 함수의 this",
+      "aliases": [
+        "this 재정의",
+        "바깥의 this를 그대로",
+        "전역객체 window"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/this-binding.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference that decides which form to use - an ordinary function redefines this to whatever it was called on, so inside an event callback it is the element listened to, while an arrow function leaves this as it was outside, which in the browser ends up being the global object",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.arrow-function",
+        "js.event.event-object",
+        "js.event.callback",
+        "js.basic.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## arrow function 맛보기",
+          "start_line": 417,
+          "end_line": 421
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## arrow function 맛보기",
+          "start_line": 435,
+          "end_line": 435
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## arrow function 맛보기",
+          "start_line": 439,
+          "end_line": 442
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ajax.server-request",
+      "title": "서버에 요청할 때 정해야 하는 두 가지",
+      "aliases": [
+        "데이터의 url",
+        "api 문서",
+        "주소창은 get 요청"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ajax/server-request.md",
+      "tags": [
+        "js",
+        "ajax"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of decisions behind any request - which data, named by a url the server's api document defines, and how, reading with GET or sending with POST - where typing an address is already a GET and submitting a form is already a POST",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.http-get",
+        "cs.network.http-post",
+        "js.form.form-tag",
+        "js.ajax.ajax"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax",
+          "start_line": 450,
+          "end_line": 460
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax",
+          "start_line": 464,
+          "end_line": 470
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ajax.ajax",
+      "title": "Ajax",
+      "aliases": [
+        "새로고침 없이 요청",
+        "axios",
+        "404는 url이 없다는 뜻"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ajax/asynchronous-request.md",
+      "tags": [
+        "js",
+        "ajax"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of making a request without the page reloading, which a plain GET or POST would force - with a callback for what to do when the answer arrives and another for when it fails, a failure usually meaning the url is not there",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.ajax.server-request",
+        "js.ajax.fetch",
+        "js.ajax.json",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax > ### ajax의 등장",
+          "start_line": 476,
+          "end_line": 478
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax > ### ajax의 등장",
+          "start_line": 482,
+          "end_line": 488
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax > ### ajax의 등장",
+          "start_line": 500,
+          "end_line": 500
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax > ### ajax의 등장",
+          "start_line": 514,
+          "end_line": 516
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ajax.fetch",
+      "title": "fetch",
+      "aliases": [
+        "브라우저 기본 함수로 요청하기"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ajax/fetch.md",
+      "tags": [
+        "js",
+        "ajax"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single built-in that makes the same request without any library at all",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "js.ajax.ajax",
+        "js.basic.browser-api",
+        "js.ajax.json"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax > ### 브라우저 기본 함수 fetch",
+          "start_line": 530,
+          "end_line": 530
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ajax.json",
+      "title": "JSON",
+      "aliases": [
+        "따옴표 친 object",
+        "문자 자료만 주고받는다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ajax/json.md",
+      "tags": [
+        "js",
+        "ajax"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single form structured data takes while it travels - a server and a client can only exchange text, so an object or array is quoted into a string to be sent and turned back into one on arrival before anything can be picked out of it",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.ajax.ajax",
+        "js.data.object",
+        "js.storage.json-serialization",
+        "spring.web.http-message-converter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax > ### JSON 자료형",
+          "start_line": 555,
+          "end_line": 555
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Ajax > ### JSON 자료형",
+          "start_line": 565,
+          "end_line": 565
+        }
+      ]
+    },
+    {
+      "concept_id": "js.array.sort",
+      "title": "sort() 함수",
+      "aliases": [
+        "기본은 문자 정렬",
+        "원본을 변형시킨다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/array/sort.md",
+      "tags": [
+        "js",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method that orders an array in place, comparing as text unless told otherwise - which is why numbers come out in an order nobody wanted, and why sorting numbers or objects means supplying a comparison callback",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.data.array",
+        "js.array.sort-comparator",
+        "js.array.filter",
+        "java.util.arrays-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array 자주 쓰는 함수 > ### sort() 함수",
+          "start_line": 575,
+          "end_line": 579
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array 자주 쓰는 함수 > ### sort() 함수",
+          "start_line": 591,
+          "end_line": 591
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array 자주 쓰는 함수 > ### sort() 함수",
+          "start_line": 605,
+          "end_line": 605
+        }
+      ]
+    },
+    {
+      "concept_id": "js.array.sort-comparator",
+      "title": "정렬 콜백이 반환하는 값의 의미",
+      "aliases": [
+        "compareFunction",
+        "양수면 a가 뒤로",
+        "음수면 b가 뒤로"
+      ],
+      "canonical_path": "content/brain/knowledge/js/array/sort-comparator.md",
+      "tags": [
+        "js",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule the sort follows - it hands the callback two elements at a time and reads the sign of what comes back, a positive number putting the first one after the second, a negative one putting the second after the first, and zero leaving their order alone",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.array.sort",
+        "js.basic.return",
+        "js.event.callback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array 자주 쓰는 함수 > ### array 숫자 정렬 원리",
+          "start_line": 633,
+          "end_line": 637
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array 자주 쓰는 함수 > ### 정렬 결론",
+          "start_line": 668,
+          "end_line": 674
+        }
+      ]
+    },
+    {
+      "concept_id": "js.array.filter",
+      "title": "filter() 함수",
+      "aliases": [
+        "원하는 것만 고르기",
+        "원본을 변형시키지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/array/filter.md",
+      "tags": [
+        "js",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method returning a new array of the elements that passed a test, leaving the original as it was, so the result has to be kept somewhere to be of any use",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.array.map",
+        "js.array.sort",
+        "js.data.array",
+        "js.array.find-index"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array 자주 쓰는 함수 > ### filter() 함수",
+          "start_line": 682,
+          "end_line": 684
+        }
+      ]
+    },
+    {
+      "concept_id": "js.array.map",
+      "title": "map() 함수",
+      "aliases": [
+        "전부 변형하기",
+        "새 배열을 돌려준다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/array/map.md",
+      "tags": [
+        "js",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method returning a new array with every element put through the same transformation, again leaving the original untouched",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.array.filter",
+        "js.data.array",
+        "js.basic.for-each"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array 자주 쓰는 함수 > ### map() 함수",
+          "start_line": 706,
+          "end_line": 708
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.dom",
+      "title": "DOM",
+      "aliases": [
+        "Document Object Model",
+        "HTML을 파싱한 결과물"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/document-object-model.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object the browser builds by parsing the html, since the markup arrives as plain text and text cannot be manipulated - it is what every selector actually reaches into",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.dom.element-selector",
+        "js.dom.script-loading",
+        "js.data.object",
+        "js.basic.browser-api"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 726,
+          "end_line": 728
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 745,
+          "end_line": 745
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.script-loading",
+      "title": "script를 언제 실행할 것인가",
+      "aliases": [
+        "async와 defer",
+        "DOMContentLoaded",
+        "load 이벤트"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/script-loading.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the document being parsed top to bottom and synchronously - a script above the elements it touches finds nothing there, and one in the middle stops the parsing while it loads, which is why an external file is marked to load alongside the parsing and run either as soon as it arrives or once parsing is done; the other way is to wait for the event that says the document is built, or the one that says the images and stylesheets are in too",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.dom.dom",
+        "js.basic.script-position",
+        "js.event.add-event-listener",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 751,
+          "end_line": 751
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 761,
+          "end_line": 771
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 775,
+          "end_line": 783
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 787,
+          "end_line": 787
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 811,
+          "end_line": 811
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## DOM",
+          "start_line": 819,
+          "end_line": 819
+        }
+      ]
+    },
+    {
+      "concept_id": "js.storage.web-storage",
+      "title": "브라우저가 제공하는 저장소",
+      "aliases": [
+        "localStorage",
+        "sessionStorage",
+        "IndexedDB",
+        "Cache Storage"
+      ],
+      "canonical_path": "content/brain/knowledge/js/storage/web-storage.md",
+      "tags": [
+        "js",
+        "storage"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of places the browser will keep data - one surviving until the user clears it and one cleared on leaving the site, both key and value and both limited to a few megabytes of text or numbers; a structured store for larger data, cookies for who the user is, and a cache holding the site's own files so they need not be downloaded again",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.storage.json-serialization",
+        "js.storage.update-pattern",
+        "cs.network.stateless-limit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## localStorage",
+          "start_line": 843,
+          "end_line": 843
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## localStorage",
+          "start_line": 849,
+          "end_line": 867
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## localStorage",
+          "start_line": 871,
+          "end_line": 871
+        }
+      ]
+    },
+    {
+      "concept_id": "js.storage.json-serialization",
+      "title": "저장소에 넣기 위한 변환",
+      "aliases": [
+        "JSON.stringify()",
+        "JSON.parse()"
+      ],
+      "canonical_path": "content/brain/knowledge/js/storage/json-serialization.md",
+      "tags": [
+        "js",
+        "storage"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conversion needed before an array or object goes into browser storage - it holds text only, so the value is turned into JSON on the way in and parsed back on the way out",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.storage.web-storage",
+        "js.ajax.json",
+        "js.storage.update-pattern"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## localStorage > ### localStorage 사용법",
+          "start_line": 892,
+          "end_line": 892
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## localStorage > ### localStorage 사용법",
+          "start_line": 900,
+          "end_line": 904
+        }
+      ]
+    },
+    {
+      "concept_id": "js.storage.update-pattern",
+      "title": "저장소의 자료를 수정하는 법",
+      "aliases": [
+        "꺼내서 고치고 다시 넣기",
+        "수정 함수가 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/storage/update-pattern.md",
+      "tags": [
+        "js",
+        "storage"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single three-step routine that stands in for the edit operation browser storage does not have - read the value out, change it, write the whole thing back",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.storage.web-storage",
+        "js.storage.json-serialization",
+        "js.array.find-index"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## localStorage > ### localStorage 사용법",
+          "start_line": 918,
+          "end_line": 924
+        }
+      ]
+    },
+    {
+      "concept_id": "js.array.find-index",
+      "title": "find()와 findIndex()",
+      "aliases": [
+        "없으면 -1",
+        "배열에 있는지 확인"
+      ],
+      "canonical_path": "content/brain/knowledge/js/array/find-index.md",
+      "tags": [
+        "js",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of array methods taking a test and returning the first element that passes it or the position of that element, the position form answering with minus one when nothing passed, which is how presence is checked",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.array.filter",
+        "js.storage.update-pattern",
+        "js.data.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## localStorage > ### localStorage 사용법",
+          "start_line": 928,
+          "end_line": 934
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.scroll-animation-linear",
+      "title": "스크롤 구간에 값 대응시키기",
+      "aliases": [
+        "1차함수로 매핑",
+        "구간 opacity 조절"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/scroll-animation-linear.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique beyond a one-way animation - a range of scroll positions is mapped onto a range of values by a straight line, so a property such as opacity moves continuously with the scroll instead of switching once",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.scroll-event",
+        "js.ui.scroll-progress-bar",
+        "js.ui.css-animation-preference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## scroll 애니메이션 심화",
+          "start_line": 955,
+          "end_line": 955
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## scroll 애니메이션 심화",
+          "start_line": 969,
+          "end_line": 969
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.mouse-touch",
+      "title": "마우스와 터치 이벤트",
+      "aliases": [
+        "mousedown mousemove mouseup",
+        "clientX",
+        "touchstart",
+        "changedTouches"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/mouse-touch.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of events a drag is assembled from - the button going down, the pointer moving, the button coming up, each carrying the pointer's coordinates - with touch equivalents on mobile where the coordinates come from a list because more than one finger may be down, and where the end event has to read the list of those that changed instead",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.event-object",
+        "js.ui.carousel",
+        "js.event.add-event-listener"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 캐러셀 심화 (스와이프)",
+          "start_line": 982,
+          "end_line": 988
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 캐러셀 심화 (스와이프)",
+          "start_line": 992,
+          "end_line": 996
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 캐러셀 심화 (스와이프)",
+          "start_line": 1000,
+          "end_line": 1014
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 캐러셀 심화 (스와이프)",
+          "start_line": 1020,
+          "end_line": 1026
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.switch",
+      "title": "switch 문",
+      "aliases": [
+        "case와 break",
+        "default"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/switch.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single branching form testing one value against several cases, where each case must end in a break or execution falls through into the next, and where a default catches everything unmatched - narrower than the condition form, which can test anything",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.if-else",
+        "js.basic.comparison-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## switch 문법",
+          "start_line": 1036,
+          "end_line": 1046
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

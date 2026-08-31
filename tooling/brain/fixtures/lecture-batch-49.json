@@ -1,0 +1,1149 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-49",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-48",
+    "applied_state": "1019 approved knowledge concepts after lecture-batch-48 finished the exhaustive search chapter."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+        "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13"
+      },
+      {
+        "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch00.md",
+        "source_sha256": "5fbfefcf840ce9eb777b80e8346a45be49ac26201e4069486711ff8c82450697"
+      }
+    ],
+    "line_range": "p6-ch01 L10-L493, p6-ch00 L14-L25",
+    "series": "패스트캠퍼스 코딩테스트 Part6 SQL, 0~1장"
+  },
+  "overlap_analysis": {
+    "finding": "This is the most update-heavy batch of the lecture lane. The SQL surface it covers was already built out from db/easy-db across batches 31 to 33 - the clause order, the grouping pair, the whole join family and the aggregates - so eleven applied concepts take this file's account as further evidence, from a course written against PostgreSQL rather than MySQL.",
+    "disposition": "What easy-db never reached is what is created: the branching expression, the set operator, the ranking window functions, and the string, date, format, null-substitution, conversion and rounding functions."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All eleven update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "p6-ch01 L8, L87, L116, L157, L175, L416; p6-ch00 L8-L21",
+        "reason_code": "course-link-caption-external-reference-or-index",
+        "detail": "The course link, the numbered captions announcing each query listing, the blog post the MySQL date functions are taken from, and the part index with its sample data script."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in p6-ch01 contributes at least one cited locator, either to a create or to an update. p6-ch00 contributes none, being an index and a data dump; p6-ch02, the problem-solving chapter, is a heading with no body."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 14566,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 157,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 14,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 11,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 20,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes fastcampus-algo - parts 1 to 4 over batches 46 and 47, part 5 over batch 48, part 6 here. The uncited files are the four index files, p1-ch04's simulation heading, p5-ch02 and p6-ch02, all of which are empty.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 20,
+  "candidates": [
+    {
+      "concept_id": "db.language.sql",
+      "title": "SQL",
+      "aliases": [
+        "Relational Database Language",
+        "통합된 DB 언어",
+        "Structured Query Language"
+      ],
+      "canonical_path": "content/brain/knowledge/db/language/sql.md",
+      "tags": [
+        "db",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single language in which today's systems merge what were once three - definition, view and manipulation - the relational database language being SQL",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-31",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.language.ddl",
+        "db.language.dml",
+        "db.language.vdl",
+        "db.basic.dbms",
+        "db.sql.term-mapping",
+        "db.sql.multiset-relation",
+        "db.sql.database-command",
+        "db.sql.case-when",
+        "db.sql.date-function",
+        "db.sql.rank-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB Language > ### 통합된 언어",
+          "start_line": 259,
+          "end_line": 261
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL",
+          "start_line": 14,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 용어",
+          "start_line": 49,
+          "end_line": 52
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "unheaded-body",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.select-clause-order",
+      "title": "SELECT 절의 개념적 실행 순서",
+      "aliases": [
+        "FROM WHERE GROUP BY HAVING ORDER BY SELECT",
+        "쿼리 실행 순서"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/select-clause-order.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single order in which a SELECT statement's clauses are to be understood - FROM, then WHERE, then GROUP BY, then HAVING, then ORDER BY, then SELECT - which is conceptual only, since the order each RDBMS actually executes them in is its own implementation's business",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.select",
+        "db.sql.group-by",
+        "db.sql.having",
+        "db.sql.order-by",
+        "db.sql.join",
+        "db.sql.case-when",
+        "db.sql.union"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 예제 > ### SELECT 최종 정리",
+          "start_line": 187,
+          "end_line": 194
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 예제 > ### SELECT 최종 정리",
+          "start_line": 198,
+          "end_line": 207
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 기본검색 및 정렬 (SFWO)",
+          "start_line": 27,
+          "end_line": 34
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.group-by",
+      "title": "GROUP BY",
+      "aliases": [
+        "grouping attribute",
+        "그룹으로 나눠 집계하기",
+        "GROUP BY에 쓴 속성만 SELECT 가능"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/group-by.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single clause splitting the tuples into groups by the grouping attributes and applying the aggregate function once per group, where tuples holding NULL in a grouping attribute form a group of their own and the grouping attribute belongs in the SELECT list so each row can be told apart",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.aggregate-function",
+        "db.sql.having",
+        "db.constraint.null",
+        "db.sql.select-clause-order",
+        "db.sql.rank-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 그룹 > ### GROUP BY",
+          "start_line": 104,
+          "end_line": 107
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 그룹제어 (GROUP BY)",
+          "start_line": 52,
+          "end_line": 55
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 그룹제어 (GROUP BY)",
+          "start_line": 64,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.having",
+      "title": "HAVING",
+      "aliases": [
+        "그룹 필터링",
+        "집계 결과로 거르기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/having.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single clause filtering whole groups by the value an aggregate function produced for them, usable only alongside GROUP BY",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.group-by",
+        "db.sql.aggregate-function",
+        "db.sql.where-vs-having",
+        "db.sql.rank-function",
+        "db.sql.case-when"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 그룹 > ### HAVING",
+          "start_line": 119,
+          "end_line": 121
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 그룹제어 (GROUP BY)",
+          "start_line": 56,
+          "end_line": 60
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.inner-join",
+      "title": "내부 조인",
+      "aliases": [
+        "INNER JOIN",
+        "조건을 만족하는 튜플만"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/inner-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single join keeping only the tuple pairs that satisfy the join condition, so an unmatched row on either side disappears from the result and so does a row whose join attribute is NULL - written with INNER optional, but never without ON or it becomes a cross join",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.join",
+        "db.sql.outer-join",
+        "db.sql.cross-join",
+        "db.constraint.null",
+        "db.sql.union"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Inner join",
+          "start_line": 75,
+          "end_line": 75
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Inner join",
+          "start_line": 79,
+          "end_line": 87
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Inner join",
+          "start_line": 97,
+          "end_line": 97
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 조인 (JOIN)",
+          "start_line": 258,
+          "end_line": 260
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.outer-join",
+      "title": "외부 조인",
+      "aliases": [
+        "OUTER JOIN",
+        "LEFT JOIN",
+        "RIGHT JOIN",
+        "FULL OUTER JOIN"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/outer-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single join that also keeps the tuples failing the join condition, from the left table, the right table or both depending on which side is named, and which MySQL supports only in its left and right forms so a full outer join has to be assembled as a UNION of the two",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.join",
+        "db.sql.inner-join",
+        "db.sql.mysql-join-quirk",
+        "db.sql.union"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 105,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 109,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 128,
+          "end_line": 129
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 139,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 145,
+          "end_line": 151
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 조인 (JOIN)",
+          "start_line": 273,
+          "end_line": 279
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 조인 (JOIN)",
+          "start_line": 301,
+          "end_line": 304
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.self-join",
+      "title": "자체 조인",
+      "aliases": [
+        "SELF JOIN",
+        "자기 자신과의 조인"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/self-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single case rather than a separate syntax - a table joined to itself, which is what happens when the same table is named on both sides of a join",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.join",
+        "db.sql.as-alias",
+        "db.sql.inner-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### self join",
+          "start_line": 333,
+          "end_line": 341
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 조인 (JOIN)",
+          "start_line": 317,
+          "end_line": 320
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 조인 (JOIN)",
+          "start_line": 333,
+          "end_line": 334
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.cross-join",
+      "title": "상호 조인",
+      "aliases": [
+        "CROSS JOIN",
+        "모든 튜플 조합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/cross-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single join with no condition, returning every pairing of a tuple from one table with a tuple from the other - the Cartesian product the relational model started from - written either by listing both tables in FROM or with the CROSS JOIN keyword",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.mathematical-relation",
+        "db.sql.inner-join",
+        "db.sql.implicit-vs-explicit-join",
+        "db.sql.mysql-join-quirk",
+        "db.sql.union"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### cross join",
+          "start_line": 276,
+          "end_line": 288
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### cross join",
+          "start_line": 304,
+          "end_line": 304
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 조인 (JOIN)",
+          "start_line": 338,
+          "end_line": 340
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.mysql-join-quirk",
+      "title": "MySQL의 조인 특이사항",
+      "aliases": [
+        "MySQL은 FULL OUTER JOIN 미지원",
+        "ON을 쓰면 inner join"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/mysql-join-quirk.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair of MySQL departures from the standard - it has no FULL OUTER JOIN, and it treats cross join, inner join and plain join as one keyword whose behaviour is decided by whether ON or USING is present rather than by the word written",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.cross-join",
+        "db.sql.inner-join",
+        "db.sql.outer-join",
+        "db.language.sql",
+        "db.sql.union",
+        "db.sql.date-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### MySQL Join",
+          "start_line": 312,
+          "end_line": 318
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### MySQL Join",
+          "start_line": 322,
+          "end_line": 324
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 조인 (JOIN)",
+          "start_line": 341,
+          "end_line": 344
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.aggregate-function",
+      "title": "집계 함수",
+      "aliases": [
+        "Aggregate function",
+        "SUM",
+        "MAX",
+        "MIN",
+        "AVG"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/aggregate-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single family of functions summarising many tuples into one value - COUNT, SUM, MAX, MIN and AVG - applied to the attribute of interest and computed with NULL values left out",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.count",
+        "db.sql.group-by",
+        "db.constraint.null",
+        "db.sql.select",
+        "db.sql.rank-function",
+        "db.sql.round-truncate",
+        "db.sql.string-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 집계",
+          "start_line": 49,
+          "end_line": 54
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 집계 함수",
+          "start_line": 362,
+          "end_line": 375
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.order-by",
+      "title": "ORDER BY",
+      "aliases": [
+        "ASC",
+        "DESC",
+        "조회 결과 정렬"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/order-by.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single clause sorting the result by one or more attributes, ascending unless DESC is written, applying each attribute in the order listed so the second only breaks ties in the first - and treating NULL as the smallest value in MySQL, which puts those tuples first",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-49",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.select",
+        "db.constraint.null",
+        "db.sql.select-clause-order",
+        "db.sql.rank-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 정렬 > ### ORDER BY",
+          "start_line": 16,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture09.md",
+          "source_sha256": "7e777ceef7e999679143470603a0f5a762c9b50935178ee752889ed3a5a3b83f",
+          "heading": "## 정렬 > ### ORDER BY",
+          "start_line": 39,
+          "end_line": 41
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.case-when",
+      "title": "CASE WHEN",
+      "aliases": [
+        "THEN ELSE END",
+        "간단한 표현식과 검색된 표현식",
+        "MySQL의 IF 함수"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/case-when.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single branching expression inside a query, written in two forms - one naming the attribute after CASE and comparing it against a value in each WHEN, the other leaving CASE bare and writing a full condition in each WHEN - with a fallback branch and an explicit end, and with a shorter function form in MySQL",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.select",
+        "db.sql.where-vs-having",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 분기문 (IF / CASE WHEN)",
+          "start_line": 74,
+          "end_line": 75
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 분기문 (IF / CASE WHEN)",
+          "start_line": 103,
+          "end_line": 112
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 분기문 (IF / CASE WHEN)",
+          "start_line": 132,
+          "end_line": 141
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.union",
+      "title": "UNION",
+      "aliases": [
+        "UNION ALL",
+        "쿼리 결과를 합치기",
+        "속성 개수와 순서가 같아야"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/union.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set operator stacking the results of two or more queries into one, which requires each to return the same number of attributes in the same order with compatible types - and which removes duplicate rows unless the all form is used",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.sql.distinct",
+        "db.sql.outer-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 집합연산 (UNION)",
+          "start_line": 149,
+          "end_line": 153
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 집합연산 (UNION)",
+          "start_line": 171,
+          "end_line": 171
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 집합연산 (UNION)",
+          "start_line": 189,
+          "end_line": 189
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.rank-function",
+      "title": "순위 함수",
+      "aliases": [
+        "RANK",
+        "DENSE_RANK",
+        "ROW_NUMBER",
+        "PARTITION BY"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/rank-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of three window functions differing only in how they treat ties - one gives tied rows the same rank and then skips as many places as there were ties, one gives them the same rank and continues with the next number, and one refuses ties altogether and numbers every row - with an optional clause restricting the ranking to within each group",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.order-by",
+        "db.sql.group-by",
+        "db.sql.aggregate-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 순위집계 (RANK)",
+          "start_line": 197,
+          "end_line": 197
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 순위집계 (RANK)",
+          "start_line": 201,
+          "end_line": 201
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 순위집계 (RANK)",
+          "start_line": 214,
+          "end_line": 214
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 순위집계 (RANK)",
+          "start_line": 218,
+          "end_line": 218
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 순위집계 (RANK)",
+          "start_line": 231,
+          "end_line": 231
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 순위집계 (RANK)",
+          "start_line": 235,
+          "end_line": 235
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 기본 문법 > ### 순위집계 (RANK)",
+          "start_line": 248,
+          "end_line": 248
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.string-function",
+      "title": "SQL 문자열 함수",
+      "aliases": [
+        "SUBSTRING",
+        "LTRIM과 RTRIM",
+        "LPAD와 RPAD",
+        "LENGTH"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/string-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of functions operating on text in the query - cutting a piece out by position and length, stripping whitespace or a given string from one end, padding to a width from one end, substituting one substring for another, and measuring the length - where the trimming works only at the ends and never in the middle",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.type.char-vs-varchar",
+        "db.sql.like",
+        "java.util.string-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 문자열 함수",
+          "start_line": 384,
+          "end_line": 399
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.date-function",
+      "title": "SQL 날짜 함수",
+      "aliases": [
+        "NOW",
+        "AGE와 DATEDIFF",
+        "TIMESTAMPDIFF",
+        "DATE_PART와 DATE_TRUNC"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/date-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of functions over timestamps - the current moment, the interval between two of them, the extraction of one field such as the year or the month, and the truncation of everything below a given field - where the names differ sharply between products, one having an age function and the other a difference function taking the unit as an argument",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.type.datetime",
+        "db.sql.format-function",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 날짜 함수",
+          "start_line": 409,
+          "end_line": 419
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 날짜 함수",
+          "start_line": 431,
+          "end_line": 435
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.format-function",
+      "title": "날짜를 문자로 포맷하기",
+      "aliases": [
+        "TO_CHAR",
+        "DATE_FORMAT",
+        "%Y %m %d"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/format-function.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conversion of a timestamp into text by a format string of codes standing for the year in two or four digits, the month as a number or a name, the day as a number or a weekday, and the hour in twelve or twenty-four - named differently in each product",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.date-function",
+        "db.type.datetime",
+        "java.util.printf-format"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 그외 함수",
+          "start_line": 443,
+          "end_line": 445
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 그외 함수",
+          "start_line": 449,
+          "end_line": 461
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.coalesce",
+      "title": "COALESCE",
+      "aliases": [
+        "null이면 다음 인자를",
+        "널 대체"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/coalesce.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single function returning the first of its arguments that is not null, which is how a missing value is given a stand-in inside the query",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.constraint.null",
+        "db.sql.is-null",
+        "db.sql.case-when"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 그외 함수",
+          "start_line": 473,
+          "end_line": 474
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.cast",
+      "title": "CAST",
+      "aliases": [
+        "타입 변환",
+        "DATE_SUB와 INTERVAL"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/cast.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conversion of a value from one type to another inside the query, which does not extend to arithmetic on dates - for that an interval is subtracted from a timestamp with its own function and a unit keyword",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.date-function",
+        "db.type.decimal",
+        "java.type.type-conversion"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 그외 함수",
+          "start_line": 476,
+          "end_line": 486
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.round-truncate",
+      "title": "반올림과 버림",
+      "aliases": [
+        "ROUND",
+        "TRUNCATE는 무조건 버린다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/round-truncate.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of functions cutting a number at a given decimal place, one rounding at the cut and the other always discarding what is past it",
+      "pilot_strata": [
+        "lecture-batch-49",
+        "algo/fastcampus-algo",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.type.decimal",
+        "js.number.to-fixed",
+        "db.sql.aggregate-function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part6/p6-ch01.md",
+          "source_sha256": "d23bc43b91cc8df6cd83ae900079e285a02518b13484c2c1315e70f28ec23f13",
+          "heading": "## 함수 > ### 그외 함수",
+          "start_line": 489,
+          "end_line": 491
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

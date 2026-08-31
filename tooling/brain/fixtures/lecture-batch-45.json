@@ -1,0 +1,1243 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-45",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-44",
+    "applied_state": "964 approved knowledge concepts after lecture-batch-44 added fonts, flex, the document head, responsive units and bootstrap."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+        "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e"
+      }
+    ],
+    "line_range": "L13-L905 (whole file)",
+    "series": "코딩애플 - HTML/CSS All-in-One 고급모듈"
+  },
+  "overlap_analysis": {
+    "finding": "The advanced module carries the one section in this course that explains rather than instructs - the order the browser draws in, which is why a transform animates smoothly and a margin does not. It is the reason behind advice already recorded in the js lane and in the intermediate module.",
+    "disposition": "Three applied concepts gain edges to it and to the transform concept: the positioning property that sticky extends, the one-way animation recipe that keyframes generalises, and the carousel, which was already told to move by transform without being told why."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L9, L55, L77-L87, L109, L141-L143, L154-L156, L178, L232-L234, L488-L490, L582 partial, L654, L685, L871",
+        "reason_code": "course-link-bookmark-list-tool-tip-or-carried-by-owner",
+        "detail": "The course link, the list of codepen demos the author bookmarked, the note about where to find a VS Code status bar, the section captions announcing the code below them, and the claims already stated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 26042,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 146,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 18,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 16,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 23,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes apple-html - the basic, intermediate and advanced modules over batches 43 to 45. Only the two index files are uncited, being tables of contents.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 23,
+  "candidates": [
+    {
+      "concept_id": "css.layout.position",
+      "title": "position",
+      "aliases": [
+        "relative static fixed absolute",
+        "viewport 기준 고정",
+        "부모 기준 좌표"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/position.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single property that both lets an element be moved by coordinates and lifts it out of the flow, whose value says what those coordinates are measured from - its own original place, nothing at all, the viewport so it stays put while the page scrolls, or the nearest ancestor that was itself positioned",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain",
+        "lecture-batch-45"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.layout.float",
+        "css.layout.z-index",
+        "css.background.background-property",
+        "js.ui.scroll-progress-bar",
+        "css.layout.sticky",
+        "css.animation.transform"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 좌표 이동",
+          "start_line": 242,
+          "end_line": 248
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 좌표 이동",
+          "start_line": 258,
+          "end_line": 266
+        }
+      ]
+    },
+    {
+      "concept_id": "css.animation.one-way",
+      "title": "one-way 애니메이션",
+      "aliases": [
+        "시작 스타일과 최종 스타일",
+        "transition 속성"
+      ],
+      "canonical_path": "content/brain/knowledge/css/animation/one-way.md",
+      "tags": [
+        "css",
+        "animation"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single four-step recipe for animating in css - write the starting style, write the ending style, decide what triggers the change such as a hover, and declare the transition that carries one into the other",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain",
+        "lecture-batch-45"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.ui.css-animation-preference",
+        "css.debug.chrome-devtools",
+        "css.layout.overflow",
+        "js.ui.scroll-animation-linear",
+        "css.animation.keyframes",
+        "css.animation.transform"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 애니메이션 만드는 원리",
+          "start_line": 386,
+          "end_line": 391
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 애니메이션 만드는 원리",
+          "start_line": 395,
+          "end_line": 395
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.carousel",
+      "title": "캐러셀",
+      "aliases": [
+        "이미지 슬라이드",
+        "translateX",
+        "한 방향으로만 흐르는 슬라이드"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/carousel.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single build order for a sliding image strip - draw the before state, draw the after state, decide in script when it changes, then add the transition - where the strip is as wide as all its slides together with the overflow hidden, the movement is a transform rather than a margin because that performs better, and a previous and next button need a variable holding which slide is current",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "lecture-batch-45"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.ui.show-hide-pattern",
+        "js.ui.css-animation-preference",
+        "js.basic.variable",
+        "css.animation.one-way",
+        "css.animation.transform",
+        "css.render.browser-rendering-pipeline"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 211,
+          "end_line": 217
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 239,
+          "end_line": 242
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 248,
+          "end_line": 248
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 262,
+          "end_line": 263
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 288,
+          "end_line": 288
+        }
+      ]
+    },
+    {
+      "concept_id": "css.selector.pseudo-element",
+      "title": "pseudo-element",
+      "aliases": [
+        "::before와 ::after",
+        "콜론 두 개",
+        "빈 div 대신"
+      ],
+      "canonical_path": "content/brain/knowledge/css/selector/pseudo-element.md",
+      "tags": [
+        "css",
+        "selector"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single kind of selector reaching a part inside an element rather than a state of it - written with two colons where a state takes one - most often used to add something at the start or the end of an element's content, which is how an empty clearing box is added without touching the markup",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.selector.combinator",
+        "css.layout.float",
+        "css.shadow-dom.shadow-dom"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Pseudo-element",
+          "start_line": 14,
+          "end_line": 15
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Pseudo-element",
+          "start_line": 19,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Pseudo-element",
+          "start_line": 31,
+          "end_line": 31
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Pseudo-element",
+          "start_line": 42,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "css.shadow-dom.shadow-dom",
+      "title": "Shadow DOM",
+      "aliases": [
+        "user agent shadow DOM",
+        "태그 하나가 둘처럼 보이는 이유",
+        "-webkit- 접두사"
+      ],
+      "canonical_path": "content/brain/knowledge/css/shadow-dom/user-agent-shadow-dom.md",
+      "tags": [
+        "css",
+        "shadow-dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single hidden tree the browser builds inside certain elements - which is why one tag renders as two pieces - reachable in the inspector once it is made visible and styleable through the pseudo-elements the browser exposes for it, though those are named per engine and so carry a vendor prefix",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.selector.pseudo-element",
+        "css.shadow-dom.file-input-styling",
+        "js.dom.dom",
+        "css.debug.chrome-devtools"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Shadow DOM",
+          "start_line": 97,
+          "end_line": 97
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Shadow DOM",
+          "start_line": 101,
+          "end_line": 101
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Shadow DOM",
+          "start_line": 105,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Shadow DOM",
+          "start_line": 118,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Shadow DOM",
+          "start_line": 122,
+          "end_line": 122
+        }
+      ]
+    },
+    {
+      "concept_id": "css.shadow-dom.file-input-styling",
+      "title": "파일 업로드 버튼을 원하는 모양으로",
+      "aliases": [
+        "label을 눌러도 선택되게",
+        "input은 display none"
+      ],
+      "canonical_path": "content/brain/knowledge/css/shadow-dom/file-input-styling.md",
+      "tags": [
+        "css",
+        "shadow-dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way around a control whose own parts cannot be styled freely - the input itself is hidden and a label tied to it is styled instead, since clicking the label acts on the field",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.shadow-dom.shadow-dom",
+        "html.form.label",
+        "css.form.focus-outline"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Shadow DOM",
+          "start_line": 126,
+          "end_line": 129
+        }
+      ]
+    },
+    {
+      "concept_id": "css.sass.sass",
+      "title": "Sass",
+      "aliases": [
+        "CSS 전처리언어",
+        "Preprocessor",
+        "scss와 sass"
+      ],
+      "canonical_path": "content/brain/knowledge/css/sass/preprocessor.md",
+      "tags": [
+        "css",
+        "sass"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single language written instead of css and compiled down to it, which adds what css lacks - variables, conditions, loops and functions - so repetition can be factored out; the browser never sees it, and the map file compiled alongside is what lets the inspector point back at the original lines",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.sass.variable",
+        "css.sass.nesting",
+        "css.sass.mixin",
+        "css.debug.chrome-devtools"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass",
+          "start_line": 213,
+          "end_line": 223
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass",
+          "start_line": 227,
+          "end_line": 228
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass",
+          "start_line": 240,
+          "end_line": 242
+        }
+      ]
+    },
+    {
+      "concept_id": "css.sass.variable",
+      "title": "Sass 변수",
+      "aliases": [
+        "$변수명",
+        "스타일 값의 사칙연산",
+        "상대적인 크기"
+      ],
+      "canonical_path": "content/brain/knowledge/css/sass/variable.md",
+      "tags": [
+        "css",
+        "sass"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single place to keep a value that is hard to remember or used in a rule - and which can be calculated from, so a size is written as an offset from a base one and the whole scale moves when that base changes, provided the units being combined match",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.sass.sass",
+        "css.unit.rem-em",
+        "css.sass.mixin"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법01. 값을 저장하고 사용하는 변수",
+          "start_line": 252,
+          "end_line": 254
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법01. 값을 저장하고 사용하는 변수",
+          "start_line": 293,
+          "end_line": 293
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법01. 값을 저장하고 사용하는 변수",
+          "start_line": 310,
+          "end_line": 310
+        }
+      ]
+    },
+    {
+      "concept_id": "css.sass.nesting",
+      "title": "Nesting",
+      "aliases": [
+        "셀렉터를 감싸서 쓰기",
+        "& 기호"
+      ],
+      "canonical_path": "content/brain/knowledge/css/sass/nesting.md",
+      "tags": [
+        "css",
+        "sass"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of writing related rules inside one another instead of repeating the parent selector, where the ampersand attaches the child selector to the parent without a space - and which is not worth nesting more than a couple of levels deep",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.sass.sass",
+        "css.selector.combinator",
+        "css.legacy.override-strategy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법02. 셀렉터 대신 사용하는 Nesting",
+          "start_line": 316,
+          "end_line": 317
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법02. 셀렉터 대신 사용하는 Nesting",
+          "start_line": 358,
+          "end_line": 360
+        }
+      ]
+    },
+    {
+      "concept_id": "css.sass.extend",
+      "title": "@extend",
+      "aliases": [
+        "클래스 전체를 복사",
+        "% 임시 클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/css/sass/extend.md",
+      "tags": [
+        "css",
+        "sass"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single directive copying one class's declarations into another, with a placeholder form for a class meant only to be copied and never to appear in the compiled output",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.sass.mixin",
+        "css.sass.sass",
+        "css.naming.oocss"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법03. 이미 있는 클래스를 확장하는 @extend",
+          "start_line": 366,
+          "end_line": 370
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법03. 이미 있는 클래스를 확장하는 @extend",
+          "start_line": 372,
+          "end_line": 373
+        }
+      ]
+    },
+    {
+      "concept_id": "css.sass.mixin",
+      "title": "@mixin",
+      "aliases": [
+        "@include",
+        "파라미터를 받는 스타일 묶음",
+        "문자 중간의 #{}"
+      ],
+      "canonical_path": "content/brain/knowledge/css/sass/mixin.md",
+      "tags": [
+        "css",
+        "sass"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single named block of declarations that takes parameters, declared once and pulled in wherever wanted - which is what makes it the more used of the two reuse forms, the copying one having no parameters - with a syntax for putting a variable inside a string",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.sass.extend",
+        "css.sass.variable",
+        "css.sass.use"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법04. 코드를 한 단어로 축약하는 @mixin",
+          "start_line": 415,
+          "end_line": 417
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법04. 코드를 한 단어로 축약하는 @mixin",
+          "start_line": 454,
+          "end_line": 454
+        }
+      ]
+    },
+    {
+      "concept_id": "css.sass.use",
+      "title": "@use",
+      "aliases": [
+        "다른 파일 가져오기",
+        "_로 시작하는 파일은 컴파일되지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/sass/use.md",
+      "tags": [
+        "css",
+        "sass"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single directive pulling another file's contents in - its variables and mixins become usable under the file's name - where a file meant only to be pulled in is marked with a leading underscore so it is not compiled into a stylesheet of its own",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.sass.mixin",
+        "css.sass.variable",
+        "css.reset.normalize"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법05. 다른 파일에 있는 내용 가져오는 @use 문법",
+          "start_line": 479,
+          "end_line": 484
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## Sass > ### 문법05. 다른 파일에 있는 내용 가져오는 @use 문법",
+          "start_line": 496,
+          "end_line": 500
+        }
+      ]
+    },
+    {
+      "concept_id": "html.media.video",
+      "title": "video와 audio 태그",
+      "aliases": [
+        "source로 여러 형식",
+        "autoplay muted",
+        "preload metadata",
+        "poster"
+      ],
+      "canonical_path": "content/brain/knowledge/html/media/video.md",
+      "tags": [
+        "html",
+        "media"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single element for playing a file, better given several source elements than one path so that whichever format the browser supports is used, with attributes for the controls, for looping, for the still shown before play, for how much is fetched in advance - none, all, or just enough for a thumbnail and the opening - and for autoplay, which browsers now allow only when muted",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.head.meta-tag",
+        "cs.network.persistent-connection",
+        "js.basic.browser-api"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## HTML video, audio",
+          "start_line": 506,
+          "end_line": 508
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## HTML video, audio",
+          "start_line": 512,
+          "end_line": 512
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## HTML video, audio",
+          "start_line": 525,
+          "end_line": 525
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## HTML video, audio",
+          "start_line": 535,
+          "end_line": 539
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## HTML video, audio",
+          "start_line": 543,
+          "end_line": 543
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## HTML video, audio",
+          "start_line": 547,
+          "end_line": 547
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## HTML video, audio",
+          "start_line": 551,
+          "end_line": 551
+        }
+      ]
+    },
+    {
+      "concept_id": "css.center.ultimate-centering",
+      "title": "궁극의 가운데 정렬",
+      "aliases": [
+        "극한의 중앙 배치"
+      ],
+      "canonical_path": "content/brain/knowledge/css/center/ultimate-centering.md",
+      "tags": [
+        "css",
+        "center"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement the course settles on for centring something both ways when nothing else holds",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "css.layout.position",
+        "css.layout.flex",
+        "css.animation.transform"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 궁극의 가운데 정렬",
+          "start_line": 557,
+          "end_line": 557
+        }
+      ]
+    },
+    {
+      "concept_id": "css.animation.transform",
+      "title": "transform",
+      "aliases": [
+        "rotate",
+        "scale",
+        "skew",
+        "translate"
+      ],
+      "canonical_path": "content/brain/knowledge/css/animation/transform.md",
+      "tags": [
+        "css",
+        "animation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property that rotates, moves, scales or skews an element, and which is what an animation should move rather than a margin or a position - because it performs better, and a stuttering animation is worse than none",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.render.browser-rendering-pipeline",
+        "css.animation.keyframes",
+        "css.animation.performance",
+        "js.ui.carousel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes)",
+          "start_line": 592,
+          "end_line": 598
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes)",
+          "start_line": 602,
+          "end_line": 602
+        }
+      ]
+    },
+    {
+      "concept_id": "css.render.browser-rendering-pipeline",
+      "title": "브라우저가 그림 그리는 순서",
+      "aliases": [
+        "Render tree",
+        "Layout",
+        "Paint",
+        "Composite"
+      ],
+      "canonical_path": "content/brain/knowledge/css/render/browser-rendering-pipeline.md",
+      "tags": [
+        "css",
+        "render"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single four-stage order the browser draws in - build the render tree with the styles resolved, lay out the boxes, paint them, then composite the layers - which explains why changing a margin is expensive, since it forces the layout stage and everything after it, while a transform only touches the last stage and is handled on its own thread rather than the single one everything else shares",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.animation.transform",
+        "css.animation.performance",
+        "js.dom.dom",
+        "cs.concurrency.concurrent-vs-parallel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes)",
+          "start_line": 606,
+          "end_line": 610
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 브라우저가 그림 그리는 순서 (렌더링 과정)",
+          "start_line": 616,
+          "end_line": 622
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 브라우저가 그림 그리는 순서 (렌더링 과정)",
+          "start_line": 626,
+          "end_line": 626
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 브라우저가 그림 그리는 순서 (렌더링 과정)",
+          "start_line": 630,
+          "end_line": 630
+        }
+      ]
+    },
+    {
+      "concept_id": "css.animation.keyframes",
+      "title": "@keyframes",
+      "aliases": [
+        "진행도에 따라 나눠 쓰기",
+        "animation-name"
+      ],
+      "canonical_path": "content/brain/knowledge/css/animation/keyframes.md",
+      "tags": [
+        "css",
+        "animation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single construct for an animation that is more than one step - a to b to c, a out and back, or a pause in the middle - written as styles at percentages of the way through and then attached to a class by name",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.animation.one-way",
+        "css.animation.transform",
+        "css.animation.3d-flip",
+        "css.animation.performance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes)",
+          "start_line": 582,
+          "end_line": 586
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 브라우저가 그림 그리는 순서 (렌더링 과정)",
+          "start_line": 634,
+          "end_line": 634
+        }
+      ]
+    },
+    {
+      "concept_id": "css.animation.3d-flip",
+      "title": "사진 뒤집기 애니메이션",
+      "aliases": [
+        "preserve-3d",
+        "backface-visibility",
+        "뒷면은 미리 뒤집어 둔다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/animation/3d-flip.md",
+      "tags": [
+        "css",
+        "animation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement for flipping a card - the two faces stacked by absolute positioning inside a wrapper that is what actually rotates, the back face pre-rotated so it reads the right way round once turned, and the hidden face kept from showing through",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.animation.transform",
+        "css.layout.position",
+        "css.layout.z-index",
+        "css.animation.keyframes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 3D 애니메이션 (사진 뒤집기)",
+          "start_line": 677,
+          "end_line": 685
+        }
+      ]
+    },
+    {
+      "concept_id": "css.animation.performance",
+      "title": "애니메이션 성능 잡기",
+      "aliases": [
+        "will-change",
+        "하드웨어 가속",
+        "translate3d 꼼수"
+      ],
+      "canonical_path": "content/brain/knowledge/css/animation/performance.md",
+      "tags": [
+        "css",
+        "animation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of levers when an animation drags - declaring in advance which property is going to change so the browser can prepare, and pushing the work onto the graphics processor by expressing the movement in three dimensions even where the third is zero",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.render.browser-rendering-pipeline",
+        "css.animation.transform",
+        "css.animation.keyframes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 애니메이션 성능 잡는 방법들",
+          "start_line": 691,
+          "end_line": 691
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 애니메이션 성능 잡는 방법들",
+          "start_line": 699,
+          "end_line": 699
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 애니메이션 성능 잡는 방법들",
+          "start_line": 703,
+          "end_line": 705
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## 애니메이션 만들기 심화 (@keyframes) > ### 애니메이션 성능 잡는 방법들",
+          "start_line": 713,
+          "end_line": 713
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.grid",
+      "title": "CSS Grid",
+      "aliases": [
+        "display grid",
+        "grid-template-columns",
+        "fr 단위"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/grid.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single layout mode turning the parent into a ruled sheet whose rows and columns are declared by count and size, with a gap between them - and whose natural unit is the fraction, which divides whatever space is left over rather than fixing a length",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.layout.flex",
+        "css.layout.grid-placement",
+        "css.framework.bootstrap-grid",
+        "css.unit.viewport-unit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 721,
+          "end_line": 727
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 756,
+          "end_line": 756
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.grid-placement",
+      "title": "그리드에 요소를 배치하는 두 방법",
+      "aliases": [
+        "grid-column과 grid-row",
+        "grid-area와 grid-template-areas"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/grid-placement.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice between placing from the child and placing from the parent - the child says which grid lines it spans between, or the child is given a name and the parent draws the layout out as a picture of those names",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.grid",
+        "css.framework.bootstrap-grid",
+        "css.layout.flex-grow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 774,
+          "end_line": 775
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 779,
+          "end_line": 779
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 787,
+          "end_line": 787
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 799,
+          "end_line": 799
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 842,
+          "end_line": 842
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 854,
+          "end_line": 854
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.image-baseline",
+      "title": "이미지 밑의 하얀 선",
+      "aliases": [
+        "img는 글자 취급",
+        "display block으로 없애기"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/image-baseline.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single gap that appears under an image for no apparent reason - it is laid out as text and so sits on a baseline with room beneath it, which goes away once it is made a block",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.vertical-align",
+        "css.layout.grid",
+        "css.layout.box-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS Grid",
+          "start_line": 875,
+          "end_line": 875
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.sticky",
+      "title": "position: sticky",
+      "aliases": [
+        "조건부 fixed",
+        "부모를 넘어서면 해제"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/sticky.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single positioning that behaves normally until the scroll reaches it and then pins like a fixed element, releasing again once its parent has scrolled past - which is why it needs both a scrollable parent and a coordinate saying where to stick",
+      "pilot_strata": [
+        "lecture-batch-45",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.layout.position",
+        "js.event.scroll-event",
+        "css.layout.z-index"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS 스킬 sticky",
+          "start_line": 881,
+          "end_line": 891
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-last.md",
+          "source_sha256": "b6e4bb59951e637702e204ef8e14e8b7343ec5f26c8a439df2f447e75f4dab0e",
+          "heading": "## CSS 스킬 심화 > ### CSS 스킬 sticky",
+          "start_line": 902,
+          "end_line": 905
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

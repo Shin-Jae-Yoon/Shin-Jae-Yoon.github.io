@@ -1,0 +1,73 @@
+---
+title: 서브쿼리
+aliases:
+  - 서브쿼리
+  - IN
+  - EXISTS
+  - correlated subquery
+tags:
+  - database
+origin:
+  verified: 2026-08-30
+---
+
+쿼리 안에 들어 있는 쿼리. 괄호 안에 쓰고, 이를 감싸는 쪽을 외부 쿼리라고 한다. 쿼리를 두 번 날려서 얻던 결과를 한 번에 얻으려고 쓴다. `SELECT`, `INSERT`, `UPDATE`, `DELETE` 어디에나 들어갈 수 있고 위치는 주로 `WHERE`나 `FROM`이다.
+
+```sql
+SELECT id, name, birth_date
+FROM employee
+WHERE birth_date < (SELECT birth_date FROM employee WHERE id = 14);
+```
+
+"14번 직원의 생일을 구한다"와 "그보다 생일이 빠른 직원을 찾는다"를 하나로 합친 것이다.
+
+## 문제를 두 파트로 쪼개기
+
+서브쿼리가 안 떠오르면 문제를 두 파트로 쪼갠다. "5번 직원과 같은 프로젝트에 참여한 직원의 ID"라면 5번 직원이 참여한 프로젝트가 무엇인지가 첫 파트이고, 그 프로젝트에 참여한 직원이 누구인지가 둘째 파트다. 앞이 서브쿼리가 되고 뒤가 외부 쿼리가 된다.
+
+## FROM 자리의 가상 테이블
+
+`FROM`에 서브쿼리를 두면 그 결과가 가상 테이블이 된다. 별칭을 붙여 실제 테이블처럼 [[join|조인]]할 수 있다.
+
+```sql
+FROM employee AS E JOIN (SELECT DISTINCT empl_id FROM works_on WHERE ...) AS D
+     ON E.id = D.empl_id
+```
+
+## IN과 EXISTS, ANY와 ALL
+
+`v IN (v1, v2, ...)`는 v가 목록 중 하나라도 같으면 참이다. `OR`를 여러 번 쓰는 것을 줄여준다. 목록 자리에는 값을 직접 나열해도 되고 서브쿼리의 결과를 넣어도 된다. `NOT IN`은 반대로 모든 값과 다를 때 참이다.
+
+```sql
+WHERE id IN (SELECT empl_id FROM works_on WHERE proj_id = 2002)
+```
+
+`EXISTS`는 서브쿼리의 결과가 한 행이라도 있으면 참이고, `NOT EXISTS`는 한 행도 없으면 참이다.
+
+`ANY`는 서브쿼리가 돌려준 결과 중 하나라도 비교 연산이 참이면 참이다. `SOME`도 같은 뜻이다. 리더보다 높은 연봉을 받는 부서원이 있는 리더를 찾을 때처럼, 하나만 있어도 조건이 성립하는 경우에 쓴다. 반대로 `ALL`은 돌려준 결과 전부와의 비교가 참일 때만 참이다.
+
+## 바깥 컬럼을 참조할 때
+
+서브쿼리가 외부 쿼리의 컬럼을 참조하면 상관 서브쿼리라고 한다. 이러면 서브쿼리를 한 번만 실행할 수 없고 외부 쿼리의 행마다 다시 실행되어야 한다. `EXISTS`는 대개 이 형태로 쓰인다.
+
+## 값 비교와 존재 확인
+
+`IN`과 `EXISTS`는 서로 바꿔 쓸 수 있는 경우가 많다. 차이는 `EXISTS`가 값을 비교하는 것이 아니라 존재만 확인한다는 점이라, 행 하나만 찾으면 더 볼 필요가 없다. 성능은 DBMS의 종류와 버전에 달렸고, 최근 버전들은 개선이 많이 이루어져 둘의 차이가 거의 없다고 알려져 있다.
+
+## NOT IN과 NULL
+
+`NOT IN`의 목록에 NULL이 하나라도 있으면 [[null-and-three-valued-logic|결과가 항상 비어버린다]]. 서브쿼리 결과를 `NOT IN`에 넣을 때 자주 걸린다.
+
+## 이름만 쓴 컬럼이 가리키는 테이블
+
+테이블 이름을 붙이지 않은 컬럼은, 그 컬럼이 쓰인 쿼리부터 바깥으로 나가면서 같은 이름을 가진 가장 가까운 테이블을 참조한다. 서브쿼리 안에서 `id`라고만 쓰면 서브쿼리의 `FROM`에 있는 테이블을 먼저 보고, 거기 없으면 한 단계 바깥으로 나간다. 의도치 않게 바깥 테이블을 참조해도 문법 오류가 나지 않으므로 테이블 이름을 붙여 쓰는 편이 안전하다.
+
+## 관련
+
+- [[select|SELECT]]
+- [[join|조인]]
+- [[null-and-three-valued-logic|NULL과 3값 논리]]
+
+## 출처
+
+- [[brain/lectures/db/easy-db/lecture06|쉬운코드 데이터베이스 6강 - Subquery]]

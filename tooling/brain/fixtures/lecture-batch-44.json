@@ -1,0 +1,1333 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-44",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-43",
+    "applied_state": "940 approved knowledge concepts after lecture-batch-43 opened the html and css namespaces."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+        "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093"
+      }
+    ],
+    "line_range": "L13-L577 (whole file)",
+    "series": "코딩애플 - HTML/CSS All-in-One 중급모듈"
+  },
+  "overlap_analysis": {
+    "finding": "The intermediate module covers fonts, flex, the document head, responsive units, bootstrap and how to override a stylesheet one did not write. Three applied concepts are touched from a new side rather than restated.",
+    "disposition": "css.layout.box-sizing gains the badge case that is caused by it, css.layout.vertical-align gains the flex properties that superseded it, and js.ui.css-animation-preference gains the css animation recipe it was recommending all along."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the stated alias change and the new edges are applied.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L9, L48, L169-L170, L358-L365, L377-L378, L406-L407, L464-L466, L474, L478, L486, L554",
+        "reason_code": "course-link-external-reference-or-personal-note",
+        "detail": "The course link, the section captions, the lists of outside articles the author bookmarked, the author's own note that they could not tell the kit and cdn methods apart, and the running commentary on their practice files."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 20655,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 151,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 12,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 12,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 28,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_transfer_note": {
+    "key": "one-way 애니메이션",
+    "from": "js.ui.carousel",
+    "to": "css.animation.one-way",
+    "rationale": "The carousel took the phrase in batch 41 because it was the only place the term appeared. The recipe it names now has its own concept, so the name moves and the carousel keeps a descriptive alias."
+  },
+  "alias_yield_note": {
+    "keys": [
+      "Utility class",
+      "overflow"
+    ],
+    "incumbents": [
+      "css.naming.oocss",
+      "java.type.overflow"
+    ],
+    "disposition": "Bootstrap's utility classes are an instance of the naming idea OOCSS already holds the term for, so they are aliased as 부트스트랩 유틸리티 클래스. The css property is titled overflow 속성 because the bare word belongs to the numeric overflow concept in the java namespace, which is an unrelated meaning."
+  },
+  "candidates_authored": 28,
+  "candidates": [
+    {
+      "concept_id": "css.layout.box-sizing",
+      "title": "width가 가리키는 영역",
+      "aliases": [
+        "box-sizing border-box",
+        "content-box",
+        "패딩과 테두리는 포함되지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/box-sizing.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single default that catches everyone out - the declared width covers only the content, so padding and border are added on top of it and the box comes out wider than asked for, until the box is told to count them inside the width instead",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain",
+        "lecture-batch-44"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.layout.margin-collapse",
+        "css.reset.normalize",
+        "css.layout.float",
+        "css.framework.bootstrap-pill-badge"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### width의 영역에 관한 문제",
+          "start_line": 290,
+          "end_line": 296
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.vertical-align",
+      "title": "vertical-align",
+      "aliases": [
+        "inline 요소의 세로 정렬",
+        "div에는 통하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/vertical-align.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single property aligning inline and inline-block elements against each other vertically, and cells in a table - which is why it does nothing when tried on block boxes, and why an image and its caption have to be made inline first for it to work",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain",
+        "lecture-batch-44"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.layout.position",
+        "css.layout.float",
+        "html.table.table-structure",
+        "css.layout.flex",
+        "css.framework.bootstrap-align"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### vertical-align 속성",
+          "start_line": 359,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.css-animation-preference",
+      "title": "애니메이션은 CSS로 주는 편이 낫다",
+      "aliases": [
+        "visibility hidden이 낫다",
+        "자바스크립트 애니메이션의 한계"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/css-animation-preference.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single preference for doing the movement in css rather than in script, and for hiding with visibility rather than display when something is going to be animated",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-44",
+        "frontend/apple-html"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.library.jquery-effect",
+        "js.ui.show-hide-pattern",
+        "css.animation.one-way",
+        "css.layout.overflow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## UI에 애니메이션 추가",
+          "start_line": 359,
+          "end_line": 359
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## UI에 애니메이션 추가",
+          "start_line": 365,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.carousel",
+      "title": "캐러셀",
+      "aliases": [
+        "이미지 슬라이드",
+        "translateX",
+        "한 방향으로만 흐르는 슬라이드"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/carousel.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single build order for a sliding image strip - draw the before state, draw the after state, decide in script when it changes, then add the transition - where the strip is as wide as all its slides together with the overflow hidden, the movement is a transform rather than a margin because that performs better, and a previous and next button need a variable holding which slide is current",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-44",
+        "frontend/apple-html"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.ui.show-hide-pattern",
+        "js.ui.css-animation-preference",
+        "js.basic.variable",
+        "css.animation.one-way"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 211,
+          "end_line": 217
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 239,
+          "end_line": 242
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 248,
+          "end_line": 248
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 262,
+          "end_line": 263
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 288,
+          "end_line": 288
+        }
+      ]
+    },
+    {
+      "concept_id": "css.font.font-family",
+      "title": "font-family",
+      "aliases": [
+        "폰트 여러 개를 나열하는 이유",
+        "왼쪽부터 적용"
+      ],
+      "canonical_path": "content/brain/knowledge/css/font/font-family.md",
+      "tags": [
+        "css",
+        "font"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single declaration naming which font to use, written in english to avoid trouble and listing several so that if the first is not installed on the visitor's machine the next is tried",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.font.web-font",
+        "css.font.google-fonts",
+        "css.font.anti-aliasing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 폰트 설정법",
+          "start_line": 15,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "concept_id": "css.font.web-font",
+      "title": "웹 폰트",
+      "aliases": [
+        "@font-face",
+        "woff는 ttf의 3분의 1"
+      ],
+      "canonical_path": "content/brain/knowledge/css/font/web-font.md",
+      "tags": [
+        "css",
+        "font"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to use a font the visitor does not have - the file is served with the site and declared at the top of the stylesheet with a path and a name, in a format made for the web that is a third the size of the desktop one",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.font.font-family",
+        "css.font.google-fonts"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 폰트 설정법",
+          "start_line": 35,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "css.font.google-fonts",
+      "title": "Google Fonts",
+      "aliases": [
+        "폰트를 직접 링크",
+        "트래픽 절약",
+        "이미 캐싱되어 있다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/font/google-fonts.md",
+      "tags": [
+        "css",
+        "font"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative to hosting the file - the font is linked from google's servers instead, which saves the site's own bandwidth and is often already cached in the visitor's browser from some other site",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.font.web-font",
+        "css.font.font-family",
+        "css.icon.font-awesome"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 폰트 설정법",
+          "start_line": 50,
+          "end_line": 60
+        }
+      ]
+    },
+    {
+      "concept_id": "css.font.anti-aliasing",
+      "title": "폰트 앤티앨리어싱",
+      "aliases": [
+        "각진 픽셀을 부드럽게",
+        "맥과 윈도우의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/css/font/anti-aliasing.md",
+      "tags": [
+        "css",
+        "font"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique smoothing the stepped edges of glyph pixels, done automatically on one operating system and not on another - which is why the same page looks rougher on one of them",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.font.font-family",
+        "css.reset.normalize"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 폰트 Anti-aliasing",
+          "start_line": 66,
+          "end_line": 72
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.flex",
+      "title": "flex",
+      "aliases": [
+        "display flex",
+        "justify-content",
+        "align-items",
+        "flex-wrap"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/flex.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single layout mode declared on the parent, after which its children line up along one axis - horizontally by default and vertically if told - spaced by a property that pushes them to one end, to the centre or apart, wrapped to the next line when they no longer fit, and centred across the other axis by its own property; a width given to a flex child is a ceiling rather than a fixed size",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.layout.flex-grow",
+        "css.layout.float",
+        "css.layout.vertical-align",
+        "css.framework.bootstrap-grid"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## flex",
+          "start_line": 90,
+          "end_line": 102
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## flex",
+          "start_line": 120,
+          "end_line": 124
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.flex-grow",
+      "title": "flex-grow",
+      "aliases": [
+        "픽셀 대신 비율",
+        "1대 2대 1"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/flex-grow.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property giving a flex child a share of the space rather than a size, so three children set to one, two and one divide the row in that proportion - which is how a navbar's middle is made to take up the slack",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.flex",
+        "css.unit.viewport-unit",
+        "css.framework.bootstrap-grid"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## flex",
+          "start_line": 139,
+          "end_line": 143
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## flex",
+          "start_line": 155,
+          "end_line": 155
+        }
+      ]
+    },
+    {
+      "concept_id": "html.head.head-tag",
+      "title": "head 태그",
+      "aliases": [
+        "눈에 보이지 않는 정보",
+        "link로 css 첨부",
+        "style 태그"
+      ],
+      "canonical_path": "content/brain/knowledge/html/head/head-tag.md",
+      "tags": [
+        "html",
+        "head"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single part of the document holding what the page needs but does not show - the stylesheet it links to by relative or absolute path, styles written inline which work anywhere but flash unstyled content if put lower down, and the title the browser tab shows",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.head.meta-tag",
+        "html.head.favicon",
+        "js.dom.script-loading"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 176,
+          "end_line": 176
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 180,
+          "end_line": 182
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 188,
+          "end_line": 190
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 194,
+          "end_line": 195
+        }
+      ]
+    },
+    {
+      "concept_id": "html.head.meta-tag",
+      "title": "meta 태그",
+      "aliases": [
+        "charset",
+        "description과 keywords",
+        "viewport",
+        "width=device-width"
+      ],
+      "canonical_path": "content/brain/knowledge/html/head/meta-tag.md",
+      "tags": [
+        "html",
+        "head"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of declarations about the page rather than in it - which character encoding it uses, the sentence a search result shows beneath its title, the keywords that help it be found, and the viewport line telling a phone to render at its real width and at what zoom",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.head.head-tag",
+        "html.head.open-graph",
+        "css.responsive.media-query"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 199,
+          "end_line": 199
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 210,
+          "end_line": 226
+        }
+      ]
+    },
+    {
+      "concept_id": "html.head.open-graph",
+      "title": "Open Graph",
+      "aliases": [
+        "og 메타 태그",
+        "링크 공유했을 때 뜨는 박스"
+      ],
+      "canonical_path": "content/brain/knowledge/html/head/open-graph.md",
+      "tags": [
+        "html",
+        "head"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of meta tags, originally facebook's, that decide the image, title and description shown in the preview box when the link is pasted into a messenger or a social site",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.head.meta-tag",
+        "html.head.favicon"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 240,
+          "end_line": 244
+        }
+      ]
+    },
+    {
+      "concept_id": "html.head.favicon",
+      "title": "파비콘",
+      "aliases": [
+        "탭 제목 옆 아이콘",
+        "32 x 32",
+        "apple-touch-icon"
+      ],
+      "canonical_path": "content/brain/knowledge/html/head/favicon.md",
+      "tags": [
+        "html",
+        "head"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single small icon shown beside the tab's title, best supplied in the icon format for compatibility and at the conventional size - with a separate declaration per operating system for the icon used when the site is pinned to a home screen",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.head.head-tag",
+        "html.head.open-graph"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## HTML head 태그",
+          "start_line": 258,
+          "end_line": 270
+        }
+      ]
+    },
+    {
+      "concept_id": "css.unit.viewport-unit",
+      "title": "vw와 vh",
+      "aliases": [
+        "브라우저 폭에 비례",
+        "브라우저 높이에 비례"
+      ],
+      "canonical_path": "content/brain/knowledge/css/unit/viewport-unit.md",
+      "tags": [
+        "css",
+        "unit"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of units measured as a percentage of the browser window's width and height rather than in pixels",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.unit.rem-em",
+        "css.responsive.media-query",
+        "js.ui.carousel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## **반응형 웹**",
+          "start_line": 278,
+          "end_line": 284
+        }
+      ]
+    },
+    {
+      "concept_id": "css.unit.rem-em",
+      "title": "rem과 em",
+      "aliases": [
+        "기본 폰트사이즈에 비례",
+        "내 폰트 사이즈의 몇 배"
+      ],
+      "canonical_path": "content/brain/knowledge/css/unit/rem-em.md",
+      "tags": [
+        "css",
+        "unit"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of units measured against a font size - one against the document's root size, which is sixteen pixels unless changed, and one against the element's own - so sizing everything in the first makes the whole page scale together when that root size moves",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.unit.viewport-unit",
+        "css.font.font-family",
+        "css.responsive.media-query"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## **반응형 웹**",
+          "start_line": 290,
+          "end_line": 296
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## **반응형 웹**",
+          "start_line": 302,
+          "end_line": 302
+        }
+      ]
+    },
+    {
+      "concept_id": "css.responsive.media-query",
+      "title": "미디어 쿼리",
+      "aliases": [
+        "브라우저 폭이 얼마 이하일 때",
+        "breakpoint",
+        "1200 992 768 576"
+      ],
+      "canonical_path": "content/brain/knowledge/css/responsive/media-query.md",
+      "tags": [
+        "css",
+        "responsive"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single construct applying a block of rules only when the window is within a given width, which is what a responsive site is built from - conventionally broken at four widths standing roughly for desktop, tablet and phone - and which does nothing on a phone unless the viewport meta tag is present",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.head.meta-tag",
+        "css.unit.viewport-unit",
+        "css.unit.rem-em",
+        "css.framework.bootstrap-grid"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## **반응형 웹**",
+          "start_line": 306,
+          "end_line": 306
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## **반응형 웹**",
+          "start_line": 314,
+          "end_line": 314
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## **반응형 웹**",
+          "start_line": 324,
+          "end_line": 324
+        }
+      ]
+    },
+    {
+      "concept_id": "css.debug.specificity-score",
+      "title": "CSS 우선순위 점수",
+      "aliases": [
+        "important 10000점",
+        "id 100점",
+        "class 10점",
+        "태그 1점"
+      ],
+      "canonical_path": "content/brain/knowledge/css/debug/specificity-score.md",
+      "tags": [
+        "css",
+        "debug"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ranking that decides which of two conflicting rules wins - the important marker above everything, then a style written on the element, then a rule selecting by id, then by class, then by tag name",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.legacy.override-strategy",
+        "css.debug.chrome-devtools",
+        "css.selector.combinator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 크롬 개발자 도구 (디버깅)",
+          "start_line": 334,
+          "end_line": 342
+        }
+      ]
+    },
+    {
+      "concept_id": "css.debug.chrome-devtools",
+      "title": "개발자 도구로 스타일 확인하기",
+      "aliases": [
+        "적용중인 스타일을 맨 위에",
+        "animations 탭"
+      ],
+      "canonical_path": "content/brain/knowledge/css/debug/chrome-devtools.md",
+      "tags": [
+        "css",
+        "debug"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single first move when a style does not take - open the inspector, which shows the rule actually in effect at the top rather than hunting through the files - and which will also replay another site's animation to show which properties it moved",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.debug.specificity-score",
+        "css.animation.one-way",
+        "js.debug.common-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 크롬 개발자 도구 (디버깅)",
+          "start_line": 330,
+          "end_line": 332
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 애니메이션 만드는 원리",
+          "start_line": 415,
+          "end_line": 415
+        }
+      ]
+    },
+    {
+      "concept_id": "css.icon.font-awesome",
+      "title": "Font Awesome",
+      "aliases": [
+        "아이콘을 폰트처럼",
+        "Kit 방식",
+        "CDN 방식"
+      ],
+      "canonical_path": "content/brain/knowledge/css/icon/font-awesome.md",
+      "tags": [
+        "css",
+        "icon"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single icon set used as though it were a font, so an icon is sized and coloured like text - loaded through a kit issued to an account, through a content delivery network, or from a stylesheet downloaded into the project, the last being the one that survives the provider's servers going down",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.font.google-fonts",
+        "css.font.font-family",
+        "css.framework.bootstrap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Font Awesome",
+          "start_line": 348,
+          "end_line": 348
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Font Awesome",
+          "start_line": 354,
+          "end_line": 356
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Font Awesome",
+          "start_line": 369,
+          "end_line": 369
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Font Awesome",
+          "start_line": 373,
+          "end_line": 373
+        }
+      ]
+    },
+    {
+      "concept_id": "css.animation.one-way",
+      "title": "one-way 애니메이션",
+      "aliases": [
+        "시작 스타일과 최종 스타일",
+        "transition 속성"
+      ],
+      "canonical_path": "content/brain/knowledge/css/animation/one-way.md",
+      "tags": [
+        "css",
+        "animation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single four-step recipe for animating in css - write the starting style, write the ending style, decide what triggers the change such as a hover, and declare the transition that carries one into the other",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.ui.css-animation-preference",
+        "css.debug.chrome-devtools",
+        "css.layout.overflow",
+        "js.ui.scroll-animation-linear"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 애니메이션 만드는 원리",
+          "start_line": 386,
+          "end_line": 391
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 애니메이션 만드는 원리",
+          "start_line": 395,
+          "end_line": 395
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.overflow",
+      "title": "overflow 속성",
+      "aliases": [
+        "흘러넘치는 것 숨기기",
+        "overflow hidden"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/overflow.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property saying what happens to content larger than the box holding it - hidden being what an animation sliding something in from outside relies on",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.animation.one-way",
+        "css.layout.box-sizing",
+        "js.ui.carousel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## 애니메이션 만드는 원리",
+          "start_line": 411,
+          "end_line": 411
+        }
+      ]
+    },
+    {
+      "concept_id": "css.framework.bootstrap",
+      "title": "Bootstrap",
+      "aliases": [
+        "cdn 붙여넣기",
+        "부트스트랩 유틸리티 클래스",
+        "container 클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/css/framework/bootstrap.md",
+      "tags": [
+        "css",
+        "framework"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single stylesheet and script pair, pasted in as links, that comes with ready components - a navbar, a card, a carousel, a modal - and with utility classes naming a margin, a padding, a centring, a font size or a width directly in the markup, so the common cases need no stylesheet of one's own",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.naming.oocss",
+        "css.framework.bootstrap-grid",
+        "css.icon.font-awesome",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap",
+          "start_line": 421,
+          "end_line": 423
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap",
+          "start_line": 427,
+          "end_line": 434
+        }
+      ]
+    },
+    {
+      "concept_id": "css.framework.bootstrap-grid",
+      "title": "Bootstrap의 반응형 그리드",
+      "aliases": [
+        "row와 col",
+        "한 행 12칸",
+        "모바일 화면을 먼저 설계"
+      ],
+      "canonical_path": "content/brain/knowledge/css/framework/bootstrap-grid.md",
+      "tags": [
+        "css",
+        "framework"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single grid dividing each row into twelve columns that a child claims some number of, where appending a breakpoint to the class name makes that claim apply only from that width up - which is why the phone layout is the one to design first",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.framework.bootstrap",
+        "css.responsive.media-query",
+        "css.layout.flex-grow",
+        "css.framework.bootstrap-align"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap",
+          "start_line": 445,
+          "end_line": 445
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap",
+          "start_line": 459,
+          "end_line": 459
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap",
+          "start_line": 463,
+          "end_line": 463
+        }
+      ]
+    },
+    {
+      "concept_id": "css.framework.bootstrap-align",
+      "title": "Bootstrap의 정렬과 순서",
+      "aliases": [
+        "align-items 유틸리티",
+        "order 클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/css/framework/bootstrap-align.md",
+      "tags": [
+        "css",
+        "framework"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of utilities for the cross-axis - aligning flex children vertically without writing the property, and reordering them with a class that itself takes a breakpoint so the order can differ on a phone",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.framework.bootstrap-grid",
+        "css.layout.flex",
+        "css.layout.vertical-align"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap > ### Bootstrap 수직정렬",
+          "start_line": 482,
+          "end_line": 482
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap > ### Bootstrap 수직정렬",
+          "start_line": 490,
+          "end_line": 490
+        }
+      ]
+    },
+    {
+      "concept_id": "css.framework.bootstrap-pill-badge",
+      "title": "알약 배지가 깨질 때",
+      "aliases": [
+        "pill badge",
+        "box-sizing 확인"
+      ],
+      "canonical_path": "content/brain/knowledge/css/framework/bootstrap-pill-badge.md",
+      "tags": [
+        "css",
+        "framework"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single case where a rounded badge comes out misshapen, the cause being the box model setting rather than the component itself",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "css.layout.box-sizing",
+        "css.framework.bootstrap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## Bootstrap > ### Bootstrap pill badge",
+          "start_line": 496,
+          "end_line": 496
+        }
+      ]
+    },
+    {
+      "concept_id": "css.legacy.override-strategy",
+      "title": "기존 CSS를 덮어쓰는 세 가지 방법",
+      "aliases": [
+        "아래에 있는 것이 이긴다",
+        "specificity 높이기",
+        "우선순위는 급할 때만"
+      ],
+      "canonical_path": "content/brain/knowledge/css/legacy/override-strategy.md",
+      "tags": [
+        "css",
+        "legacy"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of ways to change a stylesheet one may not edit - link a second one after it, since between equal rules the later wins even across files; raise the rule's rank, which works but cannot be repeated forever and so is for emergencies; or write a more specific selector, which is why a selector written too precisely in the first place is hard to override later and why a single class name is the better start",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.debug.specificity-score",
+        "css.quality.good-code",
+        "css.naming.oocss",
+        "css.selector.combinator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 502,
+          "end_line": 506
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 508,
+          "end_line": 508
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 523,
+          "end_line": 523
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 527,
+          "end_line": 527
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 535,
+          "end_line": 535
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 539,
+          "end_line": 539
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 568,
+          "end_line": 568
+        }
+      ]
+    },
+    {
+      "concept_id": "css.quality.good-code",
+      "title": "좋은 CSS 코드의 기준",
+      "aliases": [
+        "수정과 관리가 쉬운 코드",
+        "확장성이 좋은 코드"
+      ],
+      "canonical_path": "content/brain/knowledge/css/quality/good-code.md",
+      "tags": [
+        "css",
+        "quality"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of criteria the course settles on - stylesheet code is good when it is easy to change later and easy to extend, which comes to the same thing as being reusable",
+      "pilot_strata": [
+        "lecture-batch-44",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.legacy.override-strategy",
+        "css.naming.oocss",
+        "css.naming.convention-tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-mid.md",
+          "source_sha256": "60a3284dbdbf0d77c83f291b1971692242479f167c3256283dbebb4618a9a093",
+          "heading": "## CSS 레거시 코드 수정 방법",
+          "start_line": 572,
+          "end_line": 577
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

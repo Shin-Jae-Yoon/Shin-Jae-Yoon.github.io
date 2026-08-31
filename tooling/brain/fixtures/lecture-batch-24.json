@@ -1,0 +1,935 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-24",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-23",
+    "applied_state": "522 approved knowledge concepts after lecture-batch-23 completed fun-java05."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+        "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642"
+      }
+    ],
+    "line_range": "L11-L938 (whole file)",
+    "series": "즐거운 자바 (fun-java) 6/11 — 배열과 Arrays 클래스"
+  },
+  "overlap_analysis": {
+    "finding": "The array concepts themselves are applied from the do-it-java book, so 8 of 18 candidates are updates.",
+    "disposition": "The 10 creates are what the book did not carry: the index-out-of-bounds failure, the Arrays utility class and its copy, sort and binary-search members, Comparable and Comparator as the two places an ordering can live, command-line arguments, the exit code and varargs."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7, L25-128, L178-206, L262-364, L425-470 partial, L519-548 partial, L623-706 partial, L717-806 partial, L827-847, L902-938 partial",
+        "reason_code": "code-listing-caption-or-carried-by-owner",
+        "detail": "Collapsed code-example blocks, IDE configuration screenshots and walkthrough lines whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in fun-java06 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 126,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 21,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 18,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 18,
+  "candidates": [
+    {
+      "concept_id": "java.array.array",
+      "title": "배열",
+      "aliases": [
+        "Array",
+        "자바 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/java-array.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single fixed-length contiguous Java array construct",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-23",
+        "pl/fun-java",
+        "lecture-batch-24"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array-copy",
+        "java.array.array-length",
+        "java.array.object-array",
+        "java.array.two-dimensional-array",
+        "java.collection.array-list",
+        "java.control-flow.enhanced-for",
+        "java.oop.abstract-class-array",
+        "java.util.arrays-class",
+        "java.exception.array-index-out-of-bounds"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 선언과 초기화",
+          "start_line": 19,
+          "end_line": 70
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 사용하기",
+          "start_line": 71,
+          "end_line": 84
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 문자 저장 배열 만들기",
+          "start_line": 142,
+          "end_line": 172
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### 로또 번호 생성기 실습",
+          "start_line": 841,
+          "end_line": 849
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열",
+          "start_line": 13,
+          "end_line": 14
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열",
+          "start_line": 17,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array-length",
+      "title": "배열 길이와 유효 요소",
+      "aliases": [
+        "Array Length",
+        "유효 요소 개수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/array-length.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single distinction between allocated array length and populated element count",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-24",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.collection.array-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 전체 배열 길이와 유효한 요소 값",
+          "start_line": 85,
+          "end_line": 141
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열 > ### length",
+          "start_line": 234,
+          "end_line": 235
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.object-array",
+      "title": "객체 배열",
+      "aliases": [
+        "Object Array",
+        "참조 자료형 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/object-array.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java array form whose elements store object references",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-24",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.array-copy",
+        "java.collection.array-list",
+        "java.memory.object-reference",
+        "java.type.reference-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 객체 배열 사용",
+          "start_line": 173,
+          "end_line": 292
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열 > ### 참조형 배열",
+          "start_line": 134,
+          "end_line": 135
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열 > ### 참조형 배열",
+          "start_line": 171,
+          "end_line": 172
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.two-dimensional-array",
+      "title": "이차원 배열",
+      "aliases": [
+        "Two-dimensional Array",
+        "2D Array"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/two-dimensional-array.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single row-and-column Java array structure",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "low-evidence-scope",
+        "lecture-batch-24",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 다차원 배열 > ### 이차원 배열",
+          "start_line": 538,
+          "end_line": 575
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열 > ### 이차원 배열",
+          "start_line": 301,
+          "end_line": 301
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열 > ### 이차원 배열",
+          "start_line": 328,
+          "end_line": 328
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array-copy",
+      "title": "배열 복사",
+      "aliases": [
+        "Array Copy",
+        "얕은 복사",
+        "깊은 복사",
+        "Shallow Copy",
+        "Deep Copy"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/array-copy.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java array-copy mechanism including value, shallow-reference, and deep-object copy behavior",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-24",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.object-array",
+        "java.memory.object-reference",
+        "java.util.arrays-copy-of"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 복사하기",
+          "start_line": 293,
+          "end_line": 340
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 객체 배열 복사",
+          "start_line": 341,
+          "end_line": 499
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### 얕은복사 vs 깊은복사",
+          "start_line": 510,
+          "end_line": 513
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.enhanced-for",
+      "title": "향상된 for 문",
+      "aliases": [
+        "Enhanced for Loop",
+        "for-each Loop",
+        "향상된 for문"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/enhanced-for.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java iteration form for sequential element traversal",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "low-evidence-scope",
+        "lecture-batch-24",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 향상된 for문과 배열",
+          "start_line": 500,
+          "end_line": 535
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열 > ### for each문",
+          "start_line": 378,
+          "end_line": 378
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.lambda-interface",
+      "title": "람다 인터페이스",
+      "aliases": [
+        "Lambda Interface",
+        "함수형 인터페이스",
+        "람다 표현식"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/lambda-interface.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface carrying exactly one method, which is what lets an anonymous object be shortened into a lambda expression - a JDK 8 addition and part of what modern Java means, especially alongside the Stream API",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-24"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.anonymous-class",
+        "java.language.modern-java",
+        "java.oop.interface",
+        "java.oop.comparator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 익명 클래스 > ### 람다 인터페이스",
+          "start_line": 1167,
+          "end_line": 1172
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### 람다 인터페이스",
+          "start_line": 757,
+          "end_line": 758
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.null-pointer-exception",
+      "title": "NullPointerException",
+      "aliases": [
+        "NPE",
+        "널 포인터 예외"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/null-pointer-exception.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single failure raised when a method is called through a reference that is null, which is what an uninitialized reference field holds",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-24"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.field-default-value",
+        "java.memory.object-reference",
+        "java.type.reference-type",
+        "java.exception.array-index-out-of-bounds"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### NullPointerException",
+          "start_line": 150,
+          "end_line": 155
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열",
+          "start_line": 15,
+          "end_line": 16
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.array-index-out-of-bounds",
+      "title": "ArrayIndexOutOfBoundsException",
+      "aliases": [
+        "배열 범위 초과",
+        "인덱스 범위 예외"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/array-index-out-of-bounds.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure raised when an index falls outside the room the array was initialized with",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.array-length",
+        "java.exception.null-pointer-exception"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 배열 > ### ArrayIndexOutOfBoundsException",
+          "start_line": 257,
+          "end_line": 257
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.arrays-class",
+      "title": "Arrays 클래스",
+      "aliases": [
+        "java.util.Arrays",
+        "배열 유틸리티"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/arrays-class.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single utility class the platform ships for working on arrays, whose members are called through the class name",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.method.static-method",
+        "java.util.arrays-sort",
+        "java.util.arrays-copy-of"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays",
+          "start_line": 417,
+          "end_line": 419
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.arrays-copy-of",
+      "title": "Arrays.copyOf()",
+      "aliases": [
+        "copyOfRange()",
+        "배열 복사와 참조의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/arrays-copy-of.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single copy producing a genuinely different array instance - so it is never equal by reference to its source, unlike an assignment which only makes a second name for the same array - with a range form copying from a start index up to but not including an end index",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-class",
+        "java.array.array-copy",
+        "java.memory.object-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### copyOf()",
+          "start_line": 425,
+          "end_line": 425
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### copyOf()",
+          "start_line": 472,
+          "end_line": 477
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### copyOfRange()",
+          "start_line": 485,
+          "end_line": 487
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.arrays-sort",
+      "title": "Arrays.sort()",
+      "aliases": [
+        "DualPivotQuickSort",
+        "배열 오름차순 정렬"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/arrays-sort.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single in-place ascending sort implemented as a dual-pivot quicksort that splits into three regions and mixes in insertion sort, running in n log n on average and quadratic at worst",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-class",
+        "java.oop.comparable",
+        "java.oop.comparator",
+        "java.util.arrays-binary-search"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### sort()",
+          "start_line": 550,
+          "end_line": 559
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.arrays-binary-search",
+      "title": "Arrays.binarySearch()",
+      "aliases": [
+        "이진 탐색",
+        "Insertion Point"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/arrays-binary-search.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single binary search over a sorted array returning the key's index when found, and otherwise minus the insertion point minus one, where the insertion point is the first position holding something larger",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-sort",
+        "java.util.arrays-class",
+        "java.array.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### binarySearch()",
+          "start_line": 587,
+          "end_line": 594
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.comparable",
+      "title": "Comparable",
+      "aliases": [
+        "compareTo()",
+        "정렬 기준 내부 구현"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/comparable.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface by which a class states its own ordering, overriding compareTo to compare itself against another of the same type and returning positive, zero or negative - which is what sorting an object array requires",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.comparator",
+        "java.util.arrays-sort",
+        "java.oop.interface",
+        "java.util.string-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable",
+          "start_line": 619,
+          "end_line": 623
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### Item 내부 Comparable 구현",
+          "start_line": 669,
+          "end_line": 672
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### Item 내부 Comparable 구현",
+          "start_line": 706,
+          "end_line": 711
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.comparator",
+      "title": "Comparator",
+      "aliases": [
+        "compare()",
+        "정렬 기준 외부 구현"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/comparator.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface holding the ordering outside the class being ordered, passed alongside the array so a second criterion does not require editing the class or commenting out the first",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.comparable",
+        "java.util.arrays-sort",
+        "java.oop.lambda-interface",
+        "java.oop.anonymous-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### Item 외부 Comparator 구현",
+          "start_line": 717,
+          "end_line": 717
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### Item 외부 Comparator 구현",
+          "start_line": 749,
+          "end_line": 751
+        }
+      ]
+    },
+    {
+      "concept_id": "java.entry-point.command-line-arguments",
+      "title": "명령행 아규먼트",
+      "aliases": [
+        "Command-Line Arguments",
+        "String[] args",
+        "프로그램 아규먼트"
+      ],
+      "canonical_path": "content/brain/knowledge/java/entry-point/command-line-arguments.md",
+      "tags": [
+        "java",
+        "entry-point"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single string array the JVM hands the entry point, filled by splitting what follows the class name on whitespace unless quoted, and distinct from the JVM options that precede the class name",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.entry-point.main-method",
+        "java.array.array",
+        "java.runtime.jvm",
+        "java.entry-point.exit-code"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 명령행 아규먼트 args",
+          "start_line": 810,
+          "end_line": 813
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 명령행 아규먼트 args",
+          "start_line": 836,
+          "end_line": 843
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 명령행 아규먼트 args",
+          "start_line": 852,
+          "end_line": 854
+        }
+      ]
+    },
+    {
+      "concept_id": "java.entry-point.exit-code",
+      "title": "종료 코드",
+      "aliases": [
+        "System.exit()",
+        "Exit Status",
+        "0이면 성공"
+      ],
+      "canonical_path": "content/brain/knowledge/java/entry-point/exit-code.md",
+      "tags": [
+        "java",
+        "entry-point"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single integer a program reports on exit so a shell script combining small commands can tell whether each succeeded, zero meaning success by convention",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.entry-point.command-line-arguments",
+        "java.entry-point.main-method",
+        "cs.os.operating-system"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 명령행 아규먼트 args > ### System.exit()의 의미",
+          "start_line": 883,
+          "end_line": 892
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.varargs",
+      "title": "제한없는 아규먼트",
+      "aliases": [
+        "Varargs",
+        "가변 인자",
+        "int... args"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/varargs.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single parameter form accepting any number of values of one type, which the method then handles as an array",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.parameter-vs-argument",
+        "java.array.array",
+        "java.oop.method-overloading"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 명령행 아규먼트 args > ### 제한없는 아규먼트",
+          "start_line": 899,
+          "end_line": 901
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## 명령행 아규먼트 args > ### 제한없는 아규먼트",
+          "start_line": 938,
+          "end_line": 938
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

@@ -1,0 +1,936 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-56",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-55",
+    "applied_state": "1130 approved knowledge concepts after lecture-batch-55 closed the funny-python series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+        "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e"
+      },
+      {
+        "path": "content/brain/lectures/etc/apple-git/index.md",
+        "source_sha256": "a8048692599d78b327227f755fceb318c2dc889163d0cc6d15b07c46ee0d6724"
+      }
+    ],
+    "line_range": "git-and-github L88-L729, index whole",
+    "series": "코딩애플 git and github"
+  },
+  "overlap_analysis": {
+    "finding": "A new namespace with almost no neighbours - nothing applied describes version control. The one point of contact is the ignore file, whose usual contents are the dependency tree the spring build concept describes being fetched.",
+    "disposition": "All new under git, in basic, branch, merge, undo, remote, strategy and stash. No update candidate: the applied concepts this touches make different claims and take an edge from the create instead."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "This batch carries no update candidate, so nothing applied is re-rendered.",
+    "tooling": "Not applicable."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8, L12-L88",
+        "reason_code": "environment-setup-instruction",
+        "detail": "The course link and the whole install section - which installer options to tick on each operating system, which editor to configure, and the author's own current settings. Steps to follow, not claims, and dated by the tool versions they name."
+      },
+      {
+        "span": "L141-L153, L344-L410, L426-L432 partial, L446-L452, L475-L477, L573-L581 partial, L607-L625 partial, L723",
+        "reason_code": "tool-walkthrough-figure-caption-or-carried-by-owner",
+        "detail": "The numbered tour of the editor's version control buttons, the four hands-on sections replaying each merge strategy against screenshots, the worked example of reverting a particular commit, and the captions announcing an image."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope from the command section onward contributes at least one cited locator. The setup section and the four practice sections contribute none, for the reasons recorded above; index.md is a directory file."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 24222,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 164,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 32,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 30,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 20,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes apple-git - the course is one file and it is now mined.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 20,
+  "candidates": [
+    {
+      "concept_id": "git.basic.staging-area",
+      "title": "스테이징",
+      "aliases": [
+        "작업폴더 staging area repository",
+        "git add의 두 가지 용도"
+      ],
+      "canonical_path": "content/brain/knowledge/git/basic/staging-area.md",
+      "tags": [
+        "git",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single middle place between the working directory and the repository - choosing which changed files go into it is what staging means, and the same command both starts tracking a new file and marks a modified one as staged",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.basic.diff",
+        "git.undo.restore",
+        "git.stash.stash"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 명령어 > ### 기본 명령어",
+          "start_line": 105,
+          "end_line": 109
+        }
+      ]
+    },
+    {
+      "concept_id": "git.basic.diff",
+      "title": "변경점 보기",
+      "aliases": [
+        "git diff",
+        "difftool",
+        "git graph 확장"
+      ],
+      "canonical_path": "content/brain/knowledge/git/basic/diff.md",
+      "tags": [
+        "git",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of ways to see what changed since a commit - the built-in one in the pager, which counts even a stray newline as a difference, the external tool form which can compare against a named commit, and the editor extension that is easier than either",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.basic.staging-area",
+        "git.basic.log-alias",
+        "git.undo.restore"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 명령어 > ### git diff",
+          "start_line": 115,
+          "end_line": 129
+        }
+      ]
+    },
+    {
+      "concept_id": "git.branch.branch-basics",
+      "title": "브랜치와 병합의 기본",
+      "aliases": [
+        "merge는 HEAD에 병합한다",
+        "switch와 checkout의 차이",
+        "충돌 해결 후 add와 commit"
+      ],
+      "canonical_path": "content/brain/knowledge/git/branch/branch-basics.md",
+      "tags": [
+        "git",
+        "branch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of habits around branching - a merge brings the named branch into wherever the head currently is, so the move has to come first; a conflict is resolved by editing and then staging and committing like any other change; and the narrower command that only moves between branches is preferred to the older one that does everything",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.merge.three-way",
+        "git.merge.fast-forward",
+        "git.branch.start-point",
+        "git.basic.log-alias"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 명령어 > ### git branch",
+          "start_line": 172,
+          "end_line": 176
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 명령어 > ### git branch",
+          "start_line": 184,
+          "end_line": 184
+        }
+      ]
+    },
+    {
+      "concept_id": "git.basic.log-alias",
+      "title": "로그 명령을 별칭으로",
+      "aliases": [
+        "git hist",
+        "alias 기능",
+        "origin/master까지가 올린 것"
+      ],
+      "canonical_path": "content/brain/knowledge/git/basic/log-alias.md",
+      "tags": [
+        "git",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single convenience of naming a long log invocation once and calling it by a short name, whose output shows the date, the message, the author and the branches - the remote-tracking name marking how far what is here has been pushed",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.basic.diff",
+        "git.branch.branch-basics",
+        "git.remote.push"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 명령어 > ### git hist",
+          "start_line": 213,
+          "end_line": 213
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 명령어 > ### git hist",
+          "start_line": 221,
+          "end_line": 225
+        }
+      ]
+    },
+    {
+      "concept_id": "git.merge.three-way",
+      "title": "3-way merge",
+      "aliases": [
+        "양쪽에 새 커밋이 있을 때",
+        "merge 흔적이 남는다"
+      ],
+      "canonical_path": "content/brain/knowledge/git/merge/three-way.md",
+      "tags": [
+        "git",
+        "merge"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single merge for when both branches have moved on - the two sets of changes are combined into a new commit, which is the trace it leaves, and doing it for every branch makes the history a thicket in which the merged branches' commits all reappear",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.merge.fast-forward",
+        "git.merge.squash",
+        "git.merge.rebase",
+        "git.merge.strategy-choice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### 3-way merge",
+          "start_line": 237,
+          "end_line": 241
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### 3-way merge",
+          "start_line": 245,
+          "end_line": 253
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### 3-way merge",
+          "start_line": 255,
+          "end_line": 255
+        }
+      ]
+    },
+    {
+      "concept_id": "git.merge.fast-forward",
+      "title": "fast-forward merge",
+      "aliases": [
+        "한쪽에만 새 커밋이 있을 때",
+        "이름만 옮겨간다",
+        "--no-ff로 강제"
+      ],
+      "canonical_path": "content/brain/knowledge/git/merge/fast-forward.md",
+      "tags": [
+        "git",
+        "merge"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single merge available when only one side has moved - nothing is combined, the target branch's name simply advances to where the other one is, so no trace of a merge remains unless one is forced",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.merge.three-way",
+        "git.merge.rebase",
+        "git.branch.branch-basics"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### fast-forward merge",
+          "start_line": 263,
+          "end_line": 269
+        }
+      ]
+    },
+    {
+      "concept_id": "git.merge.rebase",
+      "title": "rebase",
+      "aliases": [
+        "브랜치의 시작점을 옮긴다",
+        "충돌 가능성이 높아진다"
+      ],
+      "canonical_path": "content/brain/knowledge/git/merge/rebase.md",
+      "tags": [
+        "git",
+        "merge"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation moving a branch's starting point to another commit, usually the tip of the branch it is to join - which turns a situation needing the combining merge into one needing only the advancing kind, at the cost of a much higher chance of conflict against the commits it is being replanted onto",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.merge.three-way",
+        "git.merge.fast-forward",
+        "git.merge.squash",
+        "git.remote.pull-request"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### rebase and merge",
+          "start_line": 277,
+          "end_line": 285
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### rebase and merge",
+          "start_line": 289,
+          "end_line": 295
+        }
+      ]
+    },
+    {
+      "concept_id": "git.merge.squash",
+      "title": "squash and merge",
+      "aliases": [
+        "브랜치의 커밋을 하나로",
+        "로그가 깔끔해진다"
+      ],
+      "canonical_path": "content/brain/knowledge/git/merge/squash.md",
+      "tags": [
+        "git",
+        "merge"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single merge that collapses everything a branch did into one new commit on the target, leaving no branch in the history at all - which is what keeps the log readable when there would otherwise be many combining merges",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.merge.three-way",
+        "git.merge.rebase",
+        "git.merge.strategy-choice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### squash and merge",
+          "start_line": 310,
+          "end_line": 318
+        }
+      ]
+    },
+    {
+      "concept_id": "git.merge.strategy-choice",
+      "title": "어떤 merge 방식을 쓸 것인가",
+      "aliases": [
+        "팀마다 가이드가 있다",
+        "잔챙이 브랜치는 squash"
+      ],
+      "canonical_path": "content/brain/knowledge/git/merge/strategy-choice.md",
+      "tags": [
+        "git",
+        "merge"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single answer that is not technical - which merge to use is settled per project or per team, a common shape being to collapse the trivial branches and keep the trace for the feature ones",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.merge.three-way",
+        "git.merge.squash",
+        "git.strategy.git-flow",
+        "git.strategy.trunk-based"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 방법론 > ### 그래서 어떤 방식?",
+          "start_line": 332,
+          "end_line": 338
+        }
+      ]
+    },
+    {
+      "concept_id": "git.branch.start-point",
+      "title": "브랜치를 만드는 시점",
+      "aliases": [
+        "분기한 커밋이 시작 지점",
+        "언제 만드느냐가 중요하다"
+      ],
+      "canonical_path": "content/brain/knowledge/git/branch/start-point.md",
+      "tags": [
+        "git",
+        "branch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single thing a branch records at creation - the commit it was made from, which is where it will later be compared and merged against",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "git.branch.branch-basics",
+        "git.merge.rebase",
+        "git.merge.three-way"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git merge 실습",
+          "start_line": 344,
+          "end_line": 344
+        }
+      ]
+    },
+    {
+      "concept_id": "git.undo.restore",
+      "title": "git restore",
+      "aliases": [
+        "파일 내용을 커밋 시점으로",
+        "--source로 특정 커밋",
+        "--staged로 스테이징 취소"
+      ],
+      "canonical_path": "content/brain/knowledge/git/undo/restore.md",
+      "tags": [
+        "git",
+        "undo"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single undo at the level of a file - its contents are put back as of the last commit, or of a named one, and the same command with a flag takes a file back out of the staging area",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.basic.staging-area",
+        "git.undo.revert",
+        "git.undo.reset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 되돌리기 > ### git restore",
+          "start_line": 420,
+          "end_line": 422
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 되돌리기 > ### git restore",
+          "start_line": 430,
+          "end_line": 434
+        }
+      ]
+    },
+    {
+      "concept_id": "git.undo.revert",
+      "title": "git revert",
+      "aliases": [
+        "취소하는 커밋을 새로 만든다",
+        "merge 커밋도 취소 가능"
+      ],
+      "canonical_path": "content/brain/knowledge/git/undo/revert.md",
+      "tags": [
+        "git",
+        "undo"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single undo at the level of a commit that adds rather than removes - the named commit stays in the history and a new one undoing its effect is written on top, which works for a merge commit too",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.undo.reset",
+        "git.undo.restore",
+        "git.merge.three-way"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 되돌리기 > ### git revert",
+          "start_line": 440,
+          "end_line": 454
+        }
+      ]
+    },
+    {
+      "concept_id": "git.undo.reset",
+      "title": "git reset",
+      "aliases": [
+        "hard mixed soft",
+        "협업 중에는 쓰지 않는다",
+        "커밋이 사라진다"
+      ],
+      "canonical_path": "content/brain/knowledge/git/undo/reset.md",
+      "tags": [
+        "git",
+        "undo"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single undo that moves the branch back to an earlier commit and discards what came after - in three degrees, one throwing the changes away, one keeping them staged and one keeping them only in the working directory - and which must not be used on shared history, since it deletes commits others may have",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.undo.revert",
+        "git.undo.restore",
+        "git.basic.staging-area",
+        "git.remote.collaboration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 되돌리기 > ### git reset",
+          "start_line": 466,
+          "end_line": 466
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 되돌리기 > ### git reset",
+          "start_line": 475,
+          "end_line": 483
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 되돌리기 > ### git reset",
+          "start_line": 489,
+          "end_line": 489
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git 되돌리기 > ### git reset",
+          "start_line": 495,
+          "end_line": 495
+        }
+      ]
+    },
+    {
+      "concept_id": "git.remote.push",
+      "title": "원격 저장소로 올리기",
+      "aliases": [
+        "git push -u",
+        "remote add origin",
+        "주소를 기억하는 옵션"
+      ],
+      "canonical_path": "content/brain/knowledge/git/remote/push.md",
+      "tags": [
+        "git",
+        "remote"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single act of sending a local branch to a remote repository, where the remote's address is given a short name once so it need not be typed again, and a flag makes the pairing stick so later pushes take no arguments at all",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.remote.collaboration",
+        "git.remote.gitignore",
+        "git.basic.log-alias"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git push",
+          "start_line": 501,
+          "end_line": 519
+        }
+      ]
+    },
+    {
+      "concept_id": "git.remote.gitignore",
+      "title": ".gitignore",
+      "aliases": [
+        "올리지 않을 파일 명시",
+        "node_modules는 올리지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/git/remote/gitignore.md",
+      "tags": [
+        "git",
+        "remote"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single file listing what should never be committed - typically anything a manifest lets the machine rebuild, such as an installed dependency tree",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "git.remote.push",
+        "spring.build.dependency-management",
+        "git.remote.collaboration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git push > ### .gitignore",
+          "start_line": 525,
+          "end_line": 527
+        }
+      ]
+    },
+    {
+      "concept_id": "git.remote.collaboration",
+      "title": "원격 저장소로 협업하기",
+      "aliases": [
+        "clone으로 시작",
+        "Collaborators 등록",
+        "pull은 fetch + merge"
+      ],
+      "canonical_path": "content/brain/knowledge/git/remote/collaboration.md",
+      "tags": [
+        "git",
+        "remote"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single working arrangement - the repository is copied down to start, others are granted write access explicitly, and a push is refused while the remote has commits the local branch does not, which is fixed by pulling, itself the fetching of those commits followed by a merge",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.remote.push",
+        "git.remote.pull-request",
+        "git.merge.three-way",
+        "git.undo.reset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## github 이용 협업",
+          "start_line": 533,
+          "end_line": 535
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## github 이용 협업 > ### 다른 팀원이 최근에 git push 한 경우",
+          "start_line": 541,
+          "end_line": 541
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## github 이용 협업 > ### 다른 팀원이 최근에 git push 한 경우",
+          "start_line": 549,
+          "end_line": 549
+        }
+      ]
+    },
+    {
+      "concept_id": "git.remote.pull-request",
+      "title": "pull request",
+      "aliases": [
+        "merge 전에 검토하기",
+        "깃허브의 세 가지 merge 옵션"
+      ],
+      "canonical_path": "content/brain/knowledge/git/remote/pull-request.md",
+      "tags": [
+        "git",
+        "remote"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single review step between finishing a branch and merging it - the branch is pushed, a request to pull it opened, the change looked at, conflicts settled in the interface if any, and the merge performed by one of the same three strategies, which the hosting site offers under its own names",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.remote.collaboration",
+        "git.merge.strategy-choice",
+        "git.merge.squash",
+        "git.merge.rebase"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## github 이용 협업 > ### pull request",
+          "start_line": 555,
+          "end_line": 567
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## github 이용 협업 > ### pull request",
+          "start_line": 573,
+          "end_line": 581
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## github 이용 협업 > ### pull request",
+          "start_line": 607,
+          "end_line": 607
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## github 이용 협업 > ### pull request",
+          "start_line": 611,
+          "end_line": 625
+        }
+      ]
+    },
+    {
+      "concept_id": "git.strategy.git-flow",
+      "title": "Git Flow 전략",
+      "aliases": [
+        "main develop feature hotfix release",
+        "안정적인 릴리스가 필요할 때"
+      ],
+      "canonical_path": "content/brain/knowledge/git/strategy/git-flow.md",
+      "tags": [
+        "git",
+        "strategy"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single branching scheme of five kinds of branch - the released one, its development copy, a branch per feature off that copy, an urgent fix branch off the released one, and an occasional final test branch before release - which suits software that must always be stable and is wasted effort on anything smaller",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.strategy.trunk-based",
+        "git.merge.strategy-choice",
+        "git.remote.pull-request"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 브랜치 전략 > ### Git Flow 전략",
+          "start_line": 643,
+          "end_line": 655
+        }
+      ]
+    },
+    {
+      "concept_id": "git.strategy.trunk-based",
+      "title": "Trunk-based 전략",
+      "aliases": [
+        "main 하나로 관리",
+        "작은 단위로 자주 merge"
+      ],
+      "canonical_path": "content/brain/knowledge/git/strategy/trunk-based.md",
+      "tags": [
+        "git",
+        "strategy"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative for software that does not need staged releases - a short branch off the main one per change, merged back and deleted, with the main branch deployed whenever wanted, which is simpler to hold in one's head as long as the merges stay small and frequent",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.strategy.git-flow",
+        "git.merge.strategy-choice",
+        "git.branch.branch-basics"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## 브랜치 전략 > ### Trunk-based 전략",
+          "start_line": 669,
+          "end_line": 679
+        }
+      ]
+    },
+    {
+      "concept_id": "git.stash.stash",
+      "title": "git stash",
+      "aliases": [
+        "잠시 보관하기",
+        "Tracked이고 Modified인 파일",
+        "주석 처리와의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/git/stash/stash-command.md",
+      "tags": [
+        "git",
+        "stash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single place to put work aside without committing it - it takes what differs from the last commit whether staged or not, but only for files already tracked, holds them on a stack the most recent of which comes back first, and exists because commenting code out still commits it",
+      "pilot_strata": [
+        "lecture-batch-56",
+        "etc/apple-git",
+        "git-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "git.basic.staging-area",
+        "git.undo.restore",
+        "git.branch.branch-basics"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git stash",
+          "start_line": 685,
+          "end_line": 691
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git stash",
+          "start_line": 698,
+          "end_line": 712
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git stash",
+          "start_line": 723,
+          "end_line": 723
+        },
+        {
+          "path": "content/brain/lectures/etc/apple-git/git-and-github.md",
+          "source_sha256": "0d9dfba6442014cfa36925bfc3e3f55a8c0bb9b41ba02502826b3ee563eaf97e",
+          "heading": "## git stash",
+          "start_line": 727,
+          "end_line": 729
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

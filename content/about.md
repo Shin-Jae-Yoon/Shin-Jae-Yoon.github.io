@@ -1,4 +1,22 @@
 ---
-title: "About"
-layout: about
+title: About
+description: 커피와 사람을 좋아하고, 전기공학과에서 컴퓨터공학과로 전과해 개발자의 길을 선택한 신재윤을 소개합니다.
+created: 2026-07-19T00:00:00+09:00
+modified: 2026-07-19T00:00:00+09:00
+published: 2026-07-19T00:00:00+09:00
+cssclasses:
+  - about-page
+devUniContentContract:
+  visibleContentOwner: quartz/components/DevUniLanding.tsx
+  markdownBodyRole: seo-index-shadow
 ---
+
+## 안녕하세요, 신재윤입니다
+
+커피를 좋아하고, 사람과 이야기하며 에너지를 얻는 ESTP입니다.
+
+새로운 카페를 찾아다니는 것도, 커피 한 잔을 앞에 두고 오래 이야기하는 것도 좋아합니다. 오래 고민만 하기보다 직접 부딪혀 확인하고, 사람들과 생각을 주고받으며 더 좋은 답을 찾는 편입니다.
+
+처음에는 전기공학과에서 제어계측을 공부했습니다. 더 직접적으로 문제를 정의하고 결과를 만들어내는 소프트웨어에 매력을 느껴 컴퓨터공학과로 전과했고, 그 선택을 계기로 개발자라는 길을 본격적으로 꿈꾸기 시작했습니다.
+
+지금도 새로운 기술 자체보다 그것으로 어떤 불편을 줄이고, 사람에게 어떤 경험을 줄 수 있는지를 먼저 생각하려고 합니다.

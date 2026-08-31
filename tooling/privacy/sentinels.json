@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "sentinels": [
+    "OMX_PRIVATE_SENTINEL_7e793887_6d62_4932_ae21_0ad66044ef27",
+    "OMX_TEMPLATE_SENTINEL_a9a1c2df_890a_40f2_a6d8_1873a3a43ed7",
+    "OMX_SECRET_SENTINEL_607e0c71_f544_427e_87e5_b1ff6587745e"
+  ]
+}

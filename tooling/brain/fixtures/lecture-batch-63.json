@@ -1,0 +1,1049 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-63",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-62",
+    "applied_state": "1214 approved knowledge concepts after lecture-batch-62 mined the first half of the fifth week."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+        "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93"
+      }
+    ],
+    "line_range": "L616-L1024 (second half of the file, from the annotation section)",
+    "series": "면접 스터디 dog-study 5주차 후반 - 애노테이션, MVC 패턴, 레이어드 아키텍처"
+  },
+  "overlap_analysis": {
+    "finding": "The second half of the split file. The annotation material is new to the java namespace, the MVC material restates from the pattern's own side what the kim-spring lane recorded from the template engine's side, and the layered architecture is the general form of the four-object division that lane already applied.",
+    "disposition": "Five applied concepts take evidence or edges - reflection, which is what makes an annotation do anything; the component scan, whose several markers this file explains the point of; the spring layer structure, which the general pattern is now filed beside; the template engine; and the transaction, which the service layer is the unit of."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All five update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "alias_avoidance_note": {
+    "key": "Model View Controller",
+    "incumbent": "spring.web.mvc-template-engine",
+    "disposition": "The pattern concept takes 세 가지 역할로 나눈 개발 방법론 rather than the expanded English name, which the template engine concept from the kim-spring lane already holds."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L631-L643 partial, L689, L776-L778, L787-L827 partial, L852-L878, L881-L883, L911-L926 partial, L952, L976-L982 partial, L1000-L1004, L1025-L1038",
+        "reason_code": "collapsed-detail-external-reference-figure-caption-or-carried-by-owner",
+        "detail": "The collapsed detail blocks whose content is cited through the concept that owns it, the link the annotation list is taken from, the captions above each code listing, the author's aside on their own controller example, the observation that duplication across controllers is what the service layer answers - which the service concept states - and the closing reference list."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in this half of the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised - the source was split instead.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 20526,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 192,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 19,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 19,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 20,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. The fifth week is now fully mined across batches 62 and 63.",
+  "alias_yield_note": {
+    "key": "@Deprecated",
+    "incumbent": "java.language.javadoc",
+    "disposition": "The javadoc concept from the fun-java lane already holds this tag, which it documents as a doc marker. The standard-annotation concept lists it in its granularity without claiming the alias, and takes an edge to that concept instead."
+  },
+  "candidates_authored": 20,
+  "candidates": [
+    {
+      "concept_id": "java.runtime.reflection",
+      "title": "리플렉션",
+      "aliases": [
+        "Reflection",
+        "클래스로더로 인스턴스 생성",
+        "invoke()",
+        "접근 제어자와 상관없이 접근",
+        "클래스 로더가 만든 Class 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/reflection.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single facility for naming a class as a string, having the class loader find it on the classpath, creating an instance from that information and invoking a method by name - which is how code can run against a class whose name it learns only at run time",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "lecture-batch-63"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.classpath",
+        "java.runtime.class-loading",
+        "java.pattern.factory-method",
+        "java.oop.instance-creation-method",
+        "java.exception.print-stack-trace-avoidance",
+        "spring.di.component-scan",
+        "java.annotation.annotation",
+        "spring.annotation.spring-annotations"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 921,
+          "end_line": 923
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 979,
+          "end_line": 984
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 1003,
+          "end_line": 1008
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 진짜 Handling",
+          "start_line": 324,
+          "end_line": 327
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Annotation",
+          "start_line": 634,
+          "end_line": 641
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.component-scan",
+      "title": "컴포넌트 스캔",
+      "aliases": [
+        "@Component",
+        "@Service",
+        "@Repository",
+        "@ComponentScan",
+        "역할별로 나눠 쓰는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/component-scan.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single sweep that registers as beans every class carrying the component annotation or one built on top of it - controller, service and repository all being such - starting from the package the application class sits in and not going above it, which is why an unannotated class is invisible to the container and its injection fails",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-63",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "spring.di.dependency-injection",
+        "spring.arch.layered-structure",
+        "spring.di.java-config",
+        "spring.annotation.spring-annotations",
+        "java.annotation.annotation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 129,
+          "end_line": 134
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 138,
+          "end_line": 146
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Annotation > ### Spring Annotation",
+          "start_line": 691,
+          "end_line": 694
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.arch.layered-structure",
+      "title": "컨트롤러 서비스 도메인 리포지토리",
+      "aliases": [
+        "일반적인 웹 애플리케이션 계층 구조",
+        "서비스는 핵심 비즈니스 로직",
+        "레이어별 테스트가 쉬워진다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/layered-structure.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single division of a web application into four kinds of object - the controller handling the web request, the service holding the business rules such as a member not registering twice, the domain object being what the business is about, and the repository putting that object into storage and getting it back",
+      "pilot_strata": [
+        "lecture-batch-38",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-63",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.business-logic",
+        "spring.web.controller",
+        "spring.arch.repository-interface",
+        "software.architecture.three-tier",
+        "software.architecture.layered-architecture",
+        "software.architecture.layer-responsibilities",
+        "spring.arch.service-layer",
+        "spring.arch.repository-vs-dao"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 회원 관리 예제 > ### 비즈니스 요구사항",
+          "start_line": 530,
+          "end_line": 537
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### Spring Layered Architecture",
+          "start_line": 996,
+          "end_line": 998
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### Spring Layered Architecture",
+          "start_line": 1006,
+          "end_line": 1011
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.mvc-template-engine",
+      "title": "MVC와 템플릿 엔진",
+      "aliases": [
+        "Model View Controller",
+        "Model 1 방식",
+        "역할을 나누는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/mvc-template-engine.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single split of the work into model, view and controller, replacing the older arrangement where the view did everything - the view is left to draw the screen and the controller and model to the business and the internals - and the flow that follows from it, where the controller fills the model, the view resolver finds the template, and the engine renders html back to the browser",
+      "pilot_strata": [
+        "lecture-batch-38",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-63",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.controller",
+        "spring.web.view-resolver",
+        "spring.web.three-ways",
+        "software.pattern.design-pattern",
+        "spring.web.mvc-pattern",
+        "spring.web.mvc-flow",
+        "spring.web.model1-vs-model2"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 스프링 웹 개발 기초 > ### MVC와 템플릿 엔진",
+          "start_line": 355,
+          "end_line": 359
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 스프링 웹 개발 기초 > ### MVC와 템플릿 엔진",
+          "start_line": 415,
+          "end_line": 425
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.transaction",
+      "title": "트랜잭션",
+      "aliases": [
+        "Transaction",
+        "단일한 논리적 작업 단위",
+        "START TRANSACTION",
+        "시작하지 않으면 DB가 대신 시작한다",
+        "읽기 전용일 수도 있다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/db-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single logical unit of work - several SQL statements bound together for a reason outside the database, so that they cannot be divided and it can never happen that only some of them reach the data",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db",
+        "lecture-batch-63",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.rollback",
+        "db.transaction.atomicity",
+        "db.language.dml",
+        "db.transaction.read-only-transaction",
+        "db.transaction.commit-timing-tradeoff",
+        "db.basic.workload",
+        "spring.arch.service-layer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 14,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 29,
+          "end_line": 31
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란?",
+          "start_line": 38,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## ACID 소개",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ]
+    },
+    {
+      "concept_id": "java.annotation.annotation",
+      "title": "애노테이션",
+      "aliases": [
+        "Annotation",
+        "메타데이터의 일종",
+        "표식일 뿐 동작은 리플렉션이 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/annotation/annotation-basics.md",
+      "tags": [
+        "java",
+        "annotation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single mark written among the code that carries information rather than behaviour - for the compiler to check against, for a build tool to generate from, or for something at runtime to act on - which is why it does nothing by itself and only takes effect where reflection reads it",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.runtime.reflection",
+        "java.annotation.standard-annotation",
+        "java.annotation.meta-annotation",
+        "spring.annotation.spring-annotations"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Annotation",
+          "start_line": 618,
+          "end_line": 629
+        }
+      ]
+    },
+    {
+      "concept_id": "java.annotation.standard-annotation",
+      "title": "표준 애노테이션",
+      "aliases": [
+        "@Override",
+        "@SuppressWarnings",
+        "@FunctionalInterface"
+      ],
+      "canonical_path": "content/brain/knowledge/java/annotation/standard-annotation.md",
+      "tags": [
+        "java",
+        "annotation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of four the language itself provides - asserting that a method overrides one above it and failing to compile if it does not, marking one as going away, silencing a warning at the point of declaration, and asserting that an interface has exactly one abstract method",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.annotation.annotation",
+        "java.oop.method-overriding",
+        "java.oop.lambda-interface",
+        "java.annotation.meta-annotation",
+        "java.language.javadoc"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Annotation > ### Java Annotation",
+          "start_line": 649,
+          "end_line": 664
+        }
+      ]
+    },
+    {
+      "concept_id": "java.annotation.meta-annotation",
+      "title": "메타 애노테이션",
+      "aliases": [
+        "@Retention",
+        "@Target",
+        "@Inherited",
+        "커스텀 애노테이션을 만들 때"
+      ],
+      "canonical_path": "content/brain/knowledge/java/annotation/meta-annotation.md",
+      "tags": [
+        "java",
+        "annotation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of annotations that go on an annotation being defined - how long it survives, what it may be applied to, whether it appears in the generated documentation, whether a subclass inherits it, and whether it may appear more than once",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.annotation.annotation",
+        "java.annotation.standard-annotation",
+        "java.runtime.reflection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Annotation > ### Meta Annotation",
+          "start_line": 668,
+          "end_line": 683
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.annotation.spring-annotations",
+      "title": "스프링 주요 애노테이션",
+      "aliases": [
+        "@Component와 @Bean의 차이",
+        "@Autowired는 타입 @Resource는 이름",
+        "@SpringBootApplication의 정체"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/annotation/spring-annotations.md",
+      "tags": [
+        "spring",
+        "annotation"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single map of the annotations that do the framework's work - the scan and what it looks for, the marker for one's own class against the registration method for a class from a library, the injection marker that matches by type and its counterpart that matches by name, the qualifier resolving an ambiguity, the two controller markers differing in whether a view is wanted, and the application marker that is three of the others at once",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.annotation.annotation",
+        "spring.di.component-scan",
+        "spring.di.qualifier-primary",
+        "spring.web.api-response-body"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Annotation > ### Spring Annotation",
+          "start_line": 691,
+          "end_line": 721
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.mvc-pattern",
+      "title": "MVC 패턴",
+      "aliases": [
+        "세 가지 역할로 나눈 개발 방법론",
+        "도메인이란 무엇인가"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/mvc-pattern.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division of a web application into three roles to lower the coupling between them - the controller mediating between the request and the rest, the model being the domain the system is actually about, and the view being what the user sees - where the domain excludes the screen, the interface and the infrastructure and means only the business the system exists to do",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.mvc-template-engine",
+        "spring.web.mvc-flow",
+        "software.architecture.business-logic",
+        "spring.web.model1-vs-model2"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC",
+          "start_line": 727,
+          "end_line": 735
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.model1-vs-model2",
+      "title": "모델1과 모델2",
+      "aliases": [
+        "뷰와 로직이 섞인 구조",
+        "서블릿이 컨트롤러가 된 구조"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/model1-vs-model2.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single step in the history the pattern came out of - the earlier arrangement put the logic in the page itself, which was simple and became unreadable and undividable between front and back; the later one put a servlet in front as the controller, which costs more to learn and to write and is what made the work separable and maintainable",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.web.mvc-pattern",
+        "spring.web.servlet",
+        "spring.web.dispatcher-servlet",
+        "js.render.ssr-csr"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### 모델1",
+          "start_line": 741,
+          "end_line": 753
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### 모델2 = MVC패턴",
+          "start_line": 760,
+          "end_line": 772
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.mvc-flow",
+      "title": "MVC의 흐름",
+      "aliases": [
+        "요청은 컨트롤러로",
+        "뷰를 고르는 것도 컨트롤러",
+        "데이터는 컨트롤러를 통해 전달"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/mvc-flow.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single path a request takes through the three roles - every request arrives at the controller, which calls the model to do the work, then chooses which view will answer and hands it the data to show",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.web.mvc-pattern",
+        "spring.web.dispatcher-servlet",
+        "spring.web.view-resolver",
+        "spring.web.mvc-pitfall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### MVC 흐름",
+          "start_line": 780,
+          "end_line": 783
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### MVC 흐름",
+          "start_line": 787,
+          "end_line": 787
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### MVC 흐름",
+          "start_line": 805,
+          "end_line": 805
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### MVC 흐름",
+          "start_line": 809,
+          "end_line": 809
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.mvc-benefit",
+      "title": "MVC로 나눠서 얻는 것",
+      "aliases": [
+        "결합도를 낮추고",
+        "재사용성을 높이고",
+        "커뮤니케이션이 쉬워진다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/mvc-benefit.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three reasons the division is worth its cost - the parts depend on each other less, they can be reused separately, and the people building them can talk about them by name",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.web.mvc-pattern",
+        "java.oop.cohesion-coupling",
+        "software.architecture.layered-architecture"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### MVC 장점",
+          "start_line": 830,
+          "end_line": 834
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.mvc-pitfall",
+      "title": "MVC가 무너지는 지점",
+      "aliases": [
+        "모델이 뷰의 일을 할 때",
+        "뷰에서 과한 검증",
+        "뷰에서 비즈니스 로직"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/mvc-pitfall.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three ways the separation leaks - a model that formats its own output, a view that validates beyond the shape of the input, and a view that builds or combines models - where what belongs to whom is decidable: the shape of the input to the view, the meaning of it to the service layer, and the domain's own invariants to the constructor, which should validate and nothing else",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.web.mvc-flow",
+        "spring.arch.service-layer",
+        "software.architecture.verification-vs-validation",
+        "java.oop.autonomous-responsibility"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### MVC 주의 포인트",
+          "start_line": 840,
+          "end_line": 850
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### MVC 주의 포인트",
+          "start_line": 856,
+          "end_line": 858
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.arch.service-layer",
+      "title": "서비스는 트랜잭션 하나다",
+      "aliases": [
+        "비즈니스 로직을 가진 객체",
+        "컨트롤러가 공유하는 로직"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/service-layer.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object holding the business methods so that several controllers can call the same one instead of repeating it - and which is the unit a transaction is drawn around, so what it does either all happens or none of it does",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.arch.layered-structure",
+        "db.transaction.transaction",
+        "spring.arch.repository-vs-dao",
+        "spring.web.mvc-pitfall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### Service",
+          "start_line": 889,
+          "end_line": 893
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### Service",
+          "start_line": 899,
+          "end_line": 903
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.arch.repository-vs-dao",
+      "title": "Repository와 DAO의 차이",
+      "aliases": [
+        "저장소의 추상화와 컬렉션의 추상화",
+        "테이블 중심과 도메인 중심"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/repository-vs-dao.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between two names for the data layer - the lower one abstracts persistence itself and is shaped by the tables, while the higher one abstracts a collection of domain objects and is shaped by the business; the second may be built on the first, never the other way round",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.arch.layered-structure",
+        "spring.arch.repository-interface",
+        "spring.arch.service-layer",
+        "software.architecture.layer-responsibilities"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### Repository",
+          "start_line": 909,
+          "end_line": 909
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### Repository",
+          "start_line": 916,
+          "end_line": 924
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.layered-architecture",
+      "title": "레이어드 아키텍처",
+      "aliases": [
+        "단방향 의존성",
+        "싱크홀 안티 패턴",
+        "역할에 따라 나눈 모듈"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/layered-architecture.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern dividing code by role into layers that depend only downward, which is what makes each one independent, replaceable and testable on its own - and whose characteristic failure is the sinkhole, a request passing through a layer that does nothing to it, which costs allocation and time and is tolerable up to about a fifth of requests",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.layer-responsibilities",
+        "software.architecture.three-tier",
+        "spring.arch.layered-structure",
+        "software.architecture.layered-extension"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture",
+          "start_line": 932,
+          "end_line": 934
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture",
+          "start_line": 937,
+          "end_line": 944
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture",
+          "start_line": 946,
+          "end_line": 950
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.layer-responsibilities",
+      "title": "세 레이어가 각각 맡는 것",
+      "aliases": [
+        "Presentation Business Persistence",
+        "엔드포인트와 인증",
+        "권한 부여는 비즈니스 레이어"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/layer-responsibilities.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division of duties among the three - the outermost handling the endpoints, authentication and the translation to and from the wire format; the middle one holding the business logic, the validation of what the user meant and the decision of what they are permitted to do; and the innermost holding everything that touches storage",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.architecture.layered-architecture",
+        "spring.arch.layered-structure",
+        "software.architecture.verification-vs-validation",
+        "spring.arch.repository-vs-dao"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### Presentation Layer",
+          "start_line": 958,
+          "end_line": 964
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### Business Layer",
+          "start_line": 970,
+          "end_line": 974
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### Persistence Layer",
+          "start_line": 988,
+          "end_line": 990
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.verification-vs-validation",
+      "title": "Verification과 Validation",
+      "aliases": [
+        "과정을 지켰는가",
+        "결과물이 맞는가"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/verification-vs-validation.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between two words both translated as checking - one asks whether the thing was built the way it was specified, which is the builder's question, and the other whether what was built is what was wanted, which is the user's",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.architecture.layer-responsibilities",
+        "spring.web.mvc-pitfall",
+        "spring.test.junit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### Business Layer",
+          "start_line": 979,
+          "end_line": 980
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.layered-extension",
+      "title": "레이어드 아키텍처가 한계에 닿으면",
+      "aliases": [
+        "DDD 멀티모듈",
+        "헥사고날",
+        "MSA는 신중하게"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/layered-extension.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of directions to consider when the layered structure stops scaling - splitting by domain into modules while keeping the layers, moving to a ports-and-adapters shape, or separating into services, the last being the one not to reach for first",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.architecture.layered-architecture",
+        "software.architecture.data-service",
+        "software.architecture.three-tier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Layered Architecture > ### 레이어드 아키텍처 확장",
+          "start_line": 1017,
+          "end_line": 1021
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

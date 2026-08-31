@@ -1,0 +1,2569 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-05",
+  "lane": "book",
+  "phase": 5,
+  "review_gate": "U3",
+  "mode": "batch",
+  "produced_by": "brain-phase5-book-batch-05 candidate engine-unblock re-authoring lane",
+  "candidates_authored": true,
+  "status": "final-candidate-set",
+  "finalization_status": {
+    "state": "final",
+    "is_final": true,
+    "decision": "D — discharged",
+    "decided_by": "coordinator, dispatch ctx_a048f1cfe6b0; discharged in dispatch ctx_e688d6624f7d",
+    "statement": "This manifest is the final batch-05 candidate set. The pause recorded by the provisional option-C manifest is lifted: the engine patch landed and independently PASSed, and P6 is discharged in full — 3 true update candidates with every approved locator, alias, tag and related-concept edge preserved, and real related_concepts graph edges into all 7 relate targets, within B5 = 40.",
+    "prior_blocker": "proposeKnowledge() built its render catalog from the batch candidates alone (tooling/brain/knowledge.mjs:903 pre-patch), and proposalBody() (:288) threw `unknown related concept` for any target outside it, so no update could preserve an approved edge and no candidate could point at an applied concept.",
+    "discharged_by": {
+      "patch_report": ".omx/reviews/brain-phase5-book-batch-05-engine-catalog-patch.md",
+      "independent_verification": ".omx/reviews/brain-phase5-book-batch-05-engine-catalog-patch-independent-verification.md",
+      "engine_sha256": "60899cae6f65fb24904abd841f9f10d15bbca64e55be7c7bf4025e651e3d7050",
+      "tests_sha256": "653f26347d0823bfe798757d3b06daa4d37d7e095543b76d25cf9cff8895f8dc",
+      "mechanism": "proposeKnowledge() seeds the render catalog with approvedCatalogRecords(root) and appends the batch candidates last, so a same-id update renders from the revision under review; the same seed is passed as catalogExtra at every re-measurement point. A target in neither the approved index nor the run still throws before any file is written."
+    },
+    "remaining_gates": "This lane is candidate-only. Independent verification, U3 sampling, signature and apply are separate gates and none is authorized here."
+  },
+  "derived_from": {
+    "source_inventory": "tooling/brain/fixtures/book-batch-05-sources.json",
+    "source_inventory_sha256": "f69ed3633b4ee65a6dd20ea275898e4fd4307941cb7d6f583ea458e867615cba",
+    "inventory_report": ".omx/reviews/brain-phase5-book-batch-05-inventory.md",
+    "inventory_report_sha256": "50ec4295656ee6c0ed6adc5e7eda3830e244ffcddc617bd5c2a1286a83896e90",
+    "inventory_repair_report": ".omx/reviews/brain-phase5-book-batch-05-inventory-repair.md",
+    "inventory_repair_report_sha256": "2e5bfa8eabb39c6be24da3aa933fa71ac3cea2d6f6672aa0138902bda5db2bd6",
+    "inventory_verification": ".omx/reviews/brain-phase5-book-batch-05-inventory-repair-independent-verification.md",
+    "inventory_verification_sha256": "ad4cc6058405c2b6bfddae0de249304142edc2bb2b56f452f99db5b3adfc7854",
+    "namespace_decision": ".omx/reviews/brain-phase5-book-batch-05-namespace-decision.md",
+    "approved_knowledge_tree_sha256_at_authoring": "970d2898bcb31845d8f7ca1a3629acb0dc69202251ab928a73d9e228a712112c",
+    "approved_knowledge_file_count_at_authoring": 120,
+    "content_brain_tree_sha256_at_authoring": "f4b074786cc0f64385cf048f856de5c635b027db497dd89e70523dba85f298fa",
+    "content_brain_file_count_at_authoring": 2205,
+    "book_corpus_tree_sha256_at_authoring": "e6a230767324e5efaa11f20fff750126ee86b5052f2165540e79fc77b147dcb2",
+    "book_corpus_file_count_at_authoring": 27,
+    "engine_sha256": "60899cae6f65fb24904abd841f9f10d15bbca64e55be7c7bf4025e651e3d7050",
+    "knowledge_index_sha256": "510cb931d5c5e4b2dd0e0a750bc234e174466345565bf37f25902bbe39b07d92",
+    "lib_sha256": "5c338eec4b40d9bf3688a2fe730f0a18f28f935c5cf4ccf63489570d14ef9cf0",
+    "tree_manifest_recipe": "sha256( JSON.stringify(rows, null, 2) + \"\\n\" ) where rows = [{ path, sha256 }, …] sorted by String.prototype.localeCompare (inventory §1.1; W1 records the ICU dependency)",
+    "git_head": "d92e3faa9deeb7a1b9406c6e36fbe8eac4a03443",
+    "staged_path_count": 0,
+    "engine_batch_test_sha256": "653f26347d0823bfe798757d3b06daa4d37d7e095543b76d25cf9cff8895f8dc",
+    "engine_patch_report": ".omx/reviews/brain-phase5-book-batch-05-engine-catalog-patch.md"
+  },
+  "scope": [
+    {
+      "path": "content/brain/books/kafka/chap02.md",
+      "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16"
+    }
+  ],
+  "namespace_decision": {
+    "owner": "신재윤",
+    "reviewer": "신재윤",
+    "decision_id": "P7",
+    "decision": "kafka.zookeeper.*",
+    "taken_under": "the owner's explicit blanket approval for this lane",
+    "statement": "ZooKeeper concepts extracted from kafka/chap02.md are rooted at `kafka.zookeeper.*`, not at a standalone `zookeeper.*` root.",
+    "evidence": [
+      "L8 — 브로커의 메타 데이터를 저장하기 위해 사용되는 아파치 주키퍼: the chapter introduces ZooKeeper only as the store for Kafka broker metadata.",
+      "L10-L13 — ZooKeeper support is being dropped in recent Apache Kafka versions and replaced by KRaft; the source frames ZooKeeper's very lifetime by Kafka's roadmap.",
+      "L208-L224 — the only connection contract given is `zookeeper.connect`, a Kafka broker parameter.",
+      "The chapter carries no technology-agnostic ZooKeeper claim: no ZooKeeper API, no non-Kafka client, no coordination use case outside Kafka."
+    ],
+    "non_move_consequence": "Both `concept_id` and `canonical_path` derive from this root, so it cannot be changed after apply without moving every ZooKeeper document. Should a later source supply technology-agnostic ZooKeeper evidence, the correct response is a new `zookeeper.*` concept relating to these, not a rename of these eight; `apply` refuses to move an approved concept (`batch proposal may not move an approved concept`), so a rename would need an explicit migration lane.",
+    "affected_candidates": [
+      "kafka.zookeeper.kraft",
+      "kafka.zookeeper.zookeeper",
+      "kafka.zookeeper.ensemble",
+      "kafka.zookeeper.ensemble-sizing",
+      "kafka.zookeeper.ensemble-configuration",
+      "kafka.zookeeper.timing-parameter",
+      "kafka.zookeeper.ensemble-port",
+      "kafka.zookeeper.single-server-ensemble-test"
+    ],
+    "messaging_root_expected": false,
+    "messaging_root_rationale": "Batch 05 contains no technology-agnostic messaging evidence, so the batch-04 rule (`messaging.*` only for genuinely technology-agnostic messaging concepts with direct evidence) yields no `messaging.*` concept."
+  },
+  "id_rules": {
+    "N0": "concept_id = kafka.<area>.<slug>, area derived from the governing H2 heading: 주키퍼 → zookeeper, 카프카 설치 → install, 브로커 설정 → config, 하드웨어 선택 → hardware.",
+    "N0b": "The pre-heading preamble L7-L16 has no governing H2 (heading_chain = `unheaded-body`). Its one candidate, KRaft, is filed under `kafka.zookeeper.*` because the evidence defines KRaft solely as ZooKeeper's replacement, keeping the deprecation pair co-located.",
+    "N1": "For a configuration parameter, slug = the parameter name exactly as the source writes it, lowercased, `.` → `-`.",
+    "N1b": "Refinement recorded here: ZooKeeper's parameters are camelCase, not dotted. Applying N1 literally would yield `ticktime`/`initlimit`/`clientport`. Batch 05 does not mint per-parameter ids for them at all — they are grouped into `kafka.zookeeper.timing-parameter` and `kafka.zookeeper.ensemble-port` under N2 and carried as aliases, so N1 is applied unchanged to all 16 dotted Kafka parameters and never stretched.",
+    "N2": "For a non-parameter concept, slug = kebab-case of the established English term.",
+    "N3": "canonical_path = content/brain/knowledge/kafka/<area>/<leaf>.md where leaf = slug, except when slug === area, in which case leaf = kafka-<slug> (folder_route rule). Applied here to kafka.zookeeper.zookeeper → kafka/zookeeper/kafka-zookeeper.md.",
+    "N4": "tags[] equals the canonical_path folder segments; `brain`/`knowledge` reserved. The raw frontmatter display tag `📚 카프카 핵심가이드` (L5) is never copied.",
+    "alias_policy": "knowledge_aliases are search-only (policy H-1). No `aliases`, `alias` or `permalink` routing key is emitted. Under the repaired exact-alias search contract an exact alias match claims rank 0, so every batch-05 title and alias was checked for an EXACT normalized match against the 384 applied title-or-alias identities (119 titles + 265 aliases) and against every other batch-05 identity."
+  },
+  "p6_resolution": {
+    "statement": "All 20 applied touch points are resolved. 3 applied concepts are revised by true `update` candidates that preserve their full before-state; 7 receive real related_concepts graph edges from batch candidates without being re-proposed or restated; 10 are untouched.",
+    "superseded_note": "Supersedes the provisional create-and-relate resolution. Under coordinator decision D the engine patch landed first; this manifest is the discharged end state.",
+    "summary": {
+      "update": 3,
+      "relate": 7,
+      "no_op": 10
+    },
+    "engine_constraint": "Lifted. The propose-time render catalog is now the live approved knowledge index plus the run's own documents, with the run's documents winning for a shared concept_id (tooling/brain/knowledge.mjs approvedCatalogRecords + renderCatalog). Unresolvable relations still fail closed.",
+    "touch_point_dispositions": [
+      {
+        "concept_id": "cs.os.operating-system",
+        "applied_title": "운영체제",
+        "applied_aliases": [
+          "Operating System",
+          "OS"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/cs/os/operating-system.md",
+        "applied_document_sha256": "13aaa193e8e5322109b4b6fe5f5721603e9de97edc39051b3ec31e406a0774ce",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "title:운영체제",
+          "alias:OS"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "cross-domain-passing-and-substring",
+        "evidence": "Title 운영체제 appears once at L353 as a passing example of a rolling OS update during replica failover. Alias `OS` normalizes to `os`, which occurs only inside `macOS` (L95 heading, L97 prose). Neither is an assertion about operating systems.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "java.array.array",
+        "applied_title": "배열",
+        "applied_aliases": [
+          "Array",
+          "자바 배열"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/java/array/java-array.md",
+        "applied_document_sha256": "9c91fc41478ad87ebdec5a3ead66e9c07d9ccc42cdbfade1cee5c18e73f74ce9",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "alias:Array"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "substring-artifact",
+        "evidence": "Alias `Array` normalizes to `array`, matched only inside `RAID (Redundant Array of Independent Disks)` at L505. No array claim exists in this source.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "java.memory.heap",
+        "applied_title": "힙 메모리",
+        "applied_aliases": [
+          "Heap Memory",
+          "Java Heap",
+          "동적 메모리"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/java/memory/heap.md",
+        "applied_document_sha256": "c9f293879bd500ae4999d5d5373fe7d19c9d7abdf185345160f0a3fe5343a98e",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "title:힙 메모리"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "cross-domain-word-reuse",
+        "evidence": "Title 힙 메모리 at L534 and 힙 at L536 size the Kafka broker JVM (`5GB 힙 정도 사용`). The subject is broker memory provisioning, not the Java heap concept. A batch-05 memory concept must relate, never restate.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "java.oop.instance",
+        "applied_title": "인스턴스",
+        "applied_aliases": [
+          "Instance",
+          "객체 인스턴스",
+          "인스턴스 생성"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/java/oop/instance.md",
+        "applied_document_sha256": "5f4d80471d0d888a4353209573c1b64e3b726f344591acbc79ad713af56baa52",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "title:인스턴스"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "cross-domain-word-reuse",
+        "evidence": "Title 인스턴스 at L86 means a ZooKeeper server process instance (`각각의 주키퍼 인스턴스에 서로 다른 dataDir, clientPort 할당`), not a Java object instance.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "java.oop.interface",
+        "applied_title": "인터페이스",
+        "applied_aliases": [
+          "Interface"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/java/oop/interface.md",
+        "applied_document_sha256": "88d94784203e7b2ad4a6b4bdba66eb50ee2d604e5661d7e92aca697d3ead3639",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "title:인터페이스"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "cross-domain-word-reuse",
+        "evidence": "Title 인터페이스 at L199, L201, L557, L559 always means a network interface / NIC (`모든 네트워크 인터페이스로부터 연결 받게됨`, `네트워크 인터페이스 카드(NIC)`), not the Java interface type.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "java.runtime.jvm",
+        "applied_title": "자바 가상 머신",
+        "applied_aliases": [
+          "JVM",
+          "Java Virtual Machine"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/java/runtime/jvm.md",
+        "applied_document_sha256": "f8f3f5d985731373bf3583c213381deaf1f7ed302830a7f5d6b66becb5238092",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "alias:JVM"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "cross-domain-word-reuse",
+        "evidence": "Alias `JVM` at L534 appears in a claim about Kafka's heap footprint (`카프카 자체는 JVM에 많은 힙 메모리를 필요로 하지 않음`). The subject is Kafka, not the JVM.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "java.type.type-inference",
+        "applied_title": "지역 변수 자료형 추론",
+        "applied_aliases": [
+          "Local Variable Type Inference",
+          "Type Inference",
+          "var"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/java/type/type-inference.md",
+        "applied_document_sha256": "44ee658acd4e5a5715bb4e45909733168a4eb0e9441a12b9d9c2c25e292940c7",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "alias:var"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "substring-artifact",
+        "evidence": "Alias `var` matched only inside the fenced shell literal `dataDir=/var/lib/zookeeper` at L57, which is a code line, not prose.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "kafka.broker.broker",
+        "applied_title": "브로커",
+        "applied_aliases": [
+          "Broker",
+          "카프카 브로커"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/broker/kafka-broker.md",
+        "applied_document_sha256": "506bdbc036100d2c6997af22b0f3f5e69e85213a0ad4e4985c293bbee89bd58e",
+        "inventory_expected_disposition": "relate",
+        "matched_on": [
+          "title:브로커",
+          "alias:Broker",
+          "alias:카프카 브로커"
+        ],
+        "authoring_decision": "relate",
+        "reproposed": false,
+        "restated": false,
+        "evidence_spans": [
+          "L166-L175",
+          "L176-L184",
+          "L185-L193",
+          "L194-L207"
+        ],
+        "relating_candidates": [
+          "kafka.config.broker-id",
+          "kafka.config.core-broker-parameter",
+          "kafka.config.listeners",
+          "kafka.config.zookeeper-connect"
+        ],
+        "non_restatement_guarantee": "No batch-05 candidate states what a Kafka broker is. The whole of `## 브로커 설정` configures an already-defined broker; every candidate's granularity is a named setting or setting family, and no candidate title or alias normalizes to `브로커`, `카프카 브로커` or `broker`.",
+        "edge_expression": "Expressed as 4 real related_concepts edge(s) from kafka.config.broker-id, kafka.config.core-broker-parameter, kafka.config.listeners, kafka.config.zookeeper-connect. The engine resolves them against the approved knowledge index and renders each as a wiki link to the applied document; graph-preview.json and link-report.json measure them as resolved knowledge edges."
+      },
+      {
+        "concept_id": "kafka.broker.cluster",
+        "applied_title": "클러스터",
+        "applied_aliases": [
+          "Kafka Cluster",
+          "카프카 클러스터"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/broker/cluster.md",
+        "applied_document_sha256": "5d561af94067121e471bc6f7ecdf256f4d279e44e5c63d988d8d41cef96723da",
+        "inventory_expected_disposition": "relate",
+        "matched_on": [
+          "title:클러스터",
+          "alias:카프카 클러스터"
+        ],
+        "authoring_decision": "relate",
+        "reproposed": false,
+        "restated": false,
+        "evidence_spans": [
+          "L282-L290",
+          "L263-L272",
+          "L519-L523"
+        ],
+        "relating_candidates": [
+          "kafka.config.auto-leader-rebalance-enable",
+          "kafka.hardware.disk-capacity",
+          "kafka.topic.partition"
+        ],
+        "non_restatement_guarantee": "The cited prose uses the cluster as the frame for partition placement, leader balance and capacity growth; it never redefines a cluster. No candidate title or alias normalizes to `클러스터` or `카프카 클러스터`.",
+        "edge_expression": "Expressed as 3 real related_concepts edge(s) from kafka.config.auto-leader-rebalance-enable, kafka.hardware.disk-capacity, kafka.topic.partition. The engine resolves them against the approved knowledge index and renders each as a wiki link to the applied document; graph-preview.json and link-report.json measure them as resolved knowledge edges."
+      },
+      {
+        "concept_id": "kafka.client.consumer",
+        "applied_title": "컨슈머",
+        "applied_aliases": [
+          "Consumer",
+          "Subscriber"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/consumer.md",
+        "applied_document_sha256": "28dff7adaa2b32363b2810afc110c16f87c7c912fe47b61767642820118dd3a1",
+        "inventory_expected_disposition": "relate",
+        "matched_on": [
+          "title:컨슈머",
+          "alias:Consumer"
+        ],
+        "authoring_decision": "relate",
+        "reproposed": false,
+        "restated": false,
+        "evidence_spans": [
+          "L143-L154",
+          "L461-L479",
+          "L528-L533"
+        ],
+        "relating_candidates": [
+          "kafka.config.message-max-bytes",
+          "kafka.hardware.page-cache",
+          "kafka.install.cli-utility"
+        ],
+        "non_restatement_guarantee": "The consumer is cited as the reader whose fetch size must match the broker ceiling and whose tail reads are served from page cache. No candidate title or alias normalizes to `컨슈머`, `consumer` or `컨슈머 그룹`.",
+        "edge_expression": "Expressed as 3 real related_concepts edge(s) from kafka.config.message-max-bytes, kafka.hardware.page-cache, kafka.install.cli-utility. The engine resolves them against the approved knowledge index and renders each as a wiki link to the applied document; graph-preview.json and link-report.json measure them as resolved knowledge edges."
+      },
+      {
+        "concept_id": "kafka.client.consumer-group",
+        "applied_title": "컨슈머 그룹",
+        "applied_aliases": [
+          "Consumer Group"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/consumer-group.md",
+        "applied_document_sha256": "a658fb9507fd4138278f57435562c584df624594eb53626ec2f5cf19d7ae32f8",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "title:컨슈머 그룹"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "single-passing-mention",
+        "evidence": "Title 컨슈머 그룹 occurs once, at L294, parenthetically (`컨슈머 그룹 기능 미사용 시에도`). One passing clause is not evidence for an update.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "kafka.client.offset",
+        "applied_title": "오프셋",
+        "applied_aliases": [
+          "Offset",
+          "메세지 오프셋"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/offset.md",
+        "applied_document_sha256": "f1eac1bdee747bd4313870ddc791ee1ee4ab331ceabc0e45c266f677a05cd1f0",
+        "inventory_expected_disposition": "relate",
+        "matched_on": [
+          "title:오프셋"
+        ],
+        "authoring_decision": "relate",
+        "reproposed": false,
+        "restated": false,
+        "evidence_spans": [
+          "L415-L423"
+        ],
+        "relating_candidates": [
+          "kafka.config.log-segment-bytes",
+          "kafka.topic.partition"
+        ],
+        "non_restatement_guarantee": "The timestamp-to-offset lookup is cited as a consequence of segment size, not as a definition of an offset. No candidate title or alias normalizes to `오프셋` or `offset`.",
+        "edge_expression": "Expressed as 2 real related_concepts edge(s) from kafka.config.log-segment-bytes, kafka.topic.partition. The engine resolves them against the approved knowledge index and renders each as a wiki link to the applied document; graph-preview.json and link-report.json measure them as resolved knowledge edges."
+      },
+      {
+        "concept_id": "kafka.client.producer",
+        "applied_title": "프로듀서",
+        "applied_aliases": [
+          "Producer",
+          "Publisher"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/producer.md",
+        "applied_document_sha256": "935b5e724a35efa991cbeb16abbaa3649152c462044f43f06229c7fe70dc954f",
+        "inventory_expected_disposition": "relate",
+        "matched_on": [
+          "title:프로듀서",
+          "alias:Producer"
+        ],
+        "authoring_decision": "relate",
+        "reproposed": false,
+        "restated": false,
+        "evidence_spans": [
+          "L129-L142",
+          "L441-L458",
+          "L461-L479"
+        ],
+        "relating_candidates": [
+          "kafka.config.message-max-bytes",
+          "kafka.config.min-insync-replicas",
+          "kafka.install.cli-utility"
+        ],
+        "non_restatement_guarantee": "The producer is cited only as the actor whose acknowledgement and message size are bounded by a broker setting. No candidate title or alias normalizes to `프로듀서` or `producer`.",
+        "edge_expression": "Expressed as 3 real related_concepts edge(s) from kafka.config.message-max-bytes, kafka.config.min-insync-replicas, kafka.install.cli-utility. The engine resolves them against the approved knowledge index and renders each as a wiki link to the applied document; graph-preview.json and link-report.json measure them as resolved knowledge edges."
+      },
+      {
+        "concept_id": "kafka.message.batch",
+        "applied_title": "배치",
+        "applied_aliases": [
+          "Message Batch",
+          "메세지 배치"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/message/batch.md",
+        "applied_document_sha256": "b6ac1974bc2ba30fc3d1338658980b40a5b06122121b66da500a68881b3ad3e9",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "title:배치"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "korean-homograph-artifact",
+        "evidence": "Title 배치 matched only at L303 in `각 브로커에 배치할 파티션 수`, where 배치 is the verb 배치하다 (to place / allocate), NOT the message-batch noun this concept defines. This is the single most deceptive hit in the batch: same characters, unrelated meaning.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "kafka.message.message",
+        "applied_title": "메세지",
+        "applied_aliases": [
+          "Kafka Message",
+          "카프카 메세지"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/message/kafka-message.md",
+        "applied_document_sha256": "e0b4ff412625a9c347ac5bd62c89ecb5c7fe66adef1a5a397cebc134d7b05ceb",
+        "inventory_expected_disposition": "relate",
+        "matched_on": [
+          "title:메세지"
+        ],
+        "authoring_decision": "relate",
+        "reproposed": false,
+        "restated": false,
+        "evidence_spans": [
+          "L225-L236",
+          "L392-L426",
+          "L461-L479"
+        ],
+        "relating_candidates": [
+          "kafka.config.log-dirs",
+          "kafka.config.log-segment-bytes",
+          "kafka.config.message-max-bytes"
+        ],
+        "non_restatement_guarantee": "Messages appear as the payload whose placement, segmentation and maximum size are configured. No candidate title or alias normalizes to `메세지` or `message`.",
+        "edge_expression": "Expressed as 3 real related_concepts edge(s) from kafka.config.log-dirs, kafka.config.log-segment-bytes, kafka.config.message-max-bytes. The engine resolves them against the approved knowledge index and renders each as a wiki link to the applied document; graph-preview.json and link-report.json measure them as resolved knowledge edges."
+      },
+      {
+        "concept_id": "kafka.platform.kafka",
+        "applied_title": "카프카",
+        "applied_aliases": [
+          "Apache Kafka",
+          "분산 스트리밍 플랫폼",
+          "분산 커밋 로그"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/platform/kafka.md",
+        "applied_document_sha256": "4672c569ac40c85e0417f0e00a95e7d651479a003857e11cf9760e12615795dd",
+        "inventory_expected_disposition": "no_op",
+        "matched_on": [
+          "title:카프카",
+          "alias:Apache Kafka"
+        ],
+        "authoring_decision": "no_op",
+        "reproposed": false,
+        "restated": false,
+        "justifying_anchor": "same-domain-pervasive-no-new-definitional-claim",
+        "evidence": "Title 카프카 and alias `Apache Kafka` occur throughout (40 literal title lines incl. frontmatter L2/L5). chap02 installs and configures Kafka; it makes no new claim about what Kafka is. The applied merge-kind concept stands unchanged.",
+        "decision_rationale": "The match is word reuse or a passing mention, not a claim about this concept. The concept is not re-proposed, not related to, and not restated; its normalized title and alias keys stay occupied and unused by batch 05."
+      },
+      {
+        "concept_id": "kafka.property.fault-tolerance",
+        "applied_title": "내고장성",
+        "applied_aliases": [
+          "Fault Tolerance",
+          "장애 감내"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/property/fault-tolerance.md",
+        "applied_document_sha256": "8960047be87dee9130c79e656444e005f28a798755a483cefebd6649b0a7cc1f",
+        "inventory_expected_disposition": "update-candidate",
+        "matched_on": [
+          "title:내고장성"
+        ],
+        "authoring_decision": "update",
+        "update_authored": true,
+        "reproposed": false,
+        "restated": false,
+        "before_state_binding": {
+          "applied_document_sha256": "8960047be87dee9130c79e656444e005f28a798755a483cefebd6649b0a7cc1f",
+          "applied_proposal_kind": "create",
+          "applied_locators": [
+            "content/brain/books/kafka/chap01.md:459-470"
+          ],
+          "applied_related_concepts": [
+            "kafka.property.scalability",
+            "kafka.broker.partition-leader"
+          ],
+          "approved_edges_that_an_update_would_delete": [],
+          "preserved_in_update": {
+            "title": "내고장성",
+            "aliases": [
+              "Fault Tolerance",
+              "장애 감내"
+            ],
+            "tags": [
+              "kafka",
+              "property"
+            ],
+            "canonical_path": "content/brain/knowledge/kafka/property/fault-tolerance.md",
+            "locators": [
+              "content/brain/books/kafka/chap01.md:459-470"
+            ],
+            "related_concepts": [
+              "kafka.property.scalability",
+              "kafka.broker.partition-leader"
+            ]
+          },
+          "edges_deleted_by_this_update": [],
+          "binding_note": "target_exists and target_before_sha256 are bound by the engine at propose time from the live canonical path; the value recorded here is the pre-propose measurement of the same bytes."
+        },
+        "new_evidence": [
+          {
+            "span": "L344-L347",
+            "claim": "복제 팩터는 min.insync.replicas 보다 최소 1 이상 크게 잡을 것을 강력 권장한다."
+          },
+          {
+            "span": "L348-L353",
+            "claim": "RF++ — min.insync.replicas + 2, 즉 파티션별 최소 3개의 레플리카."
+          },
+          {
+            "span": "L441-L458",
+            "claim": "min.insync.replicas = 2 와 프로듀서 ack=all 조합이 리더 장애 시 데이터 유실을 막는다."
+          }
+        ],
+        "relating_candidates": [
+          "kafka.config.default-replication-factor",
+          "kafka.config.rf-plus-plus",
+          "kafka.config.min-insync-replicas"
+        ],
+        "non_move_consequence": "canonical_path is unchanged, so apply overwrites the approved document in place and never relocates it. The engine refuses a batch proposal that moves an approved concept.",
+        "decision_rationale": "The engine patch seeds the propose-time render catalog from the approved knowledge index, so this update renders its approved related-concept edges without re-proposing their targets. Every approved locator is kept and the chap02 evidence is appended, so the revision is strictly additive.",
+        "new_evidence_authored": [
+          "content/brain/books/kafka/chap02.md:344-347",
+          "content/brain/books/kafka/chap02.md:348-353",
+          "content/brain/books/kafka/chap02.md:441-458"
+        ],
+        "new_related_concepts": [
+          "kafka.config.default-replication-factor",
+          "kafka.config.rf-plus-plus",
+          "kafka.config.min-insync-replicas"
+        ]
+      },
+      {
+        "concept_id": "kafka.retention.retention",
+        "applied_title": "메세지 보존",
+        "applied_aliases": [
+          "Retention",
+          "메세지 보관"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/retention/message-retention.md",
+        "applied_document_sha256": "fdeee2dc3a1955baf9e454bdb4cf8617bdbf0e06052d26e6e23eddce656074ec",
+        "inventory_expected_disposition": "update-candidate",
+        "matched_on": [
+          "alias:Retention"
+        ],
+        "authoring_decision": "update",
+        "update_authored": true,
+        "reproposed": false,
+        "restated": false,
+        "before_state_binding": {
+          "applied_document_sha256": "fdeee2dc3a1955baf9e454bdb4cf8617bdbf0e06052d26e6e23eddce656074ec",
+          "applied_proposal_kind": "create",
+          "applied_locators": [
+            "content/brain/books/kafka/chap01.md:339-345"
+          ],
+          "applied_related_concepts": [
+            "kafka.retention.log-compaction",
+            "kafka.property.disk-based-retention"
+          ],
+          "approved_edges_that_an_update_would_delete": [],
+          "preserved_in_update": {
+            "title": "메세지 보존",
+            "aliases": [
+              "Retention",
+              "메세지 보관"
+            ],
+            "tags": [
+              "kafka",
+              "retention"
+            ],
+            "canonical_path": "content/brain/knowledge/kafka/retention/message-retention.md",
+            "locators": [
+              "content/brain/books/kafka/chap01.md:339-345"
+            ],
+            "related_concepts": [
+              "kafka.retention.log-compaction",
+              "kafka.property.disk-based-retention"
+            ]
+          },
+          "edges_deleted_by_this_update": [],
+          "binding_note": "target_exists and target_before_sha256 are bound by the engine at propose time from the live canonical path; the value recorded here is the pre-propose measurement of the same bytes."
+        },
+        "new_evidence": [
+          {
+            "span": "L357-L375",
+            "claim": "시간 기준 보존은 로그 세그먼트 파일의 mtime 기준으로 동작하며, 더 작은 단위 설정이 우선한다."
+          },
+          {
+            "span": "L376-L391",
+            "claim": "크기 기준 보존은 파티션 단위로 적용되고, -1은 영구 보존이다."
+          },
+          {
+            "span": "L385-L389",
+            "claim": "크기 기준과 시간 기준을 동시에 설정하면 한쪽 조건만 성립해도 삭제된다."
+          },
+          {
+            "span": "L392-L426",
+            "claim": "보존 설정은 메세지 각각이 아니라 닫힌 로그 세그먼트에 적용된다."
+          }
+        ],
+        "relating_candidates": [
+          "kafka.config.log-retention-ms",
+          "kafka.config.log-retention-bytes",
+          "kafka.config.log-segment-bytes",
+          "kafka.config.log-roll-ms"
+        ],
+        "non_move_consequence": "canonical_path is unchanged, so apply overwrites the approved document in place and never relocates it. The engine refuses a batch proposal that moves an approved concept.",
+        "decision_rationale": "The engine patch seeds the propose-time render catalog from the approved knowledge index, so this update renders its approved related-concept edges without re-proposing their targets. Every approved locator is kept and the chap02 evidence is appended, so the revision is strictly additive.",
+        "new_evidence_authored": [
+          "content/brain/books/kafka/chap02.md:357-375",
+          "content/brain/books/kafka/chap02.md:376-391",
+          "content/brain/books/kafka/chap02.md:392-426"
+        ],
+        "new_related_concepts": [
+          "kafka.config.log-retention-ms",
+          "kafka.config.log-retention-bytes",
+          "kafka.config.log-segment-bytes"
+        ]
+      },
+      {
+        "concept_id": "kafka.topic.partition",
+        "applied_title": "파티션",
+        "applied_aliases": [
+          "Partition",
+          "카프카 파티션"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/topic/partition.md",
+        "applied_document_sha256": "c4e1f1a6f15e7d2d2b73840794372a2ecc2aae93f2150a0c5bf4ce521c7e3c36",
+        "inventory_expected_disposition": "update-candidate",
+        "matched_on": [
+          "title:파티션",
+          "alias:Partition"
+        ],
+        "authoring_decision": "update",
+        "update_authored": true,
+        "reproposed": false,
+        "restated": false,
+        "before_state_binding": {
+          "applied_document_sha256": "c4e1f1a6f15e7d2d2b73840794372a2ecc2aae93f2150a0c5bf4ce521c7e3c36",
+          "applied_proposal_kind": "merge",
+          "applied_locators": [
+            "content/brain/books/kafka/chap01.md:215-224",
+            "content/brain/books/kafka/chap01.md:228-230"
+          ],
+          "applied_related_concepts": [
+            "kafka.topic.topic",
+            "kafka.client.offset",
+            "kafka.broker.partition-leader"
+          ],
+          "approved_edges_that_an_update_would_delete": [],
+          "preserved_in_update": {
+            "title": "파티션",
+            "aliases": [
+              "Partition",
+              "카프카 파티션"
+            ],
+            "tags": [
+              "kafka",
+              "topic"
+            ],
+            "canonical_path": "content/brain/knowledge/kafka/topic/partition.md",
+            "locators": [
+              "content/brain/books/kafka/chap01.md:215-224",
+              "content/brain/books/kafka/chap01.md:228-230"
+            ],
+            "related_concepts": [
+              "kafka.topic.topic",
+              "kafka.client.offset",
+              "kafka.broker.partition-leader"
+            ]
+          },
+          "edges_deleted_by_this_update": [],
+          "binding_note": "target_exists and target_before_sha256 are bound by the engine at propose time from the live canonical path; the value recorded here is the pre-propose measurement of the same bytes."
+        },
+        "new_evidence": [
+          {
+            "span": "L282-L290",
+            "claim": "파티션 수를 브로커 수에 맞추거나 배수로 잡아 메세지 부하를 고르게 분산한다."
+          },
+          {
+            "span": "L291-L300",
+            "claim": "파티션 하나는 언제나 컨슈머 하나만 읽으므로 단일 파티션 최대 읽기 처리량이 산정 입력이 된다."
+          },
+          {
+            "span": "L301-L314",
+            "claim": "과대 추산 비용: 브로커 메모리·메타데이터 갱신·리더 변경 지연·미러링 병목·IOPS 상한."
+          },
+          {
+            "span": "L315-L326",
+            "claim": "목표 처리량 ÷ 컨슈머 처리량으로 파티션 수를 계산하고, 파티션당 디스크 용량은 6GB 미만을 권장한다."
+          },
+          {
+            "span": "L376-L391",
+            "claim": "모든 보존은 토픽 단위가 아니라 파티션 단위로 작동한다."
+          }
+        ],
+        "relating_candidates": [
+          "kafka.config.num-partitions",
+          "kafka.config.log-retention-bytes"
+        ],
+        "non_move_consequence": "canonical_path is unchanged, so apply overwrites the approved document in place and never relocates it. The engine refuses a batch proposal that moves an approved concept.",
+        "decision_rationale": "The engine patch seeds the propose-time render catalog from the approved knowledge index, so this update renders its approved related-concept edges without re-proposing their targets. Every approved locator is kept and the chap02 evidence is appended, so the revision is strictly additive.",
+        "new_evidence_authored": [
+          "content/brain/books/kafka/chap02.md:282-290",
+          "content/brain/books/kafka/chap02.md:291-300",
+          "content/brain/books/kafka/chap02.md:301-314",
+          "content/brain/books/kafka/chap02.md:315-326",
+          "content/brain/books/kafka/chap02.md:376-391"
+        ],
+        "new_related_concepts": [
+          "kafka.broker.cluster",
+          "kafka.config.num-partitions",
+          "kafka.config.log-retention-bytes"
+        ]
+      },
+      {
+        "concept_id": "kafka.topic.topic",
+        "applied_title": "토픽",
+        "applied_aliases": [
+          "Topic",
+          "카프카 토픽"
+        ],
+        "applied_canonical_path": "content/brain/knowledge/kafka/topic/kafka-topic.md",
+        "applied_document_sha256": "4a6c9921794f1eb0d0d08cf90a4e86159218ba4fc68c4834eaaefe6a826e1a13",
+        "inventory_expected_disposition": "relate",
+        "matched_on": [
+          "title:토픽",
+          "alias:Topic"
+        ],
+        "authoring_decision": "relate",
+        "reproposed": false,
+        "restated": false,
+        "evidence_spans": [
+          "L115-L154",
+          "L252-L262",
+          "L273-L279",
+          "L327-L333"
+        ],
+        "relating_candidates": [
+          "kafka.config.auto-create-topics-enable",
+          "kafka.config.delete-topic-enable",
+          "kafka.config.topic-default",
+          "kafka.install.cli-utility",
+          "kafka.topic.partition"
+        ],
+        "non_restatement_guarantee": "Topics appear as the object of creation, deletion and default settings, never as a definitional claim. No candidate title or alias normalizes to `토픽` or `topic`.",
+        "edge_expression": "Expressed as 5 real related_concepts edge(s) from kafka.config.auto-create-topics-enable, kafka.config.delete-topic-enable, kafka.config.topic-default, kafka.install.cli-utility, kafka.topic.partition. The engine resolves them against the approved knowledge index and renders each as a wiki link to the applied document; graph-preview.json and link-report.json measure them as resolved knowledge edges."
+      }
+    ]
+  },
+  "budget_accounting": {
+    "B5_ceiling": 40,
+    "accepted_candidates": 39,
+    "creates": 35,
+    "stubs": 1,
+    "updates": 3,
+    "forecast_central": 31,
+    "forecast_band": "24-39",
+    "within_ceiling": true,
+    "split_required": false,
+    "split_trigger": "The L327-L481 split (`### 토픽별 기본값`, 119 prose lines) was held in reserve for this pass. Adding the 3 updates to the 39 provisional candidates would have reached 42 > B5 = 40, so redundancy was removed first: the 3 provisional creates under `### 파티션 수 결정` were merged into the kafka.topic.partition update, giving 39 ≤ 40. Because the ceiling holds, the bounded split is not required and B5 was not raised.",
+    "removed_creates": [
+      {
+        "concept_id": "kafka.config.partition-count",
+        "title": "파티션 수와 브로커 분산",
+        "locators": [
+          "content/brain/books/kafka/chap02.md:282-290"
+        ],
+        "merged_into": "kafka.topic.partition",
+        "rationale": "Not a named broker parameter (contrast kafka.config.num-partitions, retained): a prose-derived sizing claim about the 파티션 concept itself. Its spans are exactly the recorded chap02 new evidence of kafka.topic.partition, which under the provisional option-C state could not be authored as an update. With the update authored, keeping it would restate the update's own evidence in a sibling document.",
+        "evidence_preserved_by": "kafka.topic.partition update locator over the identical span; anchor coverage and scope coverage are unchanged.",
+        "incoming_edges_before": [],
+        "incoming_edges_note": "The three formed a closed triangle — they related only to each other and no surviving candidate pointed at them — so removal leaves no dangling edge."
+      },
+      {
+        "concept_id": "kafka.config.partition-count-sizing",
+        "title": "파티션 수 산정",
+        "locators": [
+          "content/brain/books/kafka/chap02.md:291-300",
+          "content/brain/books/kafka/chap02.md:315-326"
+        ],
+        "merged_into": "kafka.topic.partition",
+        "rationale": "Not a named broker parameter (contrast kafka.config.num-partitions, retained): a prose-derived sizing claim about the 파티션 concept itself. Its spans are exactly the recorded chap02 new evidence of kafka.topic.partition, which under the provisional option-C state could not be authored as an update. With the update authored, keeping it would restate the update's own evidence in a sibling document.",
+        "evidence_preserved_by": "kafka.topic.partition update locator over the identical span; anchor coverage and scope coverage are unchanged.",
+        "incoming_edges_before": [],
+        "incoming_edges_note": "The three formed a closed triangle — they related only to each other and no surviving candidate pointed at them — so removal leaves no dangling edge."
+      },
+      {
+        "concept_id": "kafka.config.partition-over-provisioning",
+        "title": "파티션 과대 추산 위험",
+        "locators": [
+          "content/brain/books/kafka/chap02.md:301-314"
+        ],
+        "merged_into": "kafka.topic.partition",
+        "rationale": "Not a named broker parameter (contrast kafka.config.num-partitions, retained): a prose-derived sizing claim about the 파티션 concept itself. Its spans are exactly the recorded chap02 new evidence of kafka.topic.partition, which under the provisional option-C state could not be authored as an update. With the update authored, keeping it would restate the update's own evidence in a sibling document.",
+        "evidence_preserved_by": "kafka.topic.partition update locator over the identical span; anchor coverage and scope coverage are unchanged.",
+        "incoming_edges_before": [],
+        "incoming_edges_note": "The three formed a closed triangle — they related only to each other and no surviving candidate pointed at them — so removal leaves no dangling edge."
+      }
+    ],
+    "granularity_note": "A first pass at maximal atomicity produced 52 candidates. Rather than raise B5 or split, evidence-adjacent notes were folded into the parameter concept they annotate (e.g. the mtime note L366-L373 into log.retention.ms, the timestamp-to-offset note L415-L423 into log.segment.bytes), leaving 39. Every fold is a callout that annotates exactly one parameter; no fold merges two independent parameters."
+  },
+  "source_accounting": {
+    "heading_regex_matches": 28,
+    "real_headings": 17,
+    "fenced_shell_pseudo_headings": 11,
+    "accounting": "17 + 11 = 28, exhaustive",
+    "pseudo_heading_note": "None of the 11 fenced shell comments was treated as a heading or as a scope start. No candidate's heading_chain contains one; every heading in every locator was recomputed by the engine's fence-aware headingChain().",
+    "preamble": {
+      "lines": "L7-L16",
+      "prose_lines": 6,
+      "heading_chain": "unheaded-body",
+      "span_sha256": "99ede8ba46710df3dd7cb79d24cf9b4fa5b90a274fd19c3df79e92af0b779359",
+      "cited_by": "kafka.zookeeper.kraft",
+      "note": "The only KRaft evidence in the chapter, and the only citable prose that belongs to no scope. Cited by literal span; it has no heading_chain, so the locator records `unheaded-body` — the engine's own value, not a placeholder."
+    },
+    "whole_file_line_accounting": "6 frontmatter (L1-L6) + 10 preamble (L7-L16) + 548 scope lines (L17-L564) = 564, unaccounted 0",
+    "scopes": {
+      "total": 17,
+      "positive_prose": 15,
+      "prose_bearing": 13,
+      "low_evidence_prose": 2,
+      "code_only": 0,
+      "zero_evidence": 2,
+      "engine_substantive": 15,
+      "engine_non_substantive": 2,
+      "partition": "13 + 2 + 0 + 2 = 17",
+      "all_17_addressed": "15 engine-substantive scopes are cited by at least one candidate; the 2 zero-evidence scopes are the rejection probes below.",
+      "reauthoring_note": "Unchanged: `### 파티션 수 결정` is still cited, now by the kafka.topic.partition update rather than by three creates."
+    },
+    "anchors": {
+      "total": 48,
+      "by_kind": {
+        "heading": 17,
+        "enumerated-parameter": 16,
+        "bold-lead": 15
+      },
+      "by_class": {
+        "citable": 34,
+        "low-evidence": 6,
+        "code-only": 0,
+        "zero-evidence": 8
+      },
+      "partition": "34 + 6 + 0 + 8 = 48",
+      "distinction_warning": "The 8 zero-evidence ANCHORS are not the 2 zero-evidence SCOPES. Only the 2 scopes are rejection probes; the 8 anchors are container headings whose body lives in a following anchor and are covered by the candidate that cites that body.",
+      "citable_anchors_cited": 34,
+      "low_evidence_anchors_cited": 6,
+      "zero_evidence_anchors_cited": 0,
+      "reauthoring_note": "Unchanged by the re-authoring pass. The four anchors under `### 파티션 수 결정` (L282-290, L291-300, L301-314, L315-326) moved from the three removed creates to the kafka.topic.partition update, which cites each as its own locator; every other anchor keeps its citing candidate."
+    }
+  },
+  "rejection_probes": {
+    "file_level": 0,
+    "file_level_note": "Whole-document negative coverage is already discharged against headfirst/chap01.md, kafka/chap03.md and kafka/chap04.md by the applied book-batch-01, against these exact still-unchanged bytes.",
+    "scope_level": 2,
+    "note": "Both probes are non-substantive under the engine's own substantiveBodyText() gate, verified by running the extracted gate against the scope bodies."
+  },
+  "exclusions_and_coverage": {
+    "note": "Carried forward from the inventory, re-checked against the live corpus; batch 05 changes no exclusion.",
+    "corpus_files": 27,
+    "selected": 1,
+    "excluded": 26,
+    "reason_codes": {
+      "selected-extraction-source": 1,
+      "consumed-by-applied-u2-pilot": 2,
+      "consumed-by-applied-book-batch-01": 2,
+      "consumed-by-applied-book-batch-02": 3,
+      "consumed-by-applied-book-batch-03": 4,
+      "consumed-by-applied-book-batch-04": 1,
+      "probe-discharged-by-applied-book-batch-01": 3,
+      "deferred-later-batch-same-series": 6,
+      "structural-landing-page": 5
+    },
+    "accounting": "1 + 26 = 27, unaccounted 0",
+    "next_batch": "kafka/chap05.md (337 prose lines, 94% of B4)"
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 05 touches, so U3 must confirm it relates rather than restates. Every `update` candidate carries this flag by construction: it rewrites an applied document.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose: it is a fenced code block, an Obsidian callout, or the pre-heading preamble that has no heading_chain.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3. 29 of 39 candidates carry at least one flag, including all 3 updates."
+  },
+  "candidates": [
+    {
+      "concept_id": "kafka.zookeeper.kraft",
+      "title": "KRaft",
+      "aliases": [
+        "Kafka Raft Metadata Model",
+        "카프카 래프트 메타데이터 모델"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/kraft.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single metadata mechanism that replaces ZooKeeper for broker metadata in recent Apache Kafka versions",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.zookeeper.zookeeper"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "unheaded-body",
+          "start_line": 7,
+          "end_line": 16
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.zookeeper.zookeeper",
+      "title": "주키퍼",
+      "aliases": [
+        "ZooKeeper",
+        "Apache ZooKeeper",
+        "아파치 주키퍼"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/kafka-zookeeper.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single centralized coordination service that stores Kafka cluster metadata and consumer client information",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.zookeeper.ensemble",
+        "kafka.zookeeper.kraft",
+        "kafka.config.zookeeper-connect"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 주키퍼",
+          "start_line": 17,
+          "end_line": 24
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.zookeeper.ensemble",
+      "title": "주키퍼 앙상블",
+      "aliases": [
+        "ZooKeeper Ensemble",
+        "쿼럼",
+        "Quorum"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/ensemble.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ZooKeeper clustering unit that answers requests only while a majority of its members is up",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.zookeeper.zookeeper",
+        "kafka.zookeeper.ensemble-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 주키퍼 > ### 주키퍼 앙상블",
+          "start_line": 25,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.zookeeper.ensemble-sizing",
+      "title": "주키퍼 앙상블 크기 결정",
+      "aliases": [
+        "ZooKeeper Ensemble Sizing",
+        "옵저버 노드",
+        "Observer Node"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/ensemble-sizing.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sizing rule bounding a ZooKeeper ensemble between maintainable and consensus-degraded node counts",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.zookeeper.ensemble"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 주키퍼 > ### 주키퍼 앙상블 크기 결정",
+          "start_line": 34,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.zookeeper.ensemble-configuration",
+      "title": "주키퍼 앙상블 설정 파일",
+      "aliases": [
+        "zoo.cfg",
+        "myid",
+        "주키퍼 설정 파일"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/ensemble-configuration.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of files every ensemble member needs: a shared server-list configuration and a per-server myid",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.zookeeper.ensemble",
+        "kafka.zookeeper.timing-parameter",
+        "kafka.zookeeper.ensemble-port"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 주키퍼 > ### 주키퍼 설정 파일",
+          "start_line": 48,
+          "end_line": 64
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.zookeeper.timing-parameter",
+      "title": "주키퍼 타이밍 매개변수",
+      "aliases": [
+        "tickTime",
+        "initLimit",
+        "syncLimit"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/timing-parameter.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single timing family that expresses follower initialization and synchronization limits as multiples of one tick",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.zookeeper.ensemble-configuration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 주키퍼 > ### 주키퍼 설정 파일",
+          "start_line": 66,
+          "end_line": 71
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.zookeeper.ensemble-port",
+      "title": "주키퍼 앙상블 포트 구성",
+      "aliases": [
+        "peerPort",
+        "leaderPort",
+        "clientPort"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/ensemble-port.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single three-port addressing scheme separating ensemble peer traffic, leader election and client connections",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.zookeeper.ensemble-configuration",
+        "kafka.zookeeper.single-server-ensemble-test"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 주키퍼 > ### 주키퍼 설정 파일",
+          "start_line": 72,
+          "end_line": 78
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.zookeeper.single-server-ensemble-test",
+      "title": "단일 서버 주키퍼 앙상블 테스트",
+      "aliases": [
+        "Single Server ZooKeeper Ensemble"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/zookeeper/single-server-ensemble-test.md",
+      "tags": [
+        "kafka",
+        "zookeeper"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single test arrangement running a whole ZooKeeper ensemble on one host by giving each instance distinct ports and data directories",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.zookeeper.ensemble-port",
+        "kafka.zookeeper.ensemble-configuration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 주키퍼 > ### 주키퍼 설정 파일",
+          "start_line": 82,
+          "end_line": 87
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.install.server-startup",
+      "title": "카프카·주키퍼 서버 기동",
+      "aliases": [
+        "zookeeper-server-start.sh",
+        "kafka-server-start.sh"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/install/server-startup.md",
+      "tags": [
+        "kafka",
+        "install"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single startup order that brings up ZooKeeper before the Kafka broker and verifies ZooKeeper over its client port",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.install.cli-utility",
+        "kafka.zookeeper.zookeeper"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 카프카 설치 > ### macOS 설치",
+          "start_line": 95,
+          "end_line": 114
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.install.cli-utility",
+      "title": "카프카 CLI 유틸리티",
+      "aliases": [
+        "kafka-topics.sh",
+        "kafka-console-producer.sh",
+        "kafka-console-consumer.sh"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/install/cli-utility.md",
+      "tags": [
+        "kafka",
+        "install"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of shipped shell utilities that create topics and drive a console producer and consumer against a broker",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.install.bootstrap-server",
+        "kafka.install.server-startup",
+        "kafka.topic.topic",
+        "kafka.client.producer",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 카프카 설치 > ### 토픽 생성 및 확인",
+          "start_line": 117,
+          "end_line": 128
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 카프카 설치 > ### 토픽 생성 및 확인",
+          "start_line": 129,
+          "end_line": 142
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 카프카 설치 > ### 토픽 생성 및 확인",
+          "start_line": 143,
+          "end_line": 154
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.install.bootstrap-server",
+      "title": "부트스트랩 서버 연결",
+      "aliases": [
+        "--bootstrap-server",
+        "--zookeeper 지원 중단"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/install/bootstrap-server.md",
+      "tags": [
+        "kafka",
+        "install"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single CLI connection contract that replaced the withdrawn ZooKeeper connection string with a direct broker address",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.install.cli-utility",
+        "kafka.zookeeper.zookeeper"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 카프카 설치 > ### 토픽 생성 및 확인",
+          "start_line": 158,
+          "end_line": 161
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.core-broker-parameter",
+      "title": "핵심 브로커 매개변수",
+      "aliases": [
+        "Core Broker Parameter",
+        "브로커 설정 매개변수"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/core-broker-parameter.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of broker settings that may stay at defaults on a standalone broker but must be changed to run in cluster mode",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.broker-id",
+        "kafka.config.listeners",
+        "kafka.config.zookeeper-connect",
+        "kafka.broker.broker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정",
+          "start_line": 166,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 176,
+          "end_line": 184
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.broker-id",
+      "title": "broker.id",
+      "aliases": [
+        "브로커 ID",
+        "브로커 식별자"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/broker-id.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single integer broker identifier that must be unique within a cluster and pinned per host",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.core-broker-parameter",
+        "kafka.broker.broker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 185,
+          "end_line": 193
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.listeners",
+      "title": "listeners",
+      "aliases": [
+        "리스너 설정",
+        "listener.security.protocol.map"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/listeners.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single listener list binding protocol, hostname and port for the connections a broker accepts",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.config.core-broker-parameter",
+        "kafka.broker.broker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 194,
+          "end_line": 207
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.zookeeper-connect",
+      "title": "zookeeper.connect",
+      "aliases": [
+        "chroot",
+        "주키퍼 접속 설정"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/zookeeper-connect.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single connection string locating the ZooKeeper holding broker metadata, optionally under a chroot path",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.zookeeper.zookeeper",
+        "kafka.zookeeper.ensemble",
+        "kafka.config.core-broker-parameter",
+        "kafka.broker.broker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 208,
+          "end_line": 224
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.log-dirs",
+      "title": "log.dirs",
+      "aliases": [
+        "log.dir",
+        "로그 디렉토리"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/log-dirs.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of local log directories, with new partitions placed by partition count rather than by used disk space",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.config.num-recovery-threads-per-data-dir",
+        "kafka.config.log-segment-bytes",
+        "kafka.message.message"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 225,
+          "end_line": 236
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.num-recovery-threads-per-data-dir",
+      "title": "num.recovery.threads.per.data.dir",
+      "aliases": [
+        "언클린 셧다운",
+        "Unclean Shutdown",
+        "복구 스레드"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/num-recovery-threads-per-data-dir.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single per-log-directory thread count governing how fast log segments open, check and close around broker restarts",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.config.log-dirs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 237,
+          "end_line": 251
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.auto-create-topics-enable",
+      "title": "auto.create.topics.enable",
+      "aliases": [
+        "자동 토픽 생성"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/auto-create-topics-enable.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single switch deciding whether a broker creates a missing topic on produce, consume or metadata request",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.num-partitions",
+        "kafka.config.delete-topic-enable",
+        "kafka.topic.topic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 252,
+          "end_line": 262
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.auto-leader-rebalance-enable",
+      "title": "auto.leader.rebalance.enable",
+      "aliases": [
+        "선호 리더 리밸런싱",
+        "leader.imbalance.per.broker.percentage"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/auto-leader-rebalance-enable.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single background rebalancer that keeps partition leadership spread evenly across brokers",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.core-broker-parameter",
+        "kafka.broker.cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 263,
+          "end_line": 272
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.delete-topic-enable",
+      "title": "delete.topic.enable",
+      "aliases": [
+        "토픽 삭제 제한"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/delete-topic-enable.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single switch that blocks arbitrary topic deletion in a cluster",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.auto-create-topics-enable",
+        "kafka.topic.topic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "start_line": 273,
+          "end_line": 279
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.topic.partition",
+      "title": "파티션",
+      "aliases": [
+        "Partition",
+        "카프카 파티션"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/topic/partition.md",
+      "tags": [
+        "kafka",
+        "topic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single append-only log within a topic that guarantees order inside itself, provides redundancy and horizontal scale, and whose per-topic count is the unit of load distribution, consumer parallelism and retention",
+      "pilot_strata": [
+        "book-batch-04",
+        "book-batch-05",
+        "kafka/chap01",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.topic.topic",
+        "kafka.client.offset",
+        "kafka.broker.partition-leader",
+        "kafka.broker.cluster",
+        "kafka.config.num-partitions",
+        "kafka.config.log-retention-bytes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 토픽/파티션",
+          "start_line": 215,
+          "end_line": 224
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 토픽/파티션",
+          "start_line": 228,
+          "end_line": 230
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 파티션 수 결정",
+          "start_line": 282,
+          "end_line": 290
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 파티션 수 결정",
+          "start_line": 291,
+          "end_line": 300
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 파티션 수 결정",
+          "start_line": 301,
+          "end_line": 314
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 파티션 수 결정",
+          "start_line": 315,
+          "end_line": 326
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 376,
+          "end_line": 391
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.topic-default",
+      "title": "토픽별 기본값",
+      "aliases": [
+        "Topic Default",
+        "토픽 기본 설정"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/topic-default.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "single broker-level default set applied to newly created topics, overridable only through the admin tooling",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.config.num-partitions",
+        "kafka.topic.topic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 327,
+          "end_line": 333
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.num-partitions",
+      "title": "num.partitions",
+      "aliases": [
+        "기본 파티션 수"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/num-partitions.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single default partition count for auto-created topics, increasable but never decreasable afterwards",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.topic-default",
+        "kafka.config.auto-create-topics-enable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 334,
+          "end_line": 343
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.default-replication-factor",
+      "title": "default.replication.factor",
+      "aliases": [
+        "기본 복제 팩터",
+        "Default Replication Factor"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/default-replication-factor.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single default replication factor for auto-created topics, recommended to exceed min.insync.replicas by at least one",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.config.rf-plus-plus",
+        "kafka.config.min-insync-replicas"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 344,
+          "end_line": 347
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.property.fault-tolerance",
+      "title": "내고장성",
+      "aliases": [
+        "Fault Tolerance",
+        "장애 감내"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/property/fault-tolerance.md",
+      "tags": [
+        "kafka",
+        "property"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single platform property of continuing correct operation while individual components fail, sized in Kafka by holding the replication factor above the minimum in-sync replica count",
+      "pilot_strata": [
+        "book-batch-04",
+        "book-batch-05",
+        "kafka/chap01",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.property.scalability",
+        "kafka.broker.partition-leader",
+        "kafka.config.default-replication-factor",
+        "kafka.config.rf-plus-plus",
+        "kafka.config.min-insync-replicas"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 플랫폼 기능",
+          "start_line": 459,
+          "end_line": 470
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 344,
+          "end_line": 347
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 348,
+          "end_line": 353
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 441,
+          "end_line": 458
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.rf-plus-plus",
+      "title": "RF++",
+      "aliases": [
+        "Replication Factor Plus Plus",
+        "복제 팩터 권장값"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/rf-plus-plus.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single replication sizing rule setting the replication factor two above min.insync.replicas, i.e. at least three replicas per partition",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.default-replication-factor",
+        "kafka.config.min-insync-replicas"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 348,
+          "end_line": 353
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.log-retention-ms",
+      "title": "log.retention.ms",
+      "aliases": [
+        "log.retention.hours",
+        "시간 기준 보존",
+        "mtime 기준 보존"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/log-retention-ms.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single time-based retention setting evaluated against each closed log segment's last-modified time, with the smallest declared unit winning",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.config.log-retention-bytes",
+        "kafka.config.log-segment-bytes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 357,
+          "end_line": 375
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.retention.retention",
+      "title": "메세지 보존",
+      "aliases": [
+        "Retention",
+        "메세지 보관"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/retention/message-retention.md",
+      "tags": [
+        "kafka",
+        "retention"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single durability rule holding messages for a configured time or partition size before expiry, evaluated per partition against closed log segments",
+      "pilot_strata": [
+        "book-batch-04",
+        "book-batch-05",
+        "kafka/chap01",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.retention.log-compaction",
+        "kafka.property.disk-based-retention",
+        "kafka.config.log-retention-ms",
+        "kafka.config.log-retention-bytes",
+        "kafka.config.log-segment-bytes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 보존/로그 압착",
+          "start_line": 339,
+          "end_line": 345
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 357,
+          "end_line": 375
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 376,
+          "end_line": 391
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 392,
+          "end_line": 426
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.log-retention-bytes",
+      "title": "log.retention.bytes",
+      "aliases": [
+        "크기 기준 보존",
+        "파티션 단위 보존"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/log-retention-bytes.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single size-based retention setting applied per partition, so retained volume scales with partition count",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.config.log-retention-ms",
+        "kafka.config.log-segment-bytes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 376,
+          "end_line": 391
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.log-segment-bytes",
+      "title": "log.segment.bytes",
+      "aliases": [
+        "로그 세그먼트",
+        "Log Segment"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/log-segment-bytes.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single segment size threshold that closes and rolls a log segment, gating expiry and timestamp-to-offset lookup",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.config.log-retention-ms",
+        "kafka.config.log-roll-ms",
+        "kafka.config.log-dirs",
+        "kafka.client.offset",
+        "kafka.message.message"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 392,
+          "end_line": 426
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.log-roll-ms",
+      "title": "log.roll.ms",
+      "aliases": [
+        "시간 기준 세그먼트",
+        "로그 롤링"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/log-roll-ms.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single time threshold that closes a log segment independently of its size, at the cost of synchronized closes",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.config.log-segment-bytes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 427,
+          "end_line": 440
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.min-insync-replicas",
+      "title": "min.insync.replicas",
+      "aliases": [
+        "최소 동기화 레플리카",
+        "In-Sync Replica"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/min-insync-replicas.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single minimum count of in-sync replicas that must acknowledge a write before it is reported successful",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.default-replication-factor",
+        "kafka.config.rf-plus-plus",
+        "kafka.client.producer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 441,
+          "end_line": 458
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.message-max-bytes",
+      "title": "message.max.bytes",
+      "aliases": [
+        "fetch.message.max.bytes",
+        "replica.fetch.max.bytes",
+        "최대 메세지 크기"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/message-max-bytes.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single broker-side ceiling on compressed message size that must stay aligned with the consumer and replica fetch sizes",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.config.log-segment-bytes",
+        "kafka.client.producer",
+        "kafka.client.consumer",
+        "kafka.message.message"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 461,
+          "end_line": 479
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.hardware.hardware-selection",
+      "title": "카프카 하드웨어 선택",
+      "aliases": [
+        "Hardware Selection",
+        "브로커 하드웨어"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/hardware/hardware-selection.md",
+      "tags": [
+        "kafka",
+        "hardware"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single provisioning frame listing the five hardware dimensions that bound broker performance and partition capacity",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.hardware.disk-throughput",
+        "kafka.hardware.disk-capacity",
+        "kafka.hardware.page-cache",
+        "kafka.hardware.network-bandwidth"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 하드웨어 선택",
+          "start_line": 482,
+          "end_line": 490
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.hardware.disk-throughput",
+      "title": "디스크 처리량",
+      "aliases": [
+        "Disk Throughput",
+        "RAID"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/hardware/disk-throughput.md",
+      "tags": [
+        "kafka",
+        "hardware"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single broker disk-write property that bounds producer acknowledgement latency and drives the SSD-versus-HDD choice",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.hardware.hardware-selection",
+        "kafka.hardware.disk-capacity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 하드웨어 선택 > ### 디스크 처리량",
+          "start_line": 493,
+          "end_line": 511
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.hardware.disk-capacity",
+      "title": "디스크 용량",
+      "aliases": [
+        "Disk Capacity",
+        "보존 기간 기반 용량 산정"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/hardware/disk-capacity.md",
+      "tags": [
+        "kafka",
+        "hardware"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single storage sizing derived from retained traffic plus overhead, and one of the two factors that size a cluster",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.hardware.hardware-selection",
+        "kafka.hardware.disk-throughput",
+        "kafka.broker.cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 하드웨어 선택 > ### 디스크 용량",
+          "start_line": 512,
+          "end_line": 523
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.hardware.page-cache",
+      "title": "페이지 캐시",
+      "aliases": [
+        "Page Cache",
+        "OS 페이지 캐시"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/hardware/page-cache.md",
+      "tags": [
+        "kafka",
+        "hardware"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single system memory region serving tail reads from cached log segments instead of from disk",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.hardware.broker-heap",
+        "kafka.hardware.hardware-selection",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 하드웨어 선택 > ### 메모리",
+          "start_line": 528,
+          "end_line": 533
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.hardware.broker-heap",
+      "title": "브로커 힙 메모리",
+      "aliases": [
+        "Broker Heap",
+        "브로커 JVM 메모리"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/hardware/broker-heap.md",
+      "tags": [
+        "kafka",
+        "hardware"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single modest JVM heap requirement for a Kafka broker, leaving the rest of system memory to the page cache",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.hardware.page-cache"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 하드웨어 선택 > ### 메모리",
+          "start_line": 534,
+          "end_line": 541
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.hardware.network-bandwidth",
+      "title": "네트워크 대역폭",
+      "aliases": [
+        "Network Bandwidth",
+        "NIC",
+        "네트워크 불균형"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/hardware/network-bandwidth.md",
+      "tags": [
+        "kafka",
+        "hardware"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single bandwidth budget that bounds cluster traffic and is skewed outbound by fan-out consumers, replication and mirroring",
+      "pilot_strata": [
+        "book-batch-05",
+        "kafka/chap02",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.hardware.hardware-selection",
+        "kafka.hardware.disk-capacity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 하드웨어 선택 > ### 네트워크",
+          "start_line": 546,
+          "end_line": 559
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap02-l0091",
+      "title": "chap02 카프카 설치 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap02 L91-94 `## 카프카 설치` carries only heading and blank/structural lines (span_sha256 a9e0d0f311f44fd74c78843164eb6ff97fc8dee7d709b33d14c026a23427417e; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-05",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16"
+        }
+      ],
+      "engine_substantive": false
+    },
+    {
+      "concept_id": "book.rejected.kafka-chap02-l0563",
+      "title": "chap02 CPU 섹션 (본문 없음)",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap02 L563-564 `## 하드웨어 선택 > ### CPU` carries only heading and blank/structural lines (span_sha256 7e48f1d33390c7ecd29aef30166fba5f4000ff78024feb0050cbaa4c27c6fdf9; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-05",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16"
+        }
+      ],
+      "engine_substantive": false
+    }
+  ],
+  "update_authoring_note": {
+    "statement": "Batch 05 authors exactly 3 `update` candidates. Each preserves its applied title, aliases, tags, canonical_path, every approved source locator and every approved related-concept edge, and appends chap02 evidence plus in-batch edges.",
+    "engine_basis": "The patched propose-time render catalog is the approved knowledge index plus this run's candidates, candidates last. An update therefore renders the approved edges it is revising instead of failing closed on them.",
+    "contained_span_note": "The recorded new-evidence span content/brain/books/kafka/chap02.md:385-389 is contained in 376-391 and is carried by that locator; citing both would duplicate the same bytes in one document.",
+    "updates": [
+      {
+        "concept_id": "kafka.topic.partition",
+        "approved_locators_preserved": [
+          "content/brain/books/kafka/chap01.md:215-224",
+          "content/brain/books/kafka/chap01.md:228-230"
+        ],
+        "new_locators": [
+          "content/brain/books/kafka/chap02.md:282-290",
+          "content/brain/books/kafka/chap02.md:291-300",
+          "content/brain/books/kafka/chap02.md:301-314",
+          "content/brain/books/kafka/chap02.md:315-326",
+          "content/brain/books/kafka/chap02.md:376-391"
+        ],
+        "approved_related_concepts_preserved": [
+          "kafka.topic.topic",
+          "kafka.client.offset",
+          "kafka.broker.partition-leader"
+        ],
+        "new_related_concepts": [
+          "kafka.broker.cluster",
+          "kafka.config.num-partitions",
+          "kafka.config.log-retention-bytes"
+        ]
+      },
+      {
+        "concept_id": "kafka.property.fault-tolerance",
+        "approved_locators_preserved": [
+          "content/brain/books/kafka/chap01.md:459-470"
+        ],
+        "new_locators": [
+          "content/brain/books/kafka/chap02.md:344-347",
+          "content/brain/books/kafka/chap02.md:348-353",
+          "content/brain/books/kafka/chap02.md:441-458"
+        ],
+        "approved_related_concepts_preserved": [
+          "kafka.property.scalability",
+          "kafka.broker.partition-leader"
+        ],
+        "new_related_concepts": [
+          "kafka.config.default-replication-factor",
+          "kafka.config.rf-plus-plus",
+          "kafka.config.min-insync-replicas"
+        ]
+      },
+      {
+        "concept_id": "kafka.retention.retention",
+        "approved_locators_preserved": [
+          "content/brain/books/kafka/chap01.md:339-345"
+        ],
+        "new_locators": [
+          "content/brain/books/kafka/chap02.md:357-375",
+          "content/brain/books/kafka/chap02.md:376-391",
+          "content/brain/books/kafka/chap02.md:392-426"
+        ],
+        "approved_related_concepts_preserved": [
+          "kafka.retention.log-compaction",
+          "kafka.property.disk-based-retention"
+        ],
+        "new_related_concepts": [
+          "kafka.config.log-retention-ms",
+          "kafka.config.log-retention-bytes",
+          "kafka.config.log-segment-bytes"
+        ]
+      }
+    ],
+    "net_effect": "3 applied documents are revised in place (replaced_concept_count = 3), 0 are moved, 0 approved edges are lost, and 36 new concepts are created."
+  }
+}

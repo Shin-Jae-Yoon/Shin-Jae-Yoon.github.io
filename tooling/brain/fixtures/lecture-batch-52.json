@@ -1,0 +1,1180 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-52",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-51",
+    "applied_state": "1059 approved knowledge concepts after lecture-batch-51 closed the easy-ds tree series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/os/easy-os/lecture01.md",
+        "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070"
+      },
+      {
+        "path": "content/brain/lectures/os/easy-os/lecture02.md",
+        "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9"
+      },
+      {
+        "path": "content/brain/lectures/os/easy-os/lecture03.md",
+        "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9"
+      },
+      {
+        "path": "content/brain/lectures/os/easy-os/lecture00.md",
+        "source_sha256": "edda7aef601ce11a5502af80487d0a4e752d759686076ee2200f86da2e38d1a2"
+      }
+    ],
+    "line_range": "lecture01 L12-L223, lecture02 L12-L146, lecture03 L12-L113, lecture00 whole",
+    "series": "쉬운코드 운영체제 01~03"
+  },
+  "overlap_analysis": {
+    "finding": "The fun-java lane already applied six cs.os concepts - the operating system, the process, the thread, context switching, inter-process communication and the comparison of thread against process - from a language course that mentioned them in passing. This course is where they are actually explained, so four of them take their real evidence here.",
+    "disposition": "The historical progression from one program at a time to sliced processor time to threads is new, as is everything the switch is made of, and the classification of a program by whether it computes or waits."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All six update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture01 L8, L119-L125, L141-L151 partial, L175-L181 partial, L191, L201, L211, L221-L223; lecture02 L8, L17, L39, L103-L104, L112-L118; lecture03 L8, L16-L24, L102 partial; lecture00 whole",
+        "reason_code": "course-link-figure-caption-repeated-definition-or-index",
+        "detail": "The channel link, the asides scoping the discussion to kernel-level threads, the captions naming each configuration above its figure, the repetition of the third lecture's opening definitions which the first lecture already gave and which are cited there, the duplicated final example, and the course index."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across lectures 01 to 03 contributes at least one cited locator, either to a create or to an update. lecture00 contributes none, being an index."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 18216,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 199,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 17,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 23,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes easy-os - the notes stop after the third lecture.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "source_control_character_note": {
+    "span": "lecture01 L12",
+    "statement": "The top-level heading contains a backspace character (U+0008) between the marker and the text, so the heading chain asserted in every locator under it must carry that byte to match.",
+    "disposition": "The locators reproduce it verbatim. The source file is not modified. The same hazard was recorded at kafka/chap05 L211 in the book lane."
+  },
+  "duplicate_avoided_note": {
+    "proposed": "cs.os.program",
+    "existing": "cross-domain.program",
+    "disposition": "프로그램 was already applied as a cross-domain concept merged from the dinosaur book and the API notes. This course's one-line definition is appended to it as evidence rather than creating a second one."
+  },
+  "candidates_authored": 23,
+  "candidates": [
+    {
+      "concept_id": "cs.os.process",
+      "title": "프로세스",
+      "aliases": [
+        "Process",
+        "독립된 메모리 공간"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/process.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single independently running unit with its own stack, heap, BSS and text segments, whose isolation means it cannot reach into another process's memory",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-52",
+        "os/easy-os"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "cs.os.ipc",
+        "cs.os.operating-system",
+        "cs.memory.call-stack",
+        "cross-domain.program",
+        "cs.os.single-process-system",
+        "cs.os.multitasking-limit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Process",
+          "start_line": 99,
+          "end_line": 103
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 기초용어",
+          "start_line": 23,
+          "end_line": 26
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.thread",
+      "title": "스레드",
+      "aliases": [
+        "Thread",
+        "실행 흐름",
+        "CPU에서 실행되는 단위",
+        "힙은 공유하고 스택은 공유하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/thread.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single flow of execution inside a process rather than a thing apart from it, several of which share the memory that one process holds",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-52",
+        "os/easy-os"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.process",
+        "cs.os.thread-vs-process",
+        "java.thread.main-thread",
+        "cs.os.context-switching",
+        "cs.os.multithreading",
+        "cs.os.multitasking-limit",
+        "cs.os.thread-count-cpu-bound"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Thread",
+          "start_line": 125,
+          "end_line": 128
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Thread",
+          "start_line": 136,
+          "end_line": 137
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 스레드",
+          "start_line": 113,
+          "end_line": 117
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 스레드",
+          "start_line": 129,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.concurrency.concurrent-vs-parallel",
+      "title": "병행과 병렬",
+      "aliases": [
+        "Concurrent",
+        "Parallel",
+        "동시성 프로그래밍"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/concurrency/concurrent-vs-parallel.md",
+      "tags": [
+        "cs",
+        "concurrency"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single distinction between concurrency, which is multithreaded programming, and parallelism, which is multicore programming",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-52",
+        "os/easy-os"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "cs.performance.amdahls-law",
+        "cs.os.context-switching",
+        "cs.os.multitasking",
+        "cs.os.concurrency-classification",
+        "cs.os.multiprocessing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### 병행 vs 병렬",
+          "start_line": 68,
+          "end_line": 70
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 스레드",
+          "start_line": 148,
+          "end_line": 151
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.context-switching",
+      "title": "컨텍스트 스위칭",
+      "aliases": [
+        "Context Switching",
+        "상태 보존과 복원",
+        "전환 오버헤드",
+        "Process Context Switching",
+        "Thread Context Switching",
+        "커널이 총괄한다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/context-switching.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single switch in which the running process is suspended and another resumed, requiring the first one's state to be saved and later restored, which is where the overhead comes from and why the concurrency only looks simultaneous",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-52",
+        "os/easy-os"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.process",
+        "cs.os.thread",
+        "cs.os.operating-system",
+        "cs.os.thread-vs-process",
+        "cs.os.kernel-mode",
+        "cs.os.cpu-register-swap",
+        "cs.os.process-vs-thread-switching",
+        "cs.os.switching-overhead"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Context Switching",
+          "start_line": 85,
+          "end_line": 91
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭",
+          "start_line": 14,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭",
+          "start_line": 26,
+          "end_line": 34
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭",
+          "start_line": 45,
+          "end_line": 49
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭",
+          "start_line": 53,
+          "end_line": 57
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 컨택스트 스위칭 공통점",
+          "start_line": 63,
+          "end_line": 65
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.thread-vs-process",
+      "title": "스레드와 프로세스의 비교",
+      "aliases": [
+        "스택만 따로",
+        "IPC 없이 통신",
+        "JVM 구현 의존"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/thread-vs-process.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single comparison in which a thread shares everything but its stack, communicates through the shared heap without IPC and switches more cheaply because it carries less context - while noting that more memory and a faster machine can still favour processes, and that the actual relationship depends on the JVM implementation",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-52",
+        "os/easy-os"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "cs.os.process",
+        "cs.os.ipc",
+        "java.runtime.jvm-stack-frame",
+        "cs.os.process-vs-thread-switching",
+        "cs.os.multitasking-limit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Thread vs Process",
+          "start_line": 143,
+          "end_line": 159
+        }
+      ]
+    },
+    {
+      "concept_id": "cross-domain.program",
+      "title": "프로그램",
+      "aliases": [
+        "Program"
+      ],
+      "canonical_path": "content/brain/knowledge/cross-domain/program.md",
+      "tags": [
+        "cross-domain"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "cross-domain definition shared by operating-system and API notes",
+      "pilot_strata": [
+        "cross-domain",
+        "lecture-batch-52",
+        "os/easy-os"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.architecture.von-neumann-architecture",
+        "cs.os.operating-system",
+        "software.api.api",
+        "cs.os.process",
+        "cs.architecture.cpu-memory-io"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 주니온 강의 > ### 프로그램",
+          "start_line": 97,
+          "end_line": 100
+        },
+        {
+          "path": "content/brain/notes/Common/API.md",
+          "source_sha256": "0e3cc6337eec13065e5ad494f64720a7c522bc79b237065544b233afd94fa7e5",
+          "heading": "unheaded-body",
+          "start_line": 21,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 기초용어",
+          "start_line": 18,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.architecture.cpu-memory-io",
+      "title": "CPU와 메인 메모리와 IO",
+      "aliases": [
+        "명령어를 실행하는 연산 장치",
+        "실행되기 위해 대기하는 곳",
+        "입출력 장치와 데이터를 주고받는 것"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/architecture/cpu-memory-io.md",
+      "tags": [
+        "cs",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division of the machine into the part that interprets and runs instructions, the part where a process waits its turn to be run, and the work of exchanging data with a file or across a network",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.architecture.von-neumann-architecture",
+        "cs.os.process",
+        "cs.os.cpu-io-burst",
+        "cs.architecture.system-bus"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 기초용어",
+          "start_line": 30,
+          "end_line": 43
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.single-process-system",
+      "title": "단일 프로세스 시스템",
+      "aliases": [
+        "한 번에 하나의 프로그램만",
+        "IO 하는 동안 CPU가 논다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/single-process-system.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single earliest arrangement, where one program runs at a time and must be ended before another starts - whose flaw is that the processor sits idle for as long as the running program is waiting on input or output",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.os.multiprogramming",
+        "cs.architecture.cpu-memory-io",
+        "cs.os.cpu-io-burst"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 단일 프로세스",
+          "start_line": 51,
+          "end_line": 54
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 단일 프로세스",
+          "start_line": 58,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.multiprogramming",
+      "title": "멀티프로그래밍",
+      "aliases": [
+        "Multi Programming",
+        "CPU 사용률 극대화"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/multiprogramming.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single answer to the idle processor - several programs are held in memory at once so that another can run whenever the current one turns to input or output, which maximises how much of the time the processor is doing something, at the cost of a long-running one making everything else wait",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.os.single-process-system",
+        "cs.os.multitasking",
+        "cs.os.cpu-io-burst"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 단일 프로세스",
+          "start_line": 70,
+          "end_line": 77
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.multitasking",
+      "title": "멀티태스킹",
+      "aliases": [
+        "multitasking",
+        "quantum",
+        "time slot",
+        "응답 시간 최소화"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/multitasking.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single refinement of holding many programs in memory - the processor's time is cut into slices of milliseconds and the running programs take turns within them, which aims at how quickly each one responds rather than at how busy the processor is, and is what makes them appear to run at the same time",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.multiprogramming",
+        "cs.os.context-switching",
+        "cs.os.multitasking-limit",
+        "cs.concurrency.concurrent-vs-parallel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 멀티태스킹",
+          "start_line": 89,
+          "end_line": 93
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.multitasking-limit",
+      "title": "멀티태스킹으로는 부족한 것",
+      "aliases": [
+        "한 프로세스가 동시에 여러 작업을 못한다",
+        "프로세스는 데이터 공유가 까다롭다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/multitasking-limit.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single gap that the thread exists to fill - one program still does one thing at a time, and doing more by starting more processes is expensive because switching between them is heavy, because each has its own memory and so cannot share data easily, and because a second core is hard to use that way",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.multitasking",
+        "cs.os.thread",
+        "cs.os.process-vs-thread-switching",
+        "cs.os.ipc"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 멀티태스킹",
+          "start_line": 98,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 멀티태스킹",
+          "start_line": 107,
+          "end_line": 107
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.multithreading",
+      "title": "멀티스레딩",
+      "aliases": [
+        "Multi Threading",
+        "하나의 프로세스가 동시에 여러 작업"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/multithreading.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single extension of the sliced processor time to threads as well as processes, so that one program does several things at once through the threads it holds",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "cs.os.multitasking",
+        "cs.os.multiprocessing",
+        "cs.os.concurrency-classification"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 멀티스레딩",
+          "start_line": 158,
+          "end_line": 162
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.multiprocessing",
+      "title": "멀티프로세싱",
+      "aliases": [
+        "Multi Processing",
+        "두 개 이상의 프로세스나 코어"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/multiprocessing.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single system making use of more than one process or more than one core",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.os.multithreading",
+        "cs.os.concurrency-classification",
+        "cs.concurrency.concurrent-vs-parallel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 멀티스레딩",
+          "start_line": 166,
+          "end_line": 167
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.concurrency-classification",
+      "title": "멀티태스킹 멀티스레딩 멀티프로세싱 구분하기",
+      "aliases": [
+        "코어 하나를 두고 경합하면 멀티태스킹",
+        "스레드가 둘이면 멀티스레딩",
+        "코어가 둘이면 멀티프로세싱"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/concurrency-classification.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three independent questions asked of any configuration - whether anything is competing for a single core, whether any one process holds more than one thread, and whether more than one core or process is in play - which is why two cores running one thread each is the third without being the first",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.os.multitasking",
+        "cs.os.multithreading",
+        "cs.os.multiprocessing",
+        "cs.concurrency.concurrent-vs-parallel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 종합 예제",
+          "start_line": 185,
+          "end_line": 187
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 종합 예제",
+          "start_line": 195,
+          "end_line": 197
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 종합 예제",
+          "start_line": 205,
+          "end_line": 207
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture01.md",
+          "source_sha256": "0596ccd48245d50ca2760dea2d6e8bd5041d55022dad988bcd3b4126e4b7e070",
+          "heading": "## \b프로세스/스레드 > ### 종합 예제",
+          "start_line": 215,
+          "end_line": 217
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.kernel-mode",
+      "title": "커널 모드",
+      "aliases": [
+        "OS 커널",
+        "통제권이 커널로 넘어간다",
+        "리소스에 직접 접근하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/kernel-mode.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement by which a process never touches the machine's resources itself - control passes to the kernel, which manages them, and the work runs there instead, as every context switch does",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.operating-system",
+        "cs.os.context-switching",
+        "cs.os.cpu-register-swap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 컨택스트 스위칭 공통점",
+          "start_line": 69,
+          "end_line": 76
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.cpu-register-swap",
+      "title": "레지스터 상태를 저장하고 복원한다",
+      "aliases": [
+        "CPU 레지스터",
+        "어디까지 실행했는지"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/cpu-register-swap.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single thing every context switch has to do - the registers hold what the running code needed, so their contents are put somewhere before the switch and read back when that code resumes, since without them there is no knowing how far it had got",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.context-switching",
+        "cs.os.kernel-mode",
+        "cs.architecture.cpu-memory-io"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 컨택스트 스위칭 공통점",
+          "start_line": 80,
+          "end_line": 88
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.process-vs-thread-switching",
+      "title": "프로세스 전환과 스레드 전환의 차이",
+      "aliases": [
+        "MMU와 TLB",
+        "가상 메모리 주소 처리",
+        "스레드 전환이 더 빠른 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/process-vs-thread-switching.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single extra step a process switch carries and a thread switch does not - the two processes address memory differently, so the unit translating addresses has to be pointed at the new one and the cache of those translations emptied, without which the new process would read the old one's memory; threads of one process share its address space and so skip all of it",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.context-switching",
+        "cs.os.thread-vs-process",
+        "cs.os.cache-pollution",
+        "cs.os.multitasking-limit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 컨택스트 스위칭 차이점",
+          "start_line": 94,
+          "end_line": 101
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 컨택스트 스위칭 예제",
+          "start_line": 122,
+          "end_line": 123
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 컨택스트 스위칭 예제",
+          "start_line": 127,
+          "end_line": 128
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.cache-pollution",
+      "title": "캐시 오염",
+      "aliases": [
+        "cache pollution",
+        "전환 직후의 캐시는 남의 것"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/cache-pollution.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single indirect cost of switching - the cache still holds what the previous process or thread was using, so the one now running finds nothing it wants there and has to go back to memory",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.os.context-switching",
+        "cs.os.switching-overhead",
+        "cs.os.process-vs-thread-switching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 캐시 오염",
+          "start_line": 134,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.switching-overhead",
+      "title": "컨택스트 스위칭은 순수한 오버헤드",
+      "aliases": [
+        "프로그램 동작과 무관한 간접비용",
+        "많이 일어나는 것은 좋지 않다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/switching-overhead.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way the switch looks from the user's side - none of it advances the program that was asked for, so all of it is cost, and less of it is better",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.os.context-switching",
+        "cs.os.cache-pollution",
+        "cs.os.thread-count-cpu-bound"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture02.md",
+          "source_sha256": "ad3162314174134acafdd611f8bbe832139d9701007f56b020292d5140eaddc9",
+          "heading": "## 컨택스트 스위칭 > ### 유저관점 컨택스트 스위칭",
+          "start_line": 143,
+          "end_line": 146
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.cpu-io-burst",
+      "title": "CPU 버스트와 IO 버스트",
+      "aliases": [
+        "버스트",
+        "연속적으로 실행되는 시간",
+        "결과를 기다리는 시간"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/cpu-io-burst.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternation a process's life consists of - a stretch running instructions without interruption, then a stretch waiting on input or output - where the running stretches are measured to be short, most of them finishing within a few milliseconds",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.architecture.cpu-memory-io",
+        "cs.os.cpu-bound-io-bound",
+        "cs.os.multiprogramming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### 기초용어",
+          "start_line": 28,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### 기초용어",
+          "start_line": 33,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### 기초용어",
+          "start_line": 39,
+          "end_line": 40
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### 기초용어",
+          "start_line": 44,
+          "end_line": 44
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### 기초용어",
+          "start_line": 50,
+          "end_line": 55
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.cpu-bound-io-bound",
+      "title": "CPU bound와 IO bound",
+      "aliases": [
+        "연산이 많은 프로세스",
+        "기다림이 많은 프로세스",
+        "API 서버는 IO bound"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/cpu-bound-io-bound.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single classification of a program by which of the two stretches dominates it - video editing and machine learning being mostly computation, while a typical backend API server spends most of its life waiting on a database or a cache across the network, which takes far longer than the handful of instructions around it",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.cpu-io-burst",
+        "cs.os.thread-count-cpu-bound",
+        "cs.os.thread-count-io-bound",
+        "software.architecture.three-tier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### 기초용어",
+          "start_line": 59,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.thread-count-cpu-bound",
+      "title": "CPU bound 프로그램의 스레드 수",
+      "aliases": [
+        "코어 수 + 1",
+        "스레드가 많다고 빨라지지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/thread-count-cpu-bound.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single guideline for a computation-heavy program - about as many threads as there are cores, or one more, because beyond that the threads only take turns on the same cores and the switching between them is pure loss",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.os.cpu-bound-io-bound",
+        "cs.os.switching-overhead",
+        "cs.performance.parallelization-consideration",
+        "cs.os.thread-count-io-bound"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### CPU bound 프로그램",
+          "start_line": 74,
+          "end_line": 79
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### CPU bound 프로그램",
+          "start_line": 83,
+          "end_line": 87
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### CPU bound 프로그램",
+          "start_line": 91,
+          "end_line": 96
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.thread-count-io-bound",
+      "title": "IO bound 프로그램의 스레드 수",
+      "aliases": [
+        "가이드라인이 없다",
+        "하드웨어 스펙과 트래픽 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/thread-count-io-bound.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single absence of a rule - for a program that spends its time waiting there is no formula, and the number has to be found for the particular machine, the particular share of waiting in the work, and the traffic actually expected",
+      "pilot_strata": [
+        "lecture-batch-52",
+        "os/easy-os",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.os.cpu-bound-io-bound",
+        "cs.os.thread-count-cpu-bound",
+        "software.pattern.concurrent-request-dispatch"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### IO bound 프로그램",
+          "start_line": 102,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/os/easy-os/lecture03.md",
+          "source_sha256": "9a2ae984b4c1e882b09ae9fccad01a5c029b181189be52afad688b3109a569d9",
+          "heading": "## CPU/IO bound > ### IO bound 프로그램",
+          "start_line": 109,
+          "end_line": 113
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

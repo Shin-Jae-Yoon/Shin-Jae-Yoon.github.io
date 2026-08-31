@@ -1,0 +1,576 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-57",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-56",
+    "applied_state": "1150 approved knowledge concepts after lecture-batch-56 closed the apple-git course."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+        "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4"
+      },
+      {
+        "path": "content/brain/lectures/db/hussein-db/lecture00.md",
+        "source_sha256": "992236f0bddf3e2137264a185644dc3c4f4207f6f2b6151397307cebe69964d4"
+      }
+    ],
+    "line_range": "lecture01 L12-L176, lecture00 L12-L23",
+    "series": "유데미 Hussein Nasser 데이터베이스 엔지니어링 00~01"
+  },
+  "overlap_analysis": {
+    "finding": "The last lecture series in the tree, and the most update-heavy relative to its size: easy-db already applied the transaction, its two terminators and all four ACID properties. This course covers the same ground one level down, at how a database actually implements them.",
+    "disposition": "Five applied concepts take this deeper account as evidence. What is genuinely new is the implementation trade-off between writing early and writing late, what has to happen at startup after a crash, the read-only transaction, and the notion of a workload from the course introduction."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All five update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture01 L8, L19-L32 partial, L114-L120; lecture00 L8, L23",
+        "reason_code": "course-link-agenda-example-or-index",
+        "detail": "The course link, the agenda listing what the later sections were to cover, the running bank-balance example whose point is stated in the concept it illustrates, and the index entry."
+      },
+      {
+        "span": "lecture01 L152-L176",
+        "reason_code": "empty-heading",
+        "detail": "Isolation, consistency, durability, the worked example, phantom reads, the comparison of read phenomena and eventual consistency are headings with no body - the notes stop after atomicity."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in lecture01 contributes at least one cited locator, either to a create or to an update. The seven empty headings contribute none. lecture00 contributes the workload concept from its summary."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 8770,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 88,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 12,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 5,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 9,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes hussein-db and with it the whole lecture lane. Every lecture series in content/brain/lectures has now been mined across batches 19 to 57.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 9,
+  "candidates": [
+    {
+      "concept_id": "db.transaction.transaction",
+      "title": "트랜잭션",
+      "aliases": [
+        "Transaction",
+        "단일한 논리적 작업 단위",
+        "START TRANSACTION",
+        "시작하지 않으면 DB가 대신 시작한다",
+        "읽기 전용일 수도 있다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/db-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single logical unit of work - several SQL statements bound together for a reason outside the database, so that they cannot be divided and it can never happen that only some of them reach the data",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.rollback",
+        "db.transaction.atomicity",
+        "db.language.dml",
+        "db.transaction.read-only-transaction",
+        "db.transaction.commit-timing-tradeoff",
+        "db.basic.workload"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 14,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 29,
+          "end_line": 31
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란?",
+          "start_line": 38,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## ACID 소개",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.commit",
+      "title": "커밋",
+      "aliases": [
+        "COMMIT",
+        "영구적으로 저장하라"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/commit.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single instruction ending a transaction by storing everything it did permanently in the database",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.rollback",
+        "db.transaction.durability",
+        "db.transaction.commit-timing-tradeoff",
+        "db.transaction.crash-recovery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 19,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 32,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 수명",
+          "start_line": 52,
+          "end_line": 55
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 수명",
+          "start_line": 59,
+          "end_line": 61
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.rollback",
+      "title": "롤백",
+      "aliases": [
+        "ROLLBACK",
+        "트랜잭션 이전 상태로",
+        "예기치 않은 종료도 롤백",
+        "undo와 redo 공간"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/rollback.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single instruction ending a transaction by undoing everything it did and returning the database to the state it was in before the transaction started",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.commit",
+        "db.transaction.atomicity",
+        "db.transaction.commit-timing-tradeoff",
+        "db.transaction.crash-recovery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 23,
+          "end_line": 25
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 34,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 수명",
+          "start_line": 73,
+          "end_line": 78
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.atomicity",
+      "title": "원자성",
+      "aliases": [
+        "Atomicity",
+        "ALL or Nothing",
+        "모두 성공하거나 모두 실패하거나"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/atomicity.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single guarantee that a transaction either happens entirely or not at all - a failure partway through cancels everything already done, as if nothing had happened - where making commit permanent and rollback complete is the DBMS's job and deciding the transaction's boundary and what counts as a failure is the developer's",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.rollback",
+        "db.transaction.consistency",
+        "db.transaction.durability",
+        "db.transaction.crash-recovery",
+        "db.transaction.commit-timing-tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Atomicity",
+          "start_line": 140,
+          "end_line": 144
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Atomicity",
+          "start_line": 150,
+          "end_line": 154
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 원자성 (Atomicity)",
+          "start_line": 126,
+          "end_line": 134
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.durability",
+      "title": "지속성",
+      "aliases": [
+        "Durability",
+        "영존성",
+        "비휘발성 메모리에 저장"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/durability.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single guarantee that a committed transaction survives - it stays in the database through a power failure or a crash, which is what storing it permanently on non-volatile media means, and the DBMS is what provides it",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.atomicity",
+        "db.model.physical-model",
+        "db.transaction.commit-timing-tradeoff",
+        "db.transaction.crash-recovery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Durability",
+          "start_line": 205,
+          "end_line": 209
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## ACID 소개",
+          "start_line": 31,
+          "end_line": 32
+        }
+      ]
+    },
+    {
+      "concept_id": "db.basic.workload",
+      "title": "워크로드",
+      "aliases": [
+        "Workload",
+        "NoSQL은 워크로드의 이름일 뿐"
+      ],
+      "canonical_path": "content/brain/knowledge/db/basic/workload.md",
+      "tags": [
+        "db",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single word for the kind and the amount of processing a system is asked to do, by which one database is distinguished from another - the label on a family of stores naming a workload rather than a different thing, since what has to be planned is still how the data is stored and how it is found",
+      "pilot_strata": [
+        "lecture-batch-57",
+        "db/hussein-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.basic.dbms",
+        "db.basic.database",
+        "db.ops.db-server-scaling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture00.md",
+          "source_sha256": "992236f0bddf3e2137264a185644dc3c4f4207f6f2b6151397307cebe69964d4",
+          "heading": "unheaded-body",
+          "start_line": 13,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.commit-timing-tradeoff",
+      "title": "언제 디스크에 쓸 것인가",
+      "aliases": [
+        "쿼리마다 쓸까 커밋할 때 몰아 쓸까",
+        "커밋이 빠르면 롤백이 느리다",
+        "Postgres는 커밋이 빠르다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/commit-timing-tradeoff.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single design choice each database makes differently - writing every change to disk as it happens, which makes the commit almost free and the rollback expensive, or holding the changes in memory and flushing them at the commit, which makes the queries fast and the rollback merely a matter of discarding memory - with the undo and redo areas existing to support whichever was chosen",
+      "pilot_strata": [
+        "lecture-batch-57",
+        "db/hussein-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.rollback",
+        "db.transaction.durability",
+        "db.transaction.crash-recovery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 수명",
+          "start_line": 65,
+          "end_line": 69
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 수명",
+          "start_line": 73,
+          "end_line": 78
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 수명",
+          "start_line": 88,
+          "end_line": 93
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 원자성 (Atomicity)",
+          "start_line": 138,
+          "end_line": 146
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.crash-recovery",
+      "title": "다운된 뒤에 되돌리기",
+      "aliases": [
+        "재시작할 때 실패를 감지한다",
+        "롤백해야 하는데 시스템이 죽었다면"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/crash-recovery.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single case atomicity has to survive - the system going down mid-transaction leaves changes that were never committed and nothing running to undo them, so the undoing is the responsibility of the next startup, which must detect that a transaction was open and roll it back",
+      "pilot_strata": [
+        "lecture-batch-57",
+        "db/hussein-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.atomicity",
+        "db.transaction.commit-timing-tradeoff",
+        "db.transaction.durability",
+        "db.transaction.rollback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 수명",
+          "start_line": 82,
+          "end_line": 84
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 원자성 (Atomicity)",
+          "start_line": 130,
+          "end_line": 134
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.read-only-transaction",
+      "title": "읽기 전용 트랜잭션",
+      "aliases": [
+        "읽기만 해도 트랜잭션이 필요하다",
+        "시작 시점의 스냅샷"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/read-only-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single use of a transaction that changes nothing - telling the database the work is read-only buys a snapshot as of the moment it began, so a report assembled from many queries sees one consistent state throughout no matter what other transactions commit while it runs",
+      "pilot_strata": [
+        "lecture-batch-57",
+        "db/hussein-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.isolation",
+        "db.transaction.consistency",
+        "db.concurrency.concurrency-control"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 본질",
+          "start_line": 99,
+          "end_line": 103
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란? > ### 트랜잭션의 본질",
+          "start_line": 107,
+          "end_line": 110
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

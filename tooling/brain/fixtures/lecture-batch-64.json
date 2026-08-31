@@ -1,0 +1,1027 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-64",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-63",
+    "applied_state": "1229 approved knowledge concepts after lecture-batch-63 closed the fifth week."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+        "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62"
+      }
+    ],
+    "line_range": "L10-L493 (whole file)",
+    "series": "면접 스터디 dog-study 6주차 - POJO, DAO, DTO, ORM, 영속성"
+  },
+  "overlap_analysis": {
+    "finding": "This week names the objects that move between the layers the previous week described, and traces the persistence side from the raw java interface up to the mapped entity. One applied concept covers ground this file goes further on - the distinction between the two names for the data layer, which batch 63 recorded from the MVC discussion and this file argues at length.",
+    "disposition": "That concept takes the fuller evidence. New: the plain object and what makes one, the abstraction that lets it use a technology without depending on it, the transfer and value objects, persistence and the three ways of providing it, the entity and why it is kept away from the wire, and the builder pattern the argument turns on."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L10-L18, L30-L61, L79-L90 partial, L109, L143-L148, L154, L189-L196 partial, L200, L217, L250-L260 partial, L292, L307, L317, L330-L365, L386, L417-L452, L477, L484-L493",
+        "reason_code": "topic-header-collapsed-code-external-reference-or-carried-by-owner",
+        "detail": "The topic list the week was set, the collapsed code listings with their attributions, the aside defining the enterprise system, the restatement of the plain object's advantages already carried by the concepts above it, the links the author was reading, and the closing reference list."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 29102,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 176,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 20,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 19,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 20,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_transfer_note": {
+    "key": "MyBatis",
+    "from": "spring.db.jdbc-template",
+    "to": "spring.db.sql-mapper",
+    "rationale": "Batch 39 listed the library as an alias of the template class because both remove the same repetition. It is an instance of the mapper kind, which now has a concept, so the name moves there and the template keeps a descriptive alias."
+  },
+  "candidates_authored": 20,
+  "candidates": [
+    {
+      "concept_id": "spring.arch.repository-vs-dao",
+      "title": "Repository와 DAO의 차이",
+      "aliases": [
+        "저장소의 추상화와 컬렉션의 추상화",
+        "테이블 중심과 도메인 중심",
+        "DAO는 DB 접근 로직을 모은 객체",
+        "Repository는 도메인 객체를 관리한다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/repository-vs-dao.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single distinction between two names for the data layer - the lower one abstracts persistence itself and is shaped by the tables, while the higher one abstracts a collection of domain objects and is shaped by the business; the second may be built on the first, never the other way round",
+      "pilot_strata": [
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-64"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.arch.layered-structure",
+        "spring.arch.repository-interface",
+        "spring.arch.service-layer",
+        "software.architecture.layer-responsibilities",
+        "spring.db.sql-mapper",
+        "spring.jpa.entity",
+        "spring.db.connection-pool"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### Repository",
+          "start_line": 909,
+          "end_line": 909
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring MVC > ### Repository",
+          "start_line": 916,
+          "end_line": 924
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DAO",
+          "start_line": 166,
+          "end_line": 169
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DAO > ### DAO vs Repository",
+          "start_line": 177,
+          "end_line": 179
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DAO > ### DAO vs Repository",
+          "start_line": 185,
+          "end_line": 187
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DAO > ### DAO vs Repository",
+          "start_line": 202,
+          "end_line": 213
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.jdbc-template",
+      "title": "JdbcTemplate",
+      "aliases": [
+        "반복 코드를 없애준다",
+        "SQL은 직접 작성",
+        "MyBatis와 같은 계열"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/jdbc-template.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single layer over the JDBC API that removes almost all of its repetition while leaving the SQL to be written by hand, needing only the data source injected into it - which is why the raw JDBC code it replaces is no longer worth writing",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-64",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.db.datasource",
+        "spring.di.dependency-injection",
+        "db.language.sql",
+        "spring.arch.repository-interface",
+        "spring.db.sql-mapper",
+        "spring.db.jdbc",
+        "spring.db.persistence-framework"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 순수 JDBC",
+          "start_line": 319,
+          "end_line": 320
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 스프링 JdbcTemplate",
+          "start_line": 433,
+          "end_line": 433
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 스프링 JdbcTemplate",
+          "start_line": 447,
+          "end_line": 447
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.datasource",
+      "title": "DataSource",
+      "aliases": [
+        "데이터베이스 커넥션을 획득하는 객체",
+        "커넥션 정보로 스프링이 만들어 둔 빈"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/datasource.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object through which a database connection is obtained, which spring boot builds from the connection settings and registers as a bean, so anything needing it has it injected rather than constructing it",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-64",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.db.jdbc-template",
+        "spring.db.h2",
+        "spring.db.connection-pool",
+        "spring.db.jdbc"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 순수 JDBC",
+          "start_line": 376,
+          "end_line": 377
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.pojo",
+      "title": "POJO",
+      "aliases": [
+        "Plain Old Java Object",
+        "특정 기술에 종속되지 않는 순수한 객체",
+        "EJB에 대한 반동"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/pojo.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single name given to an ordinary java object precisely because it needed one - the enterprise component model of the time had an impressive name and putting domain logic in a plain object did not, so the plain object was named; inheriting a class or implementing an interface does not disqualify it, only depending on a particular framework or environment does",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.basic.pojo-framework",
+        "spring.basic.pojo-conditions",
+        "spring.basic.spring-definition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 24,
+          "end_line": 28
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 65,
+          "end_line": 68
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 72,
+          "end_line": 75
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 82,
+          "end_line": 86
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.pojo-framework",
+      "title": "POJO 프레임워크",
+      "aliases": [
+        "EJB 이전으로 돌아가는 것이 아니다",
+        "Hibernate도 POJO 프레임워크"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/pojo-framework.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to have both - the enterprise services the heavyweight model provided and the plainness of the object, by putting the services around the object rather than inside it, so a class in the container implements no interface of the framework's and the code written before it can be used unchanged and tested without it",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.basic.pojo",
+        "spring.basic.psa",
+        "spring.basic.spring-definition",
+        "spring.aop.aop"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### POJO 프레임워크",
+          "start_line": 96,
+          "end_line": 98
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### POJO 프레임워크",
+          "start_line": 102,
+          "end_line": 107
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### POJO 프레임워크",
+          "start_line": 113,
+          "end_line": 113
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### POJO 프레임워크",
+          "start_line": 117,
+          "end_line": 119
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.pojo-conditions",
+      "title": "진짜 POJO의 조건",
+      "aliases": [
+        "규약에 종속되지 않는다",
+        "환경에 종속되지 않는다",
+        "객체지향적이어야 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/pojo-conditions.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three tests beyond merely not importing a framework - it must not be forced to extend a prescribed class, since single inheritance is then spent; it must not name anything of the environment it happens to run in, so business code holding a request or session type fails; and it must be object-oriented rather than one large class of branches",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.basic.pojo",
+        "spring.basic.pojo-framework",
+        "java.oop.abstraction",
+        "software.principle.dip"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### POJO의 조건",
+          "start_line": 126,
+          "end_line": 139
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.psa",
+      "title": "PSA",
+      "aliases": [
+        "Portable Service Abstraction",
+        "서비스 추상화",
+        "JPA는 표준 인터페이스"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/psa.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single answer to how an object can use a technology without depending on it - a standard interface is defined and the implementations become interchangeable behind it, so the code names the abstraction and the particular library underneath can be replaced without touching it",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.basic.pojo-framework",
+        "software.principle.dip",
+        "spring.jpa.entity",
+        "spring.db.persistence-framework"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### PSA와 JPA",
+          "start_line": 156,
+          "end_line": 160
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.arch.dto",
+      "title": "DTO",
+      "aliases": [
+        "Data Transfer Object",
+        "계층 간 데이터 교환",
+        "Entity를 감싼 것"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/dto.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object carrying data between layers and nothing else - no logic, only the accessors, filled on one side and read on the other - which exists so that the object mapped to the table is not passed around outside the layer that owns it",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.arch.vo",
+        "spring.jpa.entity",
+        "spring.jpa.entity-dto-separation",
+        "software.architecture.layer-responsibilities"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DTO",
+          "start_line": 219,
+          "end_line": 223
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.arch.vo",
+      "title": "VO",
+      "aliases": [
+        "Value Object",
+        "값 그 자체",
+        "속성이 같으면 같은 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/vo.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object standing for a value rather than for a thing - immutable, therefore built only through its constructor, allowed to carry logic, and equal to another when their attributes are equal, which requires both equality methods to be overridden or the hash-based collections will not agree",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.arch.dto",
+        "java.oop.equals-hashcode",
+        "java.oop.immutable-object",
+        "java.collection.hash-set"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DTO > ### VO",
+          "start_line": 229,
+          "end_line": 233
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DTO > ### VO",
+          "start_line": 237,
+          "end_line": 237
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DTO > ### VO",
+          "start_line": 241,
+          "end_line": 246
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.arch.dto-setter",
+      "title": "DTO에 setter를 둘 것인가",
+      "aliases": [
+        "전달 중에 값이 바뀌지 않게",
+        "빌더를 또 써야 하나"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/dto-setter.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unsettled question about the transfer object - removing the mutators and filling it through the constructor makes what is being carried immune to change on the way, against which it is already a wrapper over an object built with a builder, so applying one twice is arguably needless",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.arch.dto",
+        "java.oop.immutable-object",
+        "java.pattern.builder",
+        "spring.jpa.entity-setter-builder"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DTO > ### DTO setter 지양?",
+          "start_line": 252,
+          "end_line": 260
+        }
+      ]
+    },
+    {
+      "concept_id": "db.basic.persistence",
+      "title": "영속성",
+      "aliases": [
+        "Persistence",
+        "프로그램이 끝나도 사라지지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/basic/persistence.md",
+      "tags": [
+        "db",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property of data outliving the program that made it, which is what a persistence layer exists to provide and which can be provided in three ways of increasing distance from the query",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.durability",
+        "spring.db.jdbc",
+        "spring.db.persistence-framework",
+        "software.architecture.layer-responsibilities"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence",
+          "start_line": 266,
+          "end_line": 268
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.jdbc",
+      "title": "JDBC",
+      "aliases": [
+        "드라이버만 갈아끼우면 된다",
+        "DriverManager Connection Statement ResultSet",
+        "반복 코드와 자원 반환"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/jdbc.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single java interface to any database, whose implementations are the per-product drivers so the code above stays the same - used by loading the driver, opening a connection, making a statement, reading the result and releasing everything in reverse order, which is repetitive, forces a checked exception whose contents vary by product, and exhausts the machine's resources if the release is ever missed",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.basic.persistence",
+        "spring.db.persistence-framework",
+        "spring.db.jdbc-template",
+        "java.exception.try-with-resources"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence > ### JDBC",
+          "start_line": 274,
+          "end_line": 276
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence > ### JDBC",
+          "start_line": 278,
+          "end_line": 283
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence > ### JDBC",
+          "start_line": 285,
+          "end_line": 288
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.persistence-framework",
+      "title": "Persistence Framework",
+      "aliases": [
+        "JDBC의 번거로움을 걷어낸 것"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/persistence-framework.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class of library that sits over the low-level database interface so that connecting, mapping and releasing need not be written each time",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "spring.db.jdbc",
+        "spring.db.sql-mapper",
+        "spring.basic.psa",
+        "db.basic.persistence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence > ### Persistence Framework",
+          "start_line": 294,
+          "end_line": 294
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.sql-mapper",
+      "title": "SQL Mapper",
+      "aliases": [
+        "쿼리 결과와 객체 필드를 매핑",
+        "MyBatis",
+        "SQL은 직접 쓴다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/sql-mapper.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single kind of persistence framework that maps the result of a query onto an object's fields - not the object onto the relation, the query still being written by hand - with the best-known one keeping those queries in files of their own so they are not embedded in the code",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.db.persistence-framework",
+        "spring.db.jdbc-template",
+        "spring.jpa.entity",
+        "spring.db.jdbc"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence > ### SQL Mapper",
+          "start_line": 300,
+          "end_line": 301
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence > ### SQL Mapper",
+          "start_line": 303,
+          "end_line": 303
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Persistence > ### SQL Mapper",
+          "start_line": 309,
+          "end_line": 311
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.connection-pool",
+      "title": "커넥션 풀",
+      "aliases": [
+        "커넥션 생성 비용이 크다",
+        "미리 만들어두고 빌려 쓴다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/connection-pool.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement for the cost of opening a database connection - a number of them are opened in advance and lent out as needed rather than made and destroyed per request",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.db.datasource",
+        "spring.db.jdbc",
+        "spring.di.bean-lifecycle",
+        "cs.os.thread-count-io-bound"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DAO > ### DAO vs Repository",
+          "start_line": 192,
+          "end_line": 192
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.entity",
+      "title": "엔티티",
+      "aliases": [
+        "테이블과 1:1로 매핑",
+        "@Entity",
+        "도메인 로직만 가진다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/entity.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class standing for one table, holding its columns as fields and nothing the table does not have, inheriting nothing and implementing nothing, carrying only the logic that manipulates its own data and none of the service logic - marked as such by an annotation, with further ones on the fields",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.arch.dto",
+        "spring.jpa.entity-dto-separation",
+        "spring.basic.psa",
+        "spring.arch.repository-vs-dao"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity",
+          "start_line": 319,
+          "end_line": 319
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity",
+          "start_line": 323,
+          "end_line": 328
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.entity-setter-builder",
+      "title": "엔티티에 setter를 두지 않는 이유",
+      "aliases": [
+        "언제 어디서 바뀌는지 알 수 없다",
+        "생성자보다 빌더"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/entity-setter-builder.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single argument against mutators on a class mapped to a table - the object's consistency depends on when its fields change and a mutator makes that untraceable; the constructor is not the answer either, since a long argument list says nothing about which value is which, and the builder is",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.jpa.entity",
+        "java.pattern.builder",
+        "java.oop.immutable-object",
+        "spring.arch.dto-setter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### Setter 지양, Builder 패턴",
+          "start_line": 371,
+          "end_line": 376
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### Setter 지양, Builder 패턴",
+          "start_line": 380,
+          "end_line": 382
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.builder",
+      "title": "빌더 패턴",
+      "aliases": [
+        "단계별로 객체를 만든다",
+        "선택적 속성이 많을 때",
+        "생성자만 쓸 때의 문제"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/builder.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single creational pattern building an object step by step, which pays off when the fields are many, optional, or still being added - against a constructor it reads as which value goes where, so a transposed pair cannot pass unnoticed, and a field left out needs no placeholder",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.constructor-overloading",
+        "spring.jpa.entity-setter-builder",
+        "java.pattern.factory-method",
+        "java.oop.immutable-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### Builder 패턴이란?",
+          "start_line": 388,
+          "end_line": 397
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.entity-dto-separation",
+      "title": "엔티티와 DTO를 분리하는 이유",
+      "aliases": [
+        "엔티티를 요청 응답에 쓰지 마라",
+        "뷰가 바뀔 때마다 엔티티가 바뀐다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/entity-dto-separation.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason the object mapped to the table must not be the one sent and received - the schema follows it and the service layer is written against it, so shaping it to whatever the current screen wants propagates into the database and into every class that touches it; the transfer object absorbs that change instead, and can carry a joined result no single table has",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.jpa.entity",
+        "spring.arch.dto",
+        "spring.jpa.entity-manager",
+        "software.architecture.layered-architecture"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### Entity와 DTO를 분리하는 이유",
+          "start_line": 458,
+          "end_line": 460
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### Entity와 DTO를 분리하는 이유",
+          "start_line": 464,
+          "end_line": 467
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### Entity와 DTO를 분리하는 이유",
+          "start_line": 469,
+          "end_line": 473
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.jpa.entity-manager",
+      "title": "엔티티 매니저",
+      "aliases": [
+        "엔티티를 관리하는 역할",
+        "flush 시점에 DB에 반영"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/jpa/entity-manager.md",
+      "tags": [
+        "spring",
+        "jpa"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object that manages the mapped entities, whose flush is when a change to one of them actually reaches the database",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "spring.jpa.entity",
+        "spring.jpa.entity-dto-separation",
+        "db.transaction.commit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## Entity > ### EntityManager",
+          "start_line": 479,
+          "end_line": 480
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

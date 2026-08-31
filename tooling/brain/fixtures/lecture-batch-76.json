@@ -1,0 +1,1437 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-76",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-75",
+    "applied_state": "1397 approved knowledge concepts after the sorting folder was mined."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/CS/Algo/principle/binarySearch.md",
+        "source_sha256": "c605c4f7b39c33d533c924e50295be3a1e05a9a799cf24b52877f14f2d2a2826"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/principle/divideConquer.md",
+        "source_sha256": "e18d3f181fe0826e0684c02bcbb6e6971cb670ed5543d98a6ebc91d676a4ec0a"
+      },
+      {
+        "path": "content/brain/notes/CS/DS/bst.md",
+        "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859"
+      },
+      {
+        "path": "content/brain/notes/CS/DS/queue.md",
+        "source_sha256": "54ae387666b74f254c8cc43d92b1f1dc225dd3a547666469b8bd41016a6df3a2"
+      },
+      {
+        "path": "content/brain/notes/CS/DS/stack.md",
+        "source_sha256": "eb5b6daeaed6e45fd3982d5756f51d9ebaafffb68e90de966df7955813f2f90d"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/Compiler.md",
+        "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493"
+      },
+      {
+        "path": "content/brain/notes/CS/index.md",
+        "source_sha256": "fdde823718cbc0cdda5e7f3ece86fdfd34331a9ebbd298ea213fb1f5c2b5c80a"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/index.md",
+        "source_sha256": "96fd4414bb65c108ce3dc74ae95e8ea95e6a2b526deec4b1271f6480525db3bd"
+      },
+      {
+        "path": "content/brain/notes/CS/Algo/principle/index.md",
+        "source_sha256": "6594e3ab25ad6f59f2384fbfa77f5e326e8792804712f8da1844cc545d828da9"
+      },
+      {
+        "path": "content/brain/notes/CS/DS/index.md",
+        "source_sha256": "462151c3cd2b0bf3cbf139a3075b9da97b0ef51e206401c7e88e81fd58a13b6e"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/index.md",
+        "source_sha256": "f1b2df49d5af7194c192ce8d0994c32b4d470b112cc6ebbdd64366328f9a34a0"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/BNF.md",
+        "source_sha256": "71b2fe974f9001dd46045bbab059d253e6f9c17b73c9744b204ecf8dec208873"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/Compile.md",
+        "source_sha256": "153c8e8faf7d582f5b75ffacef795d6c485d8da306d3bff69d51199bc6ce03a8"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/EBNF.md",
+        "source_sha256": "312bcfeefb8c838b34fa57c6b7c6992004246874bb26c54c0410c44610429059"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/Interpreter.md",
+        "source_sha256": "df76895a8124136ebfa1912ea92ef48a2e546a6cf5d77d7d88f6d70812484fc2"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/LanguageTheory.md",
+        "source_sha256": "7d30baef6626f15f686776287586fc71bdaa7e4a1599b4a31271472a2652c405"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/Lex.md",
+        "source_sha256": "6e867bf99aad0f5e45e9f1318069abecdfa46bff69e1c7a27213e5ab1142d43c"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/ParseTree.md",
+        "source_sha256": "f974c72b4d4fa7f531703b6fc06bc4bf74775237d1329bb08c1f46b471744e7c"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/SyntaxTable.md",
+        "source_sha256": "fd18d780f7507c8979839d15cbb5f85b3e0beca1df52f0c14b71de4e39e1deb9"
+      },
+      {
+        "path": "content/brain/notes/CS/LT/Yacc.md",
+        "source_sha256": "90f2bff4db0e732d3d2e1f504c8743dd0ffb11f5a8a30a20b0d943127849e37c"
+      },
+      {
+        "path": "content/brain/notes/CS/Network/index.md",
+        "source_sha256": "50a70c47795be7e66de4c067eb4f551303770ed4d460acd2b5e2c0397c50b3be"
+      },
+      {
+        "path": "content/brain/notes/CS/Network/Socket.md",
+        "source_sha256": "0931b5075ab40f8015090f44c839f2436fd51d214ab459a87a69c035fc6181f0"
+      },
+      {
+        "path": "content/brain/notes/CS/OS/index.md",
+        "source_sha256": "759da5c917dcc9cde9ee527c3473f29192db2e2bc7ab5d13815c4ea938a0eda7"
+      },
+      {
+        "path": "content/brain/notes/CS/OS/Scheduling.md",
+        "source_sha256": "e8aa9e4a470e40282d91f713f4415d747ea9def2f2d24a00479193c085c8479f"
+      },
+      {
+        "path": "content/brain/notes/CS/OS/SystemCall.md",
+        "source_sha256": "d7bc3ccb0fbfd795079df611d93b6bb593c2ecad7ef509440ec0945fcf1c4e50"
+      },
+      {
+        "path": "content/brain/notes/CS/CA/index.md",
+        "source_sha256": "835965cf2c5ceccfe55c84aad3777458971d9a0e7b9acf945b84c719f68fb8e4"
+      },
+      {
+        "path": "content/brain/notes/CS/CA/ComputerArchitecture.md",
+        "source_sha256": "3f33d25f0bbf5551fc77980c9988afdf72f2d9a9ff5a29d739c6b282f2588643"
+      },
+      {
+        "path": "content/brain/notes/CS/CA/CpuArchitecture.md",
+        "source_sha256": "9f0216bb422ae64b36fd12b0aa3244f0521994a84bfb15f245164e9f8e0ba8cf"
+      },
+      {
+        "path": "content/brain/notes/CS/CA/ISA.md",
+        "source_sha256": "8af8f8788c53dd130ac71045a6d4dfa662203199a631777e7cf62d49bff5ad1f"
+      }
+    ],
+    "line_range": "whole files",
+    "series": "CS 노트 나머지 - 분할정복, 자료구조, 컴파일러"
+  },
+  "multi_source_note": "Twenty-nine files, twenty-three of them empty stubs or index pages, are mined together; locators carry an `s` index into the source list.",
+  "overlap_analysis": {
+    "finding": "The search, tree, stack and queue notes restate what the algorithm lanes applied, adding the trade the plain search tree makes when its input arrives in order. The compiler note has no counterpart anywhere in the corpus - the Java lane covers what the virtual machine does with bytecode but nothing about how the bytecode was produced.",
+    "disposition": "Ten applied concepts gain evidence or edges. Sixteen new concepts, ten of them opening a compiler namespace that runs from the token scanner to the machine instruction."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All ten update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "binarySearch L24-L33, L121; divideConquer L33; bst L41-L47, L69, L76, L81, L84, L87, L94; queue L35; stack L35, L121-L127 partial; Compiler L26, L41, L47, L57, L64, L85, L94, L109",
+        "reason_code": "displayed-equation-figure-caption-external-link-or-numbered-stage-heading",
+        "detail": "The derivation whose conclusion the cited prose states, the complexity table whose rows the concept states, the captions above each implementation, the two video links, and the numbered labels naming each compiler stage immediately before its content."
+      },
+      {
+        "span": "twenty-three files across Algo, DS, LT, Network, OS and CA",
+        "reason_code": "empty-stub-or-index",
+        "detail": "Twenty-three files carrying no prose at all - the folder indexes and nineteen topic stubs never written, including every file under the architecture, operating-system and network folders and nine of the eleven language-theory files."
+      }
+    ],
+    "coverage_statement": "Every heading scope carrying prose contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 33100,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 174,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 13,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 11,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 25,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "lane_completion_note": "This is the last source in content/brain/notes. With it the note lane is complete, as the lecture lane was at batch 57.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "duplicate_avoided_note": {
+    "statement": "Two candidates were withdrawn after the collision report showed the ground already held by an applied concept that states both the advantages and the balance problem together. Their evidence became locators on that concept.",
+    "pairs": [
+      {
+        "withdrawn": "algo.tree.bst-benefit",
+        "incumbent": "algo.tree.bst-tradeoff"
+      },
+      {
+        "withdrawn": "algo.tree.bst-balance",
+        "incumbent": "algo.tree.bst-tradeoff"
+      }
+    ],
+    "rule": "Check the collision report before signing. Apply succeeds with collisions present; only verify fails."
+  },
+  "alias_yield_note": {
+    "statement": "One name collided and was yielded rather than transferred.",
+    "yields": [
+      {
+        "name": "Scanner",
+        "incumbent": "java.io.scanner",
+        "renamed_to": "어휘 분석기 Scanner"
+      }
+    ]
+  },
+  "folder_route_note": "One canonical path had a basename equal to its parent folder, which the engine rejects as a route collision. Renamed to compiler-definition.md.",
+  "candidates_authored": 25,
+  "candidates": [
+    {
+      "concept_id": "algo.search.binary-search",
+      "title": "이분 탐색",
+      "aliases": [
+        "Binary Search",
+        "가운데 값과 비교하여 구간을 좁힌다",
+        "mid는 반드시 제외한다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/binary-search.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single method of finding a value in sorted data by comparing against the middle and discarding the half that cannot contain it - the next bounds moving past the middle rather than to it, since leaving it in loops forever - which is logarithmic on sorted input and costs the sort itself when the input is not",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "algo-domain",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-binary-search",
+        "algo.tree.bst",
+        "algo.complexity.time-complexity",
+        "algo.search.brute-force",
+        "algo.search.divide-and-conquer",
+        "algo.complexity.halving-is-log"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/binarySearch.md",
+          "source_sha256": "d4ae0c9f4fccad36e818726fc843edd18fc5f2c5bc5bd0073894a550b8c472dd",
+          "heading": "## Binary Search",
+          "start_line": 15,
+          "end_line": 20
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/principle/binarySearch.md",
+          "source_sha256": "c605c4f7b39c33d533c924e50295be3a1e05a9a799cf24b52877f14f2d2a2826",
+          "heading": "### 이진탐색 개념",
+          "start_line": 11,
+          "end_line": 15
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst",
+      "title": "이진 탐색 트리",
+      "aliases": [
+        "binary search tree",
+        "BST",
+        "왼쪽은 작고 오른쪽은 크다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single ordering imposed on a binary tree - everything in a node's left subtree is smaller than it and everything in the right is larger - from which it follows that the smallest value is the leftmost node and the largest the rightmost",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.binary-tree",
+        "algo.tree.inorder-traversal",
+        "algo.tree.bst-complexity",
+        "algo.complexity.best-worst-average",
+        "algo.tree.bst-insert",
+        "algo.tree.bst-min-max",
+        "algo.tree.bst-tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리",
+          "start_line": 18,
+          "end_line": 23
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Search Tree",
+          "start_line": 611,
+          "end_line": 619
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 기본",
+          "start_line": 13,
+          "end_line": 13
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 기본",
+          "start_line": 17,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-delete",
+      "title": "이진탐색트리에서 노드 지우기",
+      "aliases": [
+        "자녀가 없는 경우",
+        "자녀가 하나인 경우",
+        "자녀가 둘인 경우"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-delete.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single procedure split by how many children the node has - a leaf is simply unreferenced, a node with one child has the reference to it redirected at that child, and a node with two is replaced by the smallest value in its right subtree or equally the largest in its left - with a search having to find the node first in every case",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.successor-predecessor",
+        "algo.tree.bst",
+        "algo.tree.bst-complexity",
+        "algo.tree.bst-insert",
+        "algo.tree.bst-min-max"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 120,
+          "end_line": 121
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 127,
+          "end_line": 130
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 132,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Search Tree",
+          "start_line": 668,
+          "end_line": 675
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 연산",
+          "start_line": 70,
+          "end_line": 70
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 연산",
+          "start_line": 77,
+          "end_line": 79
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 연산",
+          "start_line": 82,
+          "end_line": 89
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.preorder-postorder",
+      "title": "전위 순회와 후위 순회",
+      "aliases": [
+        "preorder traversal",
+        "postorder traversal",
+        "방문 시점의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/preorder-postorder.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair of traversals differing from the inorder one only in when the node itself is visited - before both subtrees or after both of them",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.inorder-traversal",
+        "algo.tree.subtree",
+        "algo.tree.binary-tree",
+        "algo.tree.binary-tree-array",
+        "algo.tree.bst-tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 전위순회",
+          "start_line": 74,
+          "end_line": 76
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 후위순회",
+          "start_line": 86,
+          "end_line": 88
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Tree",
+          "start_line": 578,
+          "end_line": 584
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 기본",
+          "start_line": 52,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-complexity",
+      "title": "이진탐색트리의 시간복잡도",
+      "aliases": [
+        "평균은 log N",
+        "최악은 N",
+        "절반씩 줄여나간다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-complexity.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single spread across the three cases - constant when the node wanted is the root, logarithmic on average because each comparison discards one side and halves what is left, and linear at worst when the tree has degenerated into a line",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.best-worst-average",
+        "algo.tree.bst",
+        "algo.tree.bst-tradeoff",
+        "algo.tree.binary-tree-kinds",
+        "algo.complexity.halving-is-log"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 시간복잡도",
+          "start_line": 176,
+          "end_line": 179
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 시간복잡도",
+          "start_line": 185,
+          "end_line": 189
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 시간복잡도",
+          "start_line": 195,
+          "end_line": 199
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.queue.queue",
+      "title": "큐",
+      "aliases": [
+        "FIFO",
+        "First In First Out",
+        "front와 rear"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/queue/fifo-structure.md",
+      "tags": [
+        "algo",
+        "queue"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single restricted structure in which what entered first leaves first - additions at the back, reads and removals at the front, each in constant time, which is the whole of its interface",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain",
+        "lecture-batch-70",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack",
+        "algo.queue.deque",
+        "algo.queue.queue-as-stack",
+        "algo.list.linked-list",
+        "algo.graph.bfs",
+        "algo.graph.topological-sort-indegree",
+        "algo.stack.queue-with-two-stacks"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Queue",
+          "start_line": 401,
+          "end_line": 407
+        },
+        {
+          "path": "content/brain/notes/CS/DS/queue.md",
+          "source_sha256": "54ae387666b74f254c8cc43d92b1f1dc225dd3a547666469b8bd41016a6df3a2",
+          "heading": "### 큐 기본개념",
+          "start_line": 16,
+          "end_line": 20
+        },
+        {
+          "path": "content/brain/notes/CS/DS/queue.md",
+          "source_sha256": "54ae387666b74f254c8cc43d92b1f1dc225dd3a547666469b8bd41016a6df3a2",
+          "heading": "### 큐 기본개념",
+          "start_line": 26,
+          "end_line": 29
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.stack",
+      "title": "스택",
+      "aliases": [
+        "LIFO",
+        "Last In First Out",
+        "Restricted Structure"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/lifo-structure.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single structure allowing insertion and removal at one end only, so the last thing in is the first out - one of the restricted structures alongside the queue and the deque - and although the underlying array could be read at any position, doing so is outside what the structure offers, since the problems it solves need only push, pop and a look at the top",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-70",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack-implementation",
+        "algo.stack.stack-use-case",
+        "cs.memory.call-stack",
+        "algo.list.linked-list",
+        "algo.queue.queue",
+        "algo.queue.deque",
+        "algo.graph.dfs",
+        "algo.graph.topological-sort-dfs",
+        "algo.stack.queue-with-two-stacks"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 29,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 39,
+          "end_line": 41
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Stack",
+          "start_line": 348,
+          "end_line": 355
+        },
+        {
+          "path": "content/brain/notes/CS/DS/stack.md",
+          "source_sha256": "eb5b6daeaed6e45fd3982d5756f51d9ebaafffb68e90de966df7955813f2f90d",
+          "heading": "### 스택 기본개념",
+          "start_line": 16,
+          "end_line": 20
+        },
+        {
+          "path": "content/brain/notes/CS/DS/stack.md",
+          "source_sha256": "eb5b6daeaed6e45fd3982d5756f51d9ebaafffb68e90de966df7955813f2f90d",
+          "heading": "### 스택 기본개념",
+          "start_line": 26,
+          "end_line": 29
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.queue.queue-as-stack",
+      "title": "배열과 큐로 서로를 흉내내기",
+      "aliases": [
+        "배열로 큐를 만들면 O(N)",
+        "큐 두 개로 스택을 만든다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/queue/queue-as-stack.md",
+      "tags": [
+        "algo",
+        "queue"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair of substitutions - an array cannot stand in for the first-in-first-out structure because removing at the front shifts everything, which is what the linked structure avoids; and two of the queues make a stack, everything but the last entry being moved across before it is taken out",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.queue.queue",
+        "algo.stack.stack-implementation",
+        "algo.array.operation-complexity",
+        "algo.list.linked-list-complexity",
+        "algo.stack.queue-with-two-stacks"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Queue",
+          "start_line": 409,
+          "end_line": 420
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.sort.merge-sort",
+      "title": "합병 정렬",
+      "aliases": [
+        "Merge Sort",
+        "균등하게 분할한다",
+        "임시 배열이 필요하다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/sort/merge-sort.md",
+      "tags": [
+        "algo",
+        "sort"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single divide-and-conquer sort that splits the array into two equal halves, sorts each the same way and merges the results - log-linear in every case including the worst, which is what distinguishes it from the other advanced sort - at the price of memory for the merge, which is the reason to prefer the other when memory is what matters",
+      "pilot_strata": [
+        "lecture-batch-75",
+        "CS/Algo",
+        "algo-domain",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.quick-sort",
+        "algo.sort.merge-sort-recursion",
+        "algo.sort.stable-sort",
+        "algo.sort.in-place-sort",
+        "algo.search.divide-and-conquer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/sort/comparison/mergeSort.md",
+          "source_sha256": "bf6a70ecda1b1133988984d9351bfbbf48a16a3cdcd62597441c8406de4208a2",
+          "heading": "### 합병정렬 개념",
+          "start_line": 12,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.jit-compiler",
+      "title": "JIT 컴파일러",
+      "aliases": [
+        "JIT Compiler",
+        "Just In Time Compiler"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/jit-compiler.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single run-time bytecode-to-machine-code translation strategy that caches and reuses generated code",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.jvm",
+        "cs.compiler.compiler",
+        "cs.compiler.code-optimizer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 01. 플랫폼(프로그램이 실행되는 환경)에 영향을 받지 않음",
+          "start_line": 35,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-tradeoff",
+      "title": "이진탐색트리의 장단점",
+      "aliases": [
+        "레퍼런스만 재조정하면 된다",
+        "한쪽으로 편향되면 악화",
+        "스스로 균형을 잡는 트리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-tradeoff.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single balance of what the structure buys and costs - insertion and deletion move references rather than elements, the ordering makes all three operations fast in the usual case, and the values can be read out in order - against the one failure mode, a tree that has leaned to one side, which is what the self-balancing variants exist to prevent",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-76",
+        "CS"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.bst-complexity",
+        "algo.tree.avl-tree",
+        "algo.tree.binary-tree-kinds",
+        "algo.list.linked-list-complexity",
+        "algo.tree.bst-min-max",
+        "algo.complexity.halving-is-log"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 장단점",
+          "start_line": 209,
+          "end_line": 212
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 장단점",
+          "start_line": 214,
+          "end_line": 218
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 기본",
+          "start_line": 27,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 기본",
+          "start_line": 34,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.search.divide-and-conquer",
+      "title": "분할 정복",
+      "aliases": [
+        "divide and conquer",
+        "분할 정복 조합",
+        "재귀적으로 같은 방식으로"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/divide-and-conquer.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single strategy underlying much else - cut the problem into smaller problems of the same shape, solve each the same way until one is small enough to answer outright, and build the answer from theirs; three steps that the merging sort shows most plainly",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.sort.merge-sort",
+        "algo.sort.quick-sort",
+        "algo.search.binary-search",
+        "algo.complexity.halving-is-log"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/principle/divideConquer.md",
+          "source_sha256": "e18d3f181fe0826e0684c02bcbb6e6971cb670ed5543d98a6ebc91d676a4ec0a",
+          "heading": "### 분할정복 개념",
+          "start_line": 13,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/principle/divideConquer.md",
+          "source_sha256": "e18d3f181fe0826e0684c02bcbb6e6971cb670ed5543d98a6ebc91d676a4ec0a",
+          "heading": "### 분할정복 개념",
+          "start_line": 23,
+          "end_line": 25
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.halving-is-log",
+      "title": "절반씩 줄면 로그다",
+      "aliases": [
+        "1번에 데이터가 절반씩 떨어지면",
+        "1000만도 24번이면 끝",
+        "상수에 가깝다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/halving-is-log.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single identification worth carrying - any procedure that discards half the remaining data per step is logarithmic, because halving n down to one takes as many steps as the exponent that raises two to n; and that number is small enough to treat as constant, ten million taking twenty-four steps",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/Algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.search.binary-search",
+        "algo.complexity.time-complexity",
+        "algo.complexity.n-range-table",
+        "algo.search.divide-and-conquer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/Algo/principle/binarySearch.md",
+          "source_sha256": "c605c4f7b39c33d533c924e50295be3a1e05a9a799cf24b52877f14f2d2a2826",
+          "heading": "### 이진탐색 개념",
+          "start_line": 16,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/notes/CS/Algo/principle/binarySearch.md",
+          "source_sha256": "c605c4f7b39c33d533c924e50295be3a1e05a9a799cf24b52877f14f2d2a2826",
+          "heading": "### 이진탐색 개념",
+          "start_line": 22,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-min-max",
+      "title": "탐색 트리의 최소와 최대",
+      "aliases": [
+        "가장 왼쪽이 최소",
+        "가장 오른쪽이 최대"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-min-max.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the ordering - going left as far as possible reaches the smallest value and going right as far as possible reaches the largest, so neither needs searching for",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/DS",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.tree.bst",
+        "algo.tree.successor-predecessor",
+        "algo.tree.bst-delete"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/DS/bst.md",
+          "source_sha256": "5964f932b01a2cf308e75ab992d4ffc92932b7d8dac1ea0ca47f926cf00ba859",
+          "heading": "### 이진탐색트리 기본",
+          "start_line": 19,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.queue-with-two-stacks",
+      "title": "스택 두 개로 큐 만들기",
+      "aliases": [
+        "넣을 때는 첫 번째에",
+        "꺼낼 때 비어있으면 옮겨 담는다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/queue-with-two-stacks.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single construction turning two last-in-first-out structures into a first-in-first-out one - everything entering goes on the first, and anything leaving comes off the second, which is refilled by pouring the first into it whenever it runs dry; the pouring reverses the order, which is exactly what was wanted",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/DS",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack",
+        "algo.queue.queue",
+        "algo.queue.queue-as-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/DS/stack.md",
+          "source_sha256": "eb5b6daeaed6e45fd3982d5756f51d9ebaafffb68e90de966df7955813f2f90d",
+          "heading": "### 스택 2개로 큐 1개 구현",
+          "start_line": 123,
+          "end_line": 131
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.compiler",
+      "title": "컴파일러",
+      "aliases": [
+        "소스 코드 전체를 한 번에 번역",
+        "목적 코드가 생성된다",
+        "인터프리터와의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/compiler-definition.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single program that translates a whole source text into machine code before any of it runs, producing a separate executable - which makes translating slow and running fast, the opposite of the line-at-a-time translator that produces no executable at all and re-reads the source every run",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.compiler-structure",
+        "java.runtime.jit-compiler",
+        "java.runtime.bytecode",
+        "cs.compiler.pass-count"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "unheaded-body",
+          "start_line": 9,
+          "end_line": 12
+        },
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "unheaded-body",
+          "start_line": 16,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.compiler-structure",
+      "title": "프론트엔드와 백엔드",
+      "aliases": [
+        "언어에 의존하고 기계에 독립적",
+        "언어에 독립적이고 기계에 의존적"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/compiler-structure.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division of the translator into two halves - the first understanding the source language and knowing nothing about any machine, the second emitting for a machine and knowing nothing about any language - which is what lets one language be retargeted and one machine serve many languages",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.compiler.compiler",
+        "cs.compiler.lexical-analyzer",
+        "cs.compiler.target-code-generator",
+        "java.platform.platform-independence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 34,
+          "end_line": 35
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.lexical-analyzer",
+      "title": "어휘 분석기",
+      "aliases": [
+        "어휘 분석기 Scanner",
+        "소스를 토큰으로 쪼갠다",
+        "Lex"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/lexical-analyzer.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single first stage that turns the source text into a sequence of tokens, each an integer the rest of the translator can work with rather than a run of characters - a conditional and its parenthesised comparison becoming six of them",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.compiler-structure",
+        "cs.compiler.syntax-analyzer",
+        "cs.compiler.compiler"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 42,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.syntax-analyzer",
+      "title": "구문 분석기",
+      "aliases": [
+        "Parser",
+        "토큰으로 트리를 만든다",
+        "Yacc"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/syntax-analyzer.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single second stage that checks the token sequence against the language's grammar - reporting an error where it does not fit and otherwise emitting the program's structure as a tree, which is what every later stage works on",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.lexical-analyzer",
+        "cs.compiler.intermediate-code",
+        "cs.compiler.error-handling",
+        "algo.tree.tree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 48,
+          "end_line": 53
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.intermediate-code",
+      "title": "중간 코드 생성과 의미 검사",
+      "aliases": [
+        "Semantic 체크",
+        "문법은 맞는데 의미가 틀린 경우"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/intermediate-code.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single third stage that checks what the grammatically valid program actually means - assigning a fractional value to an integer being the standard example of something the grammar permits and the meaning forbids - and emits a machine-independent form of it",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.compiler.syntax-analyzer",
+        "cs.compiler.code-optimizer",
+        "java.runtime.bytecode",
+        "java.type.type-conversion"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 58,
+          "end_line": 60
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.code-optimizer",
+      "title": "최적화 단계",
+      "aliases": [
+        "선택적 단계",
+        "의미를 보존해야 한다",
+        "노력할 가치가 있을 때만"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/code-optimizer.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single optional stage that rewrites the intermediate form into something cheaper - chiefly faster and secondarily smaller - bound by three conditions: the meaning must not change, the average case must actually improve, and the rewriting must be worth what it costs to do",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.optimization-techniques",
+        "cs.compiler.intermediate-code",
+        "java.runtime.jit-compiler",
+        "cs.compiler.target-code-generator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 65,
+          "end_line": 74
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.optimization-techniques",
+      "title": "지역 최적화와 전역 최적화",
+      "aliases": [
+        "상수 접기",
+        "중복 적재 제거",
+        "공통 부분식",
+        "반복문 밖으로 빼기"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/optimization-techniques.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single split between rewrites needing only a local look - folding constants the compiler can compute itself, dropping repeated loads and stores, simplifying algebra, replacing an expensive operation with a cheaper equivalent - and rewrites needing to trace how values flow through the whole program, which is what finds a repeated subexpression, a computation that does not change inside a loop, or code nothing can reach",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.code-optimizer",
+        "cs.compiler.intermediate-code",
+        "java.runtime.jit-compiler"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 75,
+          "end_line": 83
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.target-code-generator",
+      "title": "목적 코드 생성기",
+      "aliases": [
+        "기계 명령어를 만든다",
+        "레지스터 관리",
+        "기계에 의존적인 최적화"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/target-code-generator.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single last stage turning the machine-independent form into actual instructions - which means choosing them, deciding what lives in which register, laying out storage, and applying whatever further improvement only makes sense once the machine is known",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.compiler-structure",
+        "cs.compiler.code-optimizer",
+        "cs.compiler.intermediate-code"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 86,
+          "end_line": 92
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.error-handling",
+      "title": "컴파일 오류 처리",
+      "aliases": [
+        "Error recovery와 Error repair",
+        "다른 문장에 영향을 미치지 않도록",
+        "구문 의미 실행 오류"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/error-handling.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of duties around an error - noticing it, containing it so the rest of the program is still checked rather than drowned in consequences, reporting it, and in some translators attempting a fix - across the three kinds that arise, the grammatical, the meaningful, and the one that appears only when the program runs",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.syntax-analyzer",
+        "cs.compiler.intermediate-code",
+        "java.exception.checked-unchecked",
+        "cs.compiler.compiler"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 95,
+          "end_line": 105
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.compiler.pass-count",
+      "title": "단일 패스와 다중 패스",
+      "aliases": [
+        "Single Pass Compiler",
+        "Multi-pass Compiler",
+        "속도와 유연성의 맞교환"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/compiler/pass-count.md",
+      "tags": [
+        "cs",
+        "compiler"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trade in how many times the source is walked - once is fastest and was what the early translators did, while several times allows each stage to be improved on its own, makes retargeting to another machine easier and needs less memory at any moment, at the cost of taking longer",
+      "pilot_strata": [
+        "lecture-batch-76",
+        "CS/LT",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.compiler.compiler",
+        "cs.compiler.compiler-structure",
+        "cs.compiler.code-optimizer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CS/LT/Compiler.md",
+          "source_sha256": "71fcf98fc53690d4e190bff1cc4c91804f4b7adbea8436e875c118bf0cd93493",
+          "heading": "## Compiler Structure",
+          "start_line": 111,
+          "end_line": 118
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

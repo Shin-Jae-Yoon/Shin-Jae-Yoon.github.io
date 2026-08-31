@@ -1,0 +1,1282 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-40",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-39",
+    "applied_state": "835 approved knowledge concepts after lecture-batch-39 closed the kim-spring lane."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+        "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc"
+      },
+      {
+        "path": "content/brain/lectures/frontend/apple-js/js-library.md",
+        "source_sha256": "a0428472abdf8cc5e9f00e474dc04f19f9d6aa6e75627955ed5d49496f451c04"
+      },
+      {
+        "path": "content/brain/lectures/frontend/apple-js/index.md",
+        "source_sha256": "d704c15c7e18707d52e4d84e1ea268b84eabadcc6d69ee719271def7d59b8c3a"
+      }
+    ],
+    "line_range": "apple-js-01 L13-L777, js-library L12-L88, index L9-L24",
+    "series": "코딩애플 - Javascript 입문과 웹 UI 개발 1/3, 부록"
+  },
+  "overlap_analysis": {
+    "finding": "This opens the js namespace, which nothing applied touches - the closest neighbours are software.programming.function and the HTTP concepts about sending form data, and both are joined by edges rather than absorbed.",
+    "disposition": "New top-level domain js, under basic, dom, event, ui, form, library and debug. The library appendix contributes exactly one concept: what React and Vue are actually for. The rest of that file is a personal shortlist of packages with a verdict attached to each, which is a reading note rather than knowledge."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "apple-js-01 L7-L9, L278, L296, L361-L363, L369, L411, L455, L471, L646 partial",
+        "reason_code": "course-link-figure-caption-or-carried-by-owner",
+        "detail": "The course link, the cross-references to the html course, the captions announcing the code block below them, and the claims already stated inside the cited span of the owning concept."
+      },
+      {
+        "span": "js-library L12-L18, L29, L39, L49, L68, L74, L88",
+        "reason_code": "curated-tool-list-with-personal-verdict",
+        "detail": "A shortlist of libraries - a carousel, a chart library, a scroll animation, an email sender, a utility library, a slide-style page builder - each with a note on whether the author expects to use it. These are bookmarks, not claims about how anything works. Only the React and Vue entry states something general enough to be a concept, and it is cited."
+      },
+      {
+        "span": "index L11-L24",
+        "reason_code": "table-of-contents-and-study-log",
+        "detail": "The course index with a study period and goal."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in apple-js-01 contributes at least one cited locator. js-library contributes one, index none, for the reasons recorded above."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 25845,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 153,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 31,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 29,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 29,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. Files 02 and 03 of the course are left to the next batches.",
+  "candidates_authored": 29,
+  "candidates": [
+    {
+      "concept_id": "software.programming.function",
+      "title": "함수",
+      "aliases": [
+        "Function",
+        "함수 시그니처",
+        "Function Signature"
+      ],
+      "canonical_path": "content/brain/knowledge/software/programming/function.md",
+      "tags": [
+        "software",
+        "programming"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single named reusable code unit with parameters, return behavior, and one focused responsibility",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-40",
+        "frontend/apple-js"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.memory.call-stack",
+        "java.oop.method",
+        "js.basic.function",
+        "js.event.callback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수란?",
+          "start_line": 143,
+          "end_line": 150
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수의 입력과 반환",
+          "start_line": 151,
+          "end_line": 162
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수 정의하기",
+          "start_line": 163,
+          "end_line": 214
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수의 장점",
+          "start_line": 232,
+          "end_line": 243
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.client-to-server-data",
+      "title": "클라이언트에서 서버로 데이터를 보내는 두 방식",
+      "aliases": [
+        "쿼리 파라미터를 통한 전송",
+        "메시지 바디를 통한 전송",
+        "HTML Form 전송"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/client-to-server-data.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single split between the two ways data reaches the server - the query string with GET, used for sorting, filtering and search terms, and the message body with POST, PUT or PATCH, used for signing up, ordering and changing a resource - which covers the four situations that arise: reading static data, reading dynamic data, submitting an HTML form, and calling an HTTP API from a server, an app or a web client",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain",
+        "lecture-batch-40",
+        "frontend/apple-js"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.query-string",
+        "cs.network.http-message-body",
+        "cs.network.http-get",
+        "cs.network.http-post",
+        "js.form.form-tag",
+        "js.form.prevent-default"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section05.md",
+          "source_sha256": "fa04b51da7adf365adb4c33b54b6ec3964a61dc850dc19432e2a0a1126976c00",
+          "heading": "### 클라이언트에서 서버로 데이터 전송",
+          "start_line": 16,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section05.md",
+          "source_sha256": "fa04b51da7adf365adb4c33b54b6ec3964a61dc850dc19432e2a0a1126976c00",
+          "heading": "### 클라이언트에서 서버로 데이터 전송",
+          "start_line": 26,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.purpose",
+      "title": "자바스크립트가 하는 일",
+      "aliases": [
+        "html 조작과 변경",
+        "script 태그",
+        "새로고침 시 1번 실행"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/purpose.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single job the language has on a page - reaching into the html and changing it, which is what makes tabs and modals possible, lets input be checked before it goes anywhere, and lets a button ask the server for something - written inside a script tag or a linked file, and run once per page load",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.element-selector",
+        "js.basic.script-position",
+        "cs.network.browser-request-flow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 사용 목적",
+          "start_line": 15,
+          "end_line": 21
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.element-selector",
+      "title": "id와 class로 요소 가져오기",
+      "aliases": [
+        "getElementById",
+        "getElementsByClassName",
+        "innerHTML"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/element-selector.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sentence shape every DOM edit follows - take the document, get the element by its id, say which part of it, and assign the new value - where fetching by class returns however many matched, so one has to be picked by index",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.query-selector",
+        "js.basic.purpose",
+        "js.dom.class-list-toggle"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 사용 목적",
+          "start_line": 25,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 사용 목적",
+          "start_line": 45,
+          "end_line": 49
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.query-selector",
+      "title": "querySelector",
+      "aliases": [
+        "querySelectorAll",
+        "css 셀렉터로 찾기"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/query-selector.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single selector that takes css syntax instead of a bare id or class name, returning the first match only, so picking any other one means using the all form and an index",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.element-selector",
+        "js.dom.selector-tradeoff",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## querySelector",
+          "start_line": 55,
+          "end_line": 62
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.selector-tradeoff",
+      "title": "셀렉터 선택은 생산성의 문제다",
+      "aliases": [
+        "초당 700만 번",
+        "속도보다 일관성"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/selector-tradeoff.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to read the benchmark that says the css selector is slower - it runs millions of times a second either way, so the number does not decide anything, while using one form for ids and another for classes costs the reader every time; the argument for it is consistency, not speed",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.query-selector",
+        "js.dom.element-selector",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## querySelector > ### getElementById와 비교",
+          "start_line": 80,
+          "end_line": 92
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.show-hide-pattern",
+      "title": "UI를 만드는 기본 법칙",
+      "aliases": [
+        "미리 만들어두고 숨긴다",
+        "display none과 block"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/show-hide-pattern.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single recipe behind most interface pieces - build and style the thing in advance and hide it, then reveal it when it is wanted - which is how a modal or a dropdown menu is made",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.class-list-toggle",
+        "js.ui.modal-placement",
+        "js.ui.css-animation-preference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## UI 만드는 법칙",
+          "start_line": 97,
+          "end_line": 102
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.function",
+      "title": "자바스크립트 함수",
+      "aliases": [
+        "긴 코드를 줄일 때",
+        "camelCase 작명"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/function.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to give a stretch of code a name, worth doing when it is long or used more than once, named starting lowercase and in camel case rather than with underscores",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.programming.function",
+        "js.event.callback",
+        "js.basic.variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 function",
+          "start_line": 108,
+          "end_line": 115
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 자바스크립트 function",
+          "start_line": 127,
+          "end_line": 127
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.script-position",
+      "title": "script 태그를 아래에 두는 이유",
+      "aliases": [
+        "렌더링 순서",
+        "조작할 html 하단에"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/script-position.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the page being read top to bottom - a script placed above the elements it touches runs before they exist, so it goes below them instead",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.purpose",
+        "js.debug.common-error",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 초창기 겪는 문제들, 오류들",
+          "start_line": 135,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "js.debug.common-error",
+      "title": "처음 만나는 오류들",
+      "aliases": [
+        "of null",
+        "셀렉터 오타",
+        "개발자 도구 console 탭"
+      ],
+      "canonical_path": "content/brain/knowledge/js/debug/common-error.md",
+      "tags": [
+        "js",
+        "debug"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single habit of reading the console before guessing - an error ending in of null almost always means the selector matched nothing because it was mistyped, and the rest are usually capitalisation in a built-in name",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.element-selector",
+        "js.basic.script-position",
+        "js.basic.undefined-null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 초창기 겪는 문제들, 오류들",
+          "start_line": 141,
+          "end_line": 143
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 초창기 겪는 문제들, 오류들",
+          "start_line": 147,
+          "end_line": 149
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.add-event-listener",
+      "title": "addEventListener",
+      "aliases": [
+        "click mouseover scroll keydown",
+        "onclick 대신"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/add-event-listener.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to attach behaviour to an element from the script rather than writing it into the html attribute, naming which event to wait for - a click, a hover, a scroll, a key",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.callback",
+        "js.dom.element-selector",
+        "js.event.input-change"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 이벤트리스너",
+          "start_line": 155,
+          "end_line": 160
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.callback",
+      "title": "콜백함수",
+      "aliases": [
+        "나중에 불릴 함수",
+        "괄호를 붙이면 안 된다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/callback.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single function passed to another to be run later rather than now, which is what the second argument of an event listener is - and which must be handed over by name, since writing the parentheses calls it on the spot instead",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.add-event-listener",
+        "js.basic.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 이벤트리스너 > ### 콜백함수",
+          "start_line": 178,
+          "end_line": 178
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 이벤트리스너 > ### 콜백함수",
+          "start_line": 186,
+          "end_line": 188
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.class-list-toggle",
+      "title": "classList와 toggle",
+      "aliases": [
+        "클래스 탈부착",
+        "add removeClass toggle"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/class-list-toggle.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single better way to show and hide than setting the style directly - a class carrying the styling is attached and detached instead, and toggle removes it if it is there and adds it if it is not, which is a submenu button's whole behaviour without a condition or a variable",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.ui.show-hide-pattern",
+        "js.dom.element-selector",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## classList, toggle",
+          "start_line": 194,
+          "end_line": 199
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## classList, toggle",
+          "start_line": 213,
+          "end_line": 213
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## classList, toggle",
+          "start_line": 223,
+          "end_line": 223
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## classList, toggle",
+          "start_line": 233,
+          "end_line": 233
+        }
+      ]
+    },
+    {
+      "concept_id": "js.library.jquery",
+      "title": "jQuery",
+      "aliases": [
+        "CDN으로 설치",
+        "$ 셀렉터",
+        "body 끝나기 전에"
+      ],
+      "canonical_path": "content/brain/knowledge/js/library/jquery.md",
+      "tags": [
+        "js",
+        "library"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single library for making DOM work shorter, loaded from a CDN just before the body ends so the page is not held up, after which its syntax may be used - the dollar standing in for selecting all matches, an index method for picking one, and methods for changing html, changing css and adding, removing or toggling a class",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.query-selector",
+        "js.dom.class-list-toggle",
+        "js.library.jquery-effect",
+        "js.library.spa-framework"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## jQuery 라이브러리",
+          "start_line": 239,
+          "end_line": 239
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## jQuery 라이브러리",
+          "start_line": 243,
+          "end_line": 243
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## jQuery 라이브러리",
+          "start_line": 252,
+          "end_line": 252
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## jQuery 라이브러리",
+          "start_line": 256,
+          "end_line": 268
+        }
+      ]
+    },
+    {
+      "concept_id": "js.library.jquery-effect",
+      "title": "jQuery가 제공하는 표시 효과",
+      "aliases": [
+        "fadeOut",
+        "slideUp",
+        "fadeToggle"
+      ],
+      "canonical_path": "content/brain/knowledge/js/library/jquery-effect.md",
+      "tags": [
+        "js",
+        "library"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of methods that hide and show with a transition built in - plainly, by fading, or by sliding - instead of setting the display property by hand",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.library.jquery",
+        "js.ui.css-animation-preference",
+        "js.ui.show-hide-pattern"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## jQuery 라이브러리",
+          "start_line": 304,
+          "end_line": 318
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.modal-placement",
+      "title": "모달은 html 맨 위에 적는다",
+      "aliases": [
+        "모든 요소보다 앞에 놓이니까"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/modal-placement.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single convention for where a modal's markup goes - at the top of the document, because it sits in front of everything else on the page",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "js.ui.show-hide-pattern",
+        "js.dom.class-list-toggle"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 모달(Modal) 창 제작 Tip",
+          "start_line": 324,
+          "end_line": 324
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.css-animation-preference",
+      "title": "애니메이션은 CSS로 주는 편이 낫다",
+      "aliases": [
+        "visibility hidden이 낫다",
+        "자바스크립트 애니메이션의 한계"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/css-animation-preference.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single preference for doing the movement in css rather than in script, and for hiding with visibility rather than display when something is going to be animated",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.library.jquery-effect",
+        "js.ui.show-hide-pattern"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## UI에 애니메이션 추가",
+          "start_line": 359,
+          "end_line": 359
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## UI에 애니메이션 추가",
+          "start_line": 365,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "concept_id": "js.form.form-tag",
+      "title": "form 태그",
+      "aliases": [
+        "type submit과 type button",
+        "action에 서버 경로"
+      ],
+      "canonical_path": "content/brain/knowledge/js/form/form-tag.md",
+      "tags": [
+        "js",
+        "form"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single element for sending what the user typed to the server, whose send button must be declared as a submit and whose other buttons must be declared as plain buttons or they will submit too, with the destination set in its action",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.client-to-server-data",
+        "js.form.prevent-default",
+        "cs.network.http-post"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## form태그 if/else",
+          "start_line": 498,
+          "end_line": 500
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.if-else",
+      "title": "if-else 문",
+      "aliases": [
+        "else if",
+        "elif는 파이썬"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/if-else.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single branching form written with if and else if rather than the elif of other languages, where a later branch is not even evaluated once an earlier one has been taken",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.comparison-operator",
+        "js.basic.logical-operator",
+        "js.basic.truthy-falsy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## form태그 if/else > ### 조건문 (if-else)",
+          "start_line": 514,
+          "end_line": 517
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.comparison-operator",
+      "title": "== 와 ===",
+      "aliases": [
+        "동등 연산자",
+        "일치 연산자",
+        "자료형 변환 없이 비교"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/comparison-operator.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between the two equality operators - the loose one converts the operands to a common type before comparing, the strict one compares without converting, and the same holds for their negations",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.if-else",
+        "js.basic.undefined-null",
+        "js.basic.truthy-falsy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## form태그 if/else > ### 비교 연산자",
+          "start_line": 552,
+          "end_line": 557
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.logical-operator",
+      "title": "논리 연산자",
+      "aliases": [
+        "AND OR NOT 기호"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/logical-operator.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three operators writing and, or and not as symbols",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "js.basic.if-else",
+        "js.basic.comparison-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## form태그 if/else > ### 논리 연산자",
+          "start_line": 563,
+          "end_line": 565
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.truthy-falsy",
+      "title": "truthy와 falsy",
+      "aliases": [
+        "참 같은 값",
+        "거짓 같은 값",
+        "빈 배열은 truthy"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/truthy-falsy.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division of every value into the ones a condition treats as true and the ones it treats as false - zero, the empty string, null, undefined and NaN being false, and everything else including an empty array or object being true",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.if-else",
+        "js.basic.undefined-null",
+        "js.basic.comparison-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## truthy, falsy 자료",
+          "start_line": 571,
+          "end_line": 577
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.undefined-null",
+      "title": "undefined와 null",
+      "aliases": [
+        "할당되지 않은 상태",
+        "null로 할당된 상태"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/undefined-null.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference between two ways of having no value - undefined means the variable exists but was never given anything, so its type is not yet settled, while null means it was deliberately given the empty value and so has one; comparing them loosely still says they are equal, which is the loose operator converting rather than the two being the same",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.comparison-operator",
+        "js.basic.truthy-falsy",
+        "js.basic.variable",
+        "db.constraint.null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## undefined, null",
+          "start_line": 583,
+          "end_line": 587
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## undefined, null",
+          "start_line": 597,
+          "end_line": 597
+        }
+      ]
+    },
+    {
+      "concept_id": "js.form.prevent-default",
+      "title": "전송을 막고 검사하기",
+      "aliases": [
+        "preventDefault()",
+        "input의 value",
+        "form의 submit 이벤트"
+      ],
+      "canonical_path": "content/brain/knowledge/js/form/prevent-default.md",
+      "tags": [
+        "js",
+        "form"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to check a form before it goes anywhere - listen for the form's own submit event rather than the button's click, read what was typed from the input's value, and cancel the default action so the page does not navigate away",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.form.form-tag",
+        "js.event.add-event-listener",
+        "js.basic.if-else"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## if문 이용한 form 태그",
+          "start_line": 646,
+          "end_line": 652
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.input-change",
+      "title": "input 이벤트와 change 이벤트",
+      "aliases": [
+        "값이 바뀔 때마다",
+        "포커스를 잃을 때"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/input-change.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference in when the two fire on an input element - one on every keystroke as the value changes, the other only once the field is left - which is what decides whether a rule such as a minimum password length can be shown while it is still being broken",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.add-event-listener",
+        "js.form.prevent-default",
+        "js.form.form-tag"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## input 이벤트",
+          "start_line": 664,
+          "end_line": 672
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.variable",
+      "title": "변수의 선언 할당 범위",
+      "aliases": [
+        "자주 쓰는 셀렉터는 변수에",
+        "함수 안에서 만든 변수"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/variable.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three things to know about a variable - declaring it, putting something in it, and where it can be used, one made inside a function being unreachable outside it - which is worth using for anything long, anything to be remembered such as a counter, and for a selector used more than once",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.var-let-const",
+        "js.basic.function",
+        "js.dom.element-selector"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법",
+          "start_line": 683,
+          "end_line": 687
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법",
+          "start_line": 691,
+          "end_line": 696
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.var-let-const",
+      "title": "var let const의 차이",
+      "aliases": [
+        "재선언과 재할당",
+        "Block-scoped",
+        "Function-scoped"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/var-let-const.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single table of three declarations - var allows redeclaring and reassigning and is scoped to the function, let forbids redeclaring, const forbids both and is what a value that must not change is put in - with let and const scoped to any pair of braces rather than to the function",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.variable",
+        "js.basic.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### var let const 차이",
+          "start_line": 725,
+          "end_line": 733
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### var let const 차이",
+          "start_line": 742,
+          "end_line": 744
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### var let const 차이",
+          "start_line": 753,
+          "end_line": 753
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.template-literal",
+      "title": "백틱으로 문자에 변수 넣기",
+      "aliases": [
+        "템플릿 리터럴",
+        "달러 중괄호"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/template-literal.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single string form written in backticks, inside which a variable is placed with a dollar sign and braces rather than by concatenating",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "js.basic.variable",
+        "js.dom.element-selector"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### 문자 중간에 변수 쉽게 넣기",
+          "start_line": 767,
+          "end_line": 769
+        }
+      ]
+    },
+    {
+      "concept_id": "js.library.spa-framework",
+      "title": "React와 Vue가 필요해지는 지점",
+      "aliases": [
+        "SPA",
+        "Single Page Application",
+        "컴포넌트 단위와 라우팅"
+      ],
+      "canonical_path": "content/brain/knowledge/js/library/spa-framework.md",
+      "tags": [
+        "js",
+        "library"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single kind of application these libraries are for - many pages needing routing, interface pieces reused across them, and only the changed part re-rendered instead of the whole page reloading - which is worth reaching for only once the language underneath is understood",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.library.jquery",
+        "js.basic.purpose",
+        "cs.network.browser-request-flow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/js-library.md",
+          "source_sha256": "a0428472abdf8cc5e9f00e474dc04f19f9d6aa6e75627955ed5d49496f451c04",
+          "heading": "## React, Vue (강력 추천, 따로 공부)",
+          "start_line": 80,
+          "end_line": 82
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

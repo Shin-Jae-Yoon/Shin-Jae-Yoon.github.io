@@ -1,0 +1,2672 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-04",
+  "lane": "book",
+  "phase": 5,
+  "mode": "candidate-manifest",
+  "candidates_authored": true,
+  "status": "ready_for_u3_generation",
+  "review_gate": "U3",
+  "produced_by": "phase5-book-candidate-authoring-lane (candidates + rejections only; no U3, no sign, no apply)",
+  "produced_at_note": "No wall-clock timestamp: every field is derived from repository bytes so the whole document is reproducible from the working tree alone.",
+  "series_note": {
+    "statement": "Batch 04 is the FIRST Kafka batch. It opens a domain the approved index has never touched: zero of the 85 applied concepts cite any Kafka source, and the index contains no messaging, streaming, broker, or event-log concept.",
+    "consequence": "Unlike batches 02 and 03, batch 04 cannot be reasoned about as an extension of an existing namespace. Its concepts will occupy a new root namespace, and the collision surface against the applied index is thin by construction (see alias_scan_semantics)."
+  },
+  "predecessor_state": {
+    "note": "All three predecessor Book batches are applied and independently verified, so the approved index batch 04 must be authored against is fixed and knowable today.",
+    "book_batch_01": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-01-u3-v2",
+      "status": "applied",
+      "applied_count": 17
+    },
+    "book_batch_02": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-02-u3-v2",
+      "status": "applied",
+      "applied_count": 34
+    },
+    "book_batch_03": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-03-u3",
+      "status": "applied",
+      "run_state": "completed",
+      "applied_count": 28,
+      "excluded_count": 0,
+      "before_knowledge_tree_sha256": "db8bef805b1182af0b8df00042e26caabe06ef917852d496ba23f565e7c9e35d",
+      "after_knowledge_tree_sha256": "fcd973c16ed07ce109f7676de9d72bcd77dd5bd6aacea2f40a4d843012bf36ea",
+      "approved_review_sha256": "b13054f21d4cb60d8f0fdb939e3054e681053f935f0d95395c4438fd559303d1"
+    }
+  },
+  "contract": {
+    "consumer": "Executable batch manifest for `node tooling/brain/knowledge.mjs propose --batch`.",
+    "consumer_status": "EXECUTABLE. Carries a candidates[] array of 34 authored candidates and a rejected_candidates[] array of 3 scope-level rejection probes.",
+    "engine_surface_verified": "tooling/brain/knowledge.mjs sha256 f2af802a06750b4f9d3b6727e12e89629a0f5855b873a7e12b15bfd122ceaad6 exposes propose (--pilot | --batch), sample, verify, apply, promote and rollback. Batch mode requires >= 1 candidate and a batch_id matching /^[a-z0-9]+(?:[._-][a-z0-9]+)*$/, which `book-batch-04` satisfies.",
+    "forbidden": "This manifest must not be signed, applied, promoted or committed. It authorizes propose only; U3 generation, signature and apply are separate gates."
+  },
+  "ordering": {
+    "rule": "repo-relative POSIX path, ascending byte-wise (LC_ALL=C) UTF-8 comparison",
+    "grouping": "extraction sources first, then rejection probes; each group independently byte-sorted. Batch 04 has no file-level probes.",
+    "order_index_is_authoritative": true,
+    "reproduce": "find content/brain/books -type f -name '*.md' | LC_ALL=C sort"
+  },
+  "hash_lock": {
+    "algorithm": "sha256",
+    "encoding": "lowercase hex over complete raw-layer file bytes",
+    "batch_baseline_sha256": "d6ccdc1b8963d2b784b9d0a075ac7ef59bcd1ba6838c78b848d0a3c4ae35a375",
+    "batch_baseline_recipe": "sha256 of the UTF-8 concatenation of `<role>\\t<path>\\t<source_sha256>\\n` for every entry in order_index order",
+    "batch_baseline_reproduce": "{ for f in content/brain/books/kafka/chap01.md; do printf 'extraction\\t%s\\t%s\\n' \"$f\" \"$(shasum -a 256 \"$f\" | cut -d' ' -f1)\"; done; } | shasum -a 256",
+    "book_corpus_sha256": "c39bbdf5c72911e23fe08364762ffdc143dc4ce1c2edda8e47896b5f68183c88",
+    "book_corpus_recipe": "sha256 of the UTF-8 concatenation of `<path>\\t<source_sha256>\\n` for all 27 content/brain/books Markdown files in LC_ALL=C path order",
+    "approved_knowledge_tree_sha256_at_inventory": "fcd973c16ed07ce109f7676de9d72bcd77dd5bd6aacea2f40a4d843012bf36ea",
+    "brain_tree_sha256_at_inventory": "b68f962129e644937d5af54e200d869247ee4c365890e920fb9f7c319da21480",
+    "batch_baseline_role": "deterministic source baseline and sample-seed INPUT. It is NOT the AC-15 `sample.json` seed.",
+    "drift_policy": "fail-closed. Re-verify every source_sha256 and approved_knowledge_tree_sha256_at_inventory immediately before propose and again before apply; a mismatch aborts. `apply` independently refuses with `approved knowledge content changed after proposal generation` if the knowledge tree moved."
+  },
+  "line_count_definition": "physical lines. A terminal newline terminates the last line and does not begin another; line_count is NOT `split(\"\\n\").length`.",
+  "evidence_class_definition": "EXCLUSIVE classes: prose-bearing (prose_lines > 3), low-evidence-prose (0 < prose_lines <= 3), code-only (prose_lines = 0 AND code_lines > 0), zero-evidence (prose_lines = 0 AND code_lines = 0). Every scope has exactly one; the four counts partition the scope total.",
+  "positive_prose_definition": "INCLUSIVE tally of scopes with prose_lines > 0 = prose-bearing + low-evidence-prose. It OVERLAPS the low-evidence class, is not an evidence_class, and is never part of the partition.",
+  "scope_class_accounting": {
+    "rule": "every scope belongs to exactly one evidence_class; the four exclusive class counts sum to the scope total",
+    "prose-bearing": 23,
+    "low-evidence-prose": 2,
+    "code-only": 0,
+    "zero-evidence": 3,
+    "sum": 28,
+    "equation": "23 + 2 + 0 + 3 = 28",
+    "positive_prose_is_not_a_class": "positive_prose = 25 is the INCLUSIVE count of scopes with prose_lines > 0, i.e. prose-bearing (23) + low-evidence-prose (2). It is a forecasting base, not an evidence_class, and must never be added to the partition."
+  },
+  "selection_budget": {
+    "purpose": "Batch 04 opens the Kafka series, whose chapters are individually far larger than any Do it! Java slice. A budget is stated BEFORE selection so the choice is falsifiable rather than a preference.",
+    "ceilings": {
+      "B1_bytes": {
+        "max": 60000,
+        "basis": "largest applied batch: book-batch-02 at 57,373 bytes"
+      },
+      "B2_heading_scopes": {
+        "max": 70,
+        "basis": "largest applied batch: book-batch-02 at 65 scopes"
+      },
+      "B3_positive_prose_scopes": {
+        "max": 55,
+        "basis": "largest applied batch: book-batch-02 at 53"
+      },
+      "B4_prose_lines": {
+        "max": 360,
+        "basis": "largest applied batch: book-batch-02 at 329 prose lines, plus 10% headroom. Prose lines are the review-burden measure a U3 reviewer actually reads, and they are the budget that binds here."
+      },
+      "B5_forecast_accepted_candidates": {
+        "max": 38,
+        "basis": "largest realized batch: book-batch-02 applied 34"
+      }
+    },
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 25915,
+        "ceiling": 60000,
+        "percent": 43,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 28,
+        "ceiling": 70,
+        "percent": 40,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 25,
+        "ceiling": 55,
+        "percent": 45,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 321,
+        "ceiling": 360,
+        "percent": 89,
+        "satisfied": true
+      },
+      "forecast_accepted_candidates": {
+        "value": "14-23",
+        "ceiling": 38,
+        "satisfied": true
+      }
+    },
+    "why_not_more": {
+      "tested_addition": "content/brain/books/kafka/chap02.md",
+      "result_if_added": {
+        "bytes": 55567,
+        "heading_scopes": 45,
+        "positive_prose_scopes": 40,
+        "prose_lines": 651,
+        "percent_of_B4": 181,
+        "satisfied": false,
+        "binding_ceiling": "B4_prose_lines"
+      },
+      "statement": "chap01 + chap02 satisfies B1, B2, B3 and B5 but reaches 181% of the prose-line ceiling — 651 prose lines against a 360 ceiling and against book-batch-02's realized 329. B4 binds, so chap02 is deferred. chap01 alone is therefore the MAXIMAL adjacency-preserving selection under the stated budget."
+    },
+    "all_eight_do_not_fit": {
+      "total_bytes": 331664,
+      "total_heading_scopes": 178,
+      "total_positive_prose_scopes": 164,
+      "total_prose_lines": 2940,
+      "multiple_of_prose_line_budget": 8.2,
+      "statement": "The eight unmined Kafka substantive chapters total 331,664 bytes, 178 heading scopes and 2,940 prose lines — 8.2x the prose-line budget and 5.8x the largest applied batch by bytes. Every individual chapter consumes between 63% and 151% of the whole budget on its own. The Kafka series therefore needs roughly one batch per chapter, not one batch for the series."
+    },
+    "per_chapter_scan": [
+      {
+        "path": "content/brain/books/kafka/chap01.md",
+        "bytes": 25915,
+        "line_count": 569,
+        "heading_scopes": 28,
+        "positive_prose_scopes": 25,
+        "prose_lines": 321,
+        "prose_lines_per_positive_scope": 12.8,
+        "percent_of_prose_line_budget": 89
+      },
+      {
+        "path": "content/brain/books/kafka/chap02.md",
+        "bytes": 29652,
+        "line_count": 564,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 15,
+        "prose_lines": 330,
+        "prose_lines_per_positive_scope": 22,
+        "percent_of_prose_line_budget": 92
+      },
+      {
+        "path": "content/brain/books/kafka/chap05.md",
+        "bytes": 35954,
+        "line_count": 870,
+        "heading_scopes": 25,
+        "positive_prose_scopes": 23,
+        "prose_lines": 337,
+        "prose_lines_per_positive_scope": 14.7,
+        "percent_of_prose_line_budget": 94
+      },
+      {
+        "path": "content/brain/books/kafka/chap07.md",
+        "bytes": 36294,
+        "line_count": 757,
+        "heading_scopes": 21,
+        "positive_prose_scopes": 20,
+        "prose_lines": 478,
+        "prose_lines_per_positive_scope": 23.9,
+        "percent_of_prose_line_budget": 133
+      },
+      {
+        "path": "content/brain/books/kafka/chap08.md",
+        "bytes": 60639,
+        "line_count": 804,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 17,
+        "prose_lines": 542,
+        "prose_lines_per_positive_scope": 31.9,
+        "percent_of_prose_line_budget": 151
+      },
+      {
+        "path": "content/brain/books/kafka/chap09.md",
+        "bytes": 26990,
+        "line_count": 473,
+        "heading_scopes": 20,
+        "positive_prose_scopes": 18,
+        "prose_lines": 228,
+        "prose_lines_per_positive_scope": 12.7,
+        "percent_of_prose_line_budget": 63
+      },
+      {
+        "path": "content/brain/books/kafka/chap10.md",
+        "bytes": 58072,
+        "line_count": 821,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 16,
+        "prose_lines": 343,
+        "prose_lines_per_positive_scope": 21.4,
+        "percent_of_prose_line_budget": 95
+      },
+      {
+        "path": "content/brain/books/kafka/chap14.md",
+        "bytes": 58148,
+        "line_count": 995,
+        "heading_scopes": 33,
+        "positive_prose_scopes": 30,
+        "prose_lines": 361,
+        "prose_lines_per_positive_scope": 12,
+        "percent_of_prose_line_budget": 100
+      }
+    ]
+  },
+  "alias_scan_semantics": {
+    "purpose": "Overlap is reported under BOTH scan identities with the identity stated, because they disagree and only one models the engine's collision behaviour.",
+    "applied_concepts": 85,
+    "applied_alias_identities": 188,
+    "key_naming_note": "Alias lists here are keyed `applied_aliases` / `alias_identities`, never the reserved candidate key `aliases`. Every string recorded belongs to an ALREADY-APPLIED concept; none is authored.",
+    "literal_scan": {
+      "identity": "case-sensitive UTF-8 byte substring, no normalization",
+      "hits": 1,
+      "of": 188,
+      "alias_identities": [
+        "필드"
+      ],
+      "caveat": "A byte metric only. It does NOT model the engine's collision identity."
+    },
+    "collision_normalized_scan": {
+      "identity": "normalizedKey() from tooling/brain/knowledge-index.mjs: String(v).normalize('NFKC').trim().toLocaleLowerCase('en-US'), applied to both sides then substring-matched. This is the identity collisionReport() keys its title_or_alias bucket on.",
+      "alias_hits": 4,
+      "alias_of": 188,
+      "title_hits": 3,
+      "title_of": 85,
+      "distinct_applied_concepts_touched": 7,
+      "alias_identities": [
+        "OS",
+        "필드",
+        "Object",
+        "OOP"
+      ],
+      "applied_titles": [
+        "배열",
+        "인터페이스",
+        "API"
+      ]
+    },
+    "applied_concepts_citing_selected_source": 0,
+    "verdict": "All 7 touched applied concepts resolve to no_op. Four are substring or fenced-code artifacts (OS, OOP, Object, 필드-as-schema-field) and three are prose-anchored but domain-different (배열 as byte array, 인터페이스 as client/network interface, API as Kafka Connect API). Batch 04 opens an entirely new domain: ZERO of the 85 applied concepts cite any Kafka source, and the applied index contains no messaging, streaming, or broker concept."
+  },
+  "extraction_sources": [
+    {
+      "order_index": 0,
+      "role": "extraction",
+      "path": "content/brain/books/kafka/chap01.md",
+      "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+      "bytes": 25915,
+      "line_count": 569,
+      "frontmatter_bytes": 126,
+      "body_bytes_after_frontmatter": 25789,
+      "heading_scope_count": 28,
+      "positive_prose_scope_count": 25,
+      "prose_bearing_exclusive_scope_count": 23,
+      "low_evidence_scope_count": 2,
+      "code_only_scope_count": 0,
+      "zero_evidence_scope_count": 3,
+      "engine_substantive_scope_count": 25,
+      "prose_lines_total": 321,
+      "code_lines_total": 38,
+      "extraction_surface_ref": ".omx/artifacts/brain-restructure/book-batch-04/extraction-surface.json"
+    }
+  ],
+  "rejection_probes": [],
+  "rejection_probe_policy": {
+    "file_level_probes": 0,
+    "justification": "The Book corpus contains four frontmatter-only Markdown files: headfirst/chap01.md, kafka/chap03.md, kafka/chap04.md and the root landing page books/index.md. The three CHAPTER files were adopted as file-level rejection probes by book-batch-01, which APPLIED with all three recorded in rejected-candidates.json as insufficient-source-evidence with proposal_created false. Whole-document negative coverage is therefore already discharged against these exact, still-unchanged bytes, so batch 04 takes no file-level probe.",
+    "frontmatter_only_files": {
+      "markdown_total": 4,
+      "chapter_files": [
+        "content/brain/books/headfirst/chap01.md",
+        "content/brain/books/kafka/chap03.md",
+        "content/brain/books/kafka/chap04.md"
+      ],
+      "non_probe_file": "content/brain/books/index.md",
+      "non_probe_reason": "structural-landing-page; not a valid extraction or probe candidate under the evidence rule."
+    },
+    "substitute": "scope_level_rejection_probes",
+    "coverage_gap": "none. File-level negative coverage is discharged by the applied book-batch-01 packet; scope-level negative coverage is supplied in-batch."
+  },
+  "scope_level_rejection_probes": {
+    "definition": "heading scope whose body is non-substantive under the engine's substantiveBodyText() gate. For all batch-04 probes this coincides with prose_lines = 0 AND code_lines = 0; the engine gate is the authoritative criterion.",
+    "expected_outcome": "rejected",
+    "expected_reason_code": "insufficient-source-evidence",
+    "count": 3,
+    "scopes": [
+      {
+        "path": "content/brain/books/kafka/chap01.md",
+        "heading_chain": "## 메세징 개념",
+        "start_line": 25,
+        "end_line": 28,
+        "span_sha256": "78b9968d6fe648a86c3490d8f79de87bc31357eaac0589dccae818579e01b016",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/kafka/chap01.md",
+        "heading_chain": "## 카프카 사용 이유",
+        "start_line": 383,
+        "end_line": 384,
+        "span_sha256": "94a97a5071b36a57447a8cfe6e978398fc78034d1c71920048a6832ba591a437",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/kafka/chap01.md",
+        "heading_chain": "## 카프카의 기원",
+        "start_line": 541,
+        "end_line": 542,
+        "span_sha256": "5c5ca52e4bf259c166dada547f86766476ab3167151a5b46a84a2ca1a255f211",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      }
+    ]
+  },
+  "code_only_scopes": {
+    "definition": "heading scope with prose_lines = 0 AND code_lines > 0",
+    "count": 0,
+    "note": "Batch 04's selected source contains none, unlike batch 03. The code-only authoring hazard (P6 in batch 03) does not arise here.",
+    "scopes": []
+  },
+  "selection_rationale": {
+    "scheduling_hint": "The book-batch-03 inventory scheduled batch 04+ as the Kafka substantive chapters (chap01, 02, 05, 07, 08, 09, 10, 14), split by byte budget. This lane executes the first slice of that plan and replaces 'byte budget' with the explicit five-ceiling budget in selection_budget, because bytes alone do not model review burden.",
+    "primary": "kafka/chap01.md (카프카 시작하기) is the series opener and the only chapter that defines the vocabulary every later chapter presupposes: message and batch, schema, topic and partition, producer and consumer, broker and cluster, retention and log compaction, multi-cluster. Starting anywhere else would forward-reference undefined terms, exactly the defect batches 02 and 03 were scoped to avoid.",
+    "bounded": "One extraction file, 25,915 bytes, 28 heading scopes of which 25 carry prose and 25 are engine-substantive, 321 prose lines. This is 43% of the byte ceiling and 89% of the prose-line ceiling — the binding constraint.",
+    "adjacency": "A single file trivially preserves per-file adjacency, and chap01 is the series opener with no predecessor to strand. chap02 remains directly adjacent and is the designated batch 05.",
+    "probes": "No file-level probes (discharged by the applied batch 01); 3 in-source zero-evidence scopes provide negative coverage.",
+    "rejected_alternatives": [
+      "All eight Kafka chapters in one batch: 331,664 bytes / 178 scopes / 2,940 prose lines = 8.2x the prose-line ceiling and 5.8x the largest applied batch. Rejected on every ceiling.",
+      "chap01 + chap02 (the adjacent pair): satisfies B1, B2, B3 and B5 but reaches 181% of B4 at 651 prose lines. Rejected on the binding ceiling; chap02 becomes batch 05.",
+      "chap09 first (the smallest chapter, 228 prose lines): would fit comfortably but forward-references the entire chap01 vocabulary. Rejected on adjacency and dependency order.",
+      "A sub-chapter split of chap01: possible but unnecessary — chap01 fits the budget whole, and splitting a single chapter would strand its internal cross-references."
+    ]
+  },
+  "expected_candidate_profile": {
+    "disclaimer": "Ranges and topics only. No concept_id, title, canonical_path, alias, or tag is authored here for any new concept.",
+    "heading_scopes": 28,
+    "positive_prose_heading_scopes": 25,
+    "prose_bearing_exclusive_heading_scopes": 23,
+    "engine_substantive_heading_scopes": 25,
+    "prose_lines_total": 321,
+    "forecast_base": "positive_prose (INCLUSIVE, prose_lines > 0) = 25. This is the base batch 01 (31), batch 02 (53) and batch 03 (30) were measured on, so the ratios below are comparable.",
+    "expected_accepted_candidate_range": [
+      14,
+      23
+    ],
+    "range_derivation": "Realized ratios per positive-prose scope: batch 01 17/31 = 0.548, batch 02 34/53 = 0.642, batch 03 28/30 = 0.933. The band 0.548-0.933 applied to 25 positive-prose scopes gives 13.7-23.3, i.e. 14-23. CONFIDENCE IS LOW AND THE RANGE IS A FLOOR, for a reason batches 01-03 did not have: batch-04 scopes are far denser (12.8 prose lines per positive-prose scope versus 9.4 / 6.2 / 4.6), and five scopes carry 20 or more prose lines each. A dense scope typically supports more than one concept, so the true centre is likely at or above the top of this band. The per-prose-line basis is recorded and explicitly NOT used: its realized ratios (0.058 / 0.103 / 0.203) vary by 3.5x and would forecast 19-65, which is too wide to be actionable.",
+    "ratio_instability_note": "The per-positive-prose-scope ratio has risen monotonically across batches (0.548 -> 0.642 -> 0.933) because slice granularity has been getting finer, not because the method improved. Treat 14-23 as a planning floor and gate the authoring lane on the candidate ceiling B5 = 38 rather than on this range.",
+    "expected_kinds": {
+      "create": "the overwhelming majority. Expected families, described by topic only: data-driven applications and the point-to-point / publish-subscribe messaging patterns; message and batch; schema and serialization formats; topic and partition; producer and consumer, consumer group and offset; broker and cluster, partition leadership; retention and log compaction; multi-cluster and mirroring; the platform properties (multiple producers, multiple consumers, disk-based retention, scalability, high performance); and the use-case families (activity tracking, messaging, metrics and log collection, commit log, stream processing).",
+      "update": "expected against NO applied concept. All 7 touched applied ids resolve to no_op; see existing_touch_points.",
+      "merge": "possible where one mechanism is documented twice, e.g. the platform-property scopes L385-473 restate properties introduced in the L57-382 concept scopes. An authoring judgement, not a manifest decision.",
+      "stub": "expected from the 2 low-evidence scopes (L29-36 prose=3, L428-434 prose=2).",
+      "no_op": "expected on rerun; AC-14 requires rerun no-op.",
+      "rejected": "expected on the 3 zero-evidence scopes, reason_code insufficient-source-evidence."
+    },
+    "existing_touch_points": {
+      "note": "These concept ids already exist and are applied under content/brain/knowledge/. They are recorded as expected no_op targets, not authored here. Measured against the post-batch-03 approved tree fcd973c1...",
+      "applied_concept_count": 85,
+      "applied_concepts_citing_selected_source": 0,
+      "applied_alias_hits_literal_case_sensitive": 1,
+      "applied_alias_hits_collision_normalized": 4,
+      "applied_title_hits_collision_normalized": 3,
+      "distinct_applied_concepts_touched": 7,
+      "alias_scan_ref": "alias_scan_semantics",
+      "collision_handling_rule": "Every touch point below is no_op: batch 04 must NOT update, merge into, or re-mint any of them. Where a Kafka-domain concept covers the same WORD (배열 as byte array, 인터페이스 as client interface, API as Kafka Connect API), it must carry a distinct title and alias set and relate rather than restate. collisionReport() keys title_or_alias under NFKC+lowercase, so re-using 배열 / 인터페이스 / API / 객체 as a bare title would collide and fail the proposal build.",
+      "touch_points": [
+        {
+          "concept_id": "cs.os.operating-system",
+          "applied_title": "운영체제",
+          "applied_aliases": [
+            "Operating System",
+            "OS"
+          ],
+          "applied_kind": "create",
+          "matched_on": [
+            "alias:OS"
+          ],
+          "anchor": "substring-artifact",
+          "evidence": "`OS` normalizes to `os`, which occurs only inside longer lowercased English words. chap01 contains no assertion about operating systems.",
+          "expected": "no_op / IGNORE",
+          "collision_handling": "The normalized key(s) `os` are OCCUPIED by cs.os.operating-system. A batch-04 concept covering the Kafka-domain meaning must use a distinct title and alias set and, where genuinely related, RELATE rather than restate."
+        },
+        {
+          "concept_id": "java.array.array",
+          "applied_title": "배열",
+          "applied_aliases": [
+            "Array",
+            "자바 배열"
+          ],
+          "applied_kind": "create",
+          "matched_on": [
+            "title:배열"
+          ],
+          "anchor": "prose-domain-different",
+          "evidence": "chap01 L77/L82 `특별한 의미 없는 단순바이트 배열` describes a Kafka message payload as an opaque BYTE array, not the applied Java array type.",
+          "expected": "no_op",
+          "collision_handling": "The normalized key(s) `배열` are OCCUPIED by java.array.array. A batch-04 concept covering the Kafka-domain meaning must use a distinct title and alias set and, where genuinely related, RELATE rather than restate."
+        },
+        {
+          "concept_id": "java.oop.interface",
+          "applied_title": "인터페이스",
+          "applied_aliases": [
+            "Interface"
+          ],
+          "applied_kind": "create",
+          "matched_on": [
+            "title:인터페이스"
+          ],
+          "anchor": "prose-domain-different",
+          "evidence": "chap01 L478 `모든 클라이언트에 대해 일관된 인터페이스 제공` and L499 use 인터페이스 in the generic client/UI sense, not the Java interface type.",
+          "expected": "no_op",
+          "collision_handling": "The normalized key(s) `인터페이스` are OCCUPIED by java.oop.interface. A batch-04 concept covering the Kafka-domain meaning must use a distinct title and alias set and, where genuinely related, RELATE rather than restate."
+        },
+        {
+          "concept_id": "java.oop.member-variable",
+          "applied_title": "멤버 변수",
+          "applied_aliases": [
+            "Member Variable",
+            "Instance Variable",
+            "인스턴스 변수",
+            "필드"
+          ],
+          "applied_kind": "create",
+          "matched_on": [
+            "alias:필드"
+          ],
+          "anchor": "prose-domain-different",
+          "evidence": "chap01 L161 discusses Protobuf/Avro schema FIELD NUMBERS in binary encoding, not a Java member variable.",
+          "expected": "no_op",
+          "collision_handling": "The normalized key(s) `필드` are OCCUPIED by java.oop.member-variable. A batch-04 concept covering the Kafka-domain meaning must use a distinct title and alias set and, where genuinely related, RELATE rather than restate."
+        },
+        {
+          "concept_id": "java.oop.object",
+          "applied_title": "객체",
+          "applied_aliases": [
+            "Object"
+          ],
+          "applied_kind": "create",
+          "matched_on": [
+            "alias:Object"
+          ],
+          "anchor": "code-artifact",
+          "evidence": "chap01 L171 `\"type\": \"object\"` inside a fenced JSON-schema example.",
+          "expected": "no_op / IGNORE",
+          "collision_handling": "The normalized key(s) `object` are OCCUPIED by java.oop.object. A batch-04 concept covering the Kafka-domain meaning must use a distinct title and alias set and, where genuinely related, RELATE rather than restate."
+        },
+        {
+          "concept_id": "software.api.api",
+          "applied_title": "API",
+          "applied_aliases": [
+            "Application Programming Interface",
+            "응용 프로그램 인터페이스"
+          ],
+          "applied_kind": "create",
+          "matched_on": [
+            "title:API"
+          ],
+          "anchor": "prose-anchored-relate",
+          "evidence": "chap01 L248 `카프카 커넥트(Kafka Connect) API`. The applied software.api.api is the general API concept; a Kafka Connect concept must RELATE to it, never restate it.",
+          "expected": "no_op",
+          "collision_handling": "The normalized key(s) `api` are OCCUPIED by software.api.api. A batch-04 concept covering the Kafka-domain meaning must use a distinct title and alias set and, where genuinely related, RELATE rather than restate."
+        },
+        {
+          "concept_id": "software.paradigm.object-oriented-programming",
+          "applied_title": "객체 지향 프로그래밍",
+          "applied_aliases": [
+            "Object-Oriented Programming",
+            "OOP",
+            "객체지향 프로그래밍"
+          ],
+          "applied_kind": "stub",
+          "matched_on": [
+            "alias:OOP"
+          ],
+          "anchor": "substring-artifact",
+          "evidence": "`OOP` normalizes to `oop`, which is a substring of `hadoop` (하둡(Hadoop), chap01 L238/L511/L530). chap01 contains no OOP assertion.",
+          "expected": "no_op / IGNORE",
+          "collision_handling": "The normalized key(s) `oop` are OCCUPIED by software.paradigm.object-oriented-programming. A batch-04 concept covering the Kafka-domain meaning must use a distinct title and alias set and, where genuinely related, RELATE rather than restate."
+        }
+      ],
+      "disposition_summary": {
+        "total_touch_points": 7,
+        "by_expected_disposition": {
+          "no_op": 7
+        },
+        "substring_or_code_artifact_entries": 3,
+        "prose_anchored_entries": 4,
+        "update_entries": 0,
+        "note": "Derived from the touch_points array at build time, not hand-counted."
+      },
+      "verified_absent_overlap": "ZERO of the 85 applied concepts cite any Kafka source. The applied index has no messaging, streaming, broker, event-log, partition, or serialization concept: its 24 namespaces are entirely Java, CS-architecture, and software-paradigm. The 7 touched ids are matched only by generic words used in a different domain sense or by substring artifacts, so batch 04's collision exposure is to WORD REUSE, not to concept overlap."
+    },
+    "namespace_interaction": {
+      "note": "Batch 04 opens a new root namespace; this records naming risk during authoring, not evidence contention.",
+      "applied_root_namespaces": [
+        "cross-domain",
+        "cs",
+        "java",
+        "software"
+      ],
+      "no_applied_kafka_or_messaging_namespace": true,
+      "risk": "The authoring lane must choose a root namespace for Kafka concepts (for example `kafka.*` or `messaging.*`) and apply it consistently. That choice is deliberately NOT made here: it belongs to candidate authoring under U3 review, and pre-committing it in an inventory would be authoring by another name.",
+      "occupied_normalized_keys_in_selected_prose": {
+        "note": "Applied title/alias keys that appear in the selected source under NFKC+trim+lower, all in a different domain sense. Minting a new concept under any of them fails the collision report.",
+        "keys": [
+          "배열 / array (java.array.array) — chap01 L77/L82, byte array of a message payload",
+          "인터페이스 (java.oop.interface) — chap01 L478/L499, client interface",
+          "api (software.api.api) — chap01 L248, Kafka Connect API",
+          "객체 / object (java.oop.object) — chap01 L171, JSON-schema \"type\": \"object\"",
+          "필드 (java.oop.member-variable) — chap01 L161, schema field number",
+          "os (cs.os.operating-system) — substring artifact",
+          "oop (software.paradigm.object-oriented-programming) — substring of hadoop"
+        ],
+        "current_index_collisions": 0,
+        "constraint": "The approved index currently reports 0 collisions across concept_id, title_or_alias, canonical_path and folder_route. Candidate authoring must keep it at 0."
+      }
+    },
+    "expected_flagged_for_full_review": {
+      "rule": "plan §5.1 requires 100% review of conflict / low-confidence / provenance-warning proposals; REVIEW_FLAGS in knowledge.mjs is exactly {conflict, low-confidence, provenance-warning}.",
+      "low_evidence_rule": "0 < prose_lines <= 3",
+      "low_evidence_scope_count": 2,
+      "low_evidence_scopes": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "heading_chain": "## 메세징 개념 > ### 메세지 전달 패턴",
+          "start_line": 29,
+          "end_line": 36,
+          "span_sha256": "a4baf8c1a8e567485d26fa891fd1fab3153795fdb2f3a3a74e2d8aaeb5db3a6e",
+          "prose_lines": 3,
+          "code_lines": 0
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "heading_chain": "## 카프카 사용 이유 > ### 고성능",
+          "start_line": 428,
+          "end_line": 434,
+          "span_sha256": "f42b01c697a256ec8558055959e35ae2e248f90605630a602ed41368f56db89e",
+          "prose_lines": 2,
+          "code_lines": 0
+        }
+      ],
+      "dense_scope_expectation": "The 5 scopes carrying 20 or more prose lines should be expected to yield multiple candidates each, and any candidate whose locator covers only part of such a scope should be checked for an unsupported granularity claim — the defect that produced R1/R2 in the batch-03 candidate review.",
+      "sample_quota_recipe": "computeBatchSample() sets quota = min(unflagged_pool, max(5, ceil(0.10 x unflagged_pool))) over the UNFLAGGED pool; category coverage can add one draw per proposal kind missing from the quota slice, so the discretionary count is a floor.",
+      "estimated_u3_review_load": "ESTIMATE ONLY. Batch 03 realized 20 mandatory of 28 after its repair; batch 02 sampled 18 of 34. With only 2 low-evidence scopes and no code-only scopes, batch 04's flagged set will be driven by conflict and provenance-warning decisions made during authoring rather than by scope class, so no numeric estimate is asserted here."
+    }
+  },
+  "preconditions": [
+    {
+      "id": "P1",
+      "severity": "informational",
+      "statement": "All three predecessor Book batches are applied and independently verified, so candidate authoring is not sequencing-blocked.",
+      "required_before": "candidate authoring",
+      "resolution": "Bind approved_knowledge_tree_sha256_at_inventory into the future batch manifest and re-verify before propose and before apply."
+    },
+    {
+      "id": "P2",
+      "severity": "blocking",
+      "statement": "The approved knowledge tree must not move between this inventory and batch-04 apply. It is fcd973c16ed07ce109f7676de9d72bcd77dd5bd6aacea2f40a4d843012bf36ea (86 files, 85 concepts).",
+      "consequence": "Any intervening apply forces regeneration; `apply` refuses with `approved knowledge content changed after proposal generation`. Fail-closed, not a corruption risk.",
+      "required_before": "propose and apply",
+      "resolution": "Sequence batch 04 as the only in-flight Book packet, or regenerate after any intervening apply."
+    },
+    {
+      "id": "P3",
+      "severity": "warning",
+      "statement": "The raw layer is uncommitted; the extraction source is untracked in git, so drift cannot be caught by git alone.",
+      "required_before": "propose and apply",
+      "resolution": "Re-verify all 27 corpus source_sha256 immediately before propose and again before apply; fail closed on mismatch."
+    },
+    {
+      "id": "P4",
+      "severity": "warning",
+      "statement": "Tag policy: knowledge tags[] must equal canonical_path folder segments; `brain` and `knowledge` are reserved. Raw Kafka frontmatter carries the display tag `📚 카프카 핵심가이드`.",
+      "required_before": "candidate authoring",
+      "resolution": "Derive tags from canonical_path folders only; never copy the display tag."
+    },
+    {
+      "id": "P5",
+      "severity": "warning",
+      "statement": "Alias policy H-1: knowledge aliases are search-only; `aliases`/`alias`/`permalink` are forbidden in knowledge frontmatter.",
+      "required_before": "candidate authoring",
+      "resolution": "Use knowledge_aliases plus the KNOWLEDGE_ALIASES body block, as all 85 applied concepts do."
+    },
+    {
+      "id": "P6",
+      "severity": "blocking",
+      "statement": "Batch 04 opens a new root namespace and the authoring lane must choose it. This inventory deliberately does not.",
+      "consequence": "An inconsistent or late namespace choice would force re-authoring of every candidate, since concept_id and canonical_path are both derived from it.",
+      "required_before": "candidate authoring",
+      "resolution": "Fix the Kafka root namespace as the first authoring decision, record it in the candidate manifest's rationale, and check every proposed title and alias against the 7 occupied normalized keys listed above."
+    },
+    {
+      "id": "P7",
+      "severity": "warning",
+      "statement": "Scope density is unprecedented: 12.8 prose lines per positive-prose scope, with 5 scopes at 20 or more prose lines (largest 39).",
+      "consequence": "The 14-23 candidate forecast is a floor, and a candidate citing only part of a dense scope can easily claim more than its span supports — the exact defect flagged as R1/R2 in the batch-03 candidate review.",
+      "required_before": "candidate authoring",
+      "resolution": "Expect multiple candidates per dense scope, and check every granularity clause against its own cited span before U3."
+    }
+  ],
+  "exclusions": [
+    {
+      "path": "content/brain/books/dinosaur/chap01.md",
+      "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+      "bytes": 20564,
+      "reason_code": "consumed-by-applied-u2-pilot",
+      "reason": "Applied U2 pilot source: 6 live locators. Consolidation over applied-source chapters is a separately scheduled pass; this exclusion does not claim exhaustive mining."
+    },
+    {
+      "path": "content/brain/books/dinosaur/index.md",
+      "source_sha256": "a8120f7707ebf9337aa6e39266cdfa818cb7bac0f461d9780ce35e629e1c8628",
+      "bytes": 434,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap01.md",
+      "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+      "bytes": 3839,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied (28/28, run_state completed): 5 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap02.md",
+      "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+      "bytes": 10221,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied: 14 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap03.md",
+      "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+      "bytes": 4298,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied: 5 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap04.md",
+      "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+      "bytes": 8675,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied: 12 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap05.md",
+      "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+      "bytes": 22791,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 27 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap06.md",
+      "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+      "bytes": 18202,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 17 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap07.md",
+      "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+      "bytes": 16380,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 12 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap08.md",
+      "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+      "bytes": 36552,
+      "reason_code": "consumed-by-applied-u2-pilot",
+      "reason": "Applied U2 pilot source: 4 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap09.md",
+      "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+      "bytes": 21207,
+      "reason_code": "consumed-by-applied-book-batch-01",
+      "reason": "Book batch 01 applied: 14 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap10.md",
+      "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+      "bytes": 26270,
+      "reason_code": "consumed-by-applied-book-batch-01",
+      "reason": "Book batch 01 applied: 22 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/index.md",
+      "source_sha256": "2ebcf0fdf49f2e33bcfee437b577a69d81badfaf241d7d5dc0b9dc9b31f55433",
+      "bytes": 1067,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/headfirst/chap01.md",
+      "source_sha256": "5bc76a52b84de82b431eca3153eb88b7b46c8e97182f4acfcc5cf2a96a912934",
+      "bytes": 132,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter (body 0 bytes). Discharged as book.rejected.headfirst-chap01 / insufficient-source-evidence inside the applied book-batch-01 packet; bytes unchanged since that lock."
+    },
+    {
+      "path": "content/brain/books/headfirst/index.md",
+      "source_sha256": "0a494323844cf13491e90daeede77b9b10d8ad87e2f3cf042800a7a88ecf2378",
+      "bytes": 531,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/index.md",
+      "source_sha256": "0e16821f89bb88ce2d9ab35393e622e1af7584106fd5d767994ffb8db206be46",
+      "bytes": 34,
+      "reason_code": "structural-landing-page",
+      "reason": "Root landing page for the Book layer. Frontmatter-only, and a landing page is not a valid extraction or probe candidate under the evidence rule."
+    },
+    {
+      "path": "content/brain/books/kafka/chap02.md",
+      "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+      "bytes": 29652,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 02 카프카 설치하기. Adjacent to the selection and the natural batch 05, but adding it reaches 181% of the prose-line ceiling B4 (651 vs 360). Deferred on budget, not on merit."
+    },
+    {
+      "path": "content/brain/books/kafka/chap03.md",
+      "source_sha256": "415a2aa0a323e2a13946beb6cc01fd4a2a5d4136761647d1212b2db57676d36e",
+      "bytes": 126,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter (body 0 bytes). Discharged as book.rejected.kafka-chap03; bytes unchanged."
+    },
+    {
+      "path": "content/brain/books/kafka/chap04.md",
+      "source_sha256": "61c9540d0ce99d8de40b8b1fc156344d32ba4b72935b3846a2ecaaa378b28c79",
+      "bytes": 123,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter (body 0 bytes). Discharged as book.rejected.kafka-chap04; bytes unchanged."
+    },
+    {
+      "path": "content/brain/books/kafka/chap05.md",
+      "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+      "bytes": 35954,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 05 AdminClient. 337 prose lines = 94% of B4 on its own; a batch of its own."
+    },
+    {
+      "path": "content/brain/books/kafka/chap07.md",
+      "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+      "bytes": 36294,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 07 신뢰성 있는 데이터 전달. 478 prose lines = 133% of B4; may itself need splitting."
+    },
+    {
+      "path": "content/brain/books/kafka/chap08.md",
+      "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+      "bytes": 60639,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 08 정확히 한번의 의미구조. 542 prose lines = 151% of B4, the largest single chapter; will need splitting."
+    },
+    {
+      "path": "content/brain/books/kafka/chap09.md",
+      "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+      "bytes": 26990,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 09. 228 prose lines = 63% of B4, the only chapter that could share a batch with another."
+    },
+    {
+      "path": "content/brain/books/kafka/chap10.md",
+      "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+      "bytes": 58072,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 10. 343 prose lines = 95% of B4; a batch of its own."
+    },
+    {
+      "path": "content/brain/books/kafka/chap14.md",
+      "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+      "bytes": 58148,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 14. 361 prose lines = 100% of B4; a batch of its own."
+    },
+    {
+      "path": "content/brain/books/kafka/index.md",
+      "source_sha256": "18a829ca948932c7c9279afb1d0b9f4f6a0547d83740f136932772b12d41a2bf",
+      "bytes": 1104,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    }
+  ],
+  "coverage": {
+    "book_markdown_total": 27,
+    "extraction_sources": 1,
+    "rejection_probes": 0,
+    "exclusions": 26,
+    "accounted_for": 27,
+    "unaccounted": 0,
+    "by_reason_code": {
+      "selected-extraction-source": 1,
+      "consumed-by-applied-u2-pilot": 2,
+      "consumed-by-applied-book-batch-01": 2,
+      "consumed-by-applied-book-batch-02": 3,
+      "consumed-by-applied-book-batch-03": 4,
+      "probe-discharged-by-applied-book-batch-01": 3,
+      "deferred-later-batch-same-series": 7,
+      "structural-landing-page": 5
+    }
+  },
+  "next_batch_recommendation": {
+    "batch_05": "content/brain/books/kafka/chap02.md (카프카 설치하기) — 330 prose lines, 92% of B4 on its own.",
+    "remaining_after_batch_05": "kafka chap05 (337 prose lines), chap07 (478), chap08 (542), chap09 (228), chap10 (343), chap14 (361). chap07 and chap08 exceed B4 alone and will need a sub-chapter split or a raised budget; chap09 is the only chapter small enough to consider pairing.",
+    "projected_batch_count": "roughly 7 further batches after batch 04, one per remaining chapter, with chap07 and chap08 possibly splitting into two each.",
+    "consolidation": "a dedicated pass over dinosaur/chap01.md and do-it-java/chap01-chap10.md, whose spans are applied but not necessarily exhaustively mined. After the Kafka series completes, consolidation is the only remaining Book work."
+  },
+  "namespace_decision": {
+    "record": ".omx/reviews/brain-phase5-book-batch-04-namespace-decision.md",
+    "owner": "신재윤",
+    "primary_root": "kafka",
+    "secondary_root": "messaging",
+    "rule": "kafka.* for Kafka-specific concepts; messaging.* only for genuinely technology-agnostic messaging concepts with direct evidence.",
+    "messaging_concepts": [
+      "messaging.pipeline.data-pipeline",
+      "messaging.pattern.publish-subscribe",
+      "messaging.pattern.centralized-messaging-system"
+    ],
+    "deferred_extraction": "Serialization formats (Avro/Protobuf/JSON) are filed under kafka.schema.* because this chapter introduces them as Kafka's schema options. Rule 4 of the namespace decision permits extracting them to a technology-agnostic root during consolidation; extraction adds concepts and never moves them.",
+    "folder_route_rule": "collisionReport() rejects a document whose filename stem equals its parent folder name. Seven leaves were renamed accordingly (kafka-broker, kafka-message, kafka-origin, message-retention, kafka-schema, kafka-stream, kafka-topic), following the applied precedent java.array.array -> java/array/java-array.md and software.api.api -> software/api/application-programming-interface.md. concept_id is unchanged; the engine imposes no id-path mirroring rule."
+  },
+  "occupied_key_policy": {
+    "rule": "No candidate title or alias may normalize to a key already held by an applied concept. All seven touch points remain no_op; this batch authors no update and no merge against any applied concept.",
+    "occupied_keys_checked": [
+      "os",
+      "oop",
+      "object",
+      "필드",
+      "배열",
+      "인터페이스",
+      "api"
+    ],
+    "applied_normalized_keys_checked": 273,
+    "violations": 0,
+    "updates_authored": 0,
+    "merges_against_applied_concepts": 0
+  },
+  "candidate_summary": {
+    "accepted": 34,
+    "kinds": {
+      "create": 22,
+      "stub": 2,
+      "merge": 10
+    },
+    "flagged_candidates": 19,
+    "flag_instances": 21,
+    "flags": {
+      "low-confidence": 15,
+      "provenance-warning": 3,
+      "conflict": 3
+    },
+    "locators": 48,
+    "aliases": 77,
+    "budget_ceiling_B5": 38,
+    "within_budget": true,
+    "roots": {
+      "kafka": 31,
+      "messaging": 3
+    }
+  },
+  "scope_accounting": {
+    "rule": "Every heading scope is either proposed (at least one accepted candidate locator lies inside it) or rejected (a scope-level rejection probe cites it). No scope is unaccounted.",
+    "total_scopes": 28,
+    "proposed": 25,
+    "rejected": 3,
+    "unaccounted": 0,
+    "equation": "25 proposed + 3 rejected = 28",
+    "scopes": [
+      {
+        "start_line": 12,
+        "end_line": 24,
+        "heading_chain": "## 데이터 주도 애플리케이션",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 8,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "messaging.pipeline.data-pipeline"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 25,
+        "end_line": 28,
+        "heading_chain": "## 메세징 개념",
+        "evidence_class": "zero-evidence",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "disposition": "rejected",
+        "concept_ids": [],
+        "rejected_as": "book.rejected.kafka-chap01-l0025"
+      },
+      {
+        "start_line": 29,
+        "end_line": 36,
+        "heading_chain": "## 메세징 개념 > ### 메세지 전달 패턴",
+        "evidence_class": "low-evidence-prose",
+        "prose_lines": 3,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "messaging.pattern.publish-subscribe"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 37,
+        "end_line": 56,
+        "heading_chain": "## 메세징 개념 > ### 확장되어가는 과정",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 12,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "messaging.pattern.centralized-messaging-system"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 57,
+        "end_line": 69,
+        "heading_chain": "## 카프카",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 7,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.platform.kafka"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 70,
+        "end_line": 99,
+        "heading_chain": "## 카프카 > ### 메세지 / 배치",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 19,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.message.message",
+          "kafka.message.message-key",
+          "kafka.message.batch"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 100,
+        "end_line": 207,
+        "heading_chain": "## 카프카 > ### 스키마",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 39,
+        "code_lines": 38,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.schema.schema",
+          "kafka.schema.serialization-format"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 208,
+        "end_line": 241,
+        "heading_chain": "## 카프카 > ### 토픽/파티션",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 23,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.topic.topic",
+          "kafka.topic.partition",
+          "kafka.stream.stream"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 242,
+        "end_line": 292,
+        "heading_chain": "## 카프카 > ### 프로듀서/컨슈머",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 35,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.client.kafka-client",
+          "kafka.client.producer",
+          "kafka.client.consumer",
+          "kafka.client.offset",
+          "kafka.client.consumer-group"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 293,
+        "end_line": 336,
+        "heading_chain": "## 카프카 > ### 브로커/클러스터",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 26,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.broker.broker",
+          "kafka.broker.cluster",
+          "kafka.broker.partition-leader"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 337,
+        "end_line": 354,
+        "heading_chain": "## 카프카 > ### 보존/로그 압착",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 11,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.retention.retention",
+          "kafka.retention.log-compaction"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 355,
+        "end_line": 382,
+        "heading_chain": "## 카프카 > ### 다중 클러스터",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 18,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.cluster.multi-cluster",
+          "kafka.cluster.mirror-maker"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 383,
+        "end_line": 384,
+        "heading_chain": "## 카프카 사용 이유",
+        "evidence_class": "zero-evidence",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "disposition": "rejected",
+        "concept_ids": [],
+        "rejected_as": "book.rejected.kafka-chap01-l0383"
+      },
+      {
+        "start_line": 385,
+        "end_line": 393,
+        "heading_chain": "## 카프카 사용 이유 > ### 다중 프로듀서",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 4,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.property.multiple-producers"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 394,
+        "end_line": 405,
+        "heading_chain": "## 카프카 사용 이유 > ### 다중 컨슈머",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 7,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.property.multiple-consumers"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 406,
+        "end_line": 416,
+        "heading_chain": "## 카프카 사용 이유 > ### 디스크 기반 보존",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 6,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.property.disk-based-retention"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 417,
+        "end_line": 427,
+        "heading_chain": "## 카프카 사용 이유 > ### 확장성",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 6,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.property.scalability"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 428,
+        "end_line": 434,
+        "heading_chain": "## 카프카 사용 이유 > ### 고성능",
+        "evidence_class": "low-evidence-prose",
+        "prose_lines": 2,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.property.high-performance"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 435,
+        "end_line": 473,
+        "heading_chain": "## 카프카 사용 이유 > ### 플랫폼 기능",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 33,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.property.scalability",
+          "kafka.property.fault-tolerance",
+          "kafka.platform.platform-feature"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 474,
+        "end_line": 483,
+        "heading_chain": "## 데이터 생태계",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 6,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.ecosystem.data-ecosystem"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 484,
+        "end_line": 493,
+        "heading_chain": "## 데이터 생태계 > ### 이용 사례 : 활동 추적",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 6,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.usecase.use-case-family"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 494,
+        "end_line": 506,
+        "heading_chain": "## 데이터 생태계 > ### 이용 사례 : 메세지 교환",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 9,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.usecase.use-case-family"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 507,
+        "end_line": 516,
+        "heading_chain": "## 데이터 생태계 > ### 이용 사례 : 지표 및 로그 수집",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 6,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.usecase.use-case-family"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 517,
+        "end_line": 527,
+        "heading_chain": "## 데이터 생태계 > ### 이용 사례 : 커밋 로그",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 7,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.usecase.use-case-family"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 528,
+        "end_line": 540,
+        "heading_chain": "## 데이터 생태계 > ### 이용 사례 : 스트림 처리",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 9,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.usecase.use-case-family"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 541,
+        "end_line": 542,
+        "heading_chain": "## 카프카의 기원",
+        "evidence_class": "zero-evidence",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "disposition": "rejected",
+        "concept_ids": [],
+        "rejected_as": "book.rejected.kafka-chap01-l0541"
+      },
+      {
+        "start_line": 543,
+        "end_line": 561,
+        "heading_chain": "## 카프카의 기원 > ### 링크드인이 직면한 문제",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 13,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.origin.origin"
+        ],
+        "rejected_as": null
+      },
+      {
+        "start_line": 562,
+        "end_line": 569,
+        "heading_chain": "## 카프카의 기원 > ### 카프카 탄생",
+        "evidence_class": "prose-bearing",
+        "prose_lines": 6,
+        "code_lines": 0,
+        "disposition": "proposed",
+        "concept_ids": [
+          "kafka.origin.origin"
+        ],
+        "rejected_as": null
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "concept_id": "messaging.pipeline.data-pipeline",
+      "title": "데이터 파이프라인",
+      "aliases": [
+        "Data Pipeline",
+        "데이터 이동"
+      ],
+      "canonical_path": "content/brain/knowledge/messaging/pipeline/data-pipeline.md",
+      "tags": [
+        "messaging",
+        "pipeline"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technology-agnostic practice of moving data between systems so business logic, not transport, absorbs the effort",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "messaging-agnostic"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "messaging.pattern.centralized-messaging-system"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 주도 애플리케이션",
+          "start_line": 19,
+          "end_line": 21
+        }
+      ]
+    },
+    {
+      "concept_id": "messaging.pattern.publish-subscribe",
+      "title": "발행-구독 메세지 전달 패턴",
+      "aliases": [
+        "Publish-Subscribe",
+        "Pub/Sub",
+        "발행 구독 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/messaging/pattern/publish-subscribe.md",
+      "tags": [
+        "messaging",
+        "pattern"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single technology-agnostic delivery pattern in which a publisher never sends directly to a subscriber but through an intermediary broker",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "messaging-agnostic"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "messaging.pattern.centralized-messaging-system",
+        "kafka.platform.kafka"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 메세징 개념 > ### 메세지 전달 패턴",
+          "start_line": 31,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "messaging.pattern.centralized-messaging-system",
+      "title": "중앙 집중화된 메세징 시스템",
+      "aliases": [
+        "Centralized Messaging System",
+        "중앙 집중형 메세지 큐"
+      ],
+      "canonical_path": "content/brain/knowledge/messaging/pattern/centralized-messaging-system.md",
+      "tags": [
+        "messaging",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technology-agnostic conclusion that point-to-point and per-team queues converge on one central publish-subscribe system",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "messaging-agnostic"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "messaging.pattern.publish-subscribe",
+        "messaging.pipeline.data-pipeline"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 메세징 개념 > ### 확장되어가는 과정",
+          "start_line": 39,
+          "end_line": 53
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.platform.kafka",
+      "title": "카프카",
+      "aliases": [
+        "Apache Kafka",
+        "분산 스트리밍 플랫폼",
+        "분산 커밋 로그"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/platform/kafka.md",
+      "tags": [
+        "kafka",
+        "platform"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single distributed publish-subscribe platform that persists ordered messages as a distributed commit log",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "messaging.pattern.centralized-messaging-system",
+        "kafka.message.message",
+        "kafka.topic.topic",
+        "kafka.broker.broker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카",
+          "start_line": 59,
+          "end_line": 61
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카",
+          "start_line": 63,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.message.message",
+      "title": "메세지",
+      "aliases": [
+        "Kafka Message",
+        "카프카 메세지"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/message/kafka-message.md",
+      "tags": [
+        "kafka",
+        "message"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Kafka data unit stored as an opaque byte sequence with no format or meaning of its own",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.message.message-key",
+        "kafka.message.batch",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 메세지 / 배치",
+          "start_line": 74,
+          "end_line": 78
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.message.message-key",
+      "title": "메세지 키",
+      "aliases": [
+        "Message Key",
+        "카프카 키"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/message/message-key.md",
+      "tags": [
+        "kafka",
+        "message"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single optional message metadata value whose hash selects the partition a message is written to",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.message.message",
+        "kafka.topic.partition",
+        "kafka.retention.log-compaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 메세지 / 배치",
+          "start_line": 80,
+          "end_line": 86
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.message.batch",
+      "title": "배치",
+      "aliases": [
+        "Message Batch",
+        "메세지 배치"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/message/batch.md",
+      "tags": [
+        "kafka",
+        "message"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single grouping of messages written to one topic partition together to trade latency for throughput",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.message.message",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 메세지 / 배치",
+          "start_line": 90,
+          "end_line": 96
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.schema.schema",
+      "title": "스키마",
+      "aliases": [
+        "Kafka Schema",
+        "메세지 스키마"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/schema/kafka-schema.md",
+      "tags": [
+        "kafka",
+        "schema"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single imposed message structure that decouples writing from reading so producers and consumers need not upgrade together",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.schema.serialization-format",
+        "kafka.message.message"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 스키마",
+          "start_line": 102,
+          "end_line": 103
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 스키마",
+          "start_line": 201,
+          "end_line": 204
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.schema.serialization-format",
+      "title": "직렬화 포맷",
+      "aliases": [
+        "Serialization Format",
+        "Avro",
+        "Protobuf",
+        "JSON 스키마"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/schema/serialization-format.md",
+      "tags": [
+        "kafka",
+        "schema"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single family of message serialization formats — Avro, Protobuf and JSON — compared by compactness, typing and readability",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.schema.schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 스키마",
+          "start_line": 107,
+          "end_line": 134
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 스키마",
+          "start_line": 138,
+          "end_line": 162
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 스키마",
+          "start_line": 166,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.topic.topic",
+      "title": "토픽",
+      "aliases": [
+        "Topic",
+        "카프카 토픽"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/topic/kafka-topic.md",
+      "tags": [
+        "kafka",
+        "topic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Kafka classification of messages, composed of partitions and comparable to a database table",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.topic.partition",
+        "kafka.stream.stream",
+        "kafka.platform.kafka"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 토픽/파티션",
+          "start_line": 210,
+          "end_line": 213
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.topic.partition",
+      "title": "파티션",
+      "aliases": [
+        "Partition",
+        "카프카 파티션"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/topic/partition.md",
+      "tags": [
+        "kafka",
+        "topic"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single append-only log within a topic that guarantees order inside itself and provides redundancy and horizontal scale",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.topic.topic",
+        "kafka.client.offset",
+        "kafka.broker.partition-leader"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 토픽/파티션",
+          "start_line": 215,
+          "end_line": 224
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 토픽/파티션",
+          "start_line": 228,
+          "end_line": 230
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream",
+      "title": "스트림",
+      "aliases": [
+        "Stream",
+        "데이터 스트림"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/kafka-stream.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single continuous flow of the data held in one topic, moving from producer to consumer in contrast with offline batch frameworks",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.topic.topic",
+        "kafka.client.producer",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 토픽/파티션",
+          "start_line": 234,
+          "end_line": 238
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.kafka-client",
+      "title": "카프카 클라이언트",
+      "aliases": [
+        "Kafka Client",
+        "카프카 사용자"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/client/kafka-client.md",
+      "tags": [
+        "kafka",
+        "client"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single taxonomy of Kafka system users: the basic producer and consumer plus the advanced clients built on them",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.client.producer",
+        "kafka.client.consumer",
+        "kafka.platform.platform-feature"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 프로듀서/컨슈머",
+          "start_line": 244,
+          "end_line": 250
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.producer",
+      "title": "프로듀서",
+      "aliases": [
+        "Producer",
+        "Publisher"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/client/producer.md",
+      "tags": [
+        "kafka",
+        "client"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Kafka client that creates messages and distributes them across a topic's partitions, optionally through a partitioner",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.client.consumer",
+        "kafka.message.message-key",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 프로듀서/컨슈머",
+          "start_line": 254,
+          "end_line": 261
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.consumer",
+      "title": "컨슈머",
+      "aliases": [
+        "Consumer",
+        "Subscriber"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/client/consumer.md",
+      "tags": [
+        "kafka",
+        "client"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Kafka client that subscribes to topics and reads partition messages in written order, tracking how far it has read",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.client.producer",
+        "kafka.client.offset",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 프로듀서/컨슈머",
+          "start_line": 265,
+          "end_line": 270
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.offset",
+      "title": "오프셋",
+      "aliases": [
+        "Offset",
+        "메세지 오프셋"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/client/offset.md",
+      "tags": [
+        "kafka",
+        "client"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single integer position metadata Kafka assigns to each message so a consumer can record progress and resume after its last read message",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.client.consumer",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 프로듀서/컨슈머",
+          "start_line": 274,
+          "end_line": 280
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.consumer-group",
+      "title": "컨슈머 그룹",
+      "aliases": [
+        "Consumer Group"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/client/consumer-group.md",
+      "tags": [
+        "kafka",
+        "client"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single group of cooperating consumers in which each partition is read by exactly one member, giving horizontal scale and failover",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.client.consumer",
+        "kafka.topic.partition",
+        "kafka.property.multiple-consumers"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 프로듀서/컨슈머",
+          "start_line": 284,
+          "end_line": 289
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.broker.broker",
+      "title": "브로커",
+      "aliases": [
+        "Broker",
+        "카프카 브로커"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/broker/kafka-broker.md",
+      "tags": [
+        "kafka",
+        "broker"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Kafka server that assigns offsets, writes messages to disk and serves partition read requests",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.broker.cluster",
+        "kafka.broker.partition-leader",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 브로커/클러스터",
+          "start_line": 295,
+          "end_line": 301
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.broker.cluster",
+      "title": "클러스터",
+      "aliases": [
+        "Kafka Cluster",
+        "카프카 클러스터"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/broker/cluster.md",
+      "tags": [
+        "kafka",
+        "broker"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single group of brokers, one of which is elected controller, that scales without losing availability",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.broker.broker",
+        "kafka.cluster.multi-cluster",
+        "kafka.property.scalability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 브로커/클러스터",
+          "start_line": 305,
+          "end_line": 313
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.broker.partition-leader",
+      "title": "파티션 리더",
+      "aliases": [
+        "Partition Leader"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/broker/partition-leader.md",
+      "tags": [
+        "kafka",
+        "broker"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single partition-leader role: the broker responsible for a partition, replaced by a follower after leader failure within the same cluster",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.broker.broker",
+        "kafka.topic.partition",
+        "kafka.cluster.mirror-maker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 브로커/클러스터",
+          "start_line": 317,
+          "end_line": 322
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 브로커/클러스터",
+          "start_line": 330,
+          "end_line": 332
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.retention.retention",
+      "title": "메세지 보존",
+      "aliases": [
+        "Retention",
+        "메세지 보관"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/retention/message-retention.md",
+      "tags": [
+        "kafka",
+        "retention"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single durability rule holding messages for a configured time or partition size before expiry",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.retention.log-compaction",
+        "kafka.property.disk-based-retention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 보존/로그 압착",
+          "start_line": 339,
+          "end_line": 345
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.retention.log-compaction",
+      "title": "로그 압착",
+      "aliases": [
+        "Log Compaction",
+        "체인지 로그 압착"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/retention/log-compaction.md",
+      "tags": [
+        "kafka",
+        "retention"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single retention mode keeping only the most recent message per key, suited to change-log data",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.retention.retention",
+        "kafka.message.message-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 보존/로그 압착",
+          "start_line": 349,
+          "end_line": 351
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.cluster.multi-cluster",
+      "title": "다중 클러스터",
+      "aliases": [
+        "Multi-Cluster",
+        "다중 데이터센터"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/cluster/multi-cluster.md",
+      "tags": [
+        "kafka",
+        "cluster"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single multi-cluster deployment model separating data by type, isolation, or disaster recovery, including active-active mirroring across independent clusters",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.cluster.mirror-maker",
+        "kafka.broker.cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 다중 클러스터",
+          "start_line": 357,
+          "end_line": 360
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 다중 클러스터",
+          "start_line": 370,
+          "end_line": 373
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.cluster.mirror-maker",
+      "title": "미러메이커",
+      "aliases": [
+        "MirrorMaker",
+        "MM2",
+        "클러스터 간 미러링"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/cluster/mirror-maker.md",
+      "tags": [
+        "kafka",
+        "cluster"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single cross-cluster mirroring tool that is itself only a Kafka consumer and producer joined by a queue",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.cluster.multi-cluster",
+        "kafka.client.producer",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 다중 클러스터",
+          "start_line": 364,
+          "end_line": 366
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.property.multiple-producers",
+      "title": "다중 프로듀서",
+      "aliases": [
+        "Multiple Producers",
+        "다중 발행자"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/property/multiple-producers.md",
+      "tags": [
+        "kafka",
+        "property"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single platform property accepting multiple producers across one or more topics while allowing a shared format and a unified consumer stream where the application chooses one common topic",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.client.producer",
+        "kafka.stream.stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 다중 프로듀서",
+          "start_line": 387,
+          "end_line": 390
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.property.multiple-consumers",
+      "title": "다중 컨슈머",
+      "aliases": [
+        "Multiple Consumers",
+        "다중 구독자"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/property/multiple-consumers.md",
+      "tags": [
+        "kafka",
+        "property"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single platform property letting many consumers read the same stream without interference, unlike a single-delivery queue",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.client.consumer-group",
+        "kafka.stream.stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 다중 컨슈머",
+          "start_line": 396,
+          "end_line": 402
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.property.disk-based-retention",
+      "title": "디스크 기반 보존",
+      "aliases": [
+        "Disk-Based Retention",
+        "디스크 보존"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/property/disk-based-retention.md",
+      "tags": [
+        "kafka",
+        "property"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single platform property storing messages durably on disk so consumers need not read in real time",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.retention.retention",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 디스크 기반 보존",
+          "start_line": 408,
+          "end_line": 413
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.property.scalability",
+      "title": "규모 가변성",
+      "aliases": [
+        "Scalability",
+        "확장성"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/property/scalability.md",
+      "tags": [
+        "kafka",
+        "property"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single platform property of growing from one small cluster to many brokers without losing availability",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.broker.cluster",
+        "kafka.property.fault-tolerance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 확장성",
+          "start_line": 419,
+          "end_line": 424
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 플랫폼 기능",
+          "start_line": 447,
+          "end_line": 457
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.property.high-performance",
+      "title": "고성능",
+      "aliases": [
+        "High Performance",
+        "저지연"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/property/high-performance.md",
+      "tags": [
+        "kafka",
+        "property"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single platform property of sub-second delivery under horizontally scaled load",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.property.scalability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 고성능",
+          "start_line": 430,
+          "end_line": 431
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.property.fault-tolerance",
+      "title": "내고장성",
+      "aliases": [
+        "Fault Tolerance",
+        "장애 감내"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/property/fault-tolerance.md",
+      "tags": [
+        "kafka",
+        "property"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single platform property of continuing correct operation while individual components fail",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.property.scalability",
+        "kafka.broker.partition-leader"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 플랫폼 기능",
+          "start_line": 459,
+          "end_line": 470
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.platform.platform-feature",
+      "title": "플랫폼 기능",
+      "aliases": [
+        "Kafka Connect",
+        "Kafka Streams",
+        "카프카 커넥트",
+        "카프카 스트림즈"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/platform/platform-feature.md",
+      "tags": [
+        "kafka",
+        "platform"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single pair of built-in platform features — Connect for system integration and Streams for stream processing",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.client.kafka-client",
+        "kafka.usecase.use-case-family",
+        "kafka.platform.kafka"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 플랫폼 기능",
+          "start_line": 438,
+          "end_line": 440
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 플랫폼 기능",
+          "start_line": 441,
+          "end_line": 445
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.ecosystem.data-ecosystem",
+      "title": "데이터 생태계",
+      "aliases": [
+        "Data Ecosystem",
+        "순환 시스템"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/ecosystem/data-ecosystem.md",
+      "tags": [
+        "kafka",
+        "ecosystem"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single role of Kafka as the circulatory system of a data ecosystem, decoupling producers from consumers behind one interface",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.platform.kafka",
+        "kafka.schema.schema",
+        "kafka.usecase.use-case-family"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계",
+          "start_line": 476,
+          "end_line": 480
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.usecase.use-case-family",
+      "title": "카프카 이용 사례",
+      "aliases": [
+        "Kafka Use Cases",
+        "활동 추적",
+        "메세지 교환",
+        "지표 및 로그 수집",
+        "커밋 로그",
+        "스트림 처리"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/usecase/use-case-family.md",
+      "tags": [
+        "kafka",
+        "usecase"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single family of the five use cases this chapter enumerates: activity tracking, messaging, metrics and log collection, commit log, and stream processing",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.ecosystem.data-ecosystem",
+        "kafka.platform.platform-feature",
+        "kafka.retention.log-compaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 활동 추적",
+          "start_line": 486,
+          "end_line": 490
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 메세지 교환",
+          "start_line": 496,
+          "end_line": 503
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 지표 및 로그 수집",
+          "start_line": 509,
+          "end_line": 513
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 커밋 로그",
+          "start_line": 519,
+          "end_line": 524
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 스트림 처리",
+          "start_line": 530,
+          "end_line": 537
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.origin.origin",
+      "title": "카프카의 기원",
+      "aliases": [
+        "Kafka Origin",
+        "카프카 탄생"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/origin/kafka-origin.md",
+      "tags": [
+        "kafka",
+        "origin"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single origin account of the LinkedIn monitoring and tracking problems Kafka was built to solve and the design it adopted",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.platform.kafka",
+        "messaging.pattern.centralized-messaging-system"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카의 기원 > ### 링크드인이 직면한 문제",
+          "start_line": 545,
+          "end_line": 558
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카의 기원 > ### 카프카 탄생",
+          "start_line": 564,
+          "end_line": 569
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap01-l0025",
+      "title": "chap01 메세징 개념 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap01 L25-28 `## 메세징 개념` carries only the heading and blank/structural lines (span_sha256 78b9968d6fe648a86c3490d8f79de87bc31357eaac0589dccae818579e01b016; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal. Its child scopes carry the evidence and are proposed separately.",
+      "pilot_strata": [
+        "book-batch-04",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.kafka-chap01-l0383",
+      "title": "chap01 카프카 사용 이유 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap01 L383-384 `## 카프카 사용 이유` carries only the heading and blank/structural lines (span_sha256 94a97a5071b36a57447a8cfe6e978398fc78034d1c71920048a6832ba591a437; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal. Its child scopes carry the evidence and are proposed separately.",
+      "pilot_strata": [
+        "book-batch-04",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.kafka-chap01-l0541",
+      "title": "chap01 카프카의 기원 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap01 L541-542 `## 카프카의 기원` carries only the heading and blank/structural lines (span_sha256 5c5ca52e4bf259c166dada547f86766476ab3167151a5b46a84a2ca1a255f211; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal. Its child scopes carry the evidence and are proposed separately.",
+      "pilot_strata": [
+        "book-batch-04",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893"
+        }
+      ]
+    }
+  ],
+  "repair_record": {
+    "applied": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5"
+    ],
+    "authority": ".omx/reviews/brain-phase5-book-batch-04-candidate-independent-verification.md",
+    "pre_repair_fixture_sha256": "f0893f80c7914ca8639d4e12d8dc6c3345a086e178284bc1a96909ea3d1fa6db",
+    "R1": "kafka.client.offset — granularity no longer asserts ever-increasing monotonicity (the source says both 지속적으로 증가하는 정수값 and 단조증가할 필요 ❌); now integer position/progress/resume metadata. Added conflict.",
+    "R2": "kafka.cluster.multi-cluster — second locator narrowed L370-376 -> L370-373 so the stretched-cluster contrast (L374-376, one Kafka cluster) is no longer cited as a multi-cluster instance; granularity now names active-active mirroring across independent clusters. low-confidence retained.",
+    "R3": "kafka.property.multiple-producers — granularity now covers one or more topics with a shared format and unified consumer stream, matching 여러 토픽을 사용하든 하나의 토픽을 사용하든.",
+    "R4": "Removed exactly seven adjacent-concept aliases (producer 파티셔너; consumer-group 파티션 소유권; cluster 클러스터 컨트롤러; partition-leader 파티션 팔로워 and 복제; scalability 복제 팩터; origin 링크드인); 84 -> 77 aliases. partition-leader granularity rewritten to the singular leader role with follower failover.",
+    "R5": "Added low-confidence to kafka.platform.kafka, kafka.schema.schema, kafka.topic.partition, kafka.broker.partition-leader, kafka.retention.log-compaction, kafka.cluster.mirror-maker so every non-create candidate and both thin-evidence candidates are mandatory; with R1's conflict this yields 19 flagged candidates and 21 flag instances.",
+    "unchanged": "34 candidates, 3 rejections, 48 locators, 25+3=28 scope accounting, concept ids, canonical paths, tags, related links, source selection, and every other locator are untouched."
+  }
+}

@@ -1,0 +1,1244 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-16",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-15",
+    "applied_state": "392 approved knowledge concepts after book-batch-15 completed chap10."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap14.md",
+    "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+    "line_range": "L7-L277",
+    "covered_scopes": "heading scopes 0-10 (## 스트림 처리란 무엇인가? through ### 처리 보장)",
+    "deferred_range": "L278-L995, split between book-batch-17 (디자인 패턴, L278-473) and book-batch-18 (예제부터 프레임워크 선택, L474-995)"
+  },
+  "split_decision": {
+    "statement": "chap14 measures 347 prose lines, inside B4, but authoring it whole would land near 50 candidates. Even halving it at L474 left the first half at 44, over the B5 ceiling of 40.",
+    "resulting_plan": "three batches: L7-277 (27 candidates), L278-473 (a projected 17), L474-995 (a projected 24).",
+    "why_dense": "The 스트림 처리 개념 section defines one atomic concept every two or three prose lines - three notions of time, three kinds of state, four window properties - so its candidate count runs far ahead of its line count."
+  },
+  "namespace_decision": {
+    "continued_namespace": "kafka.stream.*, which already holds kafka.stream.stream from chap01 and kafka.stream.consume-process-produce from chap08.",
+    "no_redefine_rule": "kafka.stream.stream is applied and carries 데이터 스트림 as an alias. chap14's ### 데이터 스트림 scope asserts more about the same thing - that the dataset is unbounded because records keep arriving - so it updates that concept rather than creating a second one under the name it already owns."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 16 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 28,
+  "candidates": [
+    {
+      "concept_id": "kafka.usecase.use-case-family",
+      "title": "카프카 이용 사례",
+      "aliases": [
+        "Kafka Use Cases",
+        "활동 추적",
+        "메세지 교환",
+        "지표 및 로그 수집",
+        "커밋 로그"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/usecase/use-case-family.md",
+      "tags": [
+        "kafka",
+        "usecase"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single family of the five use cases this chapter enumerates: activity tracking, messaging, metrics and log collection, commit log, and stream processing",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain",
+        "book-batch-16"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.ecosystem.data-ecosystem",
+        "kafka.platform.platform-feature",
+        "kafka.retention.log-compaction",
+        "kafka.stream.stream-processing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 활동 추적",
+          "start_line": 486,
+          "end_line": 490
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 메세지 교환",
+          "start_line": 496,
+          "end_line": 503
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 지표 및 로그 수집",
+          "start_line": 509,
+          "end_line": 513
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 커밋 로그",
+          "start_line": 519,
+          "end_line": 524
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 데이터 생태계 > ### 이용 사례 : 스트림 처리",
+          "start_line": 530,
+          "end_line": 537
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream",
+      "title": "스트림",
+      "aliases": [
+        "Stream",
+        "데이터 스트림",
+        "무한한 데이터세트"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/kafka-stream.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single continuous flow of the data held in one topic, moving from producer to consumer in contrast with offline batch frameworks, and an abstraction over a dataset that is unbounded because records keep arriving",
+      "pilot_strata": [
+        "book-batch-04",
+        "kafka/chap01",
+        "kafka-domain",
+        "book-batch-16",
+        "kafka/chap14"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.topic.topic",
+        "kafka.client.producer",
+        "kafka.client.consumer",
+        "kafka.stream.event-stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 토픽/파티션",
+          "start_line": 234,
+          "end_line": 238
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 데이터 스트림",
+          "start_line": 18,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.event-stream",
+      "title": "이벤트 스트림",
+      "aliases": [
+        "Event Stream",
+        "비즈니스 활동의 연속"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/event-stream.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single model in which almost any business activity - a card payment, a trade, a delivery, a network event - is expressible as a sequence of events",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream",
+        "kafka.stream.event-order",
+        "kafka.message.message"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 이벤트 스트림",
+          "start_line": 24,
+          "end_line": 26
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.event-order",
+      "title": "이벤트 스트림의 순서",
+      "aliases": [
+        "Event Ordering",
+        "이벤트는 전후 관계를 갖는다"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/event-order.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property that an event inherently carries whether it happened before or after another",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.event-stream",
+        "kafka.topic.partition",
+        "kafka.reliability.kafka-guarantee"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 이벤트 스트림",
+          "start_line": 30,
+          "end_line": 32
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.record-immutability",
+      "title": "데이터 레코드의 불변성",
+      "aliases": [
+        "Record Immutability",
+        "이벤트는 고칠 수 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/record-immutability.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property that an event, once it happened, cannot be altered, which is what makes the stream a record of every transaction",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.event-stream",
+        "kafka.stream.replayability",
+        "kafka.retention.log-compaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 이벤트 스트림",
+          "start_line": 36,
+          "end_line": 38
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.replayability",
+      "title": "이벤트 스트림의 재생 가능성",
+      "aliases": [
+        "Replayability",
+        "raw stream 재생",
+        "감사와 재분석"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/replayability.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property that a raw stream from months or years ago can be played back to fix an error, try a new analysis or audit, and which is independent of the event's payload shape or rate",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.record-immutability",
+        "kafka.retention.retention",
+        "kafka.schema.serialization-format"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 이벤트 스트림",
+          "start_line": 42,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream-processing",
+      "title": "스트림 처리",
+      "aliases": [
+        "Stream Processing",
+        "연속적 논블로킹 처리"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/stream-processing.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single programming paradigm reading continuously from an unbounded dataset and emitting results, filling the gap between millisecond request-response and hour-long batch, and defined by that behaviour rather than by any framework or API",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.request-response",
+        "kafka.stream.batch-processing",
+        "kafka.stream.topology",
+        "kafka.stream.consume-process-produce"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 스트림 처리",
+          "start_line": 56,
+          "end_line": 58
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 스트림 처리",
+          "start_line": 86,
+          "end_line": 96
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념",
+          "start_line": 102,
+          "end_line": 102
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.request-response",
+      "title": "요청-응답 패러다임",
+      "aliases": [
+        "Request-Response",
+        "OLTP",
+        "블로킹 처리"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/request-response.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single lowest-latency paradigm answering in milliseconds and usually blocking the caller until it does, known in databases as OLTP",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-processing",
+        "kafka.stream.batch-processing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 스트림 처리",
+          "start_line": 62,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.batch-processing",
+      "title": "배치 처리 패러다임",
+      "aliases": [
+        "Batch Processing",
+        "데이터 웨어하우스",
+        "규모의 경제"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/batch-processing.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single high-latency high-throughput paradigm running on a schedule, reading all input and writing all output before waiting for the next run, efficient at scale but increasingly at odds with a business that wants fresher data",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-processing",
+        "kafka.stream.request-response",
+        "kafka.pipeline.timeliness"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리란 무엇인가? > ### 스트림 처리",
+          "start_line": 70,
+          "end_line": 82
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.topology",
+      "title": "처리 토폴로지",
+      "aliases": [
+        "Topology",
+        "스트림 프로세서",
+        "소스와 싱크 스트림"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/topology.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single graph joining one or more source streams through stream processors to one or more sink streams, where each processor is one transformation applied to the events passing through",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-processing",
+        "kafka.connect.connector",
+        "kafka.stream.state"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 토폴로지",
+          "start_line": 108,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.event-time",
+      "title": "이벤트 시간",
+      "aliases": [
+        "Event Time",
+        "이벤트가 발생한 시점"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/event-time.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single notion of time at which the event happened and the record was created, usually the one that matters, and worth carrying in its own field when the producer's default timestamp does not match it",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.log-append-time",
+        "kafka.stream.processing-time",
+        "kafka.stream.timestamp-extractor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간",
+          "start_line": 124,
+          "end_line": 128
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.log-append-time",
+      "title": "로그 추가 시간",
+      "aliases": [
+        "Log Append Time",
+        "접수 시간",
+        "Ingestion Time"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/log-append-time.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single notion of time at which the broker stored the event, added automatically when configured or when an old producer sent no timestamp, and a stable approximation of event time when none was recorded",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.event-time",
+        "kafka.stream.processing-time",
+        "kafka.broker.broker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간",
+          "start_line": 134,
+          "end_line": 138
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.processing-time",
+      "title": "처리 시간",
+      "aliases": [
+        "Processing Time",
+        "스레드마다 달라지는 시각"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/processing-time.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single notion of time at which the application happened to read the event, which varies with when and by which thread it was read and is therefore unreliable enough to avoid",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.event-time",
+        "kafka.stream.log-append-time"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간",
+          "start_line": 144,
+          "end_line": 146
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.timestamp-extractor",
+      "title": "TimestampExtractor",
+      "aliases": [
+        "시간 개념 선택 인터페이스",
+        "이벤트 내용에서 타임스탬프 추출"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/timestamp-extractor.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface through which Kafka Streams assigns a time to each event, letting the developer pick event, log-append or processing time, or derive one from the payload",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.event-time",
+        "kafka.stream.log-append-time",
+        "kafka.stream.processing-time"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간",
+          "start_line": 152,
+          "end_line": 152
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.output-timestamp-rule",
+      "title": "결과 레코드의 타임스탬프 규칙",
+      "aliases": [
+        "집계 결과의 최대 타임스탬프",
+        "조인 결과의 타임스탬프",
+        "punctuate()"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/output-timestamp-rule.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of rules assigning a timestamp to an emitted record - the input's own for a one-to-one result, the largest of the inputs for an aggregation or join, the stream side's for a stream-table join, and the application's internal clock for a scheduled emission",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.event-time",
+        "kafka.stream.timestamp-extractor",
+        "kafka.stream.stream-table-duality"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간",
+          "start_line": 158,
+          "end_line": 164
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.timezone-caution",
+      "title": "스트림 처리의 시간대 주의",
+      "aliases": [
+        "단일 시간대 표준화",
+        "윈도우 작업 전 시간대 변환"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/timezone-caution.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operational rule that a pipeline mixing time zones produces meaningless windows unless event times are converted to one zone first, or the zone is carried in the record",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.event-time",
+        "kafka.stream.time-window"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간",
+          "start_line": 170,
+          "end_line": 170
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.state",
+      "title": "스트림 처리의 상태",
+      "aliases": [
+        "State",
+        "이벤트 간에 유지되는 정보"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/state.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single body of information tracked across events - counts, joins, sums, averages - which cannot live in a plain local variable because a crash would lose it and change the result",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.local-state",
+        "kafka.stream.external-state",
+        "kafka.client.consumer-state"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 상태",
+          "start_line": 176,
+          "end_line": 178
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.local-state",
+      "title": "로컬 상태",
+      "aliases": [
+        "Local State",
+        "내부 상태",
+        "내장형 인메모리 저장소"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/local-state.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single per-instance state held in an embedded store, fast but bounded by memory, which is why so many stream patterns exist to partition data into substreams a bounded local state can handle",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.state",
+        "kafka.stream.external-state",
+        "kafka.stream.stream-to-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 상태",
+          "start_line": 186,
+          "end_line": 192
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.external-state",
+      "title": "외부 상태",
+      "aliases": [
+        "External State",
+        "NoSQL 상태 저장소",
+        "로컬 캐싱"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/external-state.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single state kept in an outside store, unbounded in size and reachable from every instance, at the cost of latency, complexity and availability, usually mitigated by caching it locally and then having to keep the two consistent",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.local-state",
+        "kafka.stream.state",
+        "kafka.connect.kafka-connect"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 상태",
+          "start_line": 198,
+          "end_line": 202
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream-table-duality",
+      "title": "스트림-테이블 이원성",
+      "aliases": [
+        "Stream-Table Duality",
+        "변경 내역과 현재 상태"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/stream-table-duality.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single correspondence in which a stream is the sequence of changes and a table is the current state those changes produced",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.table-to-stream",
+        "kafka.stream.stream-to-table",
+        "kafka.retention.log-compaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 스트림-테이블 이원성",
+          "start_line": 208,
+          "end_line": 210
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.table-to-stream",
+      "title": "테이블을 스트림으로 변환",
+      "aliases": [
+        "Table to Stream",
+        "변경 내역 캡처"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/table-to-stream.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conversion capturing every insert, update and delete on a table into a stream, which change-data-capture connectors carry into Kafka",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-table-duality",
+        "messaging.pipeline.data-pipeline",
+        "kafka.connect.kafka-connect"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 스트림-테이블 이원성",
+          "start_line": 216,
+          "end_line": 216
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream-to-table",
+      "title": "스트림을 테이블로 변환",
+      "aliases": [
+        "Stream to Table",
+        "구체화",
+        "Materialization"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/stream-to-table.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conversion applying every change in the stream to a table until it holds the state at a given point, an operation called materializing the stream",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-table-duality",
+        "kafka.stream.table-to-stream",
+        "kafka.stream.local-state"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 스트림-테이블 이원성",
+          "start_line": 222,
+          "end_line": 222
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.time-window",
+      "title": "시간 윈도우",
+      "aliases": [
+        "Time Window",
+        "구간 단위 처리"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/time-window.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single slicing of time into intervals that most stream operations work over - moving averages, weekly top sellers, load percentiles - and within which two streams are joined",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.session-window",
+        "kafka.stream.hopping-tumbling-window",
+        "kafka.stream.window-grace-period"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간 윈도우",
+          "start_line": 228,
+          "end_line": 230
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.session-window",
+      "title": "세션 윈도우",
+      "aliases": [
+        "Session Window",
+        "세션 간격",
+        "세션 갭"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/session-window.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single window whose size is set by inactivity: events arriving closer together than the session gap belong to one session, and a longer silence opens the next",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.time-window",
+        "kafka.stream.hopping-tumbling-window"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간 윈도우",
+          "start_line": 238,
+          "end_line": 242
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.hopping-tumbling-window",
+      "title": "호핑 윈도우와 텀블링 윈도우",
+      "aliases": [
+        "Hopping Window",
+        "Tumbling Window",
+        "윈도우 진행 간격"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/hopping-tumbling-window.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction by advance interval: a hopping window steps by a fixed gap, a tumbling window steps by its own width and therefore never overlaps",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.time-window",
+        "kafka.stream.session-window"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간 윈도우",
+          "start_line": 247,
+          "end_line": 248
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.window-grace-period",
+      "title": "윈도우 업데이트 기한",
+      "aliases": [
+        "Grace Period",
+        "지연 이벤트 수용 기한"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/window-grace-period.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single deadline for how long a window stays open to late events, after which a further straggler is dropped rather than triggering a recomputation",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.time-window",
+        "kafka.stream.session-window"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간 윈도우",
+          "start_line": 254,
+          "end_line": 254
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.window-alignment",
+      "title": "윈도우 정렬",
+      "aliases": [
+        "Window Alignment",
+        "벽시계 시간 정렬"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/window-alignment.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice of whether window boundaries line up with wall-clock time or simply start when the application did",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.time-window",
+        "kafka.stream.timezone-caution"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 시간 윈도우",
+          "start_line": 260,
+          "end_line": 260
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.processing-guarantee",
+      "title": "processing.guarantee",
+      "aliases": [
+        "exactly_once",
+        "exactly_once_beta",
+        "exactly_once_v2",
+        "카프카 스트림즈 정확히 한 번 활성화"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/processing-guarantee.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Kafka Streams setting that turns on exactly-once, the recommended way to use transactions, whose exactly_once_beta variant needs a 2.5 broker and whose successor exactly_once_v2 replaces both as the earlier values are removed",
+      "pilot_strata": [
+        "book-batch-12",
+        "kafka/chap08",
+        "config-domain",
+        "book-batch-16",
+        "kafka/chap14"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.transaction.transaction",
+        "kafka.platform.platform-feature",
+        "kafka.reliability.exactly-once",
+        "kafka.client.idempotent-producer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용법",
+          "start_line": 748,
+          "end_line": 752
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 처리 보장",
+          "start_line": 266,
+          "end_line": 274
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap14-l0012",
+      "title": "chap14 스트림 처리란 무엇인가 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap14 L12-15 `## 스트림 처리란 무엇인가?` carries only the heading, blank lines and a bare <br> (span_sha256 36e37609d03613af9074d0a9bfa0aab23994e453d8f808bb6e6cfd4dd7f3a2b0; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false.",
+      "pilot_strata": [
+        "book-batch-16",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4"
+        }
+      ],
+      "engine_substantive": false
+    }
+  ],
+  "update_authoring_note": {
+    "statement": "Batch 16 authors 2 update candidates. Each preserves its applied title, canonical_path, tags, every approved locator and every approved related-concept edge.",
+    "updates": [
+      {
+        "concept_id": "kafka.stream.stream",
+        "approved_locators_preserved": [
+          "content/brain/books/kafka/chap01.md:234-238"
+        ],
+        "new_locators": [
+          "content/brain/books/kafka/chap14.md:18-18"
+        ],
+        "why_update_not_create": "chap14's 데이터 스트림 scope is the alias this concept already owns, saying the same thing more precisely - the dataset is unbounded because records keep arriving."
+      },
+      {
+        "concept_id": "kafka.config.processing-guarantee",
+        "approved_locators_preserved": [
+          "content/brain/books/kafka/chap08.md:748-752"
+        ],
+        "new_locators": [
+          "content/brain/books/kafka/chap14.md:266-274"
+        ],
+        "alias_change": "adds exactly_once_v2, the value chap14 records as the successor after the earlier two were deprecated.",
+        "why_update_not_create": "Same setting, with the version history chap08 did not carry."
+      }
+    ]
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8, L116",
+        "reason_code": "section-lead-in",
+        "detail": "The chapter opening and the one-line framing of the 시간 section, whose content is restated inside the cited spans of the concepts they introduce."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L7-277 contributes at least one cited locator. The one non-substantive scope is filed as a rejection probe."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 107,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 11,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 27,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    },
+    "note": "B5, not B4, is what governs this chapter. 107 prose lines produce 27 candidates - one per four lines - the densest ratio in the series."
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "The first propose failed on a related_concepts edge pointing at a concept reserved for book-batch-17. Seven forward edges were retargeted to concepts that exist now; the deferred relations will be added from the later batch, which is the direction the engine allows.",
+  "alias_ownership_correction": "The collision gate caught 스트림 처리 held as an alias on kafka.usecase.use-case-family, where it names one of five use cases rather than the paradigm. chap14 defines the paradigm as its own concept, so the alias moves there and the use-case family keeps the other four names plus its own title. Alias move only: all five approved locators and all three approved edges are preserved."
+}

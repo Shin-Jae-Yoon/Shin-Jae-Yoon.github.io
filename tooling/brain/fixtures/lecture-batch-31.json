@@ -1,0 +1,1558 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-31",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-30",
+    "applied_state": "644 approved knowledge concepts after lecture-batch-30 built out db.relational and db.constraint from lecture02."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture03.md",
+        "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture04.md",
+        "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture05.md",
+        "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152"
+      }
+    ],
+    "line_range": "lecture03 L12-L387, lecture04 L12-L189, lecture05 L12-L181 (three whole files)",
+    "series": "쉬운코드 DB (easy-db) 3~5/15 — DB/table 생성, 데이터 추가·수정·삭제, 데이터 조회"
+  },
+  "overlap_analysis": {
+    "finding": "The three files are one arc: lecture03 creates the schema, lecture04 writes and changes data in it, lecture05 reads it back. Splitting them would strand DML statements from the constraints that reject them, so they are batched together at 183 prose lines — half the B4 ceiling.",
+    "disposition": "Where the lectures re-teach something the db.* namespace already holds, the evidence is appended to the applied concept rather than duplicated: SQL itself, and the primary, unique and foreign keys that lecture02 introduced as model concepts and lecture03 now shows as DDL. Three new subdomains open: db.sql for the language surface, db.type for the attribute data types, db.index for the one place the course names an index."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture03 L8, L150, L170, L187, L200, L216-220, L229, L248-254, L266-272, L281-287, L294-300, L308-314, L326-344, L354, L371-384; lecture04 L8, L14, L22, L52, L56-62, L80-86, L129-138, L172-184; lecture05 L8, L37-43, L54, L59, L70-79, L97-105, L115, L120-136, L149-171, L181",
+        "reason_code": "lecture-preamble-figure-caption-or-carried-by-owner",
+        "detail": "The channel link, the cross-reference to lecture03, the screenshot lines that carry the actual syntax, the '선언방법' captions that only announce the figure below them, and the worked examples whose claim is already stated inside the cited span of the owning concept."
+      },
+      {
+        "span": "lecture03 L202",
+        "reason_code": "single-line-aside-below-concept-threshold",
+        "detail": "byte-string being used to hold an encryption key is one line with no surrounding development; it is left uncited rather than promoted to a concept."
+      },
+      {
+        "span": "lecture05 L181",
+        "reason_code": "course-wide-caveat-already-owned",
+        "detail": "'MySQL 기준이라 다른 RDBMS와 문법이 다를 수 있음' restates the SQL-is-not-uniformly-implemented claim already cited into db.language.sql from lecture03 L49-52."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across the three files contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 18527,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 183,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 27,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 25,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 34,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. The four updates close their own forward edges within the batch: the keys point at the constraints and errors created here, and db.language.sql at the SQL-surface concepts.",
+  "candidates_authored": 34,
+  "candidates": [
+    {
+      "concept_id": "db.language.sql",
+      "title": "SQL",
+      "aliases": [
+        "Relational Database Language",
+        "통합된 DB 언어",
+        "Structured Query Language"
+      ],
+      "canonical_path": "content/brain/knowledge/db/language/sql.md",
+      "tags": [
+        "db",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single language in which today's systems merge what were once three - definition, view and manipulation - the relational database language being SQL",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-31"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.language.ddl",
+        "db.language.dml",
+        "db.language.vdl",
+        "db.basic.dbms",
+        "db.sql.term-mapping",
+        "db.sql.multiset-relation",
+        "db.sql.database-command"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB Language > ### 통합된 언어",
+          "start_line": 259,
+          "end_line": 261
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL",
+          "start_line": 14,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 용어",
+          "start_line": 49,
+          "end_line": 52
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.primary-key",
+      "title": "기본키",
+      "aliases": [
+        "Primary Key",
+        "PK",
+        "개인키"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/primary-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single candidate key chosen to identify tuples, usually the one with fewest attributes, conventionally marked by underlining",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-31"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.candidate-key",
+        "db.key.unique-key",
+        "db.key.foreign-key",
+        "db.constraint.null",
+        "db.constraint.not-null",
+        "db.sql.constraint-violation-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 287,
+          "end_line": 291
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 244,
+          "end_line": 246
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 252,
+          "end_line": 257
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.unique-key",
+      "title": "유일키",
+      "aliases": [
+        "Unique Key",
+        "대체키",
+        "Alternate Key"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/unique-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single candidate key that was not chosen as the primary one",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-31"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.candidate-key",
+        "db.key.primary-key",
+        "db.constraint.not-null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 295,
+          "end_line": 298
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 261,
+          "end_line": 264
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.foreign-key",
+      "title": "외래키",
+      "aliases": [
+        "Foreign Key",
+        "FK",
+        "다른 릴레이션의 PK 참조"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/foreign-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single attribute set referring to another relation's primary key",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-31"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.primary-key",
+        "db.constraint.schema-based-constraint",
+        "db.relational.relational-database",
+        "db.constraint.referential-action",
+        "db.sql.constraint-violation-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 302,
+          "end_line": 305
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 304,
+          "end_line": 306
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.schema-design-priority",
+      "title": "DB 스키마 정의 시 고려 요소",
+      "aliases": [
+        "스키마 설계 고려사항",
+        "일관성 편의성 확장성"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/schema-design-priority.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single judgment made before any DDL is written: the schema must be settled against the service spec, data consistency, convenience and extensibility together, because it is what everything else is built on",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.schema.db-schema",
+        "db.language.ddl",
+        "db.sql.alter-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL",
+          "start_line": 20,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.term-mapping",
+      "title": "관계 모델과 SQL의 용어 대응",
+      "aliases": [
+        "relation = table",
+        "attribute = column",
+        "tuple = row"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/term-mapping.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single table of correspondences between the relational data model's vocabulary and SQL's - relation becomes table, attribute becomes column, tuple becomes row, and domain keeps its name",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.relation",
+        "db.relational.attribute",
+        "db.relational.tuple",
+        "db.relational.domain",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 용어",
+          "start_line": 30,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.multiset-relation",
+      "title": "SQL에서의 relation은 multiset",
+      "aliases": [
+        "multiset",
+        "bag of tuples",
+        "중복 tuple 허용"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/multiset-relation.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single divergence between theory and SQL: the relational model defines a relation as a set so no tuple may repeat, but SQL defines it as a multiset (bag) so duplicate tuples are allowed",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.relation",
+        "db.relational.relation-property",
+        "db.sql.term-mapping",
+        "db.sql.distinct"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 용어",
+          "start_line": 41,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.database-command",
+      "title": "데이터베이스 기본 명령어",
+      "aliases": [
+        "SHOW DATABASES",
+        "CREATE DATABASE",
+        "USE db이름",
+        "DROP DATABASE"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/database-command.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of statements that operate on databases rather than on data - listing them, creating one, asking which one is currently selected, selecting one, and dropping one",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.basic.database",
+        "db.language.ddl",
+        "db.sql.database-vs-schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 명령어",
+          "start_line": 61,
+          "end_line": 74
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 명령어",
+          "start_line": 78,
+          "end_line": 92
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 명령어",
+          "start_line": 96,
+          "end_line": 106
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 명령어",
+          "start_line": 110,
+          "end_line": 125
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 기본 명령어",
+          "start_line": 129,
+          "end_line": 133
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.database-vs-schema",
+      "title": "DATABASE와 SCHEMA의 관계",
+      "aliases": [
+        "CREATE SCHEMA",
+        "PostgreSQL의 namespace",
+        "DB와 스키마의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/database-vs-schema.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ambiguity in the word schema across products: MySQL treats DATABASE and SCHEMA as the same thing, while PostgreSQL makes SCHEMA a namespace inside a DATABASE so one database holds many schemas and each schema holds tables",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.schema.db-schema",
+        "db.basic.database",
+        "db.sql.database-command"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### DB vs 스키마",
+          "start_line": 139,
+          "end_line": 144
+        }
+      ]
+    },
+    {
+      "concept_id": "db.type.integer",
+      "title": "정수 타입의 RDBMS별 차이",
+      "aliases": [
+        "SMALLINT",
+        "INTEGER",
+        "BIGINT",
+        "TINYINT",
+        "MEDIUMINT"
+      ],
+      "canonical_path": "content/brain/knowledge/db/type/integer.md",
+      "tags": [
+        "db",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single caveat that the integer type family is not the same everywhere - PostgreSQL offers only SMALLINT, INT/INTEGER and BIGINT, with no TINYINT or MEDIUMINT",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.domain",
+        "db.type.decimal",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 데이터 타입 (정수)",
+          "start_line": 152,
+          "end_line": 153
+        }
+      ]
+    },
+    {
+      "concept_id": "db.type.decimal",
+      "title": "고정 소수점 타입",
+      "aliases": [
+        "DECIMAL",
+        "NUMERIC",
+        "precision와 scale"
+      ],
+      "canonical_path": "content/brain/knowledge/db/type/decimal.md",
+      "tags": [
+        "db",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single fixed-point type declared as DECIMAL(precision, scale) where precision is the digit count and scale the digits after the point, and whose overflow handling differs - the SQL standard makes DECIMAL lenient and NUMERIC strict, while MySQL treats both strictly and truncates to the declared precision",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.type.integer",
+        "db.relational.domain",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 데이터 타입 (정수)",
+          "start_line": 154,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 데이터 타입 (정수)",
+          "start_line": 161,
+          "end_line": 164
+        }
+      ]
+    },
+    {
+      "concept_id": "db.type.char-vs-varchar",
+      "title": "CHAR와 VARCHAR",
+      "aliases": [
+        "CHAR",
+        "VARCHAR",
+        "고정 길이 문자열",
+        "가변 길이 문자열"
+      ],
+      "canonical_path": "content/brain/knowledge/db/type/char-vs-varchar.md",
+      "tags": [
+        "db",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice between the fixed-length and variable-length string types, which cannot be settled in the abstract because each RDBMS implements them differently - PostgreSQL recommends VARCHAR outright, while in MySQL VARCHAR saves storage but can cost time, so a fixed-width attribute like a form number is better as CHAR",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.type.text",
+        "db.relational.domain",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 데이터 타입 (문자열)",
+          "start_line": 172,
+          "end_line": 177
+        }
+      ]
+    },
+    {
+      "concept_id": "db.type.text",
+      "title": "TEXT 계열 타입",
+      "aliases": [
+        "TEXT",
+        "TINYTEXT",
+        "MEDIUMTEXT",
+        "LONGTEXT"
+      ],
+      "canonical_path": "content/brain/knowledge/db/type/text.md",
+      "tags": [
+        "db",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of long string types whose membership is product-specific - PostgreSQL has only TEXT, MySQL splits it into four where MEDIUMTEXT and LONGTEXT hold more than VARCHAR and TINYTEXT and TEXT hold the same or less",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.type.char-vs-varchar",
+        "db.relational.domain"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 데이터 타입 (문자열)",
+          "start_line": 178,
+          "end_line": 181
+        }
+      ]
+    },
+    {
+      "concept_id": "db.type.datetime",
+      "title": "날짜와 시간 타입",
+      "aliases": [
+        "DATETIME",
+        "TIMESTAMP",
+        "TIMESTAMP의 time-zone 영향"
+      ],
+      "canonical_path": "content/brain/knowledge/db/type/datetime.md",
+      "tags": [
+        "db",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between DATETIME and TIMESTAMP - they differ in range and in time-zone handling, because MySQL converts a TIMESTAMP from the server's or its own configured zone into UTC on write and converts it back on read, so TIMESTAMP is affected by time-zone and DATETIME is not",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.domain",
+        "db.type.integer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 데이터 타입 (날짜와 시간)",
+          "start_line": 189,
+          "end_line": 194
+        }
+      ]
+    },
+    {
+      "concept_id": "db.type.boolean",
+      "title": "boolean 타입의 부재",
+      "aliases": [
+        "BOOLEAN",
+        "TINYINT으로 대체",
+        "0과 1로 참거짓"
+      ],
+      "canonical_path": "content/brain/knowledge/db/type/boolean.md",
+      "tags": [
+        "db",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single gap in MySQL's type list - it has no boolean type, so a truth value is stored as TINYINT holding 0 or 1, whereas PostgreSQL provides one",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.type.integer",
+        "db.relational.domain"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 데이터 타입 (etc)",
+          "start_line": 203,
+          "end_line": 206
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.attribute-default",
+      "title": "속성 DEFAULT",
+      "aliases": [
+        "attribute DEFAULT",
+        "속성 기본값"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/attribute-default.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single value declared for an attribute that is stored in its place when a new tuple arrives without one",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.attribute",
+        "db.constraint.null",
+        "db.sql.insert"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 속성 DEFAULT",
+          "start_line": 212,
+          "end_line": 214
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.alter-table",
+      "title": "ALTER TABLE",
+      "aliases": [
+        "테이블 스키마 변경",
+        "운영 중 스키마 변경"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/alter-table.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single statement that changes an existing table's schema, and the operational caution that comes with it - if the table is already in service, the change must be reviewed for its effect on the backend before it is run",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.schema.db-schema",
+        "db.language.ddl",
+        "db.sql.drop-table",
+        "db.sql.schema-design-priority"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 테이블 스키마 변경",
+          "start_line": 226,
+          "end_line": 227
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 테이블 스키마 변경",
+          "start_line": 231,
+          "end_line": 232
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.drop-table",
+      "title": "DROP TABLE",
+      "aliases": [
+        "테이블 삭제"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/drop-table.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single statement that removes a table",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.sql.alter-table",
+        "db.language.ddl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 테이블 스키마 변경",
+          "start_line": 236,
+          "end_line": 238
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.not-null",
+      "title": "NOT NULL 제약조건",
+      "aliases": [
+        "NOT NULL",
+        "NULL 불가 속성"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/not-null.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single constraint forbidding NULL as a value for an attribute, usually declared together with UNIQUE because UNIQUE alone may still let NULL repeat",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.constraint.null",
+        "db.key.unique-key",
+        "db.constraint.schema-based-constraint"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 276,
+          "end_line": 279
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.check",
+      "title": "CHECK 제약조건",
+      "aliases": [
+        "CHECK",
+        "속성 값 제한"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/check.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single constraint restricting which values an attribute may hold, so an INSERT carrying a value outside the declared range is rejected",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.constraint.schema-based-constraint",
+        "db.relational.domain",
+        "db.sql.constraint-violation-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 291,
+          "end_line": 292
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 예제 > ### 데이터 추가 오류",
+          "start_line": 178,
+          "end_line": 178
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.referential-action",
+      "title": "참조 무결성 옵션",
+      "aliases": [
+        "CASCADE",
+        "SET NULL",
+        "RESTRICT",
+        "NO ACTION",
+        "SET DEFAULT"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/referential-action.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single option attached to a FOREIGN KEY that decides what happens to the referencing value when the referenced one is deleted or updated - CASCADE follows it, SET NULL blanks it, RESTRICT refuses the change, NO ACTION defers the check to the end of the transaction, and SET DEFAULT falls back to the default, with MySQL supporting only the first three in practice",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.foreign-key",
+        "db.constraint.schema-based-constraint",
+        "db.sql.attribute-default",
+        "db.sql.delete"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 316,
+          "end_line": 320
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건",
+          "start_line": 324,
+          "end_line": 342
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 삭제",
+          "start_line": 140,
+          "end_line": 146
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.constraint-naming",
+      "title": "제약조건 이름 명시",
+      "aliases": [
+        "CONSTRAINT 이름",
+        "제약조건 이름으로 삭제"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/constraint-naming.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single habit of naming a constraint when declaring it, which makes a violation message say which constraint was broken and lets the constraint be dropped by that name later",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.constraint.constraint",
+        "db.sql.constraint-violation-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## SQL > ### 제약조건 이름 명시",
+          "start_line": 350,
+          "end_line": 356
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.company-example-schema",
+      "title": "실습용 회사 스키마",
+      "aliases": [
+        "DEPARTMENT EMPLOYEE PROJECT WORKS_ON",
+        "InnoDB 실습",
+        "순환 참조 FK는 나중에"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/company-example-schema.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single worked example carried through the rest of the course - an IT company relational database over departments, employees and projects on MySQL InnoDB, written from a data model into a schema, where DEPARTMENT's leader_id could not be a FOREIGN KEY at creation time because EMPLOYEE did not exist yet and had to be added afterwards",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.alter-table",
+        "db.key.foreign-key",
+        "db.schema.db-schema",
+        "db.model.logical-model"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## 예제",
+          "start_line": 364,
+          "end_line": 367
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## 예제 > ### 실습",
+          "start_line": 373,
+          "end_line": 373
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture03.md",
+          "source_sha256": "1bb5ff0ed6ef60639e17865b08ea26f36ceba1e7c5c7d49dcd945fc89523fd12",
+          "heading": "## 예제 > ### 실습",
+          "start_line": 385,
+          "end_line": 385
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.insert",
+      "title": "INSERT",
+      "aliases": [
+        "INSERT INTO",
+        "데이터 추가",
+        "다중 튜플 INSERT"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/insert.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single statement adding tuples to a table in three forms - values only, which must follow the declared attribute order and fill every attribute; attribute names with values, which frees the order and lets omitted attributes fall back to DEFAULT or NULL; and several value lists at once for many tuples in one statement",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.language.dml",
+        "db.sql.attribute-default",
+        "db.constraint.null",
+        "db.relational.tuple"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 추가",
+          "start_line": 26,
+          "end_line": 32
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 추가",
+          "start_line": 36,
+          "end_line": 42
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 추가",
+          "start_line": 46,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.update-statement",
+      "title": "UPDATE",
+      "aliases": [
+        "UPDATE SET",
+        "데이터 수정",
+        "테이블명.속성 표기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/update-statement.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single statement changing attribute values in the tuples a WHERE clause selects, which may span two tables by naming both in the statement and joining them in the condition, and which is best written as table.attribute so the reader can tell where each name comes from",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.language.dml",
+        "db.sql.join-condition",
+        "db.sql.delete"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 수정",
+          "start_line": 72,
+          "end_line": 76
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 수정",
+          "start_line": 94,
+          "end_line": 100
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 수정",
+          "start_line": 104,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.delete",
+      "title": "DELETE",
+      "aliases": [
+        "DELETE FROM",
+        "데이터 삭제",
+        "<> 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/delete.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single statement removing the tuples a WHERE clause selects, which erases every tuple in the table when that clause is left out, and whose condition may exclude rather than match using <> (equivalently !=)",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.language.dml",
+        "db.constraint.referential-action",
+        "db.sql.update-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 삭제",
+          "start_line": 120,
+          "end_line": 125
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 데이터 다루기 > ### 데이터 삭제",
+          "start_line": 150,
+          "end_line": 164
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.constraint-violation-error",
+      "title": "제약조건 위반 에러",
+      "aliases": [
+        "a foreign key constraint fails",
+        "PK 중복 에러",
+        "SHOW CREATE TABLE"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/constraint-violation-error.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way constraints make themselves felt at INSERT time - a duplicate primary key, a value outside a CHECK range, and a foreign key whose referenced value does not actually exist in the other table each fail the statement, with SHOW CREATE TABLE available to see which constraints the table carries",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.key.primary-key",
+        "db.constraint.check",
+        "db.key.foreign-key",
+        "db.constraint.constraint-naming",
+        "db.sql.insert"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 예제 > ### 데이터 추가 오류",
+          "start_line": 174,
+          "end_line": 174
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 예제 > ### 데이터 추가 오류",
+          "start_line": 182,
+          "end_line": 182
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture04.md",
+          "source_sha256": "764762018cff5cea4fb7cd32b258bf7630576061552f9d40553c2453e44e33fc",
+          "heading": "## 예제 > ### 데이터 추가 오류",
+          "start_line": 186,
+          "end_line": 188
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.select",
+      "title": "SELECT",
+      "aliases": [
+        "selection condition",
+        "projection condition",
+        "데이터 조회"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/select.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single statement reading tuples out of a table, made of two parts worth naming separately - the selection condition in WHERE that decides which tuples, and the projection condition in the attribute list that decides which attributes",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.language.dml",
+        "db.sql.join-condition",
+        "db.sql.asterisk"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### SELECT",
+          "start_line": 18,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.join-condition",
+      "title": "join condition",
+      "aliases": [
+        "조인 조건",
+        "테이블명 명시",
+        "ambiguous 오류"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/join-condition.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single third kind of condition beside selection and projection - the one linking two tables by equating a column of each, which forces every ambiguous name in the statement to be qualified with its table or the query fails as ambiguous",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.key.foreign-key",
+        "db.sql.as-alias",
+        "db.sql.company-example-schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### SELECT",
+          "start_line": 39,
+          "end_line": 50
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### SELECT",
+          "start_line": 56,
+          "end_line": 61
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.as-alias",
+      "title": "AS 별칭",
+      "aliases": [
+        "별칭 짓기",
+        "AS 생략"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/as-alias.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single keyword giving a table or an attribute another name, which is what lets a result column say whose id it is rather than just id, and which may be omitted entirely",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.sql.join-condition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### AS 별칭짓기",
+          "start_line": 67,
+          "end_line": 68
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### AS 별칭짓기",
+          "start_line": 74,
+          "end_line": 81
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.distinct",
+      "title": "DISTINCT",
+      "aliases": [
+        "중복 tuple 제외"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/distinct.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single keyword dropping duplicate tuples from a SELECT result, which is needed precisely because a join can produce the same row more than once and SQL does not remove it on its own",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.multiset-relation",
+        "db.sql.select",
+        "db.sql.join-condition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### DISTINCT",
+          "start_line": 87,
+          "end_line": 91
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### DISTINCT",
+          "start_line": 99,
+          "end_line": 103
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.like",
+      "title": "LIKE",
+      "aliases": [
+        "pattern matching",
+        "% 와일드카드",
+        "_ 와일드카드",
+        "escape 문자"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/like.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operator matching a string against a pattern, where % stands for any number of characters and _ for exactly one, and where a literal % or _ must be escaped with a backslash to be searched for",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.type.char-vs-varchar"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### LIKE",
+          "start_line": 117,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### LIKE",
+          "start_line": 140,
+          "end_line": 143
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.asterisk",
+      "title": "asterisk",
+      "aliases": [
+        "애스터리스크",
+        "모든 attribute 조회"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/asterisk.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shorthand standing for every attribute of the selected tuples",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.sql.select",
+        "db.relational.attribute"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### asterisk",
+          "start_line": 169,
+          "end_line": 169
+        }
+      ]
+    },
+    {
+      "concept_id": "db.index.search-condition-index",
+      "title": "조회 조건과 인덱스",
+      "aliases": [
+        "index",
+        "인덱스",
+        "조회 속도와 인덱스"
+      ],
+      "canonical_path": "content/brain/knowledge/db/index/search-condition-index.md",
+      "tags": [
+        "db",
+        "index"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule for writing queries that keep working as data grows - the attributes named in the conditions must have an index, or the query slows down in proportion to the table's size",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.model.physical-model",
+        "db.relational.attribute"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### 주의사항",
+          "start_line": 177,
+          "end_line": 180
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

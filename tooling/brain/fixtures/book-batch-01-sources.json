@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-01",
+  "lane": "book",
+  "phase": 5,
+  "mode": "source-inventory-only",
+  "candidates_authored": false,
+  "status": "awaiting_candidate_authoring",
+  "review_gate": "U3",
+  "produced_by": "phase5-book-inventory-lane (read/analyze + manifest only)",
+  "produced_at_note": "This manifest carries no wall-clock timestamp on purpose: every field is derived from repository bytes so the file is byte-reproducible from the recorded inputs.",
+  "contract": {
+    "consumer": "Intended input for `node tooling/brain/knowledge.mjs propose --batch <manifest> --run <run>` (Phase 5 command template, plan §Phase 5).",
+    "consumer_status": "NOT YET EXECUTABLE. tooling/brain/knowledge.mjs exposes only `propose --pilot`, `verify`, `apply`; there is no `--batch` or `sample` surface, and `proposeKnowledge` hard-fails outside 8-12 candidates and requires a `rejected_candidates` array. Engine work is out of this lane's ownership.",
+    "forbidden": "This file must not be read as a candidate fixture. It deliberately contains no concept_id, title, alias, canonical_path, tag, or locator span for any new concept."
+  },
+  "ordering": {
+    "rule": "repo-relative POSIX path, ascending byte-wise (LC_ALL=C) UTF-8 comparison",
+    "grouping": "extraction sources first, then rejection probes; each group independently byte-sorted",
+    "order_index_is_authoritative": true,
+    "reproduce": "find content/brain/books -type f -name '*.md' | LC_ALL=C sort"
+  },
+  "hash_lock": {
+    "algorithm": "sha256",
+    "encoding": "lowercase hex over complete raw-layer file bytes",
+    "batch_baseline_sha256": "5ef8fb7f741e627def5cda6fd5202c7a60193cfc36cd84c39cc0344f334ad99d",
+    "batch_baseline_recipe": "sha256 of the UTF-8 concatenation of `<role>\\t<path>\\t<source_sha256>\\n` for every entry in order_index order (extraction rows first, then rejection_probe rows)",
+    "batch_baseline_reproduce": "{ for f in content/brain/books/do-it-java/chap09.md content/brain/books/do-it-java/chap10.md; do printf \"extraction\\t%s\\t%s\\n\" \"$f\" \"$(shasum -a 256 \"$f\" | cut -d' ' -f1)\"; done; for f in content/brain/books/headfirst/chap01.md content/brain/books/kafka/chap03.md content/brain/books/kafka/chap04.md; do printf \"rejection_probe\\t%s\\t%s\\n\" \"$f\" \"$(shasum -a 256 \"$f\" | cut -d' ' -f1)\"; done; } | shasum -a 256",
+    "book_corpus_sha256": "c39bbdf5c72911e23fe08364762ffdc143dc4ce1c2edda8e47896b5f68183c88",
+    "book_corpus_recipe": "sha256 of the UTF-8 concatenation of `<path>\\t<source_sha256>\\n` for all 27 content/brain/books Markdown files in LC_ALL=C path order",
+    "seed_use": "batch_baseline_sha256 is the deterministic seed required by AC-15 for the U3 `sample.json` selection. Any source drift changes the seed and invalidates a prior sample.",
+    "drift_policy": "fail-closed. Re-verify every source_sha256 immediately before propose and again before apply; a mismatch aborts the batch with zero writes."
+  },
+  "extraction_sources": [
+    {
+      "order_index": 0,
+      "role": "extraction",
+      "path": "content/brain/books/do-it-java/chap09.md",
+      "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+      "bytes": 21207,
+      "line_count": 784,
+      "heading_scope_count": 15,
+      "prose_bearing_scope_count": 13,
+      "low_evidence_scope_count": 2,
+      "extraction_surface_ref": ".omx/artifacts/brain-restructure/book-batch-01/extraction-surface.json#content/brain/books/do-it-java/chap09.md"
+    },
+    {
+      "order_index": 1,
+      "role": "extraction",
+      "path": "content/brain/books/do-it-java/chap10.md",
+      "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+      "bytes": 26270,
+      "line_count": 1061,
+      "heading_scope_count": 22,
+      "prose_bearing_scope_count": 18,
+      "low_evidence_scope_count": 4,
+      "extraction_surface_ref": ".omx/artifacts/brain-restructure/book-batch-01/extraction-surface.json#content/brain/books/do-it-java/chap10.md"
+    }
+  ],
+  "rejection_probes": [
+    {
+      "order_index": 2,
+      "role": "rejection_probe",
+      "path": "content/brain/books/headfirst/chap01.md",
+      "source_sha256": "5bc76a52b84de82b431eca3153eb88b7b46c8e97182f4acfcc5cf2a96a912934",
+      "bytes": 132,
+      "line_count": 7,
+      "body_bytes_after_frontmatter": 0,
+      "expected_outcome": "rejected",
+      "expected_reason_code": "insufficient-source-evidence",
+      "observation": "Head First Design Patterns chap01: YAML frontmatter only, zero body bytes."
+    },
+    {
+      "order_index": 3,
+      "role": "rejection_probe",
+      "path": "content/brain/books/kafka/chap03.md",
+      "source_sha256": "415a2aa0a323e2a13946beb6cc01fd4a2a5d4136761647d1212b2db57676d36e",
+      "bytes": 126,
+      "line_count": 7,
+      "body_bytes_after_frontmatter": 0,
+      "expected_outcome": "rejected",
+      "expected_reason_code": "insufficient-source-evidence",
+      "observation": "Kafka Definitive Guide chap03 (producer): YAML frontmatter only, zero body bytes."
+    },
+    {
+      "order_index": 4,
+      "role": "rejection_probe",
+      "path": "content/brain/books/kafka/chap04.md",
+      "source_sha256": "61c9540d0ce99d8de40b8b1fc156344d32ba4b72935b3846a2ecaaa378b28c79",
+      "bytes": 123,
+      "line_count": 7,
+      "body_bytes_after_frontmatter": 0,
+      "expected_outcome": "rejected",
+      "expected_reason_code": "insufficient-source-evidence",
+      "observation": "Kafka Definitive Guide chap04 (consumer): YAML frontmatter only, zero body bytes."
+    }
+  ],
+  "selection_rationale": {
+    "scheduling_hint": "Plan §Phase 5 initial scheduling hint ranks Book first. This batch stays inside that hint (hint, not an acceptance criterion).",
+    "primary": "chap09 (추상 클래스) and chap10 (인터페이스) are the direct successors of the signed pilot chapter do-it-java/chap08 (상속과 다형성). They are the only unconsumed Book sources whose evidence lands on the already-signed java.oop.* namespace, so they exercise the update/merge-against-existing-index path that the pilot (all create, plus one merge into a brand-new concept) never tested.",
+    "bounded": "Two extraction files, 47,477 bytes, 37 heading scopes of which 31 carry prose. That is the smallest slice that still forces every risky Phase 5 code path, and it is cheap to regenerate if U3 rejects the batch (plan §5.1: one critical issue rejects the whole batch).",
+    "probes": "Three frontmatter-only Book files are hash-locked as rejection probes. They cost no review effort, and they prove the insufficient-source-evidence path fails closed on the Book corpus the same way it did on the notes corpus in the pilot.",
+    "rejected_alternatives": [
+      "do-it-java chap05-07 added: +46 heading scopes of mostly `create` work, doubling U3 surface for validation signal the pilot already covered. Recommended as batch 02.",
+      "Kafka series first: largest yield by bytes but zero adjacency to the signed index, so it would defer the update/merge validation that is the actual first-batch risk.",
+      "Re-reading chap08/dinosaur chap01: would re-propose over spans already signed at U2."
+    ]
+  },
+  "expected_candidate_profile": {
+    "disclaimer": "Ranges and touch points only. No concept_id, title, canonical_path, alias, or tag is authored here; candidate authoring is a separate step.",
+    "prose_bearing_heading_scopes": 31,
+    "expected_accepted_candidate_range": [
+      14,
+      22
+    ],
+    "expected_kinds": {
+      "create": "majority - abstract-class, template-method, final-keyword, interface, default/static/private interface member families",
+      "update": "expected against already-signed concept ids where chap09/chap10 add new evidence: java.oop.polymorphism (chap10 L160-181, L182-318), java.oop.inheritance (chap10 L784-909, L910-1018), java.oop.method-overriding (chap09 L83-226), java.oop.virtual-method (chap10 L141-157)",
+      "merge": "possible where chap09 and chap10 describe the same mechanism (for example type conversion evidence appearing in both); resolution belongs to the engine, not this manifest",
+      "stub": "at most 1-2 low-evidence scopes; chap09 `### final 메서드` (L735-740, 1 prose line) is the clearest candidate",
+      "no_op": "expected on rerun; AC-14 requires rerun no-op",
+      "rejected": "exactly 3, all rejection probes, reason_code insufficient-source-evidence"
+    },
+    "expected_flagged_for_full_review": {
+      "rule": "plan §5.1 requires 100% review of conflict / low-confidence / provenance-warning proposals",
+      "low_evidence_scopes": [
+        "content/brain/books/do-it-java/chap09.md L735-740 `### final 메서드` (prose=1)",
+        "content/brain/books/do-it-java/chap10.md L17-22 `## 인터페이스란?` (prose=1)",
+        "content/brain/books/do-it-java/chap10.md L319-344 `### 클라이언트가 클래스를 사용하는 방법` (prose=2)",
+        "content/brain/books/do-it-java/chap10.md L141-157 `### 인터페이스 구현과 형 변환` (prose=3)",
+        "content/brain/books/do-it-java/chap10.md L679-688 `### 두 인터페이스의 정적 메서드가 중복되는 경우` (prose=3)"
+      ],
+      "estimated_u3_review_load": "about 5 flagged proposals at 100% plus a deterministic sample of max(5, ceil(10%)) = 5, so roughly 10 proposals - a human-reviewable first slice"
+    }
+  },
+  "preconditions": [
+    {
+      "id": "P1",
+      "severity": "blocking",
+      "statement": "The 11 U2-signed pilot concepts are approved but NOT applied: content/brain/knowledge/ still contains only index.md (sha256 8fe2295874df441edf4183ce248a37527e908c9a397abb3292f0c475c5b39f8c). knowledge-index.mjs builds the approved index from that tree, so today it is empty.",
+      "consequence": "If batch 01 proposes before the pilot is applied, every expected `update`/`merge` degrades to `create` and duplicate concepts for polymorphism / inheritance / method-overriding / virtual-method enter the graph.",
+      "required_before": "propose"
+    },
+    {
+      "id": "P2",
+      "severity": "blocking",
+      "statement": "knowledge.mjs has no `--batch` or `sample` command, and proposeKnowledge enforces 8-12 candidates plus a `rejected_candidates` array.",
+      "consequence": "This manifest cannot be executed yet, and the expected 14-22 candidate range would trip the pilot-era 8-12 guard if the batch runner reuses it.",
+      "required_before": "propose"
+    },
+    {
+      "id": "P3",
+      "severity": "warning",
+      "statement": "All five batch sources are untracked in git (`??`), so the raw layer is uncommitted working-tree state rather than a committed baseline.",
+      "consequence": "Source drift cannot be detected by git alone; the hash lock in this manifest is the only drift guard.",
+      "required_before": "propose"
+    },
+    {
+      "id": "P4",
+      "severity": "warning",
+      "statement": "Raw book frontmatter carries display tags such as `📚 Do it! 자바`. Knowledge `tags[]` must equal the canonical_path folder segments, and `brain`/`knowledge` are reserved.",
+      "consequence": "Propagating raw book tags into knowledge documents violates the Phase 4 tag invariant.",
+      "required_before": "candidate authoring"
+    },
+    {
+      "id": "P5",
+      "severity": "warning",
+      "statement": "Owner decision H-1: knowledge aliases are search-only. `aliases`/`alias`/`permalink` are forbidden in knowledge frontmatter because Quartz emits a public redirect route per entry.",
+      "consequence": "Alias handling for batch 01 must reuse the pilot's KNOWLEDGE_ALIASES body-block rendering.",
+      "required_before": "candidate authoring"
+    }
+  ],
+  "exclusions": [
+    {
+      "path": "content/brain/books/dinosaur/chap01.md",
+      "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+      "bytes": 20564,
+      "reason_code": "deferred-signed-pilot-source",
+      "reason": "Carries 4 signed U2 pilot concepts (cs.*, cross-domain.program). Re-proposing over signed spans belongs to a dedicated pilot-consolidation step, not the first Book batch."
+    },
+    {
+      "path": "content/brain/books/dinosaur/index.md",
+      "source_sha256": "a8120f7707ebf9337aa6e39266cdfa818cb7bac0f461d9780ce35e629e1c8628",
+      "bytes": 434,
+      "reason_code": "structural-landing-page",
+      "reason": "Folder landing page: frontmatter plus navigation/TOC only. Never a valid extraction source under the Phase 4 evidence rule."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap01.md",
+      "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+      "bytes": 3839,
+      "reason_code": "deferred-next-batch-same-series",
+      "reason": "Do it! Java language-basics arc (chap01-04). Scheduled for a later Book batch; low pilot adjacency."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap02.md",
+      "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+      "bytes": 10221,
+      "reason_code": "deferred-next-batch-same-series",
+      "reason": "Do it! Java language-basics arc (chap01-04). Scheduled for a later Book batch; low pilot adjacency."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap03.md",
+      "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+      "bytes": 4298,
+      "reason_code": "deferred-next-batch-same-series",
+      "reason": "Do it! Java language-basics arc (chap01-04). Scheduled for a later Book batch; low pilot adjacency."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap04.md",
+      "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+      "bytes": 8675,
+      "reason_code": "deferred-next-batch-same-series",
+      "reason": "Do it! Java language-basics arc (chap01-04). Scheduled for a later Book batch; low pilot adjacency."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap05.md",
+      "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+      "bytes": 22791,
+      "reason_code": "deferred-next-batch-same-series",
+      "reason": "OOP foundation arc (chap05-07). High value but adds ~46 heading scopes; recommended as batch 02 once batch 01 validates the update/merge path."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap06.md",
+      "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+      "bytes": 18202,
+      "reason_code": "deferred-next-batch-same-series",
+      "reason": "OOP foundation arc (chap05-07). High value but adds ~46 heading scopes; recommended as batch 02 once batch 01 validates the update/merge path."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap07.md",
+      "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+      "bytes": 16380,
+      "reason_code": "deferred-next-batch-same-series",
+      "reason": "OOP foundation arc (chap05-07). High value but adds ~46 heading scopes; recommended as batch 02 once batch 01 validates the update/merge path."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap08.md",
+      "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+      "bytes": 36552,
+      "reason_code": "deferred-signed-pilot-source",
+      "reason": "Carries the 4 signed U2 java.oop.* concepts. Batch 01 extends this chapter's namespace from chap09/chap10 instead of re-reading it."
+    },
+    {
+      "path": "content/brain/books/do-it-java/index.md",
+      "source_sha256": "2ebcf0fdf49f2e33bcfee437b577a69d81badfaf241d7d5dc0b9dc9b31f55433",
+      "bytes": 1067,
+      "reason_code": "structural-landing-page",
+      "reason": "Folder landing page: frontmatter plus navigation/TOC only. Never a valid extraction source under the Phase 4 evidence rule."
+    },
+    {
+      "path": "content/brain/books/headfirst/index.md",
+      "source_sha256": "0a494323844cf13491e90daeede77b9b10d8ad87e2f3cf042800a7a88ecf2378",
+      "bytes": 531,
+      "reason_code": "structural-landing-page",
+      "reason": "Folder landing page: frontmatter plus navigation/TOC only. Never a valid extraction source under the Phase 4 evidence rule."
+    },
+    {
+      "path": "content/brain/books/index.md",
+      "source_sha256": "0e16821f89bb88ce2d9ab35393e622e1af7584106fd5d767994ffb8db206be46",
+      "bytes": 34,
+      "reason_code": "structural-landing-page",
+      "reason": "Folder landing page: frontmatter plus navigation/TOC only. Never a valid extraction source under the Phase 4 evidence rule."
+    },
+    {
+      "path": "content/brain/books/kafka/chap01.md",
+      "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+      "bytes": 25915,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/chap02.md",
+      "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+      "bytes": 29652,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/chap05.md",
+      "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+      "bytes": 35954,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/chap07.md",
+      "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+      "bytes": 36294,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/chap08.md",
+      "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+      "bytes": 60639,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/chap09.md",
+      "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+      "bytes": 26990,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/chap10.md",
+      "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+      "bytes": 58072,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/chap14.md",
+      "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+      "bytes": 58148,
+      "reason_code": "deferred-different-series",
+      "reason": "Kafka series opens a distributed-systems namespace with zero overlap against the signed concept index; ~331 KB across 8 substantive chapters. Defer until the Java arc is applied."
+    },
+    {
+      "path": "content/brain/books/kafka/index.md",
+      "source_sha256": "18a829ca948932c7c9279afb1d0b9f4f6a0547d83740f136932772b12d41a2bf",
+      "bytes": 1104,
+      "reason_code": "structural-landing-page",
+      "reason": "Folder landing page: frontmatter plus navigation/TOC only. Never a valid extraction source under the Phase 4 evidence rule."
+    }
+  ],
+  "coverage": {
+    "book_markdown_total": 27,
+    "extraction_sources": 2,
+    "rejection_probes": 3,
+    "exclusions": 22,
+    "accounted_for": 27,
+    "unaccounted": 0
+  },
+  "next_batch_recommendation": {
+    "batch_02": [
+      "content/brain/books/do-it-java/chap05.md",
+      "content/brain/books/do-it-java/chap06.md",
+      "content/brain/books/do-it-java/chap07.md"
+    ],
+    "batch_03": [
+      "content/brain/books/do-it-java/chap01.md",
+      "content/brain/books/do-it-java/chap02.md",
+      "content/brain/books/do-it-java/chap03.md",
+      "content/brain/books/do-it-java/chap04.md"
+    ],
+    "batch_04_plus": "kafka substantive chapters (chap01, chap02, chap05, chap07, chap08, chap09, chap10, chap14), split by byte budget",
+    "consolidation": "a dedicated pass over dinosaur/chap01 and do-it-java/chap08 once the signed pilot concepts are applied"
+  }
+}

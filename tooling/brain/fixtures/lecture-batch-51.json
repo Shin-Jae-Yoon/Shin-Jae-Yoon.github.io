@@ -1,0 +1,914 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-51",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-50",
+    "applied_state": "1043 approved knowledge concepts after lecture-batch-50 closed the barkingdog series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+        "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547"
+      },
+      {
+        "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+        "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4"
+      },
+      {
+        "path": "content/brain/lectures/dataStructure/easy-ds/lecture09.md",
+        "source_sha256": "046a0619b4f3f1522b245b85b6a9f4051d99e8298205fe26328026af7647616c"
+      },
+      {
+        "path": "content/brain/lectures/dataStructure/easy-ds/lecture00.md",
+        "source_sha256": "cd5ecb69316cce47c2b4d446be856e9c85bf960477ca35e9f1ef5d083ba0702b"
+      }
+    ],
+    "line_range": "lecture07 L12-L253, lecture08 L12-L218, lecture09 L12-L17, lecture00 L8-L20",
+    "series": "쉬운코드 데이터 구조 07~09 (01~06, 10~11은 노트에 없음)"
+  },
+  "overlap_analysis": {
+    "finding": "The notes for this course exist only for lectures seven through nine, so the tree material stands alone - the stack, queue, list, map and set lectures the index promises were never written up, and the applied concepts for the stack and the linked list come from the barkingdog lane instead.",
+    "disposition": "All new under algo.tree. Two applied concepts gain edges: the linked list, which this course classes with the array as linear against the tree's nonlinear, and the best-worst-average distinction, which the search tree's complexity is an instance of."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture07 L8, L121-L125 partial, L193-L195, L202-L206 partial, L211-L215 partial, L219-L223 partial, L228-L232 partial, L236-L240 partial; lecture08 L8, L42-L62, L144-L170; lecture00 L8-L20",
+        "reason_code": "course-link-figure-caption-walkthrough-or-index",
+        "detail": "The channel link, the captions naming each kind of binary tree above the figure that shows it, the eight-step walkthrough of one inorder traversal over a particular tree, the worked deletion examples, and the course index whose first six and last two entries point at notes that do not exist."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across lectures 07 to 09 contributes at least one cited locator. lecture00 contributes none, being an index."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 13412,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 208,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 14,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 14,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 18,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes easy-ds. The AVL lecture stops after four lines, so the balancing rotations it names are recorded as existing and no further.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 18,
+  "candidates": [
+    {
+      "concept_id": "algo.list.linked-list",
+      "title": "연결 리스트",
+      "aliases": [
+        "다음 원소의 위치를 함께 저장",
+        "선형 자료구조",
+        "비선형 자료구조"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single structure storing with each element the location of the next one, so the elements need not sit together in memory - and which, like the array, keeps its elements in an order, unlike the tree, graph and hash structures that do not",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-51",
+        "dataStructure/easy-ds"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.array-memory-layout",
+        "algo.list.linked-list-complexity",
+        "algo.list.linked-list-use-case",
+        "java.collection.list-interface",
+        "algo.tree.tree",
+        "algo.tree.tree-properties"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 28,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 37,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.best-worst-average",
+      "title": "최선 최악 평균",
+      "aliases": [
+        "줄에서 사람 찾기",
+        "정렬되어 있으면 log N",
+        "코딩테스트의 로그는 밑이 2"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/best-worst-average.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single distinction between the three cases a search can fall into - asking each person in a line takes one second at best and n at worst, while asking the middle person of a line already in order halves what is left each time and so takes a logarithm of n even at worst, that logarithm always being base two here",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-51",
+        "dataStructure/easy-ds"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.operation-count",
+        "algo.complexity.time-complexity",
+        "algo.complexity.n-range-table",
+        "algo.tree.bst-complexity",
+        "algo.tree.bst"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 시간복잡도",
+          "start_line": 47,
+          "end_line": 48
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 시간복잡도",
+          "start_line": 52,
+          "end_line": 55
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.tree",
+      "title": "트리",
+      "aliases": [
+        "tree",
+        "값과 레퍼런스로 이루어진 노드의 집합"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/tree-structure.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure made of nodes, each holding a value together with the references pointing at other nodes - the references being as much part of the node as the value is",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.tree-terminology",
+        "algo.tree.tree-properties",
+        "algo.list.linked-list",
+        "algo.tree.binary-tree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리",
+          "start_line": 14,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.tree-terminology",
+      "title": "트리의 노드 용어",
+      "aliases": [
+        "간선과 루트",
+        "자녀 부모 형제",
+        "조상과 자손",
+        "내부 노드와 리프 노드"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/tree-terminology.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single vocabulary for pointing at parts of a tree - the edge that is a reference, the root that is the single top, the children a node points at and the parent pointing at them, the siblings sharing a parent, the ancestors found by walking up and the descendants by walking down, and the split between nodes that have children and the leaves that do not",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.tree",
+        "algo.tree.path-metrics",
+        "algo.tree.subtree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 용어",
+          "start_line": 31,
+          "end_line": 71
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.path-metrics",
+      "title": "높이와 깊이와 레벨",
+      "aliases": [
+        "경로 길이",
+        "노드의 높이",
+        "노드의 깊이",
+        "두 노드 사이의 거리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/path-metrics.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of measurements taken along paths - a node's height being the longest edge count down to a leaf below it and the tree's height being the root's, a node's depth being the edge count from the root down to it and the tree's depth the largest of those, the distance between two nodes being the edges on the shortest path between them, and the level being the same count as the depth - with the caveat that some sources count nodes rather than edges and so are one larger",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.tree-terminology",
+        "algo.tree.degree-and-size",
+        "algo.tree.binary-tree-kinds"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 용어",
+          "start_line": 73,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 용어",
+          "start_line": 116,
+          "end_line": 127
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.degree-and-size",
+      "title": "차수와 크기와 너비",
+      "aliases": [
+        "노드의 차수",
+        "트리의 크기",
+        "레벨의 width"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/degree-and-size.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of counts taken over nodes - a node's degree being how many children it has and the tree's the largest of those, a node's size being itself plus all its descendants and the tree's being all its nodes, and the width being how many nodes sit at one level",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.path-metrics",
+        "algo.tree.tree-terminology",
+        "algo.tree.binary-tree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 용어",
+          "start_line": 107,
+          "end_line": 114
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 용어",
+          "start_line": 129,
+          "end_line": 141
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.subtree",
+      "title": "서브 트리",
+      "aliases": [
+        "재귀적으로 구성된다",
+        "모든 노드가 서브트리를 가진다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/subtree.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sense in which a tree contains smaller trees - each node's children form subtrees of their own, recursively, so anything true of a tree is true of every node's subtree",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.tree-properties",
+        "algo.tree.tree-terminology",
+        "algo.tree.inorder-traversal"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 용어",
+          "start_line": 143,
+          "end_line": 148
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.tree-properties",
+      "title": "트리의 성질",
+      "aliases": [
+        "루트는 하나",
+        "사이클이 없다",
+        "부모는 하나",
+        "계층적이고 재귀적인 구조"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/tree-properties.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of constraints that make a structure a tree - exactly one root, no cycles, exactly one parent per node - and the consequences, that it stores nothing in sequence and so is nonlinear, that it is recursive because every node heads a subtree, and that it is therefore hierarchical",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.tree",
+        "algo.tree.subtree",
+        "algo.list.linked-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 154,
+          "end_line": 159
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 163,
+          "end_line": 163
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 169,
+          "end_line": 169
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 175,
+          "end_line": 175
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.binary-tree",
+      "title": "이진 트리",
+      "aliases": [
+        "binary tree",
+        "자녀는 최대 두 개",
+        "왼쪽 자녀와 오른쪽 자녀"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/binary-tree.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single restriction to at most two children per node, which are distinguished as the left and the right rather than merely counted",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.tree",
+        "algo.tree.binary-tree-kinds",
+        "algo.tree.bst"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 187,
+          "end_line": 189
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.binary-tree-kinds",
+      "title": "이진 트리의 종류",
+      "aliases": [
+        "정 이진 트리",
+        "완전 이진 트리",
+        "포화 이진 트리",
+        "변질 이진 트리",
+        "균형 이진 트리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/binary-tree-kinds.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of names for the shapes a binary tree can take - every node having no children or two, every level filled except the last which fills from the left, every level filled outright, every parent having exactly one child which may all lean the same way, and every node's two subtrees differing in height by at most one",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.binary-tree",
+        "algo.tree.path-metrics",
+        "algo.tree.bst-tradeoff",
+        "algo.tree.avl-tree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 197,
+          "end_line": 199
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 206,
+          "end_line": 207
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 215,
+          "end_line": 215
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 223,
+          "end_line": 224
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 232,
+          "end_line": 232
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 240,
+          "end_line": 240
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 244,
+          "end_line": 245
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst",
+      "title": "이진 탐색 트리",
+      "aliases": [
+        "binary search tree",
+        "BST",
+        "왼쪽은 작고 오른쪽은 크다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ordering imposed on a binary tree - everything in a node's left subtree is smaller than it and everything in the right is larger - from which it follows that the smallest value is the leftmost node and the largest the rightmost",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.binary-tree",
+        "algo.tree.inorder-traversal",
+        "algo.tree.bst-complexity",
+        "algo.complexity.best-worst-average"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리",
+          "start_line": 18,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.inorder-traversal",
+      "title": "중위 순회",
+      "aliases": [
+        "inorder traversal",
+        "왼쪽 현재 오른쪽",
+        "크기 순서로 나온다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/inorder-traversal.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single traversal visiting the left subtree, then the node, then the right subtree, which over a search tree emits the values in sorted order",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.bst",
+        "algo.tree.preorder-postorder",
+        "algo.tree.subtree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 중위순회",
+          "start_line": 29,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.preorder-postorder",
+      "title": "전위 순회와 후위 순회",
+      "aliases": [
+        "preorder traversal",
+        "postorder traversal",
+        "방문 시점의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/preorder-postorder.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of traversals differing from the inorder one only in when the node itself is visited - before both subtrees or after both of them",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.inorder-traversal",
+        "algo.tree.subtree",
+        "algo.tree.binary-tree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 전위순회",
+          "start_line": 74,
+          "end_line": 76
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 후위순회",
+          "start_line": 86,
+          "end_line": 88
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.successor-predecessor",
+      "title": "후임자와 선임자",
+      "aliases": [
+        "successor",
+        "predecessor",
+        "바로 다음 큰 값"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/successor-predecessor.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of neighbours a node has in value order rather than in position - the smallest of the values larger than it and the largest of those smaller",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.bst",
+        "algo.tree.bst-delete",
+        "algo.tree.inorder-traversal"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 후임자 / 선임자",
+          "start_line": 98,
+          "end_line": 101
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 후임자 / 선임자",
+          "start_line": 109,
+          "end_line": 112
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-delete",
+      "title": "이진탐색트리에서 노드 지우기",
+      "aliases": [
+        "자녀가 없는 경우",
+        "자녀가 하나인 경우",
+        "자녀가 둘인 경우"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-delete.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single procedure split by how many children the node has - a leaf is simply unreferenced, a node with one child has the reference to it redirected at that child, and a node with two is replaced by the smallest value in its right subtree or equally the largest in its left - with a search having to find the node first in every case",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.successor-predecessor",
+        "algo.tree.bst",
+        "algo.tree.bst-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 120,
+          "end_line": 121
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 127,
+          "end_line": 130
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 132,
+          "end_line": 140
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-complexity",
+      "title": "이진탐색트리의 시간복잡도",
+      "aliases": [
+        "평균은 log N",
+        "최악은 N",
+        "절반씩 줄여나간다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-complexity.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single spread across the three cases - constant when the node wanted is the root, logarithmic on average because each comparison discards one side and halves what is left, and linear at worst when the tree has degenerated into a line",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.best-worst-average",
+        "algo.tree.bst",
+        "algo.tree.bst-tradeoff",
+        "algo.tree.binary-tree-kinds"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 시간복잡도",
+          "start_line": 176,
+          "end_line": 179
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 시간복잡도",
+          "start_line": 185,
+          "end_line": 189
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 시간복잡도",
+          "start_line": 195,
+          "end_line": 199
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-tradeoff",
+      "title": "이진탐색트리의 장단점",
+      "aliases": [
+        "레퍼런스만 재조정하면 된다",
+        "한쪽으로 편향되면 악화",
+        "스스로 균형을 잡는 트리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-tradeoff.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single balance of what the structure buys and costs - insertion and deletion move references rather than elements, the ordering makes all three operations fast in the usual case, and the values can be read out in order - against the one failure mode, a tree that has leaned to one side, which is what the self-balancing variants exist to prevent",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.tree.bst-complexity",
+        "algo.tree.avl-tree",
+        "algo.tree.binary-tree-kinds",
+        "algo.list.linked-list-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 장단점",
+          "start_line": 209,
+          "end_line": 212
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 장단점",
+          "start_line": 214,
+          "end_line": 218
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.avl-tree",
+      "title": "AVL 트리",
+      "aliases": [
+        "balance factor",
+        "스스로 균형을 잡는 이진탐색트리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/avl-tree.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single search tree that keeps itself balanced, using a factor computed per node to decide when the shape has to be corrected",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.tree.bst-tradeoff",
+        "algo.tree.binary-tree-kinds",
+        "algo.tree.bst-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture09.md",
+          "source_sha256": "046a0619b4f3f1522b245b85b6a9f4051d99e8298205fe26328026af7647616c",
+          "heading": "## AVL 트리",
+          "start_line": 14,
+          "end_line": 17
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

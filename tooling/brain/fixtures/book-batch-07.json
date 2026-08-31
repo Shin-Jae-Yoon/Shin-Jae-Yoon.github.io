@@ -1,0 +1,731 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-07",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-06",
+    "scheduling_basis": "book-batch-06 split content/brain/books/kafka/chap05.md at L427 under the recorded B5 escalation policy and reserved L427-870 for this batch.",
+    "applied_state": "180 approved knowledge concepts after book-batch-06 applied 25 proposals, 22 of them in the new kafka.adminclient.* namespace."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap05.md",
+    "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+    "line_range": "L427-L870",
+    "covered_scopes": "heading scopes 14-24 (## 컨슈머 그룹 관리 through ### MockAdminClient)",
+    "completes": "chap05. With this batch the chapter is fully mined and the Kafka book has chap07, chap08, chap09, chap10 and chap14 left."
+  },
+  "namespace_decision": {
+    "continued_namespace": "kafka.adminclient.*, opened by book-batch-06. All 22 candidates take it: every one is an AdminClient operation, an operational rule about using one, or the API's test double.",
+    "why_not_kafka_client": "The consumer-group and offset concepts under kafka.client.* are already applied and describe what those things are. This batch describes what AdminClient does to them, which is a different claim and belongs to the adminclient namespace."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 07 touches, so U3 must confirm it relates rather than restates.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose: it opens on a fenced code block or an Obsidian callout.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 22,
+  "candidates": [
+    {
+      "concept_id": "kafka.adminclient.consumer-group-management",
+      "title": "AdminClient 컨슈머 그룹 관리",
+      "aliases": ["Consumer Group Management", "메세지 재처리 시나리오"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/consumer-group-management.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "stub",
+      "concept_granularity": "single family of AdminClient operations that read and modify consumer groups and their committed offsets, motivated by reprocessing after a fault or in disaster recovery",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.client.consumer-group",
+        "kafka.adminclient.list-consumer-groups",
+        "kafka.adminclient.alter-consumer-group-offsets"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리",
+          "start_line": 429,
+          "end_line": 434
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.list-consumer-groups",
+      "title": "listConsumerGroups()",
+      "aliases": ["valid()", "errors()", "컨슈머 그룹 목록 조회"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/list-consumer-groups.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single listing operation whose valid() yields only the groups the cluster returned without error, with errors() and all() offering the two other error dispositions",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.consumer-group-management",
+        "kafka.adminclient.describe-consumer-groups",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 조회",
+          "start_line": 442,
+          "end_line": 453
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.describe-consumer-groups",
+      "title": "describeConsumerGroups()",
+      "aliases": ["ConsumerGroupDescription", "그룹 코디네이터", "컨슈머 그룹 상세 조회"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/describe-consumer-groups.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single detail operation returning a group's members, their identifiers and hosts, their assigned partitions, the assignment algorithm and the coordinator host",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.adminclient.list-consumer-groups",
+        "kafka.adminclient.consumer-lag",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 조회",
+          "start_line": 457,
+          "end_line": 472
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.consumer-lag",
+      "title": "컨슈머 랙",
+      "aliases": ["Consumer Lag", "랙", "커밋된 오프셋과 최신 오프셋의 차이"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/consumer-lag.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single measure of how far a consumer group trails the newest message, absent from the group description and obtainable through AdminClient instead of by parsing the internal commit topic",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.list-consumer-group-offsets",
+        "kafka.adminclient.list-offsets",
+        "kafka.client.offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 조회",
+          "start_line": 476,
+          "end_line": 480
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.list-consumer-group-offsets",
+      "title": "listConsumerGroupOffsets()",
+      "aliases": ["OffsetAndMetadata", "커밋된 오프셋 조회"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/list-consumer-group-offsets.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation returning one group's topic partitions mapped to their last committed offsets, scoped to a single group unlike describeConsumerGroups",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.consumer-lag",
+        "kafka.adminclient.describe-consumer-groups",
+        "kafka.client.offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 조회",
+          "start_line": 510,
+          "end_line": 514
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.list-offsets",
+      "title": "listOffsets()",
+      "aliases": ["OffsetSpec", "earliest()", "latest()", "forTimestamp()"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/list-offsets.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation resolving a partition offset by specification - earliest, latest or the first record written after a timestamp",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.consumer-lag",
+        "kafka.adminclient.delete-records",
+        "kafka.client.offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 조회",
+          "start_line": 518,
+          "end_line": 529
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.alter-consumer-group-offsets",
+      "title": "alterConsumerGroupOffsets()",
+      "aliases": ["오프셋 변경", "컨슈머 그룹 수정"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/alter-consumer-group-offsets.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single offset-modification operation, the most used of the group-modifying methods, which Kafka refuses while the group is running",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.consumer-group-management",
+        "kafka.adminclient.unknown-member-id",
+        "kafka.adminclient.list-offsets"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 수정",
+          "start_line": 535,
+          "end_line": 543
+        },
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 수정",
+          "start_line": 601,
+          "end_line": 612
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.offset-deletion",
+      "title": "커밋된 오프셋 삭제",
+      "aliases": ["Offset Deletion", "auto.offset.reset 의존", "컨슈머 리셋"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/offset-deletion.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single reset technique that is unreliable because a consumer finding no committed offset falls back on auto.offset.reset, making an explicit rewind to the earliest offset the deterministic choice",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.alter-consumer-group-offsets",
+        "kafka.client.offset",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 수정",
+          "start_line": 547,
+          "end_line": 554
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.offset-topic-propagation",
+      "title": "오프셋 토픽 값 전파",
+      "aliases": ["Offset Topic Propagation", "오프셋 토픽 읽는 시점"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/offset-topic-propagation.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single propagation rule under which a group reads the offset topic only when a consumer is newly assigned or started, which is why Kafka forbids modifying a running group's offsets",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.adminclient.alter-consumer-group-offsets",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 수정",
+          "start_line": 558,
+          "end_line": 561
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.stateful-offset-reset",
+      "title": "상태를 가진 애플리케이션의 오프셋 리셋",
+      "aliases": ["Stateful Offset Reset", "상태 저장소와 오프셋 불일치", "중복 집계"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/stateful-offset-reset.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single hazard in which rewinding offsets without clearing an application's accumulated state double-counts the reprocessed range",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.offset-deletion",
+        "kafka.adminclient.alter-consumer-group-offsets"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 수정",
+          "start_line": 565,
+          "end_line": 571
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.unknown-member-id",
+      "title": "UnknownMemberIdException",
+      "aliases": ["컨슈머 그룹 정지 필요", "오프셋 변경 실패"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/unknown-member-id.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure mode raised when a live group's coordinator treats an offset change as a commit from a non-member, with stopping the consumer application the only remedy",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.alter-consumer-group-offsets",
+        "kafka.adminclient.execution-exception",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 컨슈머 그룹 관리 > ### 컨슈머 그룹 수정",
+          "start_line": 616,
+          "end_line": 622
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.describe-cluster",
+      "title": "describeCluster()",
+      "aliases": ["DescribeClusterResult", "클러스터 메타데이터 조회", "클러스터 ID"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/describe-cluster.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single metadata read exposing the cluster id, its broker nodes and the controller, information Kafka clients otherwise abstract away",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.broker.cluster",
+        "kafka.adminclient.operation-routing",
+        "kafka.adminclient.adminclient"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 클러스터 메타데이터",
+          "start_line": 628,
+          "end_line": 648
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.partition-addition",
+      "title": "토픽에 파티션 추가",
+      "aliases": ["Partition Addition", "파티션 수 확장 위험", "키 순서 보장 파괴"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/partition-addition.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single rare and risky operation, since a topic's partition count is normally fixed at creation and widening it breaks the assumption that one key always lands on one partition",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.topic.partition",
+        "kafka.adminclient.create-partitions",
+        "kafka.message.message-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 토픽에 파티션 추가",
+          "start_line": 656,
+          "end_line": 663
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.create-partitions",
+      "title": "createPartitions()",
+      "aliases": ["NewPartitions.increaseTo()", "파티션 추가 후 총 개수 지정"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/create-partitions.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single expansion operation taking the partition count the topic should end up with rather than the number to add, so the current count must be read first",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.partition-addition",
+        "kafka.adminclient.describe-topics",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 토픽에 파티션 추가",
+          "start_line": 667,
+          "end_line": 676
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.delete-records",
+      "title": "deleteRecords()",
+      "aliases": ["RecordsToDelete.beforeOffset()", "레코드 삭제 표시"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/delete-records.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation marking every record older than a given offset unreadable to consumers, with the physical erase happening asynchronously afterwards",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.list-offsets",
+        "kafka.config.log-segment-bytes",
+        "kafka.retention.retention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 토픽에서 레코드 삭제",
+          "start_line": 682,
+          "end_line": 685
+        },
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 토픽에서 레코드 삭제",
+          "start_line": 689,
+          "end_line": 694
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.preferred-leader-election",
+      "title": "선호 리더 선출",
+      "aliases": ["Preferred Leader Election", "선호 리더", "리더 개수 균형"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/preferred-leader-election.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single election that restores each partition's designated preferred replica as leader, which Kafka checks every five minutes and which electLeaders() can trigger on demand",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.broker.partition-leader",
+        "kafka.config.auto-leader-rebalance-enable",
+        "kafka.adminclient.elect-leaders"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 리더 선출",
+          "start_line": 712,
+          "end_line": 718
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.unclean-leader-election",
+      "title": "언클린 리더 선출",
+      "aliases": ["Unclean Leader Election", "데이터 유실 감수 선출"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/unclean-leader-election.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single election promoting a replica that is not eligible to lead, trading the loss of events never replicated from the old leader for the partition's availability",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.preferred-leader-election",
+        "kafka.broker.partition-leader",
+        "kafka.adminclient.elect-leaders"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 리더 선출",
+          "start_line": 722,
+          "end_line": 729
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.elect-leaders",
+      "title": "electLeaders()",
+      "aliases": ["ElectionType", "ElectionNotNeededException"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/elect-leaders.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single asynchronous election call whose return precedes cluster-wide awareness, so describeTopics may disagree and a multi-partition request may partly succeed",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.preferred-leader-election",
+        "kafka.adminclient.unclean-leader-election",
+        "kafka.adminclient.eventual-consistency"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 리더 선출",
+          "start_line": 733,
+          "end_line": 737
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.replica-reassignment",
+      "title": "레플리카 재할당",
+      "aliases": ["Replica Reassignment", "alterPartitionReassignments()"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/replica-reassignment.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation placing each of a partition's replicas on a chosen broker, used to relieve an overloaded broker, add replicas, drain a machine or isolate hot topics",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.reassignment-throttling",
+        "kafka.adminclient.new-partition-reassignment",
+        "kafka.broker.broker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 레플리카 재할당",
+          "start_line": 767,
+          "end_line": 776
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.reassignment-throttling",
+      "title": "재할당 스로틀링",
+      "aliases": ["Reassignment Throttling", "복제 쿼터"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/reassignment-throttling.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single mitigation for the bulk copying a reassignment causes, applying a broker quota - itself readable and writable through AdminClient - to cap replication traffic",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.replica-reassignment",
+        "kafka.hardware.network-bandwidth",
+        "kafka.adminclient.incremental-alter-configs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 레플리카 재할당",
+          "start_line": 780,
+          "end_line": 784
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.new-partition-reassignment",
+      "title": "NewPartitionReassignment",
+      "aliases": ["레플리카 목록 지정", "재할당 취소", "listPartitionReassignments()"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/new-partition-reassignment.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single per-partition instruction whose replica list adds, moves or reorders replicas and whose empty value cancels an in-flight reassignment and restores the prior placement",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.replica-reassignment",
+        "kafka.adminclient.preferred-leader-election",
+        "kafka.adminclient.eventual-consistency"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 레플리카 재할당",
+          "start_line": 820,
+          "end_line": 843
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.mock-admin-client",
+      "title": "MockAdminClient",
+      "aliases": ["AdminClient 테스트 목업", "브로커 없이 어드민 테스트"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/mock-admin-client.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "create",
+      "concept_granularity": "single test double standing in for a real cluster, outside the public API and therefore changeable, though its mocked method signatures stay compatible",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain"],
+      "review_flags": [],
+      "related_concepts": ["kafka.adminclient.adminclient"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 테스트 > ### MockAdminClient",
+          "start_line": 851,
+          "end_line": 855
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap05-l0652",
+      "title": "chap05 고급 어드민 작업 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap05 L652-653 `## 고급 어드민 작업` carries only the heading and one blank line (span_sha256 7a974fd009ac8e8ba9295671daa76522cecd6c16bf3ccc06c12b15c2e1d543b2; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": ["book-batch-07", "scope-level-rejection-probe"],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464"
+        }
+      ],
+      "engine_substantive": false
+    },
+    {
+      "concept_id": "book.rejected.kafka-chap05-l0847",
+      "title": "chap05 테스트 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap05 L847-848 `## 테스트` carries only the heading and one blank line (span_sha256 9c136bb819483ed98f5cf2bb7843e860a4e5ef349922e36d375febd46cd68333; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": ["book-batch-07", "scope-level-rejection-probe"],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464"
+        }
+      ],
+      "engine_substantive": false
+    }
+  ],
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L444-446, L459-465, L482-508, L577-599, L669-673, L696-706, L739-752, L793-818, L859-869",
+        "reason_code": "code-carried-by-neighbouring-locator",
+        "detail": "Java listings whose meaning is carried by the numbered commentary spans that are cited."
+      },
+      {
+        "span": "L601-612 for candidates other than alterConsumerGroupOffsets",
+        "reason_code": "single-owner",
+        "detail": "The numbered walkthrough of the offset-reset example belongs to one concept and is cited once."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L427-870 contributes at least one cited locator. The two non-substantive scopes are filed as rejection probes."
+  },
+  "p6_resolution": {
+    "statement": "Twelve applied concepts are touched by prose in L427-870. None is re-proposed and none is restated. Ten receive a real related_concepts edge; two are passing mentions.",
+    "summary": { "update": 0, "relate": 10, "no_op": 2 },
+    "touch_point_dispositions": [
+      {
+        "concept_id": "kafka.client.consumer-group",
+        "authoring_decision": "relate",
+        "evidence": "The whole 컨슈머 그룹 관리 section operates on groups.",
+        "decision_rationale": "Batch 07 asserts what AdminClient does to a consumer group, never what a consumer group is."
+      },
+      {
+        "concept_id": "kafka.client.offset",
+        "authoring_decision": "relate",
+        "evidence": "Committed offsets, latest offsets and lag run through the section.",
+        "decision_rationale": "The offset's definition is applied; these candidates assert how AdminClient reads and rewrites offsets."
+      },
+      {
+        "concept_id": "kafka.broker.partition-leader",
+        "authoring_decision": "relate",
+        "evidence": "L713-716 describes the preferred replica and leader balance.",
+        "decision_rationale": "Preferred and unclean election are operations over leadership, distinct from the applied definition of a partition leader."
+      },
+      {
+        "concept_id": "kafka.config.auto-leader-rebalance-enable",
+        "authoring_decision": "relate",
+        "evidence": "L717 names the setting as the reason to call electLeaders() manually.",
+        "decision_rationale": "The applied switch already carries its own meaning; this batch points at it."
+      },
+      {
+        "concept_id": "kafka.topic.partition",
+        "authoring_decision": "relate",
+        "evidence": "L656-663 concerns changing a topic's partition count.",
+        "decision_rationale": "The risk of widening a partition count is a new claim, not a restatement of what a partition is."
+      },
+      {
+        "concept_id": "kafka.message.message-key",
+        "authoring_decision": "relate",
+        "evidence": "L659 relies on same-key-same-partition ordering.",
+        "decision_rationale": "Cited as the property the operation endangers, not redefined."
+      },
+      {
+        "concept_id": "kafka.config.log-segment-bytes",
+        "authoring_decision": "relate",
+        "evidence": "L685 cross-references chap02's segment-size discussion for why records outlive retention.",
+        "decision_rationale": "The applied concept carries the segment rule; delete-records only points at it."
+      },
+      {
+        "concept_id": "kafka.retention.retention",
+        "authoring_decision": "relate",
+        "evidence": "L682 sets up a 30-day retention requirement.",
+        "decision_rationale": "Retention is applied; the new claim is that deleteRecords exists for what retention does not remove."
+      },
+      {
+        "concept_id": "kafka.hardware.network-bandwidth",
+        "authoring_decision": "relate",
+        "evidence": "L782 warns about available bandwidth during reassignment.",
+        "decision_rationale": "The bandwidth concept is applied; throttling relates to it."
+      },
+      {
+        "concept_id": "kafka.broker.cluster",
+        "authoring_decision": "relate",
+        "evidence": "L628-631 and L643-647 read cluster id, nodes and controller.",
+        "decision_rationale": "describeCluster is an operation over the cluster, not a definition of it."
+      },
+      {
+        "concept_id": "kafka.client.consumer",
+        "authoring_decision": "no_op",
+        "evidence": "L549-553 asks where a consumer starts when it finds no committed offset.",
+        "decision_rationale": "The consumer appears as the actor in an example; the claim is about offset deletion."
+      },
+      {
+        "concept_id": "kafka.stream.stream",
+        "authoring_decision": "no_op",
+        "evidence": "L567 uses a stream application as the stateful example.",
+        "decision_rationale": "A passing illustration, not a claim about streams."
+      }
+    ]
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "heading_scopes": { "value": 11, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 22, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

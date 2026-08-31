@@ -1,0 +1,1080 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-35",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-34",
+    "applied_state": "742 approved knowledge concepts after lecture-batch-34 mined the procedure-in-practice argument and the trigger surface."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture14.md",
+        "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture15.md",
+        "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b"
+      }
+    ],
+    "line_range": "lecture14 L12-L216, lecture15 L12-L219 (two whole files)",
+    "series": "쉬운코드 DB (easy-db) 14~15/15 — transaction, 동시성 제어 1부"
+  },
+  "overlap_analysis": {
+    "finding": "These two files close the series and are one argument: lecture14 ends on isolation and points at lecture15, and lecture15 ends by naming isolation as the transaction property concurrency control exists to provide. Splitting them would leave that loop open across a batch boundary.",
+    "disposition": "Two new subdomains open - db.transaction for the unit of work and the four ACID properties, and db.concurrency for schedules, conflict and serializability. Two applied concepts gain back-edges: db.constraint.constraint, which consistency is defined in terms of, and db.basic.dbms, which is what actually provides these guarantees."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture14 L8, L42-48, L55-63, L92-96, L100-104, L118-120, L130, L148, L169, L195-199, L213-215; lecture15 L8, L16-38, L44-48, L56-58, L73, L80, L94, L128-132, L156, L163-165, L174, L186",
+        "reason_code": "lecture-preamble-figure-caption-or-carried-by-owner",
+        "detail": "The channel link, the 'ex)' scenario headers whose diagram carries the content, and the caption lines whose claim is already stated inside the cited span of the owning concept."
+      },
+      {
+        "span": "lecture15 L16-38",
+        "reason_code": "figure-driven-walkthrough",
+        "detail": "The four cases of the concurrent transfer are shown entirely in screenshots; the only prose line in the section is the one naming the outcome, which db.concurrency.lost-update cites."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across both files contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 15219,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 157,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 16,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 14,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 24,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "With this batch every substantive file of db/easy-db is mined - lectures 01 through 15 across batches 29 to 35. Only index.md and lecture00.md remain uncited, and lecture00 holds no heading scope or prose at all.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. The lecture titles itself '동시성 제어 1부' but no second part exists in the source tree, so isolation levels themselves are named but never enumerated - db.transaction.isolation records that they exist and are chosen by the developer, which is as far as the source goes.",
+  "candidates_authored": 24,
+  "candidates": [
+    {
+      "concept_id": "db.constraint.constraint",
+      "title": "제약조건",
+      "aliases": [
+        "Constraints",
+        "데이터 일관성 보장"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/db-constraint.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single rule the relations of a database must satisfy at all times, existing so the data stays in a consistent form",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-35"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.constraint.implicit-constraint",
+        "db.constraint.schema-based-constraint",
+        "db.relational.relational-database",
+        "db.transaction.consistency"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### 제약조건",
+          "start_line": 311,
+          "end_line": 312
+        }
+      ]
+    },
+    {
+      "concept_id": "db.basic.dbms",
+      "title": "DBMS",
+      "aliases": [
+        "Database Management System",
+        "데이터베이스 관리 시스템"
+      ],
+      "canonical_path": "content/brain/knowledge/db/basic/dbms.md",
+      "tags": [
+        "db",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single software system giving users the means to define, create and manage a database, PostgreSQL, MySQL, Oracle and MS-SQL being the familiar ones",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-35"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.basic.database",
+        "db.basic.metadata",
+        "db.basic.db-system",
+        "db.transaction.transaction",
+        "db.concurrency.concurrency-control",
+        "db.transaction.durability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB 기본 > ### DBMS",
+          "start_line": 28,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.transaction",
+      "title": "트랜잭션",
+      "aliases": [
+        "Transaction",
+        "단일한 논리적 작업 단위",
+        "START TRANSACTION"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/db-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single logical unit of work - several SQL statements bound together for a reason outside the database, so that they cannot be divided and it can never happen that only some of them reach the data",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.rollback",
+        "db.transaction.atomicity",
+        "db.language.dml"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 14,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 29,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.commit",
+      "title": "커밋",
+      "aliases": [
+        "COMMIT",
+        "영구적으로 저장하라"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/commit.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single instruction ending a transaction by storing everything it did permanently in the database",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.rollback",
+        "db.transaction.durability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 19,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 32,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.rollback",
+      "title": "롤백",
+      "aliases": [
+        "ROLLBACK",
+        "트랜잭션 이전 상태로"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/rollback.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single instruction ending a transaction by undoing everything it did and returning the database to the state it was in before the transaction started",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.commit",
+        "db.transaction.atomicity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 23,
+          "end_line": 25
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 34,
+          "end_line": 35
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.transfer-example",
+      "title": "계좌 이체가 단일 작업인 이유",
+      "aliases": [
+        "출금과 입금은 나눌 수 없다",
+        "이체 예제"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/transfer-example.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single worked case showing where the boundary of a transaction comes from - a transfer is two SQL statements, and it has only succeeded if both did, which is a fact about banking rather than about the database",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.atomicity",
+        "db.transaction.isolation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 예제",
+          "start_line": 50,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.autocommit",
+      "title": "AUTOCOMMIT",
+      "aliases": [
+        "자동 커밋",
+        "SET autocommit=0",
+        "select @@autocommit"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/autocommit.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single setting that makes every individual SQL statement its own transaction - committed if it succeeded, rolled back if it did not - enabled by default in MySQL and offered by most other DBMSs, and switched off for the duration of an explicit transaction, returning to its previous state when that transaction ends",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.commit",
+        "db.transaction.application-transaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### AUTOCOMMIT",
+          "start_line": 69,
+          "end_line": 74
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### AUTOCOMMIT",
+          "start_line": 76,
+          "end_line": 82
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### AUTOCOMMIT",
+          "start_line": 86,
+          "end_line": 88
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.usage-pattern",
+      "title": "트랜잭션 사용 패턴",
+      "aliases": [
+        "begin 로직 commit rollback",
+        "문제가 생기면 롤백"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/usage-pattern.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shape every use of a transaction takes - begin it, run the logic including its reads and writes, commit if nothing went wrong, roll back if something did",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.application-transaction",
+        "db.transaction.atomicity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용패턴",
+          "start_line": 110,
+          "end_line": 114
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.application-transaction",
+      "title": "애플리케이션 코드에서의 트랜잭션",
+      "aliases": [
+        "setAutoCommit(false)",
+        "@Transactional",
+        "트랜잭션 코드 감추기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/application-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way the pattern appears in code - turning autocommit off on the connection both starts the transaction and must be undone afterwards because connections are reused, and the bookkeeping is better hidden behind an annotation such as @Transactional so only the business logic is left to read",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.autocommit",
+        "db.transaction.usage-pattern",
+        "software.architecture.business-logic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용패턴",
+          "start_line": 122,
+          "end_line": 126
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용패턴",
+          "start_line": 132,
+          "end_line": 132
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.atomicity",
+      "title": "원자성",
+      "aliases": [
+        "Atomicity",
+        "ALL or Nothing",
+        "모두 성공하거나 모두 실패하거나"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/atomicity.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single guarantee that a transaction either happens entirely or not at all - a failure partway through cancels everything already done, as if nothing had happened - where making commit permanent and rollback complete is the DBMS's job and deciding the transaction's boundary and what counts as a failure is the developer's",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.rollback",
+        "db.transaction.consistency",
+        "db.transaction.durability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Atomicity",
+          "start_line": 140,
+          "end_line": 144
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Atomicity",
+          "start_line": 150,
+          "end_line": 154
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.consistency",
+      "title": "일관성",
+      "aliases": [
+        "Consistency",
+        "일관된 상태에서 또 다른 일관된 상태로"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/consistency.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single guarantee that a transaction moves the database from one consistent state to another - a transaction violating a rule declared in the database, whether a constraint or a trigger, is rolled back, and the DBMS checks those rules before the commit; whatever consistency means to the application beyond them is the developer's to keep",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.constraint.constraint",
+        "db.sql.trigger",
+        "db.transaction.atomicity",
+        "db.sql.constraint-violation-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Consistency",
+          "start_line": 160,
+          "end_line": 165
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Consistency",
+          "start_line": 170,
+          "end_line": 172
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.isolation",
+      "title": "격리성",
+      "aliases": [
+        "Isolation",
+        "isolation level",
+        "혼자 실행되는 것처럼"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/isolation.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single guarantee that concurrent transactions behave as though each ran alone, offered at several levels because enforcing it strictly costs performance - a higher level shields a transaction from the others but lowers concurrency, a lower level raises concurrency at the risk of wrong results - and the level is the developer's to choose",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.concurrency-control",
+        "db.transaction.transaction",
+        "db.concurrency.lost-update"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Isolation",
+          "start_line": 178,
+          "end_line": 182
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Isolation",
+          "start_line": 186,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.durability",
+      "title": "지속성",
+      "aliases": [
+        "Durability",
+        "영존성",
+        "비휘발성 메모리에 저장"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/durability.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single guarantee that a committed transaction survives - it stays in the database through a power failure or a crash, which is what storing it permanently on non-volatile media means, and the DBMS is what provides it",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.atomicity",
+        "db.model.physical-model"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Durability",
+          "start_line": 205,
+          "end_line": 209
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.lost-update",
+      "title": "Lost update",
+      "aliases": [
+        "갱신 손실",
+        "업데이트가 사라지는 현상"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/lost-update.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single anomaly where one transaction's update disappears because another overwrote it with a value read before that update landed",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.transaction.isolation",
+        "db.concurrency.nonserial-schedule",
+        "db.concurrency.concurrency-control"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### 예제",
+          "start_line": 40,
+          "end_line": 40
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.operation-notation",
+      "title": "operation 표기법",
+      "aliases": [
+        "operation",
+        "r1(K)",
+        "w2(H)"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/operation-notation.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shorthand for reasoning about interleaving - each step is an operation written as r or w for read or write, the transaction's number, and the data it touches in parentheses",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.schedule",
+        "db.concurrency.conflict"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### 예제",
+          "start_line": 50,
+          "end_line": 52
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.schedule",
+      "title": "스케쥴",
+      "aliases": [
+        "Schedule",
+        "operation들의 실행 순서"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/schedule.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ordering of the operations belonging to several concurrently running transactions, in which the operations within any one transaction keep their own order",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.operation-notation",
+        "db.concurrency.serial-schedule",
+        "db.concurrency.nonserial-schedule"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Schedule",
+          "start_line": 64,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.serial-schedule",
+      "title": "순차적 스케쥴",
+      "aliases": [
+        "Serial schedule",
+        "한 번에 하나씩"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/serial-schedule.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single schedule in which transactions do not overlap at all, which therefore never produces a strange result but leaves the CPU idle through every IO and cannot be used in practice",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.schedule",
+        "db.concurrency.nonserial-schedule",
+        "db.concurrency.conflict-serializable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Schedule",
+          "start_line": 70,
+          "end_line": 71
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Schedule",
+          "start_line": 84,
+          "end_line": 87
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.nonserial-schedule",
+      "title": "비순차적 스케쥴",
+      "aliases": [
+        "nonserial schedule",
+        "interleaving",
+        "겹쳐서 실행"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/nonserial-schedule.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single schedule in which transactions interleave, getting more work done in the same time but able to produce a wrong result depending on how they overlap - which sets up the question the rest of the subject answers, how to interleave without the wrong results, by running only those nonserial schedules that are equivalent to some serial one",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.serial-schedule",
+        "db.concurrency.conflict-serializable",
+        "db.concurrency.lost-update",
+        "cs.concurrency.concurrent-vs-parallel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Schedule",
+          "start_line": 77,
+          "end_line": 78
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Schedule",
+          "start_line": 92,
+          "end_line": 97
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Schedule",
+          "start_line": 101,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.conflict",
+      "title": "Conflict",
+      "aliases": [
+        "충돌 연산",
+        "순서가 바뀌면 결과가 바뀌는 두 연산"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/conflict.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single relation between two operations that holds when all three conditions are met - they belong to different transactions, they touch the same data, and at least one of them writes - and that matters because reversing their order changes the outcome",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.operation-notation",
+        "db.concurrency.conflict-equivalent",
+        "db.concurrency.schedule"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Conflict",
+          "start_line": 118,
+          "end_line": 124
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.conflict-equivalent",
+      "title": "Conflict equivalent",
+      "aliases": [
+        "충돌되는 연산 순서가 동일",
+        "두 스케쥴이 같다는 정의"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/conflict-equivalent.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single definition of two schedules being the same, built out of conflict - they hold the same transactions, and every pair of conflicting operations appears in the same order on both sides",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.conflict",
+        "db.concurrency.conflict-serializable",
+        "db.concurrency.serial-schedule"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Conflict",
+          "start_line": 136,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Conflict",
+          "start_line": 142,
+          "end_line": 148
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.conflict-serializable",
+      "title": "Conflict serializable",
+      "aliases": [
+        "직렬 스케쥴과 충돌 동등",
+        "이상한 결과가 나오지 않는 조건"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/conflict-serializable.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property a schedule has when it is conflict equivalent to some serial schedule, which is what separates an interleaving that is safe from one that is not - a schedule equivalent to no serial schedule at all is exactly the one that produced the wrong answer",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.concurrency.conflict-equivalent",
+        "db.concurrency.serial-schedule",
+        "db.concurrency.nonserial-schedule",
+        "db.concurrency.serializability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Serializable",
+          "start_line": 158,
+          "end_line": 159
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Serializable",
+          "start_line": 166,
+          "end_line": 170
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Serializable",
+          "start_line": 175,
+          "end_line": 184
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.serializability-protocol",
+      "title": "사후 확인이 아니라 프로토콜로 보장한다",
+      "aliases": [
+        "conflict serializable한 스케쥴만 실행",
+        "확인 비용이 너무 크다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/serializability-protocol.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way the property is actually secured - a protocol under which only conflict serializable schedules can arise in the first place, rather than checking afterwards whether the schedule that ran happened to be one, since checking would cost far too much once many transactions are in flight",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.conflict-serializable",
+        "db.concurrency.concurrency-control"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Serializable 구현",
+          "start_line": 193,
+          "end_line": 194
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### Serializable 구현",
+          "start_line": 198,
+          "end_line": 201
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.serializability",
+      "title": "serializability",
+      "aliases": [
+        "직렬 가능성",
+        "view serializable",
+        "serializable 하다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/serializability.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of terms following one shape - a schedule equivalent to some serial schedule is serializable, conflict equivalent to one is conflict serializable, view equivalent to one is view serializable - so the word before serializable names which definition of equivalence is meant",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.concurrency.conflict-serializable",
+        "db.concurrency.conflict-equivalent",
+        "db.concurrency.concurrency-control"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### 최종정리",
+          "start_line": 207,
+          "end_line": 211
+        }
+      ]
+    },
+    {
+      "concept_id": "db.concurrency.concurrency-control",
+      "title": "동시성 제어",
+      "aliases": [
+        "Concurrency Control",
+        "어떤 스케쥴도 serializable 하게"
+      ],
+      "canonical_path": "content/brain/knowledge/db/concurrency/concurrency-control.md",
+      "tags": [
+        "db",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single job of making any schedule serializable, which is the same thing as the transaction property isolation - and since pursuing serializability strictly costs concurrency and therefore performance, isolation is relaxed into levels the developer picks from",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.isolation",
+        "db.concurrency.serializability",
+        "db.concurrency.serializability-protocol",
+        "db.basic.dbms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture15.md",
+          "source_sha256": "b4e4b4f42fda16413425f8e0f6743365c73934b8eb3aec8d172047ce95cf425b",
+          "heading": "## Concurrency Control > ### 최종정리",
+          "start_line": 215,
+          "end_line": 219
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

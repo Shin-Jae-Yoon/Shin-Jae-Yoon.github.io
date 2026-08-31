@@ -1,0 +1,1488 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-55",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-54",
+    "applied_state": "1107 approved knowledge concepts after lecture-batch-54 opened the python namespace."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny04.md",
+        "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny05.md",
+        "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny06.md",
+        "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny07.md",
+        "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny08.md",
+        "source_sha256": "b524a36803529ec476e9964189466c2a641bb1febf4579772887ff6cf0c01080"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny09.md",
+        "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny10.md",
+        "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8"
+      },
+      {
+        "path": "content/brain/lectures/pl/funny-python/funny11.md",
+        "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9"
+      }
+    ],
+    "line_range": "funny04 L12-L467, funny05 L12-L161, funny06 L12-L277, funny07 L12-L220, funny08 L12-L82, funny09 L12-L175, funny10 L12-L251, funny11 L12-L211",
+    "series": "잔재미코딩 파이썬 입문 04~11"
+  },
+  "overlap_analysis": {
+    "finding": "Eight files each covering one type or one control structure, following the same five-question frame the second file set out. The collection types land beside their counterparts in the java, javascript and algorithm namespaces, and the variable chapter turns out to be the reference-semantics concept that the whole language rests on.",
+    "disposition": "All new under python. Three applied concepts gain edges: the frame itself, now that the types it was to be applied to exist; the string slicing concept, which this course explicitly extends to lists; and the javascript object, which is the same key-value structure."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "alias_avoidance_note": {
+    "key": "튜플",
+    "incumbent": "db.relational.tuple",
+    "disposition": "The python type is titled 파이썬 튜플, since the bare word belongs to the row of a relation in the database namespace."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "the course link on all eight files; funny04 L41-L65, L75, L107, L164, L181-L202, L219, L344-L388, L429-L440; funny05 L42, L59-L87; funny06 L35-L45, L49-L98, L157-L249; funny07 L37, L71, L180-L216; funny08 L50-L82; funny09 L157-L175; funny10 L50-L138, L173-L208 partial; funny11 L37-L53, L140-L142, L169-L211 partial",
+        "reason_code": "course-link-worked-example-caption-or-carried-by-owner",
+        "detail": "The course link, the short-form summaries repeated from the chapter opening, the per-operation captions announcing the code below them, the worked examples demonstrating a method the list above already named, and the cross-references to earlier files of the same course."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across the eight files contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 45286,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 222,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 33,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 32,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 27,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes funny-python - eleven lecture files over batches 54 and 55, with only the course index uncited.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 26,
+  "candidates": [
+    {
+      "concept_id": "python.basic.data-structure-operations",
+      "title": "자료형마다 다섯 가지를 본다",
+      "aliases": [
+        "선언과 입력 읽기 추가 삭제 수정",
+        "파이썬의 자료형 목록"
+      ],
+      "canonical_path": "content/brain/knowledge/python/basic/data-structure-operations.md",
+      "tags": [
+        "python",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single frame the course puts every data type through - how it is declared and filled, read, added to, deleted from and changed - applied in turn to numbers, strings, lists, tuples, dictionaries, sets and booleans",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain",
+        "lecture-batch-55"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.basic.dynamic-typing",
+        "python.string.string-basics",
+        "python.env.toolchain",
+        "python.list.list",
+        "python.tuple.tuple",
+        "python.dict.dictionary",
+        "python.set.set",
+        "python.bool.bool"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny02.md",
+          "source_sha256": "766bf1d546f80ab19c7bfae6ebe08829c74ada6f5aa3d5c0316fae2ee849b731",
+          "heading": "## 파이썬의 데이터구조",
+          "start_line": 16,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "concept_id": "python.string.index-slicing",
+      "title": "인덱스와 잘라내기",
+      "aliases": [
+        "음수 인덱스",
+        "시작부터 끝 직전까지",
+        "요소를 바꿀 수 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/python/string/index-slicing.md",
+      "tags": [
+        "python",
+        "string"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single way of reaching into a string by position, counted from the front or from the back with negative numbers, and of taking a range that runs from the first index up to but not including the second - which is also the only way to change a string, since its characters cannot be assigned to and a new string has to be built from the pieces",
+      "pilot_strata": [
+        "lecture-batch-54",
+        "pl/funny-python",
+        "python-domain",
+        "lecture-batch-55"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.string.string-basics",
+        "java.util.string-class",
+        "js.data.array",
+        "algo.string.index-bound-check",
+        "python.list.list",
+        "python.list.nested-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 83,
+          "end_line": 90
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 107,
+          "end_line": 109
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 122,
+          "end_line": 122
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 135,
+          "end_line": 135
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny03.md",
+          "source_sha256": "b9be89d7c49a1970f85c8c9814ebc9f241b6f144e1174a307ed29da789b27276",
+          "heading": "## 01. 문자열 다루기 기본",
+          "start_line": 147,
+          "end_line": 149
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 02. 인덱싱과 슬라이싱",
+          "start_line": 75,
+          "end_line": 75
+        }
+      ]
+    },
+    {
+      "concept_id": "js.data.object",
+      "title": "Object 자료형",
+      "aliases": [
+        "중괄호로 만드는 자료",
+        "key와 value",
+        "이름을 붙여 저장"
+      ],
+      "canonical_path": "content/brain/knowledge/js/data/object.md",
+      "tags": [
+        "js",
+        "data"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single way of storing values under names rather than in an order, where only the value is really the data and the key is the name it is reached by",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-55",
+        "pl/funny-python"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.data.array",
+        "js.data.array-vs-object",
+        "js.basic.for-in",
+        "java.collection.map-interface",
+        "python.dict.dictionary"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## Array, Object > ### Object 자료형",
+          "start_line": 62,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "concept_id": "python.list.list",
+      "title": "파이썬 리스트",
+      "aliases": [
+        "대괄호와 쉼표",
+        "빈 리스트는 list()"
+      ],
+      "canonical_path": "content/brain/knowledge/python/list/list-type.md",
+      "tags": [
+        "python",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of holding several related values under one name, written in square brackets separated by commas, reached by index, and holding values of different types at once - with the constructor preferred over the empty brackets when declaring an empty one",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.basic.data-structure-operations",
+        "python.string.index-slicing",
+        "python.list.list-methods",
+        "js.data.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 01. 리스트 자료형이란?",
+          "start_line": 14,
+          "end_line": 29
+        }
+      ]
+    },
+    {
+      "concept_id": "python.list.nested-list",
+      "title": "중첩 리스트",
+      "aliases": [
+        "이중 리스트",
+        "리스트 안의 리스트를 인덱싱"
+      ],
+      "canonical_path": "content/brain/knowledge/python/list/nested-list.md",
+      "tags": [
+        "python",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement of a list holding lists, indexed one level at a time and sliced the same way, which is how a two-dimensional table is represented without a separate type for it",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.list.list",
+        "python.string.index-slicing",
+        "algo.search.dimension-reduction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 02. 인덱싱과 슬라이싱 > ### 리스트의 인덱싱",
+          "start_line": 105,
+          "end_line": 107
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 02. 인덱싱과 슬라이싱 > ### 리스트의 인덱싱",
+          "start_line": 120,
+          "end_line": 120
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 02. 인덱싱과 슬라이싱 > ### 리스트의 슬라이싱",
+          "start_line": 147,
+          "end_line": 147
+        }
+      ]
+    },
+    {
+      "concept_id": "python.list.delete-methods",
+      "title": "리스트에서 지우는 세 가지 방법",
+      "aliases": [
+        "del은 인덱스로",
+        "remove는 값으로",
+        "pop은 꺼내면서 지운다"
+      ],
+      "canonical_path": "content/brain/knowledge/python/list/delete-methods.md",
+      "tags": [
+        "python",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice among three removals differing in what they take and what they leave - one names the position, one names the value and removes only its first occurrence, and one takes the last element out and returns it",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.list.add-methods",
+        "python.list.list",
+        "algo.stack.stack-implementation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 04. 수정, 삭제, 추가 > ### 리스트 삭제",
+          "start_line": 235,
+          "end_line": 237
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 04. 수정, 삭제, 추가 > ### 리스트 삭제",
+          "start_line": 254,
+          "end_line": 258
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 04. 수정, 삭제, 추가 > ### 리스트 삭제",
+          "start_line": 270,
+          "end_line": 272
+        }
+      ]
+    },
+    {
+      "concept_id": "python.list.add-methods",
+      "title": "리스트에 넣는 두 가지 방법",
+      "aliases": [
+        "append는 맨 뒤에 하나",
+        "insert는 지정한 자리에"
+      ],
+      "canonical_path": "content/brain/knowledge/python/list/add-methods.md",
+      "tags": [
+        "python",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of insertions - one puts a single element at the end, the other puts one at a named position",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.list.delete-methods",
+        "python.list.list-methods",
+        "algo.array.operation-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 04. 수정, 삭제, 추가 > ### 리스트 추가",
+          "start_line": 287,
+          "end_line": 291
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 04. 수정, 삭제, 추가 > ### 리스트 추가",
+          "start_line": 308,
+          "end_line": 310
+        }
+      ]
+    },
+    {
+      "concept_id": "python.list.list-methods",
+      "title": "리스트 함수들",
+      "aliases": [
+        "sort와 reverse",
+        "index와 find의 차이",
+        "extend"
+      ],
+      "canonical_path": "content/brain/knowledge/python/list/list-methods.md",
+      "tags": [
+        "python",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of methods over a list - sorting it, turning it back to front without sorting, finding a value's position, counting occurrences, and extending it by another list, which comes to the same thing as adding the two - where the position method raises an error on a missing value while the string one returns minus one",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.list.list",
+        "python.string.string-methods",
+        "algo.string.index-of-search",
+        "js.array.sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 05. 리스트 다양한 함수들",
+          "start_line": 329,
+          "end_line": 340
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 05. 리스트 다양한 함수들",
+          "start_line": 390,
+          "end_line": 390
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 05. 리스트 다양한 함수들",
+          "start_line": 420,
+          "end_line": 425
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 05. 리스트 다양한 함수들",
+          "start_line": 442,
+          "end_line": 444
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny04.md",
+          "source_sha256": "46b833a6a202bfe74fdcf76dc45b742ffcd66b833c66f56baf1529999c0bb7ef",
+          "heading": "## 05. 리스트 다양한 함수들",
+          "start_line": 467,
+          "end_line": 467
+        }
+      ]
+    },
+    {
+      "concept_id": "python.tuple.tuple",
+      "title": "파이썬 튜플",
+      "aliases": [
+        "소괄호와 쉼표",
+        "값을 바꿀 수 없다",
+        "추가도 삭제도 수정도 불가"
+      ],
+      "canonical_path": "content/brain/knowledge/python/tuple/tuple-type.md",
+      "tags": [
+        "python",
+        "tuple"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure differing from the list in one respect that decides everything else - its contents cannot be changed after it is made, so it can be declared and read and nothing more, which is exactly why it is reached for where a value must not be altered",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.list.list",
+        "python.tuple.tuple-swap",
+        "python.dict.key-constraint",
+        "python.basic.data-structure-operations"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 01. 튜플 자료형이란?",
+          "start_line": 16,
+          "end_line": 20
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 01. 튜플 자료형이란?",
+          "start_line": 24,
+          "end_line": 27
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 01. 튜플 자료형이란?",
+          "start_line": 31,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "python.tuple.tuple-swap",
+      "title": "괄호 없는 튜플",
+      "aliases": [
+        "a, b = b, a",
+        "임시 변수 없이 교환",
+        "여러 값 반환"
+      ],
+      "canonical_path": "content/brain/knowledge/python/tuple/tuple-swap.md",
+      "tags": [
+        "python",
+        "tuple"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single idiom that follows from the parentheses being optional - two names on each side of the assignment are two tuples, so a swap needs no temporary variable, and a function returning two values is returning one tuple",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.tuple.tuple",
+        "python.variable.reference-semantics",
+        "js.basic.return"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 03. 튜플 응용",
+          "start_line": 109,
+          "end_line": 109
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 03. 튜플 응용",
+          "start_line": 128,
+          "end_line": 128
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 03. 튜플 응용",
+          "start_line": 142,
+          "end_line": 142
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 03. 튜플 응용",
+          "start_line": 146,
+          "end_line": 146
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny05.md",
+          "source_sha256": "83b19ef504c02b12686720b552f1b186ea44e04ecd7fc832b0d9b89067abaadf",
+          "heading": "## 03. 튜플 응용",
+          "start_line": 157,
+          "end_line": 157
+        }
+      ]
+    },
+    {
+      "concept_id": "python.dict.dictionary",
+      "title": "딕셔너리",
+      "aliases": [
+        "연관 배열",
+        "키로 값을 찾는다",
+        "순차적으로 탐색하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/python/dict/dictionary.md",
+      "tags": [
+        "python",
+        "dict"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure of key and value pairs, also called an associative array or a hash, which unlike the ordered structures is not walked through to find something - the key alone reaches the value - and which is therefore indexed by key rather than by position",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.list.list",
+        "python.dict.key-constraint",
+        "java.collection.hash-map",
+        "js.data.object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 01. 딕셔너리 자료형이란?",
+          "start_line": 16,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 01. 딕셔너리 자료형이란?",
+          "start_line": 22,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "concept_id": "python.dict.key-constraint",
+      "title": "딕셔너리 키의 제약",
+      "aliases": [
+        "키가 중복되면 하나만 남는다",
+        "변하는 값은 키가 될 수 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/python/dict/key-constraint.md",
+      "tags": [
+        "python",
+        "dict"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of restrictions following from the key being what finds the value - a repeated key keeps only one of its values, and a key must be something that cannot change, which admits the immutable sequence type and excludes the mutable one",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.dict.dictionary",
+        "python.tuple.tuple",
+        "python.variable.reference-semantics"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 03. 딕셔너리 응용",
+          "start_line": 106,
+          "end_line": 110
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 03. 딕셔너리 응용",
+          "start_line": 121,
+          "end_line": 123
+        }
+      ]
+    },
+    {
+      "concept_id": "python.dict.dict-methods",
+      "title": "딕셔너리 함수들",
+      "aliases": [
+        "keys values items",
+        "get은 없으면 None",
+        "dict_keys 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/python/dict/dict-methods.md",
+      "tags": [
+        "python",
+        "dict"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of methods returning views rather than lists - the keys, the values, and the pairs as tuples, which are cheaper than building a list and are what a loop iterates over - alongside clearing, membership testing, and the safe read that answers with nothing, or with a chosen default, where a direct read would raise",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.dict.dictionary",
+        "python.tuple.tuple",
+        "python.control.for-loop",
+        "python.bool.bool"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 04. 딕셔너리 다양한 함수",
+          "start_line": 142,
+          "end_line": 153
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 04. 딕셔너리 다양한 함수",
+          "start_line": 159,
+          "end_line": 159
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 04. 딕셔너리 다양한 함수",
+          "start_line": 175,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 04. 딕셔너리 다양한 함수",
+          "start_line": 189,
+          "end_line": 189
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 04. 딕셔너리 다양한 함수",
+          "start_line": 251,
+          "end_line": 253
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 04. 딕셔너리 다양한 함수",
+          "start_line": 264,
+          "end_line": 264
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny06.md",
+          "source_sha256": "36dfc6ae0f71b0d0e007e744171de9527fe8c46e3ab76a92e379bca64f907f7e",
+          "heading": "## 04. 딕셔너리 다양한 함수",
+          "start_line": 277,
+          "end_line": 277
+        }
+      ]
+    },
+    {
+      "concept_id": "python.set.set",
+      "title": "파이썬 집합",
+      "aliases": [
+        "중복을 허용하지 않는다",
+        "순서가 없다",
+        "빈 집합은 set()"
+      ],
+      "canonical_path": "content/brain/knowledge/python/set/set-type.md",
+      "tags": [
+        "python",
+        "set"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure defined by two absences - no duplicates and no order - which is why it cannot be indexed and why the empty one must be made with the constructor, the braces belonging to the dictionary",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.dict.dictionary",
+        "python.set.set-operation",
+        "python.set.dedup-use",
+        "java.collection.set-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 01. 집합 자료형이란?",
+          "start_line": 16,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 01. 집합 자료형이란?",
+          "start_line": 25,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 02. 집합 다루기",
+          "start_line": 46,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 02. 집합 다루기",
+          "start_line": 50,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "concept_id": "python.set.set-operation",
+      "title": "집합 연산",
+      "aliases": [
+        "교집합과 합집합",
+        "차집합",
+        "대칭차집합"
+      ],
+      "canonical_path": "content/brain/knowledge/python/set/set-operation.md",
+      "tags": [
+        "python",
+        "set"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of four operations written either as an operator or as a method - what is in both, what is in either, what is in the first only, and what is in either but not both",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.set.set",
+        "db.sql.union",
+        "python.set.dedup-use"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 02. 집합 다루기",
+          "start_line": 95,
+          "end_line": 97
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 02. 집합 다루기",
+          "start_line": 113,
+          "end_line": 115
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 02. 집합 다루기",
+          "start_line": 131,
+          "end_line": 133
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 02. 집합 다루기",
+          "start_line": 149,
+          "end_line": 151
+        }
+      ]
+    },
+    {
+      "concept_id": "python.set.dedup-use",
+      "title": "집합을 중복 제거 필터로",
+      "aliases": [
+        "리스트를 집합으로 바꿨다가 되돌리기"
+      ],
+      "canonical_path": "content/brain/knowledge/python/set/dedup-use.md",
+      "tags": [
+        "python",
+        "set"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single use the no-duplicates property is most often put to - a list with repeats is converted to a set and back, which removes them without writing any comparison",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "python.set.set",
+        "python.list.list",
+        "db.sql.distinct"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny07.md",
+          "source_sha256": "9059884f7d56548ae9bbe8a4a71a500768ac960131c211adc03a5b4ee121d7ad",
+          "heading": "## 04. 집합 응용",
+          "start_line": 220,
+          "end_line": 220
+        }
+      ]
+    },
+    {
+      "concept_id": "python.bool.bool",
+      "title": "불 자료형과 참 거짓 판정",
+      "aliases": [
+        "비어있으면 거짓",
+        "None은 거짓",
+        "NoneType의 유일한 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/python/bool/bool-type.md",
+      "tags": [
+        "python",
+        "bool"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of truth values, together with the rule that any other value can stand in for one - a string, list, tuple, dictionary or set counts as false when empty and true otherwise, zero is false, and the single object of the null type is false",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.truthy-falsy",
+        "python.control.if-statement",
+        "python.basic.dynamic-typing",
+        "db.constraint.null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny08.md",
+          "source_sha256": "b524a36803529ec476e9964189466c2a641bb1febf4579772887ff6cf0c01080",
+          "heading": "## 01. 불 자료형이란?",
+          "start_line": 16,
+          "end_line": 20
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny08.md",
+          "source_sha256": "b524a36803529ec476e9964189466c2a641bb1febf4579772887ff6cf0c01080",
+          "heading": "## 01. 불 자료형이란?",
+          "start_line": 24,
+          "end_line": 32
+        }
+      ]
+    },
+    {
+      "concept_id": "python.variable.reference-semantics",
+      "title": "변수는 객체의 주소를 가리킨다",
+      "aliases": [
+        "대입은 주소를 복사한다",
+        "is는 같은 객체인지 묻는다"
+      ],
+      "canonical_path": "content/brain/knowledge/python/variable/reference-semantics.md",
+      "tags": [
+        "python",
+        "variable"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single fact about assignment that explains a whole class of surprises - everything is an object and a variable holds where that object is, not the object, so assigning one variable to another makes both point at the same thing and a change through one is visible through the other",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.variable.copy",
+        "python.control.equality-vs-identity",
+        "java.type.reference-type",
+        "python.dict.key-constraint"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 01. 변수의 정확한 의미",
+          "start_line": 16,
+          "end_line": 20
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 01. 변수의 정확한 의미",
+          "start_line": 35,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 01. 변수의 정확한 의미",
+          "start_line": 47,
+          "end_line": 47
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 01. 변수의 정확한 의미",
+          "start_line": 66,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "python.variable.copy",
+      "title": "값만 복사하기",
+      "aliases": [
+        "전체 슬라이스",
+        "copy 모듈",
+        "copy() 함수"
+      ],
+      "canonical_path": "content/brain/knowledge/python/variable/copy.md",
+      "tags": [
+        "python",
+        "variable"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of ways to get a new object holding the same values rather than another name for the old one - slicing the whole thing, the copy module, or the method on the list - with identity comparison the way to check which of the two happened",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.variable.reference-semantics",
+        "python.control.equality-vs-identity",
+        "java.io.deep-copy-serialization"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 02. 변수 다루기 응용",
+          "start_line": 74,
+          "end_line": 74
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 02. 변수 다루기 응용",
+          "start_line": 78,
+          "end_line": 78
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 02. 변수 다루기 응용",
+          "start_line": 101,
+          "end_line": 101
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 02. 변수 다루기 응용",
+          "start_line": 125,
+          "end_line": 125
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny09.md",
+          "source_sha256": "bd7071ab9c72e1978d4da82edec8363dd541aab5169b5cd53d8d957673f57fc7",
+          "heading": "## 02. 변수 다루기 응용",
+          "start_line": 141,
+          "end_line": 141
+        }
+      ]
+    },
+    {
+      "concept_id": "python.control.if-statement",
+      "title": "파이썬 조건문",
+      "aliases": [
+        "콜론과 들여쓰기",
+        "중괄호가 없다",
+        "탭이냐 공백이냐"
+      ],
+      "canonical_path": "content/brain/knowledge/python/control/if-statement.md",
+      "tags": [
+        "python",
+        "control"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single branching form whose block is marked by a colon and the indentation that follows rather than by braces, which makes the indentation part of the syntax and its style - tab or spaces - a question the community has an answer to",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.bool.bool",
+        "python.control.conditional-expression",
+        "js.basic.if-else",
+        "python.control.membership-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 01. 조건문 (if문)",
+          "start_line": 16,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 01. 조건문 (if문)",
+          "start_line": 33,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 01. 조건문 (if문)",
+          "start_line": 37,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "python.control.equality-vs-identity",
+      "title": "== 와 is",
+      "aliases": [
+        "값 비교와 객체 비교",
+        "값은 같은데 객체가 다른 경우"
+      ],
+      "canonical_path": "content/brain/knowledge/python/control/equality-vs-identity.md",
+      "tags": [
+        "python",
+        "control"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between asking whether two things hold the same value and asking whether they are the same object - which come apart exactly when two separate objects were built from the same contents",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.variable.reference-semantics",
+        "python.variable.copy",
+        "java.type.string-constant-pool",
+        "js.basic.comparison-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 02. value와 data type 비교",
+          "start_line": 44,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 02. value와 data type 비교",
+          "start_line": 116,
+          "end_line": 116
+        }
+      ]
+    },
+    {
+      "concept_id": "python.control.conditional-expression",
+      "title": "조건부 표현식",
+      "aliases": [
+        "삼항연산자",
+        "참값 if 조건 else 거짓값"
+      ],
+      "canonical_path": "content/brain/knowledge/python/control/conditional-expression.md",
+      "tags": [
+        "python",
+        "control"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single one-line form of a branch, written with the value first and the condition in the middle rather than in the question-mark form other languages use - readable enough as english, but not worth nesting, since a second condition is clearer as a full statement",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.control.if-statement",
+        "js.basic.if-else"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 02. 조건부 표현식 (삼항연산자)",
+          "start_line": 142,
+          "end_line": 146
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 02. 조건부 표현식 (삼항연산자)",
+          "start_line": 171,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 02. 조건부 표현식 (삼항연산자)",
+          "start_line": 208,
+          "end_line": 208
+        }
+      ]
+    },
+    {
+      "concept_id": "python.control.membership-operator",
+      "title": "in과 not in",
+      "aliases": [
+        "안에 있는지 묻는 조건",
+        "pass"
+      ],
+      "canonical_path": "content/brain/knowledge/python/control/membership-operator.md",
+      "tags": [
+        "python",
+        "control"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operator asking whether a value occurs inside a string, list or tuple, which is a condition in its own right - and the placeholder statement for a branch that is to do nothing",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.control.if-statement",
+        "python.dict.dict-methods",
+        "python.set.set"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 03. 특이한 조건문",
+          "start_line": 216,
+          "end_line": 224
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny10.md",
+          "source_sha256": "9dc9321627fab04d02423e43b2be33570a94c9917bf28b57655166db2cff31f8",
+          "heading": "## 03. 특이한 조건문",
+          "start_line": 251,
+          "end_line": 251
+        }
+      ]
+    },
+    {
+      "concept_id": "python.control.for-loop",
+      "title": "파이썬 for문",
+      "aliases": [
+        "반복 가능한 것을 순회",
+        "continue"
+      ],
+      "canonical_path": "content/brain/knowledge/python/control/for-loop.md",
+      "tags": [
+        "python",
+        "control"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single loop that walks whatever can be iterated - a list, a tuple, a string or a range - rather than counting an index, with the statement that skips the rest of the body and goes on to the next round",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "python.control.range",
+        "python.control.list-comprehension",
+        "js.basic.for-in",
+        "python.list.list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 01. for문 기본 구조",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 01. for문 기본 구조",
+          "start_line": 26,
+          "end_line": 26
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 01. for문 기본 구조",
+          "start_line": 33,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 01. for문 기본 구조",
+          "start_line": 91,
+          "end_line": 93
+        }
+      ]
+    },
+    {
+      "concept_id": "python.control.range",
+      "title": "range()",
+      "aliases": [
+        "시작 이상 끝 미만",
+        "range 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/python/control/range.md",
+      "tags": [
+        "python",
+        "control"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object standing for a run of numbers from the first argument up to but not including the second, one argument meaning from zero - which is what a loop counts over when there is nothing to walk",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.control.for-loop",
+        "python.string.index-slicing",
+        "python.control.list-comprehension"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 02. for문과 range 함수",
+          "start_line": 110,
+          "end_line": 114
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 02. for문과 range 함수",
+          "start_line": 129,
+          "end_line": 129
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 02. for문과 range 함수",
+          "start_line": 142,
+          "end_line": 142
+        }
+      ]
+    },
+    {
+      "concept_id": "python.control.list-comprehension",
+      "title": "리스트 내포",
+      "aliases": [
+        "표현식 for 항목 in 반복가능객체",
+        "조건문 포함 내포"
+      ],
+      "canonical_path": "content/brain/knowledge/python/control/list-comprehension.md",
+      "tags": [
+        "python",
+        "control"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single form writing a loop inside the brackets that build a list - an expression, the loop over something iterable, and optionally a condition filtering it - which replaces declaring an empty list and appending to it in a loop",
+      "pilot_strata": [
+        "lecture-batch-55",
+        "pl/funny-python",
+        "python-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "python.control.for-loop",
+        "python.list.list",
+        "js.array.map",
+        "python.control.range"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 03. 리스트 안에 for문 넣기 (리스트 내포)",
+          "start_line": 165,
+          "end_line": 165
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 03. 리스트 안에 for문 넣기 (리스트 내포)",
+          "start_line": 169,
+          "end_line": 169
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 03. 리스트 안에 for문 넣기 (리스트 내포)",
+          "start_line": 198,
+          "end_line": 198
+        },
+        {
+          "path": "content/brain/lectures/pl/funny-python/funny11.md",
+          "source_sha256": "f248296b3244a4c06a622d598e2ce82267291bfa8f7cbaa72edbb92d740f3ce9",
+          "heading": "## 03. 리스트 안에 for문 넣기 (리스트 내포)",
+          "start_line": 211,
+          "end_line": 211
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

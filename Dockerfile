@@ -1,10 +1,17 @@
-FROM alpine:3.16
+FROM node:22-slim AS builder
 
-RUN apk add --no-cache go hugo git make perl
-RUN go install github.com/jackyzha0/hugo-obsidian@latest
-ENV PATH="/root/go/bin:$PATH"
-RUN git clone https://github.com/jackyzha0/quartz.git /quartz
+# install git to install plugins
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /quartz
+WORKDIR /usr/src/app
+COPY package.json .
+COPY package-lock.json* .
+COPY quartz/ ./quartz/
+COPY quartz.lock.json .
+RUN npm ci; npx quartz plugin install
 
-CMD ["make", "serve"]
+FROM node:22-slim
+WORKDIR /usr/src/app
+COPY --from=builder /usr/src/app/ /usr/src/app/
+COPY . .
+CMD ["npx", "quartz", "build", "--serve"]

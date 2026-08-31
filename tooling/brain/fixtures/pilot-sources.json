@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "pilot_id": "pilot-20260812",
+  "candidates": [
+    {
+      "concept_id": "java.oop.inheritance",
+      "title": "상속",
+      "aliases": ["Inheritance", "클래스 상속"],
+      "canonical_path": "content/brain/knowledge/java/oop/inheritance.md",
+      "tags": ["java", "oop"],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented language mechanism",
+      "pilot_strata": ["high-density", "do-it-java/chap08"],
+      "related_concepts": ["java.oop.method-overriding", "java.oop.polymorphism"],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 상속이란?",
+          "start_line": 17,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.method-overriding",
+      "title": "메서드 오버라이딩",
+      "aliases": ["Method Overriding", "메서드 재정의"],
+      "canonical_path": "content/brain/knowledge/java/oop/method-overriding.md",
+      "tags": ["java", "oop"],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented method-redefinition mechanism",
+      "pilot_strata": ["high-density", "do-it-java/chap08"],
+      "related_concepts": ["java.oop.inheritance", "java.oop.virtual-method"],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 메서드 오버라이딩",
+          "start_line": 443,
+          "end_line": 459
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.virtual-method",
+      "title": "가상 메서드",
+      "aliases": ["Virtual Method"],
+      "canonical_path": "content/brain/knowledge/java/oop/virtual-method.md",
+      "tags": ["java", "oop"],
+      "proposal_kind": "create",
+      "concept_granularity": "runtime method-selection mechanism",
+      "pilot_strata": ["high-density", "do-it-java/chap08"],
+      "related_concepts": ["java.oop.method-overriding", "java.oop.polymorphism"],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 메서드 오버라이딩 > ### 묵시적 클래스 형 변환과 메서드 재정의",
+          "start_line": 502,
+          "end_line": 532
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.polymorphism",
+      "title": "다형성",
+      "aliases": ["Polymorphism"],
+      "canonical_path": "content/brain/knowledge/java/oop/polymorphism.md",
+      "tags": ["java", "oop"],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented design property",
+      "pilot_strata": ["high-density", "do-it-java/chap08"],
+      "related_concepts": ["java.oop.inheritance", "java.oop.virtual-method"],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 다형성",
+          "start_line": 660,
+          "end_line": 671
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.information.information-quantity",
+      "title": "정보량",
+      "aliases": ["Information Quantity", "자기정보량"],
+      "canonical_path": "content/brain/knowledge/cs/information/information-quantity.md",
+      "tags": ["cs", "information"],
+      "proposal_kind": "create",
+      "concept_granularity": "single information-theory measure",
+      "pilot_strata": ["high-density", "dinosaur/chap01"],
+      "related_concepts": [],
+      "locators": [
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 주니온 강의 > ### 컴퓨터, 정보 기초",
+          "start_line": 26,
+          "end_line": 41
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.architecture.von-neumann-architecture",
+      "title": "폰 노이만 아키텍처",
+      "aliases": ["Von Neumann Architecture", "내장형 프로그램 컴퓨터"],
+      "canonical_path": "content/brain/knowledge/cs/architecture/von-neumann-architecture.md",
+      "tags": ["cs", "architecture"],
+      "proposal_kind": "create",
+      "concept_granularity": "single stored-program architecture model",
+      "pilot_strata": ["high-density", "dinosaur/chap01"],
+      "related_concepts": ["cross-domain.program"],
+      "locators": [
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 주니온 강의 > ### 폰 노이만",
+          "start_line": 85,
+          "end_line": 92
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.operating-system",
+      "title": "운영체제",
+      "aliases": ["Operating System", "OS"],
+      "canonical_path": "content/brain/knowledge/cs/os/operating-system.md",
+      "tags": ["cs", "os"],
+      "proposal_kind": "create",
+      "concept_granularity": "single system-software concept",
+      "pilot_strata": ["high-density", "dinosaur/chap01"],
+      "related_concepts": ["cs.architecture.system-bus", "cross-domain.program"],
+      "locators": [
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 공룡책",
+          "start_line": 115,
+          "end_line": 119
+        },
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 공룡책 > ### 운영체제가 할 일",
+          "start_line": 195,
+          "end_line": 206
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.architecture.system-bus",
+      "title": "시스템 버스",
+      "aliases": ["System Bus"],
+      "canonical_path": "content/brain/knowledge/cs/architecture/system-bus.md",
+      "tags": ["cs", "architecture"],
+      "proposal_kind": "create",
+      "concept_granularity": "single computer interconnect concept",
+      "pilot_strata": ["high-density", "dinosaur/chap01"],
+      "related_concepts": ["cs.os.operating-system"],
+      "locators": [
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 공룡책 > ### 컴퓨터 시스템의 구성",
+          "start_line": 253,
+          "end_line": 254
+        }
+      ]
+    },
+    {
+      "concept_id": "software.api.api",
+      "title": "API",
+      "aliases": ["Application Programming Interface", "응용 프로그램 인터페이스"],
+      "canonical_path": "content/brain/knowledge/software/api/application-programming-interface.md",
+      "tags": ["software", "api"],
+      "proposal_kind": "create",
+      "concept_granularity": "single software interface concept",
+      "pilot_strata": ["api-rest-duplicate-merge"],
+      "related_concepts": ["cross-domain.program"],
+      "locators": [
+        {
+          "path": "content/brain/notes/Common/API.md",
+          "source_sha256": "0e3cc6337eec13065e5ad494f64720a7c522bc79b237065544b233afd94fa7e5",
+          "heading": "unheaded-body",
+          "start_line": 10,
+          "end_line": 14
+        }
+      ]
+    },
+    {
+      "concept_id": "java.memory.garbage-collection",
+      "title": "가비지 컬렉션",
+      "aliases": ["Garbage Collection", "자동 메모리 관리"],
+      "canonical_path": "content/brain/knowledge/java/memory/garbage-collection.md",
+      "tags": ["java", "memory"],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for one automatic memory-management mechanism",
+      "pilot_strata": ["source-backed-stub"],
+      "related_concepts": [],
+      "locators": [
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 27,
+          "end_line": 30
+        }
+      ]
+    },
+    {
+      "concept_id": "cross-domain.program",
+      "title": "프로그램",
+      "aliases": ["Program"],
+      "canonical_path": "content/brain/knowledge/cross-domain/program.md",
+      "tags": ["cross-domain"],
+      "proposal_kind": "merge",
+      "concept_granularity": "cross-domain definition shared by operating-system and API notes",
+      "pilot_strata": ["cross-domain"],
+      "related_concepts": [
+        "cs.architecture.von-neumann-architecture",
+        "cs.os.operating-system",
+        "software.api.api"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 주니온 강의 > ### 프로그램",
+          "start_line": 97,
+          "end_line": 100
+        },
+        {
+          "path": "content/brain/notes/Common/API.md",
+          "source_sha256": "0e3cc6337eec13065e5ad494f64720a7c522bc79b237065544b233afd94fa7e5",
+          "heading": "unheaded-body",
+          "start_line": 21,
+          "end_line": 22
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "software.api.rest-api",
+      "title": "REST API",
+      "aliases": ["RESTful API"],
+      "proposal_kind_considered": "merge",
+      "duplicate_decision": "rejected-duplicate-merge-candidate",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "RESTAPI.md and RESTfulAPI.md contain only YAML frontmatter titles and no body-backed substantive assertion; frontmatter-only metadata is insufficient accepted proposal evidence.",
+      "pilot_strata": ["api-rest-duplicate-merge", "deliberately-rejected-frontmatter-only-merge"],
+      "sources": [
+        {
+          "path": "content/brain/notes/Common/RESTAPI.md",
+          "source_sha256": "73e424c92491ca9d6e27000045e406d8981afebb648edcbd510bc669df5791d5"
+        },
+        {
+          "path": "content/brain/notes/Common/RESTfulAPI.md",
+          "source_sha256": "4bfe6efa4efecf399eb2737c871e15bd5cf60ecfd39028ef18b8c5f55fec43c8"
+        }
+      ]
+    },
+    {
+      "concept_id": "software.framework-library-difference",
+      "title": "프레임워크와 라이브러리의 차이",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "The raw notes contain frontmatter titles only and no source-backed assertion about either concept or their difference.",
+      "pilot_strata": ["deliberately-rejected-insufficient-evidence-stub"],
+      "sources": [
+        {
+          "path": "content/brain/notes/Common/Framework.md",
+          "source_sha256": "16b1361a71138c948092c4cc9a8e88d2e152a430353ad3265bcd3d00285fc00b"
+        },
+        {
+          "path": "content/brain/notes/Common/Library.md",
+          "source_sha256": "bf77ca3c78a8e58890077141279436eb4ccb72cc26c562d34af500e83131b6c8"
+        }
+      ]
+    }
+  ]
+}

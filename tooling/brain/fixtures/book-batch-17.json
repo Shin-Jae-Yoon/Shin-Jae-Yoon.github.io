@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-17",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-16",
+    "applied_state": "417 approved knowledge concepts after book-batch-16 covered chap14 L7-277."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap14.md",
+    "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+    "line_range": "L278-L473",
+    "covered_scopes": "heading scopes 11-20 (## 스트림 처리 디자인 패턴 through ### 인터랙티브 쿼리)",
+    "deferred_range": "L474-L995, reserved for book-batch-18"
+  },
+  "back_edge_note": {
+    "context": "book-batch-16 had to retarget seven related_concepts edges that pointed forward at concepts reserved for this batch; the engine resolves an edge only against a concept that already exists or is in the same batch.",
+    "resolution": "Those relations are restored here as back edges - multi-stage-repartition points at topology, windowed-join at time-window, out-of-order-event at window-grace-period, and so on - so the pairs end up connected without reopening the batch-16 documents."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 17 touches, so U3 must confirm it relates rather than restates.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 17,
+  "candidates": [
+    {
+      "concept_id": "kafka.stream.map-filter-pattern",
+      "title": "맵/필터 패턴",
+      "aliases": ["Map/Filter Pattern", "단일 이벤트 처리", "무상태 처리"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/map-filter-pattern.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single simplest stream pattern handling each event on its own to drop or transform it, needing no state and therefore no recovery, so failover and load balancing are trivial and a plain producer and consumer suffice",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.stream-processing",
+        "kafka.stream.state",
+        "kafka.connect.smt"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 단일 이벤트 처리",
+          "start_line": 284,
+          "end_line": 292
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.local-state-aggregation",
+      "title": "로컬 상태를 사용한 집계",
+      "aliases": ["그룹별 집계", "파티셔너로 항목 고정", "부분 집합 상태"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/local-state-aggregation.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern making group-wise aggregation possible without shared state, by partitioning so every event for one key lands on one partition and each instance keeps state only for the keys it owns",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.local-state",
+        "kafka.message.message-key",
+        "kafka.topic.partition",
+        "kafka.stream.multi-stage-repartition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 로컬 상태와 스트림 처리",
+          "start_line": 298,
+          "end_line": 304
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.local-state-memory",
+      "title": "로컬 상태의 메모리 제약",
+      "aliases": ["디스크 저장 시 성능 저하", "인스턴스 메모리 한계"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/local-state-memory.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single constraint that local state ideally fits in the instance's memory, since spilling it to disk costs significant performance even where the store supports it",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": ["kafka.stream.local-state", "kafka.stream.local-state-aggregation"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 로컬 상태와 스트림 처리",
+          "start_line": 312,
+          "end_line": 312
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.local-state-persistence",
+      "title": "로컬 상태의 영속성",
+      "aliases": ["RocksDB", "상태 변경의 토픽 백업", "로그 압착으로 복구 보장"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/local-state-persistence.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single durability arrangement in which the embedded store keeps state in memory and on disk while every change is also written to a Kafka topic, so a lost node rebuilds its state by replaying that topic, which log compaction keeps bounded",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.local-state",
+        "kafka.retention.log-compaction",
+        "kafka.stream.local-state-rebalance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 로컬 상태와 스트림 처리",
+          "start_line": 318,
+          "end_line": 324
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 로컬 상태와 스트림 처리",
+          "start_line": 334,
+          "end_line": 336
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.local-state-rebalance",
+      "title": "리밸런싱과 로컬 상태",
+      "aliases": ["파티션 상실 시 상태 저장", "재할당 이전 상태 복구"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/local-state-rebalance.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single handover obligation in which the instance losing a partition must persist its last state so whichever instance receives that partition can restore it",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.stream.local-state-persistence",
+        "kafka.reliability.rebalance-commit",
+        "kafka.client.consumer-rebalance-frequency"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 로컬 상태와 스트림 처리",
+          "start_line": 330,
+          "end_line": 330
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.multi-stage-repartition",
+      "title": "다단계 처리와 리파티셔닝",
+      "aliases": ["Repartitioning", "단일 파티션 토픽으로 집약", "맵리듀스식 단계"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/multi-stage-repartition.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern for results needing all the data: each instance aggregates locally, writes to a single-partition topic small enough for one instance to reduce, and the framework hides which worker runs which stage",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.topology",
+        "kafka.stream.local-state-aggregation",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 다단계 처리/리파티셔닝",
+          "start_line": 342,
+          "end_line": 348
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.external-lookup-cost",
+      "title": "외부 검색의 비용",
+      "aliases": ["External Lookup", "스트림과 DB의 처리율 격차", "캐시 필요성"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/external-lookup-cost.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single cost of enriching events by querying an outside store - milliseconds per record and a throughput gap of roughly ten to one against the stream - which forces the data to be cached inside the application",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.external-state",
+        "kafka.stream.cdc",
+        "kafka.stream.stream-table-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 스트림-테이블 조인",
+          "start_line": 354,
+          "end_line": 360
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.cdc",
+      "title": "변경 데이터 캡처",
+      "aliases": ["CDC", "Change Data Capture", "테이블 변경의 이벤트 스트림화"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/cdc.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique of receiving a database's changes as an event stream, which Connect's connectors provide so an application can hold its own copy of a table and update it as the source changes, without loading the database or its other clients",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.table-to-stream",
+        "kafka.connect.kafka-connect",
+        "kafka.transaction.outbox-pattern"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 스트림-테이블 조인",
+          "start_line": 366,
+          "end_line": 370
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream-table-join",
+      "title": "스트림-테이블 조인",
+      "aliases": ["Stream-Table Join", "캐시된 테이블에 대한 조인"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/stream-table-join.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single join in which one side is a stream of changes to a locally cached table",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.stream.cdc",
+        "kafka.stream.external-lookup-cost",
+        "kafka.stream.stream-table-duality"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 스트림-테이블 조인",
+          "start_line": 376,
+          "end_line": 376
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.table-table-join",
+      "title": "테이블-테이블 조인",
+      "aliases": ["Table-Table Join", "동등 조인", "외래 키 조인"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/table-table-join.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single unwindowed join over both tables' current state, an equi-join when the two are partitioned the same way so the work spreads across instances, with foreign-key joins also supported",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.stream-table-join",
+        "kafka.stream.windowed-join",
+        "kafka.stream.stream-to-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 테이블-테이블 조인",
+          "start_line": 382,
+          "end_line": 386
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.windowed-join",
+      "title": "윈도우 조인",
+      "aliases": ["Windowed Join", "스트리밍 조인", "조인 윈도우 상태 저장소"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/windowed-join.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single join of two unbounded streams matching events that share a key within the same time window, which Kafka Streams supports when both are partitioned on the join key by assigning matching partitions to one task and holding the join window in its state store",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.time-window",
+        "kafka.stream.table-table-join",
+        "kafka.stream.local-state-persistence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 스트리밍 조인(윈도우 조인)",
+          "start_line": 392,
+          "end_line": 396
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.out-of-order-event",
+      "title": "비순차 이벤트",
+      "aliases": ["Out-of-Order Event", "지연 도착 이벤트", "순서 복구 시간 영역"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/out-of-order-event.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single problem of events arriving late - common when a disconnected device reconnects and dumps hours of backlog - requiring the application to notice the event is old, bound how far back it will reconcile, reprocess within one running process rather than rerunning a batch, and be able to amend a result it has already emitted",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.window-grace-period",
+        "kafka.stream.event-time",
+        "kafka.stream.out-of-order-framework-support"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 비순차 이벤트",
+          "start_line": 402,
+          "end_line": 402
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 비순차 이벤트",
+          "start_line": 408,
+          "end_line": 414
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.out-of-order-framework-support",
+      "title": "비순차 이벤트의 프레임워크 지원",
+      "aliases": ["처리 시간과 독립된 이벤트 시간", "집계 윈도우 유지 기간"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/out-of-order-framework-support.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single framework capability keeping event time independent of processing time and holding several aggregation windows mutable in local state, where a longer mutable period costs proportionally more memory",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.out-of-order-event",
+        "kafka.stream.processing-time",
+        "kafka.stream.local-state-memory"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 비순차 이벤트",
+          "start_line": 420,
+          "end_line": 422
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.out-of-order-result-update",
+      "title": "지연 이벤트로 인한 결과 갱신",
+      "aliases": ["압착 토픽에 결과 덮어쓰기", "새 집계값으로 대체"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/out-of-order-result-update.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single amendment mechanism in which aggregation results go to a compacted topic keeping only the newest value per key, so a late event is absorbed by writing the window's new result over the old one",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.stream.out-of-order-event",
+        "kafka.retention.log-compaction",
+        "kafka.stream.window-grace-period"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 비순차 이벤트",
+          "start_line": 428,
+          "end_line": 428
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.reprocessing-new-version",
+      "title": "신버전 병행 재처리",
+      "aliases": ["새 컨슈머 그룹으로 재처리", "두 결과 스트림 비교"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/reprocessing-new-version.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single reprocessing strategy running the new version in its own consumer group from the first offset, producing a second result stream to compare against the old one before clients are switched over",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.reprocessing-reset",
+        "kafka.config.group-id",
+        "kafka.config.auto-offset-reset",
+        "kafka.stream.replayability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 재처리하기",
+          "start_line": 436,
+          "end_line": 450
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.reprocessing-reset",
+      "title": "초기화 후 재처리",
+      "aliases": ["기존 애플리케이션 초기화", "로컬 상태와 출력 스트림 삭제"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/reprocessing-reset.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single reprocessing strategy rewinding the existing application to the start and clearing its local state and previous output so the two versions' results cannot mix, riskier than running the new version alongside the old",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.reprocessing-new-version",
+        "kafka.adminclient.stateful-offset-reset",
+        "kafka.stream.local-state-persistence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 재처리하기",
+          "start_line": 456,
+          "end_line": 460
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.interactive-query",
+      "title": "인터랙티브 쿼리",
+      "aliases": ["Interactive Query", "상태 저장소 직접 조회"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/interactive-query.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single access path reading the application's distributed state directly instead of consuming the result topic, faster and simpler when the result is a table and the result stream is only its update log",
+      "pilot_strata": ["book-batch-17", "kafka/chap14", "stream-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.stream.local-state",
+        "kafka.stream.stream-table-duality",
+        "kafka.adminclient.describe-configs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 인터랙티브 쿼리",
+          "start_line": 466,
+          "end_line": 470
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap14-l0278",
+      "title": "chap14 스트림 처리 디자인 패턴 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap14 L278-279 `## 스트림 처리 디자인 패턴` carries only the heading and one blank line (span_sha256 540355e31ee551f225e73a7747ec889cb47ad631332a8501a4643a1ea68bc4f8; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false.",
+      "pilot_strata": ["book-batch-17", "scope-level-rejection-probe"],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4"
+        }
+      ],
+      "engine_substantive": false
+    }
+  ],
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L282, L308, L364, L374, L406, L418, L426, L434, L444, L454",
+        "reason_code": "numbered-sub-label",
+        "detail": "Bold numbering labels introducing the block that follows, whose content is carried by the cited span of the concept that owns it."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L278-473 contributes at least one cited locator. The one non-substantive scope is filed as a rejection probe."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": { "value": 73, "ceiling": 360, "satisfied": true },
+      "heading_scopes": { "value": 10, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 17, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

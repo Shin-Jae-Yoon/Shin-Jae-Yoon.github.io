@@ -1,0 +1,1221 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-21",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-20",
+    "applied_state": "485 approved knowledge concepts after lecture-batch-20 covered fun-java03."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+        "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215"
+      }
+    ],
+    "line_range": "L11-L470",
+    "series": "즐거운 자바 (fun-java) 4/11 — 객체지향 2/3, 전반부",
+    "deferred_range": "L473-L853 (상속부터 Object 메서드), reserved for lecture-batch-22"
+  },
+  "overlap_analysis": {
+    "finding": "The applied java.* set already carries the OOP vocabulary, so 9 of 24 candidates are updates.",
+    "disposition": "The 15 creates are what neither the book nor the earlier lecture files carried: the instance method as its own concept, default field values, the string constant pool, the String class, NullPointerException, the static pool, the static-context restriction, static blocks, class loading, abstraction, encapsulation, cohesion and coupling, method overloading, package naming and import."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7, L33-40, L55-69 partial, L136-138 partial, L144-149, L159-166, L307-312 partial, L316, L322-333, L380-393 partial, L409, L435-443",
+        "reason_code": "lecture-preamble-figure-or-carried-by-owner",
+        "detail": "The course link, code-listing captions, debugger walkthroughs, the desk and car analogies illustrating abstraction, and summary lines restating what the owning concept already cites."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L11-470 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 151,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 16,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 24,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "split_decision": {
+    "statement": "fun-java04 measures 241 prose lines over 26 scopes and yields roughly 40 candidates whole, which leaves no headroom under B5.",
+    "split_point": "L473, the ## 상속 boundary. Before it the file is about fields, static members, class loading and the OO qualities; after it, inheritance and the Object methods."
+  },
+  "alias_ownership_note": "The collision gate caught the bare word Coupling, already held by kafka.pipeline.coupling from book-batch-13 for source-to-destination coupling in a data pipeline. Neither domain owns the bare term, so the new OO concept keeps Cohesion and the Korean 응집도/결합도 and drops the English Coupling rather than taking it from the applied concept.",
+  "candidates_authored": 24,
+  "candidates": [
+    {
+      "concept_id": "java.oop.member-variable",
+      "title": "멤버 변수",
+      "aliases": [
+        "Member Variable",
+        "Instance Variable",
+        "인스턴스 변수",
+        "필드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/member-variable.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single class-declared state variable category stored per instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05-chap06",
+        "lecture-batch-21",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.memory.heap",
+        "java.oop.class",
+        "java.oop.instance",
+        "java.variable.scope",
+        "java.variable.static-variable",
+        "java.oop.field-default-value",
+        "java.oop.instance-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스 살펴보기 > ### 멤버 변수",
+          "start_line": 79,
+          "end_line": 94
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 멤버 변수 유효범위",
+          "start_line": 402,
+          "end_line": 407
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 25,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "concept_id": "java.variable.static-variable",
+      "title": "정적 변수",
+      "aliases": [
+        "Static Variable",
+        "Class Variable",
+        "클래스 변수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/variable/static-variable.md",
+      "tags": [
+        "java",
+        "variable"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single class-level variable category allocated once and shared across instances",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-21",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.method.static-method",
+        "java.oop.member-variable",
+        "java.pattern.singleton",
+        "java.variable.scope",
+        "java.runtime.static-pool",
+        "java.oop.static-block"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### 변수를 여러 클래스에서 공통으로 사용하려면?",
+          "start_line": 160,
+          "end_line": 180
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### static 변수의 정의와 사용 방법",
+          "start_line": 181,
+          "end_line": 266
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### 클래스 변수",
+          "start_line": 267,
+          "end_line": 292
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 정적 변수 유효범위",
+          "start_line": 412,
+          "end_line": 423
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 28,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.polymorphism",
+      "title": "다형성",
+      "aliases": [
+        "Polymorphism"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/polymorphism.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented design property",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap09-chap10",
+        "lecture-batch-21",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.virtual-method",
+        "java.oop.interface",
+        "java.pattern.template-method",
+        "java.oop.method-overloading"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 다형성",
+          "start_line": 660,
+          "end_line": 671
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 응용하기 > ### 클래스 설계하기",
+          "start_line": 426,
+          "end_line": 651
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 인터페이스 구현과 형 변환",
+          "start_line": 141,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스와 다형성 > ### 인터페이스와 다형성",
+          "start_line": 182,
+          "end_line": 318
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 다형성",
+          "start_line": 375,
+          "end_line": 376
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 다형성",
+          "start_line": 381,
+          "end_line": 383
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.package",
+      "title": "패키지",
+      "aliases": [
+        "Java Package",
+        "Package"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/package.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java namespace and class-grouping mechanism",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "low-evidence-scope",
+        "lecture-batch-21",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.language.package-naming",
+        "java.language.import"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스 살펴보기 > ### 패키지",
+          "start_line": 118,
+          "end_line": 136
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 패키지",
+          "start_line": 415,
+          "end_line": 416
+        }
+      ]
+    },
+    {
+      "concept_id": "java.memory.garbage-collection",
+      "title": "가비지 컬렉션",
+      "aliases": [
+        "Garbage Collection",
+        "자동 메모리 관리"
+      ],
+      "canonical_path": "content/brain/knowledge/java/memory/garbage-collection.md",
+      "tags": [
+        "java",
+        "memory"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single automatic Java heap-memory reclamation mechanism",
+      "pilot_strata": [
+        "source-backed-stub",
+        "book-batch-02",
+        "extends-applied-concept",
+        "do-it-java/chap05-chap06",
+        "lecture-batch-21",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.memory.heap",
+        "java.oop.instance",
+        "java.oop.member-variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 인스턴스와 힙 메모리",
+          "start_line": 471,
+          "end_line": 473
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 멤버 변수 유효범위",
+          "start_line": 408,
+          "end_line": 411
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 27,
+          "end_line": 30
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 총정리",
+          "start_line": 308,
+          "end_line": 308
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.object-collaboration",
+      "title": "객체 간 협력",
+      "aliases": [
+        "Object Collaboration",
+        "객체 협력"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/object-collaboration.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented interaction model assigning behavior to collaborating objects",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-21",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.method",
+        "java.oop.object",
+        "software.paradigm.object-oriented-programming",
+        "java.oop.cohesion-coupling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 객체 간 협력",
+          "start_line": 138,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 좋은 객체 vs 나쁜 객체",
+          "start_line": 366,
+          "end_line": 369
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.metaspace",
+      "title": "메타스페이스",
+      "aliases": [
+        "Metaspace",
+        "Native Memory",
+        "클래스 정보 영역"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/metaspace.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single native memory region holding the class information the JVM has loaded - the class itself, not any instance of it - and where the entry point is looked up before it runs",
+      "pilot_strata": [
+        "lecture-batch-20",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-21"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.jvm",
+        "java.runtime.classpath",
+        "java.entry-point.main-method",
+        "java.runtime.class-loading"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 메서드 > ### 메서드 실행 시 발생하는 일",
+          "start_line": 278,
+          "end_line": 280
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### JVM 메모리, 인스턴스 생성",
+          "start_line": 290,
+          "end_line": 290
+        }
+      ]
+    },
+    {
+      "concept_id": "java.variable.scope",
+      "title": "변수 유효 범위",
+      "aliases": [
+        "Variable Scope",
+        "지역 변수 유효범위",
+        "정적 변수 유효범위"
+      ],
+      "canonical_path": "content/brain/knowledge/java/variable/scope.md",
+      "tags": [
+        "java",
+        "variable"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java variable-lifetime and visibility model across local, instance, and static storage",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-21",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.memory.call-stack",
+        "java.memory.heap",
+        "java.oop.member-variable",
+        "java.variable.static-variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위",
+          "start_line": 386,
+          "end_line": 391
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 지역 변수 유효범위",
+          "start_line": 392,
+          "end_line": 401
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 변수 유형에 따른 용도",
+          "start_line": 424,
+          "end_line": 445
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 총정리",
+          "start_line": 312,
+          "end_line": 312
+        }
+      ]
+    },
+    {
+      "concept_id": "java.method.static-method",
+      "title": "정적 메서드",
+      "aliases": [
+        "Static Method",
+        "클래스 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/method/static-method.md",
+      "tags": [
+        "java",
+        "method"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java class-level method category callable without an instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-20",
+        "pl/fun-java",
+        "lecture-batch-21"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.method",
+        "java.variable.static-variable",
+        "java.util.math-class",
+        "java.oop.static-context-restriction",
+        "java.oop.instance-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### 클래스 메서드",
+          "start_line": 293,
+          "end_line": 385
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 클래스 > ### 클래스 다이어그램",
+          "start_line": 113,
+          "end_line": 115
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 메서드 > ### static 메서드",
+          "start_line": 227,
+          "end_line": 228
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 메서드 > ### static 메서드",
+          "start_line": 254,
+          "end_line": 256
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 총정리",
+          "start_line": 309,
+          "end_line": 311
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.instance-method",
+      "title": "인스턴스 메서드",
+      "aliases": [
+        "Instance Method",
+        "static이 붙지 않은 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/instance-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method without static, chosen whenever behaviour must differ per instance, and the default the lecture recommends over the class method",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.method.static-method",
+        "java.oop.method",
+        "java.oop.static-context-restriction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 클래스 메서드 vs 인스턴스 메서드",
+          "start_line": 15,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.field-default-value",
+      "title": "필드 기본 초기값",
+      "aliases": [
+        "Default Field Value",
+        "기본형 0 초기화",
+        "참조형 null 초기화"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/field-default-value.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single initialization rule for a field left unassigned: numeric primitives become zero, boolean becomes false, and a reference becomes null",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.member-variable",
+        "java.type.primitive-type",
+        "java.type.reference-type",
+        "java.exception.null-pointer-exception"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 42,
+          "end_line": 51
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 66,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.string-constant-pool",
+      "title": "String constant pool",
+      "aliases": [
+        "문자열 상수 풀",
+        "큰따옴표 리터럴 인스턴스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/string-constant-pool.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pool that lets a string be created without new, which is why quoting a literal is preferred over constructing one",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.language.literal",
+        "java.memory.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 116,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-class",
+      "title": "String 클래스",
+      "aliases": [
+        "java.lang.String",
+        "CharSequence",
+        "length()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-class.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single library class extending Object and implementing Serializable, CharSequence and Comparable, whose API documentation is the worked example for reading a method signature as parameters and return type",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.string-constant-pool",
+        "java.oop.interface",
+        "software.api.api",
+        "java.oop.method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### String Class",
+          "start_line": 130,
+          "end_line": 138
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.null-pointer-exception",
+      "title": "NullPointerException",
+      "aliases": [
+        "NPE",
+        "널 포인터 예외"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/null-pointer-exception.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure raised when a method is called through a reference that is null, which is what an uninitialized reference field holds",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.field-default-value",
+        "java.memory.object-reference",
+        "java.type.reference-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### NullPointerException",
+          "start_line": 150,
+          "end_line": 155
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.static-pool",
+      "title": "Static Pool",
+      "aliases": [
+        "정적 필드 저장 영역",
+        "클래스 로드 시 한 번 초기화"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/static-pool.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single region holding a class's static fields, filled once when the class loader loads the class and shared rather than duplicated per instance, which is why a static field is addressed through the class name",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.variable.static-variable",
+        "java.runtime.class-loading",
+        "java.runtime.metaspace",
+        "java.runtime.classpath"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드)",
+          "start_line": 172,
+          "end_line": 174
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드)",
+          "start_line": 215,
+          "end_line": 219
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.static-context-restriction",
+      "title": "정적 문맥에서의 인스턴스 접근 제약",
+      "aliases": [
+        "non-static cannot be referenced from a static context",
+        "메모리 생성 시점 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/static-context-restriction.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single restriction preventing a class method from touching instance fields or methods, because the class member exists before any instance does and the instance member only after one is on the heap",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.method.static-method",
+        "java.oop.instance-method",
+        "java.memory.heap",
+        "java.runtime.static-pool"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### non-static (중요)",
+          "start_line": 231,
+          "end_line": 244
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.static-block",
+      "title": "static 블록",
+      "aliases": [
+        "Static Initializer",
+        "정적 초기화 블록"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/static-block.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single block that initializes static fields at class-load time, and therefore runs before the entry point does",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.variable.static-variable",
+        "java.runtime.class-loading",
+        "java.entry-point.main-method",
+        "java.runtime.static-pool"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### static-block",
+          "start_line": 252,
+          "end_line": 269
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.class-loading",
+      "title": "클래스 로딩",
+      "aliases": [
+        "Class Loading",
+        "PermGen",
+        "처음 사용될 때 메모리에 적재"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/class-loading.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single lazy load in which a class, being static, is read from disk into memory the first time it is used and kept there because secondary storage is far slower than RAM - held in PermGen up to Java 7 and in metaspace afterwards, with statics moving to the heap in Java 8",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.metaspace",
+        "java.runtime.static-pool",
+        "java.runtime.classpath",
+        "java.memory.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### JVM 메모리, 인스턴스 생성",
+          "start_line": 277,
+          "end_line": 286
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### JVM 메모리, 인스턴스 생성",
+          "start_line": 296,
+          "end_line": 301
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstraction",
+      "title": "추상화",
+      "aliases": [
+        "Abstraction",
+        "중요한 것만 남기기",
+        "도메인에 맞는 추상화"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstraction.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single act of keeping what matters and discarding what does not, where what matters depends on who is looking, so a class carries only the fields and behaviour its business domain actually needs",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.paradigm.object-oriented-programming",
+        "java.oop.encapsulation",
+        "java.oop.abstract-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 추상화",
+          "start_line": 320,
+          "end_line": 338
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.encapsulation",
+      "title": "캡슐화",
+      "aliases": [
+        "Encapsulation",
+        "관련된 것을 모아 가지기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/encapsulation.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single act of gathering what belongs together into one place, which is what raises cohesion and is the other side of information hiding",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.information-hiding",
+        "java.oop.cohesion-coupling",
+        "java.oop.abstraction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 캡슐화",
+          "start_line": 344,
+          "end_line": 347
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.cohesion-coupling",
+      "title": "응집도와 결합도",
+      "aliases": [
+        "Cohesion",
+        "응집도",
+        "결합도",
+        "높은 응집도 낮은 결합도"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/cohesion-coupling.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single quality pair by which a good object is judged - it holds the behaviour its name promises, and it needs as little as possible from other objects to be usable",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.encapsulation",
+        "java.oop.object-collaboration",
+        "java.oop.autonomous-responsibility"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 좋은 객체 vs 나쁜 객체",
+          "start_line": 353,
+          "end_line": 362
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.method-overloading",
+      "title": "메서드 오버로딩",
+      "aliases": [
+        "Method Overloading",
+        "같은 이름 다른 매개변수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/method-overloading.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single facility for several methods to share a name while differing in parameter type or count - never in return type alone - with the JVM picking one at run time, which is what lets println keep one name for every kind of argument",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.polymorphism",
+        "java.oop.constructor-overloading",
+        "java.io.system-out",
+        "java.oop.parameter-vs-argument"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 다형성",
+          "start_line": 395,
+          "end_line": 395
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 다형성, 오버로딩",
+          "start_line": 400,
+          "end_line": 403
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.package-naming",
+      "title": "패키지 이름 규칙",
+      "aliases": [
+        "도메인 역순",
+        "com.example.util"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/package-naming.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single convention of reversing a domain name and appending the project or module, which exists because two libraries may otherwise ship classes of the same name into one folder",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.language.package",
+        "java.language.import",
+        "java.language.naming-convention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 패키지",
+          "start_line": 419,
+          "end_line": 428
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.import",
+      "title": "import",
+      "aliases": [
+        "import 선언",
+        "동일 이름 클래스 충돌"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/import.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single declaration telling the compiler which package's class a name refers to - it loads nothing - so when two packages carry the same class name only one of them can be imported and the other must be written out in full",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.language.package",
+        "java.language.package-naming",
+        "java.runtime.classpath"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 패키지",
+          "start_line": 450,
+          "end_line": 451
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 패키지",
+          "start_line": 469,
+          "end_line": 469
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

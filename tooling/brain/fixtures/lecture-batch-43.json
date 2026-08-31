@@ -1,0 +1,1026 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-43",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-42",
+    "applied_state": "918 approved knowledge concepts after lecture-batch-42 closed the apple-js series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+        "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb"
+      },
+      {
+        "path": "content/brain/lectures/frontend/apple-html/all-in-one.md",
+        "source_sha256": "5593fbb508ec899e4fa3bda64cdbfb59118534b503da20d8c99cec91e97535fc"
+      },
+      {
+        "path": "content/brain/lectures/frontend/apple-html/index.md",
+        "source_sha256": "0d0e43ffc4b8ff954224dc3c45c773cf579afcc1bdb17a41b6e9d35710dc25cf"
+      }
+    ],
+    "line_range": "all-in-one-basic L13-L566, all-in-one L11-L24, index whole",
+    "series": "코딩애플 - HTML/CSS All-in-One 기초모듈"
+  },
+  "overlap_analysis": {
+    "finding": "Two new namespaces open here, html and css, which nothing applied touches. The nearest applied concepts are on the javascript side - the form tag and the select element, both of which the js lane described from the script's point of view and this file describes as markup.",
+    "disposition": "Those two take edges to the markup concepts rather than absorbing them, since what a name attribute does to a request is a different claim from how a script reads a value. The rest is new under html and css."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "all-in-one-basic L9, L213-L223, L446-L476, L363-L365 partial",
+        "reason_code": "course-link-code-only-section-or-personal-note",
+        "detail": "The course link, the black-tint and pseudo-class sections which are a code block with no prose claim at all, and the author's note about which of their own practice files failed and why."
+      },
+      {
+        "span": "all-in-one L11-L24, index whole",
+        "reason_code": "table-of-contents-and-study-log",
+        "detail": "The course index with a study period and goal, and the directory index file."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in all-in-one-basic contributes at least one cited locator except the two code-only sections recorded above. The two index files contribute none."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 13158,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 79,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 24,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 20,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 24,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. The intermediate and advanced modules of the same course are left to the next batches.",
+  "candidates_authored": 24,
+  "candidates": [
+    {
+      "concept_id": "js.form.form-tag",
+      "title": "form 태그",
+      "aliases": [
+        "type submit과 type button",
+        "action에 서버 경로"
+      ],
+      "canonical_path": "content/brain/knowledge/js/form/form-tag.md",
+      "tags": [
+        "js",
+        "form"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single element for sending what the user typed to the server, whose send button must be declared as a submit and whose other buttons must be declared as plain buttons or they will submit too, with the destination set in its action",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-43",
+        "frontend/apple-html"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.client-to-server-data",
+        "js.form.prevent-default",
+        "cs.network.http-post",
+        "html.form.input-name",
+        "html.form.label"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## form태그 if/else",
+          "start_line": 498,
+          "end_line": 500
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.select-input",
+      "title": "select 태그 다루기",
+      "aliases": [
+        "select의 value",
+        "select와 change 이벤트"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/select-input.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single element read the same way as a text input - its chosen option comes out of its value, and it fires the same input and change events",
+      "pilot_strata": [
+        "lecture-batch-42",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-43",
+        "frontend/apple-html"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.event.input-change",
+        "js.form.form-tag",
+        "js.dom.create-element",
+        "html.form.select"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-03.md",
+          "source_sha256": "a0f011d5812bfb21ae8236887a2ec2b82b80c9795895dab842019d32b809ee0f",
+          "heading": "## 웹서비스 방식 > ### Select 01 : 인풋 다루기",
+          "start_line": 123,
+          "end_line": 123
+        }
+      ]
+    },
+    {
+      "concept_id": "html.tag.multiple-class",
+      "title": "한 태그에 클래스 여러 개",
+      "aliases": [
+        "띄어쓰기로 클래스 나열"
+      ],
+      "canonical_path": "content/brain/knowledge/html/tag/multiple-class.md",
+      "tags": [
+        "html",
+        "tag"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single fact that an element may carry more than one class, written one after another separated by a space",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "css.naming.oocss",
+        "js.dom.class-list-toggle"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## HTML > ### HTML 태그",
+          "start_line": 19,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "html.form.input-name",
+      "title": "input의 name 속성",
+      "aliases": [
+        "서버에 전달될 변수 이름",
+        "type submit 두 가지"
+      ],
+      "canonical_path": "content/brain/knowledge/html/form/input-name.md",
+      "tags": [
+        "html",
+        "form"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single attribute deciding under what name a field's value reaches the server, sent either by an input declared as a submit or by a button declared as one",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.form.form-tag",
+        "cs.network.client-to-server-data",
+        "spring.web.form-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## HTML > ### input 태그 name 속성",
+          "start_line": 29,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## HTML > ### input 태그 name 속성",
+          "start_line": 39,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "html.form.select",
+      "title": "select 태그",
+      "aliases": [
+        "드롭다운"
+      ],
+      "canonical_path": "content/brain/knowledge/html/form/select.md",
+      "tags": [
+        "html",
+        "form"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single element rendering a dropdown of choices",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "js.dom.select-input",
+        "html.form.input-name"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## HTML > ### select 태그",
+          "start_line": 48,
+          "end_line": 48
+        }
+      ]
+    },
+    {
+      "concept_id": "html.form.label",
+      "title": "label 태그",
+      "aliases": [
+        "for와 id를 맞춘다",
+        "글자를 눌러도 체크된다"
+      ],
+      "canonical_path": "content/brain/knowledge/html/form/label.md",
+      "tags": [
+        "html",
+        "form"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single element tying a piece of text to a field by matching its for to the field's id, which makes clicking the text act on the field - the reason to use it rather than a meaningless span",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.form.input-name",
+        "html.form.select"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## HTML > ### label 태그",
+          "start_line": 62,
+          "end_line": 64
+        }
+      ]
+    },
+    {
+      "concept_id": "html.table.table-structure",
+      "title": "표의 구조",
+      "aliases": [
+        "thead와 tbody",
+        "tr이 행 td가 열",
+        "colspan"
+      ],
+      "canonical_path": "content/brain/knowledge/html/table/table-structure.md",
+      "tags": [
+        "html",
+        "table"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement a table is written in - head and body sections, a row element holding cell elements - with cells merged by declaring how many they span, and where setting one cell's width changes the whole column's",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "html-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.table.border-radius-issue",
+        "css.selector.nth-child"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## HTML > ### table",
+          "start_line": 74,
+          "end_line": 76
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## HTML > ### table",
+          "start_line": 102,
+          "end_line": 104
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.float",
+      "title": "float",
+      "aliases": [
+        "공중에 띄워 정렬",
+        "clear both"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/float.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property lifting an element out of the normal flow and pushing it left or right, whose side effect is that the elements after it behave as though it were not there - which is undone by clearing, and contained by wrapping the floated boxes in one sized parent so they do not overflow on a narrow screen",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.position",
+        "css.layout.box-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### float 속성",
+          "start_line": 114,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### float 속성",
+          "start_line": 136,
+          "end_line": 139
+        }
+      ]
+    },
+    {
+      "concept_id": "css.selector.combinator",
+      "title": "셀렉터의 결합자",
+      "aliases": [
+        "공백과 꺽쇠",
+        "자식 셀렉터"
+      ],
+      "canonical_path": "content/brain/knowledge/css/selector/combinator.md",
+      "tags": [
+        "css",
+        "selector"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference between separating selectors by a space and by an angle bracket, the one reaching any descendant and the other only a direct child - and the advice not to chain more than a few, since a long chain breaks the moment the markup shifts",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.selector.nth-child",
+        "css.selector.attribute-selector",
+        "js.dom.query-selector"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### Selector 셀렉터",
+          "start_line": 153,
+          "end_line": 155
+        }
+      ]
+    },
+    {
+      "concept_id": "css.selector.nth-child",
+      "title": "nth-child",
+      "aliases": [
+        "n번째 요소만 고르기",
+        "n번째 이후 전부"
+      ],
+      "canonical_path": "content/brain/knowledge/css/selector/nth-child.md",
+      "tags": [
+        "css",
+        "selector"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single selector picking an element by its position among its siblings, either exactly the nth or every one from the nth on",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.selector.combinator",
+        "html.table.table-structure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### Selector 셀렉터",
+          "start_line": 175,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### Selector 셀렉터",
+          "start_line": 187,
+          "end_line": 189
+        }
+      ]
+    },
+    {
+      "concept_id": "css.background.background-property",
+      "title": "background 속성들",
+      "aliases": [
+        "background-size cover",
+        "no-repeat",
+        "background-attachment",
+        "filter brightness"
+      ],
+      "canonical_path": "content/brain/knowledge/css/background/background-property.md",
+      "tags": [
+        "css",
+        "background"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of properties controlling an image used as a background rather than placed as an element - whether it fills the box or fits inside it, whether it tiles, what point it is anchored on, and whether it moves with the scroll - together with the filter that adjusts it, which also affects any text sitting on top",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.position",
+        "css.layout.box-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### background 속성",
+          "start_line": 195,
+          "end_line": 209
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.margin-collapse",
+      "title": "margin collapse",
+      "aliases": [
+        "마진 병합",
+        "위쪽 테두리가 겹치면"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/margin-collapse.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single surprise where two boxes whose top edges meet share one margin instead of having two, so giving the inner one a top margin moves the outer one down with it",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.box-sizing",
+        "css.layout.float",
+        "css.layout.position"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### margin collapse 현상",
+          "start_line": 226,
+          "end_line": 226
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### margin collapse 현상",
+          "start_line": 236,
+          "end_line": 236
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.position",
+      "title": "position",
+      "aliases": [
+        "relative static fixed absolute",
+        "viewport 기준 고정",
+        "부모 기준 좌표"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/position.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property that both lets an element be moved by coordinates and lifts it out of the flow, whose value says what those coordinates are measured from - its own original place, nothing at all, the viewport so it stays put while the page scrolls, or the nearest ancestor that was itself positioned",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.float",
+        "css.layout.z-index",
+        "css.background.background-property",
+        "js.ui.scroll-progress-bar"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 좌표 이동",
+          "start_line": 242,
+          "end_line": 248
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 좌표 이동",
+          "start_line": 258,
+          "end_line": 266
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.z-index",
+      "title": "z-index",
+      "aliases": [
+        "겹칠 때의 우선순위",
+        "숫자가 클수록 앞"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/z-index.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property deciding which of two overlapping elements is drawn in front, the higher number winning",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.position",
+        "js.ui.modal-placement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### z-index",
+          "start_line": 282,
+          "end_line": 284
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.box-sizing",
+      "title": "width가 가리키는 영역",
+      "aliases": [
+        "box-sizing border-box",
+        "content-box",
+        "패딩과 테두리는 포함되지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/box-sizing.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single default that catches everyone out - the declared width covers only the content, so padding and border are added on top of it and the box comes out wider than asked for, until the box is told to count them inside the width instead",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.margin-collapse",
+        "css.reset.normalize",
+        "css.layout.float"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### width의 영역에 관한 문제",
+          "start_line": 290,
+          "end_line": 296
+        }
+      ]
+    },
+    {
+      "concept_id": "css.reset.normalize",
+      "title": "브라우저 기본 스타일 초기화",
+      "aliases": [
+        "normalize.css",
+        "브라우저 호환성 이슈"
+      ],
+      "canonical_path": "content/brain/knowledge/css/reset/normalize.md",
+      "tags": [
+        "css",
+        "reset"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single stylesheet put in front of one's own to even out what each browser draws by default, since a button or an image is not the same size in every one",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.box-sizing",
+        "css.form.focus-outline"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### css 초기 설정시 편한 것, normalize",
+          "start_line": 335,
+          "end_line": 335
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### css 초기 설정시 편한 것, normalize",
+          "start_line": 339,
+          "end_line": 339
+        }
+      ]
+    },
+    {
+      "concept_id": "css.selector.attribute-selector",
+      "title": "속성으로 고르는 셀렉터",
+      "aliases": [
+        "input type별 스타일",
+        "대괄호 셀렉터"
+      ],
+      "canonical_path": "content/brain/knowledge/css/selector/attribute-selector.md",
+      "tags": [
+        "css",
+        "selector"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single selector matching on an attribute's value rather than on a class or a tag, which is how one kind of input is styled without giving it a class",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "css.selector.combinator",
+        "html.form.input-name",
+        "css.form.focus-outline"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### input type에 따른 css 셀렉터",
+          "start_line": 345,
+          "end_line": 345
+        }
+      ]
+    },
+    {
+      "concept_id": "css.layout.vertical-align",
+      "title": "vertical-align",
+      "aliases": [
+        "inline 요소의 세로 정렬",
+        "div에는 통하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/layout/vertical-align.md",
+      "tags": [
+        "css",
+        "layout"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property aligning inline and inline-block elements against each other vertically, and cells in a table - which is why it does nothing when tried on block boxes, and why an image and its caption have to be made inline first for it to work",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.layout.position",
+        "css.layout.float",
+        "html.table.table-structure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### vertical-align 속성",
+          "start_line": 359,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "concept_id": "css.table.border-radius-issue",
+      "title": "표의 모서리를 둥글게 할 때",
+      "aliases": [
+        "border-collapse와 border-radius 충돌",
+        "box-shadow로 테두리 흉내"
+      ],
+      "canonical_path": "content/brain/knowledge/css/table/border-radius-issue.md",
+      "tags": [
+        "css",
+        "table"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conflict between collapsing a table's borders and rounding its corners - the rounding stops taking effect - worked around either by not collapsing them or by drawing the border with a shadow instead",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "html.table.table-structure",
+        "css.layout.box-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### table 태그 border-radius 오류",
+          "start_line": 383,
+          "end_line": 383
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### table 태그 border-radius 오류",
+          "start_line": 387,
+          "end_line": 387
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### table 태그 border-radius 오류",
+          "start_line": 402,
+          "end_line": 403
+        }
+      ]
+    },
+    {
+      "concept_id": "css.ui.cursor-pointer",
+      "title": "cursor: pointer",
+      "aliases": [
+        "누를 수 있어 보이게",
+        "hover 없이도 커서가 바뀐다"
+      ],
+      "canonical_path": "content/brain/knowledge/css/ui/cursor-pointer.md",
+      "tags": [
+        "css",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single declaration that makes the pointer change over an element without needing a hover rule, which is how something is made to look clickable",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "css.form.focus-outline",
+        "css.selector.attribute-selector"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### button 태그 같이 hover 할 때 마우스 커서",
+          "start_line": 419,
+          "end_line": 419
+        }
+      ]
+    },
+    {
+      "concept_id": "css.form.focus-outline",
+      "title": "focus 스타일이 먹지 않을 때",
+      "aliases": [
+        "outline none",
+        "크롬 기본 속성"
+      ],
+      "canonical_path": "content/brain/knowledge/css/form/focus-outline.md",
+      "tags": [
+        "css",
+        "form"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason a border set on a focused input seems to be ignored - the browser draws its own outline over it, which has to be turned off first",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.reset.normalize",
+        "css.selector.attribute-selector",
+        "css.ui.cursor-pointer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### input 태그 focus 스타일 안먹힐 때",
+          "start_line": 434,
+          "end_line": 435
+        }
+      ]
+    },
+    {
+      "concept_id": "css.naming.oocss",
+      "title": "OOCSS",
+      "aliases": [
+        "Object Oriented CSS",
+        "뼈대와 살점 분리",
+        "Utility class"
+      ],
+      "canonical_path": "content/brain/knowledge/css/naming/oocss.md",
+      "tags": [
+        "css",
+        "naming"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of naming that splits a component's structure from its skin - one class for the shape, another for the colour - so the shape is written once and reused, taken to its extreme as a pile of single-purpose utility classes",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.naming.bem",
+        "css.naming.convention-tradeoff",
+        "html.tag.multiple-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 코드 양이 줄어드는 class 작명법 (OOCSS, BEM)",
+          "start_line": 479,
+          "end_line": 485
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 코드 양이 줄어드는 class 작명법 (OOCSS, BEM)",
+          "start_line": 511,
+          "end_line": 511
+        }
+      ]
+    },
+    {
+      "concept_id": "css.naming.bem",
+      "title": "BEM",
+      "aliases": [
+        "Block Element Modifier",
+        "덩어리이름 역할 세부특징"
+      ],
+      "canonical_path": "content/brain/knowledge/css/naming/bem.md",
+      "tags": [
+        "css",
+        "naming"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single naming scheme that spells out which block a class belongs to, what part of it that is, and which variant - which removes the need to invent a name at all",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "css.naming.oocss",
+        "css.naming.convention-tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 코드 양이 줄어드는 class 작명법 (OOCSS, BEM)",
+          "start_line": 542,
+          "end_line": 546
+        }
+      ]
+    },
+    {
+      "concept_id": "css.naming.convention-tradeoff",
+      "title": "작명 규칙을 얼마나 지킬 것인가",
+      "aliases": [
+        "html이 더러워진다",
+        "컴포넌트 단위 개발에서는"
+      ],
+      "canonical_path": "content/brain/knowledge/css/naming/convention-tradeoff.md",
+      "tags": [
+        "css",
+        "naming"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason neither scheme is settled practice - one crowds the markup with classes and the other is often used only halfway, and building in components rather than in pages removes the collision they were guarding against, since the same class name inside two components no longer clashes",
+      "pilot_strata": [
+        "lecture-batch-43",
+        "frontend/apple-html",
+        "css-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "css.naming.oocss",
+        "css.naming.bem",
+        "js.library.spa-framework"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-html/all-in-one-basic.md",
+          "source_sha256": "a7fc065bb90b97bb4d13f0fc11a91f5b1f73b7d4057d2e30de743fc2cb4d55cb",
+          "heading": "## CSS > ### 코드 양이 줄어드는 class 작명법 (OOCSS, BEM)",
+          "start_line": 560,
+          "end_line": 566
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

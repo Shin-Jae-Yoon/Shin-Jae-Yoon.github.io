@@ -1,0 +1,637 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-10",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-09",
+    "applied_state": "258 approved knowledge concepts after book-batch-09 completed chap07."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap08.md",
+    "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+    "line_range": "L7-L265",
+    "covered_scopes": "the pre-heading preamble plus heading scopes 0-7 (## 멱등적 프로듀서 through ### 멱등적 프로듀서 사용법)",
+    "deferred_range": "L266-L804, heading scopes 8-16 (## 트랜잭션 onwards), split across book-batch-11 and book-batch-12"
+  },
+  "split_decision": {
+    "statement": "chap08 measures 513 prose lines, the densest chapter in the series, against a B4 ceiling of 360. It needs three batches, not two.",
+    "planned_split": "batch 10 = L7-265 (멱등적 프로듀서, 160 prose lines); batch 11 = L266-442 (트랜잭션 도입부터 트랜잭션의 정확히 한 번, 106); batch 12 = L443-804 (해결할 수 없는 문제부터 성능, 251).",
+    "why_three": "At batch 09's realized density of 35 candidates per 265 prose lines, a two-way split would put roughly 35 candidates in each half, leaving no headroom under B5 = 40. The 해결할 수 없는 문제 scope alone carries 211 prose lines and is the reason the chapter cannot be halved evenly."
+  },
+  "namespace_decision": {
+    "new_namespace": "kafka.transaction.* opens here. Two candidates in the 시나리오 예시 01 scope are transaction claims the source makes ahead of its own transaction section; they belong to that namespace rather than to the idempotence one.",
+    "reused_namespaces": "kafka.reliability.* for the exactly-once model and the loss scenarios, kafka.client.* for producer behaviour, kafka.config.* for named settings, kafka.replication.* for how producer state survives a leader change."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 10 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is the pre-heading preamble with no heading chain, or an Obsidian callout.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 19,
+  "candidates": [
+    {
+      "concept_id": "kafka.reliability.exactly-once",
+      "title": "정확히 한 번의 의미 구조",
+      "aliases": ["Exactly-Once Semantics", "EOS", "정확히 한 번"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/exactly-once.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single delivery guarantee built from two parts - the idempotent producer stopping retry duplicates and transactional semantics giving stream processing exactly-once handling",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "reliability-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.reliability.at-least-once",
+        "kafka.client.idempotent-producer",
+        "kafka.transaction.ordering-requirement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "unheaded-body",
+          "start_line": 8,
+          "end_line": 13
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.idempotence",
+      "title": "멱등성",
+      "aliases": ["Idempotent", "멱등", "Idempotence"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/idempotence.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single property of an operation whose repeated execution leaves the same result as one execution",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "reliability-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": ["kafka.client.idempotent-producer", "kafka.reliability.exactly-once"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서",
+          "start_line": 19,
+          "end_line": 21
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.retry-duplicate-scenario",
+      "title": "재전송 중복 시나리오",
+      "aliases": ["응답 전 리더 크래시", "타임아웃 후 재전송 중복"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/retry-duplicate-scenario.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single duplication path in which the leader replicates a record and crashes before answering, so the producer times out, resends, and the new leader stores the record twice",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "reliability-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.idempotent-producer",
+        "kafka.reliability.at-least-once",
+        "kafka.replication.clean-leader-election"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서",
+          "start_line": 30,
+          "end_line": 34
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.idempotent-producer",
+      "title": "멱등적 프로듀서",
+      "aliases": ["Idempotent Producer", "중복 자동 탐지"],
+      "canonical_path": "content/brain/knowledge/kafka/client/idempotent-producer.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single producer feature detecting and dropping duplicates caused by producer, network or broker errors, which cannot stop an application sending the same message twice itself",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.reliability.idempotence",
+        "kafka.client.producer-id-sequence",
+        "kafka.config.enable-idempotence",
+        "kafka.client.idempotence-limitation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서",
+          "start_line": 38,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.producer-id-sequence",
+      "title": "프로듀서 ID와 시퀀스 넘버",
+      "aliases": ["PID", "SID", "Producer ID", "Sequence Number"],
+      "canonical_path": "content/brain/knowledge/kafka/client/producer-id-sequence.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single message identity formed by the broker-assigned producer id plus a per-topic-partition sequence number, where the broker accepts a batch only when its sequence is one past the last it stored",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.idempotent-producer",
+        "kafka.client.out-of-order-sequence-number",
+        "kafka.message.batch"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 멱등적 프로듀서의 작동 원리",
+          "start_line": 50,
+          "end_line": 55
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.max-in-flight-requests",
+      "title": "max.in.flight.requests.per.connection",
+      "aliases": ["인플라이트 요청 수", "응답 없이 보낼 수 있는 배치 수"],
+      "canonical_path": "content/brain/knowledge/kafka/config/max-in-flight-requests.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single cap on how many message batches one connection may have outstanding without an acknowledgement, which also bounds how many sequence numbers a partition must track",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.producer-id-sequence",
+        "kafka.client.out-of-order-sequence-number",
+        "kafka.message.batch"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 멱등적 프로듀서의 작동 원리",
+          "start_line": 59,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.duplicate-rejection-metric",
+      "title": "중복 거부는 예외를 던지지 않는다",
+      "aliases": ["record-error-rate", "ErrorsPerSec", "RequestMetrics"],
+      "canonical_path": "content/brain/knowledge/kafka/client/duplicate-rejection-metric.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single observability gap in which a rejected duplicate is logged and counted but raises no exception, so it is visible only through the producer's record-error-rate and the broker's ErrorsPerSec",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.idempotent-producer",
+        "kafka.reliability.producer-monitoring",
+        "kafka.reliability.broker-error-rate-metric"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 멱등적 프로듀서의 작동 원리",
+          "start_line": 73,
+          "end_line": 80
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.out-of-order-sequence-number",
+      "title": "Out Of Order Sequence Number",
+      "aliases": ["시퀀스 넘버 역전", "배치 도착 순서 뒤바뀜"],
+      "canonical_path": "content/brain/knowledge/kafka/client/out-of-order-sequence-number.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single broker error raised when a batch arrives with a sequence number past the expected one, most often because in-flight batches overtook each other, after which the retry still stores every message once and in order",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.max-in-flight-requests",
+        "kafka.client.producer-id-sequence",
+        "kafka.client.ignorable-sequence-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 시나리오 예시 01",
+          "start_line": 86,
+          "end_line": 102
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.ignorable-sequence-error",
+      "title": "무시해도 되는 시퀀스 에러",
+      "aliases": ["재시도 가능한 시퀀스 에러", "트랜잭션 미사용 시 무시 가능"],
+      "canonical_path": "content/brain/knowledge/kafka/client/ignorable-sequence-error.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single operating rule that without transactions the out-of-order sequence error needs no application recovery, because the producer already treats it as retriable and its own retry restores exactly-once delivery",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.out-of-order-sequence-number",
+        "kafka.client.retriable-error",
+        "kafka.transaction.ordering-requirement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 시나리오 예시 01",
+          "start_line": 107,
+          "end_line": 113
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.ordering-requirement",
+      "title": "트랜잭션의 순서 요구",
+      "aliases": ["ProducerFencedException", "펜싱", "Fencing"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/ordering-requirement.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single atomicity requirement that message order be absolute inside a transaction, so a broken sequence makes Kafka fence the producer and the application must abort and rebuild the instance",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.out-of-order-sequence-number",
+        "kafka.transaction.zombie-producer",
+        "kafka.reliability.exactly-once"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 시나리오 예시 01",
+          "start_line": 117,
+          "end_line": 122
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.zombie-producer",
+      "title": "좀비 프로듀서",
+      "aliases": ["Zombie Producer", "뒤늦은 커밋 시도", "트랜잭션 원자성 파괴"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/zombie-producer.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single hazard of a briefly disconnected producer returning to commit part of a transaction the replacement already aborted, splitting one transaction into a partly committed and partly failed state",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.ordering-requirement",
+        "kafka.client.producer-restart-pid"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 시나리오 예시 01",
+          "start_line": 126,
+          "end_line": 132
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.idempotent-ordering-scope",
+      "title": "멱등적 프로듀서의 순서 보장 범위",
+      "aliases": ["단일 세션 단일 파티션 순서", "파티션 간 순서 미보장"],
+      "canonical_path": "content/brain/knowledge/kafka/client/idempotent-ordering-scope.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single boundary on the ordering idempotence gives: within one producer session and one topic partition only, not across partitions and not across a restart that assigns a new producer id",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.idempotent-producer",
+        "kafka.client.producer-restart-pid",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 시나리오 예시 01",
+          "start_line": 136,
+          "end_line": 142
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.sequence-gap-loss",
+      "title": "시퀀스 간격이 드러내는 유실",
+      "aliases": ["언클린 선출로 인한 영구 유실", "메세지 3~26 유실 시나리오"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/sequence-gap-loss.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single loss path in which an unclean election promotes a lagging follower, so the producer's next batch lands far past the new leader's last sequence and the skipped messages are gone for good since the producer believes they were stored",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "reliability-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.unclean-leader-election",
+        "kafka.client.out-of-order-sequence-number",
+        "kafka.config.unclean-leader-election-enable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 시나리오 예시 02",
+          "start_line": 148,
+          "end_line": 166
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.sequence-gap-diagnosis",
+      "title": "시퀀스 간격으로 원인 진단",
+      "aliases": ["GAP 크기 판별", "간격이 크고 지속적이면 유실"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/sequence-gap-diagnosis.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single diagnostic reading the gap in the logged sequence numbers - small and sporadic means in-flight reordering, large and persistent means real loss to be closed with unclean election off and acks=all",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "reliability-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.reliability.sequence-gap-loss",
+        "kafka.config.unclean-leader-election-enable",
+        "kafka.config.acks-all"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 시나리오 예시 02",
+          "start_line": 170,
+          "end_line": 180
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.producer-restart-pid",
+      "title": "프로듀서 재시작과 새 PID",
+      "aliases": ["재시작 시 중복 탐지 불가", "새 프로듀서 ID 할당"],
+      "canonical_path": "content/brain/knowledge/kafka/client/producer-restart-pid.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single blind spot in which a restarted producer receives a fresh producer id, so messages identical to the failed instance's carry different identities and the broker cannot see them as duplicates",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.producer-id-sequence",
+        "kafka.client.idempotent-ordering-scope",
+        "kafka.transaction.zombie-producer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 프로듀서 재시작",
+          "start_line": 192,
+          "end_line": 201
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.producer-state-replication",
+      "title": "프로듀서 상태 복제",
+      "aliases": ["인-메모리 프로듀서 상태", "팔로워의 최근 SID 5개"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/producer-state-replication.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason a newly elected leader already knows which sequence numbers to expect: followers update their own in-memory producer state on every replicated message",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "replication-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.producer-id-sequence",
+        "kafka.replication.producer-state-snapshot",
+        "kafka.replication.clean-leader-election"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 브로커 장애",
+          "start_line": 211,
+          "end_line": 216
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 브로커 장애",
+          "start_line": 220,
+          "end_line": 223
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.producer-state-snapshot",
+      "title": "프로듀서 상태 스냅샷",
+      "aliases": ["Producer State Snapshot", "세그먼트 생성 시 스냅샷", "크래시 복구"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/producer-state-snapshot.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single durability mechanism writing producer state to a file on shutdown and on each new segment, so a restarted broker rebuilds the sequence state from the snapshot plus replicated records, or from an older snapshot and the newest segments after a crash",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "replication-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.replication.producer-state-replication",
+        "kafka.config.log-segment-bytes",
+        "kafka.client.producer-id-sequence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 브로커 장애",
+          "start_line": 227,
+          "end_line": 237
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.client.idempotence-limitation",
+      "title": "멱등적 프로듀서의 한계",
+      "aliases": ["애플리케이션 중복은 못 막음", "다중 인스턴스 중복"],
+      "canonical_path": "content/brain/knowledge/kafka/client/idempotence-limitation.md",
+      "tags": ["kafka", "client"],
+      "proposal_kind": "create",
+      "concept_granularity": "single boundary confining the guarantee to duplicates the producer's own retry logic creates, leaving a double send() call or two instances sending the same message uncaught",
+      "pilot_strata": ["book-batch-10", "kafka/chap08", "client-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.client.idempotent-producer",
+        "kafka.client.idempotent-ordering-scope"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 한계",
+          "start_line": 243,
+          "end_line": 245
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.enable-idempotence",
+      "title": "enable.idempotence",
+      "aliases": ["중복 메세지 건너뛰기", "카프카 3.0 기본값", "멱등성 활성화 설정"],
+      "canonical_path": "content/brain/knowledge/kafka/config/enable-idempotence.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "update",
+      "concept_granularity": "single producer switch, on by default since Kafka 3.0, adding record metadata the broker uses to drop retry duplicates, at the cost of one extra startup call and 96 bits per batch",
+      "pilot_strata": ["book-batch-09", "kafka/chap07", "config-domain", "book-batch-10", "kafka/chap08"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.reliability.at-least-once",
+        "kafka.client.producer",
+        "kafka.client.idempotent-producer",
+        "kafka.client.producer-id-sequence",
+        "kafka.config.acks-all"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 신뢰성 있는 시스템에서 프로듀서 > ### 프로듀서 재시도 설정",
+          "start_line": 475,
+          "end_line": 475
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 멱등적 프로듀서 사용법",
+          "start_line": 251,
+          "end_line": 253
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 멱등적 프로듀서 사용법",
+          "start_line": 257,
+          "end_line": 262
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [],
+  "rejection_probes": {
+    "scope_level": "None. chap08 has no non-substantive heading scope anywhere in the file."
+  },
+  "update_authoring_note": {
+    "statement": "Batch 10 authors exactly 1 update candidate, preserving its applied title, canonical_path, tags, approved locator and approved edges while appending chap08 evidence.",
+    "updates": [
+      {
+        "concept_id": "kafka.config.enable-idempotence",
+        "approved_locators_preserved": ["content/brain/books/kafka/chap07.md:475-475"],
+        "new_locators": [
+          "content/brain/books/kafka/chap08.md:251-253",
+          "content/brain/books/kafka/chap08.md:257-262"
+        ],
+        "why_update_not_create": "chap07 named the setting in one line; chap08 gives its default, its cost and what turning it on changes. Same setting, more evidence.",
+        "alias_change": "drops 멱등적 프로듀서 and Idempotent Producer. Those names belong to the feature, which batch 10 gives its own concept at kafka.client.idempotent-producer; leaving them on the setting collided outright and the engine's collision report caught it."
+      }
+    ]
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L25-26",
+        "reason_code": "motivating-example",
+        "detail": "Names inventory, accounting and duplicate shipping as places idempotence matters without asserting anything about Kafka."
+      },
+      {
+        "span": "L65-69",
+        "reason_code": "external-reference-callout",
+        "detail": "A quoted community answer clarifying that Kafka's 'request' historically meant one batch. It is terminology sourced from outside the book, in the same class as the Java Future blog callout excluded in batch 06."
+      },
+      {
+        "span": "L186-188, L207",
+        "reason_code": "section-lead-in",
+        "detail": "One-line framings of the failure being discussed, whose content is restated inside the cited span of each owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L7-265 contributes at least one cited locator."
+  },
+  "p6_resolution": {
+    "statement": "Eight applied concepts are touched by prose in L7-265. One is updated, seven receive a related_concepts edge, none is restated.",
+    "summary": { "update": 1, "relate": 7, "no_op": 0 },
+    "touch_point_dispositions": [
+      {
+        "concept_id": "kafka.config.enable-idempotence",
+        "authoring_decision": "update",
+        "evidence": "L251-262 is the setting's own usage section.",
+        "decision_rationale": "Same setting, richer evidence."
+      },
+      {
+        "concept_id": "kafka.reliability.at-least-once",
+        "authoring_decision": "relate",
+        "evidence": "L8 frames chapter 8 as the step past chapter 7's at-least-once.",
+        "decision_rationale": "The applied concept carries at-least-once; exactly-once is its successor, not a restatement."
+      },
+      {
+        "concept_id": "kafka.adminclient.unclean-leader-election",
+        "authoring_decision": "relate",
+        "evidence": "L159-166 uses an unclean election as the cause of permanent loss.",
+        "decision_rationale": "The election is applied; the new claim is what it does to producer sequence state."
+      },
+      {
+        "concept_id": "kafka.config.unclean-leader-election-enable",
+        "authoring_decision": "relate",
+        "evidence": "L162 and L178 name the setting.",
+        "decision_rationale": "Pointed at, not redefined."
+      },
+      {
+        "concept_id": "kafka.config.acks-all",
+        "authoring_decision": "relate",
+        "evidence": "L180 and L253 recommend acks=all alongside idempotence.",
+        "decision_rationale": "The mode is applied; these are usage claims about it."
+      },
+      {
+        "concept_id": "kafka.client.retriable-error",
+        "authoring_decision": "relate",
+        "evidence": "L111 says the producer already classes the sequence error as retriable.",
+        "decision_rationale": "The class is applied; this is a membership claim."
+      },
+      {
+        "concept_id": "kafka.message.batch",
+        "authoring_decision": "relate",
+        "evidence": "Sequence numbers are per message batch throughout.",
+        "decision_rationale": "The batch is applied; nothing here redefines it."
+      },
+      {
+        "concept_id": "kafka.reliability.producer-monitoring",
+        "authoring_decision": "relate",
+        "evidence": "L78-80 names the producer and broker metrics that surface rejected duplicates.",
+        "decision_rationale": "The monitoring set is applied; this adds which metric shows duplicates."
+      }
+    ]
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": { "value": 160, "ceiling": 360, "satisfied": true },
+      "heading_scopes": { "value": 8, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 19, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

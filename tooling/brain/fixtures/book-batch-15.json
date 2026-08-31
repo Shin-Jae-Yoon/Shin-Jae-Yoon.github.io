@@ -1,0 +1,950 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-15",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-14",
+    "applied_state": "361 approved knowledge concepts after book-batch-14 covered chap10 L7-386."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap10.md",
+    "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+    "line_range": "L387-L821",
+    "covered_scopes": "heading scopes 7-16 (## 아파치 카프카 미러메이커 through ### 컨플루언트의 솔루션)",
+    "completes": "chap10. Only chap14 is left in the Kafka book."
+  },
+  "namespace_decision": {
+    "continued_namespace": "kafka.mirroring.*, opened by book-batch-14.",
+    "reused_namespace": "kafka.config.* for the four client tuning settings this range introduces by name."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 15 touches, so U3 must confirm it relates rather than restates. The update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span opens on a fenced configuration block rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 33,
+  "alias_ownership_correction": {
+    "trigger": "The first propose failed the collision gate on the key MM2.",
+    "correction": "kafka.cluster.mirror-maker, applied from chap01, holds MM2 as an alias while describing MirrorMaker generically as a consumer and producer joined by a queue. MM2 names the version-specific rewrite, which chap10 gives its own concept at kafka.mirroring.mirrormaker2, so the alias moves there and the chap01 concept keeps MirrorMaker and 클러스터 간 미러링.",
+    "note": "Alias move only. No source locator and no related-concept edge is dropped."
+  },
+  "candidates": [
+    {
+      "concept_id": "kafka.cluster.mirror-maker",
+      "title": "미러메이커",
+      "aliases": ["MirrorMaker", "클러스터 간 미러링"],
+      "canonical_path": "content/brain/knowledge/kafka/cluster/mirror-maker.md",
+      "tags": ["kafka", "cluster"],
+      "proposal_kind": "update",
+      "concept_granularity": "single cross-cluster mirroring tool that is itself only a Kafka consumer and producer joined by a queue",
+      "pilot_strata": ["book-batch-04", "kafka/chap01", "kafka-domain", "book-batch-15"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.cluster.multi-cluster",
+        "kafka.client.producer",
+        "kafka.client.consumer",
+        "kafka.mirroring.mirrormaker2"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 > ### 다중 클러스터",
+          "start_line": 364,
+          "end_line": 366
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mirrormaker2",
+      "title": "미러메이커 2.0",
+      "aliases": ["MirrorMaker 2", "MM2", "차세대 미러링 솔루션"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mirrormaker2.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single mirroring solution built on Kafka Connect that reads from another Kafka cluster through a source connector, spreads its tasks across connect workers automatically, and is managed through Connect's REST API",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.cluster.mirror-maker",
+        "kafka.connect.kafka-connect",
+        "kafka.connect.task",
+        "kafka.mirroring.mm2-partition-mapping"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커",
+          "start_line": 389,
+          "end_line": 397
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-partition-mapping",
+      "title": "미러메이커의 파티션 대응",
+      "aliases": ["컨슈머 그룹 프로토콜 미사용", "파티션 의미 구조 유지"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-partition-mapping.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single design choice to assign partitions to tasks itself rather than use the consumer group protocol, avoiding rebalances, mirroring each partition to the matching one so order and partition meaning survive, and creating the target topic when the source gains partitions",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.mirrormaker2",
+        "kafka.client.consumer-rebalance-frequency",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커",
+          "start_line": 399,
+          "end_line": 401
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-configuration",
+      "title": "미러메이커 설정과 실행",
+      "aliases": ["connect-mirror-maker.sh", "properties 파일 기반 실행"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-configuration.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single configuration surface covering the topology, Connect and connector settings plus every parameter of the producer, consumer and admin client MirrorMaker uses internally, driven from one properties file",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.mirrormaker2",
+        "kafka.mirroring.config-prefix",
+        "kafka.connect.worker-configuration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 409,
+          "end_line": 409
+        },
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 415,
+          "end_line": 418
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.replication-flow",
+      "title": "복제 흐름",
+      "aliases": ["Replication Flow", "원본->대상 접두어", "클러스터 별칭"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/replication-flow.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single directed link between two aliased clusters, switched on by a source-to-target prefixed setting that every option of that flow then shares",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.mirroring.mm2-configuration",
+        "kafka.mirroring.config-prefix",
+        "kafka.mirroring.mm2-topology-config"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 425,
+          "end_line": 441
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.topic-selection",
+      "title": "미러링 토픽 선택",
+      "aliases": ["정규식 토픽 지정", "원격 토픽 접두어", "자동 토픽 탐지"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/topic-selection.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single selection mechanism naming mirrored topics by regular expression with an exclusion list, prefixing the target name with the source cluster alias so active-active cannot loop, and picking up new source topics and partitions on its own",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.circular-mirroring-prevention",
+        "kafka.mirroring.active-active",
+        "kafka.mirroring.mm2-partition-mapping"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 447,
+          "end_line": 457
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.consumer-offset-migration",
+      "title": "컨슈머 오프셋 마이그레이션",
+      "aliases": ["RemoteClusterUtils", "체크포인트 오프셋 변환"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/consumer-offset-migration.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single facility translating the primary's committed offsets and committing them to the DR cluster's offsets topic so a migrating consumer resumes at the right point, refusing to overwrite a group that is currently in use on the target",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.offset-translation",
+        "kafka.mirroring.offset-topic-replication",
+        "kafka.adminclient.alter-consumer-group-offsets"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 463,
+          "end_line": 465
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.config-acl-migration",
+      "title": "토픽 설정과 ACL 마이그레이션",
+      "aliases": ["Literal 타입 ACL만 이전", "Topic:Write는 이전되지 않음"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/config-acl-migration.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single migration of topic configuration and access control alongside the data, where most settings carry over but some such as min.insync.replicas do not, only literal ACLs move, and Topic:Write is withheld so nothing but MirrorMaker writes to the target",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.min-insync-replicas",
+        "kafka.mirroring.mm2-acl-requirement",
+        "kafka.pipeline.pipeline-security"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 471,
+          "end_line": 479
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.tasks-max",
+      "title": "tasks.max",
+      "aliases": ["미러메이커 커넥터 태스크 수", "병렬 처리 수준"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/tasks-max.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single ceiling on how many connector tasks MirrorMaker starts, defaulting to one and worth raising to at least two, and higher still when many partitions must be copied",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.connect.task",
+        "kafka.mirroring.mm2-sizing",
+        "kafka.mirroring.mirrormaker2"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 485,
+          "end_line": 487
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.config-prefix",
+      "title": "미러메이커 설정 접두어",
+      "aliases": ["설정 계층 구조", "클러스터별 접두어", "복제 흐름 설정"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/config-prefix.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single prefixing scheme addressing a setting to a cluster, to that cluster's admin, consumer or producer, or to a replication flow, where a more specific prefix wins over a less specific one",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.mm2-configuration",
+        "kafka.mirroring.replication-flow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 설정",
+          "start_line": 493,
+          "end_line": 507
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-topology-config",
+      "title": "미러메이커 토폴로지 설정",
+      "aliases": ["양방향 복제 흐름", "--clusters 옵션", "공통 설정 파일"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-topology-config.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to express a topology by enabling flows in both directions, sharing one configuration file across processes to avoid conflicts in the target's internal topics, and scoping each process with the clusters option",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.replication-flow",
+        "kafka.mirroring.active-active",
+        "kafka.mirroring.topic-selection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 다중 클러스터 토폴로지",
+          "start_line": 513,
+          "end_line": 519
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-security",
+      "title": "미러메이커 보안 설정",
+      "aliases": ["SASL_SSL", "데이터센터 간 SSL 암호화", "JAAS 자격 증명"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-security.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single requirement that MirrorMaker use secured listeners on both clusters with matching client-side security options, encrypting all cross-data-centre traffic, and hold credentials authorized on each side",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.listeners",
+        "kafka.pipeline.pipeline-security",
+        "kafka.mirroring.mm2-acl-requirement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 보안",
+          "start_line": 554,
+          "end_line": 556
+        },
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 보안",
+          "start_line": 570,
+          "end_line": 570
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-acl-requirement",
+      "title": "미러메이커 프로세스 권한",
+      "aliases": ["Topic:Read", "Topic:Create", "Group:Describe", "Cluster:Alter"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-acl-requirement.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single permission set the MirrorMaker principal needs - read and describe on the source, create, write and alter on the target, group describe and read for offsets, cluster describe and alter for ACLs, and create and write on both for its internal topics",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.mm2-security",
+        "kafka.mirroring.config-acl-migration",
+        "kafka.mirroring.consumer-offset-migration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 보안",
+          "start_line": 576,
+          "end_line": 584
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-deployment",
+      "title": "미러메이커 배포",
+      "aliases": ["분산 모드 권장", "대상 데이터센터에서 실행", "상태 없는 프로세스"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-deployment.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single deployment rule that MirrorMaker is stateless enough for a container, should run distributed in production, and belongs in the target data centre because losing the consumer's connection during a network break is far safer than losing the producer's",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.local-read-remote-write",
+        "kafka.mirroring.avoid-remote-write",
+        "kafka.connect.worker-deployment"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 운영 환경에 배포",
+          "start_line": 590,
+          "end_line": 598
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.local-read-remote-write",
+      "title": "지역 읽기-원격 쓰기",
+      "aliases": ["제로카피 최적화 상실", "errors.tolerance=none", "하이브리드 방화벽 환경"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/local-read-remote-write.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative placement in the source data centre, which forfeits the consumer's zero-copy path but lets unencrypted local reads feed an SSL-encrypted remote write, and is the only option when a firewall permits connections in one direction only",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.mm2-deployment",
+        "kafka.mirroring.mm2-security",
+        "kafka.mirroring.cloud-migration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 운영 환경에 배포",
+          "start_line": 600,
+          "end_line": 606
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.connect-monitoring",
+      "title": "커넥트 지표 모니터링",
+      "aliases": ["커넥터 지표", "소스 커넥터 지표", "워커 지표"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/connect-monitoring.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single monitoring surface Connect provides beneath MirrorMaker - connector metrics for status, source connector metrics for throughput, worker metrics for rebalance delay - plus the REST API",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.connect.rest-api",
+        "kafka.connect.worker",
+        "kafka.mirroring.mm2-metrics"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 운영 환경에 배포",
+          "start_line": 614,
+          "end_line": 616
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-metrics",
+      "title": "미러메이커 지표",
+      "aliases": ["replication-latency-ms", "record-age-ms", "checkpoint-latency-ms"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-metrics.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single metric set for mirroring throughput and replication lag, where the gap between a record's timestamp and its write on the target shows the target falling behind, and a lag that keeps climbing rather than recovering after a peak means too little capacity",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.lag-tracking",
+        "kafka.adminclient.consumer-lag",
+        "kafka.mirroring.mm2-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 운영 환경에 배포",
+          "start_line": 620,
+          "end_line": 633
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.lag-tracking",
+      "title": "미러메이커 랙 추적",
+      "aliases": ["kafka-consumer-groups로 랙 확인", "최대 컨슈머 랙 JMX"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/lag-tracking.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of lag readings - the committed offset gap, which sawtooths because commits are periodic, and the consumer's own max lag metric, which ignores whether the producer actually wrote to the target - neither of them exact",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.mm2-metrics",
+        "kafka.adminclient.consumer-lag",
+        "kafka.adminclient.list-consumer-group-offsets"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 운영 환경에 배포",
+          "start_line": 637,
+          "end_line": 643
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.client-metrics",
+      "title": "미러메이커 클라이언트 지표",
+      "aliases": ["fetch-size-avg", "batch-size-avg", "io-ratio"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/client-metrics.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of producer and consumer metrics the Connect framework exposes beneath MirrorMaker, worth collecting because they are what the tuning decisions are read from",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.bottleneck-identification",
+        "kafka.reliability.producer-monitoring",
+        "kafka.mirroring.connect-monitoring"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 운영 환경에 배포",
+          "start_line": 647,
+          "end_line": 653
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.canary-test",
+      "title": "카나리아 테스트",
+      "aliases": ["Canary Test", "1분 주기 복제 확인"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/canary-test.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single liveness probe sending one event a minute to the source and reading it back from the target, so an unusual round-trip time signals that mirroring is lagging or stopped",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.mm2-metrics",
+        "kafka.mirroring.lag-tracking",
+        "kafka.reliability.data-flow-monitoring"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 운영 환경에 배포",
+          "start_line": 657,
+          "end_line": 657
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.mm2-sizing",
+      "title": "미러메이커 규모 산정",
+      "aliases": ["수평 확장", "압축 해제 후 재압축 비용", "민감한 토픽 분리"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/mm2-sizing.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single sizing decision set by required throughput and tolerable lag, found by raising tasks until throughput falls off, watching CPU because compressed events are decompressed and recompressed, and isolating critical topics in their own MirrorMaker cluster",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.tasks-max",
+        "kafka.mirroring.mm2-metrics",
+        "kafka.mirroring.bottleneck-identification"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 튜닝",
+          "start_line": 663,
+          "end_line": 671
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.tcp-tuning",
+      "title": "리눅스 네트워크 튜닝",
+      "aliases": ["socket.send.buffer.bytes", "TCP 윈도우 스케일링", "슬로우 스타트 비활성화"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/tcp-tuning.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single tuning pass raising the broker socket buffers together with the kernel's TCP buffer limits, window scaling and slow-start behaviour, which is what turns a wide area link's nominal bandwidth into usable throughput",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.limited-bandwidth",
+        "kafka.mirroring.mm2-sizing",
+        "kafka.hardware.network-bandwidth"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 튜닝",
+          "start_line": 677,
+          "end_line": 683
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.bottleneck-identification",
+      "title": "병목 지점 식별",
+      "aliases": ["jstack 스레드 덤프", "poll이면 컨슈머 send면 프로듀서"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/bottleneck-identification.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single diagnostic locating the bottleneck by comparing producer and consumer metrics, and by reading thread dumps for whether the time goes to poll or to send",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.client-metrics",
+        "kafka.config.linger-ms",
+        "kafka.config.fetch-max-bytes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 튜닝",
+          "start_line": 689,
+          "end_line": 691
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.linger-ms",
+      "title": "linger.ms",
+      "aliases": ["batch.size", "배치가 찰 때까지 대기"],
+      "canonical_path": "content/brain/knowledge/kafka/config/linger-ms.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single delay the producer waits for a batch to fill before sending, raised when partly empty batches go out, with batch.size raised instead when full batches go out and memory allows",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.message.batch",
+        "kafka.mirroring.bottleneck-identification",
+        "kafka.client.producer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 튜닝",
+          "start_line": 699,
+          "end_line": 703
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.max-in-flight-requests",
+      "title": "max.in.flight.requests.per.connection",
+      "aliases": [
+        "인플라이트 요청 수",
+        "응답 없이 보낼 수 있는 배치 수",
+        "순서가 중요하지 않을 때의 처리량"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/max-in-flight-requests.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "update",
+      "concept_granularity": "single cap on how many message batches one connection may have outstanding without an acknowledgement, bounding the sequence numbers a partition must track and, where order does not matter, the lever that lifts throughput across a high-latency link",
+      "pilot_strata": [
+        "book-batch-10",
+        "kafka/chap08",
+        "config-domain",
+        "book-batch-15",
+        "kafka/chap10"
+      ],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.producer-id-sequence",
+        "kafka.client.out-of-order-sequence-number",
+        "kafka.message.batch",
+        "kafka.mirroring.bottleneck-identification"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서 > ### 멱등적 프로듀서의 작동 원리",
+          "start_line": 59,
+          "end_line": 63
+        },
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 튜닝",
+          "start_line": 707,
+          "end_line": 709
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.fetch-max-bytes",
+      "title": "fetch.max.bytes",
+      "aliases": ["요청당 최대 수신량", "fetch-size-avg 판독"],
+      "canonical_path": "content/brain/knowledge/kafka/config/fetch-max-bytes.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single ceiling on how much a consumer pulls per request, worth raising when the observed fetch size already sits at the limit and memory allows",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "config-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.config.fetch-min-bytes",
+        "kafka.mirroring.client-metrics",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 튜닝",
+          "start_line": 717,
+          "end_line": 717
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.fetch-min-bytes",
+      "title": "fetch.min.bytes",
+      "aliases": ["fetch.max.wait.ms", "요청 수는 많은데 수신량이 작을 때"],
+      "canonical_path": "content/brain/knowledge/kafka/config/fetch-min-bytes.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single minimum a broker waits to accumulate before answering a fetch, raised together with the wait ceiling when a high fetch rate returns little data per request",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "config-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.config.fetch-max-bytes",
+        "kafka.mirroring.client-metrics",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 아파치 카프카 미러메이커 > ### 미러메이커 튜닝",
+          "start_line": 721,
+          "end_line": 721
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.ureplicator",
+      "title": "우버 uReplicator",
+      "aliases": ["uReplicator", "Apache Helix", "리밸런스 회피"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/ureplicator.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative built around a Helix controller that assigns partitions centrally and a replacement consumer that takes those assignments instead of rebalancing",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.mirrormaker2",
+        "kafka.client.consumer-rebalance-frequency",
+        "kafka.mirroring.brooklin"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 기타 클러스터간 미러링 솔루션 > ### 우버 uReplicator",
+          "start_line": 729,
+          "end_line": 733
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.brooklin",
+      "title": "링크드인 브루클린",
+      "aliases": ["Brooklin", "범용 데이터 수집 프레임워크", "CDC 스트리밍"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/brooklin.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single distributed service streaming data between heterogeneous stores, proven at trillions of messages a day, usable as a shared pipeline platform, for change-data-capture streams and for cross-cluster Kafka mirroring",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.ureplicator",
+        "messaging.pipeline.data-pipeline",
+        "kafka.connect.ingestion-framework-alternative"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 기타 클러스터간 미러링 솔루션 > ### 링크드인 브루클린",
+          "start_line": 739,
+          "end_line": 755
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.confluent-solution",
+      "title": "컨플루언트의 미러링 솔루션",
+      "aliases": ["Confluent Server", "멀티 리전 클러스터 기본 탑재"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/confluent-solution.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single vendor line built on Connect, adding multi-region clustering to the stretch cluster for customers chasing low RTO and RPO, and cluster linking for distant sites on less reliable networks",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.stretch-cluster",
+        "kafka.mirroring.multi-region-cluster",
+        "kafka.mirroring.cluster-linking"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 기타 클러스터간 미러링 솔루션 > ### 컨플루언트의 솔루션",
+          "start_line": 761,
+          "end_line": 767
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.confluent-replicator",
+      "title": "컨플루언트 리프리케이터",
+      "aliases": ["Confluent Replicator", "직접 토픽", "헤더 기반 순환 방지"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/confluent-replicator.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single Connect-based mirroring tool that migrates offsets and topic configuration but not ACLs, translates offsets for Java clients only, uses direct topics rather than local and remote ones, and blocks loops by writing provenance into the record header",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.confluent-solution",
+        "kafka.mirroring.circular-mirroring-prevention",
+        "kafka.mirroring.offset-translation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 기타 클러스터간 미러링 솔루션 > ### 컨플루언트의 솔루션",
+          "start_line": 773,
+          "end_line": 783
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.multi-region-cluster",
+      "title": "멀티 리전 클러스터",
+      "aliases": ["MRC", "옵저버", "Observer", "자동 옵저버 승격"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/multi-region-cluster.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single stretch-cluster refinement mixing synchronous replication inside a region with asynchronous observers across regions, where an observer stays out of the in-sync set until a shortfall promotes it and a recovered region demotes it again",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.stretch-cluster",
+        "kafka.replication.in-sync-replica",
+        "kafka.config.min-insync-replicas",
+        "kafka.config.broker-rack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 기타 클러스터간 미러링 솔루션 > ### 컨플루언트의 솔루션",
+          "start_line": 789,
+          "end_line": 799
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.cluster-linking",
+      "title": "클러스터 링킹",
+      "aliases": ["Cluster Linking", "오프셋 보존 복제", "읽기 전용 미러 토픽"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/cluster-linking.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single cross-cluster replication built into the broker that reuses the intra-cluster protocol to preserve offsets, so clients migrate without translation, mirrored topics are read-only on the target, and each event crosses between data centres once",
+      "pilot_strata": ["book-batch-15", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.confluent-solution",
+        "kafka.mirroring.offset-translation",
+        "kafka.mirroring.multi-region-cluster",
+        "kafka.replication.replication-mechanism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 기타 클러스터간 미러링 솔루션 > ### 컨플루언트의 솔루션",
+          "start_line": 805,
+          "end_line": 821
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap10-l0725",
+      "title": "chap10 기타 클러스터간 미러링 솔루션 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap10 L725-726 `## 기타 클러스터간 미러링 솔루션` carries only the heading and one blank line (span_sha256 0a5ed764e05b3b682a738e1ce0da6a19eab769cd2676e28f7d68b423c85359da; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false.",
+      "pilot_strata": ["book-batch-15", "scope-level-rejection-probe"],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398"
+        }
+      ],
+      "engine_substantive": false
+    }
+  ],
+  "update_authoring_note": {
+    "statement": "Batch 15 authors 1 update candidate, preserving its applied title, canonical_path, tags, approved locator and approved edges.",
+    "updates": [
+      {
+        "concept_id": "kafka.config.max-in-flight-requests",
+        "approved_locators_preserved": ["content/brain/books/kafka/chap08.md:59-63"],
+        "new_locators": ["content/brain/books/kafka/chap10.md:707-709"],
+        "why_update_not_create": "chap08 introduced the setting as the bound on tracked sequence numbers; chap10 gives the other half of the same setting - that leaving it at its default lifts throughput over a high-latency link when order does not matter. One setting, two facets."
+      }
+    ]
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L407, L413, L423, L445, L461, L469, L483, L491, L541-548, L574, L610-612, L618, L635, L645, L655, L675, L687, L695-697, L705, L713-715, L771, L787, L803",
+        "reason_code": "section-lead-in-or-carried-by-owner",
+        "detail": "Bold sub-headings and one-line framings whose content is restated inside the cited span of the concept that owns them, plus the L541-548 third-cluster example already covered by the topology concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L387-821 contributes at least one cited locator. The one non-substantive scope is filed as a rejection probe."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": { "value": 161, "ceiling": 360, "satisfied": true },
+      "heading_scopes": { "value": 10, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 32, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

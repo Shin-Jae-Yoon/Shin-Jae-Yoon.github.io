@@ -1,1 +1,0 @@
-<a href='<% tp.file.cursor(0) %>' target='_blank'></a>

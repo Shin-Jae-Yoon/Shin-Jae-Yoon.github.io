@@ -1,0 +1,775 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-37",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-36",
+    "applied_state": "786 approved knowledge concepts after lecture-batch-36 built out cs.network from the first four sections of the HTTP course."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+        "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3"
+      },
+      {
+        "path": "content/brain/lectures/backend/kim-spring/http/section05.md",
+        "source_sha256": "fa04b51da7adf365adb4c33b54b6ec3964a61dc850dc19432e2a0a1126976c00"
+      }
+    ],
+    "line_range": "section04 L12-L373, section05 L12-L40",
+    "series": "인프런 김영한 - 모든 개발자를 위한 HTTP 웹 기본 지식 4~5/8"
+  },
+  "overlap_analysis": {
+    "finding": "section04 is the course's centre: it derives the need for methods from URI design, defines each one, and closes with the three properties that distinguish them. section05 is short and belongs with it, being the practical summary of which method carries data how.",
+    "disposition": "Everything here is new under cs.network. Two applied concepts gain edges rather than content: cs.network.http-request-line, whose method field is what this batch fills in, and kafka.reliability.idempotence, which is the same property seen in a different system and is now linked to the HTTP reading of it."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "alias_avoidance_note": {
+    "key": "멱등",
+    "incumbent": "kafka.reliability.idempotence",
+    "disposition": "cs.network.idempotent-method is titled 멱등한 메서드 and takes Idempotent Methods rather than the bare 멱등, which the Kafka concept already holds. The two are joined by an edge in both directions instead of competing for the word."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "section04 L8, L16-30, L47-52, L65, L113-116, L124-132, L139-147, L157-165, L172-180 partial, L221-229, L244-256, L263-265, L271-278, L284-288, L294-297, L303-307, L318; section05 L8, L40",
+        "reason_code": "lecture-preamble-figure-caption-request-sample-or-carried-by-owner",
+        "detail": "The channel link, the bad URI design that the text immediately rejects and whose correction is cited, the sample request messages shown as code, the figure lead-ins, and the empty trailing heading of section05."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in section04 contributes at least one cited locator. section05's single substantive scope is cited whole; its second heading holds nothing."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 14259,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 187,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 7,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 6,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 15,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes the HTTP course as it exists in the tree - sections 06 to 08 on status codes and headers are frontmatter-only stubs of five or six lines, so the course's own table of contents in section00 lists three topics the notes never covered.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_transfer_note": {
+    "key": "HTTP 메서드",
+    "from": "cs.network.http-request-line",
+    "to": "cs.network.http-method",
+    "rationale": "Batch 36 gave the request line the alias because it was the only place the term appeared. Now that the method has its own concept, the name moves to it and the request line keeps 요청 라인의 메서드 필드."
+  },
+  "alias_yield_note": {
+    "key": "DELETE",
+    "incumbent": "db.sql.delete",
+    "disposition": "The HTTP method is titled DELETE 메서드 rather than taking the bare word, which the SQL statement already holds. The two are unrelated operations that happen to share a name."
+  },
+  "candidates_authored": 15,
+  "candidates": [
+    {
+      "concept_id": "cs.network.http-request-line",
+      "title": "요청 라인",
+      "aliases": [
+        "request-line",
+        "요청 대상",
+        "absolute-path",
+        "요청 라인의 메서드 필드"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-request-line.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single form the start line takes in a request - method, space, request target, space, HTTP version, newline - where the method names the action the server is to take, GET to fetch a resource and POST to have something processed, and the target is an absolute path with an optional query",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain",
+        "lecture-batch-37"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.http-message-structure",
+        "cs.network.http-status-line",
+        "cs.network.query-string",
+        "cs.network.http-method",
+        "cs.network.resource-identification"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 265,
+          "end_line": 266
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 278,
+          "end_line": 295
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.idempotence",
+      "title": "멱등성",
+      "aliases": [
+        "Idempotent",
+        "멱등",
+        "Idempotence"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/idempotence.md",
+      "tags": [
+        "kafka",
+        "reliability"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single property of an operation whose repeated execution leaves the same result as one execution",
+      "pilot_strata": [
+        "book-batch-10",
+        "kafka/chap08",
+        "reliability-domain",
+        "lecture-batch-37",
+        "backend/kim-spring"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.client.idempotent-producer",
+        "kafka.reliability.exactly-once",
+        "cs.network.idempotent-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 멱등적 프로듀서",
+          "start_line": 19,
+          "end_line": 21
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.resource-identification",
+      "title": "URI는 리소스만 식별한다",
+      "aliases": [
+        "리소스와 행위의 분리",
+        "리소스는 명사 행위는 동사",
+        "컬렉션은 복수형"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/resource-identification.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule for designing an API's URIs - the resource is the thing itself, a member rather than reading or registering a member, so the URI names only that, in the noun and using the hierarchy, with the collection named in the plural; the verb is left out because it is carried elsewhere",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.uri",
+        "cs.network.http-method",
+        "cs.network.url-structure",
+        "cs.network.control-uri"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP API 제작",
+          "start_line": 32,
+          "end_line": 32
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP API 제작",
+          "start_line": 36,
+          "end_line": 43
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP API 제작",
+          "start_line": 56,
+          "end_line": 63
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP API 제작",
+          "start_line": 69,
+          "end_line": 76
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-method",
+      "title": "HTTP 메서드",
+      "aliases": [
+        "클라이언트가 기대하는 행동",
+        "HEAD",
+        "OPTIONS",
+        "TRACE"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-method.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single word in the request line saying what the client expects the server to do - GET to read, POST to have data processed, PUT to replace, PATCH to change part, DELETE to remove - with further methods for returning only the headers, asking which methods are allowed, opening a tunnel and looping a message back",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.http-request-line",
+        "cs.network.resource-identification",
+        "cs.network.http-get",
+        "cs.network.http-post"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 종류",
+          "start_line": 82,
+          "end_line": 82
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 종류",
+          "start_line": 86,
+          "end_line": 95
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 종류",
+          "start_line": 99,
+          "end_line": 103
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-get",
+      "title": "GET",
+      "aliases": [
+        "리소스 조회",
+        "쿼리로 데이터 전달"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-get.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method for reading a resource, which passes whatever the server needs in the query string rather than in the body - a body is possible but supported in too few places to rely on",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-method",
+        "cs.network.query-string",
+        "cs.network.safe-method",
+        "cs.network.cacheable-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### GET, POST",
+          "start_line": 118,
+          "end_line": 120
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-post",
+      "title": "POST",
+      "aliases": [
+        "요청 데이터 처리",
+        "메시지 바디로 전달",
+        "애매하면 POST"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-post.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method that hands the server data in the body and asks it to process it, where what processing means is decided per resource and nowhere fixed - creating a resource the server has not identified yet, posting to a board, appending to a document, or driving a process from one state to the next - and which is also the fallback when no other method fits, though a read should stay a GET because that is what can be cached",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-method",
+        "cs.network.http-get",
+        "cs.network.control-uri",
+        "cs.network.http-message-body",
+        "cs.network.idempotent-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### GET, POST",
+          "start_line": 137,
+          "end_line": 137
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### GET, POST",
+          "start_line": 149,
+          "end_line": 153
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### GET, POST",
+          "start_line": 169,
+          "end_line": 181
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### GET, POST",
+          "start_line": 185,
+          "end_line": 196
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### GET, POST",
+          "start_line": 205,
+          "end_line": 211
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.control-uri",
+      "title": "컨트롤 URI",
+      "aliases": [
+        "동사가 들어간 URI",
+        "리소스로 표현할 수 없을 때"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/control-uri.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single exception to naming URIs after resources alone - some actions cannot be expressed as a noun, so a verb appears in the path, which is allowed only where designing it as a resource has genuinely failed",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.resource-identification",
+        "cs.network.http-post",
+        "cs.network.uri"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### GET, POST",
+          "start_line": 200,
+          "end_line": 201
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-put",
+      "title": "PUT",
+      "aliases": [
+        "리소스를 완전히 대체",
+        "클라이언트가 리소스를 식별",
+        "없으면 생성"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-put.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method that replaces the resource at the given URI entirely, creating it if it is not there and overwriting it if it is - which makes it a poor fit for editing, since the fields left out are lost - and whose defining difference from POST is that the client, not the server, decides where the resource lives",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-method",
+        "cs.network.http-patch",
+        "cs.network.http-post",
+        "cs.network.idempotent-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### PUT, PATCH, DELETE",
+          "start_line": 231,
+          "end_line": 240
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### PUT, PATCH, DELETE",
+          "start_line": 260,
+          "end_line": 261
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-patch",
+      "title": "PATCH",
+      "aliases": [
+        "리소스 부분 변경",
+        "지원하지 않으면 POST"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-patch.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method changing part of a resource and leaving the rest as it was, which is what editing actually needs, though a server that does not support it leaves POST as the way out",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.network.http-put",
+        "cs.network.http-method",
+        "cs.network.http-post"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### PUT, PATCH, DELETE",
+          "start_line": 280,
+          "end_line": 280
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-delete",
+      "title": "DELETE 메서드",
+      "aliases": [
+        "HTTP DELETE",
+        "리소스 제거"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-delete.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method removing the resource at the given URI",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.network.http-method",
+        "cs.network.idempotent-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### PUT, PATCH, DELETE",
+          "start_line": 299,
+          "end_line": 299
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-method-property",
+      "title": "HTTP 메서드의 속성",
+      "aliases": [
+        "안전 멱등 캐시가능"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-method-property.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three questions asked of every method - whether it is safe, whether it is idempotent, and whether its response may be cached",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.network.safe-method",
+        "cs.network.idempotent-method",
+        "cs.network.cacheable-method",
+        "cs.network.http-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 속성",
+          "start_line": 313,
+          "end_line": 316
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.safe-method",
+      "title": "안전한 메서드",
+      "aliases": [
+        "Safe Methods",
+        "리소스를 변경하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/safe-method.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property of a method that leaves the target resource unchanged, which GET has and POST, PUT, PATCH and DELETE do not - and which is asked of that resource alone, not of anything else calling it repeatedly might pile up, such as logs",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-method-property",
+        "cs.network.http-get",
+        "cs.network.idempotent-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 속성",
+          "start_line": 322,
+          "end_line": 329
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.idempotent-method",
+      "title": "멱등한 메서드",
+      "aliases": [
+        "Idempotent Methods",
+        "몇 번을 호출해도 결과가 같다",
+        "자동 복구 메커니즘"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/idempotent-method.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property of a method whose repeated call leaves the same result as one call - GET, PUT and DELETE have it, POST does not since calling it twice can charge twice - which is what tells a client whether it may safely retry after a timeout, and which is asked only of its own repetition, not of another party changing the resource in between",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.http-method-property",
+        "cs.network.http-put",
+        "cs.network.http-delete",
+        "kafka.reliability.idempotence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 속성",
+          "start_line": 333,
+          "end_line": 340
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 속성",
+          "start_line": 344,
+          "end_line": 344
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 속성",
+          "start_line": 348,
+          "end_line": 352
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 속성",
+          "start_line": 356,
+          "end_line": 362
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.cacheable-method",
+      "title": "캐시 가능한 메서드",
+      "aliases": [
+        "Cacheable Methods",
+        "URL만 키로 잡으면 되니까"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/cacheable-method.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property of a method whose response may be kept and reused, which the spec grants to GET, HEAD, POST and PATCH but which in practice only GET and HEAD get, because their cache key is just the URL while the other two would have to key on the body as well",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-method-property",
+        "cs.network.http-get",
+        "cs.network.http-post",
+        "software.pattern.cache-aside"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section04.md",
+          "source_sha256": "d58e2a17eb1ca4a72e0c34a3f15b0a32d0b09985c2b0fe5f3baae5f35f141fd3",
+          "heading": "### HTTP 메서드 속성",
+          "start_line": 366,
+          "end_line": 372
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.client-to-server-data",
+      "title": "클라이언트에서 서버로 데이터를 보내는 두 방식",
+      "aliases": [
+        "쿼리 파라미터를 통한 전송",
+        "메시지 바디를 통한 전송",
+        "HTML Form 전송"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/client-to-server-data.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single split between the two ways data reaches the server - the query string with GET, used for sorting, filtering and search terms, and the message body with POST, PUT or PATCH, used for signing up, ordering and changing a resource - which covers the four situations that arise: reading static data, reading dynamic data, submitting an HTML form, and calling an HTTP API from a server, an app or a web client",
+      "pilot_strata": [
+        "lecture-batch-37",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.query-string",
+        "cs.network.http-message-body",
+        "cs.network.http-get",
+        "cs.network.http-post"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section05.md",
+          "source_sha256": "fa04b51da7adf365adb4c33b54b6ec3964a61dc850dc19432e2a0a1126976c00",
+          "heading": "### 클라이언트에서 서버로 데이터 전송",
+          "start_line": 16,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section05.md",
+          "source_sha256": "fa04b51da7adf365adb4c33b54b6ec3964a61dc850dc19432e2a0a1126976c00",
+          "heading": "### 클라이언트에서 서버로 데이터 전송",
+          "start_line": 26,
+          "end_line": 36
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

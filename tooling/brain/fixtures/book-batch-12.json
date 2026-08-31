@@ -1,0 +1,541 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-12",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-11",
+    "applied_state": "289 approved knowledge concepts after book-batch-11 covered chap08 L266-442."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap08.md",
+    "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+    "line_range": "L443-L804",
+    "covered_scopes": "heading scopes 12-16 (### 해결할 수 없는 문제 through ### 성능)",
+    "completes": "chap08. The Kafka book then has chap09, chap10 and chap14 left."
+  },
+  "density_note": {
+    "measured": "The ### 해결할 수 없는 문제 scope measures 211 prose lines, 41% of the chapter, and was the reason chap08 needed three batches.",
+    "finding": "Most of that count is two <details> blocks holding NotebookLM summaries of an external Debezium blog post (L490-578) and of KIP-656 (L608-720), together roughly 180 lines. They are reference material about the outbox pattern and MirrorMaker, not assertions the book makes, and are excluded on the same grounds as the external callouts excluded in batches 06 and 10. The scope's own Kafka claims fit in eight concepts."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 12 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is an Obsidian callout rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 16,
+  "candidates": [
+    {
+      "concept_id": "kafka.transaction.transaction-misconception",
+      "title": "트랜잭션에 대한 흔한 오해",
+      "aliases": ["카프카 밖에서도 보장된다는 오해", "트랜잭션 경계를 안다는 가정"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/transaction-misconception.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of mistakes about Kafka transactions: believing exactly-once extends past writes to Kafka, and assuming a consumer always reads a whole transaction and knows where its boundaries are",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.side-effect-limit",
+        "kafka.transaction.pubsub-limit",
+        "kafka.reliability.exactly-once"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 445,
+          "end_line": 449
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.side-effect-limit",
+      "title": "부수 효과에는 적용되지 않는다",
+      "aliases": ["Side Effect", "이메일 발송은 취소 불가", "외부 효과"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/side-effect-limit.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single boundary confining the guarantee to records written to Kafka, so any external effect a processing step causes - an email, a REST call, a file write - still happens once per attempt",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction-misconception",
+        "kafka.reliability.exactly-once",
+        "kafka.stream.consume-process-produce"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 453,
+          "end_line": 459
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.external-database-limit",
+      "title": "외부 데이터베이스 쓰기의 한계",
+      "aliases": ["JDBC 쓰기와 오프셋 커밋", "오프셋을 DB에 저장하기"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/external-database-limit.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single gap where a result goes to an external database through a driver while the offset is committed to Kafka, with no mechanism joining the two, leaving storing the offset in the database and relying on its transaction as the workaround",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.outbox-pattern",
+        "kafka.transaction.atomic-multipartition-write",
+        "kafka.client.offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 463,
+          "end_line": 471
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.outbox-pattern",
+      "title": "아웃박스 패턴",
+      "aliases": ["Outbox Pattern", "메세지 중계 서비스", "이중 쓰기 문제"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/outbox-pattern.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single workaround for the dual-write problem in which the service writes only to an outbox and a relay service applies the update, requiring the update itself to be idempotent because Kafka guarantees nothing about it",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.transaction.external-database-limit",
+        "kafka.reliability.idempotence",
+        "messaging.pattern.publish-subscribe"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 475,
+          "end_line": 486
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.end-to-end-guarantee-limit",
+      "title": "종단 보장의 한계",
+      "aliases": ["DB→카프카→DB", "read_committed는 DB 트랜잭션 보존에 약하다"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/end-to-end-guarantee-limit.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single limit on chaining a database read through Kafka into another database, because read_committed only hides uncommitted records and never tells the consumer where a transaction started, ended, or how much of it has arrived",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.isolation-level",
+        "kafka.transaction.transaction-misconception",
+        "kafka.transaction.external-database-limit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 582,
+          "end_line": 589
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.cross-cluster-limit",
+      "title": "클러스터 간 복제의 한계",
+      "aliases": ["KIP-656", "미러메이커 2.0 정확히 한 번", "복제 시 트랜잭션 속성 유실"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/cross-cluster-limit.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between copying each record exactly once across clusters, which MirrorMaker 2.0 can do, and preserving the transaction's atomicity, which is lost in the copy",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.cluster.mirror-maker",
+        "kafka.cluster.multi-cluster",
+        "kafka.transaction.transaction-misconception"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 593,
+          "end_line": 604
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.pubsub-limit",
+      "title": "발행/구독 패턴에서의 한계",
+      "aliases": ["JMS 트랜잭션과의 비교", "오프셋 커밋 로직에 따른 중복 처리"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/pubsub-limit.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single shortfall in publish-subscribe use, where read_committed consumers do skip aborted records - comparable to a JMS transaction - but the offset commit logic can still make a consumer process a message more than once",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "messaging.pattern.publish-subscribe",
+        "kafka.config.isolation-level",
+        "kafka.reliability.at-least-once"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 724,
+          "end_line": 734
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.commit-deadlock",
+      "title": "커밋 전 응답 대기 데드락",
+      "aliases": ["트랜잭션 데드락", "커밋 전 응답 기다리는 패턴 금지"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/commit-deadlock.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single anti-pattern of writing a message and waiting for another application's reply before committing, which deadlocks because the reader cannot see the message until the commit",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict", "provenance-warning", "low-confidence"],
+      "related_concepts": [
+        "kafka.transaction.pubsub-limit",
+        "kafka.config.isolation-level",
+        "kafka.transaction.last-stable-offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결할 수 없는 문제",
+          "start_line": 736,
+          "end_line": 738
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.processing-guarantee",
+      "title": "processing.guarantee",
+      "aliases": ["exactly_once", "exactly_once_beta", "카프카 스트림즈 정확히 한 번 활성화"],
+      "canonical_path": "content/brain/knowledge/kafka/config/processing-guarantee.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single Kafka Streams setting that turns on exactly-once, the recommended way to use transactions because Streams then drives the transaction API on the application's behalf",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction",
+        "kafka.platform.platform-feature",
+        "kafka.reliability.exactly-once"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용법",
+          "start_line": 748,
+          "end_line": 752
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.producer-side-feature",
+      "title": "트랜잭션은 프로듀서 쪽 기능",
+      "aliases": ["Producer-Side Transaction", "트랜잭션 시작과 커밋의 위치", "브로커 기능이기도 함"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/producer-side-feature.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "update",
+      "concept_granularity": "single placement fact that creating the transactional producer, beginning, writing records and offsets, and committing or aborting all happen on the producer, while the transaction is also a broker feature",
+      "pilot_strata": [
+        "book-batch-11",
+        "kafka/chap08",
+        "transaction-domain",
+        "book-batch-12"
+      ],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction",
+        "kafka.config.isolation-level",
+        "kafka.client.producer",
+        "kafka.transaction.transaction-marker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 393,
+          "end_line": 399
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용법",
+          "start_line": 744,
+          "end_line": 744
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.consumer-group-metadata-fencing",
+      "title": "컨슈머 그룹 메타데이터 펜싱",
+      "aliases": [
+        "Consumer Group Metadata Fencing",
+        "2.5.0 이후 펜싱 확장",
+        "인스턴스별로 달라야 하는 트랜잭션 ID"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/consumer-group-metadata-fencing.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "update",
+      "concept_granularity": "single option from Kafka 2.5 pairing the transactional id with consumer group metadata for fencing, requiring a distinct id per application instance so one consumer's failure fences only that instance and the rest keep their transactions running",
+      "pilot_strata": [
+        "book-batch-11",
+        "kafka/chap08",
+        "transaction-domain",
+        "book-batch-12"
+      ],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.zombie-fencing",
+        "kafka.config.transactional-id",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 387,
+          "end_line": 389
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션 ID와 펜싱",
+          "start_line": 758,
+          "end_line": 761
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.transaction-marker",
+      "title": "트랜잭션 마커",
+      "aliases": [
+        "Transaction Marker",
+        "Chandy-Lamport",
+        "__transaction_state",
+        "2PC",
+        "트랜잭션 코디네이터"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/transaction-marker.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single control message the coordinator writes to every partition in a transaction to mark it committed or aborted, ordered by a two-phase commit against the __transaction_state log so a partial write is recoverable",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.atomic-multipartition-write",
+        "kafka.transaction.transaction-api-flow",
+        "kafka.transaction.producer-side-feature"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 작동 원리",
+          "start_line": 767,
+          "end_line": 777
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.transaction-api-flow",
+      "title": "트랜잭션 API 흐름",
+      "aliases": [
+        "beginTransaction()",
+        "AddPartitionsToTxn",
+        "sendOffsetsToTransaction()",
+        "EndTxn"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/transaction-api-flow.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single call sequence from registering the transactional id through beginning, announcing each new partition, sending the processed offsets and ending with a commit or abort the coordinator records",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction-marker",
+        "kafka.config.transactional-id",
+        "kafka.config.transaction-timeout-ms",
+        "kafka.transaction.zombie-fencing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 작동 원리",
+          "start_line": 781,
+          "end_line": 789
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.transaction-timeout-ms",
+      "title": "transaction.timeout.ms",
+      "aliases": ["트랜잭션 자동 중단 시간", "코디네이터 강제 중단"],
+      "canonical_path": "content/brain/knowledge/kafka/config/transaction-timeout-ms.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single deadline after which the coordinator aborts a transaction that has neither committed nor aborted",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "config-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.transaction.transaction-api-flow",
+        "kafka.transaction.last-stable-offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 작동 원리",
+          "start_line": 790,
+          "end_line": 790
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.last-stable-offset",
+      "title": "Last Stable Offset",
+      "aliases": ["LSO", "미결 트랜잭션으로 인한 지연", "읽기 보류 지점"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/last-stable-offset.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "update",
+      "concept_granularity": "single read barrier under read_committed at the start of the oldest open transaction, holding later messages back until that transaction commits, aborts, or times out, which lengthens end-to-end delay while it stays open",
+      "pilot_strata": [
+        "book-batch-11",
+        "kafka/chap08",
+        "transaction-domain",
+        "book-batch-12"
+      ],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.isolation-level",
+        "kafka.replication.end-to-end-delay",
+        "kafka.client.offset",
+        "kafka.config.transaction-timeout-ms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 428,
+          "end_line": 432
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.transaction-performance",
+      "title": "트랜잭션 성능",
+      "aliases": ["트랜잭션 오버헤드", "큰 트랜잭션일수록 오버헤드 감소"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/transaction-performance.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single cost profile in which registration and partition announcements are one-off, commit markers and the synchronous wait are per transaction, so throughput rises as more messages fit in one transaction while read_committed still lengthens end-to-end delay",
+      "pilot_strata": ["book-batch-12", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction-marker",
+        "kafka.transaction.last-stable-offset",
+        "kafka.client.idempotent-producer",
+        "kafka.replication.end-to-end-delay"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 성능",
+          "start_line": 796,
+          "end_line": 804
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [],
+  "rejection_probes": {
+    "scope_level": "None. chap08 has no non-substantive heading scope anywhere in the file."
+  },
+  "update_authoring_note": {
+    "statement": "Batch 12 authors 3 update candidates. Each preserves its applied title, canonical_path, tags, every approved locator and every approved related-concept edge.",
+    "updates": [
+      {
+        "concept_id": "kafka.transaction.producer-side-feature",
+        "approved_locators_preserved": ["content/brain/books/kafka/chap08.md:393-399"],
+        "new_locators": ["content/brain/books/kafka/chap08.md:744-744"],
+        "why_update_not_create": "L744 qualifies the very claim this concept makes - transactions are mostly producer-side but also a broker feature. A separate note would leave the two halves of one statement in different files."
+      },
+      {
+        "concept_id": "kafka.transaction.consumer-group-metadata-fencing",
+        "approved_locators_preserved": ["content/brain/books/kafka/chap08.md:387-389"],
+        "new_locators": ["content/brain/books/kafka/chap08.md:758-761"],
+        "why_update_not_create": "The ### 트랜잭션 ID와 펜싱 scope is the same 2.5 feature the applied concept already covers, with the per-instance id requirement and a worked example added."
+      },
+      {
+        "concept_id": "kafka.transaction.last-stable-offset",
+        "approved_locators_preserved": ["content/brain/books/kafka/chap08.md:428-432"],
+        "new_locators": [],
+        "alias_change": "drops transaction.timeout.ms and adds 읽기 보류 지점. The setting gets its own concept in this batch at kafka.config.transaction-timeout-ms; leaving the alias here would collide and would point a search for the setting at the read barrier instead."
+      }
+    ]
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L488-578",
+        "reason_code": "external-reference-material",
+        "detail": "A link to the Debezium blog plus a NotebookLM summary of it. The outbox pattern claim the book itself makes is the L475-486 callout, which is cited."
+      },
+      {
+        "span": "L608-720",
+        "reason_code": "external-reference-material",
+        "detail": "A NotebookLM summary of KIP-656. The book's own MirrorMaker claim is L593-604, which is cited."
+      },
+      {
+        "span": "L744 for candidates other than producer-side-feature",
+        "reason_code": "single-owner",
+        "detail": "Cited once, by the concept whose claim it qualifies."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L443-804 contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines_raw": { "value": 251, "ceiling": 360, "satisfied": true },
+      "prose_lines_excluding_external_summaries": { "value": 71, "note": "the figure that actually drove candidate count" },
+      "heading_scopes": { "value": 5, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 16, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

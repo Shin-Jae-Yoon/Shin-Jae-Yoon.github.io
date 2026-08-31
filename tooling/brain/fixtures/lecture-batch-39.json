@@ -1,0 +1,893 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-39",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-38",
+    "applied_state": "820 approved knowledge concepts after lecture-batch-38 opened the spring namespace from the first half of the spring introduction course."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+        "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2"
+      }
+    ],
+    "line_range": "L12-L553 (whole file)",
+    "series": "인프런 김영한 - 스프링 입문, 섹션 4~8"
+  },
+  "overlap_analysis": {
+    "finding": "This file answers the question the previous one left open. Batch 38 named dependency injection only as the fix for a test seeing the wrong repository instance; here the container's own account of it arrives - what a bean is, how the scan finds one, and what is gained by registering it in java instead.",
+    "disposition": "New subdomains spring.di and spring.db. Two candidates leave the spring namespace: the open-closed principle is a general software principle and is filed under software.principle beside the polymorphism concept it rests on. Three applied concepts gain evidence or edges - spring.web.static-content, whose lookup order is restated here from the other side, spring.arch.repository-interface, whose swap actually happens in this file, and db.transaction.application-transaction, which the test rollback is a use of."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L283-L306, L324-L345, L349",
+        "reason_code": "environment-setup-instruction",
+        "detail": "Downloading H2, chmod on its shell script, the JDBC URL to use the first time, the shell alias, the build file lines and the datasource properties including the version-specific note about a username that must be set. These are steps and version workarounds, not claims."
+      },
+      {
+        "span": "L8, L20-L21, L78-L85, L89, L155, L269-L270, L432, L451-L452, L505, L509-L510, L537",
+        "reason_code": "walkthrough-narration-or-carried-by-owner",
+        "detail": "The course link, the running commentary of what is being built next, the deliberately-failing intermediate step whose lesson is stated in the cited span of the component scan, and the details wrappers around code listings."
+      },
+      {
+        "span": "L72, L149",
+        "reason_code": "cross-reference-to-notes-lane",
+        "detail": "Two pointers to the Interview/dog-study notes for injection position and bean scope. Those files are their own lane and will be mined there."
+      },
+      {
+        "span": "L541-L553",
+        "reason_code": "empty-heading",
+        "detail": "JPA, 스프링 데이터 JPA and the three AOP headings carry no body at all - the notes stop before those sections of the course."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update. The five empty headings at the end contribute none, as recorded above."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 18611,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 97,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 10,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 18,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes the kim-spring lane - the HTTP course over batches 36 and 37 and the spring introduction over batches 38 and 39. The course's last topics, JPA and AOP, exist in the notes only as empty headings, so nothing in the knowledge base claims to cover them.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_yield_note": {
+    "key": "@Transactional",
+    "incumbent": "db.transaction.application-transaction",
+    "disposition": "The annotation names a transaction boundary in application code, which is what the applied concept is about. The test concept takes 테스트의 @Transactional instead and links to it."
+  },
+  "candidates_authored": 18,
+  "candidates": [
+    {
+      "concept_id": "spring.web.static-content",
+      "title": "정적 컨텐츠 처리",
+      "aliases": [
+        "컨트롤러를 먼저 찾는다",
+        "static 경로에서 반환",
+        "templates가 static보다 먼저"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/static-content.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single order in which a request for a file is resolved - the container hands it to spring, which looks for a controller mapped to that path first and only then falls back to the file under the static resource path",
+      "pilot_strata": [
+        "lecture-batch-38",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-39"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.web.three-ways",
+        "spring.web.welcome-page",
+        "spring.web.controller",
+        "spring.web.form-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 스프링 웹 개발 기초 > ### 정적 컨텐츠",
+          "start_line": 337,
+          "end_line": 337
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 스프링 웹 개발 기초 > ### 정적 컨텐츠",
+          "start_line": 343,
+          "end_line": 349
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 회원 관리 예제 - MVC > ### 웹 기능 - 홈 화면 추가",
+          "start_line": 204,
+          "end_line": 204
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 회원 관리 예제 - MVC > ### 웹 기능 - 홈 화면 추가",
+          "start_line": 208,
+          "end_line": 209
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.arch.repository-interface",
+      "title": "저장소를 정하지 않고 개발을 시작하는 법",
+      "aliases": [
+        "인터페이스로 두고 구현을 바꿔끼운다",
+        "메모리 구현체로 먼저"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/arch/repository-interface.md",
+      "tags": [
+        "spring",
+        "arch"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single way to begin before the storage decision is made - the repository is written as an interface so the implementation can be swapped later, and a light in-memory one is used to get moving while the choice between a relational store and something else is still open",
+      "pilot_strata": [
+        "lecture-batch-38",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-39"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.arch.layered-structure",
+        "java.collection.interface-type-reference",
+        "spring.test.fixture-injection",
+        "spring.di.java-config",
+        "spring.db.jdbc-template",
+        "software.principle.open-closed"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 회원 관리 예제 > ### 비즈니스 요구사항",
+          "start_line": 543,
+          "end_line": 547
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.application-transaction",
+      "title": "애플리케이션 코드에서의 트랜잭션",
+      "aliases": [
+        "setAutoCommit(false)",
+        "@Transactional",
+        "트랜잭션 코드 감추기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/application-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single way the pattern appears in code - turning autocommit off on the connection both starts the transaction and must be undone afterwards because connections are reused, and the bookkeeping is better hidden behind an annotation such as @Transactional so only the business logic is left to read",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-39",
+        "backend/kim-spring"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.autocommit",
+        "db.transaction.usage-pattern",
+        "software.architecture.business-logic",
+        "spring.test.transactional-rollback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용패턴",
+          "start_line": 122,
+          "end_line": 126
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션 > ### 트랜잭션 사용패턴",
+          "start_line": 132,
+          "end_line": 132
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.bean-registration-methods",
+      "title": "스프링 빈을 등록하는 두 가지 방법",
+      "aliases": [
+        "컴포넌트 스캔과 자바 설정"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/bean-registration-methods.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice between the two ways an object becomes a bean - annotating the class so the scan finds it, or writing the registration out in java configuration",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "spring.di.component-scan",
+        "spring.di.java-config",
+        "spring.di.spring-bean"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계",
+          "start_line": 14,
+          "end_line": 16
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.spring-bean",
+      "title": "스프링 빈",
+      "aliases": [
+        "Spring Bean",
+        "스프링 컨테이너",
+        "기본이 싱글톤 등록"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/spring-bean.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object the spring container creates and holds on the application's behalf - registered once and shared, since one instance of a service is enough for everyone to call, so the same bean is the same instance everywhere",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.component-scan",
+        "spring.di.dependency-injection",
+        "java.pattern.singleton",
+        "spring.arch.layered-structure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 30,
+          "end_line": 30
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 36,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 48,
+          "end_line": 49
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 148,
+          "end_line": 148
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.dependency-injection",
+      "title": "의존관계 주입",
+      "aliases": [
+        "DI",
+        "Dependency Injection",
+        "@Autowired",
+        "외부에서 넣어주는 것"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/dependency-injection.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reversal in who supplies an object's collaborators - the constructor declares what it needs and the container finds the matching bean and passes it in, rather than the object creating one for itself; on a class with a single constructor the annotation may even be left out",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "spring.test.fixture-injection",
+        "spring.di.injection-style",
+        "software.principle.open-closed"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 66,
+          "end_line": 67
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 71,
+          "end_line": 71
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.component-scan",
+      "title": "컴포넌트 스캔",
+      "aliases": [
+        "@Component",
+        "@Service",
+        "@Repository",
+        "@ComponentScan"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/component-scan.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sweep that registers as beans every class carrying the component annotation or one built on top of it - controller, service and repository all being such - starting from the package the application class sits in and not going above it, which is why an unannotated class is invisible to the container and its injection fails",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "spring.di.dependency-injection",
+        "spring.arch.layered-structure",
+        "spring.di.java-config"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 129,
+          "end_line": 134
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 138,
+          "end_line": 146
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.java-config",
+      "title": "자바 코드로 빈 등록하기",
+      "aliases": [
+        "@Configuration과 @Bean",
+        "구현 클래스를 바꿔야 할 때",
+        "XML 설정"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/java-config.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative to scanning, chosen when the implementation is going to be swapped - the registration is written out so changing which class is returned is the whole change, everything else being untouched; the settled controller, service and repository stay on the scan, and the older XML form is no longer used",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.component-scan",
+        "spring.arch.repository-interface",
+        "software.principle.open-closed",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 자바 코드로 직접 스프링 빈 등록",
+          "start_line": 173,
+          "end_line": 174
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 자바 코드로 직접 스프링 빈 등록",
+          "start_line": 176,
+          "end_line": 176
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 자바 코드로 직접 스프링 빈 등록",
+          "start_line": 180,
+          "end_line": 180
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.injection-style",
+      "title": "주입의 세 가지 방법",
+      "aliases": [
+        "필드 주입",
+        "setter 주입",
+        "생성자 주입"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/injection-style.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice among field, setter and constructor injection, where the constructor is the one to use because dependencies almost never change while the application is running",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.test.integration-test"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 자바 코드로 직접 스프링 빈 등록",
+          "start_line": 178,
+          "end_line": 178
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.autowired-scope",
+      "title": "주입은 컨테이너가 아는 객체에만 동작한다",
+      "aliases": [
+        "직접 생성한 객체에는 안 된다",
+        "스프링이 관리하는 객체에서만"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/autowired-scope.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single limit on injection - it works only inside objects the container itself made, so an instance created with new gets nothing injected no matter how it is annotated",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.di.spring-bean",
+        "spring.di.component-scan"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 자바 코드로 직접 스프링 빈 등록",
+          "start_line": 182,
+          "end_line": 182
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.form-object",
+      "title": "폼 객체",
+      "aliases": [
+        "@PostMapping",
+        "등록 화면에서 데이터를 받는 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/form-object.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object standing between the registration form and the controller, holding what the form submits, with the method bound to the POST mapping being the one that actually registers",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.web.controller",
+        "cs.network.http-post",
+        "cs.network.client-to-server-data"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 회원 관리 예제 - MVC > ### 웹 기능 - 등록",
+          "start_line": 231,
+          "end_line": 231
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 회원 관리 예제 - MVC > ### 웹 기능 - 등록",
+          "start_line": 263,
+          "end_line": 263
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.h2",
+      "title": "H2 데이터베이스",
+      "aliases": [
+        "개발과 테스트용 경량 DB",
+        "웹 콘솔 제공"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/h2.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single lightweight database used while developing and testing, which comes with a web console to work in",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.basic.dbms",
+        "spring.db.datasource",
+        "spring.db.sql-file-management"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### H2 DB 설치",
+          "start_line": 279,
+          "end_line": 279
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.sql-file-management",
+      "title": "SQL문을 프로젝트에 두고 관리하기",
+      "aliases": [
+        "ddl.sql",
+        "sql 폴더"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/sql-file-management.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single habit of keeping the schema statements as a file in the project rather than only in the database, so they are versioned with the code",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "spring.db.h2",
+        "db.language.ddl",
+        "db.sql.alter-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### H2 DB 설치",
+          "start_line": 312,
+          "end_line": 313
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.datasource",
+      "title": "DataSource",
+      "aliases": [
+        "데이터베이스 커넥션을 획득하는 객체",
+        "커넥션 정보로 스프링이 만들어 둔 빈"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/datasource.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object through which a database connection is obtained, which spring boot builds from the connection settings and registers as a bean, so anything needing it has it injected rather than constructing it",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.db.jdbc-template",
+        "spring.db.h2"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 순수 JDBC",
+          "start_line": 376,
+          "end_line": 377
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.open-closed",
+      "title": "개방-폐쇄 원칙",
+      "aliases": [
+        "OCP",
+        "Open-Closed Principle",
+        "확장에는 열려있고 변경에는 닫혀있다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/open-closed.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single principle that a piece of software should admit extension without being modified, which polymorphism is the mechanism for and which dependency injection delivers in practice - the implementing class is swapped in configuration while the code using it is never touched",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.polymorphism",
+        "spring.di.dependency-injection",
+        "spring.di.java-config",
+        "java.collection.interface-type-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 순수 JDBC",
+          "start_line": 385,
+          "end_line": 388
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.test.integration-test",
+      "title": "통합 테스트",
+      "aliases": [
+        "@SpringBootTest",
+        "컨테이너와 DB까지 띄우는 테스트",
+        "단위 테스트가 더 좋다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/test/integration-test.md",
+      "tags": [
+        "spring",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single kind of test that starts the container and the database alongside the code, which is heavier than it looks - a test that can be written without the container, at the smallest unit, is the better test, and being able to write one is a skill worth practising",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.test.junit",
+        "spring.test.transactional-rollback",
+        "spring.test.fixture-injection",
+        "spring.di.injection-style"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 스프링 통합테스트",
+          "start_line": 394,
+          "end_line": 395
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 스프링 통합테스트",
+          "start_line": 421,
+          "end_line": 422
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.test.transactional-rollback",
+      "title": "테스트를 롤백으로 되돌리기",
+      "aliases": [
+        "테스트의 @Transactional",
+        "커밋하지 않고 롤백",
+        "테스트 메서드마다 적용"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/test/transactional-rollback.md",
+      "tags": [
+        "spring",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way an integration test leaves the database as it found it - the annotation opens a transaction before each test method and rolls it back afterwards, so the rows the test inserted are never committed",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.test.integration-test",
+        "db.transaction.rollback",
+        "db.transaction.autocommit",
+        "spring.test.independence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 스프링 통합테스트",
+          "start_line": 423,
+          "end_line": 425
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.jdbc-template",
+      "title": "JdbcTemplate",
+      "aliases": [
+        "반복 코드를 없애준다",
+        "MyBatis",
+        "SQL은 직접 작성"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/jdbc-template.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single layer over the JDBC API that removes almost all of its repetition while leaving the SQL to be written by hand, needing only the data source injected into it - which is why the raw JDBC code it replaces is no longer worth writing",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.db.datasource",
+        "spring.di.dependency-injection",
+        "db.language.sql",
+        "spring.arch.repository-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 순수 JDBC",
+          "start_line": 319,
+          "end_line": 320
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 스프링 JdbcTemplate",
+          "start_line": 433,
+          "end_line": 433
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 스프링 JdbcTemplate",
+          "start_line": 447,
+          "end_line": 447
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

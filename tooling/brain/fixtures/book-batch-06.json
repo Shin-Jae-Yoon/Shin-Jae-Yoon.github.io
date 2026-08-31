@@ -1,0 +1,1067 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-06",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work after the Codex/Orca session hit its usage limit on 2026-08-14",
+  "derived_from": {
+    "predecessor_batch": "book-batch-05",
+    "scheduling_basis": "book-batch-05-sources.json next_batch_recommendation named content/brain/books/kafka/chap05.md as batch 06 at 337 prose lines (94% of B4).",
+    "applied_state": "155 approved knowledge concepts, 70 of them under kafka.* or messaging.*, after book-batch-05 applied 39 proposals."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap05.md",
+    "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+    "line_range": "L7-L426",
+    "covered_scopes": "the pre-heading preamble plus heading scopes 0-13 (## AdminClient through ## 토픽 관리 기능 > ### 설정 관리)",
+    "deferred_range": "L427-L870, heading scopes 14-24 (## 컨슈머 그룹 관리 through ### MockAdminClient), reserved for book-batch-07"
+  },
+  "split_decision": {
+    "statement": "chap05 fits B4 as a whole file (319-337 prose lines against a 360 ceiling) but does NOT fit B5. Authoring the whole chapter at the atomicity this series uses yields 46 accepted candidates against a B5 ceiling of 40.",
+    "policy_applied": "book-batch-05-sources.json selection_budget.B5.escalation_trigger: 'If authoring exceeds 40 accepted candidates, do NOT raise B5 again. Split the source and re-inventory.' B5 is therefore left at 40 and the source is split.",
+    "split_point": "L427, the ## 컨슈머 그룹 관리 scope boundary. It is a top-level heading and the chapter's natural seam: everything before it concerns the AdminClient object itself, its configuration and topic administration; everything after concerns consumer groups, cluster metadata, advanced operations and testing.",
+    "resulting_sizes": "batch 06 = 25 candidates over L7-426; batch 07 = a projected 21 candidates over L427-870.",
+    "why_not_consolidate": "Merging candidates to land under 40 in one batch would fuse distinct API operations (describeConfigs vs incrementalAlterConfigs, the two client.dns.lookup modes) into composite notes, contradicting the project rule that one atomic concept is one file."
+  },
+  "namespace_decision": {
+    "new_namespace": "kafka.adminclient.*",
+    "rationale": "chap05 introduces the AdminClient API surface, which no applied concept covers. 22 of 25 candidates are operations or properties of that API and take the new namespace.",
+    "reused_namespace": "kafka.config.* takes the three client-side configuration parameters (client.dns.lookup and its two modes, request.timeout.ms). The applied kafka.config.* set is broker-side, but the namespace is keyed on 'this is a named configuration parameter', not on which side sets it.",
+    "path_convention": "kafka.adminclient.adminclient maps to kafka/adminclient/kafka-adminclient.md, following the applied kafka.zookeeper.zookeeper -> kafka/zookeeper/kafka-zookeeper.md and kafka.retention.retention -> kafka/retention/message-retention.md precedent that keeps a note's basename distinct from its folder name."
+  },
+  "id_rules": {
+    "concept_id": "lowercase dot-separated domain.subdomain.concept; the concept segment is the API method, configuration key or property name as it appears in the source",
+    "canonical_path": "content/brain/knowledge/<domain>/<subdomain>/<slug>.md with an ASCII slug, so the URL stays ASCII while the displayed title stays Korean",
+    "tags": "derived, never authored: the engine requires tags to equal the canonical path's folder segments below content/brain/knowledge/"
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 06 touches, so U3 must confirm it relates rather than restates.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose: it opens on a fenced code block, an Obsidian callout, or the pre-heading preamble that has no heading_chain.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 25,
+  "candidates": [
+    {
+      "concept_id": "kafka.adminclient.adminclient",
+      "title": "AdminClient",
+      "aliases": [
+        "Admin API",
+        "카프카 어드민 클라이언트",
+        "프로그램적 관리 API"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/kafka-adminclient.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single programmatic administration API for Kafka that returns Result objects and takes Options objects, replacing the pre-AdminClient workarounds for managing topics and cluster state",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.async-operation",
+        "kafka.adminclient.topic-management",
+        "kafka.platform.kafka"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "unheaded-body",
+          "start_line": 8,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient",
+          "start_line": 21,
+          "end_line": 26
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.async-operation",
+      "title": "AdminClient 비동기 작동",
+      "aliases": [
+        "Asynchronous AdminClient",
+        "Future 객체",
+        "Result 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/async-operation.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single asynchronous execution model in which every AdminClient method returns one or more Future objects wrapped in a Result object",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.eventual-consistency",
+        "kafka.adminclient.blocking-get",
+        "kafka.adminclient.adminclient"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient > ### 비동기적 / 최종적 일관성",
+          "start_line": 29,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.eventual-consistency",
+      "title": "최종적 일관성",
+      "aliases": [
+        "Eventual Consistency",
+        "메타데이터 전파 지연"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/eventual-consistency.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consistency guarantee under which an AdminClient Future completes when the controller's state is updated, leaving the moment every broker learns of the change unspecified",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.async-operation",
+        "kafka.broker.cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient > ### 비동기적 / 최종적 일관성",
+          "start_line": 38,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.options-object",
+      "title": "Options 객체",
+      "aliases": [
+        "AdminClient Options",
+        "ListTopicsOptions",
+        "DescribeClusterOptions"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/options-object.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single per-method parameter object carrying how the broker should handle that AdminClient request",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.timeout-ms",
+        "kafka.adminclient.adminclient"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient > ### 옵션",
+          "start_line": 54,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.timeout-ms",
+      "title": "timeoutMs",
+      "aliases": [
+        "AbstractOptions",
+        "어드민 요청 타임아웃"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/timeout-ms.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single per-request timeout parameter every AdminClient method inherits because all Options classes extend AbstractOptions",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.options-object",
+        "kafka.config.request-timeout-ms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient > ### 옵션",
+          "start_line": 67,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.admin-protocol",
+      "title": "카프카 어드민 프로토콜",
+      "aliases": [
+        "KafkaAdminClient",
+        "Admin 명령용 네트워크 프로토콜"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/admin-protocol.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single implementation contract in which KafkaAdminClient builds Kafka admin protocol messages directly, so an operation absent from the interface is genuinely unimplemented",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.flat-namespace",
+        "kafka.adminclient.adminclient"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient > ### 수평구조",
+          "start_line": 79,
+          "end_line": 81
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.flat-namespace",
+      "title": "AdminClient 수평구조",
+      "aliases": [
+        "Flat Namespace",
+        "네임스페이스 없음",
+        "토픽 이름이 유일 식별자"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/flat-namespace.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structural property of the admin surface in which resources are plain string or numeric identifiers with no object dependency, hierarchy or namespace",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.admin-protocol",
+        "kafka.topic.topic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient > ### 수평구조",
+          "start_line": 85,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.operation-routing",
+      "title": "어드민 작업 라우팅",
+      "aliases": [
+        "컨트롤러 수행 작업",
+        "브로커 수행 작업"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/operation-routing.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single routing rule sending state-changing admin operations to the controller and read-only ones to whichever broker is least loaded from the client's view",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.broker.broker",
+        "kafka.adminclient.adminclient"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## AdminClient > ### 참고사항",
+          "start_line": 111,
+          "end_line": 113
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.lifecycle",
+      "title": "AdminClient 생명주기",
+      "aliases": [
+        "AdminClient.create()",
+        "close()",
+        "BOOTSTRAP_SERVERS_CONFIG"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/lifecycle.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single create-configure-close lifecycle whose only mandatory property is the cluster bootstrap URI and whose untimed close waits for every in-flight operation",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.adminclient",
+        "kafka.install.bootstrap-server",
+        "kafka.config.client-dns-lookup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 사용법",
+          "start_line": 119,
+          "end_line": 129
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.client-dns-lookup",
+      "title": "client.dns.lookup",
+      "aliases": [
+        "DNS 조회 설정",
+        "advertised.listeners 기준 연결"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/client-dns-lookup.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single client-side setting governing how bootstrap hostnames are resolved, needed because clients reconnect using the hostnames advertised.listeners returns",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "config-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.resolve-canonical-bootstrap-servers-only",
+        "kafka.config.use-all-dns-ips",
+        "kafka.config.listeners"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 사용법 > ### client.dns.lookup",
+          "start_line": 135,
+          "end_line": 139
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.resolve-canonical-bootstrap-servers-only",
+      "title": "resolve_canonical_bootstrap_servers_only",
+      "aliases": [
+        "DNS 별칭 인증 실패",
+        "SASL DNS alias"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/resolve-canonical-bootstrap-servers-only.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single client.dns.lookup mode that expands a DNS alias into its member broker names so SASL authenticates against the real security principal",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "config-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.config.client-dns-lookup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 사용법 > ### client.dns.lookup",
+          "start_line": 144,
+          "end_line": 151
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.use-all-dns-ips",
+      "title": "use_all_dns_ips",
+      "aliases": [
+        "다중 IP DNS",
+        "로드밸런서 고가용성"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/use-all-dns-ips.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single client.dns.lookup mode that tries every IP a hostname resolves to, so one unreachable address does not fail the connection",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "config-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.config.client-dns-lookup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 사용법 > ### client.dns.lookup",
+          "start_line": 155,
+          "end_line": 160
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.request-timeout-ms",
+      "title": "request.timeout.ms",
+      "aliases": [
+        "어드민 응답 대기 시간",
+        "120초 기본값"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/request-timeout-ms.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ceiling on how long an application waits for an AdminClient response including retries, defaulting to 120 seconds and worth lowering on a critical path",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "config-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.timeout-ms",
+        "kafka.adminclient.adminclient"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 사용법 > ### request.timeout.ms",
+          "start_line": 166,
+          "end_line": 180
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.topic-management",
+      "title": "AdminClient 토픽 관리",
+      "aliases": [
+        "Topic Management",
+        "토픽 관리 기능"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/topic-management.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "single family of AdminClient topic operations - list, describe, create and delete - that is the API's most common use",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.list-topics",
+        "kafka.adminclient.create-topics",
+        "kafka.adminclient.delete-topics",
+        "kafka.topic.topic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능",
+          "start_line": 186,
+          "end_line": 190
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.list-topics",
+      "title": "listTopics()",
+      "aliases": [
+        "ListTopicsResult",
+        "토픽 목록 조회"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/list-topics.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation returning a ListTopicsResult whose names() Future yields the cluster's topic name set",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.topic-management",
+        "kafka.adminclient.topic-existence-check"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### 토픽 목록 조회",
+          "start_line": 198,
+          "end_line": 206
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.topic-existence-check",
+      "title": "토픽 존재 확인",
+      "aliases": [
+        "Topic Existence Check",
+        "설정 토픽 요구조건"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/topic-existence-check.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single decision of how to test that a topic exists, where scanning listTopics() is inefficient on a large cluster and usually insufficient because callers also need the topic's shape",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.list-topics",
+        "kafka.adminclient.describe-topics",
+        "kafka.retention.log-compaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### \b토픽  존재 확인 및 생성",
+          "start_line": 213,
+          "end_line": 222
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.describe-topics",
+      "title": "describeTopics()",
+      "aliases": [
+        "DescribeTopicsResult",
+        "TopicDescription"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/describe-topics.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation returning a topic-name-keyed map of Futures, each yielding a TopicDescription that lists every partition with its leader, replicas and in-sync replicas",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.topic-existence-check",
+        "kafka.adminclient.create-topics",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### \b토픽  존재 확인 및 생성",
+          "start_line": 263,
+          "end_line": 277
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.execution-exception",
+      "title": "ExecutionException",
+      "aliases": [
+        "AdminClient 에러 처리",
+        "cause 확인"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/execution-exception.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single error-surfacing rule under which every AdminClient Result raises ExecutionException and the Kafka error is only readable through its cause",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.async-operation",
+        "kafka.adminclient.describe-topics"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### \b토픽  존재 확인 및 생성",
+          "start_line": 280,
+          "end_line": 282
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.create-topics",
+      "title": "createTopics()",
+      "aliases": [
+        "CreateTopicsResult",
+        "TopicExistsException"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/create-topics.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operation creating topics by name, with partition and replica counts optional and falling back to the broker defaults, whose result must be re-read to confirm the outcome",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.describe-topics",
+        "kafka.config.num-partitions",
+        "kafka.config.default-replication-factor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### \b토픽  존재 확인 및 생성",
+          "start_line": 286,
+          "end_line": 294
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.delete-topics",
+      "title": "deleteTopics()",
+      "aliases": [
+        "토픽 삭제",
+        "되돌릴 수 없는 삭제"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/delete-topics.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single irreversible deletion operation that takes a topic list and performs no emptiness or confirmation check",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.topic-management",
+        "kafka.config.delete-topic-enable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### 토픽 삭제",
+          "start_line": 300,
+          "end_line": 303
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.blocking-get",
+      "title": "Future.get() 블로킹",
+      "aliases": [
+        "Blocking get",
+        "어드민 블로킹 호출"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/blocking-get.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single blocking call pattern that is acceptable for the rare admin operation but must be avoided on a server thread expected to serve many admin requests",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.when-complete",
+        "kafka.adminclient.async-operation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### 비동기 처리",
+          "start_line": 309,
+          "end_line": 312
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.when-complete",
+      "title": "whenComplete()",
+      "aliases": [
+        "CompletableFuture 비동기 처리",
+        "논블로킹 어드민 호출"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/when-complete.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single non-blocking completion callback that replaces get() so the calling thread serves other requests while Kafka responds",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.blocking-get"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### 비동기 처리",
+          "start_line": 339,
+          "end_line": 344
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.config-resource",
+      "title": "ConfigResource",
+      "aliases": [
+        "설정 관리 자원",
+        "kafka-configs.sh"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/config-resource.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single addressing object naming which broker, broker log or topic a configuration operation targets",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.describe-configs",
+        "kafka.adminclient.incremental-alter-configs",
+        "kafka.config.topic-default"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### 설정 관리",
+          "start_line": 350,
+          "end_line": 356
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.describe-configs",
+      "title": "describeConfigs()",
+      "aliases": [
+        "isDefault()",
+        "기본값 아닌 설정"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/describe-configs.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single read operation returning each ConfigResource's settings, where isDefault() is false both for user-set topic values and for values inherited from a modified broker setting",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.adminclient.config-resource",
+        "kafka.adminclient.incremental-alter-configs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### 설정 관리",
+          "start_line": 403,
+          "end_line": 412
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.incremental-alter-configs",
+      "title": "incrementalAlterConfigs()",
+      "aliases": [
+        "AlterConfigOp",
+        "SET / DELETE / APPEND / SUBTRACT"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/incremental-alter-configs.md",
+      "tags": [
+        "kafka",
+        "adminclient"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single write operation expressing each change as a config-entry and operation-type pair, so a setting can be set, reset to default, appended to or subtracted from without resending the whole list",
+      "pilot_strata": [
+        "book-batch-06",
+        "kafka/chap05",
+        "adminclient-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.adminclient.config-resource",
+        "kafka.retention.log-compaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 토픽 관리 기능 > ### 설정 관리",
+          "start_line": 416,
+          "end_line": 423
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [],
+  "rejection_probes": {
+    "scope_level": "None. Every heading scope inside L7-426 passes the engine's substantiveBodyText() gate, so this batch has no scope-level rejection probe.",
+    "deferred_probes": "The chapter's two non-substantive scopes, ## 고급 어드민 작업 (L652-653) and ## 테스트 (L847-848), both fall in the deferred L427-870 range and belong to batch 07.",
+    "file_level": "None. chap05 is the only file in scope and it is an extraction source, not a probe."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L46-48",
+        "reason_code": "external-reference-callout",
+        "detail": "A note pointing at an outside blog post about Java Future. It asserts nothing about Kafka."
+      },
+      {
+        "span": "L101-105",
+        "reason_code": "out-of-domain-definition",
+        "detail": "A general definition of 'namespace' using Java packages and Docker as examples. It defines a programming term, not a Kafka concept, so it belongs to no kafka.* concept."
+      },
+      {
+        "span": "L360-367",
+        "reason_code": "restates-applied-concept",
+        "detail": "A motivating example plus a callout re-explaining log compaction. kafka.retention.log-compaction is already applied and this span would restate it, so no candidate cites it. kafka.adminclient.topic-existence-check and kafka.adminclient.incremental-alter-configs relate to that concept instead."
+      },
+      {
+        "span": "L213-222 partial, L226-261, L318-337, L371-401",
+        "reason_code": "code-carried-by-neighbouring-locator",
+        "detail": "Long Java listings whose meaning is carried by the numbered commentary spans that are cited. Citing the listing as well would duplicate the same bytes across two documents."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L7-426 contributes at least one cited locator except scope 0's overlap with the preamble, which kafka.adminclient.adminclient covers with a second locator."
+  },
+  "p6_resolution": {
+    "statement": "Nine applied concepts are touched by prose in L7-426. None is re-proposed and none is restated. Seven receive a real related_concepts edge from a batch candidate; two are passing mentions that stay untouched.",
+    "summary": {
+      "update": 0,
+      "relate": 7,
+      "no_op": 2
+    },
+    "touch_point_dispositions": [
+      {
+        "concept_id": "kafka.retention.log-compaction",
+        "authoring_decision": "relate",
+        "evidence": "L222 requires the config topic to be compacted and L360-367 re-explains compaction.",
+        "decision_rationale": "The compaction claim is already an applied concept, so the restating span L360-367 is left uncited and two candidates carry an edge to it instead."
+      },
+      {
+        "concept_id": "kafka.topic.topic",
+        "authoring_decision": "relate",
+        "evidence": "Topics are the object of every operation in the 토픽 관리 기능 scope.",
+        "decision_rationale": "Batch 06 asserts what AdminClient does to topics, not what a topic is."
+      },
+      {
+        "concept_id": "kafka.topic.partition",
+        "authoring_decision": "relate",
+        "evidence": "L273-276 lists the partitions, leaders and in-sync replicas a TopicDescription carries.",
+        "decision_rationale": "The claim is about describeTopics' return shape, not about what a partition is."
+      },
+      {
+        "concept_id": "kafka.config.num-partitions",
+        "authoring_decision": "relate",
+        "evidence": "L251 notes that omitted partition and replica counts fall back to the broker defaults.",
+        "decision_rationale": "The applied concept already carries the default's meaning; createTopics only points at it."
+      },
+      {
+        "concept_id": "kafka.config.default-replication-factor",
+        "authoring_decision": "relate",
+        "evidence": "Same span as above, for the replica count.",
+        "decision_rationale": "Same as above."
+      },
+      {
+        "concept_id": "kafka.config.delete-topic-enable",
+        "authoring_decision": "relate",
+        "evidence": "L300-303 describes irreversible topic deletion, which the applied broker switch guards.",
+        "decision_rationale": "The switch and the API call are distinct concepts; an edge expresses the relation."
+      },
+      {
+        "concept_id": "kafka.install.bootstrap-server",
+        "authoring_decision": "relate",
+        "evidence": "L123 and L128 make the bootstrap server list the one mandatory AdminClient property.",
+        "decision_rationale": "The applied concept is about the CLI connection contract replacing --zookeeper; this is the client property. Related, not the same."
+      },
+      {
+        "concept_id": "kafka.config.auto-create-topics-enable",
+        "authoring_decision": "no_op",
+        "evidence": "L13 mentions auto topic creation once, as one of the pre-AdminClient workarounds.",
+        "decision_rationale": "A passing mention in a list of alternatives, not a claim about the setting."
+      },
+      {
+        "concept_id": "kafka.client.producer",
+        "authoring_decision": "no_op",
+        "evidence": "L12 mentions producer.send() throwing UNKNOWN_TOPIC_OR_PARTITION.",
+        "decision_rationale": "The producer appears as the caller in an example, not as the subject of a claim."
+      }
+    ]
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised by this batch.",
+    "selected_vs_budget": {
+      "heading_scopes": {
+        "value": 15,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 25,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    },
+    "binding_constraint": "B5. It is what forced the split; every other ceiling had room for the whole chapter.",
+    "measurement_note": "Structural counts here were re-measured from source bytes. Scope boundaries, positive-prose-scope counts, the substantive gate and all span hashes reproduce the series' recorded figures exactly. The per-file prose_lines totals come out 3-5% below the figures recorded in book-batch-05-sources.json (chap05: 319 measured against 337 recorded); the difference does not change any selection, since chap05 sits inside B4 under either count."
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

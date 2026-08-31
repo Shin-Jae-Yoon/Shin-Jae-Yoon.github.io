@@ -1,0 +1,1044 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-26",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-25",
+    "applied_state": "544 approved knowledge concepts after lecture-batch-25 completed fun-java07."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+        "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271"
+      }
+    ],
+    "line_range": "L11-L787 (whole file)",
+    "series": "즐거운 자바 (fun-java) 8/11 — 예외처리, enum"
+  },
+  "overlap_analysis": {
+    "finding": "This is the first lecture file with no overlap at all: the applied index carried two exception classes but no exception-handling concept and nothing about enums.",
+    "disposition": "All 23 candidates are creates - comments and JavaDoc, the Error/Exception split, try-catch and why handling in place goes wrong, throws, the checked/unchecked division, multi-catch, custom exceptions, and the enum family from the integer-constant problem it replaces through its constructors, methods, EnumMap and EnumSet."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L44 partial, L93, L114-134 partial, L143-181 partial, L198-243 partial, L290-344 partial, L390-478 partial, L498-666 partial, L676-787 partial",
+        "reason_code": "code-listing-caption-or-carried-by-owner",
+        "detail": "Code listings, IDE instructions and walkthrough lines whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in fun-java08 contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 146,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 23,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 23,
+  "candidates": [
+    {
+      "concept_id": "java.language.comment",
+      "title": "주석문",
+      "aliases": [
+        "Comment",
+        "// 주석",
+        "/* */ 주석"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/comment.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single non-executing note carrying an explanation, written to the end of a line, spanning a block, or in the doc form that opens with two asterisks",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.language.javadoc",
+        "java.language.comment-practice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 주석문",
+          "start_line": 13,
+          "end_line": 20
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.javadoc",
+      "title": "JavaDoc 주석문",
+      "aliases": [
+        "JavaDoc",
+        "@author",
+        "@deprecated",
+        "@since"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/javadoc.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single documentation comment whose annotations record version, author, deprecation, history, links and thrown exceptions, and from which a browsable document set can be generated",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.language.comment",
+        "software.api.api",
+        "java.exception.exception-handling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 주석문",
+          "start_line": 44,
+          "end_line": 57
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 주석문 > ### JavaDoc 장점",
+          "start_line": 63,
+          "end_line": 72
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.comment-practice",
+      "title": "주석을 최소한으로 쓰기",
+      "aliases": [
+        "이름으로 설명하기",
+        "주석 작성 원칙"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/comment-practice.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single practice of naming classes, methods and variables well enough that a comment is unnecessary, and writing the doc form when one is genuinely needed",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.language.comment",
+        "java.language.javadoc",
+        "java.language.naming-convention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 주석문 > ### 주석문을 잘 작성하는 법",
+          "start_line": 82,
+          "end_line": 84
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.error-vs-exception",
+      "title": "Error와 Exception",
+      "aliases": [
+        "컴파일 에러",
+        "런타임 에러",
+        "수습 가능한 오류"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/error-vs-exception.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single split between an Error the programmer cannot control - memory exhaustion or a stack overflow, fixable only at the source - and an Exception that handling can recover from",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.exception-handling",
+        "java.exception.checked-unchecked",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리",
+          "start_line": 91,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.exception-handling",
+      "title": "예외 처리",
+      "aliases": [
+        "Exception Handling",
+        "예외 인스턴스 생성"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/exception-handling.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single practice of catching what the JVM raises - it instantiates the matching exception class and throws it - so the program need not end abnormally",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.error-vs-exception",
+        "java.exception.try-catch",
+        "java.exception.throws",
+        "java.runtime.jvm"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리",
+          "start_line": 134,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.try-catch",
+      "title": "try-catch",
+      "aliases": [
+        "예외 잡기",
+        "catch 매개변수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/try-catch.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single simplest handling form, whose catch clause names a type and a variable precisely because what was thrown is an instance of an exception class",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.exception-handling",
+        "java.exception.try-catch-pitfall",
+        "java.exception.multi-catch"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### try-catch",
+          "start_line": 143,
+          "end_line": 143
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### try-catch",
+          "start_line": 157,
+          "end_line": 158
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### try-catch",
+          "start_line": 181,
+          "end_line": 182
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.try-catch-pitfall",
+      "title": "삼켜버린 예외의 문제",
+      "aliases": [
+        "잘못된 값 반환",
+        "호출자가 원하지 않는 출력"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/try-catch-pitfall.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of failures from handling in place - returning a value where there should be none, which is worse than terminating, and printing what the caller never asked for",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.try-catch",
+        "java.exception.throws",
+        "java.exception.exception-handling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### try-catch",
+          "start_line": 186,
+          "end_line": 192
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.throws",
+      "title": "throws",
+      "aliases": [
+        "예외 떠넘기기",
+        "호출한 쪽에서 처리"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/throws.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single declaration handing the exception up to the caller, which cures both faults of handling in place but obliges someone above to actually deal with it",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.try-catch-pitfall",
+        "java.exception.exception-handling",
+        "java.exception.custom-exception"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### throws",
+          "start_line": 198,
+          "end_line": 198
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### throws",
+          "start_line": 243,
+          "end_line": 244
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.checked-unchecked",
+      "title": "Checked와 UnChecked 예외",
+      "aliases": [
+        "RuntimeException 상속 여부",
+        "컴파일 강제 여부"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/checked-unchecked.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division by whether the class descends from RuntimeException - if it does, handling is optional and failure appears at run time; if it does not, the compiler refuses to build until it is handled",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.error-vs-exception",
+        "java.exception.custom-exception",
+        "java.oop.inheritance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### Checked / UnChecked",
+          "start_line": 254,
+          "end_line": 262
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### Checked / UnChecked",
+          "start_line": 268,
+          "end_line": 273
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.multi-catch",
+      "title": "다중 catch",
+      "aliases": [
+        "여러 catch 블록",
+        "상위 예외는 아래에"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/multi-catch.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement of several catch blocks for finer handling, of which exactly one runs, which is why a broader exception type must sit below the narrower ones",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.try-catch",
+        "java.exception.checked-unchecked",
+        "java.oop.inheritance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### 다중 catch",
+          "start_line": 283,
+          "end_line": 288
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.custom-exception",
+      "title": "사용자 정의 예외",
+      "aliases": [
+        "Custom Exception",
+        "throw",
+        "예외 감싸기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/custom-exception.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single exception class of one's own, typically constructed from a message or from another Throwable it wraps, thrown deliberately so the caller sees the failure in the author's own terms",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.checked-unchecked",
+        "java.exception.throws",
+        "java.oop.inheritance",
+        "java.keyword.super"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### Custom Exception",
+          "start_line": 316,
+          "end_line": 326
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### Custom Exception",
+          "start_line": 344,
+          "end_line": 344
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### Custom 상세 사용법",
+          "start_line": 356,
+          "end_line": 360
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum",
+      "title": "열거형",
+      "aliases": [
+        "Enum",
+        "Enumeration",
+        "타입 안전 상수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/java-enum.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single JDK 5 construct for a fixed set of named constants, whose point is type safety",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.constant-problem",
+        "java.enum.type-safety",
+        "java.enum.enum-feature"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum",
+          "start_line": 368,
+          "end_line": 369
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.constant-problem",
+      "title": "int 상수의 문제",
+      "aliases": [
+        "final static int 상수",
+        "범위 밖 값 대입 가능"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/constant-problem.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single weakness of representing a fixed set as integer constants - the variable holding one is just an int, so any other number can be assigned to it too",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.enum.enum",
+        "java.enum.type-safety",
+        "java.variable.static-variable",
+        "java.keyword.final"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### 상수 사용 시 문제점",
+          "start_line": 375,
+          "end_line": 390
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### 상수 사용 시 문제점",
+          "start_line": 399,
+          "end_line": 413
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.type-safety",
+      "title": "enum의 타입 안전성",
+      "aliases": [
+        "Type-Safety",
+        "선언된 상수만 대입 가능"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/type-safety.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single guarantee that a variable of an enum type accepts only the constants that enum declares, which is what the integer-constant form could not promise",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.enum.enum",
+        "java.enum.constant-problem",
+        "java.enum.enum-feature"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### enum 사용",
+          "start_line": 419,
+          "end_line": 420
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### enum 사용",
+          "start_line": 458,
+          "end_line": 460
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### enum 사용",
+          "start_line": 478,
+          "end_line": 478
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-feature",
+      "title": "Enum 타입의 특징",
+      "aliases": [
+        "Enum 기능 목록",
+        "Serializable Comparable 구현"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-feature.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "single list of what an enum can do, each item detailed in its own concept, plus two facts stated only here: its objects are created when a constant is first referenced, and it already implements Serializable and Comparable",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.enum",
+        "java.enum.enum-comparison",
+        "java.enum.enum-switch",
+        "java.oop.comparable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 486,
+          "end_line": 494
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-comparison",
+      "title": "enum 값 비교",
+      "aliases": [
+        "비교 연산자로 비교",
+        "메모리에 하나만 존재"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-comparison.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that enum values are compared with the identity operator, because each constant exists once in memory and every reference to it points at that one object",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.enum-feature",
+        "java.oop.equals-hashcode",
+        "java.memory.object-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 510,
+          "end_line": 511
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-switch",
+      "title": "switch 문에서의 enum",
+      "aliases": [
+        "case에 상수 이름만",
+        "enum switch"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-switch.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single usage in which an enum drives a switch, whose case labels carry the bare constant name rather than a qualified one",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.enum-feature",
+        "java.control-flow.switch-case",
+        "java.enum.type-safety"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 523,
+          "end_line": 525
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-interface",
+      "title": "enum의 인터페이스 구현",
+      "aliases": [
+        "enum implements",
+        "상수별 오버라이딩"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-interface.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single capability of an enum to implement an interface and override its methods",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.enum-feature",
+        "java.oop.interface",
+        "java.oop.method-overriding"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 550,
+          "end_line": 550
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-abstract-method",
+      "title": "enum의 추상 메서드",
+      "aliases": [
+        "상수별 구현 강제",
+        "enum abstract"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-abstract-method.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single capability of an enum to declare an abstract method, which then must be implemented at each constant's definition",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.enum-feature",
+        "java.oop.abstract-method",
+        "java.oop.anonymous-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 593,
+          "end_line": 593
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-constructor",
+      "title": "enum 생성자",
+      "aliases": [
+        "enum의 private 생성자",
+        "상수 뒤 괄호"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-constructor.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single constructor an enum may declare - necessarily private, callable only from inside - which runs for a constant written with parentheses so that constant carries its own field values",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.enum.enum-feature",
+        "java.oop.private-constructor",
+        "java.enum.enum-method-field",
+        "java.oop.constructor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 631,
+          "end_line": 633
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 647,
+          "end_line": 651
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum 타입의 특징",
+          "start_line": 666,
+          "end_line": 667
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-method-field",
+      "title": "enum의 메서드와 필드",
+      "aliases": [
+        "enum toString 오버라이딩",
+        "enum 필드 선언"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-method-field.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single capability of an enum to hold its own methods and fields and to override what Object provides, so printing a constant can show more than its name",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.enum.enum-constructor",
+        "java.oop.tostring",
+        "java.oop.object-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum에 메서드와 변수 선언",
+          "start_line": 673,
+          "end_line": 676
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### Enum에 메서드와 변수 선언",
+          "start_line": 715,
+          "end_line": 715
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-map",
+      "title": "EnumMap",
+      "aliases": [
+        "enum을 키로 쓰는 Map"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-map.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Map whose keys may only be the constants of one enum type",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.enum",
+        "java.collection.map-interface",
+        "java.enum.enum-set"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### EnumMap",
+          "start_line": 721,
+          "end_line": 723
+        }
+      ]
+    },
+    {
+      "concept_id": "java.enum.enum-set",
+      "title": "EnumSet",
+      "aliases": [
+        "allOf()",
+        "enum 상수를 Set으로"
+      ],
+      "canonical_path": "content/brain/knowledge/java/enum/enum-set.md",
+      "tags": [
+        "java",
+        "enum"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Set for handling an enum's constants, whose allOf factory yields every constant of the type it is given",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.enum.enum",
+        "java.collection.set-interface",
+        "java.enum.enum-map"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### EnumSet",
+          "start_line": 746,
+          "end_line": 746
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## enum > ### EnumSet",
+          "start_line": 787,
+          "end_line": 787
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

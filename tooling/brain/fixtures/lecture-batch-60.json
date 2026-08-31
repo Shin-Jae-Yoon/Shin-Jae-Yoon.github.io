@@ -1,0 +1,812 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-60",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-59",
+    "applied_state": "1174 approved knowledge concepts after lecture-batch-59 mined the second week of the study."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+        "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274"
+      }
+    ],
+    "line_range": "L12-L689 (whole file)",
+    "series": "면접 스터디 dog-study 3주차 - 프레임워크, IoC, DI, 스프링 컨테이너"
+  },
+  "overlap_analysis": {
+    "finding": "The kim-spring lane introduced injection as the fix for a test seeing the wrong instance and then as the container's mechanism. This week asks what it is for, which turns out to be two principles that are not spring's at all - inverted control and inverted dependency - and works down from there to how the container resolves an ambiguous injection.",
+    "disposition": "Three applied spring concepts take the deeper evidence. The principles are filed under software.principle beside the open-closed one they belong with, and the framework-library distinction under software.architecture, since none of them is about spring."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8, L12-L20, L114-L127, L195, L226-L262, L293-L295, L316-L318, L400-L402, L419, L487-L488 partial, L564, L591-L595, L677-L683 partial, L687-L689",
+        "reason_code": "issue-link-topic-header-figure-caption-worked-example-or-carried-by-owner",
+        "detail": "The link to the issue thread, the topic list the week was set, the captions announcing each code listing, the rice-cake and fish-cake worked example carried through three stages whose conclusion is cited, the running commentary introducing each injection style before its listing, and the closing reference."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 23250,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 153,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 23,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 21,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 14,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_transfer_note": {
+    "key": "스프링 컨테이너",
+    "from": "spring.di.spring-bean",
+    "to": "spring.di.spring-container",
+    "rationale": "Batch 39 gave the bean concept the container's name because the container had no concept of its own. It has one now, so the name moves to it and the bean keeps 컨테이너가 관리하는 객체."
+  },
+  "candidates_authored": 14,
+  "candidates": [
+    {
+      "concept_id": "spring.di.dependency-injection",
+      "title": "의존관계 주입",
+      "aliases": [
+        "DI",
+        "Dependency Injection",
+        "@Autowired",
+        "외부에서 넣어주는 것",
+        "의존성을 외부에서 주입",
+        "IoC의 구현체"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/dependency-injection.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single reversal in who supplies an object's collaborators - the constructor declares what it needs and the container finds the matching bean and passes it in, rather than the object creating one for itself; on a class with a single constructor the annotation may even be left out",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-60",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "spring.test.fixture-injection",
+        "spring.di.injection-style",
+        "software.principle.open-closed",
+        "software.principle.ioc",
+        "spring.di.qualifier-primary",
+        "spring.di.spring-container"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 66,
+          "end_line": 67
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 71,
+          "end_line": 71
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## DI",
+          "start_line": 284,
+          "end_line": 289
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI",
+          "start_line": 434,
+          "end_line": 440
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.injection-style",
+      "title": "주입의 세 가지 방법",
+      "aliases": [
+        "필드 주입",
+        "setter 주입",
+        "생성자 주입",
+        "필드 주입은 프레임워크에 종속된다",
+        "setter는 선택적 의존성에"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/injection-style.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single choice among field, setter and constructor injection, where the constructor is the one to use because dependencies almost never change while the application is running",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-60",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.test.integration-test",
+        "spring.di.constructor-injection-benefit",
+        "spring.di.interface-injection",
+        "spring.di.multiple-constructor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 자바 코드로 직접 스프링 빈 등록",
+          "start_line": 178,
+          "end_line": 178
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### (Spring) 필드 주입",
+          "start_line": 446,
+          "end_line": 450
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### (Spring) Setter 주입",
+          "start_line": 466,
+          "end_line": 468
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### (Spring) Setter 주입",
+          "start_line": 486,
+          "end_line": 488
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### (Spring) 생성자 주입",
+          "start_line": 494,
+          "end_line": 498
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.spring-bean",
+      "title": "스프링 빈",
+      "aliases": [
+        "Spring Bean",
+        "기본이 싱글톤 등록",
+        "컨테이너가 관리하는 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/spring-bean.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object the spring container creates and holds on the application's behalf - registered once and shared, since one instance of a service is enough for everyone to call, so the same bean is the same instance everywhere",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-60",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.component-scan",
+        "spring.di.dependency-injection",
+        "java.pattern.singleton",
+        "spring.arch.layered-structure",
+        "spring.di.spring-container",
+        "spring.di.qualifier-primary",
+        "spring.basic.spring-definition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 30,
+          "end_line": 30
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 36,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 48,
+          "end_line": 49
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 148,
+          "end_line": 148
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.framework-vs-library",
+      "title": "프레임워크와 라이브러리",
+      "aliases": [
+        "누가 흐름을 제어하는가",
+        "수동적으로 사용된다",
+        "능동적으로 호출한다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/framework-vs-library.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single question that separates the two - who holds the flow of control; a framework supplies a settled environment and a bounded space to work in, and calls the code written into it, while a library is a collection of functions the code calls when it wants them",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.ioc",
+        "spring.basic.spring-definition",
+        "software.architecture.three-tier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## 프레임워크란?",
+          "start_line": 26,
+          "end_line": 26
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## 프레임워크란? > ### Framework 특징",
+          "start_line": 32,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## 프레임워크란? > ### Library",
+          "start_line": 41,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## 프레임워크란? > ### Framework vs Library",
+          "start_line": 52,
+          "end_line": 56
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.spring-definition",
+      "title": "스프링이란",
+      "aliases": [
+        "자바 플랫폼을 위한 애플리케이션 프레임워크",
+        "경량 컨테이너",
+        "느슨한 결합"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/spring-definition.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single framework for the java platform that manages the objects itself - creating them, destroying them and handing them out - and whose parts follow from that: inverted control for loose coupling, injected dependencies for the relations between objects, aspect separation to cover what object orientation leaves out, and a layered pattern for the web tier",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.framework-vs-library",
+        "spring.di.spring-bean",
+        "software.principle.ioc",
+        "spring.web.mvc-template-engine"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring 정의 및 장점",
+          "start_line": 62,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.spring-boot",
+      "title": "스프링 부트가 덜어낸 것",
+      "aliases": [
+        "의존성 버전 관리",
+        "설정 파일 없이",
+        "내장 서버로 jar 배포"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/spring-boot.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three things the framework's successor removed - declaring every dependency with its version, writing out the configuration and registering beans by hand, and deploying into an external servlet container - the last replaced by a server inside the artifact, so a single archive is run directly and starts in half the time",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.basic.spring-definition",
+        "spring.build.dependency-management",
+        "spring.server.embedded-was",
+        "spring.di.java-config"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring 정의 및 장점 > ### Spring Boot",
+          "start_line": 75,
+          "end_line": 90
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring 정의 및 장점 > ### Spring Boot",
+          "start_line": 94,
+          "end_line": 99
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.ioc",
+      "title": "제어의 역전",
+      "aliases": [
+        "IoC",
+        "Inversion of Control",
+        "원칙일 뿐 구현체가 필요하다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/ioc.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single principle that the flow of control belongs outside the code rather than in it - which is an idea and not a mechanism, dependency injection being one way of realising it; what it buys is that an object no longer decides what it is made of, so changing that decision no longer means changing the object",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "software.principle.dip",
+        "software.architecture.framework-vs-library",
+        "java.oop.cohesion-coupling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC",
+          "start_line": 105,
+          "end_line": 110
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### IoC의 필요성",
+          "start_line": 142,
+          "end_line": 145
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### IoC의 필요성",
+          "start_line": 149,
+          "end_line": 151
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### IoC의 필요성",
+          "start_line": 171,
+          "end_line": 173
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.dip",
+      "title": "의존 역전 원칙",
+      "aliases": [
+        "DIP",
+        "Dependency Inversion Principle",
+        "둘 다 추상화에 의존한다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/dip.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single principle of the five that a higher-level module must not depend on a lower-level one, both depending on an abstraction instead - so a field typed to a concrete class is what makes change expensive, and typing it to an interface is what makes either side replaceable",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.ioc",
+        "software.principle.open-closed",
+        "java.collection.interface-type-reference",
+        "spring.arch.repository-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### DIP",
+          "start_line": 197,
+          "end_line": 199
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### DIP",
+          "start_line": 203,
+          "end_line": 209
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.ioc-dip-goal",
+      "title": "IoC와 DIP는 무엇을 역전시키는가",
+      "aliases": [
+        "제어의 역전과 의존 방향의 역전",
+        "둘 다 원칙이다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/ioc-dip-goal.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shared aim behind two principles that are easily confused - both loosen the coupling between classes so that changing one disturbs the fewest others, and both are principles rather than techniques; they differ in what is inverted, the control in one case and the direction of dependency in the other",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.principle.ioc",
+        "software.principle.dip",
+        "java.oop.cohesion-coupling",
+        "software.principle.open-closed"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### IoC와 DIP",
+          "start_line": 215,
+          "end_line": 222
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.interface-injection",
+      "title": "인터페이스 주입",
+      "aliases": [
+        "주입 메서드를 인터페이스로 강제",
+        "빠뜨릴 수 없게 만든다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/interface-injection.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single third way of injecting, outside any framework - the injecting method is declared in an interface the class must implement, so unlike the setter form it cannot be forgotten, though it still has to be called from outside",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.injection-style",
+        "software.principle.dip",
+        "java.oop.interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## DI > ### Interface 주입",
+          "start_line": 350,
+          "end_line": 351
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## DI > ### Interface 주입",
+          "start_line": 375,
+          "end_line": 378
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.constructor-injection-benefit",
+      "title": "생성자 주입이 권장되는 이유",
+      "aliases": [
+        "final로 불변",
+        "NullPointerException 방지",
+        "순환참조를 시작 시점에 잡는다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/constructor-injection-benefit.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three consequences of injecting at construction - the field can be final and so the relation is fixed once, an object built with new still has its dependencies rather than nulls, and a cycle between two objects fails at startup with a message instead of recursing until the stack runs out",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.injection-style",
+        "java.oop.immutable-object",
+        "java.exception.null-pointer-exception",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 생성자 주입 장점",
+          "start_line": 517,
+          "end_line": 526
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 생성자 주입 장점",
+          "start_line": 556,
+          "end_line": 558
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.multiple-constructor",
+      "title": "생성자가 여러 개일 때",
+      "aliases": [
+        "가장 많이 주입할 수 있는 생성자",
+        "주입 순서는 생성자 필드 setter"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/multiple-constructor.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single resolution when a class offers several constructors - the annotated one is used, the one taking the most injectable dependencies if several are annotated, and the no-argument one if none is usable, failing to compile if there is not even that; and across the three styles the order of injection is constructor, then field, then setter",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.injection-style",
+        "spring.di.constructor-injection-benefit",
+        "java.oop.constructor-overloading"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 생성자가 여러 개",
+          "start_line": 565,
+          "end_line": 572
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.qualifier-primary",
+      "title": "같은 타입의 빈이 여러 개일 때",
+      "aliases": [
+        "@Qualifier",
+        "@Primary",
+        "타입 다음은 이름"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/qualifier-primary.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single order of resolution when one interface has two implementations registered - the container matches by type first and then by name against the parameter, which works but ties the choice to a variable name; the explicit ways are a qualifier naming which bean is wanted at both ends, or marking one as the default; and the qualifier wins over the default",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.di.spring-bean",
+        "spring.arch.repository-interface",
+        "software.principle.dip"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 599,
+          "end_line": 604
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 629,
+          "end_line": 631
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 660,
+          "end_line": 660
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 665,
+          "end_line": 665
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 671,
+          "end_line": 671
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.spring-container",
+      "title": "스프링 컨테이너",
+      "aliases": [
+        "BeanFactory와 ApplicationContext",
+        "자바 객체의 생명 주기를 관리"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/spring-container.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single thing the two principles are actually embodied in - it manages the lifecycle of the objects and adds capability to them, and comes in two forms, the smaller one registering and handing out beans and the larger one inheriting that and adding the rest, which is what the term ordinarily means",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "software.principle.ioc",
+        "spring.di.dependency-injection",
+        "spring.basic.spring-definition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## 스프링 컨테이너",
+          "start_line": 677,
+          "end_line": 683
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

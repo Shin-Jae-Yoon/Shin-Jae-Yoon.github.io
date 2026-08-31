@@ -1,0 +1,1096 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-62",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-61",
+    "applied_state": "1201 approved knowledge concepts after lecture-batch-61 mined the fourth week of the study."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+        "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93"
+      }
+    ],
+    "line_range": "L25-L615 (first half of the file, split at the scope boundary before ## Annotation)",
+    "series": "면접 스터디 dog-study 5주차 전반 - 빈 생명주기와 스코프, 싱글턴 구현"
+  },
+  "overlap_analysis": {
+    "finding": "The fifth week is 410 prose lines, above the B4 ceiling of 360, so it is split at a scope boundary rather than the ceiling being raised - this batch takes everything up to the singleton section's end and the next takes annotations, MVC and the layered architecture.",
+    "disposition": "Five applied concepts take evidence: the bean and the container from the spring side, and the singleton pattern and the locking discussion from the java side, the latter two having been applied from the first week of this same study. New: what registering with the container buys, the lifecycle and its callbacks, the registry that makes one instance without the pattern, the scopes, and the four implementations of the pattern with the recommendation between them."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All five update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "split_note": {
+    "reason": "B4 exceeded at 410 prose lines",
+    "policy": "The recorded escalation policy is to split the source at a scope boundary rather than raise the ceiling.",
+    "boundary": "between the singleton section ending at L615 and the annotation section beginning at L616"
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L10-L21, L85, L111, L158-L159, L179-L189, L217-L252 partial, L322, L328, L343-L351, L385-L391, L425-L435, L450, L509-L511 partial, L592-L606 partial",
+        "reason_code": "topic-header-collapsed-detail-figure-caption-or-carried-by-owner",
+        "detail": "The topic list the week was set, the collapsed detail blocks whose content is cited through the concept they belong to, the captions announcing each implementation before its listing, the farmer-and-shovel analogy used to introduce injection alongside the singleton, and the cross-reference back to the third week."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in this half of the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised - the source is split instead.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 26800,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 206,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 14,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 14,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 18,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. The second half of the file is left to the next batch.",
+  "candidates_authored": 18,
+  "candidates": [
+    {
+      "concept_id": "spring.di.spring-bean",
+      "title": "스프링 빈",
+      "aliases": [
+        "Spring Bean",
+        "기본이 싱글톤 등록",
+        "컨테이너가 관리하는 객체",
+        "IoC 컨테이너가 관리하는 객체",
+        "항상 동일한 객체를 보장한다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/spring-bean.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object the spring container creates and holds on the application's behalf - registered once and shared, since one instance of a service is enough for everyone to call, so the same bean is the same instance everywhere",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "lecture-batch-62"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.component-scan",
+        "spring.di.dependency-injection",
+        "java.pattern.singleton",
+        "spring.arch.layered-structure",
+        "spring.di.spring-container",
+        "spring.di.qualifier-primary",
+        "spring.basic.spring-definition",
+        "spring.di.bean-necessity",
+        "spring.di.bean-lifecycle",
+        "spring.di.bean-scope",
+        "spring.di.singleton-registry"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 30,
+          "end_line": 30
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 36,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 48,
+          "end_line": 49
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 빈과 의존관계 > ### 컴포넌트 스캔, 자동 의존관계",
+          "start_line": 148,
+          "end_line": 148
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean",
+          "start_line": 27,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 193,
+          "end_line": 193
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 212,
+          "end_line": 213
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.spring-container",
+      "title": "스프링 컨테이너",
+      "aliases": [
+        "BeanFactory와 ApplicationContext",
+        "자바 객체의 생명 주기를 관리"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/spring-container.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single thing the two principles are actually embodied in - it manages the lifecycle of the objects and adds capability to them, and comes in two forms, the smaller one registering and handing out beans and the larger one inheriting that and adding the rest, which is what the term ordinarily means",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-62"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "software.principle.ioc",
+        "spring.di.dependency-injection",
+        "spring.basic.spring-definition",
+        "spring.di.bean-lifecycle",
+        "spring.di.singleton-registry",
+        "spring.di.bean-lifecycle-detail"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## 스프링 컨테이너",
+          "start_line": 677,
+          "end_line": 683
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 99,
+          "end_line": 107
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.singleton",
+      "title": "싱글톤 패턴",
+      "aliases": [
+        "Singleton Pattern",
+        "싱글턴 패턴",
+        "private static 인스턴스",
+        "순수한 구현은 thread-safe하지 않다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/singleton.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single design pattern restricting a class to one program-wide instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-20",
+        "pl/fun-java",
+        "lecture-batch-23",
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "lecture-batch-62"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.constructor",
+        "java.variable.static-variable",
+        "software.pattern.design-pattern",
+        "java.oop.private-constructor",
+        "java.pattern.factory-method",
+        "java.pattern.dclp-avoidance",
+        "java.pattern.field-caching",
+        "java.pattern.singleton-synchronized",
+        "java.pattern.bill-pugh-singleton",
+        "java.pattern.enum-singleton",
+        "java.pattern.static-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴이란?",
+          "start_line": 458,
+          "end_line": 477
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴으로 회사 클래스 구현",
+          "start_line": 478,
+          "end_line": 572
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## Math Class > ### private",
+          "start_line": 332,
+          "end_line": 333
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴",
+          "start_line": 885,
+          "end_line": 886
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) DCLP 지양에 관한 이야기",
+          "start_line": 341,
+          "end_line": 341
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴",
+          "start_line": 330,
+          "end_line": 330
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 싱글턴 패턴의 순수한 구현",
+          "start_line": 336,
+          "end_line": 339
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 싱글턴 패턴의 순수한 구현",
+          "start_line": 371,
+          "end_line": 374
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.dclp-avoidance",
+      "title": "DCLP를 쓰지 않는 이유",
+      "aliases": [
+        "Double-checked Locking",
+        "out-of-order writes",
+        "volatile의 대가"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/dclp-avoidance.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pattern that looks sound and is not on this platform - the mutual exclusion does order the two threads, but the memory model permits writes to be reordered, so the second thread can see a non-null reference to an object whose construction has not finished; the keyword that forces the write through to main memory fixes that at the cost of the optimisations it disables, which is why the pattern is avoided rather than repaired",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain",
+        "lecture-batch-62"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.singleton",
+        "java.pattern.field-caching",
+        "cs.concurrency.concurrent-vs-parallel",
+        "java.thread.concurrent-collection",
+        "java.thread.volatile",
+        "java.pattern.singleton-synchronized",
+        "java.pattern.bill-pugh-singleton"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) DCLP 지양에 관한 이야기",
+          "start_line": 328,
+          "end_line": 337
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) DCLP 지양에 관한 이야기",
+          "start_line": 359,
+          "end_line": 376
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### DCL",
+          "start_line": 418,
+          "end_line": 423
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### DCL",
+          "start_line": 428,
+          "end_line": 429
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### DCL",
+          "start_line": 476,
+          "end_line": 478
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.qualifier-primary",
+      "title": "같은 타입의 빈이 여러 개일 때",
+      "aliases": [
+        "@Qualifier",
+        "@Primary",
+        "타입 다음은 이름"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/qualifier-primary.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single order of resolution when one interface has two implementations registered - the container matches by type first and then by name against the parameter, which works but ties the choice to a variable name; the explicit ways are a qualifier naming which bean is wanted at both ends, or marking one as the default; and the qualifier wins over the default",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-62"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.di.spring-bean",
+        "spring.arch.repository-interface",
+        "software.principle.dip",
+        "spring.di.bean-scope",
+        "spring.di.singleton-stateless"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 599,
+          "end_line": 604
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 629,
+          "end_line": 631
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 660,
+          "end_line": 660
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 665,
+          "end_line": 665
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## Spring DI > ### 주입하고자 하는 의존성이 여러 개",
+          "start_line": 671,
+          "end_line": 671
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 설정 시 주의점",
+          "start_line": 317,
+          "end_line": 320
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.bean-necessity",
+      "title": "빈으로 등록하지 않으면 생기는 일",
+      "aliases": [
+        "구현체를 고르는 책임",
+        "주입 순서와 관계를 다 알아야 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/bean-necessity.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single argument for registering objects with the container - injecting by hand means something must call new, so whoever constructs the service also chooses which implementation it gets and has to change when that choice changes, and with several dependencies the order and the relations between them all have to be held in one's head",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "spring.di.dependency-injection",
+        "software.principle.dip",
+        "spring.arch.repository-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean을 쓰지 않는 경우 문제점",
+          "start_line": 41,
+          "end_line": 41
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean을 쓰지 않는 경우 문제점",
+          "start_line": 63,
+          "end_line": 63
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean을 쓰지 않는 경우 문제점",
+          "start_line": 73,
+          "end_line": 73
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean을 쓰지 않는 경우 문제점",
+          "start_line": 83,
+          "end_line": 83
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean을 쓰지 않는 경우 문제점",
+          "start_line": 87,
+          "end_line": 89
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.bean-lifecycle",
+      "title": "빈의 생명주기",
+      "aliases": [
+        "컨테이너 생성 생성 주입 초기화 사용 소멸",
+        "@PostConstruct와 @PreDestroy",
+        "초기화 콜백"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/bean-lifecycle.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single order the container puts a bean through - built, injected, initialised, used, and told to release before the container shuts down - where initialisation is separate from construction because the object is only usable once its dependencies are in, and where the callbacks can be declared by implementing the framework's interfaces, by the standard annotations which are what is recommended, or by naming the methods on the registration for a class one cannot annotate",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-bean",
+        "spring.di.bean-lifecycle-detail",
+        "spring.di.bean-scope",
+        "spring.di.java-config"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 95,
+          "end_line": 95
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 100,
+          "end_line": 107
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 113,
+          "end_line": 113
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 126,
+          "end_line": 129
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 145,
+          "end_line": 147
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.bean-lifecycle-detail",
+      "title": "빈이 만들어지는 상세 순서",
+      "aliases": [
+        "Aware 인터페이스들",
+        "BeanPostProcessor",
+        "생성과 초기화를 나누는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/bean-lifecycle-detail.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sequence of hooks between instantiation and use - the name, the factory and the context are handed in through their respective interfaces, then the post-processor runs before and after whichever initialisation callback was declared - which exists so that construction stays cheap and whatever is heavy happens in a step of its own",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.bean-lifecycle",
+        "spring.di.spring-container",
+        "spring.di.singleton-registry"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 161,
+          "end_line": 177
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.singleton-registry",
+      "title": "싱글턴 레지스트리",
+      "aliases": [
+        "빈 이름이 키 객체가 값",
+        "평범한 클래스로 만들고 하나만 보관한다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/singleton-registry.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single mechanism by which the container guarantees one instance without the class being written as a singleton - the object is an ordinary class, and the container keeps it in a registry under the bean's name, handing back the same one every time that name is asked for",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.spring-singleton",
+        "java.pattern.singleton",
+        "spring.di.spring-container",
+        "spring.di.bean-scope"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 생명주기",
+          "start_line": 230,
+          "end_line": 237
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.bean-scope",
+      "title": "빈 스코프",
+      "aliases": [
+        "싱글턴과 프로토타입",
+        "request session application",
+        "@Scope"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/bean-scope.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single setting for how long a bean lives and how many there are - one for the container's whole life by default, a new one per request to the container which it then stops managing, or one tied to a web request, a session, or the servlet context which lasts as long as the server does",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.di.bean-lifecycle",
+        "spring.di.singleton-stateless",
+        "spring.di.singleton-registry",
+        "spring.web.servlet"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 스코프",
+          "start_line": 258,
+          "end_line": 260
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 스코프",
+          "start_line": 262,
+          "end_line": 267
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 스코프",
+          "start_line": 269,
+          "end_line": 273
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 스코프",
+          "start_line": 275,
+          "end_line": 280
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.singleton-stateless",
+      "title": "싱글턴 빈은 상태를 가지면 안 된다",
+      "aliases": [
+        "모든 요청이 같은 객체를 본다",
+        "무상태로 설계하라"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/singleton-stateless.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule following from one instance being shared by every thread - a field holding request-specific state is read and written by all of them at once, so what one request left behind is what another sees",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.bean-scope",
+        "cs.network.stateless",
+        "java.thread.concurrent-collection",
+        "spring.di.singleton-registry"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 스코프",
+          "start_line": 265,
+          "end_line": 266
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## Spring Bean > ### Bean 설정 시 주의점",
+          "start_line": 286,
+          "end_line": 286
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.singleton-synchronized",
+      "title": "synchronized로 만든 싱글턴",
+      "aliases": [
+        "메서드 전체에 락",
+        "호출할 때마다 락이 걸린다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/singleton-synchronized.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single fix for the naive implementation's race - the accessor is synchronised so only one thread can be inside it - which is correct and wasteful, since the lock is taken on every call although it is only needed on the first",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.singleton",
+        "java.pattern.dclp-avoidance",
+        "java.pattern.bill-pugh-singleton",
+        "java.thread.volatile"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 동기화(Synchronized)",
+          "start_line": 388,
+          "end_line": 389
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 동기화(Synchronized)",
+          "start_line": 411,
+          "end_line": 412
+        }
+      ]
+    },
+    {
+      "concept_id": "java.thread.volatile",
+      "title": "volatile",
+      "aliases": [
+        "가시성 보장",
+        "레지스터가 아니라 메인 메모리에서 읽는다",
+        "상호배제는 아니다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/thread/volatile.md",
+      "tags": [
+        "java",
+        "thread"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single keyword making a variable's writes visible to other threads - each thread would otherwise work from its own cached copy, so one could read a value the other has already changed but not yet written back; it addresses visibility only and provides no mutual exclusion",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.dclp-avoidance",
+        "cs.os.cache-pollution",
+        "java.thread.concurrent-collection",
+        "java.pattern.singleton-synchronized"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### DCL",
+          "start_line": 438,
+          "end_line": 448
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.bill-pugh-singleton",
+      "title": "Bill Pugh 방식",
+      "aliases": [
+        "static inner class holder",
+        "클래스 로딩이 동기화되어 있다",
+        "리플렉션으로 깨진다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/bill-pugh-singleton.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single implementation holding the instance in a static inner class, which is not loaded until first referenced and whose loading the virtual machine already synchronises - so it is lazy and thread-safe without a lock of its own, though reflection or deserialisation can still produce a second instance",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.singleton",
+        "java.pattern.enum-singleton",
+        "java.pattern.singleton-recommendation",
+        "java.runtime.reflection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### Bill Pugh Solution",
+          "start_line": 484,
+          "end_line": 488
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### Bill Pugh Solution",
+          "start_line": 505,
+          "end_line": 513
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.enum-singleton",
+      "title": "enum으로 만드는 싱글턴",
+      "aliases": [
+        "enum 자체가 싱글턴",
+        "리플렉션으로도 깨지지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/enum-singleton.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single implementation that comes free with the enumeration type - its constructor is private and its values are constants, so it is one instance by construction and cannot be duplicated by reflection or deserialisation, at the cost of not being able to extend anything or be released once created",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.bill-pugh-singleton",
+        "java.pattern.singleton-recommendation",
+        "java.enum.enum",
+        "java.pattern.singleton"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### Enum",
+          "start_line": 519,
+          "end_line": 522
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.singleton-recommendation",
+      "title": "싱글턴은 어느 방식으로",
+      "aliases": [
+        "Bill Pugh 또는 enum",
+        "지연 로딩과 thread-safe"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/singleton-recommendation.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conclusion after working through the implementations - the holder class for laziness together with safety, or the enumeration for safety with the least code",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.pattern.bill-pugh-singleton",
+        "java.pattern.enum-singleton",
+        "java.pattern.dclp-avoidance",
+        "spring.di.spring-singleton"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 권장 방법",
+          "start_line": 534,
+          "end_line": 540
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.static-class",
+      "title": "정적 클래스",
+      "aliases": [
+        "static 메서드만 갖는 클래스",
+        "유틸 클래스",
+        "정적 바인딩"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/static-class.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative way of having exactly one of something - a class of static methods, which shares with the singleton that it is reachable everywhere and unique, and differs in having no instance at all, so it cannot be inherited from or passed as an argument; it binds at compile time and is therefore the faster of the two, which makes it right for utilities and wrong wherever the thing has to behave as an object",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.singleton",
+        "java.oop.static-context-restriction",
+        "java.util.math-class",
+        "java.pattern.singleton-recommendation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 정적 클래스",
+          "start_line": 547,
+          "end_line": 547
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 정적 클래스",
+          "start_line": 565,
+          "end_line": 570
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### 정적 클래스",
+          "start_line": 576,
+          "end_line": 586
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.di.spring-singleton",
+      "title": "스프링 싱글턴이 없앤 단점",
+      "aliases": [
+        "private 생성자가 필요 없다",
+        "상속과 테스트가 가능해진다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/di/spring-singleton.md",
+      "tags": [
+        "spring",
+        "di"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason none of the pattern's drawbacks apply here - the container guarantees the single instance, so the class needs no private constructor and can be inherited, no static accessor and so stays object-oriented, and can be replaced in a test since what is injected is decided outside it",
+      "pilot_strata": [
+        "lecture-batch-62",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.singleton-registry",
+        "java.pattern.singleton",
+        "spring.di.dependency-injection",
+        "spring.test.fixture-injection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### Spring 싱글턴",
+          "start_line": 592,
+          "end_line": 596
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week05.md",
+          "source_sha256": "bdbf248e9db7b424d6e3fded09fdbce172dfc954d0364856db778bf1df2f6b93",
+          "heading": "## 싱글턴 > ### Spring 싱글턴",
+          "start_line": 608,
+          "end_line": 612
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

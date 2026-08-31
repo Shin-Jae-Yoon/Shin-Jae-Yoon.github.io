@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-59",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-58",
+    "applied_state": "1162 approved knowledge concepts after lecture-batch-58 opened the note lane."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+        "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c"
+      }
+    ],
+    "line_range": "L13-L633 (whole file)",
+    "series": "면접 스터디 dog-study 2주차 - 예외 핸들링, 스프링 예외 처리"
+  },
+  "overlap_analysis": {
+    "finding": "The first half extends the exception concepts fun-java applied, adding the three responses to an exception and the practical objections to the convenient printing method. The second half is entirely new ground - how a web framework takes exception handling away from the individual method - and lands beside the spring concepts from the kim-spring lane.",
+    "disposition": "Four applied java concepts take this evidence. New: the recovery and translation responses, the printing methods and why the stack-dumping one is wrong operationally and as a vulnerability, reflection, the resource form, the performance answer, and five spring concepts covering the scope of the framework's reach, the three levels of handler, the resolver chain, and what lies outside it."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All five update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L9, L13-L19, L44-L70, L98-L125, L140-L171, L305-L320, L345, L375-L413, L421-L423, L432-L434, L465-L467 partial, L506, L534, L565-L566, L584-L586, L621-L633",
+        "reason_code": "issue-link-topic-header-collapsed-code-external-reference-or-carried-by-owner",
+        "detail": "The link to the issue thread, the two topic statements, the collapsed code listings with their attributions, the outbound links the author was reading, the transitional lines asking what comes next, and the closing reference list."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 32351,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 198,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 18,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 17,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 17,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "duplicate_avoided_note": {
+    "proposed": "java.reflection.reflection",
+    "existing": "java.runtime.reflection",
+    "disposition": "Reflection was already applied from the fun-java lane. This note's account of it - reaching members regardless of access modifier through the object the class loader built - is appended there instead of creating a second concept."
+  },
+  "candidates_authored": 17,
+  "candidates": [
+    {
+      "concept_id": "java.exception.exception-handling",
+      "title": "예외 처리",
+      "aliases": [
+        "Exception Handling",
+        "예외 인스턴스 생성",
+        "핸들링 대상은 UnChecked"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/exception-handling.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single practice of catching what the JVM raises - it instantiates the matching exception class and throws it - so the program need not end abnormally",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-59",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.error-vs-exception",
+        "java.exception.try-catch",
+        "java.exception.throws",
+        "java.runtime.jvm",
+        "java.exception.recovery",
+        "java.exception.translation",
+        "spring.exception.exception-scope"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리",
+          "start_line": 134,
+          "end_line": 137
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링",
+          "start_line": 25,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.throws",
+      "title": "throws",
+      "aliases": [
+        "예외 떠넘기기",
+        "호출한 쪽에서 처리",
+        "throw와 throws의 차이",
+        "예외 회피"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/throws.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single declaration handing the exception up to the caller, which cures both faults of handling in place but obliges someone above to actually deal with it",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-59",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.try-catch-pitfall",
+        "java.exception.exception-handling",
+        "java.exception.custom-exception",
+        "java.exception.recovery",
+        "java.exception.translation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### throws",
+          "start_line": 198,
+          "end_line": 198
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### throws",
+          "start_line": 243,
+          "end_line": 244
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 예외회피",
+          "start_line": 76,
+          "end_line": 79
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 예외회피",
+          "start_line": 81,
+          "end_line": 84
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.multi-catch",
+      "title": "다중 catch",
+      "aliases": [
+        "여러 catch 블록",
+        "상위 예외는 아래에",
+        "상위 예외는 아래쪽에",
+        "공통 조상의 멤버만"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/multi-catch.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single arrangement of several catch blocks for finer handling, of which exactly one runs, which is why a broader exception type must sit below the narrower ones",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-59",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.try-catch",
+        "java.exception.checked-unchecked",
+        "java.oop.inheritance",
+        "java.exception.try-with-resources",
+        "java.exception.error-print-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### 다중 catch",
+          "start_line": 283,
+          "end_line": 288
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 다중 catch",
+          "start_line": 131,
+          "end_line": 138
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 멀티 catch",
+          "start_line": 179,
+          "end_line": 190
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 멀티 catch",
+          "start_line": 202,
+          "end_line": 212
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 멀티 catch",
+          "start_line": 238,
+          "end_line": 238
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.try-catch-pitfall",
+      "title": "삼켜버린 예외의 문제",
+      "aliases": [
+        "잘못된 값 반환",
+        "호출자가 원하지 않는 출력",
+        "잡기만 하지 마라",
+        "잡고 바로 던지지 마라"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/try-catch-pitfall.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair of failures from handling in place - returning a value where there should be none, which is worse than terminating, and printing what the caller never asked for",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-59",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.try-catch",
+        "java.exception.throws",
+        "java.exception.exception-handling",
+        "java.exception.print-stack-trace-avoidance",
+        "java.exception.recovery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### try-catch",
+          "start_line": 186,
+          "end_line": 192
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 진짜 Handling",
+          "start_line": 255,
+          "end_line": 265
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 진짜 Handling",
+          "start_line": 269,
+          "end_line": 279
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.reflection",
+      "title": "리플렉션",
+      "aliases": [
+        "Reflection",
+        "클래스로더로 인스턴스 생성",
+        "invoke()",
+        "접근 제어자와 상관없이 접근",
+        "클래스 로더가 만든 Class 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/reflection.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single facility for naming a class as a string, having the class loader find it on the classpath, creating an instance from that information and invoking a method by name - which is how code can run against a class whose name it learns only at run time",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-59",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.classpath",
+        "java.runtime.class-loading",
+        "java.pattern.factory-method",
+        "java.oop.instance-creation-method",
+        "java.exception.print-stack-trace-avoidance",
+        "spring.di.component-scan"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 921,
+          "end_line": 923
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 979,
+          "end_line": 984
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 1003,
+          "end_line": 1008
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 진짜 Handling",
+          "start_line": 324,
+          "end_line": 327
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.recovery",
+      "title": "예외 복구",
+      "aliases": [
+        "정상 흐름으로 되돌리기",
+        "다른 비즈니스 로직으로 유도"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/recovery.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single response to an exception in which the application carries on - the failure is anticipated, the flow is diverted into an alternative, and the state is put back to a working one, which suits something like a network call that may simply be retried",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.exception-handling",
+        "java.exception.try-catch",
+        "java.exception.translation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 예외복구",
+          "start_line": 37,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.translation",
+      "title": "예외 전환",
+      "aliases": [
+        "의미가 분명한 예외로 바꿔 던진다",
+        "복구 불가능한 예외를 UnChecked로"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/translation.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single response in which an exception is caught and rethrown as one that says what actually went wrong, so the caller can handle it meaningfully - which is how a low-level failure the client could do nothing with becomes an unchecked exception carrying the business meaning",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.recovery",
+        "java.exception.checked-unchecked",
+        "java.exception.custom-exception",
+        "spring.tx.rollback-policy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 예외전환",
+          "start_line": 90,
+          "end_line": 96
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.error-print-method",
+      "title": "예외를 출력하는 세 메서드",
+      "aliases": [
+        "getMessage",
+        "toString",
+        "printStackTrace"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/error-print-method.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three ways to say what an exception was - the cause alone, the type together with the cause, and the whole call stack from where it was thrown, the last of which returns nothing and prints on its own",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.exception.print-stack-trace-avoidance",
+        "java.exception.try-catch",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 에러 출력 메서드",
+          "start_line": 244,
+          "end_line": 247
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.print-stack-trace-avoidance",
+      "title": "printStackTrace를 쓰지 않는 이유",
+      "aliases": [
+        "System.err로 나가서 제어가 어렵다",
+        "리플렉션 오버헤드",
+        "로깅 라이브러리를 쓰라"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/print-stack-trace-avoidance.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of reasons the convenient method is wrong in a server - it writes to the error stream where it cannot be controlled or found, it walks the stack by reflection which costs, it loads the server to assemble that stack, and where its output ends up depends on the container; a logging library gives the same information with a pattern, a level and a destination",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.error-print-method",
+        "java.logging.slf4j-logback",
+        "java.runtime.reflection",
+        "java.exception.print-stack-trace-vulnerability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### 진짜 Handling",
+          "start_line": 283,
+          "end_line": 303
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.print-stack-trace-vulnerability",
+      "title": "스택 트레이스가 취약점이 되는 이유",
+      "aliases": [
+        "CWE-497",
+        "시스템 정보 노출"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/print-stack-trace-vulnerability.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single security reason beyond the operational ones - the printed trace carries file paths and internal structure, and if it reaches a response it reaches an outsider, so debugging output of this kind has to be removed rather than left in",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.exception.print-stack-trace-avoidance",
+        "db.security.sensitive-data-practice",
+        "java.exception.error-print-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### printStackTrace 취약점",
+          "start_line": 333,
+          "end_line": 339
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.try-with-resources",
+      "title": "try-with-resources",
+      "aliases": [
+        "자원 반납을 자동으로",
+        "AutoCloseable"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/try-with-resources.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single form that removes the release block - a resource declared in the parentheses is closed automatically, which fixes the four failures of doing it by hand: the noise, the null checks, forgetting altogether, and a failure during release swallowing the original trace - available to anything implementing the closeable interface",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.try-catch",
+        "java.io.io-stream",
+        "java.exception.try-catch-pitfall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### try-with-resources",
+          "start_line": 347,
+          "end_line": 361
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.try-catch-performance",
+      "title": "try-catch의 성능",
+      "aliases": [
+        "try 블록 자체는 거의 공짜",
+        "스택을 채우는 비용",
+        "범위를 좁게"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/try-catch-performance.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single answer to whether exception handling is expensive - measurably yes and practically no, since the cost is in filling the stack trace when one is actually thrown rather than in the block existing, and it only matters at millions of throws a second; the reductions available are to use the block only where an exception is possible, keep its scope small, prefer a condition where one would do, and log rather than throw",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.exception.try-catch",
+        "java.exception.print-stack-trace-avoidance",
+        "algo.complexity.operation-budget"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### try-catch 성능",
+          "start_line": 419,
+          "end_line": 427
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### try-catch 성능",
+          "start_line": 436,
+          "end_line": 440
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 01 - 예외 핸들링 > ### try-catch 성능",
+          "start_line": 446,
+          "end_line": 454
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.exception.exception-scope",
+      "title": "스프링에서 예외가 발생하는 두 자리",
+      "aliases": [
+        "Dispatcher Servlet 안과 밖",
+        "try-catch 남용의 문제"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/exception/exception-scope.md",
+      "tags": [
+        "spring",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single division of where an exception can arise in a web application - inside the front controller, meaning in the controller, service or repository, or before it in a filter - which matters because only the first is inside spring's reach; and the reason to care at all, that handling each one locally buries the code's purpose and lets failures pass unnoticed",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.exception.handling-levels",
+        "spring.exception.filter-exception",
+        "spring.arch.layered-structure",
+        "java.exception.try-catch-pitfall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는?",
+          "start_line": 462,
+          "end_line": 467
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### 스프링 예외처리",
+          "start_line": 473,
+          "end_line": 477
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.exception.handling-levels",
+      "title": "예외를 처리하는 세 단계",
+      "aliases": [
+        "@ExceptionHandler",
+        "@ControllerAdvice",
+        "@RestControllerAdvice"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/exception/handling-levels.md",
+      "tags": [
+        "spring",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ladder of scope - the method handling its own, a controller-wide handler catching what any of its methods throw, and a global one catching what any controller throws, with a variant of the last that writes the body directly for an API - where the narrower one wins, since handling it in the controller ends the matter and the global one never sees it",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.exception.exception-scope",
+        "spring.exception.handler-exception-resolver",
+        "spring.web.controller",
+        "spring.web.api-response-body"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 내에서",
+          "start_line": 487,
+          "end_line": 489
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 내에서",
+          "start_line": 495,
+          "end_line": 495
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 내에서",
+          "start_line": 501,
+          "end_line": 504
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 내에서",
+          "start_line": 512,
+          "end_line": 520
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 내에서",
+          "start_line": 524,
+          "end_line": 528
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.exception.handler-exception-resolver",
+      "title": "HandlerExceptionResolver",
+      "aliases": [
+        "세 리졸버가 순서대로",
+        "@ResponseStatus",
+        "표준 예외 매핑"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/exception/handler-exception-resolver.md",
+      "tags": [
+        "spring",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single chain the front controller runs when something is thrown out of a controller - first the one looking for a matching handler on the controller and then on the global advice, then the one turning an annotated exception into a status code, then the one mapping spring's own exceptions to the standard statuses, a missing route to not-found, a bad parameter to bad-request and anything else to server-error - with whatever remains falling through to the container's default error page",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.exception.handling-levels",
+        "cs.network.http-status-line",
+        "spring.web.controller",
+        "spring.exception.filter-exception"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### HandlerExceptionResolver",
+          "start_line": 536,
+          "end_line": 542
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### HandlerExceptionResolver",
+          "start_line": 548,
+          "end_line": 552
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### HandlerExceptionResolver",
+          "start_line": 558,
+          "end_line": 561
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### HandlerExceptionResolver",
+          "start_line": 573,
+          "end_line": 580
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.exception.filter-exception",
+      "title": "필터에서 난 예외는 스프링이 못 잡는다",
+      "aliases": [
+        "요청은 필터를 먼저 지난다",
+        "필터 안에서 try-catch"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/exception/filter-exception.md",
+      "tags": [
+        "spring",
+        "exception"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the request order - the container hands the request to the filters before the front controller sees it, so an exception thrown in a filter never enters spring's territory and no handler annotation applies to it, leaving the filter to catch its own",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.exception.exception-scope",
+        "spring.web.filter-role",
+        "spring.exception.handler-exception-resolver"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 외부에서",
+          "start_line": 590,
+          "end_line": 594
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Dispatcher Servlet 외부에서",
+          "start_line": 600,
+          "end_line": 606
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.web.filter-role",
+      "title": "필터가 맡는 일",
+      "aliases": [
+        "모든 요청에 대한 로깅",
+        "JWT 같은 보안 공통 작업",
+        "인코딩과 압축"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/web/filter-role.md",
+      "tags": [
+        "spring",
+        "web"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of jobs that belong before the application rather than in it - logging every request and response, the security work common to all of them such as checking a token, adjusting the request object itself, and encoding or compressing what passes through",
+      "pilot_strata": [
+        "lecture-batch-59",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.exception.filter-exception",
+        "spring.web.controller",
+        "java.logging.slf4j-logback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week02.md",
+          "source_sha256": "190cbaffe3bd610e60585b1dc8e25c87e87d11817057676828c11c64eb99545c",
+          "heading": "## TOPIC 02 - Spring에서는? > ### Filter에서 처리하는 예외",
+          "start_line": 612,
+          "end_line": 617
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

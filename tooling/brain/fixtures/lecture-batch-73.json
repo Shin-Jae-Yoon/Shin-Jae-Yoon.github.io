@@ -1,0 +1,936 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-73",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-72",
+    "applied_state": "1371 approved knowledge concepts after the first three DevCourse posts were mined."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/DevCourse/004.md",
+        "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60"
+      },
+      {
+        "path": "content/brain/notes/DevCourse/005.md",
+        "source_sha256": "898d2000380e7cac7c9d8c30db0f022b016995c694a477f504d1755d7190b60c"
+      },
+      {
+        "path": "content/brain/notes/DevCourse/index.md",
+        "source_sha256": "b5a8ef55a031e7a76d5ba31d149492dd983c57fa8a47c31b1062310a29e692d2"
+      }
+    ],
+    "line_range": "whole files",
+    "series": "데브코스 회고 4-5편 - 컬렉션과 스트림, 설계 리뷰"
+  },
+  "multi_source_note": "Two retrospective posts and the series index are mined together; locators carry an `s` index into the source list.",
+  "overlap_analysis": {
+    "finding": "The fourth post is the only place in the corpus that works through the standard functional interfaces one at a time and shows the stream as the answer to what the iterator gives up. The fifth is largely a diary, with a design review in the middle that states where to stop dividing responsibilities.",
+    "disposition": "Seven applied concepts gain evidence or edges. Eleven new concepts, opening two namespaces - the functional interfaces and the stream."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is a blockquote rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All seven update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "004 L10, L16 partial, L33, L40, L83, L87, L106, L124-L126 partial, L136 partial, L186-L188, L196-L210, L214, L272-L277, L281-L299; 005 L9, L15-L23, L29-L38, L44, L49, L58, L64-L68; index whole",
+        "reason_code": "diary-entry-environment-setup-instruction-project-specific-design-or-index",
+        "detail": "The diary opening and closing each post, the account of getting a build tool to cooperate with the IDE and the numbered list of IDE settings that followed, the translation plugin's keyboard shortcuts, the running list of open questions about one particular calculator's class layout, the personal feedback about study habits and sleep, and the series index."
+      },
+      {
+        "span": "004 L186-L188",
+        "reason_code": "deferred-by-author",
+        "detail": "The author explicitly defers writing this up until the lecture has been rewatched, so there is nothing stated to cite."
+      }
+    ],
+    "coverage_statement": "Every heading scope carrying a stated concept contributes at least one cited locator. Four scopes - the number-baseball project, the calculator preview, the shared tips and the personal feedback - carry none, for the reasons above."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 24600,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 113,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 13,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 9,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 18,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes DevCourse - five posts and an index over batches 72 and 73.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_yield_note": {
+    "statement": "Four names collided with concepts already applied and were yielded rather than transferred, since the incumbent holds the more established sense of each.",
+    "yields": [
+      {
+        "name": "map",
+        "incumbent": "java.collection.map-interface",
+        "renamed_to": "값을 다른 타입으로 바꾼다"
+      },
+      {
+        "name": "consumer",
+        "incumbent": "kafka.client.consumer",
+        "renamed_to": "Consumer 인터페이스 (title)"
+      },
+      {
+        "name": "accept()",
+        "incumbent": "java.net.socket",
+        "renamed_to": "accept(T t)"
+      },
+      {
+        "name": "스트림",
+        "incumbent": "kafka.stream.stream",
+        "renamed_to": "자바 스트림"
+      }
+    ]
+  },
+  "folder_route_note": "Two canonical paths had a basename equal to their parent folder, which the engine rejects as a route collision. Renamed to mapping-function.md and java-stream.md.",
+  "candidates_authored": 18,
+  "candidates": [
+    {
+      "concept_id": "java.collection.collection-framework",
+      "title": "컬렉션 프레임워크",
+      "aliases": [
+        "Java Collections Framework",
+        "Collections API",
+        "자료구조 클래스 모음"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/collection-framework.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of data-structure classes added in Java 2, built as interfaces and the classes implementing them, whose members store Object unless a generic type is given",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-73",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.generic.generic",
+        "java.collection.collection-interface",
+        "java.collection.interface-type-reference",
+        "java.oop.generic-collection-behavior",
+        "java.stream.stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크",
+          "start_line": 113,
+          "end_line": 119
+        },
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Collection",
+          "start_line": 16,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.iterator",
+      "title": "Iterator 인터페이스",
+      "aliases": [
+        "Iterator",
+        "hasNext()",
+        "next()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/iterator.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface for taking items out of a structure, where hasNext must be asked before next is called",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-73",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.collection-interface",
+        "java.control-flow.enhanced-for",
+        "java.collection.map-interface",
+        "algo.list.list-iterator",
+        "java.collection.iterator-tradeoff",
+        "java.stream.stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### Iterator Interface",
+          "start_line": 147,
+          "end_line": 150
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Iterator",
+          "start_line": 280,
+          "end_line": 284
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.optional",
+      "title": "Optional",
+      "aliases": [
+        "Optional.ofNullable()",
+        "null을 감싸서 반환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/optional.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single wrapper added in Java 8 for a return value that may not be there - a lookup that finds nothing returns it empty rather than returning null, leaving the caller to deal with the absence deliberately",
+      "pilot_strata": [
+        "lecture-batch-38",
+        "backend/kim-spring",
+        "java-domain",
+        "lecture-batch-73",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.map-interface",
+        "spring.arch.repository-interface",
+        "java.util.optional-caution"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 회원 관리 예제 > ### 도메인, 리포지토리",
+          "start_line": 594,
+          "end_line": 594
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-01.md",
+          "source_sha256": "666473735c04527bfd82281732086031fef0a0cd00f1010fab3e0dfd4719e747",
+          "heading": "## 회원 관리 예제 > ### 도메인, 리포지토리",
+          "start_line": 631,
+          "end_line": 631
+        },
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Optional",
+          "start_line": 171,
+          "end_line": 171
+        },
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Optional",
+          "start_line": 177,
+          "end_line": 180
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.lambda-interface",
+      "title": "람다 인터페이스",
+      "aliases": [
+        "Lambda Interface",
+        "함수형 인터페이스",
+        "람다 표현식"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/lambda-interface.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface carrying exactly one method, which is what lets an anonymous object be shortened into a lambda expression - a JDK 8 addition and part of what modern Java means, especially alongside the Stream API",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-24",
+        "lecture-batch-72",
+        "DevCourse",
+        "lecture-batch-73"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.anonymous-class",
+        "java.language.modern-java",
+        "java.oop.interface",
+        "java.oop.comparator",
+        "java.oop.method-reference",
+        "java.oop.behavior-injection",
+        "java.oop.interface-adapter",
+        "java.function.consumer",
+        "java.function.function",
+        "java.function.predicate"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 익명 클래스 > ### 람다 인터페이스",
+          "start_line": 1167,
+          "end_line": 1172
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### 람다 인터페이스",
+          "start_line": 757,
+          "end_line": 758
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 함수형 인터페이스",
+          "start_line": 165,
+          "end_line": 173
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 익명 클래스와 람다 표현식",
+          "start_line": 219,
+          "end_line": 219
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.srp",
+      "title": "단일 책임 원칙",
+      "aliases": [
+        "SRP",
+        "Single Responsibility Principle",
+        "수정되는 이유는 하나여야 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/srp.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single rule that an object should have exactly one reason to change, which is the same as saying it carries exactly one responsibility - so a class that would need editing for two unrelated reasons is two classes",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "software-domain",
+        "lecture-batch-73"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.solid",
+        "java.oop.good-object",
+        "java.oop.cohesion-coupling",
+        "java.oop.autonomous-responsibility",
+        "java.oop.responsibility-splitting"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 설계, SOLID",
+          "start_line": 147,
+          "end_line": 153
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.overflow",
+      "title": "오버플로우",
+      "aliases": [
+        "Overflow",
+        "부호 비트 반전"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/overflow.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single wraparound in which a result past the type's maximum or below its minimum flips sign, because adding one to the largest positive pattern carries into the sign bit",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "lecture-batch-73",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.integer-type",
+        "cs.data.bit-and-byte",
+        "java.type.explicit-type-conversion",
+        "algo.test.int-range-check",
+        "algo.complexity.space-complexity",
+        "java.type.bigdecimal"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 오버플로우",
+          "start_line": 159,
+          "end_line": 161
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 공간 복잡도",
+          "start_line": 79,
+          "end_line": 79
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.behavior-injection",
+      "title": "동작 자체를 호스트 코드로 미루기",
+      "aliases": [
+        "Consumer로 입력만 받고 출력은 없이",
+        "구현부를 바꾸지 않고 기능을 바꾼다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/behavior-injection.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pattern that falls out of taking a function as a parameter - what to do is written where the call is made rather than where the work happens, so the same implementation serves different behaviours without being edited; the same move as taking a dependency from outside, applied to behaviour instead of to an object",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain",
+        "lecture-batch-73"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.lambda-interface",
+        "software.principle.ioc",
+        "java.pattern.factory-method",
+        "java.oop.generic-collection-behavior"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 모던 자바 사용법",
+          "start_line": 290,
+          "end_line": 292
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.generic-collection-behavior",
+      "title": "기능을 사용하는 쪽에서 정의하는 컬렉션",
+      "aliases": [
+        "고정된 기능이 아니라 범용적인 형태",
+        "묶여있는 채로 다룬다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/generic-collection-behavior.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of a container taking a function as a parameter - what it does to each element is decided where it is called rather than where it is written, so one container serves filtering, transforming and consuming without knowing about any of them, and the data stays a bundle throughout",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.behavior-injection",
+        "java.collection.collection-framework",
+        "java.function.consumer",
+        "java.oop.lambda-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### 함수형 인터페이스 적용",
+          "start_line": 35,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "java.function.consumer",
+      "title": "Consumer 인터페이스",
+      "aliases": [
+        "입력은 있고 반환은 없다",
+        "accept(T t)",
+        "forEach가 받는 것"
+      ],
+      "canonical_path": "content/brain/knowledge/java/function/consumer.md",
+      "tags": [
+        "java",
+        "function"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single functional interface for work that takes a value and returns nothing - which is exactly the shape of a loop body, so a container that walks its own elements takes one of these and hands each element to it",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.lambda-interface",
+        "java.function.predicate",
+        "java.function.function",
+        "java.oop.generic-collection-behavior"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### 함수형 인터페이스 적용",
+          "start_line": 50,
+          "end_line": 50
+        },
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### 함수형 인터페이스 적용",
+          "start_line": 62,
+          "end_line": 62
+        }
+      ]
+    },
+    {
+      "concept_id": "java.function.function",
+      "title": "Function과 메서드 단위의 타입 변수",
+      "aliases": [
+        "매핑한다",
+        "값을 다른 타입으로 바꾼다",
+        "메서드에만 쓰는 타입은 메서드에 선언한다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/function/mapping-function.md",
+      "tags": [
+        "java",
+        "function"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single functional interface turning one type into another, and the declaration problem it creates - the result type appears nowhere on the container, so it has to be introduced on the method itself rather than on the class, which is why the signature carries a type variable before its return type",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.function.consumer",
+        "java.generic.generic",
+        "java.function.predicate",
+        "java.oop.generic-collection-behavior"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### 함수형 인터페이스 적용",
+          "start_line": 97,
+          "end_line": 102
+        }
+      ]
+    },
+    {
+      "concept_id": "java.function.predicate",
+      "title": "Predicate",
+      "aliases": [
+        "파라미터를 받아 boolean을 반환",
+        "참이면 남긴다",
+        "filter가 받는 것"
+      ],
+      "canonical_path": "content/brain/knowledge/java/function/predicate.md",
+      "tags": [
+        "java",
+        "function"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single functional interface answering yes or no about a value, which is what a filter needs - each element is offered to it and kept only when the answer is yes",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.function.consumer",
+        "java.function.function",
+        "java.oop.lambda-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### 함수형 인터페이스 적용",
+          "start_line": 117,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.iterator-tradeoff",
+      "title": "하나씩 풀면 묶음의 이점을 잃는다",
+      "aliases": [
+        "Iterator는 덩어리를 풀어 하나씩",
+        "고차함수를 쓸 수 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/iterator-tradeoff.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single cost of walking a container one element at a time - the bundle is gone, and with it the ability to hand the whole thing a function, which is the question the stream was introduced to answer",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.iterator",
+        "java.stream.stream",
+        "java.oop.generic-collection-behavior",
+        "algo.list.list-iterator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Iterator",
+          "start_line": 124,
+          "end_line": 128
+        }
+      ]
+    },
+    {
+      "concept_id": "java.stream.stream",
+      "title": "자바 스트림",
+      "aliases": [
+        "연속된 데이터 중 하나",
+        "Collections.stream()",
+        "고차함수를 이어 쓴다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/stream/java-stream.md",
+      "tags": [
+        "java",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single view of a container as a flow of elements rather than a bundle or a walk - which keeps the whole available to be handed a function, so a chain of such functions expresses in one expression what a loop would spell out",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.collection.iterator-tradeoff",
+        "java.stream.stream-creation",
+        "java.function.function",
+        "java.io.io-stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Stream",
+          "start_line": 134,
+          "end_line": 138
+        }
+      ]
+    },
+    {
+      "concept_id": "java.stream.stream-creation",
+      "title": "스트림을 만드는 두 방법",
+      "aliases": [
+        "generate와 iterate",
+        "Supplier",
+        "시드값에서 다음 값을 만든다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/stream/stream-creation.md",
+      "tags": [
+        "java",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of ways to produce a flow from nothing - one taking a function with no input that yields a value each time it is asked, the other taking a starting value and a rule for getting the next one from the last",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.stream.stream",
+        "java.function.function",
+        "java.oop.lambda-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Stream",
+          "start_line": 142,
+          "end_line": 146
+        },
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Stream",
+          "start_line": 157,
+          "end_line": 159
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.optional-caution",
+      "title": "Optional을 남발하지 마라",
+      "aliases": [
+        "안 쓰는 상황이 제일 좋다",
+        "null이 나올 것 같다고 무조건 감싸지 말 것"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/optional-caution.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single warning about the wrapper - the best outcome is the one where it was not needed, so reaching for it wherever a value might be absent trades one problem for a layer of them rather than removing anything",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.util.optional",
+        "java.exception.checked-unchecked",
+        "java.type.reference-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/004.md",
+          "source_sha256": "7f356203b7a2d9c7cc8078bc69272b6ed6bb1cc5a99072b58b340399a087ce60",
+          "heading": "## 💻 2주차 DAY 03 > ### Optional",
+          "start_line": 173,
+          "end_line": 173
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.bigdecimal",
+      "title": "BigDecimal을 쓰는 이유",
+      "aliases": [
+        "21억을 넘는 계산",
+        "예외 처리보다 더 큰 수를 다루기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/bigdecimal.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single answer to a result that will not fit the built-in integer - rather than detecting the overflow and throwing, use a type with no fixed width, which also changes the method signature and so the tests written against it",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.type.overflow",
+        "java.type.integer-type",
+        "cs.data.floating-point-representation",
+        "algo.test.int-range-check"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/005.md",
+          "source_sha256": "898d2000380e7cac7c9d8c30db0f022b016995c694a477f504d1755d7190b60c",
+          "heading": "## 💻 2주차 DAY 04 > ### 계산기 설계 고민",
+          "start_line": 33,
+          "end_line": 34
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.responsibility-splitting",
+      "title": "책임을 어디까지 쪼갤 것인가",
+      "aliases": [
+        "사칙연산 하나하나를 클래스로 빼지 마라",
+        "계산기와 연산과 표현식",
+        "파일만 많아진다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/responsibility-splitting.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single judgement about how far to divide - one class per arithmetic operation is too far, because the responsibility is arithmetic rather than addition, and a class that both computes and stores is not far enough; the split that works names the distinct jobs, and the objects are then wired together at the entry point rather than creating each other",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.srp",
+        "java.oop.autonomous-responsibility",
+        "java.oop.good-object",
+        "software.principle.ioc"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/005.md",
+          "source_sha256": "898d2000380e7cac7c9d8c30db0f022b016995c694a477f504d1755d7190b60c",
+          "heading": "## 💻 2주차 DAY 04 > ### 팀 미팅 시간",
+          "start_line": 46,
+          "end_line": 48
+        },
+        {
+          "path": "content/brain/notes/DevCourse/005.md",
+          "source_sha256": "898d2000380e7cac7c9d8c30db0f022b016995c694a477f504d1755d7190b60c",
+          "heading": "## 💻 2주차 DAY 04 > ### 팀 미팅 시간",
+          "start_line": 52,
+          "end_line": 56
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.composition-over-inheritance",
+      "title": "상속 대신 컴포지션",
+      "aliases": [
+        "가지고 있게 만든다",
+        "if보다 switch가 읽힌다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/composition-over-inheritance.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative to extending a class when one object needs another's behaviour - holding it and delegating instead, which is what the review suggested for a pair of input and output implementations that were about to be joined by inheritance",
+      "pilot_strata": [
+        "lecture-batch-73",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance-misuse",
+        "java.oop.inheritance-coupling",
+        "software.pattern.design-pattern",
+        "java.oop.responsibility-splitting"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/005.md",
+          "source_sha256": "898d2000380e7cac7c9d8c30db0f022b016995c694a477f504d1755d7190b60c",
+          "heading": "## 💻 2주차 DAY 04 > ### 팀 미팅 시간",
+          "start_line": 50,
+          "end_line": 51
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

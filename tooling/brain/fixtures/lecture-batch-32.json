@@ -1,0 +1,1346 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-32",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-31",
+    "applied_state": "674 approved knowledge concepts after lecture-batch-31 opened db.sql, db.type and db.index from lectures 03 to 05."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture06.md",
+        "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture07.md",
+        "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture08.md",
+        "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c"
+      }
+    ],
+    "line_range": "lecture06 L12-L200, lecture07 L12-L137, lecture08 L12-L367 (three whole files)",
+    "series": "쉬운코드 DB (easy-db) 6~8/15 — 서브쿼리, three-valued logic, Join"
+  },
+  "overlap_analysis": {
+    "finding": "The three files continue the query arc batch 31 started, and they interlock: NOT IN is introduced in lecture06 and its NULL trap is the subject of lecture07, while lecture07's three-valued logic explains why an inner join drops a NULL join attribute in lecture08. Batching them together keeps those edges inside one review.",
+    "disposition": "Two applied concepts absorb this evidence instead of being duplicated: db.constraint.null, whose three readings lecture07 states outright, and db.sql.join-condition, which lecture08 places relative to selection conditions. Everything else is new query-language surface under db.sql."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "source_defect_note": {
+    "span": "lecture06 L70",
+    "statement": "The source line reads 'set은 중복 허용 O, multiset은 중복 허용 X', which inverts the two. The applied db.sql.multiset-relation, cited from lecture03 L41-45 of the same course, has it the right way round.",
+    "disposition": "db.sql.in-operator cites the surrounding span and states only that the operand may be an explicit list or a subquery result; it does not carry the inverted claim forward, and it is flagged conflict so U3 sees the discrepancy. The source file is not modified."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture06 L8, L23-29, L39-45, L51-59, L79-87, L112-119, L135-149, L167-169, L180-184, L196-198; lecture07 L8, L28-30, L46, L60, L68, L79, L109, L116-118, L132-136; lecture08 L8, L22-24, L77, L91-95, L107, L122-126, L133-137, L144-149, L161, L193-195, L201-203, L229-233, L240-244, L278, L292-302, L335, L349-357",
+        "reason_code": "lecture-preamble-figure-caption-or-carried-by-owner",
+        "detail": "The channel link, the 'ex)' example headers whose query lives in the screenshot below them, and the walk-through lines whose claim is already stated inside the cited span of the owning concept."
+      },
+      {
+        "span": "lecture07 L54",
+        "reason_code": "intra-page-navigation",
+        "detail": "An anchor link pointing at a later section of the same page, carrying no claim of its own."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across the three files contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 19398,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 205,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 23,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 21,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 27,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. db.sql.cross-join closes the loop back to db.relational.mathematical-relation from batch 30 — the Cartesian product the model was defined on turns out to be a join with no condition.",
+  "alias_transfer_note": {
+    "key": "동등 조인",
+    "from": "kafka.stream.table-table-join",
+    "to": "db.sql.equi-join",
+    "rationale": "The bare Korean term for equi join belongs to the relational operation lecture08 defines, not to the Kafka Streams table-table join that happens to be one. The Kafka concept keeps the idea under the qualified alias 스트림 동등 조인 and gains an edge to the SQL concept."
+  },
+  "candidates_authored": 27,
+  "candidates": [
+    {
+      "concept_id": "db.constraint.null",
+      "title": "NULL",
+      "aliases": [
+        "값이 존재하지 않음",
+        "알 수 없음",
+        "해당 사항 없음",
+        "unavailable or withheld",
+        "not applicable"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/null.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single marker carrying at least three different meanings - absent, unknown, or not applicable - which is exactly why it is best avoided",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-32"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.constraint.schema-based-constraint",
+        "db.key.primary-key",
+        "db.relational.tuple",
+        "db.sql.is-null",
+        "db.sql.three-valued-logic",
+        "db.constraint.not-null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### NULL",
+          "start_line": 249,
+          "end_line": 263
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NULL의 의미",
+          "start_line": 16,
+          "end_line": 26
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NULL의 의미",
+          "start_line": 32,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.join-condition",
+      "title": "join condition",
+      "aliases": [
+        "조인 조건",
+        "테이블명 명시",
+        "ambiguous 오류"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/join-condition.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single third kind of condition beside selection and projection - the one linking two tables by equating a column of each, which forces every ambiguous name in the statement to be qualified with its table or the query fails as ambiguous",
+      "pilot_strata": [
+        "lecture-batch-31",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-32"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.select",
+        "db.key.foreign-key",
+        "db.sql.as-alias",
+        "db.sql.company-example-schema",
+        "db.sql.join",
+        "db.sql.implicit-vs-explicit-join",
+        "db.sql.using-clause",
+        "db.sql.equi-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### SELECT",
+          "start_line": 39,
+          "end_line": 50
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture05.md",
+          "source_sha256": "8ca95471f29df4590bae933249591350d088f0e7545b8e9dbfdba0a5aedc7152",
+          "heading": "## 데이터 조회 > ### SELECT",
+          "start_line": 56,
+          "end_line": 61
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Implict vs Explicit",
+          "start_line": 45,
+          "end_line": 47
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Inner join",
+          "start_line": 86,
+          "end_line": 87
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.table-table-join",
+      "title": "테이블-테이블 조인",
+      "aliases": [
+        "Table-Table Join",
+        "외래 키 조인",
+        "스트림 동등 조인"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/table-table-join.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single unwindowed join over both tables' current state, an equi-join when the two are partitioned the same way so the work spreads across instances, with foreign-key joins also supported",
+      "pilot_strata": [
+        "book-batch-17",
+        "kafka/chap14",
+        "stream-domain",
+        "lecture-batch-32",
+        "db/easy-db"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-table-join",
+        "kafka.stream.windowed-join",
+        "kafka.stream.stream-to-table",
+        "db.sql.equi-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 테이블-테이블 조인",
+          "start_line": 382,
+          "end_line": 386
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.subquery",
+      "title": "서브쿼리",
+      "aliases": [
+        "subquery",
+        "nested query",
+        "inner query",
+        "outer query",
+        "main query"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/subquery.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single query written in parentheses inside another - the inner one is the subquery, the one containing it the outer query - which lets a question that would otherwise take two round trips be asked once, and which may sit in the WHERE clause or in the FROM clause",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.select",
+        "db.sql.correlated-subquery",
+        "db.sql.derived-table",
+        "db.sql.in-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### Subquery 기본",
+          "start_line": 16,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### Subquery 기본",
+          "start_line": 31,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### Subquery 기본",
+          "start_line": 47,
+          "end_line": 49
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.derived-table",
+      "title": "FROM 절 서브쿼리",
+      "aliases": [
+        "가상 테이블",
+        "derived table",
+        "FROM 절의 subquery"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/derived-table.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single subquery placed in the FROM clause, whose result stands in the statement as one more table to be joined against the real ones",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.subquery",
+        "db.sql.join-condition",
+        "db.sql.as-alias"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### IN - OR 같은 녀석",
+          "start_line": 89,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.in-operator",
+      "title": "IN",
+      "aliases": [
+        "NOT IN",
+        "v IN (v1, v2, v3)"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/in-operator.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operator returning TRUE when a value equals any member of a list, where the list may be written out or produced by a subquery, and whose negation NOT IN returns TRUE only when the value differs from every member - which is why it reads as a shorthand for a chain of ORs",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.subquery",
+        "db.sql.exists",
+        "db.sql.not-in-null-pitfall",
+        "db.sql.multiset-relation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### IN - OR 같은 녀석",
+          "start_line": 67,
+          "end_line": 72
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.unqualified-attribute-scope",
+      "title": "수식되지 않은 속성이 가리키는 테이블",
+      "aliases": [
+        "unqualified attribute",
+        "가장 가까운 테이블 참조"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/unqualified-attribute-scope.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single resolution rule for an attribute written without a table name - it binds to the nearest enclosing query that has a table carrying that attribute, searching outward from the query it appears in",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.subquery",
+        "db.sql.join-condition",
+        "db.sql.correlated-subquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### IN - OR 같은 녀석",
+          "start_line": 76,
+          "end_line": 77
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.correlated-subquery",
+      "title": "상관 서브쿼리",
+      "aliases": [
+        "correlated subquery",
+        "correlated query",
+        "바깥 쿼리의 속성 참조"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/correlated-subquery.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single subquery that names an attribute belonging to the outer query, so it cannot be evaluated once on its own but is re-evaluated for each row the outer query considers",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.subquery",
+        "db.sql.exists",
+        "db.sql.unqualified-attribute-scope"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### EXISTS 존재여부",
+          "start_line": 105,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### EXISTS 존재여부",
+          "start_line": 129,
+          "end_line": 131
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.exists",
+      "title": "EXISTS",
+      "aliases": [
+        "NOT EXISTS",
+        "존재 여부 확인"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/exists.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operator asking only whether a subquery returned at least one row, with NOT EXISTS asking whether it returned none, interchangeable with IN in expression and - on recent RDBMS versions - close enough in performance that the choice is a matter of readability",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.in-operator",
+        "db.sql.correlated-subquery",
+        "db.sql.not-in-null-pitfall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### EXISTS 존재여부",
+          "start_line": 106,
+          "end_line": 108
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### EXISTS 존재여부",
+          "start_line": 153,
+          "end_line": 154
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.any-some",
+      "title": "ANY와 SOME",
+      "aliases": [
+        "ANY",
+        "SOME",
+        "단 하나라도 참이면"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/any-some.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single quantifier placed after a comparison operator that returns TRUE when the comparison holds against at least one row the subquery returned, spelled either ANY or SOME",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.subquery",
+        "db.sql.all-operator",
+        "db.sql.correlated-subquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### ANY 서브쿼리 단 하나라도",
+          "start_line": 162,
+          "end_line": 163
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### ANY 서브쿼리 단 하나라도",
+          "start_line": 171,
+          "end_line": 176
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.all-operator",
+      "title": "ALL",
+      "aliases": [
+        "모두 참이어야",
+        "comparison_operator ALL"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/all-operator.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single quantifier returning TRUE only when the comparison holds against every row the subquery returned",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.sql.any-some",
+        "db.sql.subquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture06.md",
+          "source_sha256": "8c1a5f4210d8ded6fc879cd8b8f43e31b239f22044388ecb77674e1af3ef8ea0",
+          "heading": "## Subquery > ### ALL 모두",
+          "start_line": 192,
+          "end_line": 192
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.is-null",
+      "title": "IS NULL",
+      "aliases": [
+        "IS",
+        "IS NOT NULL",
+        "NULL 비교 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/is-null.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single comparison operator for testing whether a value is NULL, which exists because the equality operator cannot answer that question, with IS NOT for the opposite test",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.constraint.null",
+        "db.sql.three-valued-logic",
+        "db.sql.select"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### IS",
+          "start_line": 42,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.three-valued-logic",
+      "title": "three-valued logic",
+      "aliases": [
+        "UNKNOWN",
+        "3값 논리",
+        "TRUE FALSE UNKNOWN"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/three-valued-logic.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of NULL for SQL's logic - any comparison with NULL on either side yields UNKNOWN, meaning it could be TRUE or could be FALSE, so comparison and logical operators return one of three values rather than two",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.constraint.null",
+        "db.sql.is-null",
+        "db.sql.unknown-truth-table",
+        "db.sql.where-selects-true-only"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NULL과 three-valued",
+          "start_line": 52,
+          "end_line": 54
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NULL과 three-valued",
+          "start_line": 62,
+          "end_line": 64
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NULL과 three-valued",
+          "start_line": 70,
+          "end_line": 71
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.unknown-truth-table",
+      "title": "UNKNOWN의 논리 연산 결과",
+      "aliases": [
+        "AND OR NOT과 UNKNOWN",
+        "FALSE AND UNKNOWN은 FALSE",
+        "TRUE OR UNKNOWN은 TRUE"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/unknown-truth-table.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single truth table for UNKNOWN under AND, OR and NOT, where the answer collapses to a definite value only when the other operand already decides it - FALSE AND UNKNOWN is FALSE and TRUE OR UNKNOWN is TRUE - and stays UNKNOWN otherwise",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.three-valued-logic",
+        "db.sql.where-selects-true-only"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### UNKNOWN 연산결과",
+          "start_line": 81,
+          "end_line": 90
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.where-selects-true-only",
+      "title": "WHERE는 TRUE인 튜플만 선택한다",
+      "aliases": [
+        "FALSE거나 UNKNOWN이면 제외",
+        "조건이 TRUE인 tuple만"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/where-selects-true-only.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that makes three-valued logic matter in practice - a WHERE clause keeps a tuple only when its condition evaluates to TRUE, so FALSE and UNKNOWN are discarded alike and a query that can never reach TRUE returns nothing at all",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.three-valued-logic",
+        "db.sql.unknown-truth-table",
+        "db.sql.select",
+        "db.sql.not-in-null-pitfall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### UNKNOWN 연산결과",
+          "start_line": 94,
+          "end_line": 96
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.not-in-null-pitfall",
+      "title": "NOT IN에 NULL이 섞이면",
+      "aliases": [
+        "NOT IN 주의사항",
+        "NULL이 든 목록과의 NOT IN",
+        "NOT EXISTS로 우회"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/not-in-null-pitfall.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trap where NOT IN silently returns nothing - it expands to a chain of != joined by AND, so one NULL in the list makes the whole chain UNKNOWN and WHERE drops every tuple, which is avoided by forbidding NULL on the attribute, filtering it out inside the subquery, or rewriting the test as NOT EXISTS",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.in-operator",
+        "db.sql.exists",
+        "db.constraint.not-null",
+        "db.sql.where-selects-true-only",
+        "db.sql.unknown-truth-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NOT IN 주의사항",
+          "start_line": 102,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NOT IN 주의사항",
+          "start_line": 110,
+          "end_line": 112
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NOT IN 주의사항",
+          "start_line": 120,
+          "end_line": 122
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture07.md",
+          "source_sha256": "a7ecfb6f7928f508c41f1cbf8fcfff940cf3d818aca12ae54832ea45a1fa348d",
+          "heading": "## three-valued logic > ### NOT IN 주의사항",
+          "start_line": 126,
+          "end_line": 134
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.join",
+      "title": "조인",
+      "aliases": [
+        "JOIN",
+        "두 테이블을 한 번에 조회"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single act of reading data held in two or more tables in one query, which is needed whenever the answer names something one table does not carry, and which comes in several kinds",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.join-condition",
+        "db.sql.inner-join",
+        "db.sql.outer-join",
+        "db.key.foreign-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join",
+          "start_line": 16,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join",
+          "start_line": 26,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.implicit-vs-explicit-join",
+      "title": "암시적 조인과 명시적 조인",
+      "aliases": [
+        "implicit join",
+        "explicit join",
+        "JOIN ... ON",
+        "old-style join syntax"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/implicit-vs-explicit-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice of where the join condition is written - the implicit form lists tables in FROM and puts the condition in WHERE beside the selection conditions, which reads poorly and invites mistakes in complex queries; the explicit form names JOIN in FROM and the condition after ON, keeping the two kinds of condition apart",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.join",
+        "db.sql.join-condition",
+        "db.sql.cross-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Implict vs Explicit",
+          "start_line": 37,
+          "end_line": 48
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Implict vs Explicit",
+          "start_line": 52,
+          "end_line": 65
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.inner-join",
+      "title": "내부 조인",
+      "aliases": [
+        "INNER JOIN",
+        "조건을 만족하는 튜플만"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/inner-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single join keeping only the tuple pairs that satisfy the join condition, so an unmatched row on either side disappears from the result and so does a row whose join attribute is NULL - written with INNER optional, but never without ON or it becomes a cross join",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.join",
+        "db.sql.outer-join",
+        "db.sql.cross-join",
+        "db.constraint.null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Inner join",
+          "start_line": 75,
+          "end_line": 75
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Inner join",
+          "start_line": 79,
+          "end_line": 87
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Inner join",
+          "start_line": 97,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.outer-join",
+      "title": "외부 조인",
+      "aliases": [
+        "OUTER JOIN",
+        "LEFT JOIN",
+        "RIGHT JOIN",
+        "FULL OUTER JOIN"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/outer-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single join that also keeps the tuples failing the join condition, from the left table, the right table or both depending on which side is named, and which MySQL supports only in its left and right forms so a full outer join has to be assembled as a UNION of the two",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.join",
+        "db.sql.inner-join",
+        "db.sql.mysql-join-quirk"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 105,
+          "end_line": 105
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 109,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 128,
+          "end_line": 129
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 139,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### Outer join",
+          "start_line": 145,
+          "end_line": 151
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.equi-join",
+      "title": "동등 조인",
+      "aliases": [
+        "equi join",
+        "= 를 사용하는 조인"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/equi-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single name for a join whose condition uses the equality comparator, cutting across the inner and outer distinction - though the term is read two ways, one counting any such join and the other only inner ones",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.join-condition",
+        "db.sql.inner-join",
+        "db.sql.outer-join",
+        "db.sql.using-clause"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### equi join",
+          "start_line": 159,
+          "end_line": 159
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### equi join",
+          "start_line": 163,
+          "end_line": 164
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### equi join",
+          "start_line": 168,
+          "end_line": 170
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.using-clause",
+      "title": "USING",
+      "aliases": [
+        "같은 이름 속성으로 조인",
+        "USING (attributes)"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/using-clause.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shorthand for an equi join whose two attributes carry the same name - the name is written once inside USING instead of twice around an equals sign, and it appears once in the result table, pulled to the front as if it belonged to neither side",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.equi-join",
+        "db.sql.natural-join",
+        "db.sql.join-condition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### using",
+          "start_line": 180,
+          "end_line": 189
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### using",
+          "start_line": 197,
+          "end_line": 197
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### using",
+          "start_line": 205,
+          "end_line": 206
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.natural-join",
+      "title": "자연 조인",
+      "aliases": [
+        "NATURAL JOIN",
+        "이름이 같은 모든 속성으로 조인"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/natural-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single join that writes no condition at all and instead equi joins on every attribute pair the two tables happen to share, which is why it quietly returns nothing when they share a name that was never meant to be matched - an employee's name and a department's name, say",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.using-clause",
+        "db.sql.equi-join",
+        "db.sql.inner-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### natural join",
+          "start_line": 216,
+          "end_line": 225
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### natural join",
+          "start_line": 235,
+          "end_line": 236
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### natural join",
+          "start_line": 246,
+          "end_line": 247
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### natural join",
+          "start_line": 266,
+          "end_line": 268
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.cross-join",
+      "title": "상호 조인",
+      "aliases": [
+        "CROSS JOIN",
+        "모든 튜플 조합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/cross-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single join with no condition, returning every pairing of a tuple from one table with a tuple from the other - the Cartesian product the relational model started from - written either by listing both tables in FROM or with the CROSS JOIN keyword",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.mathematical-relation",
+        "db.sql.inner-join",
+        "db.sql.implicit-vs-explicit-join",
+        "db.sql.mysql-join-quirk"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### cross join",
+          "start_line": 276,
+          "end_line": 288
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### cross join",
+          "start_line": 304,
+          "end_line": 304
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.mysql-join-quirk",
+      "title": "MySQL의 조인 특이사항",
+      "aliases": [
+        "MySQL은 FULL OUTER JOIN 미지원",
+        "ON을 쓰면 inner join"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/mysql-join-quirk.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of MySQL departures from the standard - it has no FULL OUTER JOIN, and it treats cross join, inner join and plain join as one keyword whose behaviour is decided by whether ON or USING is present rather than by the word written",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.cross-join",
+        "db.sql.inner-join",
+        "db.sql.outer-join",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### MySQL Join",
+          "start_line": 312,
+          "end_line": 318
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### MySQL Join",
+          "start_line": 322,
+          "end_line": 324
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.self-join",
+      "title": "자체 조인",
+      "aliases": [
+        "SELF JOIN",
+        "자기 자신과의 조인"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/self-join.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single case rather than a separate syntax - a table joined to itself, which is what happens when the same table is named on both sides of a join",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.join",
+        "db.sql.as-alias",
+        "db.sql.inner-join"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## Join > ### self join",
+          "start_line": 333,
+          "end_line": 341
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.join-chaining",
+      "title": "조인을 이어 붙이기",
+      "aliases": [
+        "조인 결과에 다시 조인",
+        "중간 result 테이블"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/join-chaining.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way joins compose - the result of one join is itself a table the next join is written against, and the kind of each step is chosen from what may be missing at that step, so a left outer join is used where the attribute being followed may be NULL",
+      "pilot_strata": [
+        "lecture-batch-32",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.inner-join",
+        "db.sql.outer-join",
+        "db.sql.company-example-schema",
+        "db.constraint.null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture08.md",
+          "source_sha256": "7df2eb4898dde42b162082960a6bfdd735befd0c880cde1679789e1aca2bf69c",
+          "heading": "## 예제",
+          "start_line": 359,
+          "end_line": 367
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

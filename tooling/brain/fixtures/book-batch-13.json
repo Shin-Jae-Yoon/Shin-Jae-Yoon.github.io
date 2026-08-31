@@ -1,0 +1,1052 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-13",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-12",
+    "applied_state": "302 approved knowledge concepts after book-batch-12 completed chap08."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap09.md",
+    "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+    "line_range": "L7-L473 (whole file)",
+    "single_batch_rationale": "chap09 measures 211 prose lines against a B4 ceiling of 360 and yields 31 candidates against a B5 ceiling of 40. It needs no split."
+  },
+  "namespace_decision": {
+    "new_namespaces": "kafka.pipeline.* for the eight data pipeline design considerations, kafka.connect.* for Kafka Connect itself.",
+    "no_redefine_rule": "messaging.pipeline.data-pipeline is already applied and carries what a data pipeline is. Batch 13 asserts what Kafka contributes to one and never redefines the pipeline; the preamble candidates relate to it instead.",
+    "group_id_note": "The connect worker's group.id is not given its own concept. kafka.config.group-id is applied for the consumer group id and a second concept with that title would collide outright, so the four core worker settings are carried as one kafka.connect.worker-configuration concept."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 13 touches, so U3 must confirm it relates rather than restates.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is the pre-heading preamble with no heading chain, or an Obsidian callout.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 33,
+  "alias_ownership_corrections": {
+    "trigger": "The first propose of this batch failed the collision gate with 3 title-or-alias collisions. Two applied concepts held aliases that name what chap09 gives its own concepts.",
+    "corrections": [
+      "kafka.platform.platform-feature drops Kafka Connect and 카프카 커넥트. Those name the framework, which is now kafka.connect.kafka-connect. It keeps the Streams aliases, which it still owns.",
+      "kafka.reliability.error-handler-decision drops 백프레셔. Backpressure is one option a handler may take, not the handler decision itself, and chap09 defines it as its own concept at kafka.pipeline.backpressure."
+    ],
+    "note": "Both are alias moves only. Neither drops a source locator or a related-concept edge."
+  },
+  "candidates": [
+    {
+      "concept_id": "kafka.platform.platform-feature",
+      "title": "플랫폼 기능",
+      "aliases": ["Kafka Streams", "카프카 스트림즈", "내장 플랫폼 기능"],
+      "canonical_path": "content/brain/knowledge/kafka/platform/platform-feature.md",
+      "tags": ["kafka", "platform"],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair of built-in platform features — Connect for system integration and Streams for stream processing",
+      "pilot_strata": ["book-batch-04", "kafka/chap01", "kafka-domain", "book-batch-13"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.kafka-client",
+        "kafka.usecase.use-case-family",
+        "kafka.platform.kafka",
+        "kafka.connect.kafka-connect"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 플랫폼 기능",
+          "start_line": 438,
+          "end_line": 440
+        },
+        {
+          "path": "content/brain/books/kafka/chap01.md",
+          "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+          "heading": "## 카프카 사용 이유 > ### 플랫폼 기능",
+          "start_line": 441,
+          "end_line": 445
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.error-handler-decision",
+      "title": "에러 핸들러 설계 판단",
+      "aliases": ["Error Handler Decision", "재전송뿐이면 프로듀서 재시도를 쓰라"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/error-handler-decision.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "update",
+      "concept_granularity": "single design choice over what a handler does with a failed message - discard, log, stop reading upstream, apply backpressure or spill to disk - with the rule that a handler doing only resend should be replaced by the producer's own retry",
+      "pilot_strata": ["book-batch-09", "kafka/chap07", "reliability-domain", "book-batch-13"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.reliability.non-retriable-error-handling",
+        "kafka.config.delivery-timeout-ms",
+        "kafka.pipeline.backpressure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 신뢰성 있는 시스템에서 프로듀서 > ### 추가적인 에러 처리",
+          "start_line": 490,
+          "end_line": 500
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.connect-api-origin",
+      "title": "카프카 커넥트 API의 등장 배경",
+      "aliases": ["Connect API 도입 이유", "파이프라인마다 직접 개발하던 문제"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/connect-api-origin.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason the Connect API exists: integrating Kafka into a pipeline was hard enough that every organization was building its own, so the work was lifted into an API",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "messaging.pipeline.data-pipeline",
+        "kafka.connect.kafka-connect",
+        "kafka.connect.connect-vs-client"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "unheaded-body",
+          "start_line": 10,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.kafka-as-buffer",
+      "title": "파이프라인 버퍼로서의 카프카",
+      "aliases": ["쓰는 쪽과 읽는 쪽의 분리", "Large Reliable Buffer"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/kafka-as-buffer.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single role Kafka plays between pipeline stages - a large, reliable buffer that decouples writers from readers so one source can feed several destinations with different timeliness and availability needs",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "messaging.pipeline.data-pipeline",
+        "kafka.pipeline.timeliness",
+        "kafka.pipeline.adjustable-throughput"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "unheaded-body",
+          "start_line": 22,
+          "end_line": 25
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.timeliness",
+      "title": "적시성",
+      "aliases": ["Timeliness", "시간적 민감도 분리"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/timeliness.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single requirement that data arrive in time to affect a decision, which Kafka meets by letting one side write in real time while the other reads in batches, or the reverse",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.pipeline.kafka-as-buffer",
+        "kafka.pipeline.backpressure",
+        "kafka.pipeline.adjustable-throughput"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (1) 적시성",
+          "start_line": 33,
+          "end_line": 40
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.backpressure",
+      "title": "백프레셔",
+      "aliases": ["Backpressure", "생산 속도 제어"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/backpressure.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique of throttling a producer that outpaces its consumer in order to keep the system stable",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["provenance-warning", "low-confidence"],
+      "related_concepts": ["kafka.pipeline.timeliness", "kafka.reliability.error-handler-decision"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (1) 적시성",
+          "start_line": 44,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.delivery-guarantee",
+      "title": "파이프라인 전달 보장",
+      "aliases": ["Delivery Guarantee", "SPOF 회피", "외부 저장소와 결합한 정확히 한 번"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/delivery-guarantee.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single reliability requirement on a pipeline - avoid single points of failure and state the delivery guarantee - where Kafka gives at-least-once alone and exactly-once when paired with a destination that has transactions or unique keys",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.reliability.at-least-once",
+        "kafka.reliability.exactly-once",
+        "kafka.connect.offset-management"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (2) 신뢰성",
+          "start_line": 51,
+          "end_line": 58
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.adjustable-throughput",
+      "title": "조정 가능한 처리율",
+      "aliases": ["Adjustable Throughput", "프로듀서와 컨슈머 처리율 분리"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/adjustable-throughput.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of buffering: producer and consumer throughput stop being coupled, surplus accumulates in Kafka instead of needing a backpressure mechanism, and each side scales on its own",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.pipeline.kafka-as-buffer",
+        "kafka.pipeline.backpressure",
+        "kafka.property.scalability"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (3) 높으면서 조정 가능한 처리율",
+          "start_line": 64,
+          "end_line": 67
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.data-format-independence",
+      "title": "데이터 형식 독립성",
+      "aliases": ["Data Format Independence", "장착 가능한 컨버터", "Pluggable Converter"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/data-format-independence.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single property that Kafka and the Connect API are indifferent to data format, holding records as in-memory objects with type and schema and leaving the wire format to a pluggable converter, so the choice of format does not constrain which connectors can be used",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.converter",
+        "kafka.schema.serialization-format",
+        "kafka.connect.schema-propagation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (4) 데이터 형식",
+          "start_line": 73,
+          "end_line": 82
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.schema-propagation",
+      "title": "스키마 전파",
+      "aliases": ["Schema Propagation", "싱크 커넥터의 형식 책임"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/schema-propagation.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single practice of carrying the source's schema alongside the data so it can be used for compatibility checks and to update the sink's schema, with the sink connector owning the destination format",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.schema.schema",
+        "kafka.pipeline.data-format-independence",
+        "kafka.pipeline.metadata-loss"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (4) 데이터 형식",
+          "start_line": 88,
+          "end_line": 93
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.etl",
+      "title": "ETL",
+      "aliases": ["Extract-Transform-Load", "추출 변환 적재"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/etl.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single pipeline shape that transforms data in transit, saving time and storage downstream but moving the compute and storage burden into the pipeline and making anything it drops unavailable to consumers",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.pipeline.elt",
+        "kafka.connect.smt",
+        "kafka.pipeline.excessive-processing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (5) 변환",
+          "start_line": 101,
+          "end_line": 106
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.elt",
+      "title": "ELT",
+      "aliases": ["Extract-Load-Transform", "추출 적재 변환", "고 데이터 파이프라인"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/elt.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single pipeline shape delivering data as close to the original as possible and leaving transformation to the destination, maximizing the destination's flexibility at the cost of its CPU and resources",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": ["kafka.pipeline.etl", "kafka.pipeline.excessive-processing"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (5) 변환",
+          "start_line": 108,
+          "end_line": 112
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.smt",
+      "title": "SMT",
+      "aliases": [
+        "Single Message Transformation",
+        "개별 메시지 변환",
+        "MaskField",
+        "RegexRouter"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/connect/smt.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single stateless per-record transformation Connect applies in transit, usually without code, covering type casts, masking, filtering, flattening, header and field moves and topic rerouting, while stateful joins and aggregations need Kafka Streams",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.pipeline.etl",
+        "kafka.platform.platform-feature",
+        "kafka.connect.kafka-connect"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (5) 변환",
+          "start_line": 116,
+          "end_line": 120
+        },
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 개별 메시지 변환",
+          "start_line": 366,
+          "end_line": 381
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.pipeline-security",
+      "title": "파이프라인 보안",
+      "aliases": ["Pipeline Security", "PII", "개인 식별 정보", "SASL 인증"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/pipeline-security.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single security checklist for a pipeline - who may read the data, is it encrypted in transit, who may change the pipeline, can it authenticate to restricted stores, and does handling personally identifiable information meet the law - against which Kafka offers encryption, SASL, audit logs and external secret configuration",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.listeners",
+        "kafka.pipeline.delivery-guarantee",
+        "kafka.connect.worker-configuration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (6) 보안",
+          "start_line": 126,
+          "end_line": 135
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.failure-recovery",
+      "title": "파이프라인 장애 복구",
+      "aliases": ["이전 시점으로 되돌아가 복구", "장기 보존을 이용한 재처리"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/failure-recovery.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single recovery affordance: because Kafka can retain every event for a long time, a pipeline can rewind to an earlier point and repair the error rather than assuming the data was always clean",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.retention.retention",
+        "kafka.adminclient.alter-consumer-group-offsets",
+        "kafka.property.disk-based-retention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (7) 장애 처리",
+          "start_line": 141,
+          "end_line": 142
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.coupling",
+      "title": "원본과 대상의 결합",
+      "aliases": ["Coupling", "데이터 원본과 대상 분리"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/coupling.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "stub",
+      "concept_granularity": "single design goal of keeping the data source and destination separable, against which three recurring patterns accidentally create coupling",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": [
+        "kafka.pipeline.ad-hoc-pipeline",
+        "kafka.pipeline.metadata-loss",
+        "kafka.pipeline.excessive-processing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (8) 결합과 민첩성",
+          "start_line": 148,
+          "end_line": 149
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.ad-hoc-pipeline",
+      "title": "임기응변 파이프라인",
+      "aliases": ["Ad-hoc Pipeline", "애드훅", "엔드포인트마다 커스텀 구축"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/ad-hoc-pipeline.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single anti-pattern of building a custom pipeline per application pair, which binds each pipeline to its endpoints and multiplies the installation, maintenance and monitoring burden",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": ["kafka.pipeline.coupling", "kafka.connect.connect-api-origin"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (8) 결합과 민첩성",
+          "start_line": 153,
+          "end_line": 156
+        },
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (8) 결합과 민첩성",
+          "start_line": 175,
+          "end_line": 176
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.metadata-loss",
+      "title": "메타데이터 유실",
+      "aliases": ["Metadata Loss", "스키마 진화 미지원", "소스와 싱크의 강한 결합"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/metadata-loss.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single coupling cause in which a pipeline that preserves no schema metadata forces both ends to know how to parse the data themselves",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.pipeline.coupling",
+        "kafka.connect.schema-propagation",
+        "kafka.schema.schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (8) 결합과 민첩성",
+          "start_line": 160,
+          "end_line": 163
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.pipeline.excessive-processing",
+      "title": "과도한 처리",
+      "aliases": ["Excessive Processing", "raw 데이터를 그대로 내려보내기"],
+      "canonical_path": "content/brain/knowledge/kafka/pipeline/excessive-processing.md",
+      "tags": ["kafka", "pipeline"],
+      "proposal_kind": "create",
+      "concept_granularity": "single coupling cause in which processing too much inside the pipeline strips downstream systems of choices and forces a pipeline change whenever their requirements move, answered by passing raw data through and letting each application decide",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "pipeline-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.pipeline.coupling",
+        "kafka.pipeline.elt",
+        "kafka.pipeline.etl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 데이터 파이프라인 구축 고려사항 > ### (8) 결합과 민첩성",
+          "start_line": 167,
+          "end_line": 171
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.connect-vs-client",
+      "title": "커넥트와 클라이언트 API의 선택",
+      "aliases": ["Connect vs Producer/Consumer", "설정 파일만 작성하면 되는 경우"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/connect-vs-client.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single selection rule: use Connect when the other end is a data store whose code you neither wrote nor can change, since the user then only writes a configuration file, and reach for the client API only when no connector exists",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.kafka-connect",
+        "kafka.client.kafka-client",
+        "kafka.connect.worker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머",
+          "start_line": 182,
+          "end_line": 186
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.kafka-connect",
+      "title": "카프카 커넥트",
+      "aliases": ["Kafka Connect", "커넥터 플러그인"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/kafka-connect.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single framework made of the connect process that runs connectors and the connectors that decide what is copied where, providing the API, runtime and REST management for moving data between Kafka and other stores",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.connector",
+        "kafka.connect.worker",
+        "kafka.connect.task",
+        "kafka.platform.platform-feature"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트",
+          "start_line": 197,
+          "end_line": 204
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.worker",
+      "title": "커넥트 워커",
+      "aliases": ["Worker", "커넥트 워커 프로세스", "컨테이너 프로세스"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/worker.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single container process running connectors and tasks, which serves the REST API, stores configuration in an internal topic, commits offsets, retries failed tasks, and reassigns work when a worker joins or crashes",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.kafka-connect",
+        "kafka.connect.task",
+        "kafka.connect.rest-api",
+        "kafka.connect.offset-management"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트",
+          "start_line": 193,
+          "end_line": 195
+        },
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 커넥트  좀 더 자세히 알아보기",
+          "start_line": 414,
+          "end_line": 424
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.connector",
+      "title": "커넥터",
+      "aliases": ["Connector", "커넥터 API", "태스크 분할 결정"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/connector.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single half of the connector plugin that decides how many tasks run, how the copying is divided among them, and passes each task its configuration from the worker",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.task",
+        "kafka.connect.kafka-connect",
+        "kafka.connect.worker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 커넥트  좀 더 자세히 알아보기",
+          "start_line": 395,
+          "end_line": 403
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.task",
+      "title": "커넥트 태스크",
+      "aliases": ["Task", "소스 태스크", "싱크 태스크"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/task.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single unit that actually moves data - a source task reads the origin and hands connect data objects to the worker, a sink task takes them from the worker and writes them out - initialized from a context the worker supplies",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.connector",
+        "kafka.connect.worker",
+        "kafka.connect.converter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트",
+          "start_line": 205,
+          "end_line": 207
+        },
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 커넥트  좀 더 자세히 알아보기",
+          "start_line": 407,
+          "end_line": 410
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.converter",
+      "title": "컨버터",
+      "aliases": ["Converter", "ConnectSchema", "Schema Value 순서쌍"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/converter.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single translation layer turning the connect data object and its schema into the wire format stored in Kafka and back, which is why any connector works with any record format for which a converter exists",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.task",
+        "kafka.pipeline.data-format-independence",
+        "kafka.schema.serialization-format"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트",
+          "start_line": 208,
+          "end_line": 209
+        },
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 커넥트  좀 더 자세히 알아보기",
+          "start_line": 429,
+          "end_line": 438
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.worker-deployment",
+      "title": "커넥트 워커 배치",
+      "aliases": ["브로커와 별도 서버", "connect-distributed.sh"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/worker-deployment.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single deployment rule that production Connect runs on servers separate from the brokers, started much the same way a broker is",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.connect.worker",
+        "kafka.connect.worker-configuration",
+        "kafka.install.server-startup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트 실행",
+          "start_line": 215,
+          "end_line": 216
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.worker-configuration",
+      "title": "커넥트 워커 핵심 설정",
+      "aliases": ["plugin.path", "key.converter", "value.converter", "커넥트 클러스터 구성"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/worker-configuration.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of four worker settings - the broker list, the group id that decides which workers form one connect cluster, the plugin search path, and the key and value converters",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.worker",
+        "kafka.connect.converter",
+        "kafka.install.bootstrap-server",
+        "kafka.config.group-id"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트 실행",
+          "start_line": 226,
+          "end_line": 249
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.rest-api",
+      "title": "커넥트 REST API",
+      "aliases": ["rest.host.name", "rest.port", "connector-plugins"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/rest-api.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single management interface for configuring and monitoring connectors, whose base URL reports the running version and whose connector-plugins route lists what is installed",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.worker",
+        "kafka.connect.worker-configuration",
+        "kafka.connect.file-connector-example"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트 실행",
+          "start_line": 253,
+          "end_line": 262
+        },
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 카프카 커넥트 실행",
+          "start_line": 277,
+          "end_line": 277
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.file-connector-example",
+      "title": "파일 소스·싱크 커넥터 예제",
+      "aliases": ["FileStreamSource", "FileStreamSink", "topic과 topics의 차이"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/file-connector-example.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single worked example in which a file source turns each line into a JSON record on a topic and a file sink restores it byte for byte, differing only in the connector class, the meaning of the file property and topics replacing topic",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.rest-api",
+        "kafka.connect.converter",
+        "kafka.connect.connector"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 커넥터 예제 (1)",
+          "start_line": 324,
+          "end_line": 330
+        },
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 커넥터 예제 (1)",
+          "start_line": 341,
+          "end_line": 345
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.offset-management",
+      "title": "커넥트 오프셋 관리",
+      "aliases": ["논리적 파티션과 오프셋", "원본 시스템 기준 오프셋"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/offset-management.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single tracking scheme in which a source record carries a logical partition and offset defined by the origin system, not by Kafka, and the worker stores that offset only after the broker acknowledges the write so a restart resumes where it left off",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.worker",
+        "kafka.client.offset",
+        "kafka.pipeline.delivery-guarantee"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트 vs 프로듀서/컨슈머 > ### 커넥트  좀 더 자세히 알아보기",
+          "start_line": 443,
+          "end_line": 451
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.ingestion-framework-alternative",
+      "title": "수집 프레임워크 대안",
+      "aliases": ["Flume", "Logstash", "Fluentd"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/ingestion-framework-alternative.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single selection rule that the ingestion framework should follow the system at the centre of the architecture - Connect when that is Kafka, Logstash when it is Elasticsearch",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": ["kafka.connect.kafka-connect", "kafka.connect.gui-etl-alternative"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트의 대안 > ### 다른 데이터 저장소를 위한 수집 프레임워크",
+          "start_line": 459,
+          "end_line": 460
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.gui-etl-alternative",
+      "title": "GUI 기반 ETL 툴",
+      "aliases": ["Apache NiFi", "인포매티카", "StreamSets"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/gui-etl-alternative.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single class of tool built for complex workflows, which makes it heavy and complicated when the goal is only to move data",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": [
+        "kafka.connect.ingestion-framework-alternative",
+        "kafka.pipeline.etl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트의 대안 > ### GUI 기반 ETL 툴",
+          "start_line": 466,
+          "end_line": 467
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.connect.stream-framework-alternative",
+      "title": "스트림 프로세싱 프레임워크 대안",
+      "aliases": ["스트림 프레임워크로 데이터 이동", "메세지 유실 대응의 어려움"],
+      "canonical_path": "content/brain/knowledge/kafka/connect/stream-framework-alternative.md",
+      "tags": ["kafka", "connect"],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative in which a stream processing framework reads from Kafka and writes elsewhere, at the cost of harder handling for message loss and corruption",
+      "pilot_strata": ["book-batch-13", "kafka/chap09", "connect-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.connect.kafka-connect",
+        "kafka.stream.stream",
+        "kafka.connect.ingestion-framework-alternative"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+          "heading": "## 카프카 커넥트의 대안 > ### 스트림 프로세싱 프레임워크",
+          "start_line": 472,
+          "end_line": 473
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap09-l0029",
+      "title": "chap09 데이터 파이프라인 구축 고려사항 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap09 L29-30 `## 데이터 파이프라인 구축 고려사항` carries only the heading and one blank line (span_sha256 755e0599aebf6e6450de172c4db957a3d82ae89054b1a4a43750a9e67fa9caa3; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false.",
+      "pilot_strata": ["book-batch-13", "scope-level-rejection-probe"],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329"
+        }
+      ],
+      "engine_substantive": false
+    },
+    {
+      "concept_id": "book.rejected.kafka-chap09-l0455",
+      "title": "chap09 카프카 커넥트의 대안 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap09 L455-456 `## 카프카 커넥트의 대안` carries only the heading and one blank line (span_sha256 8d14cdb01bb594f074a29dc833a317240ae7339c9a99ac84695f877cd6ef1903; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false.",
+      "pilot_strata": ["book-batch-13", "scope-level-rejection-probe"],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap09.md",
+          "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329"
+        }
+      ],
+      "engine_substantive": false
+    }
+  ],
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L356-363",
+        "reason_code": "page-pointer-only",
+        "detail": "The ### 커넥터 예제 (2) scope is a heading, a one-line title and a pointer to printed pages 242-249. It passes the engine's substantive gate on the title line but asserts nothing that could support a concept, so it is the one substantive scope in chap09 with no locator."
+      },
+      {
+        "span": "L218-220, L257-275, L286-322, L332-339, L348-350",
+        "reason_code": "code-carried-by-neighbouring-locator",
+        "detail": "Shell and JSON listings whose meaning is carried by the cited commentary."
+      },
+      {
+        "span": "L382-384",
+        "reason_code": "external-reference",
+        "detail": "Links to outside SMT tutorials."
+      },
+      {
+        "span": "L390-391, L428-429 partial, L446-447",
+        "reason_code": "carried-by-owning-locator",
+        "detail": "Section lead-ins and elaborations restated inside a cited span."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in chap09 contributes at least one cited locator except ### 커넥터 예제 (2), recorded above. Both non-substantive scopes are filed as rejection probes."
+  },
+  "p6_resolution": {
+    "statement": "Ten applied concepts are touched by prose in chap09. None is re-proposed or restated; all ten receive a related_concepts edge.",
+    "summary": { "update": 0, "relate": 10, "no_op": 0 },
+    "touch_point_dispositions": [
+      {
+        "concept_id": "messaging.pipeline.data-pipeline",
+        "authoring_decision": "relate",
+        "evidence": "The whole chapter is about data pipelines.",
+        "decision_rationale": "The applied concept carries what a data pipeline is. Batch 13 asserts what Kafka contributes to one, and no candidate restates the definition."
+      },
+      {
+        "concept_id": "kafka.schema.schema",
+        "authoring_decision": "relate",
+        "evidence": "L88-91 and L429-432 carry schemas alongside the data.",
+        "decision_rationale": "The schema is applied; the new claim is that Connect propagates it."
+      },
+      {
+        "concept_id": "kafka.schema.serialization-format",
+        "authoring_decision": "relate",
+        "evidence": "Avro, JSON, Protobuf appear as converter formats.",
+        "decision_rationale": "The formats are applied; converters are the new claim."
+      },
+      {
+        "concept_id": "kafka.reliability.at-least-once",
+        "authoring_decision": "relate",
+        "evidence": "L55 states Kafka guarantees at-least-once on its own.",
+        "decision_rationale": "Applied in batch 09; cited as the baseline a pipeline builds on."
+      },
+      {
+        "concept_id": "kafka.reliability.exactly-once",
+        "authoring_decision": "relate",
+        "evidence": "L56-57 pairs Kafka with a transactional destination for exactly-once.",
+        "decision_rationale": "Applied in batch 10; the pipeline claim points at it."
+      },
+      {
+        "concept_id": "kafka.client.offset",
+        "authoring_decision": "relate",
+        "evidence": "L445-451 uses a logical offset defined by the origin system.",
+        "decision_rationale": "The Kafka offset is applied; Connect's logical offset is explicitly not it, which the granularity records."
+      },
+      {
+        "concept_id": "kafka.platform.platform-feature",
+        "authoring_decision": "relate",
+        "evidence": "Kafka Connect and Kafka Streams are named throughout.",
+        "decision_rationale": "The applied concept already names both; batch 13 details Connect rather than restating the feature list."
+      },
+      {
+        "concept_id": "kafka.stream.stream",
+        "authoring_decision": "relate",
+        "evidence": "L120 and L369 send joins and aggregations to Kafka Streams.",
+        "decision_rationale": "Cited as the boundary of what SMT can do."
+      },
+      {
+        "concept_id": "kafka.property.scalability",
+        "authoring_decision": "relate",
+        "evidence": "L67 scales producer and consumer sides independently.",
+        "decision_rationale": "Scalability is applied; this is a pipeline consequence of it."
+      },
+      {
+        "concept_id": "kafka.retention.retention",
+        "authoring_decision": "relate",
+        "evidence": "L142 relies on long retention to rewind and repair.",
+        "decision_rationale": "Retention is applied; the recovery affordance is the new claim."
+      }
+    ]
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": { "value": 211, "ceiling": 360, "satisfied": true },
+      "heading_scopes": { "value": 20, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 31, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

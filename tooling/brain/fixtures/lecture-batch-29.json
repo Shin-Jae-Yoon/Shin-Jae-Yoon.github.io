@@ -1,0 +1,772 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-29",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-28",
+    "applied_state": "606 approved knowledge concepts. The fun-java series is complete; this opens the db/easy-db series, the largest remaining lecture group at 1,164 prose lines over 16 substantive files."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture01.md",
+        "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be"
+      }
+    ],
+    "line_range": "L12-L261 (whole file)",
+    "series": "쉬운코드 DB (easy-db) 1/15 — DB 개론"
+  },
+  "overlap_analysis": {
+    "finding": "The applied index holds no database concepts at all, so this batch is entirely creates and opens the db.* namespace.",
+    "disposition": "19 creates across four subdomains: db.basic for the database, DBMS, metadata and the system as a whole; db.model for the three levels of data model; db.schema for the schema, the state and the three-schema architecture; db.language for DDL, SDL, VDL, DML and the SQL that merges them."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8, L56 partial, L76, L100-103 partial, L122-124 partial, L150 partial, L198 partial",
+        "reason_code": "lecture-preamble-figure-or-carried-by-owner",
+        "detail": "The channel link, figure captions and the historical aside about early two-level architectures, whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in lecture01 contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 106,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 18,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 19,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "Two related_concepts edges pointed at db.relational.* concepts reserved for lecture-batch-30; the engine resolves an edge only against a concept that exists or is in the same batch, so they were retargeted and the relational side will point back from the later batch.",
+  "candidates_authored": 19,
+  "candidates": [
+    {
+      "concept_id": "db.basic.database",
+      "title": "데이터베이스",
+      "aliases": [
+        "DB",
+        "Database",
+        "관련있는 데이터의 조직화된 집합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/basic/database.md",
+      "tags": [
+        "db",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single organized collection of related data stored and used electronically, where related means sharing an origin, a purpose or a service, and organizing means finding what is wanted faster and keeping out what is not needed",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.basic.dbms",
+        "db.basic.db-system",
+        "db.model.data-model"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB 기본 > ### DB",
+          "start_line": 18,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "db.basic.dbms",
+      "title": "DBMS",
+      "aliases": [
+        "Database Management System",
+        "데이터베이스 관리 시스템"
+      ],
+      "canonical_path": "content/brain/knowledge/db/basic/dbms.md",
+      "tags": [
+        "db",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single software system giving users the means to define, create and manage a database, PostgreSQL, MySQL, Oracle and MS-SQL being the familiar ones",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.basic.database",
+        "db.basic.metadata",
+        "db.basic.db-system"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB 기본 > ### DBMS",
+          "start_line": 28,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "db.basic.metadata",
+      "title": "메타데이터",
+      "aliases": [
+        "Metadata",
+        "catalog",
+        "카탈로그"
+      ],
+      "canonical_path": "content/brain/knowledge/db/basic/metadata.md",
+      "tags": [
+        "db",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single body of data describing the database itself - types, structure, constraints, security, storage, indexes and user groups - stored and managed by the DBMS in what is called the catalog",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.basic.dbms",
+        "db.schema.db-schema",
+        "db.basic.db-system"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB 기본 > ### DBMS",
+          "start_line": 35,
+          "end_line": 41
+        }
+      ]
+    },
+    {
+      "concept_id": "db.basic.db-system",
+      "title": "데이터베이스 시스템",
+      "aliases": [
+        "Database System",
+        "query",
+        "쿼리"
+      ],
+      "canonical_path": "content/brain/knowledge/db/basic/db-system.md",
+      "tags": [
+        "db",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single whole of database, DBMS and the applications around them, in which an application sends a query, the DBMS parses it, consults the metadata for the shape of what was asked for, and returns the data - and which is often what the bare word database means",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.basic.database",
+        "db.basic.dbms",
+        "db.basic.metadata",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB 기본 > ### DB System",
+          "start_line": 47,
+          "end_line": 61
+        }
+      ]
+    },
+    {
+      "concept_id": "db.model.data-model",
+      "title": "데이터 모델",
+      "aliases": [
+        "Data Model",
+        "DB 구조 추상화"
+      ],
+      "canonical_path": "content/brain/knowledge/db/model/data-model.md",
+      "tags": [
+        "db",
+        "model"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of concepts for describing a database's structure at a chosen level of abstraction, including the basic read and write operations, and dividing into the conceptual, logical and physical kinds",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.model.conceptual-model",
+        "db.model.logical-model",
+        "db.model.physical-model",
+        "db.schema.db-schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Data models",
+          "start_line": 69,
+          "end_line": 83
+        }
+      ]
+    },
+    {
+      "concept_id": "db.model.conceptual-model",
+      "title": "개념적 데이터 모델",
+      "aliases": [
+        "Conceptual Data Model",
+        "ER 모델",
+        "ER diagram"
+      ],
+      "canonical_path": "content/brain/knowledge/db/model/conceptual-model.md",
+      "tags": [
+        "db",
+        "model"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single most abstract model, built from concepts anyone can follow so business requirements can be stated in it, of which the entity-relationship model is the representative - a structure of entities, their attributes and the relations among them",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.model.data-model",
+        "db.model.logical-model",
+        "db.schema.conceptual-schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Data models > ### Conceptual",
+          "start_line": 89,
+          "end_line": 103
+        }
+      ]
+    },
+    {
+      "concept_id": "db.model.logical-model",
+      "title": "논리적 데이터 모델",
+      "aliases": [
+        "Logical Data Model",
+        "관계형 데이터 모델",
+        "object-relational"
+      ],
+      "canonical_path": "content/brain/knowledge/db/model/logical-model.md",
+      "tags": [
+        "db",
+        "model"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single middle model detailed enough to be close to how data actually sits in a computer yet tied to no particular DBMS or storage, of which the relational model is the representative - MySQL, Oracle and MS-SQL relational, PostgreSQL object-relational",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.model.data-model",
+        "db.model.conceptual-model",
+        "db.model.physical-model",
+        "db.basic.database"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Data models > ### Logical",
+          "start_line": 109,
+          "end_line": 124
+        }
+      ]
+    },
+    {
+      "concept_id": "db.model.physical-model",
+      "title": "물리적 데이터 모델",
+      "aliases": [
+        "Physical Data Model",
+        "access path",
+        "data ordering"
+      ],
+      "canonical_path": "content/brain/knowledge/db/model/physical-model.md",
+      "tags": [
+        "db",
+        "model"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single lowest model describing how data is held as files - its format, its ordering and the access paths such as indexes that make retrieval fast",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.model.data-model",
+        "db.schema.internal-schema",
+        "db.model.logical-model"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Data models > ### Physical",
+          "start_line": 130,
+          "end_line": 133
+        }
+      ]
+    },
+    {
+      "concept_id": "db.schema.db-schema",
+      "title": "데이터베이스 스키마",
+      "aliases": [
+        "DB Schema",
+        "구조 기술"
+      ],
+      "canonical_path": "content/brain/knowledge/db/schema/db-schema.md",
+      "tags": [
+        "db",
+        "schema"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single description of a database's structure written in terms of a data model, fixed at design time and rarely changed afterwards",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.model.data-model",
+        "db.schema.db-state",
+        "db.schema.three-schema-architecture",
+        "db.basic.metadata"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### DB Schema",
+          "start_line": 145,
+          "end_line": 150
+        }
+      ]
+    },
+    {
+      "concept_id": "db.schema.db-state",
+      "title": "데이터베이스 상태",
+      "aliases": [
+        "Database State",
+        "snapshot",
+        "스냅샷"
+      ],
+      "canonical_path": "content/brain/knowledge/db/schema/db-state.md",
+      "tags": [
+        "db",
+        "schema"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of data actually held at one moment, which changes often - the counterpart to the schema that does not",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.schema.db-schema",
+        "db.basic.db-system"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### DB state(snapshot)",
+          "start_line": 158,
+          "end_line": 160
+        }
+      ]
+    },
+    {
+      "concept_id": "db.schema.three-schema-architecture",
+      "title": "3단계 스키마 아키텍처",
+      "aliases": [
+        "Three-Schema Architecture",
+        "레벨 간 독립"
+      ],
+      "canonical_path": "content/brain/knowledge/db/schema/three-schema-architecture.md",
+      "tags": [
+        "db",
+        "schema"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single architecture separating user applications from the physical database through three levels, each with its own schema, so a change at one level is absorbed by remapping rather than by rewriting the level above - though most systems do not divide the three cleanly, and only the internal level actually holds data",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.schema.internal-schema",
+        "db.schema.conceptual-schema",
+        "db.schema.external-schema",
+        "db.schema.db-schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### three-schema",
+          "start_line": 166,
+          "end_line": 176
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### three-schema",
+          "start_line": 210,
+          "end_line": 215
+        }
+      ]
+    },
+    {
+      "concept_id": "db.schema.internal-schema",
+      "title": "내부 스키마",
+      "aliases": [
+        "Internal Schema",
+        "물리적 저장 구조"
+      ],
+      "canonical_path": "content/brain/knowledge/db/schema/internal-schema.md",
+      "tags": [
+        "db",
+        "schema"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single schema closest to storage, stating in a physical data model how the data is actually laid out - its storage, its structures and its access paths",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.schema.three-schema-architecture",
+        "db.model.physical-model",
+        "db.language.sdl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### three-schema",
+          "start_line": 184,
+          "end_line": 186
+        }
+      ]
+    },
+    {
+      "concept_id": "db.schema.external-schema",
+      "title": "외부 스키마",
+      "aliases": [
+        "External Schema",
+        "user view",
+        "사용자 뷰"
+      ],
+      "canonical_path": "content/brain/knowledge/db/schema/external-schema.md",
+      "tags": [
+        "db",
+        "schema"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single schema each group of users sees, showing only the data they need and hiding the rest, expressed in a logical data model",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.schema.three-schema-architecture",
+        "db.schema.conceptual-schema",
+        "db.language.vdl",
+        "db.model.logical-model"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### three-schema",
+          "start_line": 190,
+          "end_line": 198
+        }
+      ]
+    },
+    {
+      "concept_id": "db.schema.conceptual-schema",
+      "title": "개념적 스키마",
+      "aliases": [
+        "Conceptual Schema",
+        "전체 DB 구조"
+      ],
+      "canonical_path": "content/brain/knowledge/db/schema/conceptual-schema.md",
+      "tags": [
+        "db",
+        "schema"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single schema abstracting the internal one, describing the whole database in terms of entities, types, relationships, operations and constraints while hiding how any of it is stored",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.schema.three-schema-architecture",
+        "db.schema.internal-schema",
+        "db.schema.external-schema",
+        "db.language.ddl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### three-schema",
+          "start_line": 202,
+          "end_line": 206
+        }
+      ]
+    },
+    {
+      "concept_id": "db.language.ddl",
+      "title": "DDL",
+      "aliases": [
+        "Data Definition Language",
+        "데이터 정의어"
+      ],
+      "canonical_path": "content/brain/knowledge/db/language/ddl.md",
+      "tags": [
+        "db",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single language for defining the conceptual schema, sometimes reaching the internal one as well",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.schema.conceptual-schema",
+        "db.language.dml",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB Language > ### DDL",
+          "start_line": 227,
+          "end_line": 229
+        }
+      ]
+    },
+    {
+      "concept_id": "db.language.sdl",
+      "title": "SDL",
+      "aliases": [
+        "Storage Definition Language",
+        "저장 정의어"
+      ],
+      "canonical_path": "content/brain/knowledge/db/language/sdl.md",
+      "tags": [
+        "db",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single language for defining the internal schema, largely gone from relational systems where parameters and settings took its place",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.schema.internal-schema",
+        "db.language.ddl",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB Language > ### SDL",
+          "start_line": 235,
+          "end_line": 237
+        }
+      ]
+    },
+    {
+      "concept_id": "db.language.vdl",
+      "title": "VDL",
+      "aliases": [
+        "View Definition Language",
+        "뷰 정의어"
+      ],
+      "canonical_path": "content/brain/knowledge/db/language/vdl.md",
+      "tags": [
+        "db",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single language for defining external schemas, a role most systems fold into their DDL",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.schema.external-schema",
+        "db.language.ddl",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB Language > ### VDL",
+          "start_line": 243,
+          "end_line": 245
+        }
+      ]
+    },
+    {
+      "concept_id": "db.language.dml",
+      "title": "DML",
+      "aliases": [
+        "Data Manipulation Language",
+        "데이터 조작어"
+      ],
+      "canonical_path": "content/brain/knowledge/db/language/dml.md",
+      "tags": [
+        "db",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single language for working with the data itself - adding, deleting, changing and retrieving it",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.language.ddl",
+        "db.language.sql",
+        "db.basic.db-system"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB Language > ### DML",
+          "start_line": 251,
+          "end_line": 253
+        }
+      ]
+    },
+    {
+      "concept_id": "db.language.sql",
+      "title": "SQL",
+      "aliases": [
+        "Relational Database Language",
+        "통합된 DB 언어"
+      ],
+      "canonical_path": "content/brain/knowledge/db/language/sql.md",
+      "tags": [
+        "db",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single language in which today's systems merge what were once three - definition, view and manipulation - the relational database language being SQL",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.language.ddl",
+        "db.language.dml",
+        "db.language.vdl",
+        "db.basic.dbms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## DB Language > ### 통합된 언어",
+          "start_line": 259,
+          "end_line": 261
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

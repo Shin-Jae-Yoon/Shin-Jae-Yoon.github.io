@@ -1,0 +1,1070 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-50",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-49",
+    "applied_state": "1028 approved knowledge concepts after lecture-batch-49 closed the fastcampus-algo series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/algo/barkingdog/0x00.md",
+        "source_sha256": "67d3df533ebf6cae728ebdb3d25a6edb6f2bc1086ff5625a1462d070760e8294"
+      },
+      {
+        "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+        "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089"
+      },
+      {
+        "path": "content/brain/lectures/algo/barkingdog/0x03.md",
+        "source_sha256": "b59ad45b0bb116207d82eaba7f2827e4d09e485efded903c83fbb64cadcea36f"
+      },
+      {
+        "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+        "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb"
+      },
+      {
+        "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+        "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79"
+      }
+    ],
+    "line_range": "0x00 L16-L21, 0x01 L14-L145, 0x03 L16-L515, 0x04 L16-L285, 0x05 L16-L112",
+    "series": "바킹독의 실전 알고리즘 0x00~0x05 (0x02는 노트에 없음)"
+  },
+  "overlap_analysis": {
+    "finding": "This course covers the same ground as fastcampus from a data-structure rather than a problem-type angle, and it goes further in two places: it derives the operation count by hand rather than quoting a budget, and it states the floating point representation field by field, which the apple-js lane had already recorded from another source.",
+    "disposition": "The representation concept takes this second account as evidence rather than being duplicated, and the array complexity concept takes this course's version of the same table. What is new is the two structures the course builds - the linked list and the stack - along with the precision rules that follow from the representation."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All six update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "0x00 L9-L21; 0x01 L9-L11; 0x03 L9-L12, L44, L76-L78, L104-L106, L147-L149, L181-L188, L231-L234, L399-L405, L507-L513; 0x04 L9-L12, L109-L111, L176-L178, L245-L247; 0x05 L9-L12, L68-L76",
+        "reason_code": "course-link-index-problem-header-or-carried-by-owner",
+        "detail": "The lecture video and blog links on every file, the course index, the workbook and solution repositories, the per-problem headers naming a judge number, the collapsed listings of the author's own attempts, and the note that one problem was too easy to write up."
+      },
+      {
+        "span": "0x03 L231-L234",
+        "reason_code": "duplicate-of-applied-concept",
+        "detail": "The bound-check lesson from this problem is the same claim algo.string.index-bound-check already carries from the fastcampus lane, stated there with its own evidence."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across the five files contributes at least one cited locator, either to a create or to an update. 0x02 does not exist in the notes."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 31910,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 144,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 22,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 20,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 21,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes barkingdog - the notes cover lectures 0x00, 0x01 and 0x03 through 0x05 only, and 0x02 was never written up.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 21,
+  "candidates": [
+    {
+      "concept_id": "cs.data.floating-point-representation",
+      "title": "부동소수 표현",
+      "aliases": [
+        "IEEE 754",
+        "단정도 표현",
+        "부호부 지수부 가수부",
+        "mantissa와 bias",
+        "sign exponent fraction field",
+        "지수에 127을 더해 저장"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/floating-point-representation.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single layout a fractional number is stored in - a number goes into a fixed number of bits in RAM, and for the 32-bit form one bit holds the sign, the value is converted to binary and its point shifted to just after the leading one, the digits after that point go into the last 23 bits as the mantissa, and the exponent goes into the middle 8 bits with a bias added so it need not be signed",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "cs-domain",
+        "lecture-batch-50",
+        "algo/barkingdog"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.data.bit-and-byte",
+        "cs.data.repeating-binary-fraction",
+        "java.type.floating-point-type",
+        "cs.data.float-practice",
+        "algo.number.float-significant-digits",
+        "algo.number.float-comparison"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 1. RAM",
+          "start_line": 427,
+          "end_line": 431
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 2. 부동소수 표현 저장",
+          "start_line": 437,
+          "end_line": 446
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 2. 부동소수 표현 저장",
+          "start_line": 450,
+          "end_line": 450
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 실수 자료형",
+          "start_line": 93,
+          "end_line": 98
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 실수 자료형",
+          "start_line": 102,
+          "end_line": 113
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.overflow",
+      "title": "오버플로우",
+      "aliases": [
+        "Overflow",
+        "부호 비트 반전"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/overflow.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single wraparound in which a result past the type's maximum or below its minimum flips sign, because adding one to the largest positive pattern carries into the sign bit",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-50",
+        "algo/barkingdog"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.integer-type",
+        "cs.data.bit-and-byte",
+        "java.type.explicit-type-conversion",
+        "algo.test.int-range-check",
+        "algo.complexity.space-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 오버플로우",
+          "start_line": 159,
+          "end_line": 161
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 공간 복잡도",
+          "start_line": 79,
+          "end_line": 79
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.data.float-practice",
+      "title": "소수를 다루는 세 가지 방법",
+      "aliases": [
+        "돈은 정수로 저장",
+        "센트 단위로",
+        "배정도 표현",
+        "double"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/float-practice.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of three answers to the error - store anything that must be exact as an integer, money in cents rather than dollars; round the result where a fraction is unavoidable; or use the 64-bit form, which shrinks the error at the cost of twice the space",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "cs-domain",
+        "lecture-batch-50",
+        "algo/barkingdog"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.data.floating-point-representation",
+        "cs.data.floating-point-incident",
+        "js.number.to-fixed",
+        "js.number.float-error",
+        "algo.number.float-significant-digits",
+        "algo.number.float-comparison"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 5. 결론",
+          "start_line": 478,
+          "end_line": 480
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 5. 결론",
+          "start_line": 484,
+          "end_line": 484
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 5. 결론",
+          "start_line": 493,
+          "end_line": 495
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.array.operation-complexity",
+      "title": "배열 연산의 시간복잡도",
+      "aliases": [
+        "읽기와 쓰기는 상수시간",
+        "삽입과 삭제는 선형시간"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/array/operation-complexity.md",
+      "tags": [
+        "algo",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single split among the five operations - reading, writing and appending are constant because they touch one place, while inserting in the middle or erasing one is linear because every element after it has to shift by one",
+      "pilot_strata": [
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-50",
+        "algo/barkingdog"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.array-memory-layout",
+        "algo.complexity.time-complexity",
+        "algo.array.insert-shift-direction",
+        "java.collection.array-vs-list",
+        "algo.list.linked-list-complexity",
+        "algo.array.array-use-case",
+        "algo.stack.stack-implementation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 배열 시간복잡도",
+          "start_line": 54,
+          "end_line": 54
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 배열 시간복잡도",
+          "start_line": 58,
+          "end_line": 64
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### insert() 메서드",
+          "start_line": 124,
+          "end_line": 127
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### erase() 메서드",
+          "start_line": 148,
+          "end_line": 149
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x03.md",
+          "source_sha256": "b59ad45b0bb116207d82eaba7f2827e4d09e485efded903c83fbb64cadcea36f",
+          "heading": "### 배열 기본",
+          "start_line": 28,
+          "end_line": 40
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.list-interface",
+      "title": "List 인터페이스",
+      "aliases": [
+        "List",
+        "순서가 중요한 자료"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/list-interface.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Collection subinterface for data whose order matters, adding index-based get on top of everything Collection offers",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-50",
+        "algo/barkingdog"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.collection-interface",
+        "java.collection.array-list",
+        "java.collection.set-interface",
+        "algo.list.linked-list",
+        "algo.list.linked-list-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### List Interface",
+          "start_line": 156,
+          "end_line": 158
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.memory.call-stack",
+      "title": "호출 스택",
+      "aliases": [
+        "Call Stack",
+        "스택 메모리"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/memory/call-stack.md",
+      "tags": [
+        "cs",
+        "memory"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single stack-based memory mechanism for active function calls",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-20",
+        "pl/fun-java",
+        "lecture-batch-50",
+        "algo/barkingdog"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.memory.heap",
+        "java.variable.scope",
+        "software.programming.function",
+        "java.runtime.jvm-stack-frame",
+        "algo.stack.stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함후 호출과 스택 메모리",
+          "start_line": 215,
+          "end_line": 231
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 메서드 > ### 메서드 실행 시 발생하는 일",
+          "start_line": 289,
+          "end_line": 294
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.operation-count",
+      "title": "연산 횟수를 직접 세보기",
+      "aliases": [
+        "1초에 3억에서 5억 번",
+        "5n + 3"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/operation-count.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single exercise behind the notation - count every assignment, comparison and increment a loop performs, add them into an expression in the input size, and put the input's largest value into it to see whether the result fits in a second's worth of operations",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.complexity.operation-budget",
+        "algo.complexity.best-worst-average"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 시간복잡도",
+          "start_line": 16,
+          "end_line": 16
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 시간복잡도",
+          "start_line": 32,
+          "end_line": 43
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.best-worst-average",
+      "title": "최선 최악 평균",
+      "aliases": [
+        "줄에서 사람 찾기",
+        "정렬되어 있으면 log N",
+        "코딩테스트의 로그는 밑이 2"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/best-worst-average.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between the three cases a search can fall into - asking each person in a line takes one second at best and n at worst, while asking the middle person of a line already in order halves what is left each time and so takes a logarithm of n even at worst, that logarithm always being base two here",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.complexity.operation-count",
+        "algo.complexity.time-complexity",
+        "algo.complexity.n-range-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 시간복잡도",
+          "start_line": 47,
+          "end_line": 48
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 시간복잡도",
+          "start_line": 52,
+          "end_line": 55
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.space-complexity",
+      "title": "공간 복잡도",
+      "aliases": [
+        "512MB는 int 1.2억 개",
+        "메모리 제한 읽기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/space-complexity.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single relation between input size and memory needed, which the problem's memory limit turns into a count - a common limit holding on the order of a hundred million four-byte integers, which is what decides whether an array of that size may be allocated at all",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.array.counting-array",
+        "cs.data.bit-and-byte"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 공간 복잡도",
+          "start_line": 67,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.number.float-significant-digits",
+      "title": "실수의 유효숫자와 상대오차",
+      "aliases": [
+        "float 6자리 double 15자리",
+        "double에 long long을 담지 마라",
+        "절대오차 상대오차 허용"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/number/float-significant-digits.md",
+      "tags": [
+        "algo",
+        "number"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single bound the fraction field puts on precision - the single-precision type is exact to about six significant digits and the double to about fifteen, which is why a value needing nineteen cannot be held in a double at all, and why a problem wanting a real answer states what absolute or relative error it will accept",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.data.floating-point-representation",
+        "cs.data.float-practice",
+        "algo.number.float-comparison",
+        "java.type.floating-point-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 실수 자료형",
+          "start_line": 117,
+          "end_line": 128
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 실수 자료형",
+          "start_line": 132,
+          "end_line": 136
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.number.float-comparison",
+      "title": "실수는 등호로 비교하지 않는다",
+      "aliases": [
+        "차이가 1e-12 이하면 같다고 본다",
+        "1e9 표기법"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/number/float-comparison.md",
+      "tags": [
+        "algo",
+        "number"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule following from the error being unavoidable - two real values are treated as equal when the magnitude of their difference falls below a small threshold, rather than by asking whether they are the same",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.number.float-significant-digits",
+        "cs.data.repeating-binary-fraction",
+        "js.number.float-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x01.md",
+          "source_sha256": "582cc5935559cda394d603864a963d4abb72fdc2c89a21add57b485109fe8089",
+          "heading": "### 실수 자료형",
+          "start_line": 140,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.math.ceiling-division",
+      "title": "올림 나눗셈",
+      "aliases": [
+        "먼저 1을 더하고 나눈다",
+        "정수 나눗셈은 몫만 남는다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/math/ceiling-division.md",
+      "tags": [
+        "algo",
+        "math"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to round a division up while staying in integers - add one less than the divisor before dividing, which advances the quotient exactly when there would have been a remainder and leaves it alone when there would not",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.math.unit-normalization",
+        "algo.array.counting-array",
+        "java.type.integer-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x03.md",
+          "source_sha256": "b59ad45b0bb116207d82eaba7f2827e4d09e485efded903c83fbb64cadcea36f",
+          "heading": "### BOJ 1475 (sol)",
+          "start_line": 139,
+          "end_line": 143
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.array.array-use-case",
+      "title": "배열이 어울리는 문제",
+      "aliases": [
+        "자주 바꾸지 않고 쌓아둘 때",
+        "인덱스로 빠르게 접근할 때"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/array/array-use-case.md",
+      "tags": [
+        "algo",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single kind of problem the structure suits - data that is piled up rather than rearranged, and reached by position rather than searched for",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.array.operation-complexity",
+        "algo.array.counting-array",
+        "algo.list.linked-list-use-case"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x03.md",
+          "source_sha256": "b59ad45b0bb116207d82eaba7f2827e4d09e485efded903c83fbb64cadcea36f",
+          "heading": "### BOJ 10808 (sol)",
+          "start_line": 99,
+          "end_line": 100
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.array.count-difference-zero",
+      "title": "같은 구성인지 세어서 비교하기",
+      "aliases": [
+        "한쪽은 더하고 한쪽은 빼기",
+        "전부 0이면 같은 구성"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/array/count-difference-zero.md",
+      "tags": [
+        "algo",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single test for two collections having the same contents - count one into an array and count the other out of it, and they match exactly when every entry has returned to zero",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.array.counting-array",
+        "algo.array.array-use-case"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x03.md",
+          "source_sha256": "b59ad45b0bb116207d82eaba7f2827e4d09e485efded903c83fbb64cadcea36f",
+          "heading": "### BOJ 11328 (sol)",
+          "start_line": 453,
+          "end_line": 454
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.linked-list",
+      "title": "연결 리스트",
+      "aliases": [
+        "다음 원소의 위치를 함께 저장",
+        "선형 자료구조",
+        "비선형 자료구조"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure storing with each element the location of the next one, so the elements need not sit together in memory - and which, like the array, keeps its elements in an order, unlike the tree, graph and hash structures that do not",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.array-memory-layout",
+        "algo.list.linked-list-complexity",
+        "algo.list.linked-list-use-case",
+        "java.collection.list-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 28,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 37,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.linked-list-complexity",
+      "title": "연결 리스트의 시간복잡도",
+      "aliases": [
+        "k번째를 보려면 k번 이동",
+        "주소를 알 때만 삽입이 상수시간"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list-complexity.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trade against the array - there is no address to compute, so reaching the kth element means walking k links and any access is linear, while inserting or removing costs nothing beyond relinking once the position is already held",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.list.linked-list",
+        "algo.array.operation-complexity",
+        "algo.list.linked-list-use-case"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 기능과 구현",
+          "start_line": 50,
+          "end_line": 52
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 기능과 구현",
+          "start_line": 58,
+          "end_line": 58
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.linked-list-use-case",
+      "title": "연결 리스트가 어울리는 문제",
+      "aliases": [
+        "텍스트 에디터의 커서",
+        "이동하다가 삽입하고 삭제할 때"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list-use-case.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single situation where linear access costs nothing - a cursor that is already where the work happens, as in a text editor, where every insertion and deletion is at the cursor and would shift the whole array behind it",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.list.linked-list-complexity",
+        "algo.array.array-use-case",
+        "algo.list.linked-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 기능과 구현",
+          "start_line": 66,
+          "end_line": 71
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "unheaded-body",
+          "start_line": 17,
+          "end_line": 20
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.cycle-detection",
+      "title": "연결 리스트에 관한 세 가지 손코딩 문제",
+      "aliases": [
+        "Floyd's cycle-finding",
+        "토끼와 거북이",
+        "두 리스트가 만나는 지점"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/cycle-detection.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three interview questions solved in constant space by moving cursors rather than recording where they have been - the length of a circular list found by walking until the start node returns, the meeting point of two lists found by advancing the longer one by the difference in lengths first, and the presence of a cycle found by a cursor moving one step against one moving two, which must meet if a cycle exists",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.list.linked-list",
+        "algo.list.linked-list-complexity",
+        "algo.complexity.space-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 손코딩 문제 (면접)",
+          "start_line": 79,
+          "end_line": 81
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 손코딩 문제 (면접)",
+          "start_line": 85,
+          "end_line": 93
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 손코딩 문제 (면접)",
+          "start_line": 97,
+          "end_line": 105
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.stack",
+      "title": "스택",
+      "aliases": [
+        "LIFO",
+        "Last In First Out",
+        "Restricted Structure"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/lifo-structure.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure allowing insertion and removal at one end only, so the last thing in is the first out - one of the restricted structures alongside the queue and the deque - and although the underlying array could be read at any position, doing so is outside what the structure offers, since the problems it solves need only push, pop and a look at the top",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack-implementation",
+        "algo.stack.stack-use-case",
+        "cs.memory.call-stack",
+        "algo.list.linked-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 29,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 39,
+          "end_line": 41
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.stack-implementation",
+      "title": "배열로 스택 만들기",
+      "aliases": [
+        "배열과 인덱스 하나",
+        "pos가 곧 스택의 길이"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/stack-implementation.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single implementation needing nothing but an array and one index - the index is where the next element goes and therefore also how many are in the stack, so popping is just moving it back, the value left behind being overwritten by the next push",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.stack.stack",
+        "algo.array.array-growth",
+        "algo.array.operation-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 기능과 구현",
+          "start_line": 47,
+          "end_line": 47
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 기능과 구현",
+          "start_line": 51,
+          "end_line": 53
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 기능과 구현",
+          "start_line": 61,
+          "end_line": 62
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.stack-use-case",
+      "title": "스택이 쓰이는 곳",
+      "aliases": [
+        "괄호쌍 검사",
+        "전위 중위 후위 표기법",
+        "DFS와 Flood Fill"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/stack-use-case.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of the places the structure turns up - matching brackets in an expression, converting between the three notations for one, and the depth-first traversals of a graph or a grid",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.stack.stack",
+        "algo.search.brute-force",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "unheaded-body",
+          "start_line": 17,
+          "end_line": 21
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

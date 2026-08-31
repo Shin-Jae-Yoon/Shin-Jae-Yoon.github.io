@@ -1,0 +1,1415 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-70",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-69",
+    "applied_state": "1321 approved knowledge concepts after CodeTree/dataStructure.md was fully mined."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/CodeTree/graph.md",
+        "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244"
+      }
+    ],
+    "line_range": "L7-L744 whole file",
+    "series": "코드트리 Novice High 그래프 탐색"
+  },
+  "overlap_analysis": {
+    "finding": "Nothing applied covers graphs at all - the algorithm lecture lane reached arrays, lists, stacks and trees and stopped there. This file is the corpus's only treatment of traversal, shortest paths, spanning trees and topological ordering.",
+    "disposition": "Twenty-five new concepts in a namespace that did not exist. Five applied concepts gain edges where the graph work rests on them - the tree's defining property, the heap used as a priority queue, the queue and the stack the two traversals are built on, and the linked list the adjacency representation is made of."
+  },
+  "source_structure_note": {
+    "statement": "The minimum spanning tree, union-find, Kruskal and Prim sections are nested under `## 최단거리` although none of them computes a shortest path. The nesting is the source's, and locator heading chains reproduce it exactly since the engine compares them byte for byte.",
+    "handling": "The concepts are filed by what they are, not by where the file put them."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is a callout block rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All five update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8-L9, L50, L63, L78, L94, L129, L148, L186-L198, L207-L213, L222, L234, L264-L276, L285, L293, L307, L334-L340, L353, L366, L380, L392, L406-L417, L432, L448 partial, L473-L493 partial, L501, L538-L563, L582-L590, L599, L609-L618, L625-L640, L651, L672-L696, L717-L738",
+        "reason_code": "attribution-figure-caption-or-worked-example",
+        "detail": "The course attribution and the drawing credit, the bold captions above each diagram, and the numbered walkthroughs traced over a specific drawn graph. Where such a walkthrough states a rule rather than a step - the update comparison in Dijkstra, the merge in Union-Find, the attachment cost in Prim - that line is cited; the numbered narration around it is not."
+      }
+    ],
+    "coverage_statement": "Every heading scope in the file contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 28828,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 277,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 14,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 14,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 30,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 30,
+  "candidates": [
+    {
+      "concept_id": "algo.tree.tree-properties",
+      "title": "트리의 성질",
+      "aliases": [
+        "루트는 하나",
+        "사이클이 없다",
+        "부모는 하나",
+        "계층적이고 재귀적인 구조"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/tree-properties.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of constraints that make a structure a tree - exactly one root, no cycles, exactly one parent per node - and the consequences, that it stores nothing in sequence and so is nonlinear, that it is recursive because every node heads a subtree, and that it is therefore hierarchical",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-70"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.tree",
+        "algo.tree.subtree",
+        "algo.list.linked-list",
+        "algo.graph.graph-properties",
+        "algo.graph.mst"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 154,
+          "end_line": 159
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 163,
+          "end_line": 163
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 169,
+          "end_line": 169
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 175,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree",
+          "start_line": 543,
+          "end_line": 552
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.heap.heap",
+      "title": "힙",
+      "aliases": [
+        "heap",
+        "완전 이진 트리 모양",
+        "최대 힙과 최소 힙"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/heap/binary-heap.md",
+      "tags": [
+        "algo",
+        "heap"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single special shape of the binary tree - every level filled from the left with no gaps, which fixes the height at the logarithm of the count - ordered so that one extreme sits at the root, which is what makes finding the largest or the smallest constant and keeps every change logarithmic",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain",
+        "lecture-batch-70"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.binary-tree-kinds",
+        "algo.heap.max-heap",
+        "algo.heap.heapify",
+        "algo.tree.binary-tree-array",
+        "algo.graph.dijkstra",
+        "algo.graph.prim"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 718,
+          "end_line": 723
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 731,
+          "end_line": 731
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.queue.queue",
+      "title": "큐",
+      "aliases": [
+        "FIFO",
+        "First In First Out",
+        "front와 rear"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/queue/fifo-structure.md",
+      "tags": [
+        "algo",
+        "queue"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single restricted structure in which what entered first leaves first - additions at the back, reads and removals at the front, each in constant time, which is the whole of its interface",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain",
+        "lecture-batch-70"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack",
+        "algo.queue.deque",
+        "algo.queue.queue-as-stack",
+        "algo.list.linked-list",
+        "algo.graph.bfs",
+        "algo.graph.topological-sort-indegree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Queue",
+          "start_line": 401,
+          "end_line": 407
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.stack",
+      "title": "스택",
+      "aliases": [
+        "LIFO",
+        "Last In First Out",
+        "Restricted Structure"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/lifo-structure.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single structure allowing insertion and removal at one end only, so the last thing in is the first out - one of the restricted structures alongside the queue and the deque - and although the underlying array could be read at any position, doing so is outside what the structure offers, since the problems it solves need only push, pop and a look at the top",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-70"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack-implementation",
+        "algo.stack.stack-use-case",
+        "cs.memory.call-stack",
+        "algo.list.linked-list",
+        "algo.queue.queue",
+        "algo.queue.deque",
+        "algo.graph.dfs",
+        "algo.graph.topological-sort-dfs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 29,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 39,
+          "end_line": 41
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Stack",
+          "start_line": 348,
+          "end_line": 355
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.linked-list",
+      "title": "연결 리스트",
+      "aliases": [
+        "다음 원소의 위치를 함께 저장",
+        "선형 자료구조",
+        "비선형 자료구조"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single structure storing with each element the location of the next one, so the elements need not sit together in memory - and which, like the array, keeps its elements in an order, unlike the tree, graph and hash structures that do not",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "lecture-batch-68",
+        "CodeTree",
+        "lecture-batch-70"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.array-memory-layout",
+        "algo.list.linked-list-complexity",
+        "algo.list.linked-list-use-case",
+        "java.collection.list-interface",
+        "algo.tree.tree",
+        "algo.tree.tree-properties",
+        "algo.list.single-linked-list",
+        "algo.list.double-linked-list",
+        "algo.list.circular-linked-list",
+        "algo.graph.adjacency-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 28,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 37,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList",
+          "start_line": 84,
+          "end_line": 90
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.graph",
+      "title": "그래프",
+      "aliases": [
+        "노드와 간선의 집합",
+        "정점과 엣지",
+        "진입차수와 진출차수"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/vertex-and-edge.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure made of points and the lines joining them, where a line may carry a number and a point's degree is how many lines touch it - a count that splits into arriving and leaving once the lines have direction",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.graph-properties",
+        "algo.graph.adjacency-matrix-vs-list",
+        "algo.tree.tree",
+        "algo.graph.topological-sort-indegree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 그래프",
+          "start_line": 18,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.graph-properties",
+      "title": "사이클과 연결 요소",
+      "aliases": [
+        "출발점으로 되돌아올 수 있다면",
+        "연결 그래프와 비연결 그래프",
+        "연결 요소"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/graph-properties.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of properties that describe a graph's shape - whether a walk can return to where it began, whether every point is reachable from every other, and how many separate groups the points fall into when only the lines are followed",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.graph",
+        "algo.graph.union-find",
+        "algo.tree.tree-properties",
+        "algo.graph.mst"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 그래프",
+          "start_line": 28,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.adjacency-matrix-vs-list",
+      "title": "인접 행렬과 인접 리스트",
+      "aliases": [
+        "두 정점이 이어졌는지 확인",
+        "한 정점의 이웃을 모두 확인",
+        "메모리와 속도의 맞교환"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/adjacency-matrix-vs-list.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice between the two representations, decided by which question is asked more often - the table answers whether two given points are joined in one step but takes space for every pair including the ones that are not, while the per-point lists answer what a point is joined to in the length of its own list but must be walked to answer the first question",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.graph.adjacency-matrix",
+        "algo.graph.adjacency-list",
+        "algo.graph.graph",
+        "algo.complexity.space-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 그래프 > ### 그래프 구현",
+          "start_line": 39,
+          "end_line": 46
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.adjacency-matrix",
+      "title": "인접 행렬",
+      "aliases": [
+        "정점 수의 제곱 크기 2차원 배열",
+        "한 칸만 보면 된다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/adjacency-matrix.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single representation as a square table indexed by both endpoints, so a connection is one array access and listing a point's neighbours means scanning its whole row, at the cost of space proportional to the square of the point count",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.adjacency-matrix-vs-list",
+        "algo.graph.adjacency-list",
+        "java.array.two-dimensional-array",
+        "algo.graph.floyd-warshall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 그래프 > ### 그래프 구현",
+          "start_line": 54,
+          "end_line": 59
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.adjacency-list",
+      "title": "인접 리스트",
+      "aliases": [
+        "정점마다 연결 리스트 하나",
+        "공간은 정점 수 더하기 간선 수"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/adjacency-list.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single representation holding, for each point, a list of what it joins to - so the space is the point count plus the line count rather than the square, listing a point's neighbours costs exactly its degree, and testing one specific pair costs the smaller of the two degrees",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.adjacency-matrix-vs-list",
+        "algo.graph.adjacency-matrix",
+        "algo.list.linked-list",
+        "algo.graph.dfs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 그래프 > ### 그래프 구현",
+          "start_line": 67,
+          "end_line": 72
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.dfs",
+      "title": "깊이 우선 탐색",
+      "aliases": [
+        "DFS",
+        "Depth First Search",
+        "재귀로 구현한다",
+        "visited 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/dfs.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single traversal that goes as deep as it can and backs up when it cannot go further, written as a function that calls itself on each unvisited neighbour and returns when there are none - which needs a record of what has already been seen, or the walk repeats itself, and which touches every point and line once",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.bfs",
+        "algo.graph.dfs-vs-bfs",
+        "algo.stack.stack",
+        "algo.graph.topological-sort-dfs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## DFS",
+          "start_line": 79,
+          "end_line": 86
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.bfs",
+      "title": "너비 우선 탐색",
+      "aliases": [
+        "BFS",
+        "Breadth First Search",
+        "큐를 활용한다",
+        "가까운 정점부터"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/bfs.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single traversal that visits everything one step away before anything two steps away - achieved by pushing each newly reachable point onto a first-in-first-out queue and taking the next from the front, which touches every point and line once",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.dfs",
+        "algo.graph.bfs-shortest-path",
+        "algo.queue.queue",
+        "algo.graph.dfs-vs-bfs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## BFS",
+          "start_line": 95,
+          "end_line": 101
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.dfs-vs-bfs",
+      "title": "DFS와 BFS의 성능 차이",
+      "aliases": [
+        "시간복잡도는 같다",
+        "재귀 호출의 오버헤드"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/dfs-vs-bfs.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single comparison between the two traversals - both visit every point and line so their complexity is identical, and the recursive one runs marginally slower in practice only because of what each call costs, a difference too small to choose on",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "algo.graph.dfs",
+        "algo.graph.bfs",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## BFS",
+          "start_line": 121,
+          "end_line": 123
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.bfs-shortest-path",
+      "title": "BFS로 최단거리 구하기",
+      "aliases": [
+        "가중치가 모두 같을 때만",
+        "큐에 들어간 순서가 곧 거리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/bfs-shortest-path.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of visiting in order of nearness - everything pushed while processing a point at distance k sits at distance k plus one, so the traversal itself computes shortest distances; and the single condition on it, that every line cost the same, since otherwise the nearest point in hops need not be the cheapest to reach",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.bfs",
+        "algo.graph.dijkstra",
+        "algo.graph.floyd-warshall"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리",
+          "start_line": 130,
+          "end_line": 133
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리",
+          "start_line": 139,
+          "end_line": 142
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.dijkstra",
+      "title": "다익스트라 알고리즘",
+      "aliases": [
+        "Dijkstra",
+        "한 시작점에서 모든 정점까지",
+        "음수 가중치에는 못 쓴다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/dijkstra.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single algorithm giving the cheapest route from one chosen point to every other - each line examined once and the ordering maintained by a priority queue, or in a plain loop at the cost of the square of the point count - and its one hard limit, that a negative cost breaks the argument it rests on, since it commits to the smallest value found so far",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.dijkstra-procedure",
+        "algo.graph.floyd-warshall",
+        "algo.graph.prim",
+        "algo.heap.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Dijkstra",
+          "start_line": 149,
+          "end_line": 160
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.dijkstra-procedure",
+      "title": "다익스트라가 도는 순서",
+      "aliases": [
+        "거리 배열을 INF로 초기화",
+        "최소 힙에서 뽑고 갱신",
+        "뽑힌 노드의 거리는 확정"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/dijkstra-procedure.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single loop the algorithm runs - every distance starts at infinity except the source at zero, the nearest unsettled point is taken from a minimum heap and its distance is thereafter fixed, and each of its neighbours is lowered to the taken distance plus the line cost when that is smaller; repeated until the queue empties",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.graph.dijkstra",
+        "algo.heap.heap",
+        "algo.graph.prim-procedure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Dijkstra",
+          "start_line": 199,
+          "end_line": 201
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Dijkstra",
+          "start_line": 214,
+          "end_line": 216
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Dijkstra",
+          "start_line": 222,
+          "end_line": 224
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.floyd-warshall",
+      "title": "플로이드-워셜 알고리즘",
+      "aliases": [
+        "Floyd-Warshall",
+        "모든 쌍의 최단거리",
+        "k i j 순서에 유의"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/floyd-warshall.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single algorithm computing the cheapest route between every pair at once, by asking of each pair whether going through some third point is shorter - three nested loops, so the cube of the point count, which beats running the single-source algorithm from everywhere only when the graph is dense, and whose loops must be ordered with the intermediate point outermost",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.dijkstra",
+        "algo.graph.floyd-warshall-procedure",
+        "algo.graph.adjacency-matrix",
+        "algo.complexity.algorithm-choice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Floyd-Warshall",
+          "start_line": 235,
+          "end_line": 244
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.floyd-warshall-procedure",
+      "title": "경유지를 하나씩 늘려간다",
+      "aliases": [
+        "1번을 거치는 것이 더 짧다면",
+        "노드 N까지 반복"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/floyd-warshall-procedure.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single update rule repeated once per possible intermediate point - for every ordered pair, if reaching the first from the second by way of that intermediate costs less than what is recorded, record the smaller; done for the first point, then the second, and so on through all of them",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.graph.floyd-warshall",
+        "algo.graph.adjacency-matrix"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Floyd-Warshall",
+          "start_line": 277,
+          "end_line": 279
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.mst",
+      "title": "최소 신장 트리",
+      "aliases": [
+        "MST",
+        "Minimum Spanning Tree",
+        "정점 N개에 간선 N-1개",
+        "가중치 합은 항상 같다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/mst.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object - the cheapest way to join every point using as few lines as possible, which is a tree because joining n points without a cycle takes exactly n minus one lines - and the fact that two different algorithms may return differently shaped answers whose total cost is nevertheless identical",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.kruskal",
+        "algo.graph.prim",
+        "algo.tree.tree-properties",
+        "algo.graph.mst-cycle-rule"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### MST",
+          "start_line": 294,
+          "end_line": 301
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.union-find",
+      "title": "유니온 파인드",
+      "aliases": [
+        "Union-Find",
+        "합집합 찾기",
+        "두 노드가 같은 그룹인가",
+        "uf 배열은 부모를 가리킨다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/union-find.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure answering which group an element belongs to and merging two groups - held as one array in which each position records its parent, everything starting as its own parent and so its own group, which is what makes it the standard test for whether joining two points would close a cycle",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.union-find-operation",
+        "algo.graph.path-compression",
+        "algo.graph.kruskal",
+        "algo.graph.graph-properties"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Union-Find",
+          "start_line": 308,
+          "end_line": 309
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Union-Find",
+          "start_line": 328,
+          "end_line": 332
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.union-find-operation",
+      "title": "find와 union이 하는 일",
+      "aliases": [
+        "자기 자신이 부모일 때까지 올라간다",
+        "루트끼리 붙인다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/union-find-operation.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of operations - the lookup climbs from an element to its parent repeatedly until it reaches one that is its own parent, which is the group's representative; and the merge finds both representatives and points one at the other, so the two groups become one",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.graph.union-find",
+        "algo.graph.path-compression",
+        "algo.tree.tree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Union-Find",
+          "start_line": 344,
+          "end_line": 349
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Union-Find",
+          "start_line": 357,
+          "end_line": 362
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Union-Find",
+          "start_line": 370,
+          "end_line": 376
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Union-Find",
+          "start_line": 384,
+          "end_line": 388
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.path-compression",
+      "title": "경로 압축",
+      "aliases": [
+        "Path Compression",
+        "탐색한 노드를 전부 루트에 붙인다",
+        "깊이가 1이 된다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/path-compression.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single optimisation that keeps the lookup from degrading to a walk of the whole chain - while climbing to the representative, every node passed is repointed straight at it, so the next lookup on any of them finishes immediately",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.union-find-operation",
+        "algo.graph.union-find",
+        "algo.complexity.time-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Union-Find",
+          "start_line": 398,
+          "end_line": 402
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.kruskal",
+      "title": "크루스칼 알고리즘",
+      "aliases": [
+        "Kruskal",
+        "가중치가 작은 간선부터",
+        "루트가 같으면 건너뛴다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/kruskal.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of building the cheapest spanning tree from the lines outward - sort them by cost and take each in turn, merging the groups of its two endpoints unless they are already the same group, in which case taking it would close a cycle; the sort dominating the cost",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.mst",
+        "algo.graph.union-find",
+        "algo.graph.prim",
+        "algo.graph.mst-cycle-rule"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Kruskal",
+          "start_line": 433,
+          "end_line": 446
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.mst-cycle-rule",
+      "title": "언제 사이클이 생기는가",
+      "aliases": [
+        "이미 포함된 노드끼리 이으면 사이클",
+        "새 노드가 추가되는 형태여야 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/mst-cycle-rule.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single test for whether a line may be taken - joining two points already in the tree closes a cycle and joining one that is not adds to it, which is why the line-first algorithm has to check group membership and the point-first one never does",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "algo.graph.kruskal",
+        "algo.graph.prim",
+        "algo.graph.mst",
+        "algo.graph.union-find"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Kruskal",
+          "start_line": 449,
+          "end_line": 450
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Kruskal",
+          "start_line": 480,
+          "end_line": 481
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Prim",
+          "start_line": 557,
+          "end_line": 557
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.prim",
+      "title": "프림 알고리즘",
+      "aliases": [
+        "Prim",
+        "한 지점에서 확장한다",
+        "다익스트라와 두 줄만 다르다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/prim.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of building the cheapest spanning tree from a point outward, which is the single-source shortest-path algorithm with one line changed - what is recorded per point is not the distance from the start but the cost of attaching that point to what has been built so far, so the line cost is compared alone rather than added to the running total",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.mst",
+        "algo.graph.kruskal",
+        "algo.graph.dijkstra",
+        "algo.graph.prim-procedure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Prim",
+          "start_line": 502,
+          "end_line": 514
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.prim-procedure",
+      "title": "프림이 도는 순서",
+      "aliases": [
+        "최솟값을 뽑는 것이 곧 MST에 추가",
+        "간선도 함께 추가된다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/prim-procedure.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single loop the algorithm runs - taking the point with the smallest attachment cost from the priority queue means adding that point, and the line it was cheapest through, to the tree; then every neighbour of it is lowered to that line's cost when that is smaller, and the whole thing repeats",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.graph.prim",
+        "algo.graph.dijkstra-procedure",
+        "algo.heap.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Prim",
+          "start_line": 568,
+          "end_line": 569
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Prim",
+          "start_line": 576,
+          "end_line": 576
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Prim",
+          "start_line": 591,
+          "end_line": 593
+        },
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## 최단거리 > ### Prim",
+          "start_line": 603,
+          "end_line": 603
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.topological-sort",
+      "title": "위상 정렬",
+      "aliases": [
+        "Topological Sort",
+        "순서가 정해진 작업의 순서 정하기",
+        "가능한 순서 중 하나"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/topological-sort.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single problem of putting tasks in an order that respects which must come before which, where several valid orders usually exist and the algorithm returns one of them - solvable either by the deep traversal or by counting arriving lines",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.topological-sort-dfs",
+        "algo.graph.topological-sort-indegree",
+        "algo.graph.graph",
+        "algo.graph.dfs"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## Topological Sort",
+          "start_line": 655,
+          "end_line": 659
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.topological-sort-dfs",
+      "title": "DFS로 위상 정렬하기",
+      "aliases": [
+        "더 못 갈 때 스택에 넣는다",
+        "방문 안 한 정점마다 다시 시작"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/topological-sort-dfs.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method taking the order from the traversal's return path - a point is pushed onto a stack when the walk from it can go no further, so popping the stack yields a valid order - with the catch that the walk has to be restarted from every point not yet visited, or a disconnected part is missed",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.topological-sort",
+        "algo.graph.dfs",
+        "algo.stack.stack",
+        "algo.graph.topological-sort-indegree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## Topological Sort > ### Method 01 - DFS",
+          "start_line": 665,
+          "end_line": 668
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.topological-sort-indegree",
+      "title": "진입차수로 위상 정렬하기",
+      "aliases": [
+        "In-degree",
+        "진입차수가 0인 지점이 시작점",
+        "무방향이거나 사이클이면 불가"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/topological-sort-indegree.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method that reads the order directly off the arriving-line counts - a task with nothing left before it is one that can start now, so those go into the queue, and taking one out lowers the count of everything it points at until that too reaches zero; and the two graphs it cannot be run on, the one with no direction and the one with a cycle, because neither defines an order",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.graph.topological-sort",
+        "algo.graph.topological-sort-order",
+        "algo.queue.queue",
+        "algo.graph.graph"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## Topological Sort > ### Method 02 - In-degree",
+          "start_line": 701,
+          "end_line": 708
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.graph.topological-sort-order",
+      "title": "사전순으로 가장 앞선 위상 정렬",
+      "aliases": [
+        "큐 대신 우선순위 큐",
+        "가장 작은 인덱스가 먼저 나온다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/graph/topological-sort-order.md",
+      "tags": [
+        "algo",
+        "graph"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single variation that picks a particular one of the valid orders - swapping the plain queue for a priority queue makes the smallest available index come out first at every step, which is exactly the lexicographically earliest order",
+      "pilot_strata": [
+        "lecture-batch-70",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.graph.topological-sort-indegree",
+        "algo.graph.topological-sort",
+        "algo.heap.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/graph.md",
+          "source_sha256": "f6fdf574247a2d49456b0a569f1a9f662e9126ffec6057e9a7c26b381e0ed244",
+          "heading": "## Topological Sort > ### Method 02 - In-degree",
+          "start_line": 710,
+          "end_line": 712
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

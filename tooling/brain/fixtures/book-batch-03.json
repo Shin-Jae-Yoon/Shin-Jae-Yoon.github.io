@@ -1,0 +1,1480 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-03",
+  "lane": "book",
+  "phase": 5,
+  "review_gate": "U3",
+  "mode": "batch",
+  "derived_from": {
+    "source_inventory": "tooling/brain/fixtures/book-batch-03-sources.json",
+    "source_inventory_sha256": "0f5ee4fd11841491f34d9cab65b26004e12567dc84fb78e0ea4fa77476071a7d",
+    "extraction_surface": ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json",
+    "extraction_surface_sha256": "30026171e502173812a3b2586b67d11ddde8716c39ae0a6cecc52113d1ce2a72",
+    "book_corpus_lock": ".omx/artifacts/brain-restructure/book-batch-03/book-corpus-lock.json",
+    "book_corpus_lock_sha256": "181e00ce84be52339a86eee04436a253a111e67d8096409ee119ca98876e5b15",
+    "batch_baseline_sha256": "2a7a1a9153a68127999aed4af2ada6dc10b91f943ec81fd8a3e87993c1b70da0",
+    "book_corpus_sha256": "c39bbdf5c72911e23fe08364762ffdc143dc4ce1c2edda8e47896b5f68183c88",
+    "approved_knowledge_tree_sha256_at_authoring": "db8bef805b1182af0b8df00042e26caabe06ef917852d496ba23f565e7c9e35d",
+    "inventory_verification": ".omx/reviews/brain-phase5-book-batch-03-inventory-repair-v2-independent-verification.md"
+  },
+  "scope": [
+    {
+      "path": "content/brain/books/do-it-java/chap01.md",
+      "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a"
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap02.md",
+      "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578"
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap03.md",
+      "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289"
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap04.md",
+      "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67"
+    }
+  ],
+  "update_deferral_note": {
+    "statement": "Batch 03 authors ZERO `update` candidates. All seven applied touch points the inventory marked update / update-or-no_op are recorded as no_op here.",
+    "engine_reason": "proposeKnowledge() builds its related-concept catalog from this batch's candidates only (`const catalog = new Map(pilot.candidates.map(...))`), and proposalBody() throws `unknown related concept` for any id outside it. A proposal document is regenerated in full from its candidate, so an `update` on an applied concept can only carry related_concepts drawn from this batch. Every batch-03 update target's existing related_concepts lie outside batch 03 (for example java.memory.garbage-collection relates to java.memory.heap, java.oop.instance and java.oop.member-variable, none of which have chap01-04 evidence). Authoring the update would therefore preserve the approved source locators but silently delete approved graph edges from a live document.",
+    "decision": "Preserving approved provenance was read strictly: an update that keeps every source locator but drops approved related-concept edges is not additive, so no update was authored. The additive chap01-04 evidence is deferred to the scheduled consolidation batch, which can carry the neighbouring concepts and keep every edge.",
+    "deferred_updates": [
+      {
+        "concept_id": "software.paradigm.object-oriented-programming",
+        "would_add": "content/brain/books/do-it-java/chap01.md:42-48",
+        "approved_locators_preserved": [
+          "content/brain/books/do-it-java/chap05.md:31-38"
+        ],
+        "approved_related_concepts_at_risk": [
+          "java.oop.class",
+          "java.oop.object",
+          "java.oop.object-collaboration"
+        ]
+      },
+      {
+        "concept_id": "java.oop.object-collaboration",
+        "would_add": "content/brain/books/do-it-java/chap01.md:44",
+        "approved_locators_preserved": [
+          "content/brain/books/do-it-java/chap06.md:138-157"
+        ],
+        "approved_related_concepts_at_risk": [
+          "java.oop.method",
+          "java.oop.object",
+          "software.paradigm.object-oriented-programming"
+        ]
+      },
+      {
+        "concept_id": "java.memory.garbage-collection",
+        "would_add": "content/brain/books/do-it-java/chap01.md:51-57",
+        "approved_locators_preserved": [
+          "content/brain/books/do-it-java/chap05.md:471-473",
+          "content/brain/books/do-it-java/chap06.md:408-411",
+          "content/brain/notes/Java/java-features.md:27-30"
+        ],
+        "approved_related_concepts_at_risk": [
+          "java.memory.heap",
+          "java.oop.instance",
+          "java.oop.member-variable"
+        ]
+      },
+      {
+        "concept_id": "java.oop.class",
+        "would_add": "content/brain/books/do-it-java/chap01.md:76",
+        "approved_locators_preserved": [
+          "content/brain/books/do-it-java/chap05.md:39-76"
+        ],
+        "approved_related_concepts_at_risk": [
+          "java.oop.constructor",
+          "java.oop.instance",
+          "java.oop.member-variable",
+          "java.oop.method",
+          "java.oop.object",
+          "software.paradigm.object-oriented-programming"
+        ]
+      },
+      {
+        "concept_id": "java.language.package",
+        "would_add": "content/brain/books/do-it-java/chap01.md:78",
+        "approved_locators_preserved": [
+          "content/brain/books/do-it-java/chap05.md:118-136"
+        ],
+        "approved_related_concepts_at_risk": [
+          "java.oop.class"
+        ]
+      },
+      {
+        "concept_id": "java.variable.scope",
+        "would_add": "content/brain/books/do-it-java/chap02.md:191",
+        "approved_locators_preserved": [
+          "content/brain/books/do-it-java/chap06.md:386-391",
+          "content/brain/books/do-it-java/chap06.md:392-401",
+          "content/brain/books/do-it-java/chap06.md:424-445"
+        ],
+        "approved_related_concepts_at_risk": [
+          "cs.memory.call-stack",
+          "java.memory.heap",
+          "java.oop.member-variable",
+          "java.variable.static-variable"
+        ]
+      },
+      {
+        "concept_id": "java.keyword.final",
+        "would_add": "content/brain/books/do-it-java/chap02.md:203-205",
+        "approved_locators_preserved": [
+          "content/brain/books/do-it-java/chap09.md:652-663",
+          "content/brain/books/do-it-java/chap09.md:664-734",
+          "content/brain/books/do-it-java/chap09.md:735-740",
+          "content/brain/books/do-it-java/chap09.md:741-752"
+        ],
+        "approved_related_concepts_at_risk": [
+          "java.pattern.template-method"
+        ]
+      }
+    ],
+    "other_no_op_touch_points": [
+      "java.oop.object",
+      "java.oop.method",
+      "java.variable.static-variable",
+      "java.memory.heap",
+      "cs.os.operating-system",
+      "java.entry-point.main-method",
+      "cross-domain.program",
+      "software.programming.function"
+    ],
+    "net_effect": "No applied knowledge document is touched by batch 03. Every candidate is a new concept, so apply would create files only and could not regress an approved document."
+  },
+  "candidates": [
+    {
+      "concept_id": "java.platform.platform-independence",
+      "title": "플랫폼 독립성",
+      "aliases": [
+        "Platform Independence",
+        "Write Once Run Anywhere",
+        "WORA"
+      ],
+      "canonical_path": "content/brain/knowledge/java/platform/platform-independence.md",
+      "tags": [
+        "java",
+        "platform"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java portability property realized by compiling source to bytecode that any platform's JVM executes",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.runtime.jvm",
+        "java.runtime.jit-compiler"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 01. 플랫폼(프로그램이 실행되는 환경)에 영향을 받지 않음",
+          "start_line": 23,
+          "end_line": 25
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.jvm",
+      "title": "자바 가상 머신",
+      "aliases": [
+        "JVM",
+        "Java Virtual Machine"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/jvm.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java bytecode execution engine, supplied by the JRE installed for the host operating system",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.platform.platform-independence",
+        "java.runtime.jit-compiler",
+        "java.runtime.jdk"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 01. 플랫폼(프로그램이 실행되는 환경)에 영향을 받지 않음",
+          "start_line": 29,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.jit-compiler",
+      "title": "JIT 컴파일러",
+      "aliases": [
+        "JIT Compiler",
+        "Just In Time Compiler"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/jit-compiler.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single run-time bytecode-to-machine-code translation strategy that caches and reuses generated code",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.runtime.jvm"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 01. 플랫폼(프로그램이 실행되는 환경)에 영향을 받지 않음",
+          "start_line": 35,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.pointer-absence",
+      "title": "포인터 미사용",
+      "aliases": [
+        "No Pointer Arithmetic",
+        "포인터 부재"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/pointer-absence.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single Java language property of withholding direct memory control by omitting pointers",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01",
+        "single-assertion-evidence"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "conflict"
+      ],
+      "related_concepts": [],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 03. 프로그램이 안정적임",
+          "start_line": 51,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.jdk",
+      "title": "자바 개발 키트",
+      "aliases": [
+        "JDK",
+        "Java Development Kit"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/jdk.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single Java distribution that bundles the standard algorithm and utility library",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.runtime.jvm"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 04. 풍부한 기능을 제공하는 오픈소스",
+          "start_line": 64,
+          "end_line": 64
+        }
+      ]
+    },
+    {
+      "concept_id": "java.variable.variable-declaration",
+      "title": "변수 선언과 초기화",
+      "aliases": [
+        "Variable Declaration",
+        "변수 초기화",
+        "변수 이름 규칙"
+      ],
+      "canonical_path": "content/brain/knowledge/java/variable/variable-declaration.md",
+      "tags": [
+        "java",
+        "variable"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java variable-introduction mechanism covering declaration, initialization, identifier rules, and the memory it reserves",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "java.type.type-inference",
+        "java.language.literal"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 21,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 40,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 51,
+          "end_line": 53
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.primitive-type",
+      "title": "기본 자료형",
+      "aliases": [
+        "Primitive Type",
+        "기본형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/primitive-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java built-in value-type family enumerated by byte width across integer, character, floating-point, and boolean groups",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.type.integer-type",
+        "java.type.character-type",
+        "java.type.floating-point-type",
+        "java.type.boolean-type",
+        "java.variable.variable-declaration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 56,
+          "end_line": 61
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.integer-type",
+      "title": "정수 자료형",
+      "aliases": [
+        "Integer Type",
+        "정수형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/integer-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single Java integer value family whose default computation unit is the 4-byte int",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "java.language.literal"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 정수형",
+          "start_line": 73,
+          "end_line": 73
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.character-type",
+      "title": "문자 자료형",
+      "aliases": [
+        "Character Type",
+        "char형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/character-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single Java char value type represented with a 2-byte UTF-16 code unit",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "two-scope-merge"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 문자형",
+          "start_line": 90,
+          "end_line": 96
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 문자형 - 유니코드",
+          "start_line": 108,
+          "end_line": 112
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.floating-point-type",
+      "title": "실수 자료형",
+      "aliases": [
+        "Floating-Point Type",
+        "실수형",
+        "부동 소수점"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/floating-point-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java real-number value family using sign/exponent/mantissa layout with double as the default",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 실수형",
+          "start_line": 136,
+          "end_line": 148
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.boolean-type",
+      "title": "논리 자료형",
+      "aliases": [
+        "Boolean Type",
+        "논리형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/boolean-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java 1-byte truth-value type holding only true or false",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 논리형",
+          "start_line": 174,
+          "end_line": 176
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.type-inference",
+      "title": "지역 변수 자료형 추론",
+      "aliases": [
+        "Local Variable Type Inference",
+        "Type Inference",
+        "var"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/type-inference.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java 10 compile-time inference of a local variable's declared type from its initializer",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.variable.variable-declaration",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 자료형 추론",
+          "start_line": 183,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.literal",
+      "title": "리터럴",
+      "aliases": [
+        "Literal",
+        "리터럴 상수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/literal.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single written numeric, character, or boolean source value",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.type.integer-type",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 리터럴",
+          "start_line": 235,
+          "end_line": 245
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.type-conversion",
+      "title": "형 변환",
+      "aliases": [
+        "Type Conversion",
+        "형변환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/type-conversion.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java value-retyping rule set stating that smaller-to-larger and less-to-more precise conversions are automatic",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.type.implicit-type-conversion",
+        "java.type.explicit-type-conversion",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환",
+          "start_line": 251,
+          "end_line": 255
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.implicit-type-conversion",
+      "title": "묵시적 형 변환",
+      "aliases": [
+        "Implicit Type Conversion",
+        "자동 형 변환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/implicit-type-conversion.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single automatic widening conversion applied on assignment and during mixed-type arithmetic",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.type.type-conversion",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환 > ### 묵시적 형 변환 (자동)",
+          "start_line": 263,
+          "end_line": 295
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.explicit-type-conversion",
+      "title": "명시적 형 변환",
+      "aliases": [
+        "Explicit Type Conversion",
+        "강제 형 변환",
+        "캐스팅"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/explicit-type-conversion.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single programmer-written narrowing conversion that may lose data, and whose position changes the arithmetic result",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.type.type-conversion",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환 > ### 명시적 형 변환 (강제)",
+          "start_line": 301,
+          "end_line": 364
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.operator-arity",
+      "title": "항과 연산자",
+      "aliases": [
+        "Operator Arity",
+        "단항 연산자",
+        "이항 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/operator-arity.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single classification of Java operators by operand count, with the quotient and remainder operators as worked examples",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.operator.conditional-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자 > ### 항과 연산자",
+          "start_line": 24,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.short-circuit-evaluation",
+      "title": "단락 회로 평가",
+      "aliases": [
+        "Short Circuit Evaluation",
+        "SCE"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/short-circuit-evaluation.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single evaluation rule skipping the second operand of a logical AND/OR once the result is already determined",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.operator.operator-arity",
+        "java.type.boolean-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자 > ### 논리 연산 주의점",
+          "start_line": 47,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.conditional-operator",
+      "title": "조건 연산자",
+      "aliases": [
+        "Conditional Operator",
+        "삼항 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/conditional-operator.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single three-operand Java operator selecting one of two results from a boolean condition",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.operator.operator-arity",
+        "java.type.boolean-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자 > ### 조건 연산자",
+          "start_line": 87,
+          "end_line": 89
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.bitwise-logical-operator",
+      "title": "비트 논리 연산자",
+      "aliases": [
+        "Bitwise Logical Operator",
+        "AND 연산자",
+        "XOR 연산자",
+        "반전 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/bitwise-logical-operator.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of bit-position logical operators covering AND, OR, XOR, and complement",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.operator.bit-shift-operator",
+        "java.operator.operator-arity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 비트 연산자 > ### 비트 논리 연산자",
+          "start_line": 114,
+          "end_line": 154
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.bit-shift-operator",
+      "title": "비트 이동 연산자",
+      "aliases": [
+        "Bit Shift Operator",
+        "시프트 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/bit-shift-operator.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of left/right bit-shift operators, including the sign-preserving and zero-filling right shifts",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.operator.bitwise-logical-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 비트 연산자 > ### 비트 이동 연산자",
+          "start_line": 160,
+          "end_line": 186
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.if-statement",
+      "title": "if문",
+      "aliases": [
+        "if Statement",
+        "조건문"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/if-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single Java conditional branch form if / else if / else",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "low-evidence-scope",
+        "code-dominant-evidence"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.control-flow.switch-case",
+        "java.type.boolean-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java if문",
+          "start_line": 23,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.switch-case",
+      "title": "switch-case문",
+      "aliases": [
+        "switch Statement",
+        "switch-case"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/switch-case.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java multi-way branch on one value, including fall-through, shared cases, default, and the Java 7 String case",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.if-statement",
+        "java.control-flow.break-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java switch-case문",
+          "start_line": 49,
+          "end_line": 68
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java switch-case문",
+          "start_line": 73,
+          "end_line": 95
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.while-statement",
+      "title": "while문",
+      "aliases": [
+        "while Statement",
+        "while Loop"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/while-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single Java pre-tested loop that repeats while its condition holds",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "code-only-scope"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.control-flow.do-while-statement",
+        "java.control-flow.for-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### while문",
+          "start_line": 138,
+          "end_line": 147
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.do-while-statement",
+      "title": "do-while문",
+      "aliases": [
+        "do-while Statement",
+        "do-while Loop"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/do-while-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for the single Java post-tested loop that runs its body once before testing",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "code-only-scope"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.control-flow.while-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### do-while문",
+          "start_line": 175,
+          "end_line": 181
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.for-statement",
+      "title": "for문",
+      "aliases": [
+        "for Statement",
+        "for Loop"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/for-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java counted loop with initializer, condition, and increment clauses, each of which may be omitted",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "code-only-scope-paired-with-prose"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.while-statement",
+        "java.control-flow.break-statement",
+        "java.control-flow.continue-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### for문",
+          "start_line": 209,
+          "end_line": 212
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### for문 요소 생략하기",
+          "start_line": 221,
+          "end_line": 271
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.continue-statement",
+      "title": "continue문",
+      "aliases": [
+        "continue Statement"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/continue-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java loop-control statement that skips the remainder of the current iteration and continues according to the enclosing loop's control flow",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.break-statement",
+        "java.control-flow.for-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### continue문",
+          "start_line": 315,
+          "end_line": 321
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### break, continue 차이",
+          "start_line": 410,
+          "end_line": 412
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.break-statement",
+      "title": "break문",
+      "aliases": [
+        "break Statement"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/break-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unlabeled Java break statement that exits the innermost enclosing loop or switch",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.continue-statement",
+        "java.control-flow.for-statement",
+        "java.control-flow.switch-case"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java switch-case문",
+          "start_line": 49,
+          "end_line": 51
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### break문",
+          "start_line": 393,
+          "end_line": 404
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### break, continue 차이",
+          "start_line": 410,
+          "end_line": 412
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.do-it-java-chap01-l0013",
+      "title": "chap01 문서 루트 제목",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap01 L13-16 `# Chapter 01 - 자바 프로그래밍` carries only heading and blank/structural lines (span_sha256 c304965d2a923aa71874c5f03375eddd4f9edcba662f4a5df1b02d9574e2e656; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap01-l0017",
+      "title": "chap01 Java 특징 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap01 L17-20 `# Chapter 01 - 자바 프로그래밍 > ## Java 특징` carries only heading and blank/structural lines (span_sha256 a36ea9f9f12feb0d47a901357b385b2af7bcbceef6b0f7d3829f61339e066d64; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap02-l0013",
+      "title": "chap02 문서 루트 제목",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap02 L13-16 `# Chapter 02 - 변수와 자료형` carries only heading and blank/structural lines (span_sha256 b3b0c1d9ffc9176f4f21390e6a5e36a17295c423bf559daefc97add6bb33f5bd; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap02-l0017",
+      "title": "chap02 Java 변수 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap02 L17-18 `# Chapter 02 - 변수와 자료형 > ## Java 변수` carries only heading and blank/structural lines (span_sha256 c975a1b72f123a9457bb8eb82912ceb6ca4e34d1c4c0b759d5a4774c38a23fe6; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap02-l0067",
+      "title": "chap02 Java 자료형 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap02 L67-70 `# Chapter 02 - 변수와 자료형 > ## Java 자료형` carries only heading and blank/structural lines (span_sha256 4e1f1ea5eb7d66468d41fbd71feac5a3226e323d3ede17f5ac1ee49c2e3eb6d7; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap03-l0013",
+      "title": "chap03 문서 루트 제목",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap03 L13-17 `# Chapter 03 - 자바의 여러 가지 연산자` carries only heading and blank/structural lines (span_sha256 3da0ba973909dc83391d5acb265101883e1c0158be66129805dda8c53a0ae4e6; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap03-l0018",
+      "title": "chap03 Java 기본 연산자 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap03 L18-19 `# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자` carries only heading and blank/structural lines (span_sha256 b7b2476ea5f4d93616dd524e4bd2ff89f27d07f01daf0e1c3abed18f5dd24ea1; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap03-l0110",
+      "title": "chap03 Java 비트 연산자 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap03 L110-111 `# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 비트 연산자` carries only heading and blank/structural lines (span_sha256 84375e22cd9bfbcf9035d15b690960fb1453edd0daf2f47bd96733e14bc1338c; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap04-l0013",
+      "title": "chap04 문서 루트 제목",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap04 L13-16 `# Chapter 04 - 자바의 제어문` carries only heading and blank/structural lines (span_sha256 aa2cc40063e6900481f1a18cd371f535ea347e57102abba19f5830f6c30a1689; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap04-l0017",
+      "title": "chap04 Java 조건문 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap04 L17-18 `# Chapter 04 - 자바의 제어문 > ## Java 조건문` carries only heading and blank/structural lines (span_sha256 b46489db3d3e13ffcb90e767cbc6387609e17eb5848acc6a2d9135c2131b8ba8; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap04-l0132",
+      "title": "chap04 Java 반복문 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap04 L132-133 `# Chapter 04 - 자바의 제어문 > ## Java 반복문` carries only heading and blank/structural lines (span_sha256 1ec4793f3798b68eee78ed1baf3d35d86639d86bac07992bfcc1d45579df3d3b; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false, so no assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-03",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap01-l0042",
+      "title": "chap01 객체지향 언어 특징 섹션",
+      "proposal_kind_considered": "create",
+      "reason_code": "subsumed-by-applied-or-accepted-concept",
+      "reason": "chap01 L42-48 asserts only that object-oriented programming implements a program through the collaboration and mutual relationships of several objects. Both assertions are already owned by applied documents: `software.paradigm.object-oriented-programming` (title 객체 지향 프로그래밍, sourced from chap05 L31-38) and `java.oop.object-collaboration` (title 객체 간 협력, sourced from chap06 L138-157). Minting a new concept here would collide on the normalized keys 객체 지향 프로그래밍 / 객체 협력. An additive `update` on either applied document is the correct long-term disposition and is deferred to the consolidation batch for the reason recorded in update_deferral_note. Scope heading: `# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 02. 객체지향 언어라서 유지보수가 쉽고 확장성이 좋음`; span_sha256 bcf3b132bd7aef566521bd5503be68d0cd468d67620fe1365d2b8a9c85b88822.",
+      "pilot_strata": [
+        "book-batch-03",
+        "substantive-scope-subsumed"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap01-l0068",
+      "title": "chap01 Hello Java 섹션",
+      "proposal_kind_considered": "create",
+      "reason_code": "subsumed-by-applied-or-accepted-concept",
+      "reason": "chap01 L68-95 defines 프로젝트, 클래스 and 패키지 and shows a first program. 클래스 and 패키지 are owned by the applied `java.oop.class` (chap05 L39-76) and `java.language.package` (chap05 L118-136); the program body is owned by the applied `java.entry-point.main-method` and `cross-domain.program`. 프로젝트 is IDE workspace terminology rather than a language concept and is not canonicalized. No non-colliding new concept remains, so the scope is rejected here and its additive evidence deferred; see update_deferral_note. Scope heading: `# Chapter 01 - 자바 프로그래밍 > ## Hello Java`; span_sha256 787e2feafa7763c0e045b7110d3b03404cc7f151835857ec32785698c3dee45e.",
+      "pilot_strata": [
+        "book-batch-03",
+        "substantive-scope-subsumed"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap02-l0201",
+      "title": "chap02 Java 상수 섹션",
+      "proposal_kind_considered": "create",
+      "reason_code": "subsumed-by-applied-or-accepted-concept",
+      "reason": "chap02 L201-232 asserts that Java expresses a constant with the final keyword and that a final variable can be neither re-declared nor re-assigned. Both assertions are the subject matter of the applied `java.keyword.final` (title final 예약어, four approved chap09 locators). Precondition P7 forbids minting a 상수 concept that restates it, and a relating concept cannot be authored in this batch because the engine's related-concept catalog is batch-local (see update_deferral_note). The scope is therefore rejected rather than duplicated. Scope heading: `# Chapter 02 - 변수와 자료형 > ## Java 상수`; span_sha256 0467858d18531fea27716a91e984ada91866f788ba550b7545d6a046c1977f0f.",
+      "pilot_strata": [
+        "book-batch-03",
+        "substantive-scope-subsumed"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap04-l0416",
+      "title": "chap04 연습문제 2번",
+      "proposal_kind_considered": "stub",
+      "reason_code": "subsumed-by-applied-or-accepted-concept",
+      "reason": "chap04 L416-453 is exercise commentary comparing two multiplication-table solutions and concluding that the continue-based version is better. It demonstrates the mechanism already canonicalized by the accepted `java.control-flow.continue-statement` candidate and asserts no additional property of continue, so it is subsumed rather than separately canonicalized. Scope heading: `# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### 연습문제 2번`; span_sha256 d55396a8d70e1db1b5e7a9fb5aa2da2cf2bf60df3fe836eb4de66b35372c53ee.",
+      "pilot_strata": [
+        "book-batch-03",
+        "substantive-scope-subsumed"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap04-l0454",
+      "title": "chap04 연습문제 3번",
+      "proposal_kind_considered": "stub",
+      "reason_code": "subsumed-by-applied-or-accepted-concept",
+      "reason": "chap04 L454-488 is exercise commentary comparing two nested-loop solutions and noting that a break-based version is possible. It demonstrates the mechanism already canonicalized by the accepted `java.control-flow.break-statement` candidate and asserts no additional property of break, so it is subsumed rather than separately canonicalized. Scope heading: `# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### 연습문제 3번`; span_sha256 018e63bfde2c4c854b40b37fa073fa32763ef15b7c04deb8a435f65bb3a848fc.",
+      "pilot_strata": [
+        "book-batch-03",
+        "substantive-scope-subsumed"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,0 @@
-<li><% tp.file.cursor(0) %></li>

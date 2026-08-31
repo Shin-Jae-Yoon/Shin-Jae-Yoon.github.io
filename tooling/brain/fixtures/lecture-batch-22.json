@@ -1,0 +1,766 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-22",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-21",
+    "applied_state": "500 approved knowledge concepts after lecture-batch-21 covered fun-java04 L11-470."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+        "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215"
+      }
+    ],
+    "line_range": "L473-L853",
+    "series": "즐거운 자바 (fun-java) 4/11 — 객체지향 2/3, 후반부",
+    "completes": "fun-java04"
+  },
+  "overlap_analysis": {
+    "finding": "Inheritance, overriding, polymorphism, information hiding, accessor methods and this are all applied from the do-it-java book, so 6 of 15 candidates are updates.",
+    "disposition": "The 9 creates are what the book did not carry: the IS-A test, inheritance as the strongest coupling, java.lang.Object as the root, up- and downcasting, the overloading-versus-overriding contrast, field hiding, toString and the equals/hashCode pair."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L488-490, L508-518 partial, L531-539, L547-563 partial, L572-605 partial, L628-683 partial, L690-714 partial, L757-779 partial, L815-843",
+        "reason_code": "code-listing-caption-or-carried-by-owner",
+        "detail": "Class-diagram captions, code walkthrough lines and IDE instructions whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L473-853 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 90,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 10,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 15,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 15,
+  "candidates": [
+    {
+      "concept_id": "java.oop.inheritance",
+      "title": "상속",
+      "aliases": [
+        "Inheritance",
+        "클래스 상속"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/inheritance.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented language mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap10",
+        "lecture-batch-22",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.method-overriding",
+        "java.oop.polymorphism",
+        "java.oop.abstract-class",
+        "java.oop.interface-inheritance",
+        "java.oop.is-a-relation",
+        "java.oop.inheritance-coupling",
+        "java.oop.object-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 상속이란?",
+          "start_line": 17,
+          "end_line": 23
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 인터페이스 구현과 클래스 상속 함께 쓰기",
+          "start_line": 910,
+          "end_line": 1018
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속",
+          "start_line": 494,
+          "end_line": 498
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.method-overriding",
+      "title": "메서드 오버라이딩",
+      "aliases": [
+        "Method Overriding",
+        "메서드 재정의"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/method-overriding.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented method-redefinition mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "lecture-batch-22",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.virtual-method",
+        "java.oop.abstract-method",
+        "java.oop.interface-default-method",
+        "java.oop.overloading-vs-overriding",
+        "java.oop.field-hiding",
+        "java.oop.tostring"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 메서드 오버라이딩",
+          "start_line": 443,
+          "end_line": 459
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 다형성, 오버라이딩",
+          "start_line": 565,
+          "end_line": 568
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 다형성, 오버라이딩",
+          "start_line": 605,
+          "end_line": 610
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.virtual-method",
+      "title": "가상 메서드",
+      "aliases": [
+        "Virtual Method"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/virtual-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "runtime method-selection mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap10",
+        "lecture-batch-22",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.method-overriding",
+        "java.oop.polymorphism",
+        "java.oop.diamond-problem"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 메서드 오버라이딩 > ### 묵시적 클래스 형 변환과 메서드 재정의",
+          "start_line": 502,
+          "end_line": 532
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 두 인터페이스의 디폴트 메서드가 중복되는 경우",
+          "start_line": 689,
+          "end_line": 783
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 다형성, 오버라이딩",
+          "start_line": 572,
+          "end_line": 572
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.information-hiding",
+      "title": "정보 은닉",
+      "aliases": [
+        "Information Hiding",
+        "데이터 은닉"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/information-hiding.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented practice of restricting direct state access and validating mutations",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-22",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.accessor-method",
+        "java.oop.encapsulation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 정보 은닉 > ### 정보 은닉이란?",
+          "start_line": 852,
+          "end_line": 908
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 정보 은닉",
+          "start_line": 685,
+          "end_line": 686
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.accessor-method",
+      "title": "접근자 메서드",
+      "aliases": [
+        "Accessor Method",
+        "Getter",
+        "Setter",
+        "get/set 메서드",
+        "프로퍼티",
+        "Property"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/accessor-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single getter-and-setter method mechanism for controlled field access",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-22",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.information-hiding",
+        "java.oop.method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 정보 은닉 > ### get(), set() 메서드",
+          "start_line": 799,
+          "end_line": 851
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 정보 은닉",
+          "start_line": 691,
+          "end_line": 696
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 정보 은닉",
+          "start_line": 714,
+          "end_line": 715
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.this",
+      "title": "this 예약어",
+      "aliases": [
+        "this Keyword",
+        "this 참조"
+      ],
+      "canonical_path": "content/brain/knowledge/java/keyword/this.md",
+      "tags": [
+        "java",
+        "keyword"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java self-reference keyword across field disambiguation, instance access, and self-return",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05-chap06",
+        "lecture-batch-22",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.constructor",
+        "java.oop.constructor-chaining",
+        "java.oop.instance",
+        "java.oop.static-context-restriction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자 > ### this 맛보기",
+          "start_line": 670,
+          "end_line": 721
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## this 예약어 > ### 자신의 메모리를 가리키는 this",
+          "start_line": 19,
+          "end_line": 66
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## this 예약어 > ### 자신의 주소를 반환하는 this",
+          "start_line": 110,
+          "end_line": 137
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 정보 은닉",
+          "start_line": 716,
+          "end_line": 718
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.is-a-relation",
+      "title": "IS-A 관계",
+      "aliases": [
+        "IS-A",
+        "kind of 관계",
+        "일반화"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/is-a-relation.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single test for whether inheritance applies - the sentence \"A is a B\" or \"A is a kind of B\" must hold - which is what generalization means: calling the child classes by the parent's name",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.upcasting",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속",
+          "start_line": 475,
+          "end_line": 482
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.inheritance-coupling",
+      "title": "상속은 가장 강한 결합",
+      "aliases": [
+        "Inheritance Coupling",
+        "상속 남용 경계"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/inheritance-coupling.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single caution that inheritance is the strongest coupling a design can take on, so the damage from inheriting wrongly is large and it should be used only when it must be",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.cohesion-coupling",
+        "java.oop.is-a-relation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속",
+          "start_line": 502,
+          "end_line": 504
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.object-class",
+      "title": "java.lang.Object",
+      "aliases": [
+        "Object 클래스",
+        "모든 클래스의 최상위"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/object-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single root every class inherits from when it names no other parent, which is why every class is a descendant of Object",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.tostring",
+        "java.oop.equals-hashcode",
+        "java.oop.upcasting"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속",
+          "start_line": 518,
+          "end_line": 519
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.upcasting",
+      "title": "부모 타입으로 자식 참조",
+      "aliases": [
+        "Upcasting",
+        "업캐스팅",
+        "참조 타입과 인스턴스 타입"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/upcasting.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single assignment of a child instance to a parent-typed reference, which narrows the callable methods to the parent's and therefore tells a reader from the declaration alone what will be used - and which is why a parameter typed Object accepts anything at all",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.is-a-relation",
+        "java.oop.downcasting",
+        "java.oop.object-class",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 부모 타입으로 자식 참조",
+          "start_line": 525,
+          "end_line": 541
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드 > ### toString()",
+          "start_line": 779,
+          "end_line": 789
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.downcasting",
+      "title": "객체 형변환",
+      "aliases": [
+        "Downcasting",
+        "다운캐스팅",
+        "인스턴스 타입으로 되돌리기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/downcasting.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single cast back to the instance's own type so its own methods become callable again, which is legal because the reference pointed at that instance all along",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.upcasting",
+        "java.type.explicit-type-conversion",
+        "java.memory.object-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 객체 형변환",
+          "start_line": 547,
+          "end_line": 549
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.overloading-vs-overriding",
+      "title": "오버로딩과 오버라이딩의 구분",
+      "aliases": [
+        "Overloading vs Overriding",
+        "시그니처 차이 vs 동작 재정의"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/overloading-vs-overriding.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single contrast between defining several same-named methods that differ in parameter type or count, and redefining an inherited method whose signature and return type match exactly",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.method-overloading",
+        "java.oop.method-overriding",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 오버로딩 vs 오버라이딩",
+          "start_line": 621,
+          "end_line": 622
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.field-hiding",
+      "title": "필드는 오버라이딩되지 않는다",
+      "aliases": [
+        "Field Hiding",
+        "필드는 타입을 따라간다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/field-hiding.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single asymmetry in which a method resolves to the child's override but a field resolves by the reference's declared type, so the parent's author is never surprised by a value the child substituted",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.method-overriding",
+        "java.oop.member-variable",
+        "java.oop.upcasting"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 오버라이딩 주의점",
+          "start_line": 628,
+          "end_line": 632
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.tostring",
+      "title": "toString()",
+      "aliases": [
+        "toString 오버라이딩",
+        "객체의 문자열 표현"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/tostring.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Object method println actually calls on whatever it is given, whose inherited output is useless, so it exists to be overridden",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.object-class",
+        "java.oop.method-overriding",
+        "java.io.system-out",
+        "java.oop.equals-hashcode"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드",
+          "start_line": 751,
+          "end_line": 753
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드 > ### toString()",
+          "start_line": 797,
+          "end_line": 798
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.equals-hashcode",
+      "title": "equals()와 hashCode()",
+      "aliases": [
+        "equals",
+        "hashCode",
+        "값 비교 기준"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/equals-hashcode.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair that must be overridden together - equals decides value equality by a standard the developer sets rather than by reference, and hash-based collections need both to work",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.object-class",
+        "java.oop.tostring",
+        "java.oop.method-overriding",
+        "java.memory.object-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드 > ### equals(), hashCode()",
+          "start_line": 845,
+          "end_line": 853
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

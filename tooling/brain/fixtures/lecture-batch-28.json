@@ -1,0 +1,1011 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-28",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-27",
+    "applied_state": "585 approved knowledge concepts after lecture-batch-27 completed fun-java09."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+        "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8"
+      },
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+        "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66"
+      }
+    ],
+    "series": "즐거운 자바 (fun-java) 10-11/11 — Thread와 Network",
+    "completes": "the fun-java series, 11 substantive files over 10 batches"
+  },
+  "overlap_analysis": {
+    "finding": "Threads, processes and networking were absent from the index, so 21 of 23 candidates are creates.",
+    "disposition": "This batch opens four namespaces: cs.performance.* for Amdahl and the parallelization checklist, cs.concurrency.*, cs.network.* for addressing, DNS and HTTP, and java.thread.* and java.net.* for the Java side. cs.os.* gains process, thread, IPC and context switching alongside the applied operating-system concept."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "fun-java10 L7, L214-270 partial; fun-java11 L149-296 partial, L390-394, L416-550",
+        "reason_code": "code-listing-caption-or-carried-by-owner",
+        "detail": "The course link, the thread and chat-server code listings and IDE configuration steps whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in fun-java10 and fun-java11 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 159,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 21,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 23,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 23,
+  "candidates": [
+    {
+      "concept_id": "cs.os.operating-system",
+      "title": "운영체제",
+      "aliases": [
+        "Operating System",
+        "OS"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/operating-system.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single system-software concept",
+      "pilot_strata": [
+        "high-density",
+        "dinosaur/chap01",
+        "lecture-batch-28",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.architecture.system-bus",
+        "cross-domain.program",
+        "cs.os.process",
+        "cs.os.thread",
+        "cs.os.context-switching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 공룡책",
+          "start_line": 115,
+          "end_line": 119
+        },
+        {
+          "path": "content/brain/books/dinosaur/chap01.md",
+          "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+          "heading": "# Chapter 01 - 운영체제 서론 > ## 공룡책 > ### 운영체제가 할 일",
+          "start_line": 195,
+          "end_line": 206
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### 병행 vs 병렬",
+          "start_line": 76,
+          "end_line": 77
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.java-io",
+      "title": "Java I/O",
+      "aliases": [
+        "입출력",
+        "Input Output"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/java-io.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single family of objects that read from something - keyboard, network or file - and write to something else, and which are ordinary Java objects like any other",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-28"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.io-stream",
+        "java.io.system-out",
+        "java.net.socket"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O",
+          "start_line": 13,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 클라이언트-서버",
+          "start_line": 143,
+          "end_line": 143
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.performance.amdahls-law",
+      "title": "암달의 법칙",
+      "aliases": [
+        "Amdahl's Law",
+        "병렬화의 한계"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/performance/amdahls-law.md",
+      "tags": [
+        "cs",
+        "performance"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ceiling on speedup set by the share of work that cannot be parallelized, so adding machines improves the whole only up to a bound the serial fraction fixes",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.performance.parallelization-consideration",
+        "cs.concurrency.concurrent-vs-parallel",
+        "cs.os.thread"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기",
+          "start_line": 15,
+          "end_line": 31
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### 병렬화 시 고려",
+          "start_line": 49,
+          "end_line": 60
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.performance.parallelization-consideration",
+      "title": "병렬화 시 고려사항",
+      "aliases": [
+        "순차 실행이 더 빠른 경우",
+        "동시 실행 오버헤드"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/performance/parallelization-consideration.md",
+      "tags": [
+        "cs",
+        "performance"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single checklist before parallelizing - memory and cache speed, disk, network and connections - and the reminder that a sequential run can beat a parallel one because it pays no concurrency overhead",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.performance.amdahls-law",
+        "cs.os.context-switching",
+        "cs.os.thread-vs-process"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### 병렬화 시 고려",
+          "start_line": 37,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.concurrency.concurrent-vs-parallel",
+      "title": "병행과 병렬",
+      "aliases": [
+        "Concurrent",
+        "Parallel",
+        "동시성 프로그래밍"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/concurrency/concurrent-vs-parallel.md",
+      "tags": [
+        "cs",
+        "concurrency"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between concurrency, which is multithreaded programming, and parallelism, which is multicore programming",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "cs.performance.amdahls-law",
+        "cs.os.context-switching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### 병행 vs 병렬",
+          "start_line": 68,
+          "end_line": 70
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.context-switching",
+      "title": "컨텍스트 스위칭",
+      "aliases": [
+        "Context Switching",
+        "상태 보존과 복원",
+        "전환 오버헤드"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/context-switching.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single switch in which the running process is suspended and another resumed, requiring the first one's state to be saved and later restored, which is where the overhead comes from and why the concurrency only looks simultaneous",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.process",
+        "cs.os.thread",
+        "cs.os.operating-system",
+        "cs.os.thread-vs-process"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Context Switching",
+          "start_line": 85,
+          "end_line": 91
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.process",
+      "title": "프로세스",
+      "aliases": [
+        "Process",
+        "독립된 메모리 공간"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/process.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single independently running unit with its own stack, heap, BSS and text segments, whose isolation means it cannot reach into another process's memory",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "cs.os.ipc",
+        "cs.os.operating-system",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Process",
+          "start_line": 99,
+          "end_line": 103
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.ipc",
+      "title": "프로세스 간 통신",
+      "aliases": [
+        "IPC",
+        "Inter-Process Communication"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/ipc.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of mechanisms processes must use to exchange anything, precisely because their memory is separate, and whose cost compares unfavourably with threads sharing memory directly",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.process",
+        "cs.os.thread",
+        "cs.os.context-switching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### IPC",
+          "start_line": 113,
+          "end_line": 117
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.thread",
+      "title": "스레드",
+      "aliases": [
+        "Thread",
+        "실행 흐름"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/thread.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single flow of execution inside a process rather than a thing apart from it, several of which share the memory that one process holds",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.process",
+        "cs.os.thread-vs-process",
+        "java.thread.main-thread",
+        "cs.os.context-switching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Thread",
+          "start_line": 125,
+          "end_line": 128
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Thread",
+          "start_line": 136,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.os.thread-vs-process",
+      "title": "스레드와 프로세스의 비교",
+      "aliases": [
+        "스택만 따로",
+        "IPC 없이 통신",
+        "JVM 구현 의존"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/os/thread-vs-process.md",
+      "tags": [
+        "cs",
+        "os"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single comparison in which a thread shares everything but its stack, communicates through the shared heap without IPC and switches more cheaply because it carries less context - while noting that more memory and a faster machine can still favour processes, and that the actual relationship depends on the JVM implementation",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "cs.os.process",
+        "cs.os.ipc",
+        "java.runtime.jvm-stack-frame"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Thread vs Process",
+          "start_line": 143,
+          "end_line": 159
+        }
+      ]
+    },
+    {
+      "concept_id": "java.thread.main-thread",
+      "title": "메인 스레드",
+      "aliases": [
+        "Main Thread",
+        "main에서 시작되는 흐름"
+      ],
+      "canonical_path": "content/brain/knowledge/java/thread/main-thread.md",
+      "tags": [
+        "java",
+        "thread"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single flow that begins at the entry point, from which further threads may be spawned so several flows run at once",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.os.thread",
+        "java.entry-point.main-method",
+        "java.thread.thread-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## 성능 향상시키기 > ### Thread vs Process",
+          "start_line": 167,
+          "end_line": 168
+        }
+      ]
+    },
+    {
+      "concept_id": "java.thread.thread-creation",
+      "title": "자바 스레드 생성 방법",
+      "aliases": [
+        "Thread 상속과 Runnable 구현"
+      ],
+      "canonical_path": "content/brain/knowledge/java/thread/thread-creation.md",
+      "tags": [
+        "java",
+        "thread"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "single pair of routes to a new thread - extending the Thread class or implementing Runnable",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.thread.thread-class",
+        "java.thread.runnable",
+        "cs.os.thread"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## Java Thread 생성",
+          "start_line": 176,
+          "end_line": 178
+        }
+      ]
+    },
+    {
+      "concept_id": "java.thread.thread-class",
+      "title": "Thread 클래스 상속",
+      "aliases": [
+        "run() 오버라이딩",
+        "start()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/thread/thread-class.md",
+      "tags": [
+        "java",
+        "thread"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single route in which a class extends Thread and overrides run, with start being the important call because it prepares the thread and then runs that method as a new flow - and the program ends only when every thread has",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.thread.thread-creation",
+        "java.thread.runnable",
+        "java.oop.method-overriding",
+        "java.oop.inheritance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## Java Thread 생성 > ### Thread 클래스 상속",
+          "start_line": 184,
+          "end_line": 193
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## Java Thread 생성 > ### Thread 클래스 상속",
+          "start_line": 270,
+          "end_line": 270
+        }
+      ]
+    },
+    {
+      "concept_id": "java.thread.runnable",
+      "title": "Runnable 인터페이스 구현",
+      "aliases": [
+        "Runnable",
+        "Thread 생성자에 넣기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/thread/runnable.md",
+      "tags": [
+        "java",
+        "thread"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single route in which a class implements Runnable and overrides run, then hands itself to a Thread constructor because Runnable itself has no start",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.thread.thread-creation",
+        "java.thread.thread-class",
+        "java.oop.interface",
+        "java.oop.lambda-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## Java Thread 생성 > ### Runnable 인터페이스 구현",
+          "start_line": 276,
+          "end_line": 285
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.ip-and-port",
+      "title": "IP 주소와 포트",
+      "aliases": [
+        "Well Known Port",
+        "Registered Port",
+        "Dynamic Port"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/ip-and-port.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single addressing pair in which the IP identifies the machine and the port identifies which server on it, the port range split into the well-known band assigned by the registry, the registered band for organizations, and the dynamic band the operating system hands out",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.dns",
+        "cs.network.loopback",
+        "java.net.socket"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 기초 용어",
+          "start_line": 11,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.loopback",
+      "title": "루프백 주소",
+      "aliases": [
+        "127.0.0.1",
+        "localhost",
+        "자기 자신"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/loopback.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single address naming the machine itself, written as the numeric loopback or as its domain form",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "cs.network.dns"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 기초 용어",
+          "start_line": 26,
+          "end_line": 27
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 기초 용어",
+          "start_line": 51,
+          "end_line": 52
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.dns",
+      "title": "도메인 네임 서버",
+      "aliases": [
+        "DNS",
+        "도메인 주소",
+        "nslookup"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/dns.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single service translating a domain name into an IP address, configured with two name servers so one can fail",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "cs.network.loopback",
+        "java.net.inet-address"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 기초 용어",
+          "start_line": 31,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "java.net.inet-address",
+      "title": "InetAddress",
+      "aliases": [
+        "IP 주소 알아내기",
+        "하나의 도메인 여러 IP"
+      ],
+      "canonical_path": "content/brain/knowledge/java/net/inet-address.md",
+      "tags": [
+        "java",
+        "net"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class for resolving the local machine's address or a domain's, returning an array because one domain may map to several addresses",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.dns",
+        "cs.network.ip-and-port",
+        "java.net.socket"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### Java 네트워크",
+          "start_line": 58,
+          "end_line": 70
+        }
+      ]
+    },
+    {
+      "concept_id": "java.net.socket",
+      "title": "Socket과 ServerSocket",
+      "aliases": [
+        "accept()",
+        "blocking 메서드",
+        "소켓 통신"
+      ],
+      "canonical_path": "content/brain/knowledge/java/net/socket.md",
+      "tags": [
+        "java",
+        "net"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single connection pair in which the server socket waits on a port - a blocking call - and returns a socket once a client connects, after which the two sockets exchange data through ordinary IO objects",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "java.io.java-io",
+        "cs.network.http-protocol",
+        "java.net.web-server-thread"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 클라이언트-서버",
+          "start_line": 116,
+          "end_line": 119
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 클라이언트-서버",
+          "start_line": 136,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-protocol",
+      "title": "HTTP 프로토콜",
+      "aliases": [
+        "요청-응답 규약",
+        "접속 후 close"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-protocol.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single agreed exchange - connect, send a request, receive a response, close - which is what makes a browser and a web server able to talk at all",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.net.socket",
+        "java.net.http-request-header",
+        "cs.network.ip-and-port"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 클라이언트-서버",
+          "start_line": 123,
+          "end_line": 130
+        }
+      ]
+    },
+    {
+      "concept_id": "java.net.http-request-header",
+      "title": "HTTP 요청 헤더",
+      "aliases": [
+        "브라우저가 보내는 헤더",
+        "요청 방식과 요청자 정보"
+      ],
+      "canonical_path": "content/brain/knowledge/java/net/http-request-header.md",
+      "tags": [
+        "java",
+        "net"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single block a browser sends ahead of the blank line, carrying which method was used and information about the sender",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "cs.network.http-protocol",
+        "java.net.socket"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 예제 실습",
+          "start_line": 236,
+          "end_line": 238
+        }
+      ]
+    },
+    {
+      "concept_id": "java.net.web-server-thread",
+      "title": "웹서버에 스레드가 필요한 이유",
+      "aliases": [
+        "무한 루프 요청 처리",
+        "동시 요청"
+      ],
+      "canonical_path": "content/brain/knowledge/java/net/web-server-thread.md",
+      "tags": [
+        "java",
+        "net"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason a server loops forever and hands each connection to a thread: without one, a request arriving before the previous exchange finishes has nowhere to go",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.net.socket",
+        "cs.os.thread",
+        "java.thread.thread-class",
+        "java.thread.synchronized-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 웹서버 동작",
+          "start_line": 298,
+          "end_line": 301
+        }
+      ]
+    },
+    {
+      "concept_id": "java.thread.synchronized-list",
+      "title": "스레드 안전한 공유 리스트",
+      "aliases": [
+        "Collections.synchronizedList()",
+        "BroadCast",
+        "공유 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/java/thread/synchronized-list.md",
+      "tags": [
+        "java",
+        "thread"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shared structure every connection thread is handed at construction, made thread safe by the synchronizing wrapper, which is what lets a server broadcast one client's message to all the others",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.collections-class",
+        "java.net.web-server-thread",
+        "cs.os.thread",
+        "java.collection.list-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 채팅 프로그램 예제 > ### 구현 스케치",
+          "start_line": 400,
+          "end_line": 412
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

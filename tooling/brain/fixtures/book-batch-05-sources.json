@@ -1,0 +1,3778 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-05",
+  "lane": "book",
+  "phase": 5,
+  "mode": "inventory-manifest",
+  "candidates_authored": false,
+  "status": "ready_for_candidate_authoring",
+  "review_gate": "U3",
+  "produced_by": "phase5-book-batch-05-inventory lane (read/analyze + manifest only; no candidates, no U3, no signature, no apply)",
+  "produced_at_note": "No wall-clock timestamp: every field is derived from repository bytes so the whole document is reproducible from the working tree alone.",
+  "contract": {
+    "consumer": "Input to the batch-05 candidate authoring lane. NOT executable as a `propose --batch` manifest.",
+    "consumer_status": "NON-EXECUTABLE BY DESIGN. Carries no candidates[] array; `node tooling/brain/knowledge.mjs propose --batch` against this file fails closed with `batch manifest must contain a candidates array`.",
+    "engine_surface_verified": "tooling/brain/knowledge.mjs sha256 3e8b2c03ed2a8898a4d11bebaa8d52861fb6bb8918974b522dbbedcde69f0417 exposes propose (--pilot | --batch), sample, verify, apply, promote and rollback. Batch mode requires >= 1 candidate and a batch_id matching /^[a-z0-9]+(?:[._-][a-z0-9]+)*$/, which `book-batch-05` satisfies.",
+    "forbidden": "This manifest must not be signed, applied, promoted or committed. It authorizes nothing; candidate authoring, U3 generation, signature and apply are separate gates."
+  },
+  "series_note": {
+    "statement": "Batch 05 is the SECOND Kafka batch and the FIRST Book batch to extract from a source whose domain is already densely occupied by the approved index. Batch 04 applied 34 Kafka/messaging concepts (48 live locators on kafka/chap01.md); 13 of them are touched by this source in genuine same-domain prose.",
+    "consequence": "The batch-04 finding that Kafka collisions are 'word reuse, not concept overlap' DOES NOT CARRY OVER and must not be copied. Batch 05 has real concept overlap: three applied concepts (kafka.topic.partition, kafka.retention.retention, kafka.property.fault-tolerance) are update candidates, and the dominant authoring hazard is restating an applied concept rather than colliding with an unrelated one."
+  },
+  "predecessor_state": {
+    "note": "All four predecessor Book batches are applied and independently verified, so the approved index batch 05 must be authored against is fixed and knowable today.",
+    "book_batch_01": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-01-u3-v2",
+      "status": "applied",
+      "applied_count": 17
+    },
+    "book_batch_02": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-02-u3-v2",
+      "status": "applied",
+      "applied_count": 34
+    },
+    "book_batch_03": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-03-u3",
+      "status": "applied",
+      "applied_count": 28
+    },
+    "book_batch_04": {
+      "run": ".omx/artifacts/brain-restructure/book-batch-04-u3",
+      "status": "applied",
+      "applied_count": 34,
+      "post_apply_knowledge_tree_sha256": "970d2898bcb31845d8f7ca1a3629acb0dc69202251ab928a73d9e228a712112c",
+      "note": "Independently closed after the alias-search repair recorded in .omx/reviews/brain-phase5-book-batch-04-search-repair.md (77/77 aliases resolve at rank 0; 0 public alias redirect routes)."
+    }
+  },
+  "hash_lock": {
+    "algorithm": "sha256",
+    "encoding": "lowercase hex over complete raw-layer file bytes",
+    "batch_baseline_sha256": "7080058048a0b97c41c403cbc1f77907847c16e2292343808e5837189042fdc5",
+    "batch_baseline_recipe": "sha256 of the UTF-8 concatenation of `<role>\\t<path>\\t<source_sha256>\\n` for every entry in order_index order",
+    "batch_baseline_reproduce": "{ for f in content/brain/books/kafka/chap02.md; do printf 'extraction\\t%s\\t%s\\n' \"$f\" \"$(shasum -a 256 \"$f\" | cut -d' ' -f1)\"; done; } | shasum -a 256",
+    "book_corpus_sha256": "c39bbdf5c72911e23fe08364762ffdc143dc4ce1c2edda8e47896b5f68183c88",
+    "book_corpus_recipe": "sha256 of the UTF-8 concatenation of `<path>\\t<source_sha256>\\n` for all 27 content/brain/books Markdown files in LC_ALL=C path order",
+    "tree_manifest_recipe": "The `*_tree_sha256_at_inventory` values below use a DIFFERENT recipe from book_corpus_sha256: sha256 over `JSON.stringify(rows, null, 2) + \"\\n\"` where rows = [{path, sha256}] for every file under the tree. Row order is Array.prototype.sort with String.prototype.localeCompare, NOT byte order. Byte order reproduces the knowledge and books digests (their paths are ASCII) but NOT the content/brain digest, whose Korean paths sort differently. This recipe was undocumented before batch 05 and is recorded here so the baselines are re-derivable.",
+    "approved_knowledge_tree_sha256_at_inventory": "970d2898bcb31845d8f7ca1a3629acb0dc69202251ab928a73d9e228a712112c",
+    "approved_knowledge_file_count_at_inventory": 120,
+    "brain_tree_sha256_at_inventory": "f4b074786cc0f64385cf048f856de5c635b027db497dd89e70523dba85f298fa",
+    "brain_tree_file_count_at_inventory": 2205,
+    "books_tree_sha256_at_inventory": "e6a230767324e5efaa11f20fff750126ee86b5052f2165540e79fc77b147dcb2",
+    "books_tree_file_count_at_inventory": 27,
+    "engine_sha256": "3e8b2c03ed2a8898a4d11bebaa8d52861fb6bb8918974b522dbbedcde69f0417",
+    "knowledge_index_sha256": "510cb931d5c5e4b2dd0e0a750bc234e174466345565bf37f25902bbe39b07d92",
+    "lib_sha256": "5c338eec4b40d9bf3688a2fe730f0a18f28f935c5cf4ccf63489570d14ef9cf0",
+    "git_head_at_inventory": "d92e3faa9deeb7a1b9406c6e36fbe8eac4a03443",
+    "staged_paths_at_inventory": 0,
+    "batch_baseline_role": "deterministic source baseline and sample-seed INPUT. It is NOT the AC-15 `sample.json` seed, which computeBatchSample() derives from { batch_id, approved_knowledge_tree_sha256, batch_manifest_sha256, proposal_manifest_sha256 }.",
+    "drift_policy": "fail-closed. Re-verify every source_sha256 and approved_knowledge_tree_sha256_at_inventory immediately before propose and again before apply; a mismatch aborts. `apply` independently refuses with `approved knowledge content changed after proposal generation` if the knowledge tree moved."
+  },
+  "source_drift": {
+    "statement": "ZERO. The book corpus digest is byte-identical to the batch-01, batch-02, batch-03 and batch-04 locks, and all 27 files match the batch-04 lock on source_sha256 — 27/27, across four intervening applies.",
+    "per_file_drift_vs_batch_04_lock": 0,
+    "corpus_files": 27
+  },
+  "parser_calibration": {
+    "statement": "The scope parser used here was validated by regenerating ALL FOUR prior extraction surfaces from source bytes before measuring batch 05. Comparison coverage differs BY FIELD and is recorded per field group below: the seven common scope fields are compared against all 174 archived scopes, the three source-level fields against all 10 archived source files, and `engine_substantive` against only the 72 scopes whose archived surface actually records it.",
+    "common_scope_fields": {
+      "fields": [
+        "heading_chain",
+        "level",
+        "start_line",
+        "end_line",
+        "span_sha256",
+        "prose_lines",
+        "code_lines"
+      ],
+      "unit": "archived scopes",
+      "results": {
+        "book-batch-01": "37/37",
+        "book-batch-02": "65/65",
+        "book-batch-03": "44/44",
+        "book-batch-04": "28/28",
+        "total": "174/174"
+      },
+      "field_availability": {
+        "book-batch-01": "present on all 37 archived scopes",
+        "book-batch-02": "present on all 65 archived scopes",
+        "book-batch-03": "present on all 44 archived scopes",
+        "book-batch-04": "present on all 28 archived scopes"
+      }
+    },
+    "source_level_fields": {
+      "fields": [
+        "source_sha256",
+        "bytes",
+        "line_count"
+      ],
+      "unit": "archived source files, NOT scopes",
+      "results": {
+        "book-batch-01": "2/2",
+        "book-batch-02": "3/3",
+        "book-batch-03": "4/4",
+        "book-batch-04": "1/1",
+        "total": "10/10"
+      }
+    },
+    "engine_substantive_field": {
+      "fields": [
+        "engine_substantive"
+      ],
+      "unit": "archived scopes recording the field",
+      "field_availability": {
+        "book-batch-01": "field absent from archived surface",
+        "book-batch-02": "field absent from archived surface",
+        "book-batch-03": "present on all 44 archived scopes",
+        "book-batch-04": "present on all 28 archived scopes"
+      },
+      "results": {
+        "book-batch-03": "44/44",
+        "book-batch-04": "28/28",
+        "total": "72/72"
+      },
+      "scopes_without_archived_field": 102,
+      "comparison_scope": "Batches 03-04 only. The 102 batch-01/02 scopes are NOT counted as verified for this field: `engine_substantive` can be freshly computed for them from source bytes, but that is a fresh computation, not a comparison against an archived surface.",
+      "surface_evidence": {
+        "book-batch-01": ".omx/artifacts/brain-restructure/book-batch-01/extraction-surface.json",
+        "book-batch-02": ".omx/artifacts/brain-restructure/book-batch-02/extraction-surface.json",
+        "book-batch-03": ".omx/artifacts/brain-restructure/book-batch-03/extraction-surface.json",
+        "book-batch-04": ".omx/artifacts/brain-restructure/book-batch-04/extraction-surface.json"
+      }
+    },
+    "conclusion": "Batch-05 numbers are directly comparable with batches 01-04 on the seven common scope fields (174/174) and on the three source-level fields (10/10). For `engine_substantive` the archived comparison basis is batches 03-04 only (72/72); batches 01-02 carry no archived value for that field.",
+    "repair_note": "Superseded the earlier flat `results` 174/174 + `fields_compared` list, which counted `engine_substantive` as verified across all 174 archived scopes. That overstated the archived evidence: batches 01-02 do not record the field. Repair R2 of .omx/reviews/brain-phase5-book-batch-05-inventory-repair.md; no source, scope, anchor, budget, collision, touch-point, namespace or coverage datum was altered."
+  },
+  "line_count_definition": "physical lines. A terminal newline terminates the last line and does not begin another; line_count is NOT `split(\"\\n\").length`.",
+  "span_hash_recipe": "sha256 over the UTF-8 text of lines [start_line, end_line] inclusive, joined with \\n, heading line included, no trailing newline",
+  "prose_line_definition": "a line inside the scope, after the heading line, that is not blank, not inside a fenced code block, not a fence delimiter, and not a bare <br>/<hr>/image line",
+  "code_line_definition": "a line inside the scope, after the heading line, that is inside a fenced code block, counting the opening and closing fence delimiter lines themselves",
+  "scope_definition": "an ATX heading line plus every line up to (but excluding) the next ATX heading of any level, or the last line of the file. Headings inside fenced code blocks are NOT scope starts. Content before the first heading belongs to no scope.",
+  "engine_substantive_definition": "true when the engine's own substantiveBodyText() from tooling/brain/knowledge.mjs returns true for the scope's body lines with frontmatter removed - exactly the gate validatedEvidenceSpan() applies before accepting a locator. Authoritative for rejection-probe selection; prose_lines/code_lines are descriptive.",
+  "evidence_class_definition": "EXCLUSIVE classes: prose-bearing (prose_lines > 3), low-evidence-prose (0 < prose_lines <= 3), code-only (prose_lines = 0 AND code_lines > 0), zero-evidence (prose_lines = 0 AND code_lines = 0). Every scope has exactly one; the four counts partition the scope total.",
+  "positive_prose_definition": "INCLUSIVE tally of scopes with prose_lines > 0 = prose-bearing + low-evidence-prose. It OVERLAPS the low-evidence class, is not an evidence_class, and is never part of the partition.",
+  "ordering": {
+    "rule": "repo-relative POSIX path, ascending byte-wise (LC_ALL=C) UTF-8 comparison",
+    "grouping": "extraction sources first, then rejection probes; each group independently byte-sorted. Batch 05 has no file-level probes.",
+    "order_index_is_authoritative": true,
+    "reproduce": "find content/brain/books -type f -name '*.md' | LC_ALL=C sort"
+  },
+  "extraction_sources": [
+    {
+      "order_index": 0,
+      "role": "extraction",
+      "path": "content/brain/books/kafka/chap02.md",
+      "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+      "bytes": 29652,
+      "line_count": 564,
+      "frontmatter_bytes": 126,
+      "body_bytes_after_frontmatter": 29526,
+      "heading_scope_count": 17,
+      "positive_prose_scope_count": 15,
+      "prose_bearing_exclusive_scope_count": 13,
+      "low_evidence_scope_count": 2,
+      "code_only_scope_count": 0,
+      "zero_evidence_scope_count": 2,
+      "engine_substantive_scope_count": 15,
+      "engine_non_substantive_scope_count": 2,
+      "prose_lines_total": 330,
+      "code_lines_total": 51,
+      "extraction_surface_ref": "inlined in this fixture under `heading_scopes` and `evidence_anchors`; batch 05 produces no separate extraction-surface.json"
+    }
+  ],
+  "scope_class_accounting": {
+    "rule": "every heading scope belongs to exactly one evidence_class; the four exclusive class counts sum to the scope total",
+    "prose-bearing": 13,
+    "low-evidence-prose": 2,
+    "code-only": 0,
+    "zero-evidence": 2,
+    "sum": 17,
+    "equation": "13 + 2 + 0 + 2 = 17",
+    "positive_prose_is_not_a_class": "positive_prose = 15 is the INCLUSIVE count of scopes with prose_lines > 0, i.e. prose-bearing (13) + low-evidence-prose (2). It is a forecasting base, not an evidence_class, and must never be added to the partition."
+  },
+  "heading_derived_scope_accounting": {
+    "rule": "Every line in the file matching /^#{1,6}\\s+/ is either a REAL heading (scope start) or a FENCED-SHELL PSEUDO-HEADING (a shell comment inside a ``` block, never a scope start). The two counts must sum to the total.",
+    "lines_matching_atx_regex_anywhere": 28,
+    "real_heading_scopes": 17,
+    "fenced_shell_pseudo_headings": 11,
+    "equation": "17 real + 11 fenced-shell pseudo = 28 lines matching the ATX regex",
+    "why_this_matters": "A naive `grep -c '^#'` parser reports 28 scopes for this file, not 17 - a 65% overcount. Every pseudo-heading below is a Korean shell comment inside a ```shell fence; treating one as a scope start would mint a concept from a code comment and invent a span that the engine's substantiveBodyText() gate would then reject at propose time.",
+    "fenced_shell_pseudo_heading_lines": [
+      {
+        "line": 54,
+        "text": "# 공통 설정 파일",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 100,
+        "text": "# 주키퍼 서버 시작",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 103,
+        "text": "# 카프카 서버 시작",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 106,
+        "text": "# 주키퍼 작동 테스트",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 109,
+        "text": "# 텔넷 접속 이후 ",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 120,
+        "text": "# 브로커에 토픽-파티션 생성",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 123,
+        "text": "# 생성된 토픽 내용 확인",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 132,
+        "text": "# 프로듀서 메세지 발행",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 135,
+        "text": "# 콘솔창 진입",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 146,
+        "text": "# 컨슈머 메세지 소비",
+        "inside_fence": true,
+        "is_scope_start": false
+      },
+      {
+        "line": 149,
+        "text": "# 콘솔창에 표시되는 내용",
+        "inside_fence": true,
+        "is_scope_start": false
+      }
+    ],
+    "fenced_blocks": [
+      {
+        "start_line": 53,
+        "end_line": 64,
+        "language": "shell",
+        "parent_scope": "## 주키퍼 > ### 주키퍼 설정 파일"
+      },
+      {
+        "start_line": 99,
+        "end_line": 111,
+        "language": "shell",
+        "parent_scope": "## 카프카 설치 > ### macOS 설치"
+      },
+      {
+        "start_line": 119,
+        "end_line": 125,
+        "language": "shell",
+        "parent_scope": "## 카프카 설치 > ### 토픽 생성 및 확인"
+      },
+      {
+        "start_line": 131,
+        "end_line": 139,
+        "language": "shell",
+        "parent_scope": "## 카프카 설치 > ### 토픽 생성 및 확인"
+      },
+      {
+        "start_line": 145,
+        "end_line": 154,
+        "language": "shell",
+        "parent_scope": "## 카프카 설치 > ### 토픽 생성 및 확인"
+      }
+    ]
+  },
+  "pre_heading_preamble": {
+    "rule": "Content before the first ATX heading belongs to NO scope and is therefore invisible to the scope table, the class partition and the prose-line total.",
+    "start_line": 7,
+    "end_line": 16,
+    "prose_lines": 6,
+    "code_lines": 0,
+    "span_sha256": "99ede8ba46710df3dd7cb79d24cf9b4fa5b90a274fd19c3df79e92af0b779359",
+    "engine_substantive": true,
+    "evidence_class": "citable",
+    "content_summary": "L8 states the chapter's purpose and that ZooKeeper stores broker metadata. L10-L13 assert that ZooKeeper support is being dropped in recent Apache Kafka versions and replaced by KRaft (Kafka Raft Metadata Model), with an external reference at L12.",
+    "accounting_consequence": "prose_lines_total = 330 counts SCOPE prose only. Whole-file prose = 330 in scopes + 6 in the preamble = 336. Do not conflate the two.",
+    "authoring_note": "This preamble is citable evidence and carries the only KRaft claim in the chapter. A candidate citing it must use the literal span L7-L16; it belongs to no heading scope, so no heading_chain exists for it."
+  },
+  "heading_scopes": [
+    {
+      "heading_chain": "## 주키퍼",
+      "level": 2,
+      "start_line": 17,
+      "end_line": 24,
+      "span_sha256": "93450a20260b559edbff006c40871493145df426c01b94a79dfa7ee4bbd22ffa",
+      "prose_lines": 3,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "low-evidence-prose"
+    },
+    {
+      "heading_chain": "## 주키퍼 > ### 주키퍼 앙상블",
+      "level": 3,
+      "start_line": 25,
+      "end_line": 33,
+      "span_sha256": "3747946f6df6e2e465c426b35bcb40666da59854ceaffc854288e7d24a8d1075",
+      "prose_lines": 4,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 주키퍼 > ### 주키퍼 앙상블 크기 결정",
+      "level": 3,
+      "start_line": 34,
+      "end_line": 45,
+      "span_sha256": "cf1ab0470d1339f3e4889ffe9da18ee47b1af31d9d5ed20175457e7ffc9ef408",
+      "prose_lines": 7,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 주키퍼 > ### 주키퍼 설정 파일",
+      "level": 3,
+      "start_line": 46,
+      "end_line": 90,
+      "span_sha256": "22269817d0200d3055a5d500b78964f1b616504e2f5db1b58dc299639321023f",
+      "prose_lines": 23,
+      "code_lines": 12,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 카프카 설치",
+      "level": 2,
+      "start_line": 91,
+      "end_line": 94,
+      "span_sha256": "a9e0d0f311f44fd74c78843164eb6ff97fc8dee7d709b33d14c026a23427417e",
+      "prose_lines": 0,
+      "code_lines": 0,
+      "engine_substantive": false,
+      "evidence_class": "zero-evidence"
+    },
+    {
+      "heading_chain": "## 카프카 설치 > ### macOS 설치",
+      "level": 3,
+      "start_line": 95,
+      "end_line": 114,
+      "span_sha256": "3084bed29042fd492c78d13a933b450d289dc9aa827be392f12006f1f132c40e",
+      "prose_lines": 1,
+      "code_lines": 13,
+      "engine_substantive": true,
+      "evidence_class": "low-evidence-prose"
+    },
+    {
+      "heading_chain": "## 카프카 설치 > ### 토픽 생성 및 확인",
+      "level": 3,
+      "start_line": 115,
+      "end_line": 165,
+      "span_sha256": "ad2d813125834b05770be65d7d4ee433e616472e97bcc79dc9906dcee17f233e",
+      "prose_lines": 8,
+      "code_lines": 26,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 브로커 설정",
+      "level": 2,
+      "start_line": 166,
+      "end_line": 175,
+      "span_sha256": "a3ceacb9f853859bb2f0025fc71a0cc91e4c49e364e566d32d5622b8922e85ba",
+      "prose_lines": 4,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+      "level": 3,
+      "start_line": 176,
+      "end_line": 279,
+      "span_sha256": "f90e180a16ec0eaed07abec71b4ee4f6c3cf8dc8ecefd9b154b531aff2a010d2",
+      "prose_lines": 75,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 브로커 설정 > ### 파티션 수 결정",
+      "level": 3,
+      "start_line": 280,
+      "end_line": 326,
+      "span_sha256": "d70b3d532247b374a9696f65f9aa052573962d7632ba564c115b154c68b515d9",
+      "prose_lines": 34,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 브로커 설정 > ### 토픽별 기본값",
+      "level": 3,
+      "start_line": 327,
+      "end_line": 481,
+      "span_sha256": "2f2c6c39104f607db4cd8f74ad0a1b0305ecddc29166bfe9997359bfd2ed0f60",
+      "prose_lines": 119,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 하드웨어 선택",
+      "level": 2,
+      "start_line": 482,
+      "end_line": 490,
+      "span_sha256": "73f69eff7dd4289ff502b82ee843eb5262d6a16b9614ca685dff1b3337bc06a2",
+      "prose_lines": 4,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 하드웨어 선택 > ### 디스크 처리량",
+      "level": 3,
+      "start_line": 491,
+      "end_line": 511,
+      "span_sha256": "5d6ebbc8e716c2f5d5707643f503348a39c1e822874982305983c521e4d09825",
+      "prose_lines": 14,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 하드웨어 선택 > ### 디스크 용량",
+      "level": 3,
+      "start_line": 512,
+      "end_line": 525,
+      "span_sha256": "6d0b149bc971f6d23c989c36d8cc60b5ca802b108577ca15f469bb1440b2bd18",
+      "prose_lines": 9,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 하드웨어 선택 > ### 메모리",
+      "level": 3,
+      "start_line": 526,
+      "end_line": 543,
+      "span_sha256": "2b3d9749c8c952d9414e982d162c8c014db43d4a58661971d78067c82120fce8",
+      "prose_lines": 13,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 하드웨어 선택 > ### 네트워크",
+      "level": 3,
+      "start_line": 544,
+      "end_line": 562,
+      "span_sha256": "65390f068be11f35fccfcafaf3c7f24e9bf67bb4a042109c52e00e9ff2ba7cad",
+      "prose_lines": 12,
+      "code_lines": 0,
+      "engine_substantive": true,
+      "evidence_class": "prose-bearing"
+    },
+    {
+      "heading_chain": "## 하드웨어 선택 > ### CPU",
+      "level": 3,
+      "start_line": 563,
+      "end_line": 564,
+      "span_sha256": "7e48f1d33390c7ecd29aef30166fba5f4000ff78024feb0050cbaa4c27c6fdf9",
+      "prose_lines": 0,
+      "code_lines": 0,
+      "engine_substantive": false,
+      "evidence_class": "zero-evidence"
+    }
+  ],
+  "scope_tiling": {
+    "contiguous": true,
+    "non_overlapping": true,
+    "first_scope_start_line": 17,
+    "last_scope_end_line": 564,
+    "file_line_count": 564,
+    "last_scope_ends_at_eof": true
+  },
+  "evidence_anchors": {
+    "purpose": "Heading scopes alone are the wrong granularity for this source: three scopes carry 75, 119 and 34 prose lines and each enumerates many independent parameters. This table refines every scope into the sub-scope units a candidate can actually cite, so a granularity claim can be checked against a span that really supports it.",
+    "anchor_kinds": {
+      "heading": "a real ATX heading line (identical to a heading scope start)",
+      "enumerated-parameter": "a line of the form `**(N)** \\`param.name\\`` introducing one configuration parameter",
+      "bold-lead": "a standalone `**bold**` line acting as a section lead inside a heading scope"
+    },
+    "tiling_rule": "anchors tile the body from the first heading to EOF with no gaps and no overlap; anchor prose_lines therefore sum exactly to the scope prose_lines total",
+    "anchor_evidence_class_definition": "citable (prose_lines > 3), low-evidence (0 < prose_lines <= 3), code-only (prose_lines = 0 AND code_lines > 0), zero-evidence (prose_lines = 0 AND code_lines = 0). SAME thresholds as the scope classes, applied at anchor granularity. These counts are NOT the scope counts and must never be reported as such.",
+    "counts": {
+      "total_anchors": 48,
+      "by_kind": {
+        "heading": 17,
+        "enumerated-parameter": 16,
+        "bold-lead": 15
+      },
+      "by_evidence_class": {
+        "citable": 34,
+        "low-evidence": 6,
+        "code-only": 0,
+        "zero-evidence": 8
+      },
+      "equation": "34 + 6 + 0 + 8 = 48",
+      "prose_lines_sum": 330,
+      "prose_lines_sum_equals_scope_total": true
+    },
+    "distinction_warning": "The 8 zero-evidence ANCHORS are NOT the 2 zero-evidence SCOPES. Most zero-evidence anchors are container headings (e.g. '### 주키퍼 설정 파일' L46-L47) whose body lives entirely inside the following bold-lead anchor; the parent SCOPE is prose-bearing. Only 2 heading scopes are zero-evidence, and only those 2 are rejection probes.",
+    "anchors": [
+      {
+        "kind": "heading",
+        "label": "## 주키퍼",
+        "start_line": 17,
+        "end_line": 24,
+        "prose_lines": 3,
+        "code_lines": 0,
+        "evidence_class": "low-evidence",
+        "engine_substantive": true,
+        "span_sha256": "93450a20260b559edbff006c40871493145df426c01b94a79dfa7ee4bbd22ffa",
+        "parent_scope": "## 주키퍼 (L17-24)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 주키퍼 앙상블",
+        "start_line": 25,
+        "end_line": 33,
+        "prose_lines": 4,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "3747946f6df6e2e465c426b35bcb40666da59854ceaffc854288e7d24a8d1075",
+        "parent_scope": "## 주키퍼 > ### 주키퍼 앙상블 (L25-33)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 주키퍼 앙상블 크기 결정",
+        "start_line": 34,
+        "end_line": 45,
+        "prose_lines": 7,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "cf1ab0470d1339f3e4889ffe9da18ee47b1af31d9d5ed20175457e7ffc9ef408",
+        "parent_scope": "## 주키퍼 > ### 주키퍼 앙상블 크기 결정 (L34-45)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 주키퍼 설정 파일",
+        "start_line": 46,
+        "end_line": 47,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "f6e758a9864200207e8197f8709f01b2a223c24be5281070ffc01a351bdc0473",
+        "parent_scope": "## 주키퍼 > ### 주키퍼 설정 파일 (L46-90)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**주키퍼 서버 앙상블 구성 시 필요한 요소**",
+        "start_line": 48,
+        "end_line": 90,
+        "prose_lines": 23,
+        "code_lines": 12,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "f6c5549efa08a3c381bb7eef3b5edab561b647fd7e065febea0fc9df42d3f574",
+        "parent_scope": "## 주키퍼 > ### 주키퍼 설정 파일 (L46-90)"
+      },
+      {
+        "kind": "heading",
+        "label": "## 카프카 설치",
+        "start_line": 91,
+        "end_line": 94,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "a9e0d0f311f44fd74c78843164eb6ff97fc8dee7d709b33d14c026a23427417e",
+        "parent_scope": "## 카프카 설치 (L91-94)"
+      },
+      {
+        "kind": "heading",
+        "label": "### macOS 설치",
+        "start_line": 95,
+        "end_line": 114,
+        "prose_lines": 1,
+        "code_lines": 13,
+        "evidence_class": "low-evidence",
+        "engine_substantive": true,
+        "span_sha256": "3084bed29042fd492c78d13a933b450d289dc9aa827be392f12006f1f132c40e",
+        "parent_scope": "## 카프카 설치 > ### macOS 설치 (L95-114)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 토픽 생성 및 확인",
+        "start_line": 115,
+        "end_line": 116,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "a32446941656ba21eba8a28d3793e8f05101efa29c0e0526057341349b190a64",
+        "parent_scope": "## 카프카 설치 > ### 토픽 생성 및 확인 (L115-165)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**토픽 생성 및 확인**",
+        "start_line": 117,
+        "end_line": 128,
+        "prose_lines": 1,
+        "code_lines": 7,
+        "evidence_class": "low-evidence",
+        "engine_substantive": true,
+        "span_sha256": "89bfe15ce81ddce0fd4ff5baa2da1d4426cae14bfa723406aa150f598a596f19",
+        "parent_scope": "## 카프카 설치 > ### 토픽 생성 및 확인 (L115-165)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**토픽에 메세지 작성**",
+        "start_line": 129,
+        "end_line": 142,
+        "prose_lines": 1,
+        "code_lines": 9,
+        "evidence_class": "low-evidence",
+        "engine_substantive": true,
+        "span_sha256": "b596313fb39409bb099abc1bbe403eceee0e7592e3aeac8c8eb5f517cccd5ec7",
+        "parent_scope": "## 카프카 설치 > ### 토픽 생성 및 확인 (L115-165)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**토픽에 저장된 메세지 읽기**",
+        "start_line": 143,
+        "end_line": 165,
+        "prose_lines": 6,
+        "code_lines": 10,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "2d3a9e04e6f1f6f2c18fbc8f990ba4d664f128e7a79bb6efb1bbe1756ec703e9",
+        "parent_scope": "## 카프카 설치 > ### 토픽 생성 및 확인 (L115-165)"
+      },
+      {
+        "kind": "heading",
+        "label": "## 브로커 설정",
+        "start_line": 166,
+        "end_line": 175,
+        "prose_lines": 4,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "a3ceacb9f853859bb2f0025fc71a0cc91e4c49e364e566d32d5622b8922e85ba",
+        "parent_scope": "## 브로커 설정 (L166-175)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 핵심 브로커 매개변수",
+        "start_line": 176,
+        "end_line": 184,
+        "prose_lines": 4,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "8ce8880b6d0639684459324cd770316906792ea3250f38d5ff7e1862a926817f",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(1)** `broker.id`",
+        "start_line": 185,
+        "end_line": 193,
+        "prose_lines": 6,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "a4f6aa4899647e9fd4ace06889e2d090542e20873b780b7bec2f6ec118c0a7d6",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(2)** `listeners`",
+        "start_line": 194,
+        "end_line": 207,
+        "prose_lines": 11,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "eac1b648bf6ece63a3f5ca638cd04a720e82cd344c28bdf7a030c3042d9e27e9",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(3)** `zookeeper.connect`",
+        "start_line": 208,
+        "end_line": 224,
+        "prose_lines": 13,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "7e429360ee3f96f9485fda10257bc9be7c23713fd0c35c6e117b2b46fe3402b4",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(4)** `log.dirs`",
+        "start_line": 225,
+        "end_line": 236,
+        "prose_lines": 9,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "6a0c02d9a9238a469c0d3690c2f14cddf477c5ce5ed9b4396f0565db6bb5b0e4",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(5)** `num.recovery.threads.per.data.dir`",
+        "start_line": 237,
+        "end_line": 251,
+        "prose_lines": 12,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "8d033fbc45b0a2badb06aa10eddc49ac67d0da86043bda552d07be818d19f6e9",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(6)** `auto.create.topics.enable`",
+        "start_line": 252,
+        "end_line": 262,
+        "prose_lines": 8,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "a0b04e8555a3ed2385e23c607a80dab411f17bb4905bb25f8c69c9cae7df3ad2",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(7)** `auto.leader.rebalance.enable`",
+        "start_line": 263,
+        "end_line": 272,
+        "prose_lines": 7,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "da054d3b3f4f8ec9926ce6d97f839c2a745f85d6ccbcf228831945cac89681ca",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(8)** `delete.topic.enable`",
+        "start_line": 273,
+        "end_line": 279,
+        "prose_lines": 5,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "c7b42c8642145ceec38e0272ff04cd31d543ffe8cbef5336bcf5e3bc9e0623b6",
+        "parent_scope": "## 브로커 설정 > ### 핵심 브로커 매개변수 (L176-279)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 파티션 수 결정",
+        "start_line": 280,
+        "end_line": 281,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "b282850b312f66410b3e44af1b83d8e234a2bc351d591e9febb1ecce32e62ade",
+        "parent_scope": "## 브로커 설정 > ### 파티션 수 결정 (L280-326)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**파티션은 카프카 클러스터 내부에서 토픽의 크기가 확장되는 방법**",
+        "start_line": 282,
+        "end_line": 290,
+        "prose_lines": 6,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "95de0c20488f283dbf0f559ed4ef9aa949c4efaaad0e19059461b0ed64c716e5",
+        "parent_scope": "## 브로커 설정 > ### 파티션 수 결정 (L280-326)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**파티션 수는 어떻게 결정? 여러가지 사항을 고려하자**",
+        "start_line": 291,
+        "end_line": 300,
+        "prose_lines": 7,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "e1fa70ac8967a686cda1f59dd47df9aa5cad408a18d86b81343522f4e6a40c7d",
+        "parent_scope": "## 브로커 설정 > ### 파티션 수 결정 (L280-326)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**키값을 기준으로 선택된 파티션에 메세지를 전송하는 경우, 추후 파티션 추가 시 복잡**",
+        "start_line": 301,
+        "end_line": 314,
+        "prose_lines": 11,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "d40b3608ab7321eb0533a795b4b4bf081af74089b38abc499c06a9a59a58c575",
+        "parent_scope": "## 브로커 설정 > ### 파티션 수 결정 (L280-326)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**결론 : 파티션은 많아야 하지만, 너무 많으면 안된다**",
+        "start_line": 315,
+        "end_line": 326,
+        "prose_lines": 10,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "92e70c6778a05e84726c6f74b023ea69d83902b39cd3bf97d544207e8c09d3d8",
+        "parent_scope": "## 브로커 설정 > ### 파티션 수 결정 (L280-326)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 토픽별 기본값",
+        "start_line": 327,
+        "end_line": 333,
+        "prose_lines": 2,
+        "code_lines": 0,
+        "evidence_class": "low-evidence",
+        "engine_substantive": true,
+        "span_sha256": "41de136bbaff76fa4cf120837e71383e51c6f65e764e22b72fccad0bf98924ce",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(1)** `num.partitions`",
+        "start_line": 334,
+        "end_line": 343,
+        "prose_lines": 7,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "b0ead549130eea05db5830e8bb42bffd74ffce181a03655dbb9fef414926590d",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(2)** `default.replication.factor`",
+        "start_line": 344,
+        "end_line": 356,
+        "prose_lines": 10,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "504e761d50f26fcec8a8407dd8625532a9d977e20a68140e3aa783cf4fcdd678",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(3)** `log.retention.ms`",
+        "start_line": 357,
+        "end_line": 375,
+        "prose_lines": 15,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "1221a2be3d3d72b7086fa89e79ce65ad172b74cb8a0111765a8d2963d5bd73f3",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(4)** `log.retention.bytes`",
+        "start_line": 376,
+        "end_line": 391,
+        "prose_lines": 12,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "d9217b919b488421d8ba0738cdf122386dce0231385f663ccc452266ac9cd3f5",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(5)** `log.segment.bytes`",
+        "start_line": 392,
+        "end_line": 426,
+        "prose_lines": 28,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "899dc7255e2bde0d238a3bdb029a1388a3c1356d6edf93f97ab2ad8ef01323dc",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(6)** `log.roll.ms`",
+        "start_line": 427,
+        "end_line": 440,
+        "prose_lines": 10,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "e6a6d45e3ce8552cb77400765c14589bdb561915b1f9df264c6c7eed73d6cfb9",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(7)** `min.insync.replicas`",
+        "start_line": 441,
+        "end_line": 460,
+        "prose_lines": 17,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "8b6db7bb063ec21e65b0ddc432a3fab377d766bb25f85a81ae14b885026e69b0",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "enumerated-parameter",
+        "label": "**(8)** `message.max.bytes`",
+        "start_line": 461,
+        "end_line": 481,
+        "prose_lines": 18,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "02ca033457cf669fd43e605d429f395b49d4ad75cfd764b6aa81022b20566a21",
+        "parent_scope": "## 브로커 설정 > ### 토픽별 기본값 (L327-481)"
+      },
+      {
+        "kind": "heading",
+        "label": "## 하드웨어 선택",
+        "start_line": 482,
+        "end_line": 490,
+        "prose_lines": 4,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "73f69eff7dd4289ff502b82ee843eb5262d6a16b9614ca685dff1b3337bc06a2",
+        "parent_scope": "## 하드웨어 선택 (L482-490)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 디스크 처리량",
+        "start_line": 491,
+        "end_line": 492,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "a48fdfd52b3ad7c5fe3969449d36a8802bca50523406c75ebfeb9b5899e8f625",
+        "parent_scope": "## 하드웨어 선택 > ### 디스크 처리량 (L491-511)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**브로커 디스크의 처리량**",
+        "start_line": 493,
+        "end_line": 500,
+        "prose_lines": 5,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "1b2408b44498934e4580762af0c88165fb7f99b0f600411aa4275cbe4c9518bb",
+        "parent_scope": "## 하드웨어 선택 > ### 디스크 처리량 (L491-511)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**\b여러 저장장치 선택 가이드**",
+        "start_line": 501,
+        "end_line": 511,
+        "prose_lines": 9,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "54a7596f82c856b92eead309183206f1b856281f336f778d14b8b41326614fe6",
+        "parent_scope": "## 하드웨어 선택 > ### 디스크 처리량 (L491-511)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 디스크 용량",
+        "start_line": 512,
+        "end_line": 518,
+        "prose_lines": 4,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "53f654f177cb72323b88c636dda547f3f20edcbeba0ec52e6e4406d747261210",
+        "parent_scope": "## 하드웨어 선택 > ### 디스크 용량 (L512-525)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**디스크 저장 용량은 카프카 클러스터의 크기를 변경, 확장하는 시점에 고려할 중요한 요소**",
+        "start_line": 519,
+        "end_line": 525,
+        "prose_lines": 5,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "a2d5061fb7e13ecc7c872f9cc142d303b899d872afd6ed99f554186a2290330d",
+        "parent_scope": "## 하드웨어 선택 > ### 디스크 용량 (L512-525)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 메모리",
+        "start_line": 526,
+        "end_line": 527,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "8eef72142f9f757b3ba397998ddbbbc9317d1571c61adc1856f5fcce6eea625a",
+        "parent_scope": "## 하드웨어 선택 > ### 메모리 (L526-543)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**프로듀서가 막 추가한 메세지를 바로 뒤에서 쫓아오는 식으로 카프카 컨슈머가 파티션의 맨 끝에서 메세지를 읽는 것이 보통**",
+        "start_line": 528,
+        "end_line": 533,
+        "prose_lines": 5,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "5a2991d3b469b09d4949f15325f1eea4e186b567ee16c45154f6b9ed0e271beb",
+        "parent_scope": "## 하드웨어 선택 > ### 메모리 (L526-543)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**카프카 자체는 JVM에 많은 힙 메모리를 필요로 하지 않음**",
+        "start_line": 534,
+        "end_line": 543,
+        "prose_lines": 8,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "c0cda2a524946fb60319ff2eeca4e5a096cca11d59ae780cffffa09d461b4341",
+        "parent_scope": "## 하드웨어 선택 > ### 메모리 (L526-543)"
+      },
+      {
+        "kind": "heading",
+        "label": "### 네트워크",
+        "start_line": 544,
+        "end_line": 545,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "ead4876347c0c2ff29d1e3c622afedf5c5a058caaa7f3f63269f8a4270b5b02d",
+        "parent_scope": "## 하드웨어 선택 > ### 네트워크 (L544-562)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**사용 가능한 네트워크 대역폭 → 카프카가 처리할 수 있는 트래픽 최대량 결정**",
+        "start_line": 546,
+        "end_line": 550,
+        "prose_lines": 2,
+        "code_lines": 0,
+        "evidence_class": "low-evidence",
+        "engine_substantive": true,
+        "span_sha256": "fec7a82a6daf2d10568519f83c447ff905cf40048c661576470b68773f7af5cb",
+        "parent_scope": "## 하드웨어 선택 > ### 네트워크 (L544-562)"
+      },
+      {
+        "kind": "bold-lead",
+        "label": "**카프카 특유의 네트워크 불균형 문제**",
+        "start_line": 551,
+        "end_line": 562,
+        "prose_lines": 10,
+        "code_lines": 0,
+        "evidence_class": "citable",
+        "engine_substantive": true,
+        "span_sha256": "fea1bd19087c8c49abd4ed4241d19fedc0412384e7b4341b6b4e697181c4c8c7",
+        "parent_scope": "## 하드웨어 선택 > ### 네트워크 (L544-562)"
+      },
+      {
+        "kind": "heading",
+        "label": "### CPU",
+        "start_line": 563,
+        "end_line": 564,
+        "prose_lines": 0,
+        "code_lines": 0,
+        "evidence_class": "zero-evidence",
+        "engine_substantive": false,
+        "span_sha256": "7e48f1d33390c7ecd29aef30166fba5f4000ff78024feb0050cbaa4c27c6fdf9",
+        "parent_scope": "## 하드웨어 선택 > ### CPU (L563-564)"
+      }
+    ]
+  },
+  "citability_classification": {
+    "rule": "Reported at BOTH granularities because they disagree and both are actionable: scope granularity drives the rejection probes and the engine gate; anchor granularity drives the candidate forecast and the granularity-claim check.",
+    "scope_level": {
+      "citable_prose_bearing": [
+        {
+          "heading_chain": "## 주키퍼 > ### 주키퍼 앙상블",
+          "lines": "L25-L33",
+          "prose_lines": 4
+        },
+        {
+          "heading_chain": "## 주키퍼 > ### 주키퍼 앙상블 크기 결정",
+          "lines": "L34-L45",
+          "prose_lines": 7
+        },
+        {
+          "heading_chain": "## 주키퍼 > ### 주키퍼 설정 파일",
+          "lines": "L46-L90",
+          "prose_lines": 23
+        },
+        {
+          "heading_chain": "## 카프카 설치 > ### 토픽 생성 및 확인",
+          "lines": "L115-L165",
+          "prose_lines": 8
+        },
+        {
+          "heading_chain": "## 브로커 설정",
+          "lines": "L166-L175",
+          "prose_lines": 4
+        },
+        {
+          "heading_chain": "## 브로커 설정 > ### 핵심 브로커 매개변수",
+          "lines": "L176-L279",
+          "prose_lines": 75
+        },
+        {
+          "heading_chain": "## 브로커 설정 > ### 파티션 수 결정",
+          "lines": "L280-L326",
+          "prose_lines": 34
+        },
+        {
+          "heading_chain": "## 브로커 설정 > ### 토픽별 기본값",
+          "lines": "L327-L481",
+          "prose_lines": 119
+        },
+        {
+          "heading_chain": "## 하드웨어 선택",
+          "lines": "L482-L490",
+          "prose_lines": 4
+        },
+        {
+          "heading_chain": "## 하드웨어 선택 > ### 디스크 처리량",
+          "lines": "L491-L511",
+          "prose_lines": 14
+        },
+        {
+          "heading_chain": "## 하드웨어 선택 > ### 디스크 용량",
+          "lines": "L512-L525",
+          "prose_lines": 9
+        },
+        {
+          "heading_chain": "## 하드웨어 선택 > ### 메모리",
+          "lines": "L526-L543",
+          "prose_lines": 13
+        },
+        {
+          "heading_chain": "## 하드웨어 선택 > ### 네트워크",
+          "lines": "L544-L562",
+          "prose_lines": 12
+        }
+      ],
+      "low_evidence": [
+        {
+          "heading_chain": "## 주키퍼",
+          "lines": "L17-L24",
+          "prose_lines": 3
+        },
+        {
+          "heading_chain": "## 카프카 설치 > ### macOS 설치",
+          "lines": "L95-L114",
+          "prose_lines": 1
+        }
+      ],
+      "code_only": [],
+      "zero_evidence": [
+        {
+          "heading_chain": "## 카프카 설치",
+          "lines": "L91-L94",
+          "prose_lines": 0,
+          "code_lines": 0,
+          "engine_substantive": false
+        },
+        {
+          "heading_chain": "## 하드웨어 선택 > ### CPU",
+          "lines": "L563-L564",
+          "prose_lines": 0,
+          "code_lines": 0,
+          "engine_substantive": false
+        }
+      ]
+    },
+    "anchor_level": {
+      "citable": [
+        {
+          "label": "### 주키퍼 앙상블",
+          "lines": "L25-L33",
+          "prose_lines": 4
+        },
+        {
+          "label": "### 주키퍼 앙상블 크기 결정",
+          "lines": "L34-L45",
+          "prose_lines": 7
+        },
+        {
+          "label": "**주키퍼 서버 앙상블 구성 시 필요한 요소**",
+          "lines": "L48-L90",
+          "prose_lines": 23
+        },
+        {
+          "label": "**토픽에 저장된 메세지 읽기**",
+          "lines": "L143-L165",
+          "prose_lines": 6
+        },
+        {
+          "label": "## 브로커 설정",
+          "lines": "L166-L175",
+          "prose_lines": 4
+        },
+        {
+          "label": "### 핵심 브로커 매개변수",
+          "lines": "L176-L184",
+          "prose_lines": 4
+        },
+        {
+          "label": "**(1)** `broker.id`",
+          "lines": "L185-L193",
+          "prose_lines": 6
+        },
+        {
+          "label": "**(2)** `listeners`",
+          "lines": "L194-L207",
+          "prose_lines": 11
+        },
+        {
+          "label": "**(3)** `zookeeper.connect`",
+          "lines": "L208-L224",
+          "prose_lines": 13
+        },
+        {
+          "label": "**(4)** `log.dirs`",
+          "lines": "L225-L236",
+          "prose_lines": 9
+        },
+        {
+          "label": "**(5)** `num.recovery.threads.per.data.dir`",
+          "lines": "L237-L251",
+          "prose_lines": 12
+        },
+        {
+          "label": "**(6)** `auto.create.topics.enable`",
+          "lines": "L252-L262",
+          "prose_lines": 8
+        },
+        {
+          "label": "**(7)** `auto.leader.rebalance.enable`",
+          "lines": "L263-L272",
+          "prose_lines": 7
+        },
+        {
+          "label": "**(8)** `delete.topic.enable`",
+          "lines": "L273-L279",
+          "prose_lines": 5
+        },
+        {
+          "label": "**파티션은 카프카 클러스터 내부에서 토픽의 크기가 확장되는 방법**",
+          "lines": "L282-L290",
+          "prose_lines": 6
+        },
+        {
+          "label": "**파티션 수는 어떻게 결정? 여러가지 사항을 고려하자**",
+          "lines": "L291-L300",
+          "prose_lines": 7
+        },
+        {
+          "label": "**키값을 기준으로 선택된 파티션에 메세지를 전송하는 경우, 추후 파티션 추가 시 복잡**",
+          "lines": "L301-L314",
+          "prose_lines": 11
+        },
+        {
+          "label": "**결론 : 파티션은 많아야 하지만, 너무 많으면 안된다**",
+          "lines": "L315-L326",
+          "prose_lines": 10
+        },
+        {
+          "label": "**(1)** `num.partitions`",
+          "lines": "L334-L343",
+          "prose_lines": 7
+        },
+        {
+          "label": "**(2)** `default.replication.factor`",
+          "lines": "L344-L356",
+          "prose_lines": 10
+        },
+        {
+          "label": "**(3)** `log.retention.ms`",
+          "lines": "L357-L375",
+          "prose_lines": 15
+        },
+        {
+          "label": "**(4)** `log.retention.bytes`",
+          "lines": "L376-L391",
+          "prose_lines": 12
+        },
+        {
+          "label": "**(5)** `log.segment.bytes`",
+          "lines": "L392-L426",
+          "prose_lines": 28
+        },
+        {
+          "label": "**(6)** `log.roll.ms`",
+          "lines": "L427-L440",
+          "prose_lines": 10
+        },
+        {
+          "label": "**(7)** `min.insync.replicas`",
+          "lines": "L441-L460",
+          "prose_lines": 17
+        },
+        {
+          "label": "**(8)** `message.max.bytes`",
+          "lines": "L461-L481",
+          "prose_lines": 18
+        },
+        {
+          "label": "## 하드웨어 선택",
+          "lines": "L482-L490",
+          "prose_lines": 4
+        },
+        {
+          "label": "**브로커 디스크의 처리량**",
+          "lines": "L493-L500",
+          "prose_lines": 5
+        },
+        {
+          "label": "**\b여러 저장장치 선택 가이드**",
+          "lines": "L501-L511",
+          "prose_lines": 9
+        },
+        {
+          "label": "### 디스크 용량",
+          "lines": "L512-L518",
+          "prose_lines": 4
+        },
+        {
+          "label": "**디스크 저장 용량은 카프카 클러스터의 크기를 변경, 확장하는 시점에 고려할 중요한 요소**",
+          "lines": "L519-L525",
+          "prose_lines": 5
+        },
+        {
+          "label": "**프로듀서가 막 추가한 메세지를 바로 뒤에서 쫓아오는 식으로 카프카 컨슈머가 파티션의 맨 끝에서 메세지를 읽는 것이 보통**",
+          "lines": "L528-L533",
+          "prose_lines": 5
+        },
+        {
+          "label": "**카프카 자체는 JVM에 많은 힙 메모리를 필요로 하지 않음**",
+          "lines": "L534-L543",
+          "prose_lines": 8
+        },
+        {
+          "label": "**카프카 특유의 네트워크 불균형 문제**",
+          "lines": "L551-L562",
+          "prose_lines": 10
+        }
+      ],
+      "low_evidence": [
+        {
+          "label": "## 주키퍼",
+          "lines": "L17-L24",
+          "prose_lines": 3
+        },
+        {
+          "label": "### macOS 설치",
+          "lines": "L95-L114",
+          "prose_lines": 1
+        },
+        {
+          "label": "**토픽 생성 및 확인**",
+          "lines": "L117-L128",
+          "prose_lines": 1
+        },
+        {
+          "label": "**토픽에 메세지 작성**",
+          "lines": "L129-L142",
+          "prose_lines": 1
+        },
+        {
+          "label": "### 토픽별 기본값",
+          "lines": "L327-L333",
+          "prose_lines": 2
+        },
+        {
+          "label": "**사용 가능한 네트워크 대역폭 → 카프카가 처리할 수 있는 트래픽 최대량 결정**",
+          "lines": "L546-L550",
+          "prose_lines": 2
+        }
+      ],
+      "zero_evidence": [
+        {
+          "label": "### 주키퍼 설정 파일",
+          "lines": "L46-L47"
+        },
+        {
+          "label": "## 카프카 설치",
+          "lines": "L91-L94"
+        },
+        {
+          "label": "### 토픽 생성 및 확인",
+          "lines": "L115-L116"
+        },
+        {
+          "label": "### 파티션 수 결정",
+          "lines": "L280-L281"
+        },
+        {
+          "label": "### 디스크 처리량",
+          "lines": "L491-L492"
+        },
+        {
+          "label": "### 메모리",
+          "lines": "L526-L527"
+        },
+        {
+          "label": "### 네트워크",
+          "lines": "L544-L545"
+        },
+        {
+          "label": "### CPU",
+          "lines": "L563-L564"
+        }
+      ]
+    }
+  },
+  "rejection_probe_policy": {
+    "file_level_probes": 0,
+    "justification": "The Book corpus contains four frontmatter-only Markdown files: headfirst/chap01.md, kafka/chap03.md, kafka/chap04.md and the root landing page books/index.md. The three CHAPTER files were adopted as file-level rejection probes by book-batch-01, which APPLIED with all three recorded in rejected-candidates.json as insufficient-source-evidence with proposal_created false. Whole-document negative coverage is therefore already discharged against these exact, still-unchanged bytes, so batch 05 takes no file-level probe.",
+    "substitute": "scope_level_rejection_probes",
+    "coverage_gap": "none. File-level negative coverage is discharged by the applied book-batch-01 packet; scope-level negative coverage is supplied in-batch."
+  },
+  "scope_level_rejection_probes": {
+    "definition": "heading scope whose body is non-substantive under the engine's substantiveBodyText() gate. For both batch-05 probes this coincides with prose_lines = 0 AND code_lines = 0; the engine gate is the authoritative criterion.",
+    "expected_outcome": "rejected",
+    "expected_reason_code": "insufficient-source-evidence",
+    "count": 2,
+    "note": "Only 2 probes, against batch 04's 3. The CPU probe is unusual: the chapter's final heading (L563) has an entirely empty body, so the source itself ends on a promised-but-undelivered section.",
+    "scopes": [
+      {
+        "path": "content/brain/books/kafka/chap02.md",
+        "heading_chain": "## 카프카 설치",
+        "start_line": 91,
+        "end_line": 94,
+        "span_sha256": "a9e0d0f311f44fd74c78843164eb6ff97fc8dee7d709b33d14c026a23427417e",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      },
+      {
+        "path": "content/brain/books/kafka/chap02.md",
+        "heading_chain": "## 하드웨어 선택 > ### CPU",
+        "start_line": 563,
+        "end_line": 564,
+        "span_sha256": "7e48f1d33390c7ecd29aef30166fba5f4000ff78024feb0050cbaa4c27c6fdf9",
+        "prose_lines": 0,
+        "code_lines": 0,
+        "engine_substantive": false
+      }
+    ]
+  },
+  "code_only_scopes": {
+    "definition": "heading scope with prose_lines = 0 AND code_lines > 0",
+    "count": 0,
+    "note": "None. The two shell-heavy scopes (### macOS 설치 L95-L114 with 13 code lines, ### 토픽 생성 및 확인 L115-L165 with 26) each carry prose and are engine-substantive, so the code-only authoring hazard does not arise.",
+    "scopes": []
+  },
+  "selection_budget": {
+    "purpose": "Batch 05 was pre-scheduled by the batch-04 inventory. The budget is restated and re-measured here BEFORE re-confirming the selection, so the choice stays falsifiable.",
+    "ceilings": {
+      "B1_bytes": {
+        "max": 60000,
+        "basis": "unchanged from batch 04: largest applied batch by bytes remains book-batch-02 at 57,373."
+      },
+      "B2_heading_scopes": {
+        "max": 70,
+        "basis": "unchanged from batch 04: book-batch-02 at 65 scopes."
+      },
+      "B3_positive_prose_scopes": {
+        "max": 55,
+        "basis": "unchanged from batch 04: book-batch-02 at 53."
+      },
+      "B4_prose_lines": {
+        "max": 360,
+        "basis": "unchanged from batch 04: book-batch-02 at 329 prose lines plus 10% headroom. Still the binding ceiling."
+      },
+      "B5_forecast_accepted_candidates": {
+        "max": 40,
+        "previous_max": 38,
+        "raised": true,
+        "basis": "RAISED from 38 to 40. Derivation: the largest realized batch is now a tie at 34 (book-batch-02 and book-batch-04). Batch 05 carries 330 prose lines against batch 04's 321, so the prose-line-scaled realized equivalent is 34 x (330/321) = 34.95, and 15% authoring headroom gives ceil(34.95 x 1.15) = 41, floored to a round 40.",
+        "decision_class": "bounded budget decision taken under the owner's standing blanket approval; it relaxes a forecast ceiling only and changes no evidence, no source selection and no gate.",
+        "escalation_trigger": "If authoring exceeds 40 accepted candidates, do NOT raise B5 again. Split the source at scope 10 (### 토픽별 기본값, L327-L481, 119 prose lines) into batch 05b and re-inventory."
+      }
+    },
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 29652,
+        "ceiling": 60000,
+        "percent": 49,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "percent": 24,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 15,
+        "ceiling": 55,
+        "percent": 27,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 330,
+        "ceiling": 360,
+        "percent": 92,
+        "satisfied": true
+      },
+      "forecast_accepted_candidates": {
+        "value": "24-39",
+        "central": 31,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    },
+    "binding_ceiling": "B4_prose_lines at 92%. B5 is second at a central forecast of 31 against 40 (78%).",
+    "why_not_more": {
+      "note": "Both remaining adjacency options were measured, not assumed.",
+      "tested_additions": [
+        {
+          "addition": "content/brain/books/kafka/chap05.md",
+          "combined_bytes": 65606,
+          "combined_heading_scopes": 42,
+          "combined_positive_prose_scopes": 38,
+          "combined_prose_lines": 667,
+          "percent_of_B4": 185,
+          "satisfied": false,
+          "also_violates": "B1_bytes at 109%"
+        },
+        {
+          "addition": "content/brain/books/kafka/chap09.md",
+          "combined_bytes": 56642,
+          "combined_heading_scopes": 37,
+          "combined_positive_prose_scopes": 33,
+          "combined_prose_lines": 558,
+          "percent_of_B4": 155,
+          "satisfied": false
+        }
+      ],
+      "statement": "chap02 alone is the MAXIMAL adjacency-preserving selection under the stated budget. The nearest neighbour chap05 breaks both B4 (185%) and B1 (109%); the smallest remaining chapter chap09 still breaks B4 (155%)."
+    },
+    "remaining_series_scan": [
+      {
+        "path": "content/brain/books/kafka/chap05.md",
+        "bytes": 35954,
+        "line_count": 870,
+        "heading_scopes": 25,
+        "positive_prose_scopes": 23,
+        "prose_lines": 337,
+        "prose_lines_per_positive_scope": 14.7,
+        "percent_of_prose_line_budget": 94
+      },
+      {
+        "path": "content/brain/books/kafka/chap07.md",
+        "bytes": 36294,
+        "line_count": 757,
+        "heading_scopes": 21,
+        "positive_prose_scopes": 20,
+        "prose_lines": 478,
+        "prose_lines_per_positive_scope": 23.9,
+        "percent_of_prose_line_budget": 133
+      },
+      {
+        "path": "content/brain/books/kafka/chap08.md",
+        "bytes": 60639,
+        "line_count": 804,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 17,
+        "prose_lines": 542,
+        "prose_lines_per_positive_scope": 31.9,
+        "percent_of_prose_line_budget": 151
+      },
+      {
+        "path": "content/brain/books/kafka/chap09.md",
+        "bytes": 26990,
+        "line_count": 473,
+        "heading_scopes": 20,
+        "positive_prose_scopes": 18,
+        "prose_lines": 228,
+        "prose_lines_per_positive_scope": 12.7,
+        "percent_of_prose_line_budget": 63
+      },
+      {
+        "path": "content/brain/books/kafka/chap10.md",
+        "bytes": 58072,
+        "line_count": 821,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 16,
+        "prose_lines": 343,
+        "prose_lines_per_positive_scope": 21.4,
+        "percent_of_prose_line_budget": 95
+      },
+      {
+        "path": "content/brain/books/kafka/chap14.md",
+        "bytes": 58148,
+        "line_count": 995,
+        "heading_scopes": 33,
+        "positive_prose_scopes": 30,
+        "prose_lines": 361,
+        "prose_lines_per_positive_scope": 12,
+        "percent_of_prose_line_budget": 100
+      }
+    ],
+    "remaining_series_totals": {
+      "chapters": 6,
+      "total_bytes": 276097,
+      "total_heading_scopes": 133,
+      "total_positive_prose_scopes": 124,
+      "total_prose_lines": 2289,
+      "multiple_of_prose_line_budget": 6.4
+    },
+    "full_series_scan_for_reference": [
+      {
+        "path": "content/brain/books/kafka/chap01.md",
+        "bytes": 25915,
+        "line_count": 569,
+        "heading_scopes": 28,
+        "positive_prose_scopes": 25,
+        "prose_lines": 321,
+        "prose_lines_per_positive_scope": 12.8,
+        "percent_of_prose_line_budget": 89
+      },
+      {
+        "path": "content/brain/books/kafka/chap02.md",
+        "bytes": 29652,
+        "line_count": 564,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 15,
+        "prose_lines": 330,
+        "prose_lines_per_positive_scope": 22,
+        "percent_of_prose_line_budget": 92
+      },
+      {
+        "path": "content/brain/books/kafka/chap05.md",
+        "bytes": 35954,
+        "line_count": 870,
+        "heading_scopes": 25,
+        "positive_prose_scopes": 23,
+        "prose_lines": 337,
+        "prose_lines_per_positive_scope": 14.7,
+        "percent_of_prose_line_budget": 94
+      },
+      {
+        "path": "content/brain/books/kafka/chap07.md",
+        "bytes": 36294,
+        "line_count": 757,
+        "heading_scopes": 21,
+        "positive_prose_scopes": 20,
+        "prose_lines": 478,
+        "prose_lines_per_positive_scope": 23.9,
+        "percent_of_prose_line_budget": 133
+      },
+      {
+        "path": "content/brain/books/kafka/chap08.md",
+        "bytes": 60639,
+        "line_count": 804,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 17,
+        "prose_lines": 542,
+        "prose_lines_per_positive_scope": 31.9,
+        "percent_of_prose_line_budget": 151
+      },
+      {
+        "path": "content/brain/books/kafka/chap09.md",
+        "bytes": 26990,
+        "line_count": 473,
+        "heading_scopes": 20,
+        "positive_prose_scopes": 18,
+        "prose_lines": 228,
+        "prose_lines_per_positive_scope": 12.7,
+        "percent_of_prose_line_budget": 63
+      },
+      {
+        "path": "content/brain/books/kafka/chap10.md",
+        "bytes": 58072,
+        "line_count": 821,
+        "heading_scopes": 17,
+        "positive_prose_scopes": 16,
+        "prose_lines": 343,
+        "prose_lines_per_positive_scope": 21.4,
+        "percent_of_prose_line_budget": 95
+      },
+      {
+        "path": "content/brain/books/kafka/chap14.md",
+        "bytes": 58148,
+        "line_count": 995,
+        "heading_scopes": 33,
+        "positive_prose_scopes": 30,
+        "prose_lines": 361,
+        "prose_lines_per_positive_scope": 12,
+        "percent_of_prose_line_budget": 100
+      }
+    ]
+  },
+  "selection_rationale": {
+    "scheduling_hint": "The book-batch-04 inventory (.omx/reviews/brain-phase5-book-batch-04-inventory.md §11) scheduled chap02 as batch 05 at 330 prose lines / 92% of B4. This lane independently re-measured that figure from source bytes and reproduces it exactly.",
+    "primary": "kafka/chap02.md (카프카 설치하기) is the direct successor to the applied chap01 and the only chapter that supplies the OPERATIONAL layer the applied concepts presuppose: ZooKeeper as the metadata store, the broker configuration parameters, partition-count sizing, retention configuration and hardware provisioning. Every one of its concepts attaches to a vocabulary batch 04 already applied.",
+    "bounded": "One extraction file, 29652 bytes, 17 heading scopes of which 15 carry prose and 15 are engine-substantive, 330 prose lines. 49% of the byte ceiling and 92% of the prose-line ceiling - the binding constraint.",
+    "adjacency": "A single file trivially preserves per-file adjacency, and chap02 directly follows the applied chap01 with no gap. chap03 and chap04 are frontmatter-only and already discharged as probes, so chap05 is the next unmined chapter and the designated batch 06.",
+    "probes": "No file-level probes (discharged by the applied batch 01); 2 in-source zero-evidence scopes provide negative coverage.",
+    "rejected_alternatives": [
+      "chap02 + chap05 (the nearest adjacency pair): 65,606 bytes / 667 prose lines = 185% of B4 and 109% of B1. Rejected on two ceilings.",
+      "chap02 + chap09 (the smallest remaining chapter): 56,642 bytes / 558 prose lines = 155% of B4. Rejected on the binding ceiling.",
+      "Splitting chap02 into two batches now: rejected because chap02 fits every ceiling whole, and splitting would strand the cross-references between §브로커 설정 and §토픽별 기본값 (e.g. min.insync.replicas at L441-L460 is required to read default.replication.factor at L344-L356). Recorded as the contingency if authoring exceeds B5 = 40.",
+      "Skipping to chap09 first (228 prose lines, the smallest remaining): rejected on dependency order - chap09 presupposes the broker configuration vocabulary this chapter defines."
+    ]
+  },
+  "alias_scan_semantics": {
+    "purpose": "Overlap is reported under BOTH scan identities with the identity stated, because they disagree and only one models the engine's collision behaviour.",
+    "applied_concepts": 119,
+    "applied_alias_identities": 265,
+    "applied_normalized_title_or_alias_keys": 384,
+    "live_index_collision_count": 0,
+    "key_naming_note": "Alias lists here are keyed `applied_aliases` / `alias_identities`, never the reserved candidate key `aliases`. Every string recorded belongs to an ALREADY-APPLIED concept; none is authored.",
+    "literal_scan": {
+      "identity": "case-sensitive UTF-8 byte substring, no normalization",
+      "title_hits": 16,
+      "title_of": 119,
+      "alias_hits": 7,
+      "alias_of": 265,
+      "caveat": "A byte metric only. It does NOT model the engine's collision identity."
+    },
+    "collision_normalized_scan": {
+      "identity": "normalizedKey() from tooling/brain/knowledge-index.mjs: String(v).normalize('NFKC').trim().toLocaleLowerCase('en-US'), applied to both sides then substring-matched. This is the identity collisionReport() keys its title_or_alias bucket on.",
+      "title_hits": 16,
+      "title_of": 119,
+      "alias_hits": 13,
+      "alias_of": 265,
+      "distinct_applied_concepts_touched": 20
+    },
+    "search_contract_note": "Under the repaired exact-alias search contract (.omx/reviews/brain-phase5-book-batch-04-search-repair.md), knowledge_aliases is emitted into contentIndex.json as a non-routing `knowledgeAliases` field and an EXACT alias match (NFC-normalized, trimmed, case-folded) hoists its document to rank 0 ahead of every title and content match. At most one document can claim a given exact key, so any new batch-05 alias that duplicates an applied title or alias would either fail collisionReport() or silently steal an applied concept's rank-0 identity. The scan below therefore covers all three key spaces: applied concept titles, applied knowledge_aliases, and Quartz routing aliases.",
+    "routing_alias_scan": {
+      "identity": "Quartz frontmatter keys aliases / alias / permalink across all content/**/*.md; these are the keys that mint public redirect routes and are FORBIDDEN in knowledge documents under policy H-1.",
+      "content_markdown_files_scanned": 399,
+      "documents_carrying_routing_keys": 1,
+      "routing_key_identities": [
+        {
+          "file": "content/brain/index.md",
+          "key": "aliases",
+          "value": "- garden/index",
+          "normalized_key": "- garden/index"
+        }
+      ],
+      "routing_keys_under_knowledge": 0,
+      "collisions_with_selected_source": 0,
+      "verdict": "Exactly one routing alias exists in the entire content tree (`garden/index` on content/brain/index.md) and none is under content/brain/knowledge. No batch-05 title, alias or canonical path can collide with it. Policy H-1 holds: zero knowledge documents carry aliases / alias / permalink."
+    },
+    "applied_concepts_citing_selected_source": 0,
+    "applied_concepts_citing_any_kafka_source": 34,
+    "live_locators_on_selected_source": 0,
+    "verdict": "20 applied concepts are touched. This is NOT batch 04's picture: 10 no_op, 7 relate, 3 update-candidate. Thirteen touched concepts were applied by batch 04 from the immediately preceding chapter, and three of them carry genuinely new assertions in this source. The dominant hazard is RESTATEMENT of an applied concept, not collision with an unrelated one."
+  },
+  "existing_touch_points": {
+    "note": "These concept ids already exist and are applied under content/brain/knowledge/. They are recorded as expected dispositions, not authored here. Measured against the live approved tree 970d2898bcb31845d8f7ca1a3629acb0dc69202251ab928a73d9e228a712112c.",
+    "applied_concept_count": 119,
+    "applied_concepts_citing_selected_source": 0,
+    "distinct_applied_concepts_touched": 20,
+    "alias_scan_ref": "alias_scan_semantics",
+    "disposition_summary": {
+      "total_touch_points": 20,
+      "by_expected_disposition": {
+        "no_op": 10,
+        "relate": 7,
+        "update-candidate": 3
+      },
+      "note": "Derived from the touch_points array at build time, not hand-counted."
+    },
+    "collision_handling_rule": "No candidate title or alias may normalize to a key already held by an applied concept. Where a batch-05 concept covers the same word in a different sense, it must carry a distinct title and alias set and RELATE rather than restate. The three update-candidate ids are the only ones authoring may modify, and each requires an explicit U3-visible justification citing the span that carries the new assertion.",
+    "occupied_normalized_keys_in_selected_prose": {
+      "note": "Applied title/alias normalized keys that appear in the selected source. Minting a new concept under any of them fails collisionReport()'s title_or_alias bucket.",
+      "count": 29,
+      "keys": [
+        "apache kafka",
+        "array",
+        "broker",
+        "consumer",
+        "jvm",
+        "os",
+        "partition",
+        "producer",
+        "retention",
+        "topic",
+        "var",
+        "내고장성",
+        "메세지",
+        "배치",
+        "브로커",
+        "오프셋",
+        "운영체제",
+        "인스턴스",
+        "인터페이스",
+        "카프카",
+        "카프카 브로커",
+        "카프카 클러스터",
+        "컨슈머",
+        "컨슈머 그룹",
+        "클러스터",
+        "토픽",
+        "파티션",
+        "프로듀서",
+        "힙 메모리"
+      ],
+      "current_index_collisions": 0,
+      "constraint": "The approved index currently reports 0 collisions across concept_id, title_or_alias, canonical_path and folder_route. Candidate authoring must keep it at 0."
+    },
+    "touch_points": [
+      {
+        "concept_id": "cs.os.operating-system",
+        "applied_title": "운영체제",
+        "applied_aliases": [
+          "Operating System",
+          "OS"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/cs/os/operating-system.md",
+        "matched_on": [
+          "title:운영체제",
+          "alias:OS"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:운영체제",
+            "normalized_key": "운영체제",
+            "normalized_hit_lines": [
+              353
+            ],
+            "literal_hit_lines": [
+              353
+            ]
+          },
+          {
+            "identity": "alias:OS",
+            "normalized_key": "os",
+            "normalized_hit_lines": [
+              72,
+              74,
+              83,
+              95,
+              97,
+              107,
+              121,
+              124,
+              133,
+              147,
+              190,
+              196,
+              210
+            ],
+            "literal_hit_lines": [
+              95,
+              97
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "cross-domain-passing-and-substring",
+        "evidence": "Title 운영체제 appears once at L353 as a passing example of a rolling OS update during replica failover. Alias `OS` normalizes to `os`, which occurs only inside `macOS` (L95 heading, L97 prose). Neither is an assertion about operating systems.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "java.array.array",
+        "applied_title": "배열",
+        "applied_aliases": [
+          "Array",
+          "자바 배열"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/java/array/java-array.md",
+        "matched_on": [
+          "alias:Array"
+        ],
+        "match_lines": [
+          {
+            "identity": "alias:Array",
+            "normalized_key": "array",
+            "normalized_hit_lines": [
+              505
+            ],
+            "literal_hit_lines": [
+              505
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "substring-artifact",
+        "evidence": "Alias `Array` normalizes to `array`, matched only inside `RAID (Redundant Array of Independent Disks)` at L505. No array claim exists in this source.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "java.memory.heap",
+        "applied_title": "힙 메모리",
+        "applied_aliases": [
+          "Heap Memory",
+          "Java Heap",
+          "동적 메모리"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/java/memory/heap.md",
+        "matched_on": [
+          "title:힙 메모리"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:힙 메모리",
+            "normalized_key": "힙 메모리",
+            "normalized_hit_lines": [
+              534
+            ],
+            "literal_hit_lines": [
+              534
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "cross-domain-word-reuse",
+        "evidence": "Title 힙 메모리 at L534 and 힙 at L536 size the Kafka broker JVM (`5GB 힙 정도 사용`). The subject is broker memory provisioning, not the Java heap concept. A batch-05 memory concept must relate, never restate.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "java.oop.instance",
+        "applied_title": "인스턴스",
+        "applied_aliases": [
+          "Instance",
+          "객체 인스턴스",
+          "인스턴스 생성"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/java/oop/instance.md",
+        "matched_on": [
+          "title:인스턴스"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:인스턴스",
+            "normalized_key": "인스턴스",
+            "normalized_hit_lines": [
+              86
+            ],
+            "literal_hit_lines": [
+              86
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "cross-domain-word-reuse",
+        "evidence": "Title 인스턴스 at L86 means a ZooKeeper server process instance (`각각의 주키퍼 인스턴스에 서로 다른 dataDir, clientPort 할당`), not a Java object instance.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "java.oop.interface",
+        "applied_title": "인터페이스",
+        "applied_aliases": [
+          "Interface"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/java/oop/interface.md",
+        "matched_on": [
+          "title:인터페이스"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:인터페이스",
+            "normalized_key": "인터페이스",
+            "normalized_hit_lines": [
+              199,
+              201,
+              557,
+              559
+            ],
+            "literal_hit_lines": [
+              199,
+              201,
+              557,
+              559
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "cross-domain-word-reuse",
+        "evidence": "Title 인터페이스 at L199, L201, L557, L559 always means a network interface / NIC (`모든 네트워크 인터페이스로부터 연결 받게됨`, `네트워크 인터페이스 카드(NIC)`), not the Java interface type.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "java.runtime.jvm",
+        "applied_title": "자바 가상 머신",
+        "applied_aliases": [
+          "JVM",
+          "Java Virtual Machine"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/java/runtime/jvm.md",
+        "matched_on": [
+          "alias:JVM"
+        ],
+        "match_lines": [
+          {
+            "identity": "alias:JVM",
+            "normalized_key": "jvm",
+            "normalized_hit_lines": [
+              534
+            ],
+            "literal_hit_lines": [
+              534
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "cross-domain-word-reuse",
+        "evidence": "Alias `JVM` at L534 appears in a claim about Kafka's heap footprint (`카프카 자체는 JVM에 많은 힙 메모리를 필요로 하지 않음`). The subject is Kafka, not the JVM.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "java.type.type-inference",
+        "applied_title": "지역 변수 자료형 추론",
+        "applied_aliases": [
+          "Local Variable Type Inference",
+          "Type Inference",
+          "var"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/java/type/type-inference.md",
+        "matched_on": [
+          "alias:var"
+        ],
+        "match_lines": [
+          {
+            "identity": "alias:var",
+            "normalized_key": "var",
+            "normalized_hit_lines": [
+              57
+            ],
+            "literal_hit_lines": [
+              57
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "substring-artifact",
+        "evidence": "Alias `var` matched only inside the fenced shell literal `dataDir=/var/lib/zookeeper` at L57, which is a code line, not prose.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.broker.broker",
+        "applied_title": "브로커",
+        "applied_aliases": [
+          "Broker",
+          "카프카 브로커"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/broker/kafka-broker.md",
+        "matched_on": [
+          "title:브로커",
+          "alias:Broker",
+          "alias:카프카 브로커"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:브로커",
+            "normalized_key": "브로커",
+            "normalized_hit_lines": [
+              8,
+              120,
+              160,
+              161,
+              166,
+              176,
+              178,
+              179,
+              180,
+              181,
+              186,
+              188,
+              209,
+              216,
+              221,
+              230,
+              239,
+              240,
+              241,
+              243,
+              245,
+              253,
+              264,
+              268,
+              283,
+              284,
+              285,
+              303,
+              305,
+              329,
+              371,
+              395,
+              397,
+              436,
+              462,
+              464,
+              465,
+              468,
+              473,
+              478,
+              487,
+              493,
+              496,
+              505,
+              515,
+              521,
+              530,
+              535
+            ],
+            "literal_hit_lines": [
+              8,
+              120,
+              160,
+              161,
+              166,
+              176,
+              178,
+              179,
+              180,
+              181,
+              186,
+              188,
+              209,
+              216,
+              221,
+              230,
+              239,
+              240,
+              241,
+              243,
+              245,
+              253,
+              264,
+              268,
+              283,
+              284,
+              285,
+              303,
+              305,
+              329,
+              371,
+              395,
+              397,
+              436,
+              462,
+              464,
+              465,
+              468,
+              473,
+              478,
+              487,
+              493,
+              496,
+              505,
+              515,
+              521,
+              530,
+              535
+            ]
+          },
+          {
+            "identity": "alias:Broker",
+            "normalized_key": "broker",
+            "normalized_hit_lines": [
+              185,
+              190,
+              268
+            ],
+            "literal_hit_lines": []
+          },
+          {
+            "identity": "alias:카프카 브로커",
+            "normalized_key": "카프카 브로커",
+            "normalized_hit_lines": [
+              160,
+              221,
+              329,
+              395,
+              462,
+              473
+            ],
+            "literal_hit_lines": [
+              160,
+              221,
+              329,
+              395,
+              462,
+              473
+            ]
+          }
+        ],
+        "expected_disposition": "relate",
+        "anchor": "same-domain-configuration-surface",
+        "evidence": "Whole of §브로커 설정 (L166-481) configures the broker; alias `카프카 브로커` at L160/L221/L329/L395/L462/L473. chap02 supplies configuration mechanics, not a redefinition. New kafka.config.* concepts must relate to this id. Authoring must verify no restatement of the applied definition.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.broker.cluster",
+        "applied_title": "클러스터",
+        "applied_aliases": [
+          "Kafka Cluster",
+          "카프카 클러스터"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/broker/cluster.md",
+        "matched_on": [
+          "title:클러스터",
+          "alias:카프카 클러스터"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:클러스터",
+            "normalized_key": "클러스터",
+            "normalized_hit_lines": [
+              20,
+              28,
+              161,
+              181,
+              188,
+              214,
+              219,
+              264,
+              274,
+              282,
+              283,
+              284,
+              286,
+              346,
+              352,
+              443,
+              456,
+              478,
+              508,
+              519,
+              520,
+              522,
+              547,
+              556,
+              558
+            ],
+            "literal_hit_lines": [
+              20,
+              28,
+              161,
+              181,
+              188,
+              214,
+              219,
+              264,
+              274,
+              282,
+              283,
+              284,
+              286,
+              346,
+              352,
+              443,
+              456,
+              478,
+              508,
+              519,
+              520,
+              522,
+              547,
+              556,
+              558
+            ]
+          },
+          {
+            "identity": "alias:카프카 클러스터",
+            "normalized_key": "카프카 클러스터",
+            "normalized_hit_lines": [
+              20,
+              214,
+              219,
+              264,
+              282,
+              286,
+              346,
+              519
+            ],
+            "literal_hit_lines": [
+              20,
+              214,
+              219,
+              264,
+              282,
+              286,
+              346,
+              519
+            ]
+          }
+        ],
+        "expected_disposition": "relate",
+        "anchor": "same-domain-supporting-evidence",
+        "evidence": "Title 클러스터 (25 lines) and alias 카프카 클러스터 at L20/L214/L219/L264/L282/L286/L346/L519. chap02 adds cluster sizing consequences (L282-288, L519-522) but no new cluster definition.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.client.consumer",
+        "applied_title": "컨슈머",
+        "applied_aliases": [
+          "Consumer",
+          "Subscriber"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/consumer.md",
+        "matched_on": [
+          "title:컨슈머",
+          "alias:Consumer"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:컨슈머",
+            "normalized_key": "컨슈머",
+            "normalized_hit_lines": [
+              21,
+              146,
+              255,
+              294,
+              296,
+              316,
+              318,
+              320,
+              474,
+              476,
+              528,
+              529,
+              532,
+              540,
+              552,
+              555
+            ],
+            "literal_hit_lines": [
+              21,
+              146,
+              255,
+              294,
+              296,
+              316,
+              318,
+              320,
+              474,
+              476,
+              528,
+              529,
+              532,
+              540,
+              552,
+              555
+            ]
+          },
+          {
+            "identity": "alias:Consumer",
+            "normalized_key": "consumer",
+            "normalized_hit_lines": [
+              147
+            ],
+            "literal_hit_lines": []
+          }
+        ],
+        "expected_disposition": "relate",
+        "anchor": "same-domain-supporting-evidence",
+        "evidence": "Title 컨슈머 (16 lines) incl. L146-153 console consumer, L294 one-consumer-per-partition, L474-477 fetch.message.max.bytes coupling.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.client.consumer-group",
+        "applied_title": "컨슈머 그룹",
+        "applied_aliases": [
+          "Consumer Group"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/consumer-group.md",
+        "matched_on": [
+          "title:컨슈머 그룹"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:컨슈머 그룹",
+            "normalized_key": "컨슈머 그룹",
+            "normalized_hit_lines": [
+              294
+            ],
+            "literal_hit_lines": [
+              294
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "single-passing-mention",
+        "evidence": "Title 컨슈머 그룹 occurs once, at L294, parenthetically (`컨슈머 그룹 기능 미사용 시에도`). One passing clause is not evidence for an update.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.client.offset",
+        "applied_title": "오프셋",
+        "applied_aliases": [
+          "Offset",
+          "메세지 오프셋"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/offset.md",
+        "matched_on": [
+          "title:오프셋"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:오프셋",
+            "normalized_key": "오프셋",
+            "normalized_hit_lines": [
+              415,
+              416,
+              417,
+              422,
+              423
+            ],
+            "literal_hit_lines": [
+              415,
+              416,
+              417,
+              422,
+              423
+            ]
+          }
+        ],
+        "expected_disposition": "relate",
+        "anchor": "same-domain-supporting-evidence",
+        "evidence": "Title 오프셋 at L415-423 inside the timestamp-to-offset callout. Adds a lookup mechanism, does not redefine offset.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.client.producer",
+        "applied_title": "프로듀서",
+        "applied_aliases": [
+          "Producer",
+          "Publisher"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/client/producer.md",
+        "matched_on": [
+          "title:프로듀서",
+          "alias:Producer"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:프로듀서",
+            "normalized_key": "프로듀서",
+            "normalized_hit_lines": [
+              132,
+              254,
+              295,
+              296,
+              444,
+              445,
+              446,
+              452,
+              464,
+              466,
+              496,
+              528,
+              554
+            ],
+            "literal_hit_lines": [
+              132,
+              254,
+              295,
+              296,
+              444,
+              445,
+              446,
+              452,
+              464,
+              466,
+              496,
+              528,
+              554
+            ]
+          },
+          {
+            "identity": "alias:Producer",
+            "normalized_key": "producer",
+            "normalized_hit_lines": [
+              133
+            ],
+            "literal_hit_lines": []
+          }
+        ],
+        "expected_disposition": "relate",
+        "anchor": "same-domain-supporting-evidence",
+        "evidence": "Title 프로듀서 (13 lines) incl. L132-139 console producer and L444-446 ack interaction with min.insync.replicas.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.message.batch",
+        "applied_title": "배치",
+        "applied_aliases": [
+          "Message Batch",
+          "메세지 배치"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/message/batch.md",
+        "matched_on": [
+          "title:배치"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:배치",
+            "normalized_key": "배치",
+            "normalized_hit_lines": [
+              303
+            ],
+            "literal_hit_lines": [
+              303
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "korean-homograph-artifact",
+        "evidence": "Title 배치 matched only at L303 in `각 브로커에 배치할 파티션 수`, where 배치 is the verb 배치하다 (to place / allocate), NOT the message-batch noun this concept defines. This is the single most deceptive hit in the batch: same characters, unrelated meaning.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.message.message",
+        "applied_title": "메세지",
+        "applied_aliases": [
+          "Kafka Message",
+          "카프카 메세지"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/message/kafka-message.md",
+        "matched_on": [
+          "title:메세지"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:메세지",
+            "normalized_key": "메세지",
+            "normalized_hit_lines": [
+              129,
+              132,
+              143,
+              146,
+              226,
+              254,
+              255,
+              283,
+              287,
+              294,
+              301,
+              358,
+              370,
+              377,
+              387,
+              394,
+              395,
+              404,
+              406,
+              408,
+              410,
+              453,
+              456,
+              462,
+              464,
+              465,
+              466,
+              467,
+              468,
+              472,
+              473,
+              476,
+              496,
+              514,
+              515,
+              528,
+              529,
+              530,
+              535
+            ],
+            "literal_hit_lines": [
+              129,
+              132,
+              143,
+              146,
+              226,
+              254,
+              255,
+              283,
+              287,
+              294,
+              301,
+              358,
+              370,
+              377,
+              387,
+              394,
+              395,
+              404,
+              406,
+              408,
+              410,
+              453,
+              456,
+              462,
+              464,
+              465,
+              466,
+              467,
+              468,
+              472,
+              473,
+              476,
+              496,
+              514,
+              515,
+              528,
+              529,
+              530,
+              535
+            ]
+          }
+        ],
+        "expected_disposition": "relate",
+        "anchor": "same-domain-supporting-evidence",
+        "evidence": "Title 메세지 (39 lines) throughout retention and message-size scopes.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.platform.kafka",
+        "applied_title": "카프카",
+        "applied_aliases": [
+          "Apache Kafka",
+          "분산 스트리밍 플랫폼",
+          "분산 커밋 로그"
+        ],
+        "applied_kind": "merge",
+        "applied_canonical_path": "content/brain/knowledge/kafka/platform/kafka.md",
+        "matched_on": [
+          "title:카프카",
+          "alias:Apache Kafka"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:카프카",
+            "normalized_key": "카프카",
+            "normalized_hit_lines": [
+              2,
+              5,
+              8,
+              10,
+              20,
+              91,
+              97,
+              103,
+              160,
+              168,
+              203,
+              214,
+              219,
+              221,
+              226,
+              238,
+              257,
+              264,
+              282,
+              286,
+              329,
+              346,
+              353,
+              358,
+              377,
+              395,
+              418,
+              462,
+              473,
+              484,
+              486,
+              519,
+              528,
+              534,
+              538,
+              539,
+              540,
+              546,
+              551,
+              552
+            ],
+            "literal_hit_lines": [
+              2,
+              5,
+              8,
+              10,
+              20,
+              91,
+              97,
+              103,
+              160,
+              168,
+              203,
+              214,
+              219,
+              221,
+              226,
+              238,
+              257,
+              264,
+              282,
+              286,
+              329,
+              346,
+              353,
+              358,
+              377,
+              395,
+              418,
+              462,
+              473,
+              484,
+              486,
+              519,
+              528,
+              534,
+              538,
+              539,
+              540,
+              546,
+              551,
+              552
+            ]
+          },
+          {
+            "identity": "alias:Apache Kafka",
+            "normalized_key": "apache kafka",
+            "normalized_hit_lines": [
+              12
+            ],
+            "literal_hit_lines": [
+              12
+            ]
+          }
+        ],
+        "expected_disposition": "no_op",
+        "anchor": "same-domain-pervasive-no-new-definitional-claim",
+        "evidence": "Title 카프카 and alias `Apache Kafka` occur throughout (40 literal title lines incl. frontmatter L2/L5). chap02 installs and configures Kafka; it makes no new claim about what Kafka is. The applied merge-kind concept stands unchanged.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.property.fault-tolerance",
+        "applied_title": "내고장성",
+        "applied_aliases": [
+          "Fault Tolerance",
+          "장애 감내"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/property/fault-tolerance.md",
+        "matched_on": [
+          "title:내고장성"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:내고장성",
+            "normalized_key": "내고장성",
+            "normalized_hit_lines": [
+              349
+            ],
+            "literal_hit_lines": [
+              349
+            ]
+          }
+        ],
+        "expected_disposition": "update-candidate",
+        "anchor": "same-domain-new-assertion",
+        "evidence": "Title 내고장성 at L349 anchors the RF++ rule (L344-356): replication factor should exceed min.insync.replicas by at least 1, and by 2 for a fault-tolerant cluster, i.e. at least 3 replicas per partition. This is a concrete new assertion the applied concept does not carry. Authoring must decide update vs a new kafka.config.default-replication-factor concept that relates.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.retention.retention",
+        "applied_title": "메세지 보존",
+        "applied_aliases": [
+          "Retention",
+          "메세지 보관"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/retention/message-retention.md",
+        "matched_on": [
+          "alias:Retention"
+        ],
+        "match_lines": [
+          {
+            "identity": "alias:Retention",
+            "normalized_key": "retention",
+            "normalized_hit_lines": [
+              357,
+              359,
+              360,
+              361,
+              362,
+              376,
+              379,
+              381,
+              382,
+              386,
+              393,
+              409
+            ],
+            "literal_hit_lines": []
+          }
+        ],
+        "expected_disposition": "update-candidate",
+        "anchor": "same-domain-new-assertion",
+        "evidence": "Alias `Retention` matches only as a substring of the parameter names log.retention.* (L357-393, L409), but the surrounding prose is a genuine same-domain claim: L358 defines time-based retention, L376-384 size-based retention, L385-389 the combined-setting hazard. The applied concept is definitional; chap02 supplies the configuration. HIGHEST restatement risk in this batch.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.topic.partition",
+        "applied_title": "파티션",
+        "applied_aliases": [
+          "Partition",
+          "카프카 파티션"
+        ],
+        "applied_kind": "merge",
+        "applied_canonical_path": "content/brain/knowledge/kafka/topic/partition.md",
+        "matched_on": [
+          "title:파티션",
+          "alias:Partition"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:파티션",
+            "normalized_key": "파티션",
+            "normalized_hit_lines": [
+              66,
+              68,
+              120,
+              230,
+              231,
+              232,
+              239,
+              240,
+              245,
+              266,
+              268,
+              280,
+              282,
+              283,
+              284,
+              285,
+              286,
+              291,
+              293,
+              294,
+              295,
+              301,
+              303,
+              305,
+              308,
+              311,
+              315,
+              316,
+              319,
+              322,
+              335,
+              339,
+              340,
+              352,
+              371,
+              372,
+              378,
+              379,
+              380,
+              381,
+              395,
+              417,
+              435,
+              437,
+              487,
+              520,
+              528
+            ],
+            "literal_hit_lines": [
+              66,
+              68,
+              120,
+              230,
+              231,
+              232,
+              239,
+              240,
+              245,
+              266,
+              268,
+              280,
+              282,
+              283,
+              284,
+              285,
+              286,
+              291,
+              293,
+              294,
+              295,
+              301,
+              303,
+              305,
+              308,
+              311,
+              315,
+              316,
+              319,
+              322,
+              335,
+              339,
+              340,
+              352,
+              371,
+              372,
+              378,
+              379,
+              380,
+              381,
+              395,
+              417,
+              435,
+              437,
+              487,
+              520,
+              528
+            ]
+          },
+          {
+            "identity": "alias:Partition",
+            "normalized_key": "partition",
+            "normalized_hit_lines": [
+              121,
+              334,
+              340
+            ],
+            "literal_hit_lines": []
+          }
+        ],
+        "expected_disposition": "update-candidate",
+        "anchor": "same-domain-new-assertion",
+        "evidence": "Title 파티션 (47 lines); §파티션 수 결정 (L280-326) is a full partition-count sizing method the applied concept does not carry, and L379-381 asserts that all retention is per-partition. Authoring must decide update-in-place vs a new relating concept. HIGH restatement risk.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      },
+      {
+        "concept_id": "kafka.topic.topic",
+        "applied_title": "토픽",
+        "applied_aliases": [
+          "Topic",
+          "카프카 토픽"
+        ],
+        "applied_kind": "create",
+        "applied_canonical_path": "content/brain/knowledge/kafka/topic/kafka-topic.md",
+        "matched_on": [
+          "title:토픽",
+          "alias:Topic"
+        ],
+        "match_lines": [
+          {
+            "identity": "title:토픽",
+            "normalized_key": "토픽",
+            "normalized_hit_lines": [
+              115,
+              117,
+              120,
+              123,
+              129,
+              143,
+              253,
+              254,
+              255,
+              256,
+              257,
+              258,
+              264,
+              274,
+              276,
+              282,
+              284,
+              286,
+              287,
+              292,
+              316,
+              317,
+              320,
+              327,
+              329,
+              330,
+              335,
+              337,
+              338,
+              339,
+              340,
+              345,
+              379,
+              380,
+              381,
+              404,
+              406,
+              520,
+              554,
+              555
+            ],
+            "literal_hit_lines": [
+              115,
+              117,
+              120,
+              123,
+              129,
+              143,
+              253,
+              254,
+              255,
+              256,
+              257,
+              258,
+              264,
+              274,
+              276,
+              282,
+              284,
+              286,
+              287,
+              292,
+              316,
+              317,
+              320,
+              327,
+              329,
+              330,
+              335,
+              337,
+              338,
+              339,
+              340,
+              345,
+              379,
+              380,
+              381,
+              404,
+              406,
+              520,
+              554,
+              555
+            ]
+          },
+          {
+            "identity": "alias:Topic",
+            "normalized_key": "topic",
+            "normalized_hit_lines": [
+              121,
+              124,
+              133,
+              147,
+              252,
+              259,
+              273,
+              275
+            ],
+            "literal_hit_lines": []
+          }
+        ],
+        "expected_disposition": "relate",
+        "anchor": "same-domain-supporting-evidence",
+        "evidence": "Title 토픽 (40 lines); the CLI scope L115-165 creates and inspects topics and L327-333 introduces per-topic defaults. Supporting, not definitional.",
+        "collision_handling": "The normalized key(s) for this concept's title and aliases are OCCUPIED. No batch-05 title or alias may normalize to any of them; where the Kafka-domain meaning genuinely differs or extends, the candidate must carry a distinct title and alias set and RELATE rather than restate."
+      }
+    ]
+  },
+  "proposed_namespace": {
+    "disclaimer": "NAMING PROPOSAL ONLY. No candidate is authored: this section carries no title, no alias, no tag, no locator, no excerpt and no proposal_kind. It records the deterministic rule by which authoring should derive ids, plus the ids that rule produces for the 16 enumerated configuration parameters, so the rule can be checked against the collision surface BEFORE authoring rather than after.",
+    "root": {
+      "value": "kafka",
+      "basis": "Fixed by the batch-04 namespace decision (.omx/reviews/brain-phase5-book-batch-04-namespace-decision.md, owner 신재윤): kafka.* for Kafka-specific concepts, messaging.* only for genuinely technology-agnostic messaging concepts with direct evidence. Batch 05 contains no technology-agnostic messaging evidence, so no messaging.* concept is expected.",
+      "new_root_required": false
+    },
+    "zookeeper_root_decision": {
+      "question": "ZooKeeper is neither Kafka-specific nor a messaging pattern, so the batch-04 rule does not decide it. Root candidates: kafka.zookeeper.* or a new zookeeper.* root.",
+      "inventory_position": "kafka.zookeeper.*",
+      "evidence": "This source frames ZooKeeper only as Kafka infrastructure: L8 introduces it as `브로커의 메타 데이터를 저장하기 위해 사용되는 아파치 주키퍼`, and L10-L13 frame it as a Kafka-version-dependent dependency being replaced by KRaft. There is no technology-agnostic ZooKeeper claim anywhere in the file, so a standalone zookeeper.* root would be minted on evidence this source does not carry.",
+      "decision_class": "bounded naming decision taken under the owner's standing blanket approval. It follows rule 4 of the batch-04 namespace decision (extraction to a technology-agnostic root is permitted during consolidation; extraction adds concepts and never moves them), so choosing kafka.zookeeper.* now forecloses nothing.",
+      "owner_override": "If the owner prefers a standalone zookeeper.* root, this must be settled BEFORE authoring: both concept_id and canonical_path derive from it."
+    },
+    "area_derivation_rule": "rule N0: the second id segment is the area, derived from the governing H2 heading of the anchor the concept cites. This makes every area evidence-derived and mechanically checkable.",
+    "areas": [
+      {
+        "area": "zookeeper",
+        "governing_heading": "## 주키퍼",
+        "source_lines": "L17-L90",
+        "basis": "H2 heading 주키퍼; chap02 frames ZooKeeper strictly as the store for broker metadata (L8) and as a Kafka-version-dependent component being replaced by KRaft (L10-L13). No technology-agnostic ZooKeeper evidence exists in this source, so kafka.* is the evidence-supported root."
+      },
+      {
+        "area": "install",
+        "governing_heading": "## 카프카 설치",
+        "source_lines": "L91-L165",
+        "basis": "H2 heading 카프카 설치; installation and the CLI utilities that verify it."
+      },
+      {
+        "area": "config",
+        "governing_heading": "## 브로커 설정",
+        "source_lines": "L166-L481",
+        "basis": "H2 heading 브로커 설정; every configuration parameter in the chapter lives under this heading, including the 파티션 수 결정 sizing scope."
+      },
+      {
+        "area": "hardware",
+        "governing_heading": "## 하드웨어 선택",
+        "source_lines": "L482-L564",
+        "basis": "H2 heading 하드웨어 선택; disk throughput, disk capacity, memory, network, CPU."
+      }
+    ],
+    "id_rules": {
+      "N0": "concept_id = kafka.<area>.<slug>, area per the H2 rule above.",
+      "N1": "For a configuration parameter, slug = the parameter name exactly as the source writes it, lowercased, with '.' replaced by '-'. Example: `num.recovery.threads.per.data.dir` -> `num-recovery-threads-per-data-dir`.",
+      "N2": "For a non-parameter concept, slug = kebab-case of the established English term for the concept, preferring a term the applied index already uses.",
+      "N3": "document path = content/brain/knowledge/kafka/<area>/<leaf>.md where leaf = slug, EXCEPT when slug equals area, in which case leaf = `kafka-<slug>`. collisionReport() adds a folder_route collision when a filename stem equals its parent folder name; the applied precedent is kafka.broker.broker -> kafka/broker/kafka-broker.md.",
+      "N4": "tags[] must equal the canonical_path folder segments; `brain` and `knowledge` are reserved. Never copy the raw frontmatter display tag `📚 카프카 핵심가이드` (L5)."
+    },
+    "deterministic_ids_for_enumerated_parameters": {
+      "note": "Fully determined by rule N1 from the 16 enumerated-parameter anchors. Listed so the collision check below is reproducible; authoring may still merge two parameters into one concept or re-file one into a topical area (kafka.retention.*, kafka.replication.*), and either is a permitted refinement of this default, not a violation of it.",
+      "count": 16,
+      "ids": [
+        {
+          "parameter_name": "broker.id",
+          "proposed_id": "kafka.config.broker-id",
+          "proposed_leaf_filename": "broker-id.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/broker-id.md",
+          "evidence_anchor_lines": "L185-L193",
+          "anchor_prose_lines": 6,
+          "anchor_span_sha256": "a4f6aa4899647e9fd4ace06889e2d090542e20873b780b7bec2f6ec118c0a7d6",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "listeners",
+          "proposed_id": "kafka.config.listeners",
+          "proposed_leaf_filename": "listeners.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/listeners.md",
+          "evidence_anchor_lines": "L194-L207",
+          "anchor_prose_lines": 11,
+          "anchor_span_sha256": "eac1b648bf6ece63a3f5ca638cd04a720e82cd344c28bdf7a030c3042d9e27e9",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "zookeeper.connect",
+          "proposed_id": "kafka.config.zookeeper-connect",
+          "proposed_leaf_filename": "zookeeper-connect.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/zookeeper-connect.md",
+          "evidence_anchor_lines": "L208-L224",
+          "anchor_prose_lines": 13,
+          "anchor_span_sha256": "7e429360ee3f96f9485fda10257bc9be7c23713fd0c35c6e117b2b46fe3402b4",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "log.dirs",
+          "proposed_id": "kafka.config.log-dirs",
+          "proposed_leaf_filename": "log-dirs.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/log-dirs.md",
+          "evidence_anchor_lines": "L225-L236",
+          "anchor_prose_lines": 9,
+          "anchor_span_sha256": "6a0c02d9a9238a469c0d3690c2f14cddf477c5ce5ed9b4396f0565db6bb5b0e4",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "num.recovery.threads.per.data.dir",
+          "proposed_id": "kafka.config.num-recovery-threads-per-data-dir",
+          "proposed_leaf_filename": "num-recovery-threads-per-data-dir.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/num-recovery-threads-per-data-dir.md",
+          "evidence_anchor_lines": "L237-L251",
+          "anchor_prose_lines": 12,
+          "anchor_span_sha256": "8d033fbc45b0a2badb06aa10eddc49ac67d0da86043bda552d07be818d19f6e9",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "auto.create.topics.enable",
+          "proposed_id": "kafka.config.auto-create-topics-enable",
+          "proposed_leaf_filename": "auto-create-topics-enable.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/auto-create-topics-enable.md",
+          "evidence_anchor_lines": "L252-L262",
+          "anchor_prose_lines": 8,
+          "anchor_span_sha256": "a0b04e8555a3ed2385e23c607a80dab411f17bb4905bb25f8c69c9cae7df3ad2",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "auto.leader.rebalance.enable",
+          "proposed_id": "kafka.config.auto-leader-rebalance-enable",
+          "proposed_leaf_filename": "auto-leader-rebalance-enable.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/auto-leader-rebalance-enable.md",
+          "evidence_anchor_lines": "L263-L272",
+          "anchor_prose_lines": 7,
+          "anchor_span_sha256": "da054d3b3f4f8ec9926ce6d97f839c2a745f85d6ccbcf228831945cac89681ca",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "delete.topic.enable",
+          "proposed_id": "kafka.config.delete-topic-enable",
+          "proposed_leaf_filename": "delete-topic-enable.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/delete-topic-enable.md",
+          "evidence_anchor_lines": "L273-L279",
+          "anchor_prose_lines": 5,
+          "anchor_span_sha256": "c7b42c8642145ceec38e0272ff04cd31d543ffe8cbef5336bcf5e3bc9e0623b6",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "num.partitions",
+          "proposed_id": "kafka.config.num-partitions",
+          "proposed_leaf_filename": "num-partitions.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/num-partitions.md",
+          "evidence_anchor_lines": "L334-L343",
+          "anchor_prose_lines": 7,
+          "anchor_span_sha256": "b0ead549130eea05db5830e8bb42bffd74ffce181a03655dbb9fef414926590d",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "default.replication.factor",
+          "proposed_id": "kafka.config.default-replication-factor",
+          "proposed_leaf_filename": "default-replication-factor.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/default-replication-factor.md",
+          "evidence_anchor_lines": "L344-L356",
+          "anchor_prose_lines": 10,
+          "anchor_span_sha256": "504e761d50f26fcec8a8407dd8625532a9d977e20a68140e3aa783cf4fcdd678",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "log.retention.ms",
+          "proposed_id": "kafka.config.log-retention-ms",
+          "proposed_leaf_filename": "log-retention-ms.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/log-retention-ms.md",
+          "evidence_anchor_lines": "L357-L375",
+          "anchor_prose_lines": 15,
+          "anchor_span_sha256": "1221a2be3d3d72b7086fa89e79ce65ad172b74cb8a0111765a8d2963d5bd73f3",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "log.retention.bytes",
+          "proposed_id": "kafka.config.log-retention-bytes",
+          "proposed_leaf_filename": "log-retention-bytes.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/log-retention-bytes.md",
+          "evidence_anchor_lines": "L376-L391",
+          "anchor_prose_lines": 12,
+          "anchor_span_sha256": "d9217b919b488421d8ba0738cdf122386dce0231385f663ccc452266ac9cd3f5",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "log.segment.bytes",
+          "proposed_id": "kafka.config.log-segment-bytes",
+          "proposed_leaf_filename": "log-segment-bytes.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/log-segment-bytes.md",
+          "evidence_anchor_lines": "L392-L426",
+          "anchor_prose_lines": 28,
+          "anchor_span_sha256": "899dc7255e2bde0d238a3bdb029a1388a3c1356d6edf93f97ab2ad8ef01323dc",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "log.roll.ms",
+          "proposed_id": "kafka.config.log-roll-ms",
+          "proposed_leaf_filename": "log-roll-ms.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/log-roll-ms.md",
+          "evidence_anchor_lines": "L427-L440",
+          "anchor_prose_lines": 10,
+          "anchor_span_sha256": "e6a6d45e3ce8552cb77400765c14589bdb561915b1f9df264c6c7eed73d6cfb9",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "min.insync.replicas",
+          "proposed_id": "kafka.config.min-insync-replicas",
+          "proposed_leaf_filename": "min-insync-replicas.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/min-insync-replicas.md",
+          "evidence_anchor_lines": "L441-L460",
+          "anchor_prose_lines": 17,
+          "anchor_span_sha256": "8b6db7bb063ec21e65b0ddc432a3fab377d766bb25f85a81ae14b885026e69b0",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        },
+        {
+          "parameter_name": "message.max.bytes",
+          "proposed_id": "kafka.config.message-max-bytes",
+          "proposed_leaf_filename": "message-max-bytes.md",
+          "proposed_document_path": "content/brain/knowledge/kafka/config/message-max-bytes.md",
+          "evidence_anchor_lines": "L461-L481",
+          "anchor_prose_lines": 18,
+          "anchor_span_sha256": "02ca033457cf669fd43e605d429f395b49d4ad75cfd764b6aa81022b20566a21",
+          "derivation": "rule N1: lowercase the parameter name exactly as the source writes it, replace '.' with '-'"
+        }
+      ]
+    },
+    "collision_check_of_proposed_ids": {
+      "checked_against": [
+        "applied concept_id (119)",
+        "applied canonical_path (119)",
+        "applied normalized title_or_alias keys",
+        "folder_route rule",
+        "Quartz routing aliases (1)"
+      ],
+      "violations": [],
+      "violation_count": 0,
+      "caveat": "This checks the 16 mechanically-derived PARAMETER ids only. Titles and aliases are not proposed here and remain the authoring lane's responsibility; every one must be checked against the occupied normalized keys listed in existing_touch_points."
+    }
+  },
+  "expected_candidate_profile": {
+    "disclaimer": "Ranges and topics only. No concept_id, title, canonical_path, alias, or tag is authored here for any new concept.",
+    "heading_scopes": 17,
+    "positive_prose_heading_scopes": 15,
+    "prose_bearing_exclusive_heading_scopes": 13,
+    "engine_substantive_heading_scopes": 15,
+    "prose_lines_total": 330,
+    "forecast_bases": [
+      {
+        "base": "per positive-prose scope",
+        "realized_ratios": {
+          "batch-01": 0.548,
+          "batch-02": 0.642,
+          "batch-03": 0.933,
+          "batch-04": 1.36
+        },
+        "applied_to": 15,
+        "forecast": "8-20",
+        "used": false,
+        "why_not": "REJECTED as structurally invalid for this source. chap02 averages 22.0 prose lines per positive-prose scope against batch 04's 12.8 and batches 01-03's 9.4 / 6.2 / 4.6, and three of its 15 positive scopes carry 119, 75 and 34 prose lines. A scope count cannot measure review burden when one scope enumerates eight independent parameters. This is the base batch 04 used, and reusing it here would under-forecast by roughly a factor of two."
+      },
+      {
+        "base": "per prose line",
+        "realized_ratios": {
+          "batch-01": 0.058,
+          "batch-02": 0.103,
+          "batch-03": 0.203,
+          "batch-04": 0.106
+        },
+        "applied_to": 330,
+        "forecast": "19-67",
+        "used": false,
+        "why_not": "Band too wide to act on (3.5x spread). Recorded because the batch-04-only ratio 0.106 gives 35, which corroborates the anchor base."
+      },
+      {
+        "base": "per citable evidence anchor",
+        "realized_ratios": {
+          "batch-01": 0.447,
+          "batch-02": 0.829,
+          "batch-03": 1.647,
+          "batch-04": 0.919
+        },
+        "applied_to": 34,
+        "forecast": "24-39",
+        "central": 31,
+        "used": true,
+        "why": "The only base that measures the units a candidate actually cites. Calibrated by recomputing citable anchors for all four applied batches from source bytes: 38 / 41 / 17 / 37 citable anchors against 17 / 34 / 28 / 34 applied. The same-series batch-04 ratio is 0.919; applied to batch 05's 34 citable anchors it gives 31.3, and +/-25% gives 24-39."
+      }
+    ],
+    "expected_accepted_candidate_range": [
+      24,
+      39
+    ],
+    "expected_accepted_candidate_central": 31,
+    "range_derivation": "Anchor base: 34 citable evidence anchors x the same-series batch-04 realized ratio 0.919 = 31.3, band +/-25% = 24-39. Corroborated by the per-prose-line batch-04 ratio 0.106 x 330 = 35. Contradicted only by the per-positive-prose-scope base (8-20), which is rejected above with reasons. Gate on B5 = 40, not on the range.",
+    "expected_kinds": {
+      "create": "the large majority. Expected families, described by topic only: ZooKeeper as broker metadata store, ensemble and quorum, ensemble sizing, the ZooKeeper configuration parameters (L66-L78) and the myid file; the KRaft replacement claim (preamble L7-L16); installation and the CLI utilities incl. the --zookeeper deprecation (L158-L161); the eight core broker parameters (L185-L279); partition-count sizing (L282-L326); the eight topic-default parameters (L334-L481); log segment mechanics (L392-L426); and hardware provisioning across disk throughput, disk capacity, memory and network (L493-L562).",
+      "update": "expected against AT MOST 3 applied concepts: kafka.topic.partition (partition-count sizing, L280-L326, and per-partition retention, L379-L381), kafka.retention.retention (time- and size-based retention configuration, L357-L391), kafka.property.fault-tolerance (the RF++ rule, L344-L356). Each is a judgement the authoring lane must justify against its cited span; none is mandated here.",
+      "merge": "possible where the same mechanism is documented twice, e.g. log.retention.ms (L357-L375) and log.roll.ms (L427-L440) both govern segment closure, and log.dirs (L225-L236) and log.segment.bytes (L392-L426) both describe log-segment placement. An authoring judgement.",
+      "stub": "expected from the 2 low-evidence scopes (## 주키퍼 L17-L24 prose=3, ### macOS 설치 L95-L114 prose=1) and possibly from the 6 low-evidence anchors.",
+      "no_op": "expected on rerun; AC-14 requires rerun no-op. Also the expected disposition for 10 of the 20 touch points.",
+      "rejected": "expected on the 2 zero-evidence scopes, reason_code insufficient-source-evidence."
+    },
+    "expected_flagged_for_full_review": {
+      "rule": "plan §5.1 requires 100% review of conflict / low-confidence / provenance-warning proposals; REVIEW_FLAGS in knowledge.mjs is exactly {conflict, low-confidence, provenance-warning}.",
+      "low_evidence_rule": "0 < prose_lines <= 3",
+      "low_evidence_scope_count": 2,
+      "low_evidence_scopes": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "heading_chain": "## 주키퍼",
+          "start_line": 17,
+          "end_line": 24,
+          "span_sha256": "93450a20260b559edbff006c40871493145df426c01b94a79dfa7ee4bbd22ffa",
+          "prose_lines": 3,
+          "code_lines": 0
+        },
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "heading_chain": "## 카프카 설치 > ### macOS 설치",
+          "start_line": 95,
+          "end_line": 114,
+          "span_sha256": "3084bed29042fd492c78d13a933b450d289dc9aa827be392f12006f1f132c40e",
+          "prose_lines": 1,
+          "code_lines": 13
+        }
+      ],
+      "conflict_flag_expectation": "HIGHER than any prior batch. 3 update candidates and 17 relate/no_op touch points against applied Kafka concepts mean the conflict bucket is driven by real overlap, not by word reuse. Every candidate touching one of the 20 occupied keys should be expected to carry a conflict or low-confidence flag.",
+      "dense_scope_expectation": "3 heading scopes carry 20 or more prose lines: ### 토픽별 기본값 (L327-L481, 119), ### 핵심 브로커 매개변수 (L176-L279, 75) and ### 파티션 수 결정 (L280-L326, 34). Together they hold 228 of the 330 prose lines - 69% of the chapter in 3 of 17 scopes. Any candidate whose locator covers only part of one of these must be checked for an unsupported granularity claim: the defect that produced R1/R2 in the batch-03 candidate review and P7 in batch 04. The evidence_anchors table exists to make that check mechanical.",
+      "sample_quota_recipe": "computeBatchSample() sets quota = min(unflagged_pool, max(5, ceil(0.10 x unflagged_pool))) over the UNFLAGGED pool; category coverage can add one draw per proposal kind missing from the quota slice, so the discretionary count is a floor.",
+      "estimated_u3_review_load": "ESTIMATE ONLY. Batch 04 realized 19 flagged of 34; batch 03 realized 20 mandatory of 28. Batch 05's flagged set will be driven by conflict decisions against the 20 touched applied concepts rather than by scope class, so it should be expected at or above batch 04's 56% flagged rate."
+    }
+  },
+  "preconditions": [
+    {
+      "id": "P1",
+      "severity": "informational",
+      "statement": "All four predecessor Book batches are applied and independently verified, and book-batch-04 is independently closed after the alias-search repair, so candidate authoring is not sequencing-blocked.",
+      "required_before": "candidate authoring",
+      "resolution": "Bind approved_knowledge_tree_sha256_at_inventory into the future batch manifest and re-verify before propose and before apply."
+    },
+    {
+      "id": "P2",
+      "severity": "blocking",
+      "statement": "The approved knowledge tree must not move between this inventory and batch-05 apply. It is 970d2898bcb31845d8f7ca1a3629acb0dc69202251ab928a73d9e228a712112c (120 files, 119 concepts, 265 alias identities).",
+      "consequence": "Any intervening apply forces regeneration; `apply` refuses with `approved knowledge content changed after proposal generation`. Fail-closed, not a corruption risk.",
+      "required_before": "propose and apply",
+      "resolution": "Sequence batch 05 as the only in-flight Book packet, or regenerate after any intervening apply."
+    },
+    {
+      "id": "P3",
+      "severity": "warning",
+      "statement": "The raw layer is uncommitted; the extraction source is untracked in git, so drift cannot be caught by git alone.",
+      "required_before": "propose and apply",
+      "resolution": "Re-verify all 27 corpus source_sha256 immediately before propose and again before apply; fail closed on mismatch."
+    },
+    {
+      "id": "P4",
+      "severity": "warning",
+      "statement": "Tag policy: knowledge tags[] must equal canonical_path folder segments; `brain` and `knowledge` are reserved. Raw Kafka frontmatter carries the display tag `📚 카프카 핵심가이드` at L5.",
+      "required_before": "candidate authoring",
+      "resolution": "Derive tags from canonical_path folders only; never copy the display tag."
+    },
+    {
+      "id": "P5",
+      "severity": "warning",
+      "statement": "Alias policy H-1: knowledge aliases are search-only; `aliases`/`alias`/`permalink` are forbidden in knowledge frontmatter. Under the repaired search contract an exact alias match now claims rank 0, so a duplicated alias silently steals an applied concept's identity.",
+      "required_before": "candidate authoring",
+      "resolution": "Use knowledge_aliases plus the KNOWLEDGE_ALIASES body block, as all 119 applied concepts do, and check every proposed alias against the 265 applied alias identities and 119 applied titles for an EXACT normalized match, not just a substring."
+    },
+    {
+      "id": "P6",
+      "severity": "blocking",
+      "statement": "RESTATEMENT RISK. Unlike batch 04, batch 05 extracts from a domain the approved index already occupies: 20 applied concepts are touched, 13 of them applied by batch 04 from the immediately preceding chapter, and 3 carry genuinely new assertions in this source.",
+      "consequence": "A candidate that restates kafka.topic.partition, kafka.retention.retention or kafka.property.fault-tolerance instead of relating to it duplicates approved knowledge under a new id, which collisionReport() will not catch because the title differs.",
+      "required_before": "candidate authoring",
+      "resolution": "For each of the 20 touch points, decide create-and-relate vs update BEFORE writing the candidate, and record the decision with the span that justifies it. The 3 update candidates are the only applied concepts batch 05 may modify."
+    },
+    {
+      "id": "P7",
+      "severity": "blocking",
+      "statement": "The ZooKeeper root namespace is undecided. This inventory proposes kafka.zookeeper.* on the evidence that the source frames ZooKeeper only as Kafka infrastructure, but a standalone zookeeper.* root is defensible.",
+      "consequence": "Both concept_id and canonical_path derive from the root, so a late change forces re-authoring of every ZooKeeper candidate.",
+      "required_before": "candidate authoring",
+      "resolution": "Confirm or override kafka.zookeeper.* as the first authoring decision and record it in the candidate manifest's rationale."
+    },
+    {
+      "id": "P8",
+      "severity": "warning",
+      "statement": "Scope density is the highest in the series: 22.0 prose lines per positive-prose scope against batch 04's 12.8, with 3 scopes holding 69% of the chapter's prose (119 / 75 / 34 lines).",
+      "consequence": "The per-positive-prose-scope forecast base used by batch 04 under-forecasts by roughly a factor of two here, and a candidate citing part of a dense scope can easily claim more than its span supports.",
+      "required_before": "candidate authoring",
+      "resolution": "Forecast on citable evidence anchors, not scopes; check every granularity clause against its own cited span before U3; use the evidence_anchors table as the span source."
+    },
+    {
+      "id": "P9",
+      "severity": "warning",
+      "statement": "The chapter's prose is not confined to heading scopes. The pre-heading preamble L7-L16 carries 6 citable prose lines including the only KRaft claim in the file, and 11 shell comments inside fenced blocks match the ATX-heading regex.",
+      "consequence": "A parser that ignores the preamble loses citable evidence; a parser that treats fenced shell comments as headings overcounts scopes by 65% (28 vs 17) and would mint concepts from code comments.",
+      "required_before": "candidate authoring and independent verification",
+      "resolution": "Cite the preamble by its literal span L7-L16 (it has no heading_chain); confirm the 17 + 11 = 28 heading accounting before trusting any scope count."
+    },
+    {
+      "id": "P10",
+      "severity": "informational",
+      "statement": "B5 was raised from 38 to 40 under the owner's standing blanket approval for bounded budget decisions.",
+      "consequence": "If authoring exceeds 40, the correct response is a source split at L327-L481, not a further raise.",
+      "required_before": "candidate authoring",
+      "resolution": "Track accepted-candidate count during authoring; escalate at 40 rather than raising the ceiling again."
+    },
+    {
+      "id": "W1",
+      "severity": "warning",
+      "statement": "The tree-digest recipe is locale-dependent. The content/brain baseline reproduces only under localeCompare row ordering, not byte ordering; see hash_lock.tree_manifest_recipe. The knowledge and books baselines reproduce under both because their paths are ASCII.",
+      "consequence": "localeCompare depends on the ICU build, so the content/brain baseline is not portably reproducible. An independent verifier using `LC_ALL=C sort` will reproduce two of the three baselines and fail the third - a recipe artifact, not drift.",
+      "required_before": "independent verification of this inventory",
+      "resolution": "Use the recipe recorded in hash_lock.tree_manifest_recipe. Migrating the tree manifest to byte ordering would change the published content/brain digest and therefore needs an OWNER decision; it was deliberately NOT done in this lane."
+    }
+  ],
+  "extraction_source_coverage": {
+    "rule": "Every line of the selected source is accounted for: frontmatter, pre-heading preamble, or exactly one heading scope.",
+    "file_line_count": 564,
+    "frontmatter_lines": "L1-L6",
+    "preamble_lines": "L7-L16",
+    "scope_lines": "L17-L564",
+    "equation": "6 frontmatter + 10 preamble + 548 scope lines = 564",
+    "unaccounted_lines": 0,
+    "exclusions_within_source": [
+      {
+        "region": "L1-L6",
+        "reason_code": "frontmatter",
+        "reason": "YAML frontmatter. Not evidence; the engine strips it before substantiveBodyText(). Carries the display tag that P4 forbids copying."
+      },
+      {
+        "region": "L53-L64, L99-L111, L119-L125, L131-L139, L145-L154",
+        "reason_code": "fenced-code",
+        "reason": "51 code lines across 5 shell blocks. Counted as code_lines, never as prose. The 11 shell comments inside them are pseudo-headings, not scope starts."
+      }
+    ]
+  },
+  "exclusions": [
+    {
+      "path": "content/brain/books/dinosaur/chap01.md",
+      "source_sha256": "9cde30179c51f50c49b22e5845e18b0aba38671ba98ab1103aeb7f3c6d84383b",
+      "bytes": 20564,
+      "reason_code": "consumed-by-applied-u2-pilot",
+      "reason": "Applied U2 pilot source: 6 live locators. Consolidation over applied-source chapters is a separately scheduled pass; this exclusion does not claim exhaustive mining."
+    },
+    {
+      "path": "content/brain/books/dinosaur/index.md",
+      "source_sha256": "a8120f7707ebf9337aa6e39266cdfa818cb7bac0f461d9780ce35e629e1c8628",
+      "bytes": 434,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap01.md",
+      "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+      "bytes": 3839,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied: 5 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap02.md",
+      "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+      "bytes": 10221,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied: 14 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap03.md",
+      "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+      "bytes": 4298,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied: 5 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap04.md",
+      "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+      "bytes": 8675,
+      "reason_code": "consumed-by-applied-book-batch-03",
+      "reason": "Book batch 03 applied: 12 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap05.md",
+      "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+      "bytes": 22791,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 27 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap06.md",
+      "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+      "bytes": 18202,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 17 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap07.md",
+      "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+      "bytes": 16380,
+      "reason_code": "consumed-by-applied-book-batch-02",
+      "reason": "Book batch 02 applied: 12 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap08.md",
+      "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+      "bytes": 36552,
+      "reason_code": "consumed-by-applied-u2-pilot",
+      "reason": "Applied U2 pilot source: 4 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap09.md",
+      "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+      "bytes": 21207,
+      "reason_code": "consumed-by-applied-book-batch-01",
+      "reason": "Book batch 01 applied: 14 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap10.md",
+      "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+      "bytes": 26270,
+      "reason_code": "consumed-by-applied-book-batch-01",
+      "reason": "Book batch 01 applied: 22 live locators."
+    },
+    {
+      "path": "content/brain/books/do-it-java/index.md",
+      "source_sha256": "2ebcf0fdf49f2e33bcfee437b577a69d81badfaf241d7d5dc0b9dc9b31f55433",
+      "bytes": 1067,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/headfirst/chap01.md",
+      "source_sha256": "5bc76a52b84de82b431eca3153eb88b7b46c8e97182f4acfcc5cf2a96a912934",
+      "bytes": 132,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter (body 0 bytes). Discharged as book.rejected.headfirst-chap01 / insufficient-source-evidence inside the applied book-batch-01 packet; bytes unchanged since that lock."
+    },
+    {
+      "path": "content/brain/books/headfirst/index.md",
+      "source_sha256": "0a494323844cf13491e90daeede77b9b10d8ad87e2f3cf042800a7a88ecf2378",
+      "bytes": 531,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    },
+    {
+      "path": "content/brain/books/index.md",
+      "source_sha256": "0e16821f89bb88ce2d9ab35393e622e1af7584106fd5d767994ffb8db206be46",
+      "bytes": 34,
+      "reason_code": "structural-landing-page",
+      "reason": "Root landing page for the Book layer. Frontmatter-only, and a landing page is not a valid extraction or probe candidate under the evidence rule."
+    },
+    {
+      "path": "content/brain/books/kafka/chap01.md",
+      "source_sha256": "708a2feda4b018a0cf6842b1a46c117a75391afa92527f6f0cb12ded93c2a893",
+      "bytes": 25915,
+      "reason_code": "consumed-by-applied-book-batch-04",
+      "reason": "Book batch 04 applied 34 candidates: 48 live locators, the densest applied source in the corpus."
+    },
+    {
+      "path": "content/brain/books/kafka/chap03.md",
+      "source_sha256": "415a2aa0a323e2a13946beb6cc01fd4a2a5d4136761647d1212b2db57676d36e",
+      "bytes": 126,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter (body 0 bytes). Discharged as book.rejected.kafka-chap03; bytes unchanged."
+    },
+    {
+      "path": "content/brain/books/kafka/chap04.md",
+      "source_sha256": "61c9540d0ce99d8de40b8b1fc156344d32ba4b72935b3846a2ecaaa378b28c79",
+      "bytes": 123,
+      "reason_code": "probe-discharged-by-applied-book-batch-01",
+      "reason": "Frontmatter-only chapter (body 0 bytes). Discharged as book.rejected.kafka-chap04; bytes unchanged."
+    },
+    {
+      "path": "content/brain/books/kafka/chap05.md",
+      "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+      "bytes": 35954,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 05 AdminClient. 337 prose lines = 94% of B4 on its own; a batch of its own. Pairing with chap02 reaches 185% of B4."
+    },
+    {
+      "path": "content/brain/books/kafka/chap07.md",
+      "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+      "bytes": 36294,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 07 신뢰성 있는 데이터 전달. 478 prose lines = 133% of B4; exceeds the ceiling alone and needs a sub-chapter split or a raised budget."
+    },
+    {
+      "path": "content/brain/books/kafka/chap08.md",
+      "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+      "bytes": 60639,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 08 정확히 한번의 의미구조. 542 prose lines = 151% of B4, the largest single chapter; will need splitting."
+    },
+    {
+      "path": "content/brain/books/kafka/chap09.md",
+      "source_sha256": "a3b6f7ce001d356e77a86019b9480a06a5f8ce7f30579493482529606b972329",
+      "bytes": 26990,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 09. 228 prose lines = 63% of B4, the only remaining chapter small enough to consider pairing; pairing with chap02 still reaches 155% of B4."
+    },
+    {
+      "path": "content/brain/books/kafka/chap10.md",
+      "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+      "bytes": 58072,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 10. 343 prose lines = 95% of B4; a batch of its own."
+    },
+    {
+      "path": "content/brain/books/kafka/chap14.md",
+      "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+      "bytes": 58148,
+      "reason_code": "deferred-later-batch-same-series",
+      "reason": "Kafka 14. 361 prose lines = 100% of B4; a batch of its own."
+    },
+    {
+      "path": "content/brain/books/kafka/index.md",
+      "source_sha256": "18a829ca948932c7c9279afb1d0b9f4f6a0547d83740f136932772b12d41a2bf",
+      "bytes": 1104,
+      "reason_code": "structural-landing-page",
+      "reason": "Series landing page; navigational, not evidence."
+    }
+  ],
+  "coverage": {
+    "book_markdown_total": 27,
+    "extraction_sources": 1,
+    "rejection_probes": 0,
+    "exclusions": 26,
+    "accounted_for": 27,
+    "unaccounted": 0,
+    "by_reason_code": {
+      "selected-extraction-source": 1,
+      "consumed-by-applied-u2-pilot": 2,
+      "structural-landing-page": 5,
+      "consumed-by-applied-book-batch-03": 4,
+      "consumed-by-applied-book-batch-02": 3,
+      "consumed-by-applied-book-batch-01": 2,
+      "probe-discharged-by-applied-book-batch-01": 3,
+      "consumed-by-applied-book-batch-04": 1,
+      "deferred-later-batch-same-series": 6
+    },
+    "consumed_by_note": "`consumed-by-*` records that an applied packet owns the file (live locator counts: kafka/chap01 48, do-it-java/chap05 27, chap10 22, chap06 17, chap02 14, chap09 14, chap04 12, chap07 12, dinosaur/chap01 6, chap01 5, chap03 5, chap08 4) - NOT that it is exhaustively mined. A consolidation pass remains scheduled."
+  },
+  "mutation_scope": {
+    "statement": "This lane created exactly two files and modified nothing.",
+    "files_created": [
+      "tooling/brain/fixtures/book-batch-05-sources.json",
+      ".omx/reviews/brain-phase5-book-batch-05-inventory.md"
+    ],
+    "files_modified": [],
+    "files_deleted": [],
+    "explicitly_not_created": [
+      "tooling/brain/fixtures/book-batch-05.json",
+      "any candidate document",
+      "any proposal artifact",
+      "any signature",
+      "any run directory",
+      "any extraction-surface.json or book-corpus-lock.json (batch 05 inlines both into this fixture)"
+    ],
+    "git_operations_performed": "none. No commit, push, stage, reset, clean, checkout, or any other destructive operation.",
+    "engine_invocations": "read-only only: `node --test tooling/brain/*.test.mjs`, and buildKnowledgeIndex/collisionReport imported read-only. No propose, sample, verify, apply, promote or rollback was run.",
+    "production_unchanged": {
+      "content/brain": "f4b074786cc0f64385cf048f856de5c635b027db497dd89e70523dba85f298fa (2205 files)",
+      "content/brain/knowledge": "970d2898bcb31845d8f7ca1a3629acb0dc69202251ab928a73d9e228a712112c (120 files)",
+      "content/brain/books": "e6a230767324e5efaa11f20fff750126ee86b5052f2165540e79fc77b147dcb2 (27 files)",
+      "engine": "3e8b2c03ed2a8898a4d11bebaa8d52861fb6bb8918974b522dbbedcde69f0417",
+      "git_head": "d92e3faa9deeb7a1b9406c6e36fbe8eac4a03443",
+      "staged_paths": 0
+    }
+  },
+  "next_batch_recommendation": {
+    "batch_06": "content/brain/books/kafka/chap05.md (AdminClient) - 337 prose lines, 94% of B4 on its own.",
+    "remaining_after_batch_05": "kafka chap05 (337 prose lines), chap07 (478), chap08 (542), chap09 (228), chap10 (343), chap14 (361). chap07 and chap08 exceed B4 alone and will need a sub-chapter split or a raised budget; chap09 is the only chapter small enough to consider pairing, but no remaining pairing fits B4.",
+    "projected_batch_count": "six further batches after batch 05, one per remaining chapter, with chap07 and chap08 possibly splitting into two each - so seven or eight in practice.",
+    "consolidation": "a dedicated pass over dinosaur/chap01.md, do-it-java/chap01-chap10.md and kafka/chap01.md, whose spans are applied but not necessarily exhaustively mined. After the Kafka series completes, consolidation is the only remaining Book work.",
+    "defer_schedule_basis": "Every deferral above is recorded per-file in `exclusions` with reason_code deferred-later-batch-same-series and a measured prose-line figure, not a preference."
+  }
+}

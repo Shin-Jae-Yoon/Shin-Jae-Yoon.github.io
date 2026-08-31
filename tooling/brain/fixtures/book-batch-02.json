@@ -1,0 +1,1632 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-02",
+  "lane": "book",
+  "phase": 5,
+  "review_gate": "U3",
+  "mode": "candidate-manifest",
+  "derived_from": {
+    "source_inventory": "tooling/brain/fixtures/book-batch-02-sources.json",
+    "source_inventory_sha256": "878c48b595915f08cb611a0661f485bf9726a14a27edac2a70c8b20e475fd4e7",
+    "extraction_surface": ".omx/artifacts/brain-restructure/book-batch-02/extraction-surface.json",
+    "extraction_surface_sha256": "6bfb3829b92c1ff15f65c3532891f73595c89beb3d3aeffb5cb85db84cb5558e",
+    "book_corpus_lock": ".omx/artifacts/brain-restructure/book-batch-02/book-corpus-lock.json",
+    "book_corpus_lock_sha256": "efec61115a7f3c619a81aa1fb631853849587a8a98f54ba073b346f16c94987f",
+    "batch_baseline_sha256": "91c0d19b6ac72f6ac8f940096aeb2240e7b33c2cda52e7c23ffaee5fa07c9393",
+    "book_corpus_sha256": "c39bbdf5c72911e23fe08364762ffdc143dc4ce1c2edda8e47896b5f68183c88"
+  },
+  "scope": [
+    {
+      "path": "content/brain/books/do-it-java/chap05.md",
+      "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351"
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap06.md",
+      "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede"
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap07.md",
+      "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6"
+    }
+  ],
+  "candidates": [
+    {
+      "concept_id": "cs.memory.call-stack",
+      "title": "호출 스택",
+      "aliases": [
+        "Call Stack",
+        "스택 메모리"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/memory/call-stack.md",
+      "tags": [
+        "cs",
+        "memory"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single stack-based memory mechanism for active function calls",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.memory.heap",
+        "java.variable.scope",
+        "software.programming.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함후 호출과 스택 메모리",
+          "start_line": 215,
+          "end_line": 231
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array",
+      "title": "배열",
+      "aliases": [
+        "Array",
+        "자바 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/java-array.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single fixed-length contiguous Java array construct",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.array.array-copy",
+        "java.array.array-length",
+        "java.array.object-array",
+        "java.array.two-dimensional-array",
+        "java.collection.array-list",
+        "java.control-flow.enhanced-for"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 선언과 초기화",
+          "start_line": 19,
+          "end_line": 70
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 사용하기",
+          "start_line": 71,
+          "end_line": 84
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 문자 저장 배열 만들기",
+          "start_line": 142,
+          "end_line": 172
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array-copy",
+      "title": "배열 복사",
+      "aliases": [
+        "Array Copy",
+        "얕은 복사",
+        "깊은 복사",
+        "Shallow Copy",
+        "Deep Copy"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/array-copy.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java array-copy mechanism including value, shallow-reference, and deep-object copy behavior",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.object-array",
+        "java.memory.object-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 복사하기",
+          "start_line": 293,
+          "end_line": 340
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 객체 배열 복사",
+          "start_line": 341,
+          "end_line": 499
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array-length",
+      "title": "배열 길이와 유효 요소",
+      "aliases": [
+        "Array Length",
+        "유효 요소 개수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/array-length.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between allocated array length and populated element count",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.array.array",
+        "java.collection.array-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 전체 배열 길이와 유효한 요소 값",
+          "start_line": 85,
+          "end_line": 141
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.object-array",
+      "title": "객체 배열",
+      "aliases": [
+        "Object Array",
+        "참조 자료형 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/object-array.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java array form whose elements store object references",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.array-copy",
+        "java.collection.array-list",
+        "java.memory.object-reference",
+        "java.type.reference-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 객체 배열 사용",
+          "start_line": 173,
+          "end_line": 292
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.two-dimensional-array",
+      "title": "이차원 배열",
+      "aliases": [
+        "Two-dimensional Array",
+        "2D Array"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/two-dimensional-array.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single row-and-column Java array structure",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.array.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 다차원 배열 > ### 이차원 배열",
+          "start_line": 538,
+          "end_line": 575
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.array-list",
+      "title": "ArrayList",
+      "aliases": [
+        "ArrayList 클래스",
+        "가변 길이 객체 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/array-list.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single resizable Java list collection backed by array-like indexed operations",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.array-length",
+        "java.array.object-array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### 기존 배열의 단점, 그리고 ArrayList",
+          "start_line": 578,
+          "end_line": 587
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### ArrayList 클래스 주요 메서드",
+          "start_line": 588,
+          "end_line": 607
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### ArrayList 클래스 활용",
+          "start_line": 608,
+          "end_line": 674
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.enhanced-for",
+      "title": "향상된 for 문",
+      "aliases": [
+        "Enhanced for Loop",
+        "for-each Loop",
+        "향상된 for문"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/enhanced-for.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java iteration form for sequential element traversal",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.array.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 향상된 for문과 배열",
+          "start_line": 500,
+          "end_line": 535
+        }
+      ]
+    },
+    {
+      "concept_id": "java.entry-point.main-method",
+      "title": "main 메서드",
+      "aliases": [
+        "main()",
+        "Java Entry Point",
+        "프로그램 시작 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/entry-point/main-method.md",
+      "tags": [
+        "java",
+        "entry-point"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single JVM-invoked Java program entry point",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.method",
+        "software.programming.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 클래스 사용과 main() 함수",
+          "start_line": 279,
+          "end_line": 356
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.access-modifier",
+      "title": "접근 제어자",
+      "aliases": [
+        "Access Modifier",
+        "접근 지정자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/keyword/access-modifier.md",
+      "tags": [
+        "java",
+        "keyword"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java declaration-access control mechanism",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.accessor-method",
+        "java.oop.information-hiding",
+        "java.pattern.singleton"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 정보 은닉 > ### 접근 제어자",
+          "start_line": 750,
+          "end_line": 798
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.this",
+      "title": "this 예약어",
+      "aliases": [
+        "this Keyword",
+        "this 참조"
+      ],
+      "canonical_path": "content/brain/knowledge/java/keyword/this.md",
+      "tags": [
+        "java",
+        "keyword"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single Java self-reference keyword across field disambiguation, instance access, and self-return",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05-chap06"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.constructor",
+        "java.oop.constructor-chaining",
+        "java.oop.instance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자 > ### this 맛보기",
+          "start_line": 670,
+          "end_line": 721
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## this 예약어 > ### 자신의 메모리를 가리키는 this",
+          "start_line": 19,
+          "end_line": 66
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## this 예약어 > ### 자신의 주소를 반환하는 this",
+          "start_line": 110,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.package",
+      "title": "패키지",
+      "aliases": [
+        "Java Package",
+        "Package"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/package.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java namespace and class-grouping mechanism",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스 살펴보기 > ### 패키지",
+          "start_line": 118,
+          "end_line": 136
+        }
+      ]
+    },
+    {
+      "concept_id": "java.memory.garbage-collection",
+      "title": "가비지 컬렉션",
+      "aliases": [
+        "Garbage Collection",
+        "자동 메모리 관리"
+      ],
+      "canonical_path": "content/brain/knowledge/java/memory/garbage-collection.md",
+      "tags": [
+        "java",
+        "memory"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single automatic Java heap-memory reclamation mechanism",
+      "pilot_strata": [
+        "source-backed-stub",
+        "book-batch-02",
+        "extends-applied-concept",
+        "do-it-java/chap05-chap06"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.memory.heap",
+        "java.oop.instance",
+        "java.oop.member-variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 인스턴스와 힙 메모리",
+          "start_line": 471,
+          "end_line": 473
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 멤버 변수 유효범위",
+          "start_line": 408,
+          "end_line": 411
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 27,
+          "end_line": 30
+        }
+      ]
+    },
+    {
+      "concept_id": "java.memory.heap",
+      "title": "힙 메모리",
+      "aliases": [
+        "Heap Memory",
+        "Java Heap",
+        "동적 메모리"
+      ],
+      "canonical_path": "content/brain/knowledge/java/memory/heap.md",
+      "tags": [
+        "java",
+        "memory"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java runtime memory area for dynamically allocated instances",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.memory.call-stack",
+        "java.memory.garbage-collection",
+        "java.memory.object-reference",
+        "java.oop.instance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 인스턴스와 힙 메모리",
+          "start_line": 436,
+          "end_line": 473
+        }
+      ]
+    },
+    {
+      "concept_id": "java.memory.object-reference",
+      "title": "객체 참조",
+      "aliases": [
+        "Object Reference",
+        "참조 변수",
+        "참조 값"
+      ],
+      "canonical_path": "content/brain/knowledge/java/memory/object-reference.md",
+      "tags": [
+        "java",
+        "memory"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java reference relationship from a variable to a heap instance address value",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.array.array-copy",
+        "java.array.object-array",
+        "java.memory.heap",
+        "java.oop.instance",
+        "java.type.reference-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 인스턴스와 힙 메모리",
+          "start_line": 477,
+          "end_line": 511
+        }
+      ]
+    },
+    {
+      "concept_id": "java.method.static-method",
+      "title": "정적 메서드",
+      "aliases": [
+        "Static Method",
+        "클래스 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/method/static-method.md",
+      "tags": [
+        "java",
+        "method"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java class-level method category callable without an instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.method",
+        "java.variable.static-variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### 클래스 메서드",
+          "start_line": 293,
+          "end_line": 385
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.accessor-method",
+      "title": "접근자 메서드",
+      "aliases": [
+        "Accessor Method",
+        "Getter",
+        "Setter",
+        "get/set 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/accessor-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single getter-and-setter method mechanism for controlled field access",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.information-hiding",
+        "java.oop.method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 정보 은닉 > ### get(), set() 메서드",
+          "start_line": 799,
+          "end_line": 851
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.class",
+      "title": "클래스",
+      "aliases": [
+        "Class",
+        "자바 클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented code construct defining object state and behavior",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.constructor",
+        "java.oop.instance",
+        "java.oop.member-variable",
+        "java.oop.method",
+        "java.oop.object",
+        "software.paradigm.object-oriented-programming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 객체 > ### 클래스 (Class)",
+          "start_line": 39,
+          "end_line": 76
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.constructor",
+      "title": "생성자",
+      "aliases": [
+        "Constructor",
+        "디폴트 생성자",
+        "Default Constructor"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/constructor.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java instance-initialization mechanism including implicit and explicit constructors",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.keyword.this",
+        "java.oop.constructor-chaining",
+        "java.oop.constructor-overloading",
+        "java.oop.instance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자",
+          "start_line": 515,
+          "end_line": 567
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자 > ### 생성자 만들기",
+          "start_line": 568,
+          "end_line": 637
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.constructor-chaining",
+      "title": "생성자 체이닝",
+      "aliases": [
+        "Constructor Chaining",
+        "this 생성자 호출"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/constructor-chaining.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single same-class constructor delegation mechanism using this",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.keyword.this",
+        "java.oop.constructor",
+        "java.oop.constructor-overloading"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## this 예약어 > ### 생성자에서 다른 생성자를 호출하는 this",
+          "start_line": 67,
+          "end_line": 109
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.constructor-overloading",
+      "title": "생성자 오버로딩",
+      "aliases": [
+        "Constructor Overloading",
+        "생성자 오버로드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/constructor-overloading.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single same-class mechanism providing constructors with different parameter lists",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.constructor",
+        "java.oop.constructor-chaining"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자 > ### 생성자 오버로드",
+          "start_line": 638,
+          "end_line": 669
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.information-hiding",
+      "title": "정보 은닉",
+      "aliases": [
+        "Information Hiding",
+        "데이터 은닉"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/information-hiding.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented practice of restricting direct state access and validating mutations",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.accessor-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 정보 은닉 > ### 정보 은닉이란?",
+          "start_line": 852,
+          "end_line": 908
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.instance",
+      "title": "인스턴스",
+      "aliases": [
+        "Instance",
+        "객체 인스턴스",
+        "인스턴스 생성"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/instance.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single runtime realization of a Java class created with new",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.keyword.this",
+        "java.memory.heap",
+        "java.memory.object-reference",
+        "java.oop.class",
+        "java.oop.constructor",
+        "java.oop.member-variable",
+        "java.oop.object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### new 예약어로 클래스 생성",
+          "start_line": 357,
+          "end_line": 386
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 인스턴스와 참조 변수",
+          "start_line": 387,
+          "end_line": 435
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.member-variable",
+      "title": "멤버 변수",
+      "aliases": [
+        "Member Variable",
+        "Instance Variable",
+        "인스턴스 변수",
+        "필드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/member-variable.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class-declared state variable category stored per instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05-chap06"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.memory.heap",
+        "java.oop.class",
+        "java.oop.instance",
+        "java.variable.scope",
+        "java.variable.static-variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스 살펴보기 > ### 멤버 변수",
+          "start_line": 79,
+          "end_line": 94
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 멤버 변수 유효범위",
+          "start_line": 402,
+          "end_line": 407
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.method",
+      "title": "메서드",
+      "aliases": [
+        "Method",
+        "멤버 함수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single class-bound function mechanism implementing object behavior",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.method.static-method",
+        "java.oop.accessor-method",
+        "java.oop.class",
+        "java.oop.member-variable",
+        "software.programming.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스 살펴보기 > ### 메서드",
+          "start_line": 95,
+          "end_line": 117
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method)",
+          "start_line": 137,
+          "end_line": 142
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 메서드는 클래스 기능을 구현",
+          "start_line": 244,
+          "end_line": 276
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.object",
+      "title": "객체",
+      "aliases": [
+        "Object"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/object.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented runtime entity with state and behavior",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.instance",
+        "java.oop.object-collaboration",
+        "software.paradigm.object-oriented-programming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1)",
+          "start_line": 13,
+          "end_line": 28
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.object-collaboration",
+      "title": "객체 간 협력",
+      "aliases": [
+        "Object Collaboration",
+        "객체 협력"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/object-collaboration.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented interaction model assigning behavior to collaborating objects",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.method",
+        "java.oop.object",
+        "software.paradigm.object-oriented-programming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 객체 간 협력",
+          "start_line": 138,
+          "end_line": 157
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.singleton",
+      "title": "싱글톤 패턴",
+      "aliases": [
+        "Singleton Pattern",
+        "싱글턴 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/singleton.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single design pattern restricting a class to one program-wide instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.constructor",
+        "java.variable.static-variable",
+        "software.pattern.design-pattern"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴이란?",
+          "start_line": 458,
+          "end_line": 477
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴으로 회사 클래스 구현",
+          "start_line": 478,
+          "end_line": 572
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.reference-type",
+      "title": "참조 자료형",
+      "aliases": [
+        "Reference Type",
+        "객체 자료형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/reference-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java data-type category whose values refer to class instances",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.memory.object-reference",
+        "java.oop.class",
+        "java.oop.instance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 참조 자료형",
+          "start_line": 722,
+          "end_line": 747
+        }
+      ]
+    },
+    {
+      "concept_id": "java.variable.scope",
+      "title": "변수 유효 범위",
+      "aliases": [
+        "Variable Scope",
+        "지역 변수 유효범위",
+        "정적 변수 유효범위"
+      ],
+      "canonical_path": "content/brain/knowledge/java/variable/scope.md",
+      "tags": [
+        "java",
+        "variable"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Java variable-lifetime and visibility model across local, instance, and static storage",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.memory.call-stack",
+        "java.memory.heap",
+        "java.oop.member-variable",
+        "java.variable.static-variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위",
+          "start_line": 386,
+          "end_line": 391
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 지역 변수 유효범위",
+          "start_line": 392,
+          "end_line": 401
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 변수 유형에 따른 용도",
+          "start_line": 424,
+          "end_line": 445
+        }
+      ]
+    },
+    {
+      "concept_id": "java.variable.static-variable",
+      "title": "정적 변수",
+      "aliases": [
+        "Static Variable",
+        "Class Variable",
+        "클래스 변수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/variable/static-variable.md",
+      "tags": [
+        "java",
+        "variable"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class-level variable category allocated once and shared across instances",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.method.static-method",
+        "java.oop.member-variable",
+        "java.pattern.singleton",
+        "java.variable.scope"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### 변수를 여러 클래스에서 공통으로 사용하려면?",
+          "start_line": 160,
+          "end_line": 180
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### static 변수의 정의와 사용 방법",
+          "start_line": 181,
+          "end_line": 266
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 변수 > ### 클래스 변수",
+          "start_line": 267,
+          "end_line": 292
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 정적 변수 유효범위",
+          "start_line": 412,
+          "end_line": 423
+        }
+      ]
+    },
+    {
+      "concept_id": "software.paradigm.object-oriented-programming",
+      "title": "객체 지향 프로그래밍",
+      "aliases": [
+        "Object-Oriented Programming",
+        "OOP",
+        "객체지향 프로그래밍"
+      ],
+      "canonical_path": "content/brain/knowledge/software/paradigm/object-oriented-programming.md",
+      "tags": [
+        "software",
+        "paradigm"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for one programming paradigm organized around objects and their interactions",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.object",
+        "java.oop.object-collaboration"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 객체 > ### 객체 지향 프로그래밍 기본 컨셉",
+          "start_line": 31,
+          "end_line": 38
+        }
+      ]
+    },
+    {
+      "concept_id": "software.pattern.design-pattern",
+      "title": "디자인 패턴",
+      "aliases": [
+        "Design Pattern",
+        "소프트웨어 디자인 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/software/pattern/design-pattern.md",
+      "tags": [
+        "software",
+        "pattern"
+      ],
+      "proposal_kind": "stub",
+      "concept_granularity": "source-backed stub for one reusable software-design solution family",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "low-evidence-scope"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.pattern.singleton"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 디자인 패턴이란?",
+          "start_line": 448,
+          "end_line": 457
+        }
+      ]
+    },
+    {
+      "concept_id": "software.programming.function",
+      "title": "함수",
+      "aliases": [
+        "Function",
+        "함수 시그니처",
+        "Function Signature"
+      ],
+      "canonical_path": "content/brain/knowledge/software/programming/function.md",
+      "tags": [
+        "software",
+        "programming"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single named reusable code unit with parameters, return behavior, and one focused responsibility",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05"
+      ],
+      "review_flags": [
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "cs.memory.call-stack",
+        "java.oop.method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수란?",
+          "start_line": 143,
+          "end_line": 150
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수의 입력과 반환",
+          "start_line": 151,
+          "end_line": 162
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수 정의하기",
+          "start_line": 163,
+          "end_line": 214
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 메서드 (method) > ### 함수의 장점",
+          "start_line": 232,
+          "end_line": 243
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.do-it-java-chap05-l0029",
+      "title": "chap05 클래스와 객체 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap05 L29-30 `# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 객체` contains only the heading and a blank line (span_sha256 d97245d4e0055e663f5cb8d812ede7d582223ac1dbdb212813b276a64a2213c6; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap05-l0077",
+      "title": "chap05 클래스 살펴보기 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap05 L77-78 `# Chapter 05 - 클래스와 객체 (1) > ## 클래스 살펴보기` contains only the heading and a blank line (span_sha256 842f5505473b0de85c55141740d38e8fc7c8c40eab402c79ba003c985d495335; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap05-l0277",
+      "title": "chap05 클래스와 인스턴스 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap05 L277-278 `# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스` contains only the heading and a blank line (span_sha256 9ceba7b4361afc291f654d77ba3c9bdcbde27716eb8e0893dc0ff88f9009a53f; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap05-l0748",
+      "title": "chap05 정보 은닉 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap05 L748-749 `# Chapter 05 - 클래스와 객체 (1) > ## 정보 은닉` contains only the heading and a blank line (span_sha256 91b8a04a1fae1fa3a972ccd8331d64fe295ee3b6730dfe3ee9f9834e3658b1b3; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap06-l0013",
+      "title": "chap06 장 제목 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap06 L13-16 `# Chapter 06 - 클래스와 객체 (2)` contains no prose or code evidence after its heading (span_sha256 6337877b9680680cee3cc68fad1d587892aa44bab4539dfacb934885622f2971; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap06-l0017",
+      "title": "chap06 this 예약어 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap06 L17-18 `# Chapter 06 - 클래스와 객체 (2) > ## this 예약어` contains only the heading and a blank line (span_sha256 b17dd3840b66260be62a6634fedf4beeef177f5a14fc14267623f00fb8ef46f6; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap06-l0158",
+      "title": "chap06 static 변수 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap06 L158-159 `# Chapter 06 - 클래스와 객체 (2) > ## static 변수` contains only the heading and a blank line (span_sha256 6138b7de2255e703e650422cc6122bce70616043e6bdf5989aa2d49449cd1695; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap06-l0446",
+      "title": "chap06 싱글톤 패턴 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap06 L446-447 `# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴` contains only the heading and a blank line (span_sha256 8f47ad24679ca52ab91753e6220101bd0c9f258593dfef1fd335063d71f5b404; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap07-l0013",
+      "title": "chap07 장 제목 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap07 L13-16 `# Chapter 07 - 배열과 ArrayList` contains no prose or code evidence after its heading (span_sha256 61e8c44e461f89c0bf77becc51931f2dfb037eb9ea172ce1d8e8a4e487de20fa; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap07-l0017",
+      "title": "chap07 배열이란 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap07 L17-18 `# Chapter 07 - 배열과 ArrayList > ## 배열이란?` contains only the heading and a blank line (span_sha256 32167d6bcfe4ee2f6583b848bf192335308c554c6dcae9a58e4b1406622ab434; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap07-l0536",
+      "title": "chap07 다차원 배열 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap07 L536-537 `# Chapter 07 - 배열과 ArrayList > ## 다차원 배열` contains only the heading and a blank line (span_sha256 fb8422cc6bcdcaa8e2182b4a7e27a0c7fe51809bb22a5d2641ae5eefeec2474c; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.do-it-java-chap07-l0576",
+      "title": "chap07 ArrayList 클래스 활용 빈 섹션",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap07 L576-577 `# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용` contains only the heading and a blank line (span_sha256 46abae17f0d8bf813c7465a5e4d1f005b998310ae5af6464e2df481129ed79c2; prose_lines=0; code_lines=0), so no substantive assertion can support a proposal.",
+      "pilot_strata": [
+        "book-batch-02",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6"
+        }
+      ]
+    }
+  ]
+}

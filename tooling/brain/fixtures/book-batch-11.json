@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-11",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-10",
+    "applied_state": "276 approved knowledge concepts after book-batch-10 covered chap08 L7-265."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap08.md",
+    "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+    "line_range": "L266-L442",
+    "covered_scopes": "heading scopes 8-11 (## 트랜잭션 through ### 트랜잭션의 정확히 한 번)",
+    "deferred_range": "L443-L804, heading scopes 12-16 (### 해결할 수 없는 문제 through ### 성능), reserved for book-batch-12"
+  },
+  "namespace_decision": {
+    "continued_namespace": "kafka.transaction.*, opened by book-batch-10 for the two transaction claims chap08 makes ahead of this section.",
+    "reused_namespaces": "kafka.config.* for transactional.id and isolation.level; kafka.stream.* for the consume-process-produce pattern, alongside the applied kafka.stream.stream."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 11 touches, so U3 must confirm it relates rather than restates.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is an Obsidian callout rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 13,
+  "candidates": [
+    {
+      "concept_id": "kafka.transaction.transaction",
+      "title": "카프카 트랜잭션",
+      "aliases": ["Kafka Transaction", "트랜잭션 의미 구조", "Transactional Semantics"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/kafka-transaction.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single feature added to make stream processing correct, giving atomic writes across several partitions and fencing zombie producers so each input record is processed and reflected exactly once",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.reliability.exactly-once",
+        "kafka.transaction.atomic-multipartition-write",
+        "kafka.transaction.zombie-fencing",
+        "kafka.stream.consume-process-produce"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션",
+          "start_line": 268,
+          "end_line": 271
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션",
+          "start_line": 273,
+          "end_line": 275
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.consume-process-produce",
+      "title": "읽기-처리-쓰기 패턴",
+      "aliases": ["Consume-Process-Produce", "스트림 처리 기본 패턴"],
+      "canonical_path": "content/brain/knowledge/kafka/stream/consume-process-produce.md",
+      "tags": ["kafka", "stream"],
+      "proposal_kind": "create",
+      "concept_granularity": "single stream processing shape - read from a topic, process, write to another - which is the pattern transactions were built to make correct",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "stream-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.transaction.transaction",
+        "kafka.stream.stream",
+        "kafka.transaction.crash-reprocessing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션",
+          "start_line": 279,
+          "end_line": 280
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.when-transactions-help",
+      "title": "트랜잭션이 필요한 처리",
+      "aliases": ["집적과 조인", "변환·필터는 불필요", "금융 애플리케이션 예시"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/when-transactions-help.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single selection rule: per-record transforms and filters can shrug off duplicates, while aggregation and joins cannot, because a wrong aggregate is hard to spot and unfixable without reprocessing the input",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction",
+        "kafka.stream.stream",
+        "kafka.reliability.exactly-once"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 활용사례",
+          "start_line": 286,
+          "end_line": 300
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 활용사례",
+          "start_line": 304,
+          "end_line": 305
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.crash-reprocessing",
+      "title": "크래시로 인한 재처리",
+      "aliases": ["결과 write 후 오프셋 커밋 전 크래시", "리밸런스 후 중복 출력"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/crash-reprocessing.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single duplication path in which the application writes its result and crashes before committing the offset, so the partition's next owner reprocesses everything since the last commit and writes the results again",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.atomic-multipartition-write",
+        "kafka.reliability.correct-offset-commit",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결하는 문제",
+          "start_line": 311,
+          "end_line": 316
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결하는 문제",
+          "start_line": 320,
+          "end_line": 330
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.zombie-application",
+      "title": "좀비 애플리케이션",
+      "aliases": ["Zombie Application", "자신이 죽은 줄 모르는 컨슈머"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/zombie-application.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single instance that stalled long enough to be declared dead and have its partitions reassigned, then resumes and keeps writing results and heartbeating until it learns it was evicted",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.zombie-producer",
+        "kafka.transaction.zombie-fencing",
+        "kafka.client.consumer-rebalance-frequency"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 해결하는 문제",
+          "start_line": 334,
+          "end_line": 344
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.atomic-multipartition-write",
+      "title": "원자적 다수 파티션 쓰기",
+      "aliases": ["Atomic Multipartition Write", "_consumer_offsets 동시 커밋"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/atomic-multipartition-write.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single mechanism exploiting the fact that both the offset commit and the result write are partition writes, so one transaction covers the output topic and _consumer_offsets together and either both land or neither does",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction",
+        "kafka.transaction.crash-reprocessing",
+        "kafka.client.offset",
+        "kafka.transaction.non-transactional-input"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 350,
+          "end_line": 350
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 356,
+          "end_line": 362
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.transactional-id",
+      "title": "transactional.id",
+      "aliases": ["initTransactions()", "재시작 후에도 유지되는 프로듀서 식별자"],
+      "canonical_path": "content/brain/knowledge/kafka/config/transactional-id.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single producer-configured identifier that survives restarts, which the broker maps to a producer id so a reinitialized producer gets its previous one back rather than a fresh random value",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.client.producer-id-sequence",
+        "kafka.client.producer-restart-pid",
+        "kafka.transaction.zombie-fencing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 366,
+          "end_line": 374
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.zombie-fencing",
+      "title": "좀비 펜싱",
+      "aliases": ["Zombie Fencing", "에포크", "Epoch", "FencedProducer"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/zombie-fencing.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single exclusion mechanism bumping an epoch per transactional id on initialization, after which any producer holding the same id at a lower epoch has its sends, commits and aborts rejected and can only close",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.transactional-id",
+        "kafka.transaction.zombie-application",
+        "kafka.transaction.zombie-producer",
+        "kafka.transaction.ordering-requirement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 378,
+          "end_line": 383
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.consumer-group-metadata-fencing",
+      "title": "컨슈머 그룹 메타데이터 펜싱",
+      "aliases": ["Consumer Group Metadata Fencing", "2.5.0 이후 펜싱 확장"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/consumer-group-metadata-fencing.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single option from Kafka 2.5.0 adding consumer group metadata to the transaction's own metadata, letting fencing work while producers with different transactional ids write to the same partitions",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.transaction.zombie-fencing",
+        "kafka.config.transactional-id",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 387,
+          "end_line": 389
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.producer-side-feature",
+      "title": "트랜잭션은 프로듀서 쪽 기능",
+      "aliases": ["Producer-Side Transaction", "트랜잭션 시작과 커밋의 위치"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/producer-side-feature.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single placement fact that creating the transactional producer, beginning, writing records and offsets, and committing or aborting all happen on the producer",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.transaction",
+        "kafka.config.isolation-level",
+        "kafka.client.producer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 393,
+          "end_line": 399
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.isolation-level",
+      "title": "isolation.level",
+      "aliases": ["read_committed", "read_uncommitted", "격리 수준"],
+      "canonical_path": "content/brain/knowledge/kafka/config/isolation-level.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single consumer setting deciding whether polls return only committed and non-transactional messages or every record including aborted and in-flight ones, without which transactional writes give no exactly-once guarantee on the read side",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.transaction.producer-side-feature",
+        "kafka.transaction.last-stable-offset",
+        "kafka.client.consumer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 403,
+          "end_line": 404
+        },
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 408,
+          "end_line": 422
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.last-stable-offset",
+      "title": "Last Stable Offset",
+      "aliases": ["LSO", "transaction.timeout.ms", "미결 트랜잭션으로 인한 지연"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/last-stable-offset.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single read barrier under read_committed at the start of the oldest open transaction, holding later messages back until that transaction commits, aborts, or times out, which lengthens end-to-end delay while it stays open",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.isolation-level",
+        "kafka.replication.end-to-end-delay",
+        "kafka.client.offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 428,
+          "end_line": 432
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.transaction.non-transactional-input",
+      "title": "트랜잭션 없이 쓰여진 입력",
+      "aliases": ["비트랜잭션 입력 토픽", "출력 커밋이 입력 오프셋 커밋을 보장"],
+      "canonical_path": "content/brain/knowledge/kafka/transaction/non-transactional-input.md",
+      "tags": ["kafka", "transaction"],
+      "proposal_kind": "create",
+      "concept_granularity": "single guarantee that exactly-once output holds even when the input topic was written without transactions, because committing the output also commits the input offset",
+      "pilot_strata": ["book-batch-11", "kafka/chap08", "transaction-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.transaction.atomic-multipartition-write",
+        "kafka.reliability.exactly-once",
+        "kafka.stream.consume-process-produce"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap08.md",
+          "source_sha256": "a039fe70bac246a7a0afea7120cc1d091bf88c508243122dbe006675c4b0eb6a",
+          "heading": "## 트랜잭션 > ### 트랜잭션의 정확히 한 번",
+          "start_line": 436,
+          "end_line": 439
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [],
+  "rejection_probes": {
+    "scope_level": "None. chap08 has no non-substantive heading scope anywhere in the file."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L354, L426",
+        "reason_code": "image-only-line",
+        "detail": "Diagram embeds carrying no prose assertion."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L266-442 contributes at least one cited locator."
+  },
+  "p6_resolution": {
+    "statement": "Seven applied concepts are touched by prose in L266-442. None is re-proposed or restated; all seven receive a related_concepts edge.",
+    "summary": { "update": 0, "relate": 7, "no_op": 0 },
+    "touch_point_dispositions": [
+      {
+        "concept_id": "kafka.stream.stream",
+        "authoring_decision": "relate",
+        "evidence": "The section is framed around stream processing applications.",
+        "decision_rationale": "The stream is applied; batch 11 asserts what transactions do for stream processing."
+      },
+      {
+        "concept_id": "kafka.client.offset",
+        "authoring_decision": "relate",
+        "evidence": "L357-359 puts the offset commit and the result write on the same footing as partition writes.",
+        "decision_rationale": "The offset is applied; the new claim is that both writes join one transaction."
+      },
+      {
+        "concept_id": "kafka.client.consumer-group",
+        "authoring_decision": "relate",
+        "evidence": "Rebalance and group metadata appear in the zombie and fencing spans.",
+        "decision_rationale": "The group is applied; nothing here redefines it."
+      },
+      {
+        "concept_id": "kafka.client.consumer",
+        "authoring_decision": "relate",
+        "evidence": "isolation.level is a consumer setting and the zombie is a consumer instance.",
+        "decision_rationale": "Cited as the actor, not redefined."
+      },
+      {
+        "concept_id": "kafka.client.producer",
+        "authoring_decision": "relate",
+        "evidence": "L393-399 locates the whole transaction lifecycle on the producer.",
+        "decision_rationale": "The producer is applied; this is a placement claim about transactions."
+      },
+      {
+        "concept_id": "kafka.reliability.exactly-once",
+        "authoring_decision": "relate",
+        "evidence": "The section is the transaction half of the exactly-once model.",
+        "decision_rationale": "Applied in batch 10; these candidates are its constituent mechanisms."
+      },
+      {
+        "concept_id": "kafka.replication.end-to-end-delay",
+        "authoring_decision": "relate",
+        "evidence": "L432 says an open transaction lengthens end-to-end delay.",
+        "decision_rationale": "The delay concept is applied; this is a new cause of it."
+      }
+    ]
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": { "value": 106, "ceiling": 360, "satisfied": true },
+      "heading_scopes": { "value": 4, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 13, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

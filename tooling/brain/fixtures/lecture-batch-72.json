@@ -1,0 +1,2022 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-72",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-71",
+    "applied_state": "1358 approved knowledge concepts after CodeTree closed."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/DevCourse/001.md",
+        "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3"
+      },
+      {
+        "path": "content/brain/notes/DevCourse/002.md",
+        "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f"
+      },
+      {
+        "path": "content/brain/notes/DevCourse/003.md",
+        "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1"
+      }
+    ],
+    "line_range": "whole files",
+    "series": "데브코스 회고 1-3편 - 자바 심화, 객체지향, 인터페이스"
+  },
+  "multi_source_note": "Three retrospective posts are mined together; locators carry an `s` index into the source list and update candidates override the source per item.",
+  "overlap_analysis": {
+    "finding": "These are course retrospectives written by the author, so most of what they restate - encapsulation, inheritance, abstraction, polymorphism, the interface, the anonymous class, the lambda - is already applied from the Java lectures and books. What is new is the design vocabulary the course used around them: the framework-independence standard and the abstraction that supplies it, four of the five design rules, and the way a dependency is progressively loosened until it comes from outside.",
+    "disposition": "Seventeen applied concepts gain evidence or edges. Seventeen new concepts, chiefly filling out the principle namespace which held only three of the five rules."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is a blockquote rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All seventeen update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "001 L11, L17-L18, L24, L54, L60 partial, L63, L66-L67; 002 L9, L15, L24, L32-L34, L40, L46-L54, L67, L75, L83-L87, L95, L113, L126-L132 partial, L143 partial; 003 L9, L15, L31-L34, L63, L76-L84, L93-L103, L107-L112, L128, L167-L169 partial, L191-L198 partial, L219, L238, L260",
+        "reason_code": "diary-entry-external-link-figure-caption-or-restatement",
+        "detail": "The personal diary opening each post - moving flats, how the week felt - the links to the author's own blog and to others', the captions above each code listing and diagram, and the passages that narrate the author working out a conclusion that the cited span then states. The DIP restatement in 003 L107-L112 is left uncited because the same rule is cited from 002, where it is stated once."
+      }
+    ],
+    "coverage_statement": "Every heading scope carrying prose contributes at least one cited locator, except 001's JAVA 개발환경 and IDE sections, which carry only the blog link and the diary line."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 38900,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 174,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 21,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 21,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 34,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "duplicate_avoided_note": {
+    "statement": "Four candidates were withdrawn after the collision report showed the concept already applied. The evidence they carried became a locator on the incumbent instead.",
+    "pairs": [
+      {
+        "withdrawn": "software.architecture.pojo",
+        "incumbent": "spring.basic.pojo"
+      },
+      {
+        "withdrawn": "software.architecture.psa",
+        "incumbent": "spring.basic.psa"
+      },
+      {
+        "withdrawn": "software.pattern.factory-method",
+        "incumbent": "java.pattern.factory-method"
+      },
+      {
+        "withdrawn": "java.oop.functional-interface",
+        "incumbent": "java.oop.lambda-interface"
+      }
+    ],
+    "rule": "Check the collision report before signing. Apply succeeds with collisions present; only verify fails."
+  },
+  "candidates_authored": 34,
+  "candidates": [
+    {
+      "concept_id": "java.type.reference-type",
+      "title": "참조 자료형",
+      "aliases": [
+        "Reference Type",
+        "객체 자료형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/reference-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java data-type category whose values refer to class instances",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "low-evidence-scope",
+        "lecture-batch-19",
+        "pl/fun-java",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.memory.object-reference",
+        "java.oop.class",
+        "java.oop.instance",
+        "java.oop.identity-vs-equality"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 참조 자료형",
+          "start_line": 722,
+          "end_line": 747
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 참조형 타입",
+          "start_line": 50,
+          "end_line": 50
+        },
+        {
+          "path": "content/brain/notes/DevCourse/001.md",
+          "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3",
+          "heading": "## 💻 1주차 DAY 02 > ### Java 심화",
+          "start_line": 60,
+          "end_line": 62
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.string-constant-pool",
+      "title": "String constant pool",
+      "aliases": [
+        "문자열 상수 풀",
+        "큰따옴표 리터럴 인스턴스",
+        "new는 매번 새 인스턴스",
+        "==는 참조 대상을 비교한다",
+        "intern()",
+        "new로 만들면 힙에 새로 생긴다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/string-constant-pool.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pool that lets a string be created without new, which is why quoting a literal is preferred over constructing one",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-23",
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.language.literal",
+        "java.memory.heap",
+        "java.oop.immutable-object",
+        "java.oop.final-class",
+        "java.util.string-comparison",
+        "java.util.string-immutability-reason",
+        "java.util.string-builder-buffer",
+        "java.oop.identity-vs-equality"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 116,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 597,
+          "end_line": 598
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 622,
+          "end_line": 623
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 비교",
+          "start_line": 96,
+          "end_line": 99
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String",
+          "start_line": 234,
+          "end_line": 247
+        },
+        {
+          "path": "content/brain/notes/DevCourse/001.md",
+          "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3",
+          "heading": "## 💻 1주차 DAY 02 > ### Java 심화",
+          "start_line": 65,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.object-class",
+      "title": "java.lang.Object",
+      "aliases": [
+        "Object 클래스",
+        "모든 클래스의 최상위"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/object-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single root every class inherits from when it names no other parent, which is why every class is a descendant of Object",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-25",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.tostring",
+        "java.oop.equals-hashcode",
+        "java.oop.upcasting",
+        "java.generic.generic",
+        "java.oop.identity-vs-equality"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속",
+          "start_line": 518,
+          "end_line": 519
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 제네릭 > ### 제네릭이 나온 이유",
+          "start_line": 15,
+          "end_line": 15
+        },
+        {
+          "path": "content/brain/notes/DevCourse/001.md",
+          "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3",
+          "heading": "## 💻 1주차 DAY 02 > ### Java 심화",
+          "start_line": 79,
+          "end_line": 83
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.equals-hashcode",
+      "title": "equals()와 hashCode()",
+      "aliases": [
+        "equals",
+        "hashCode",
+        "값 비교 기준"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/equals-hashcode.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair that must be overridden together - equals decides value equality by a standard the developer sets rather than by reference, and hash-based collections need both to work",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-25",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.object-class",
+        "java.oop.tostring",
+        "java.oop.method-overriding",
+        "java.memory.object-reference",
+        "java.collection.hash-set",
+        "java.collection.hash-map",
+        "java.oop.identity-vs-equality"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드 > ### equals(), hashCode()",
+          "start_line": 845,
+          "end_line": 853
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashSet Class",
+          "start_line": 340,
+          "end_line": 342
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.encapsulation",
+      "title": "캡슐화",
+      "aliases": [
+        "Encapsulation",
+        "관련된 것을 모아 가지기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/encapsulation.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single act of gathering what belongs together into one place, which is what raises cohesion and is the other side of information hiding",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.information-hiding",
+        "java.oop.cohesion-coupling",
+        "java.oop.abstraction",
+        "software.architecture.data-driven-design",
+        "software.architecture.ddd",
+        "java.oop.good-object",
+        "software.principle.srp"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 캡슐화",
+          "start_line": 344,
+          "end_line": 347
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 79,
+          "end_line": 85
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.inheritance",
+      "title": "상속",
+      "aliases": [
+        "Inheritance",
+        "클래스 상속"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/inheritance.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented language mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap10",
+        "lecture-batch-22",
+        "pl/fun-java",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.method-overriding",
+        "java.oop.polymorphism",
+        "java.oop.abstract-class",
+        "java.oop.interface-inheritance",
+        "java.oop.is-a-relation",
+        "java.oop.inheritance-coupling",
+        "java.oop.object-class",
+        "java.oop.inheritance-misuse",
+        "java.oop.abstraction-criteria"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 상속이란?",
+          "start_line": 17,
+          "end_line": 23
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 인터페이스 구현과 클래스 상속 함께 쓰기",
+          "start_line": 910,
+          "end_line": 1018
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속",
+          "start_line": 494,
+          "end_line": 498
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 92,
+          "end_line": 93
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstraction",
+      "title": "추상화",
+      "aliases": [
+        "Abstraction",
+        "중요한 것만 남기기",
+        "도메인에 맞는 추상화"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstraction.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single act of keeping what matters and discarding what does not, where what matters depends on who is looking, so a class carries only the fields and behaviour its business domain actually needs",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.paradigm.object-oriented-programming",
+        "java.oop.encapsulation",
+        "java.oop.abstract-class",
+        "java.oop.abstraction-criteria",
+        "software.principle.lsp"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 추상화",
+          "start_line": 320,
+          "end_line": 338
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 103,
+          "end_line": 106
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.polymorphism",
+      "title": "다형성",
+      "aliases": [
+        "Polymorphism"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/polymorphism.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented design property",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap09-chap10",
+        "lecture-batch-21",
+        "pl/fun-java",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.virtual-method",
+        "java.oop.interface",
+        "java.pattern.template-method",
+        "java.oop.method-overloading",
+        "java.oop.abstraction-criteria",
+        "software.principle.isp"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 다형성",
+          "start_line": 660,
+          "end_line": 671
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 응용하기 > ### 클래스 설계하기",
+          "start_line": 426,
+          "end_line": 651
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 인터페이스 구현과 형 변환",
+          "start_line": 141,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스와 다형성 > ### 인터페이스와 다형성",
+          "start_line": 182,
+          "end_line": 318
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 다형성",
+          "start_line": 375,
+          "end_line": 376
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 다형성",
+          "start_line": 381,
+          "end_line": 383
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 118,
+          "end_line": 120
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 126,
+          "end_line": 126
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 132,
+          "end_line": 132
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.open-closed",
+      "title": "개방-폐쇄 원칙",
+      "aliases": [
+        "OCP",
+        "Open-Closed Principle",
+        "확장에는 열려있고 변경에는 닫혀있다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/open-closed.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single principle that a piece of software should admit extension without being modified, which polymorphism is the mechanism for and which dependency injection delivers in practice - the implementing class is swapped in configuration while the code using it is never touched",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "software-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.polymorphism",
+        "spring.di.dependency-injection",
+        "spring.di.java-config",
+        "java.collection.interface-type-reference",
+        "software.principle.solid"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 순수 JDBC",
+          "start_line": 385,
+          "end_line": 388
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 설계, SOLID",
+          "start_line": 157,
+          "end_line": 161
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.dip",
+      "title": "의존 역전 원칙",
+      "aliases": [
+        "DIP",
+        "Dependency Inversion Principle",
+        "둘 다 추상화에 의존한다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/dip.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single principle of the five that a higher-level module must not depend on a lower-level one, both depending on an abstraction instead - so a field typed to a concrete class is what makes change expensive, and typing it to an interface is what makes either side replaceable",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "software-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.ioc",
+        "software.principle.open-closed",
+        "java.collection.interface-type-reference",
+        "spring.arch.repository-interface",
+        "software.principle.solid",
+        "spring.basic.psa",
+        "java.pattern.factory-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### DIP",
+          "start_line": 197,
+          "end_line": 199
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### DIP",
+          "start_line": 203,
+          "end_line": 209
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 설계, SOLID",
+          "start_line": 178,
+          "end_line": 181
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.msa",
+      "title": "마이크로 서비스 아키텍처",
+      "aliases": [
+        "MSA",
+        "작은 서비스 단위로 쪼갠다",
+        "경량 API로 통신"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/msa.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single arrangement splitting one application into small services that each do one business function and talk to each other over defined interfaces - whose characteristic difficulties are answered by collecting the scattered logs into one searchable place, and by giving up distributed transactions in favour of compensating actions, a composite service, or a use case that verifies the result",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.monolithic",
+        "software.architecture.monolithic-vs-msa",
+        "software.architecture.data-service",
+        "db.transaction.atomicity",
+        "spring.basic.pojo"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### MSA",
+          "start_line": 368,
+          "end_line": 373
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### MSA",
+          "start_line": 377,
+          "end_line": 379
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### MSA",
+          "start_line": 383,
+          "end_line": 386
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 아키텍처 이야기",
+          "start_line": 56,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.monolithic",
+      "title": "모놀리식 아키텍처",
+      "aliases": [
+        "한 프로젝트에 모두 통합",
+        "확장하려면 전체를 확장",
+        "멀티 모듈로 분리"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/monolithic.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single arrangement with everything in one project and one process, so meeting demand on any part of it means scaling all of it, usually by making the machine bigger - which is loosened within the pattern by splitting into modules, and whose slow deployment is worked around by releasing without downtime, by parallel environments, by a gradual rollout or by replacing instances one at a time",
+      "pilot_strata": [
+        "lecture-batch-67",
+        "Interview/dog-study",
+        "software-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.architecture.msa",
+        "software.architecture.layered-extension",
+        "software.deploy.rolling-restart",
+        "software.ops.app-server-scaling",
+        "spring.basic.pojo"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### 모놀리식 아키텍처",
+          "start_line": 342,
+          "end_line": 346
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### 모놀리식 아키텍처",
+          "start_line": 350,
+          "end_line": 352
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week09.md",
+          "source_sha256": "b1c3935d233ff2d8ad6dd15ec4b2bff161b3b44956f1de49db7d145b9234256a",
+          "heading": "## 아키텍처 > ### 모놀리식 아키텍처",
+          "start_line": 356,
+          "end_line": 362
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 아키텍처 이야기",
+          "start_line": 69,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface",
+      "title": "인터페이스",
+      "aliases": [
+        "Interface"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented type-declaration construct, including its Java 8 default/static and Java 9 private member extensions",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10",
+        "lecture-batch-23",
+        "pl/fun-java",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.oop.abstract-method",
+        "java.oop.interface-constant",
+        "java.oop.interface-specification",
+        "java.oop.polymorphism",
+        "java.oop.interface-default-method",
+        "java.oop.interface-static-method",
+        "java.oop.interface-private-method",
+        "java.oop.interface-design",
+        "java.oop.interface-member-modifier",
+        "java.oop.anonymous-class",
+        "software.principle.isp",
+        "java.oop.interface-adapter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란?",
+          "start_line": 17,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 구현 코드가 없는 인터페이스",
+          "start_line": 23,
+          "end_line": 52
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 클래스에서 인터페이스 구현",
+          "start_line": 53,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### 인터페이스 작성법",
+          "start_line": 686,
+          "end_line": 688
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### Interface",
+          "start_line": 17,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### Interface",
+          "start_line": 23,
+          "end_line": 25
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-default-method",
+      "title": "디폴트 메서드",
+      "aliases": [
+        "Default Method",
+        "default 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-default-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface member category introduced in Java 8",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10",
+        "lecture-batch-23",
+        "pl/fun-java",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-static-method",
+        "java.oop.interface-private-method",
+        "java.oop.diamond-problem",
+        "java.oop.method-overriding",
+        "java.language.modern-java",
+        "java.oop.interface-adapter",
+        "java.oop.lambda-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드",
+          "start_line": 382,
+          "end_line": 470
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### JDK8 추가 문법",
+          "start_line": 700,
+          "end_line": 711
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### default 메서드",
+          "start_line": 118,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstract-class",
+      "title": "추상 클래스",
+      "aliases": [
+        "Abstract Class",
+        "추상클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstract-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented class-abstraction mechanism",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09",
+        "lecture-batch-23",
+        "pl/fun-java",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-method",
+        "java.pattern.template-method",
+        "java.oop.inheritance",
+        "java.oop.interface",
+        "java.oop.abstract-class-array",
+        "java.oop.final-class",
+        "java.oop.anonymous-class",
+        "java.oop.abstraction-criteria",
+        "java.oop.interface-adapter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스",
+          "start_line": 17,
+          "end_line": 26
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스란?",
+          "start_line": 27,
+          "end_line": 36
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스 구현",
+          "start_line": 83,
+          "end_line": 226
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스를 만드는 이유",
+          "start_line": 227,
+          "end_line": 269
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스",
+          "start_line": 335,
+          "end_line": 343
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 추상 클래스 vs 인터페이스",
+          "start_line": 155,
+          "end_line": 159
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.anonymous-class",
+      "title": "익명 클래스",
+      "aliases": [
+        "Anonymous Class",
+        "이름없는 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/anonymous-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single class written as a constructor call followed by a body, which overrides what it needs on the spot and is used where the type will not be reused - the way an abstract class or interface gets instantiated without a named subclass",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.oop.interface",
+        "java.oop.method-overriding",
+        "java.oop.lambda-interface",
+        "java.oop.method-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 익명 클래스 > ### 이름없는 클래스",
+          "start_line": 1027,
+          "end_line": 1032
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 함수형 인터페이스",
+          "start_line": 191,
+          "end_line": 192
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 익명 클래스와 람다 표현식",
+          "start_line": 198,
+          "end_line": 198
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.lambda-interface",
+      "title": "람다 인터페이스",
+      "aliases": [
+        "Lambda Interface",
+        "함수형 인터페이스",
+        "람다 표현식"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/lambda-interface.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface carrying exactly one method, which is what lets an anonymous object be shortened into a lambda expression - a JDK 8 addition and part of what modern Java means, especially alongside the Stream API",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-24",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.anonymous-class",
+        "java.language.modern-java",
+        "java.oop.interface",
+        "java.oop.comparator",
+        "java.oop.method-reference",
+        "java.oop.behavior-injection",
+        "java.oop.interface-adapter"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 익명 클래스 > ### 람다 인터페이스",
+          "start_line": 1167,
+          "end_line": 1172
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### 람다 인터페이스",
+          "start_line": 757,
+          "end_line": 758
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 함수형 인터페이스",
+          "start_line": 165,
+          "end_line": 173
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 익명 클래스와 람다 표현식",
+          "start_line": 219,
+          "end_line": 219
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.ioc",
+      "title": "제어의 역전",
+      "aliases": [
+        "IoC",
+        "Inversion of Control",
+        "원칙일 뿐 구현체가 필요하다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/ioc.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single principle that the flow of control belongs outside the code rather than in it - which is an idea and not a mechanism, dependency injection being one way of realising it; what it buys is that an object no longer decides what it is made of, so changing that decision no longer means changing the object",
+      "pilot_strata": [
+        "lecture-batch-60",
+        "Interview/dog-study",
+        "software-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "software.principle.dip",
+        "software.architecture.framework-vs-library",
+        "java.oop.cohesion-coupling",
+        "java.pattern.factory-method",
+        "java.oop.behavior-injection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC",
+          "start_line": 105,
+          "end_line": 110
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### IoC의 필요성",
+          "start_line": 142,
+          "end_line": 145
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### IoC의 필요성",
+          "start_line": 149,
+          "end_line": 151
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week03.md",
+          "source_sha256": "916a9c31a792b5bc228a899bd0306627a24505865bc9a8ec183249d5c248b274",
+          "heading": "## IoC > ### IoC의 필요성",
+          "start_line": 171,
+          "end_line": 173
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.pojo",
+      "title": "POJO",
+      "aliases": [
+        "Plain Old Java Object",
+        "특정 기술에 종속되지 않는 순수한 객체",
+        "EJB에 대한 반동"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/pojo.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single name given to an ordinary java object precisely because it needed one - the enterprise component model of the time had an impressive name and putting domain logic in a plain object did not, so the plain object was named; inheriting a class or implementing an interface does not disqualify it, only depending on a particular framework or environment does",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.basic.pojo-framework",
+        "spring.basic.pojo-conditions",
+        "spring.basic.spring-definition",
+        "java.oop.good-object",
+        "spring.basic.psa"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 24,
+          "end_line": 28
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 65,
+          "end_line": 68
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 72,
+          "end_line": 75
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO",
+          "start_line": 82,
+          "end_line": 86
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### POJO와 PSA",
+          "start_line": 26,
+          "end_line": 28
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### POJO와 PSA",
+          "start_line": 38,
+          "end_line": 38
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.basic.psa",
+      "title": "PSA",
+      "aliases": [
+        "Portable Service Abstraction",
+        "서비스 추상화",
+        "JPA는 표준 인터페이스"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/basic/psa.md",
+      "tags": [
+        "spring",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single answer to how an object can use a technology without depending on it - a standard interface is defined and the implementations become interchangeable behind it, so the code names the abstraction and the particular library underneath can be replaced without touching it",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-66",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.basic.pojo-framework",
+        "software.principle.dip",
+        "spring.jpa.entity",
+        "spring.db.persistence-framework",
+        "spring.jpa.jpa",
+        "spring.jpa.jpa-benefit",
+        "spring.basic.pojo"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## POJO > ### PSA와 JPA",
+          "start_line": 156,
+          "end_line": 160
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week08.md",
+          "source_sha256": "1ea82f6daad890c18abf7b4c651d6d12c9dae34b05f55aea2d9016fcabe53b9d",
+          "heading": "## JPA",
+          "start_line": 74,
+          "end_line": 74
+        },
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### POJO와 PSA",
+          "start_line": 30,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.factory-method",
+      "title": "팩토리 메서드 패턴",
+      "aliases": [
+        "Factory Method Pattern",
+        "객체 생성 과정 은닉"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/factory-method.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pattern hiding how an instance is built and returning only the finished object, so the caller asks a factory for it instead of running new itself",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-72",
+        "DevCourse"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.pattern.design-pattern",
+        "java.pattern.singleton",
+        "java.runtime.reflection",
+        "java.oop.instance-creation-method",
+        "software.principle.dip",
+        "software.principle.ioc"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴",
+          "start_line": 859,
+          "end_line": 861
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴",
+          "start_line": 905,
+          "end_line": 906
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 예시를 통해 알아보자",
+          "start_line": 65,
+          "end_line": 72
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 예시를 통해 알아보자",
+          "start_line": 86,
+          "end_line": 87
+        }
+      ]
+    },
+    {
+      "concept_id": "java.build.gradle-task",
+      "title": "Gradle의 task",
+      "aliases": [
+        "gradle이 수행하는 명령 단위",
+        "build.gradle에 기록된다",
+        "빌드 스크립트는 groovy"
+      ],
+      "canonical_path": "content/brain/knowledge/java/build/gradle-task.md",
+      "tags": [
+        "java",
+        "build"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unit the build tool executes - declared in the build script, with the common ones supplied by the application plugin rather than written by hand, the script itself being written in the older scripting language even as the newer one gains ground",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "software.architecture.framework-vs-library"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/001.md",
+          "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3",
+          "heading": "## 💻 1주차 DAY 02 > ### Build Tool",
+          "start_line": 46,
+          "end_line": 48
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-builder-choice",
+      "title": "String, StringBuffer, StringBuilder 중 무엇을 쓸까",
+      "aliases": [
+        "연산이 적으면 String",
+        "멀티스레드면 StringBuffer",
+        "단일스레드면 StringBuilder"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-builder-choice.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single decision among the three string types, made on two axes - how much concatenation happens and whether more than one thread is involved - which in practice means the immutable one when there is little of it, the synchronized builder under several threads, and the unsynchronized builder only when synchronization is provably unnecessary; and the observation that server code is normally multi-threaded, so the first two are the usual answers",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.util.string-builder-buffer",
+        "java.util.string-immutability-reason",
+        "java.thread.synchronized-list",
+        "java.util.string-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/001.md",
+          "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3",
+          "heading": "## 💻 1주차 DAY 02 > ### Java 심화",
+          "start_line": 71,
+          "end_line": 75
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.identity-vs-equality",
+      "title": "동일성과 동등성",
+      "aliases": [
+        "Identity와 Equality",
+        "같은 객체를 가리키는가",
+        "같은 정보를 가지는가"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/identity-vs-equality.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction between two senses of sameness - whether two names refer to one and the same object, which the reference comparison answers, and whether two objects carry the same information, which only a method can answer; and the pairing of the hash and the equality check in hash-based collections, where matching hashes alone do not make two objects equal but a false equality check settles it",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.oop.equals-hashcode",
+        "java.oop.object-class",
+        "java.collection.hashmap-collision",
+        "java.type.string-constant-pool"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/001.md",
+          "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3",
+          "heading": "## 💻 1주차 DAY 02 > ### Java 심화",
+          "start_line": 87,
+          "end_line": 89
+        },
+        {
+          "path": "content/brain/notes/DevCourse/001.md",
+          "source_sha256": "0a91acd4266fbc5203980c75fd7ec00c51fdc9d872d734950cc4de3989c725a3",
+          "heading": "## 💻 1주차 DAY 02 > ### Java 심화",
+          "start_line": 93,
+          "end_line": 96
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.good-object",
+      "title": "좋은 객체와 나쁜 객체",
+      "aliases": [
+        "역할과 책임에 충실하다",
+        "이름과 맞지 않는 속성",
+        "협력하여 동작한다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/good-object.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single standard an object is judged by - that it holds one role, does what that role is responsible for, and works with others to get the rest done - against which the bad one is recognisable by holding several roles, by carrying state and behaviour its name does not suggest, or by not working at all",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.autonomous-responsibility",
+        "java.oop.object-collaboration",
+        "software.principle.srp",
+        "spring.basic.pojo"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 프로그래밍",
+          "start_line": 17,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.inheritance-misuse",
+      "title": "상속에 관한 오해",
+      "aliases": [
+        "공통 기능을 빼려고 상속하지 마라",
+        "추상과 구체의 관계일 때만"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/inheritance-misuse.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single misuse of the mechanism - reaching for it whenever several classes happen to share code, rather than only when one genuinely is a more specific kind of the other, which is the relation it exists to express",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.is-a-relation",
+        "java.oop.inheritance-coupling",
+        "software.principle.lsp"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 97,
+          "end_line": 98
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstraction-criteria",
+      "title": "추상체를 만드는 세 가지 방법",
+      "aliases": [
+        "의미적으로만 묶은 상태",
+        "추상 클래스 형태",
+        "인터페이스 상태"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstraction-criteria.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single scale of how abstract the parent is made - both sides fully implemented and grouped only by meaning, the parent defining some behaviour and leaving the rest, or the parent defining nothing at all and being purely a specification",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstraction",
+        "java.oop.abstract-class",
+        "java.oop.interface",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향의 특성",
+          "start_line": 108,
+          "end_line": 111
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.solid",
+      "title": "SOLID 원칙",
+      "aliases": [
+        "좋은 설계를 판단하는 기준",
+        "객체를 어떻게 구분했는가",
+        "객체 간 연관관계가 어떠한가"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/solid.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of five rules answering whether a design is good, which comes down to two questions - how the work was divided among objects and how those objects were connected to each other",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.srp",
+        "software.principle.open-closed",
+        "software.principle.lsp",
+        "software.principle.isp"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 설계, SOLID",
+          "start_line": 138,
+          "end_line": 143
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.srp",
+      "title": "단일 책임 원칙",
+      "aliases": [
+        "SRP",
+        "Single Responsibility Principle",
+        "수정되는 이유는 하나여야 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/srp.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that an object should have exactly one reason to change, which is the same as saying it carries exactly one responsibility - so a class that would need editing for two unrelated reasons is two classes",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.solid",
+        "java.oop.good-object",
+        "java.oop.cohesion-coupling",
+        "java.oop.autonomous-responsibility"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 설계, SOLID",
+          "start_line": 147,
+          "end_line": 153
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.lsp",
+      "title": "리스코프 치환 원칙",
+      "aliases": [
+        "LSP",
+        "Liskov Substitution Principle",
+        "구상체가 들어가도 문제없어야 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/lsp.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that anywhere the general type is expected, any specific one must work without the caller noticing - which follows for free when the parent really is the more abstract thing, and is broken exactly when inheritance was used to share code between classes that are not kinds of one another",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.principle.solid",
+        "java.oop.inheritance-misuse",
+        "java.oop.is-a-relation",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 설계, SOLID",
+          "start_line": 165,
+          "end_line": 168
+        }
+      ]
+    },
+    {
+      "concept_id": "software.principle.isp",
+      "title": "인터페이스 분리 원칙",
+      "aliases": [
+        "ISP",
+        "Interface Segregation Principle",
+        "필요한 기능만 보이도록 나눈다"
+      ],
+      "canonical_path": "content/brain/knowledge/software/principle/isp.md",
+      "tags": [
+        "software",
+        "principle"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that a specification should be split until each one carries only what some caller actually needs, so that handing out one capability does not hand out the others alongside it",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "software.principle.solid",
+        "java.oop.interface-design",
+        "java.oop.interface",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/002.md",
+          "source_sha256": "0c9c909a939f645222fcf40372ba42cbd93ad855f46d465550e30ef1d5565e3f",
+          "heading": "## 💻 2주차 DAY 01 > ### 객체지향 설계, SOLID",
+          "start_line": 172,
+          "end_line": 174
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-adapter",
+      "title": "어댑터와 default 메서드",
+      "aliases": [
+        "쓰지도 않을 메서드까지 구현해야 한다",
+        "다중상속이 안 되니 어댑터도 막힌다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-adapter.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single problem the defaulted method was introduced to solve - a specification demands every one of its methods be written even when the implementer wants one, which used to be worked around by an intermediate class supplying empty bodies, itself unusable whenever the implementer already extends something else; a body on the specification removes the need for that class entirely, and lets a specification gain a method without breaking what already implements it",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.interface-default-method",
+        "java.oop.diamond-problem",
+        "java.oop.interface",
+        "java.oop.abstract-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### default 메서드",
+          "start_line": 120,
+          "end_line": 122
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### default 메서드",
+          "start_line": 144,
+          "end_line": 145
+        },
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### default 메서드",
+          "start_line": 149,
+          "end_line": 149
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.method-reference",
+      "title": "메서드 레퍼런스",
+      "aliases": [
+        "입력 값을 그대로 넘길 때",
+        "값의 변경이 없음을 보장한다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/method-reference.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shorthand for the case where a lambda does nothing but pass its argument through to one method - naming that method directly instead, which besides being shorter states that the value is not touched on the way",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.lambda-interface",
+        "java.oop.anonymous-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 메서드 레퍼런스",
+          "start_line": 252,
+          "end_line": 254
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.behavior-injection",
+      "title": "동작 자체를 호스트 코드로 미루기",
+      "aliases": [
+        "Consumer로 입력만 받고 출력은 없이",
+        "구현부를 바꾸지 않고 기능을 바꾼다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/behavior-injection.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern that falls out of taking a function as a parameter - what to do is written where the call is made rather than where the work happens, so the same implementation serves different behaviours without being edited; the same move as taking a dependency from outside, applied to behaviour instead of to an object",
+      "pilot_strata": [
+        "lecture-batch-72",
+        "DevCourse",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.lambda-interface",
+        "software.principle.ioc",
+        "java.pattern.factory-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/DevCourse/003.md",
+          "source_sha256": "bcaa533f1b8aba77304b6c000b872df2ba33e121aebb11562b5c61709a1963c1",
+          "heading": "## 💻 2주차 DAY 02 > ### 모던 자바 사용법",
+          "start_line": 290,
+          "end_line": 292
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

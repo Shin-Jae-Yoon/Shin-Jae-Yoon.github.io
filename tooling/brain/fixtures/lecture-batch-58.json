@@ -1,0 +1,880 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-58",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-57",
+    "applied_state": "1154 approved knowledge concepts after lecture-batch-57 closed the lecture lane."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+        "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4"
+      }
+    ],
+    "line_range": "L13-L447 (whole file)",
+    "series": "면접 스터디 dog-study 1주차 - 불변 객체, Checked/Unchecked 예외"
+  },
+  "overlap_analysis": {
+    "finding": "The note lane opens here and it behaves unlike the lecture lane: these are answers written to interview questions, so they go deeper on a narrow topic than the courses did. Three of this week's topics already have applied concepts from fun-java - the immutable object, the two exception categories and their parent distinction - and this file is where they are actually argued.",
+    "disposition": "Six applied concepts take this evidence as updates. What is new is the copy taxonomy, the benefit and cost of immutability stated separately, the four reasons the string type is immutable, the mutable alternatives, the caching question and the locking pattern that does not work here - plus one spring concept, since the rollback default is what the exception distinction actually decides in practice."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All six update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L9, L13-L19, L137-L140, L212, L217-L219, L238-L244 partial, L292, L361-L372 partial, L418, L426, L437-L447",
+        "reason_code": "issue-link-topic-header-collapsed-code-or-carried-by-owner",
+        "detail": "The link to the study's issue thread, the two topic statements the week was set, the collapsed code listing with its attribution, the step-by-step trace of two threads through the locking pattern whose conclusion is cited, the cross-reference to the second week, the author's note to come back after studying the annotation, and the closing list of reference links."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 24208,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 168,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 15,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 14,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 14,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "lane_transition_note": "First batch of the note lane. The batch id keeps the lecture- prefix for continuity of numbering, but the lane field is note.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 14,
+  "candidates": [
+    {
+      "concept_id": "java.oop.immutable-object",
+      "title": "불변 객체",
+      "aliases": [
+        "Immutable Object",
+        "불변성 보장",
+        "가변 객체",
+        "final을 붙여도 내부 상태는 바뀐다",
+        "setter를 제공하지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/immutable-object.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object given its values at construction and exposing only getters, used when a value handed outside must be guaranteed not to change - String being the standard example, since none of its methods alter its contents",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-58",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.constructor",
+        "java.oop.accessor-method",
+        "java.util.string-class",
+        "java.keyword.final",
+        "java.copy.copy-strategy",
+        "java.oop.immutable-benefit",
+        "java.oop.immutable-cost",
+        "java.util.string-immutability-reason"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### 불변객체",
+          "start_line": 78,
+          "end_line": 84
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 불변객체란?",
+          "start_line": 71,
+          "end_line": 77
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 불변객체란?",
+          "start_line": 81,
+          "end_line": 88
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 불변객체 생성방법",
+          "start_line": 114,
+          "end_line": 135
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 불변객체 생성방법",
+          "start_line": 206,
+          "end_line": 206
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.string-constant-pool",
+      "title": "String constant pool",
+      "aliases": [
+        "문자열 상수 풀",
+        "큰따옴표 리터럴 인스턴스",
+        "new는 매번 새 인스턴스",
+        "==는 참조 대상을 비교한다",
+        "intern()",
+        "new로 만들면 힙에 새로 생긴다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/string-constant-pool.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pool that lets a string be created without new, which is why quoting a literal is preferred over constructing one",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-23",
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "lecture-batch-58",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.language.literal",
+        "java.memory.heap",
+        "java.oop.immutable-object",
+        "java.oop.final-class",
+        "java.util.string-comparison",
+        "java.util.string-immutability-reason",
+        "java.util.string-builder-buffer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 116,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 597,
+          "end_line": 598
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 622,
+          "end_line": 623
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 비교",
+          "start_line": 96,
+          "end_line": 99
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String",
+          "start_line": 234,
+          "end_line": 247
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-class",
+      "title": "String 클래스",
+      "aliases": [
+        "java.lang.String",
+        "CharSequence",
+        "length()",
+        "String은 불변이다",
+        "toCharArray()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-class.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single library class extending Object and implementing Serializable, CharSequence and Comparable, whose API documentation is the worked example for reading a method signature as parameters and return type",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "lecture-batch-58",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.string-constant-pool",
+        "java.oop.interface",
+        "software.api.api",
+        "java.oop.method",
+        "java.util.printf-format",
+        "algo.string.index-of-search",
+        "java.util.string-immutability-reason",
+        "java.util.string-builder-buffer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### String Class",
+          "start_line": 130,
+          "end_line": 138
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열",
+          "start_line": 14,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 39,
+          "end_line": 39
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 53,
+          "end_line": 53
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 66,
+          "end_line": 66
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 메서드",
+          "start_line": 107,
+          "end_line": 121
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String",
+          "start_line": 214,
+          "end_line": 219
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.error-vs-exception",
+      "title": "Error와 Exception",
+      "aliases": [
+        "컴파일 에러",
+        "런타임 에러",
+        "수습 가능한 오류",
+        "컴파일 에러 런타임 에러 논리적 에러"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/error-vs-exception.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single split between an Error the programmer cannot control - memory exhaustion or a stack overflow, fixable only at the source - and an Exception that handling can recover from",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-58",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.exception-handling",
+        "java.exception.checked-unchecked",
+        "cs.memory.call-stack",
+        "spring.tx.rollback-policy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리",
+          "start_line": 91,
+          "end_line": 110
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 02 - Exception > ### Error, Exception",
+          "start_line": 388,
+          "end_line": 395
+        }
+      ]
+    },
+    {
+      "concept_id": "java.exception.checked-unchecked",
+      "title": "Checked와 UnChecked 예외",
+      "aliases": [
+        "RuntimeException 상속 여부",
+        "컴파일 강제 여부",
+        "컴파일 시점과 런타임 시점"
+      ],
+      "canonical_path": "content/brain/knowledge/java/exception/checked-unchecked.md",
+      "tags": [
+        "java",
+        "exception"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single division by whether the class descends from RuntimeException - if it does, handling is optional and failure appears at run time; if it does not, the compiler refuses to build until it is handled",
+      "pilot_strata": [
+        "lecture-batch-26",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-58",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.error-vs-exception",
+        "java.exception.custom-exception",
+        "java.oop.inheritance",
+        "spring.tx.rollback-policy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### Checked / UnChecked",
+          "start_line": 254,
+          "end_line": 262
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java08.md",
+          "source_sha256": "60ad2fb69dfe03d5fe4ff63db3769dadad8e1b46d411fbbf42df41180ae87271",
+          "heading": "## 예외 처리 > ### Checked / UnChecked",
+          "start_line": 268,
+          "end_line": 273
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 02 - Exception > ### Checked vs Unchecked",
+          "start_line": 403,
+          "end_line": 414
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.singleton",
+      "title": "싱글톤 패턴",
+      "aliases": [
+        "Singleton Pattern",
+        "싱글턴 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/singleton.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single design pattern restricting a class to one program-wide instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-20",
+        "pl/fun-java",
+        "lecture-batch-23",
+        "lecture-batch-58",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.constructor",
+        "java.variable.static-variable",
+        "software.pattern.design-pattern",
+        "java.oop.private-constructor",
+        "java.pattern.factory-method",
+        "java.pattern.dclp-avoidance",
+        "java.pattern.field-caching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴이란?",
+          "start_line": 458,
+          "end_line": 477
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴으로 회사 클래스 구현",
+          "start_line": 478,
+          "end_line": 572
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## Math Class > ### private",
+          "start_line": 332,
+          "end_line": 333
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴",
+          "start_line": 885,
+          "end_line": 886
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) DCLP 지양에 관한 이야기",
+          "start_line": 341,
+          "end_line": 341
+        }
+      ]
+    },
+    {
+      "concept_id": "java.copy.copy-strategy",
+      "title": "복사의 네 가지 방식",
+      "aliases": [
+        "얕은 복사와 깊은 복사",
+        "방어적 복사",
+        "Unmodifiable Collection"
+      ],
+      "canonical_path": "content/brain/knowledge/java/copy/copy-strategy.md",
+      "tags": [
+        "java",
+        "copy"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single spectrum from sharing to not sharing - copying the reference so both see one object, copying every element so neither sees the other's, copying at the boundary so the field cannot be reached from outside, and wrapping a collection so it cannot be written through, which is not the same as it being unchangeable since the original still can be; only the deep and the defensive forms actually cut the shared address",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.immutable-object",
+        "java.io.deep-copy-serialization",
+        "java.oop.accessor-method",
+        "java.oop.information-hiding"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 복사 시리즈",
+          "start_line": 29,
+          "end_line": 49
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 복사 시리즈",
+          "start_line": 52,
+          "end_line": 52
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 복사 시리즈",
+          "start_line": 57,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.immutable-benefit",
+      "title": "불변 객체의 이점",
+      "aliases": [
+        "thread-safety",
+        "Map 키와 Set 요소로 적합",
+        "GC 성능"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/immutable-benefit.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of what not changing buys - safety across threads without synchronising, no need to copy defensively when held as a field, suitability as a map key or set element since the hash cannot drift, and less allocation because the same instance can be handed out again",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.immutable-object",
+        "java.copy.copy-strategy",
+        "java.oop.equals-hashcode",
+        "java.thread.concurrent-collection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 불변객체 장점",
+          "start_line": 94,
+          "end_line": 100
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.immutable-cost",
+      "title": "불변 객체의 비용",
+      "aliases": [
+        "상태가 바뀔 때마다 새 객체",
+        "생성 비용은 과대평가된다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/immutable-cost.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single objection to making everything immutable - a change of state means a new object, and many of them cost - against which the vendor's own position is that the cost of creating an object is usually overestimated and the benefits outweigh it",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.immutable-benefit",
+        "java.oop.immutable-object",
+        "java.pattern.field-caching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### 불변객체 단점",
+          "start_line": 106,
+          "end_line": 108
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-immutability-reason",
+      "title": "String이 불변인 네 가지 이유",
+      "aliases": [
+        "상수 풀 재사용",
+        "해시코드 캐싱",
+        "보안 검사 이후의 변조 방지"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-immutability-reason.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of four reasons the language made this type unchangeable - the pool can cache and reuse literals only because they cannot change, threads can share one without synchronising, the hash can be computed once and kept because it can never differ, and a value used for a password or a connection string cannot be altered after the security check that passed it",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.string-constant-pool",
+        "java.oop.immutable-benefit",
+        "java.oop.equals-hashcode",
+        "java.collection.hash-map"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String이 불변인 이유",
+          "start_line": 255,
+          "end_line": 256
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String이 불변인 이유",
+          "start_line": 260,
+          "end_line": 262
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String이 불변인 이유",
+          "start_line": 274,
+          "end_line": 277
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String이 불변인 이유",
+          "start_line": 279,
+          "end_line": 281
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String이 불변인 이유",
+          "start_line": 285,
+          "end_line": 288
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-builder-buffer",
+      "title": "StringBuilder와 StringBuffer",
+      "aliases": [
+        "문자열 연산이 많을 때",
+        "버퍼 크기를 늘리는 가변 객체",
+        "동기화 지원 여부"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-builder-buffer.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single mutable alternative for when concatenation is frequent enough that a new object per operation hurts - which comes in two forms differing only in whether the methods are synchronised, so the thread-safe one is chosen under concurrency and the other where there is none",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-immutability-reason",
+        "java.util.string-class",
+        "java.oop.immutable-cost",
+        "java.thread.concurrent-collection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### StringBuilder, StringBuffer",
+          "start_line": 294,
+          "end_line": 298
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### StringBuilder, StringBuffer",
+          "start_line": 300,
+          "end_line": 304
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.field-caching",
+      "title": "생성 비용이 큰 객체를 다시 쓰기",
+      "aliases": [
+        "필드 캐싱",
+        "지연 초기화",
+        "실무에서는 필드 캐싱"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/field-caching.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice among three ways of not paying twice for an expensive object - holding it in a constant field created once with the class, deferring its creation until first use, or guarding that deferral with a double check - where the first is what is actually used, the second complicating the code for little gain",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.pattern.dclp-avoidance",
+        "java.oop.immutable-cost",
+        "java.pattern.singleton",
+        "software.pattern.cache-aside"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) 객체 생성비용 최소화",
+          "start_line": 311,
+          "end_line": 316
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) 객체 생성비용 최소화",
+          "start_line": 320,
+          "end_line": 322
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.dclp-avoidance",
+      "title": "DCLP를 쓰지 않는 이유",
+      "aliases": [
+        "Double-checked Locking",
+        "out-of-order writes",
+        "volatile의 대가"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/dclp-avoidance.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern that looks sound and is not on this platform - the mutual exclusion does order the two threads, but the memory model permits writes to be reordered, so the second thread can see a non-null reference to an object whose construction has not finished; the keyword that forces the write through to main memory fixes that at the cost of the optimisations it disables, which is why the pattern is avoided rather than repaired",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.singleton",
+        "java.pattern.field-caching",
+        "cs.concurrency.concurrent-vs-parallel",
+        "java.thread.concurrent-collection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) DCLP 지양에 관한 이야기",
+          "start_line": 328,
+          "end_line": 337
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### (심화) DCLP 지양에 관한 이야기",
+          "start_line": 359,
+          "end_line": 376
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.rollback-policy",
+      "title": "스프링의 기본 롤백 정책",
+      "aliases": [
+        "UnChecked와 Error만 롤백",
+        "Checked는 롤백하지 않는다",
+        "무조건 throw 하라"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/rollback-policy.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single default that surprises people - the transaction annotation rolls back for unchecked exceptions and errors but not for checked ones, so an exception that the compiler forced the code to declare will let the transaction commit unless the policy is configured otherwise or the exception is rethrown",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.checked-unchecked",
+        "db.transaction.rollback",
+        "db.transaction.application-transaction",
+        "spring.test.transactional-rollback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 02 - Exception > ### Checked vs Unchecked",
+          "start_line": 422,
+          "end_line": 434
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "hashScope": "destination body bytes after the required opening YAML frontmatter; no normalization",
+  "routeMap": "migration/evidence/tistory-route-map.json",
+  "fidelityEvidenceRoot": "migration/evidence/tistory/fidelity",
+  "recordCount": 15,
+  "records": [
+    {
+      "id": 3,
+      "destinationPath": "content/articles/tistory/3.md",
+      "destinationUrl": "/articles/tistory/3/",
+      "bodySha256": "1b701c73d5d4ea94f451d4835ce1b606aaff058e6167d300bd3cf42ab5eff55d",
+      "semanticSha256": "24e54b9f70d6ffd1b9ee0bc6b95bad5903ddb4b30a5c76c450a5eebb7db29e47",
+      "semanticUnitCount": 46
+    },
+    {
+      "id": 4,
+      "destinationPath": "content/articles/tistory/4.md",
+      "destinationUrl": "/articles/tistory/4/",
+      "bodySha256": "cd83af88798efe137dc140d52021d80f60fcf680be420400bd0e55a0bb6772bd",
+      "semanticSha256": "1fdc134f85446fdcb28d0dfbea72c2182a3bc635854057b7c6d4b3d40887a53a",
+      "semanticUnitCount": 58
+    },
+    {
+      "id": 6,
+      "destinationPath": "content/articles/tistory/6.md",
+      "destinationUrl": "/articles/tistory/6/",
+      "bodySha256": "17e9d5907a5f31a4c93b95f9dd9534da8cc249ceea0d18216db1a9af06e4c6c1",
+      "semanticSha256": "bc59e068d4ae786966343ef9afbeb868d94dc93ae0d700a6465551670a6f457a",
+      "semanticUnitCount": 79
+    },
+    {
+      "id": 7,
+      "destinationPath": "content/articles/tistory/7.md",
+      "destinationUrl": "/articles/tistory/7/",
+      "bodySha256": "2fe9cb070bf2b29258d908cbf4f2e187b5b72209d25563943bb3f2baaaa0b422",
+      "semanticSha256": "187108cf41546de5b717009d142b044a4114beb8b52e76a0eb610acf3b99b9be",
+      "semanticUnitCount": 118
+    },
+    {
+      "id": 8,
+      "destinationPath": "content/articles/tistory/8.md",
+      "destinationUrl": "/articles/tistory/8/",
+      "bodySha256": "ab76807af6ad14153d0f82969595ea472203491665575c5a0438cc87cf5a470b",
+      "semanticSha256": "4a13844d8606d4c30920546b4e1fac0fe8c3a688ed076eefecd88d095459728f",
+      "semanticUnitCount": 93
+    },
+    {
+      "id": 14,
+      "destinationPath": "content/articles/tistory/14.md",
+      "destinationUrl": "/articles/tistory/14/",
+      "bodySha256": "41a553e9bd35d1124adefa4a86d5e01eb2b77db99b904ab73472ac4146d14b2f",
+      "semanticSha256": "a8a222d8f938759ab154eb8495542e9f48b151af55446c8047c6d530d4950710",
+      "semanticUnitCount": 39
+    },
+    {
+      "id": 15,
+      "destinationPath": "content/articles/tistory/15.md",
+      "destinationUrl": "/articles/tistory/15/",
+      "bodySha256": "cf53b3dc2d335d597f8b06a823336a901a1c3d32ff85b2e0546f3f5bea754bf9",
+      "semanticSha256": "8f3a30ecdbbe66ca9d5622daab809fb6a776a0c1d28666b33ed7f1deaba168e9",
+      "semanticUnitCount": 242
+    },
+    {
+      "id": 16,
+      "destinationPath": "content/articles/tistory/16.md",
+      "destinationUrl": "/articles/tistory/16/",
+      "bodySha256": "db54f6bfe5dc15f7838365c6939a4a3453648290ad6354e11693f8f36fc6ea8d",
+      "semanticSha256": "b0751b0c354baced1cab326957c1868e2999e0c65bdb7b3edb0140d6acae7d31",
+      "semanticUnitCount": 190
+    },
+    {
+      "id": 17,
+      "destinationPath": "content/articles/tistory/17.md",
+      "destinationUrl": "/articles/tistory/17/",
+      "bodySha256": "e04eaaa0d8b59eb434622f579fe672364ff94980b0240cdcba38ee1fcd4d7f3b",
+      "semanticSha256": "1c363288701b71f2ff4f191fcae69057892c0faffbfc948154c4782be1f54ca9",
+      "semanticUnitCount": 198
+    },
+    {
+      "id": 18,
+      "destinationPath": "content/articles/tistory/18.md",
+      "destinationUrl": "/articles/tistory/18/",
+      "bodySha256": "c89f03956db2109d45de4eccaf59dc0684122605895da78dd30e860ff99244ba",
+      "semanticSha256": "830ad4d2daff92d9e4f528aa2edb66c76369a23f7a42e707b476f4cf387c13e4",
+      "semanticUnitCount": 212
+    },
+    {
+      "id": 19,
+      "destinationPath": "content/articles/tistory/19.md",
+      "destinationUrl": "/articles/tistory/19/",
+      "bodySha256": "7664d33e15f7b9aa9c52317df36698ad02c696156dd6992ce570c534f6e3cc57",
+      "semanticSha256": "754fab7189c6680082efa5948a325ecf5466a8e53d6e502a9c7ad9b5d31cc438",
+      "semanticUnitCount": 89
+    },
+    {
+      "id": 20,
+      "destinationPath": "content/articles/tistory/20.md",
+      "destinationUrl": "/articles/tistory/20/",
+      "bodySha256": "8c6c2f57832182466988e7326297ba9b4421d76b215709d6e03479d1d236f39e",
+      "semanticSha256": "427f20667f1ab496d17eee3bafdcdc20bc8d34972cc139e94b6e6c33365dae6c",
+      "semanticUnitCount": 148
+    },
+    {
+      "id": 21,
+      "destinationPath": "content/articles/tistory/21.md",
+      "destinationUrl": "/articles/tistory/21/",
+      "bodySha256": "43f11d5055c142506d65a8632f9a0cc475fe3463f86c9461c9786a59b41bbff9",
+      "semanticSha256": "09d8e0f781f69b6d0d6dd7c932ab3a92a7c961a5db9e31245d2563b5ff53a065",
+      "semanticUnitCount": 58
+    },
+    {
+      "id": 22,
+      "destinationPath": "content/articles/tistory/22.md",
+      "destinationUrl": "/articles/tistory/22/",
+      "bodySha256": "e27e6a6e5ca7524c55f0f9d082625deb5238130604acde296b90c7a1c60f9c87",
+      "semanticSha256": "f50bed9e9cb991cf0a4f2c4bf39807c750f9197e75d2a15f7dbae38bdfa7dd7d",
+      "semanticUnitCount": 63
+    },
+    {
+      "id": 23,
+      "destinationPath": "content/articles/tistory/23.md",
+      "destinationUrl": "/articles/tistory/23/",
+      "bodySha256": "68de3e5867819c0352364d3e85d0cc30b53677e5787501197d191dd640455d72",
+      "semanticSha256": "78fb3c7a2dfaddd734d9f2ce008c022aab98b032be690cf24b8fb2eed49f7e1a",
+      "semanticUnitCount": 104
+    }
+  ]
+}

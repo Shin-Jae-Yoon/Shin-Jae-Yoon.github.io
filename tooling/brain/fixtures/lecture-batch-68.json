@@ -1,0 +1,1246 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-68",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-67",
+    "applied_state": "1295 approved knowledge concepts after dog-study closed."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/CodeTree/dataStructure.md",
+        "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc"
+      }
+    ],
+    "line_range": "L7-L715 (ArrayList through Binary Search Tree)",
+    "series": "코드트리 Novice High 자료구조 - 전반부"
+  },
+  "split_note": {
+    "statement": "The file carries 381 prose lines over 19 heading scopes, above the B4 ceiling of 360. It is split at a scope boundary rather than raising the ceiling: this batch takes L7-L715, ending where the heap section begins; lecture-batch-69 takes L716 onward (Heap and Hashing).",
+    "budget_rule": "B4 is not raised."
+  },
+  "overlap_analysis": {
+    "finding": "Heavy overlap with the algorithm lecture lane, which already applied the linked list, stack, tree, binary tree and search tree concepts from two separate courses. This file is a Java-flavoured retelling with the operation procedures drawn step by step, which the lectures stated but did not walk through.",
+    "disposition": "Eleven applied concepts gain a locator here. New: the three list variants and the two procedures the lectures skipped, the positional iterator, the queue family which nothing applied had covered at all, the array representation of a binary tree, the search-tree insertion, and the reason the two synchronized legacy classes are avoided."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All eleven update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8-L9, L48-L50, L71-L78, L89-L90 partial, L101-L104 within cited span, L114, L127, L177-L181 partial, L185, L194, L224, L248, L273, L322 caption lines, L458-L468 partial, L478, L482-L487, L498-L502, L560, L578, L611-L619 partial, L623, L640, L669-L675 partial",
+        "reason_code": "attribution-figure-caption-api-listing-or-worked-example",
+        "detail": "The course attribution and the drawing credit, the external reading link, the method-signature listings which the applied notes already carry as the class's interface, the bold captions introducing each diagram, and the comparison tables whose rows the concept states in prose."
+      }
+    ],
+    "coverage_statement": "Every heading scope in L7-L715 contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 26100,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 209,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 13,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 13,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 23,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 23,
+  "candidates": [
+    {
+      "concept_id": "java.collection.array-list",
+      "title": "ArrayList",
+      "aliases": [
+        "ArrayList 클래스",
+        "가변 길이 객체 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/array-list.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single resizable Java list collection backed by array-like indexed operations",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-25",
+        "pl/fun-java",
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.array-length",
+        "java.array.object-array",
+        "java.collection.list-interface",
+        "java.generic.generic",
+        "java.collection.interface-type-reference",
+        "algo.array.array-growth",
+        "java.collection.synchronized-legacy-collection",
+        "algo.array.operation-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### 기존 배열의 단점, 그리고 ArrayList",
+          "start_line": 578,
+          "end_line": 587
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### ArrayList 클래스 주요 메서드",
+          "start_line": 588,
+          "end_line": 607
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### ArrayList 클래스 활용",
+          "start_line": 608,
+          "end_line": 674
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### ArrayList Class",
+          "start_line": 187,
+          "end_line": 193
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### ArrayList Class",
+          "start_line": 197,
+          "end_line": 198
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### ArrayList Class",
+          "start_line": 225,
+          "end_line": 226
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## ArrayList",
+          "start_line": 27,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.array.operation-complexity",
+      "title": "배열 연산의 시간복잡도",
+      "aliases": [
+        "읽기와 쓰기는 상수시간",
+        "삽입과 삭제는 선형시간"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/array/operation-complexity.md",
+      "tags": [
+        "algo",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single split among the five operations - reading, writing and appending are constant because they touch one place, while inserting in the middle or erasing one is linear because every element after it has to shift by one",
+      "pilot_strata": [
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.array-memory-layout",
+        "algo.complexity.time-complexity",
+        "algo.array.insert-shift-direction",
+        "java.collection.array-vs-list",
+        "algo.list.linked-list-complexity",
+        "algo.array.array-use-case",
+        "algo.stack.stack-implementation",
+        "algo.queue.queue-as-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 배열 시간복잡도",
+          "start_line": 54,
+          "end_line": 54
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 배열 시간복잡도",
+          "start_line": 58,
+          "end_line": 64
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### insert() 메서드",
+          "start_line": 124,
+          "end_line": 127
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### erase() 메서드",
+          "start_line": 148,
+          "end_line": 149
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x03.md",
+          "source_sha256": "b59ad45b0bb116207d82eaba7f2827e4d09e485efded903c83fbb64cadcea36f",
+          "heading": "### 배열 기본",
+          "start_line": 28,
+          "end_line": 40
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## ArrayList",
+          "start_line": 39,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.linked-list",
+      "title": "연결 리스트",
+      "aliases": [
+        "다음 원소의 위치를 함께 저장",
+        "선형 자료구조",
+        "비선형 자료구조"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single structure storing with each element the location of the next one, so the elements need not sit together in memory - and which, like the array, keeps its elements in an order, unlike the tree, graph and hash structures that do not",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.array.array-memory-layout",
+        "algo.list.linked-list-complexity",
+        "algo.list.linked-list-use-case",
+        "java.collection.list-interface",
+        "algo.tree.tree",
+        "algo.tree.tree-properties",
+        "algo.list.single-linked-list",
+        "algo.list.double-linked-list",
+        "algo.list.circular-linked-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 28,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x04.md",
+          "source_sha256": "2ac3511acac17bb0dd3edaadacf71bad61a8c1868e6995417702385264b1f5fb",
+          "heading": "### 정의와 성질",
+          "start_line": 37,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList",
+          "start_line": 84,
+          "end_line": 90
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.iterator",
+      "title": "Iterator 인터페이스",
+      "aliases": [
+        "Iterator",
+        "hasNext()",
+        "next()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/iterator.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface for taking items out of a structure, where hasNext must be asked before next is called",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.collection-interface",
+        "java.control-flow.enhanced-for",
+        "java.collection.map-interface",
+        "algo.list.list-iterator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### Iterator Interface",
+          "start_line": 147,
+          "end_line": 150
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Iterator",
+          "start_line": 280,
+          "end_line": 284
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.stack",
+      "title": "스택",
+      "aliases": [
+        "LIFO",
+        "Last In First Out",
+        "Restricted Structure"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/lifo-structure.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single structure allowing insertion and removal at one end only, so the last thing in is the first out - one of the restricted structures alongside the queue and the deque - and although the underlying array could be read at any position, doing so is outside what the structure offers, since the problems it solves need only push, pop and a look at the top",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack-implementation",
+        "algo.stack.stack-use-case",
+        "cs.memory.call-stack",
+        "algo.list.linked-list",
+        "algo.queue.queue",
+        "algo.queue.deque"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 29,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 정의와 성질",
+          "start_line": 39,
+          "end_line": 41
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Stack",
+          "start_line": 348,
+          "end_line": 355
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.stack.stack-implementation",
+      "title": "배열로 스택 만들기",
+      "aliases": [
+        "배열과 인덱스 하나",
+        "pos가 곧 스택의 길이"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/stack/stack-implementation.md",
+      "tags": [
+        "algo",
+        "stack"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single implementation needing nothing but an array and one index - the index is where the next element goes and therefore also how many are in the stack, so popping is just moving it back, the value left behind being overwritten by the next push",
+      "pilot_strata": [
+        "lecture-batch-50",
+        "algo/barkingdog",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack",
+        "algo.array.array-growth",
+        "algo.array.operation-complexity",
+        "algo.queue.queue-as-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 기능과 구현",
+          "start_line": 47,
+          "end_line": 47
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 기능과 구현",
+          "start_line": 51,
+          "end_line": 53
+        },
+        {
+          "path": "content/brain/lectures/algo/barkingdog/0x05.md",
+          "source_sha256": "baaa7e35cbe486d099d816491141ba600e80ad59cec88c8702aa619824923a79",
+          "heading": "### 기능과 구현",
+          "start_line": 61,
+          "end_line": 62
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Stack",
+          "start_line": 375,
+          "end_line": 380
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.tree-terminology",
+      "title": "트리의 노드 용어",
+      "aliases": [
+        "간선과 루트",
+        "자녀 부모 형제",
+        "조상과 자손",
+        "내부 노드와 리프 노드"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/tree-terminology.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single vocabulary for pointing at parts of a tree - the edge that is a reference, the root that is the single top, the children a node points at and the parent pointing at them, the siblings sharing a parent, the ancestors found by walking up and the descendants by walking down, and the split between nodes that have children and the leaves that do not",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.tree",
+        "algo.tree.path-metrics",
+        "algo.tree.subtree"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 용어",
+          "start_line": 31,
+          "end_line": 71
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree",
+          "start_line": 527,
+          "end_line": 537
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.tree-properties",
+      "title": "트리의 성질",
+      "aliases": [
+        "루트는 하나",
+        "사이클이 없다",
+        "부모는 하나",
+        "계층적이고 재귀적인 구조"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/tree-properties.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of constraints that make a structure a tree - exactly one root, no cycles, exactly one parent per node - and the consequences, that it stores nothing in sequence and so is nonlinear, that it is recursive because every node heads a subtree, and that it is therefore hierarchical",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.tree",
+        "algo.tree.subtree",
+        "algo.list.linked-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 154,
+          "end_line": 159
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 163,
+          "end_line": 163
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 169,
+          "end_line": 169
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 주요 특징",
+          "start_line": 175,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree",
+          "start_line": 543,
+          "end_line": 552
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.preorder-postorder",
+      "title": "전위 순회와 후위 순회",
+      "aliases": [
+        "preorder traversal",
+        "postorder traversal",
+        "방문 시점의 차이"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/preorder-postorder.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair of traversals differing from the inorder one only in when the node itself is visited - before both subtrees or after both of them",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.inorder-traversal",
+        "algo.tree.subtree",
+        "algo.tree.binary-tree",
+        "algo.tree.binary-tree-array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 전위순회",
+          "start_line": 74,
+          "end_line": 76
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 후위순회",
+          "start_line": 86,
+          "end_line": 88
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Tree",
+          "start_line": 578,
+          "end_line": 584
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst",
+      "title": "이진 탐색 트리",
+      "aliases": [
+        "binary search tree",
+        "BST",
+        "왼쪽은 작고 오른쪽은 크다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single ordering imposed on a binary tree - everything in a node's left subtree is smaller than it and everything in the right is larger - from which it follows that the smallest value is the leftmost node and the largest the rightmost",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.binary-tree",
+        "algo.tree.inorder-traversal",
+        "algo.tree.bst-complexity",
+        "algo.complexity.best-worst-average",
+        "algo.tree.bst-insert"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리",
+          "start_line": 18,
+          "end_line": 23
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Search Tree",
+          "start_line": 611,
+          "end_line": 619
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-delete",
+      "title": "이진탐색트리에서 노드 지우기",
+      "aliases": [
+        "자녀가 없는 경우",
+        "자녀가 하나인 경우",
+        "자녀가 둘인 경우"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-delete.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single procedure split by how many children the node has - a leaf is simply unreferenced, a node with one child has the reference to it redirected at that child, and a node with two is replaced by the smallest value in its right subtree or equally the largest in its left - with a search having to find the node first in every case",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-68",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.successor-predecessor",
+        "algo.tree.bst",
+        "algo.tree.bst-complexity",
+        "algo.tree.bst-insert"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 120,
+          "end_line": 121
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 127,
+          "end_line": 130
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture08.md",
+          "source_sha256": "5a8f9ed9e43d61cf90eb011add88aa22f8ac7e92b432ef77e7e2cac56f8f42c4",
+          "heading": "## 이진탐색트리 > ### 삽입/삭제/검색",
+          "start_line": 132,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Search Tree",
+          "start_line": 668,
+          "end_line": 675
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.single-linked-list",
+      "title": "단일 연결 리스트",
+      "aliases": [
+        "Single Linked List",
+        "head는 시작 지점",
+        "tail은 종료 지점"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/single-linked-list.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single form of the structure in which each node points only forward, so the two ends have to be held explicitly - the head because a traversal with no known start cannot tell whether it has seen everything, and the tail because a known end lets the walk stop without extra checking - and once past a node there is no way back",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.list.linked-list",
+        "algo.list.linked-list-complexity",
+        "algo.list.double-linked-list",
+        "algo.list.linked-list-insertion"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Single Linked List",
+          "start_line": 98,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.linked-list-insertion",
+      "title": "연결 리스트에 노드를 끼워넣는 순서",
+      "aliases": [
+        "연결을 먼저 잇고 끊는다",
+        "head 뒤에 넣기가 까다롭다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list-insertion.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ordering constraint in the insertion - the new node must be pointed at what follows before the preceding node is pointed at the new one, since cutting the existing link first loses the rest of the list, which is why inserting just after the start is the awkward case",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.list.single-linked-list",
+        "algo.list.linked-list-deletion",
+        "algo.list.linked-list-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Single Linked List",
+          "start_line": 140,
+          "end_line": 162
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.linked-list-deletion",
+      "title": "연결 리스트에서 노드를 지우는 법",
+      "aliases": [
+        "바로 전 노드의 연결을 바꾼다",
+        "지운 것처럼 보이게 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/linked-list-deletion.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single move that removes a node - the one before it is pointed past it, at whatever came after - so removing the last means clearing the previous node's link and moving the end marker back, and removing the first means moving the start marker forward; the node itself is never erased, it simply stops being reachable",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.list.linked-list-insertion",
+        "algo.list.single-linked-list",
+        "java.memory.object-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Single Linked List",
+          "start_line": 177,
+          "end_line": 181
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Single Linked List",
+          "start_line": 189,
+          "end_line": 190
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Single Linked List",
+          "start_line": 198,
+          "end_line": 199
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.double-linked-list",
+      "title": "이중 연결 리스트",
+      "aliases": [
+        "Double Linked List",
+        "앞뒤 연결을 모두 바꿔야 한다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/double-linked-list.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single variation in which each node points both ways, which buys backward movement at the cost of two links to maintain on every insertion and removal instead of one",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.list.single-linked-list",
+        "algo.list.circular-linked-list",
+        "algo.list.list-iterator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Double Linked List",
+          "start_line": 207,
+          "end_line": 208
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.circular-linked-list",
+      "title": "원형 연결 리스트",
+      "aliases": [
+        "head와 tail을 잇는다",
+        "tail을 따로 들 필요가 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/circular-linked-list.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single variation made by joining the two ends of an ordinary list, after which the end is reachable backward from the start and need not be held separately, and following the forward links long enough returns to where the walk began",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.list.double-linked-list",
+        "algo.list.cycle-detection",
+        "algo.list.single-linked-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Circular Linked List",
+          "start_line": 324,
+          "end_line": 328
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.list.list-iterator",
+      "title": "연결 리스트의 반복자",
+      "aliases": [
+        "노드를 가리키는 위치",
+        "찾을 때만 O(N) 이후는 O(1)"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/list/list-iterator.md",
+      "tags": [
+        "algo",
+        "list"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single device that recovers the structure's advertised speed - holding a position inside the list rather than an index, so reaching the k-th place still costs a walk but every insertion, removal and read next to that position afterwards is constant, moving either way through the two links",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.list.double-linked-list",
+        "algo.list.linked-list-complexity",
+        "java.collection.iterator",
+        "algo.list.linked-list-insertion"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Iterator",
+          "start_line": 218,
+          "end_line": 220
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## LinkedList > ### Iterator",
+          "start_line": 275,
+          "end_line": 279
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.queue.queue",
+      "title": "큐",
+      "aliases": [
+        "FIFO",
+        "First In First Out",
+        "front와 rear"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/queue/fifo-structure.md",
+      "tags": [
+        "algo",
+        "queue"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single restricted structure in which what entered first leaves first - additions at the back, reads and removals at the front, each in constant time, which is the whole of its interface",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.stack.stack",
+        "algo.queue.deque",
+        "algo.queue.queue-as-stack",
+        "algo.list.linked-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Queue",
+          "start_line": 401,
+          "end_line": 407
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.queue.queue-as-stack",
+      "title": "배열과 큐로 서로를 흉내내기",
+      "aliases": [
+        "배열로 큐를 만들면 O(N)",
+        "큐 두 개로 스택을 만든다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/queue/queue-as-stack.md",
+      "tags": [
+        "algo",
+        "queue"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of substitutions - an array cannot stand in for the first-in-first-out structure because removing at the front shifts everything, which is what the linked structure avoids; and two of the queues make a stack, everything but the last entry being moved across before it is taken out",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.queue.queue",
+        "algo.stack.stack-implementation",
+        "algo.array.operation-complexity",
+        "algo.list.linked-list-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Queue",
+          "start_line": 409,
+          "end_line": 420
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.queue.deque",
+      "title": "덱",
+      "aliases": [
+        "Deque",
+        "양쪽 끝에서 모두 넣고 뺀다",
+        "스택이자 큐"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/queue/deque.md",
+      "tags": [
+        "algo",
+        "queue"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single structure combining both restricted ones, allowing insertion and removal at either end in constant time, which is why it can be used as either and is the one usually reached for",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.queue.queue",
+        "algo.stack.stack",
+        "java.collection.synchronized-legacy-collection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Deque",
+          "start_line": 457,
+          "end_line": 468
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.synchronized-legacy-collection",
+      "title": "Vector와 Stack을 권장하지 않는 이유",
+      "aliases": [
+        "동기화 오버헤드",
+        "ArrayDeque를 쓴다",
+        "Collections.synchronizedList"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/synchronized-legacy-collection.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason the two older classes are avoided - every method on them is synchronized, which is safe under several threads but pays for that safety on every call even when there is only one, so the unsynchronized equivalents are preferred and made safe by wrapping when they must be shared",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.array-list",
+        "java.collection.collections-class",
+        "algo.queue.deque",
+        "java.thread.synchronized-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Vector, Stack 권장하지 않는 이유",
+          "start_line": 489,
+          "end_line": 494
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Vector, Stack 권장하지 않는 이유",
+          "start_line": 504,
+          "end_line": 507
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.binary-tree-array",
+      "title": "이진 트리를 배열로 담기",
+      "aliases": [
+        "왼쪽 자식은 i * 2",
+        "부모는 i / 2"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/binary-tree-array.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single representation that stores the structure without any links at all - a node at one position has its children at twice that position and one past it, so the parent is found by halving, which is what makes the array-backed heap possible",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.tree.binary-tree",
+        "algo.tree.binary-tree-kinds",
+        "algo.array.array-memory-layout"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Tree",
+          "start_line": 561,
+          "end_line": 563
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.bst-insert",
+      "title": "이진 탐색 트리에 값을 넣을 때",
+      "aliases": [
+        "부모를 갱신하며 내려간다",
+        "빈 자리에 도달하면 거기가 자리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/bst-insert.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single descent that places a new value - compare with the current node, go left if the value is smaller and right if larger, remembering the node passed, until the place to go is empty, and that is where it hangs; an empty tree making the value the root",
+      "pilot_strata": [
+        "lecture-batch-68",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.bst",
+        "algo.tree.bst-delete",
+        "algo.tree.bst-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Binary Search Tree",
+          "start_line": 639,
+          "end_line": 643
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

@@ -1,0 +1,909 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-01",
+  "lane": "book",
+  "phase": 5,
+  "review_gate": "U3",
+  "mode": "candidate-manifest",
+  "derived_from": {
+    "source_inventory": "tooling/brain/fixtures/book-batch-01-sources.json",
+    "source_inventory_sha256": "7384d64d422e4c58d0f9488308fb9dd4fa1e89ad9dcb865121f22f79d7307c01",
+    "extraction_surface": ".omx/artifacts/brain-restructure/book-batch-01/extraction-surface.json",
+    "extraction_surface_sha256": "6c5408a1f3126512ea388c257a7dc751b2751b087a4edd97a10cb3b4840b30b2",
+    "book_corpus_lock": ".omx/artifacts/brain-restructure/book-batch-01/book-corpus-lock.json",
+    "book_corpus_lock_sha256": "81459ee6b36fafe825b7f2fa66c1b1e37c577f93b002b02c25a293c8a871ac0e",
+    "batch_baseline_sha256": "5ef8fb7f741e627def5cda6fd5202c7a60193cfc36cd84c39cc0344f334ad99d",
+    "book_corpus_sha256": "c39bbdf5c72911e23fe08364762ffdc143dc4ce1c2edda8e47896b5f68183c88"
+  },
+  "scope": [
+    {
+      "path": "content/brain/books/do-it-java/chap09.md",
+      "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03"
+    },
+    {
+      "path": "content/brain/books/do-it-java/chap10.md",
+      "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0"
+    }
+  ],
+  "candidates": [
+    {
+      "concept_id": "java.oop.abstract-class",
+      "title": "추상 클래스",
+      "aliases": [
+        "Abstract Class",
+        "추상클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstract-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented class-abstraction mechanism",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.abstract-method",
+        "java.pattern.template-method",
+        "java.oop.inheritance",
+        "java.oop.interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스",
+          "start_line": 17,
+          "end_line": 26
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스란?",
+          "start_line": 27,
+          "end_line": 36
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스 구현",
+          "start_line": 83,
+          "end_line": 226
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스를 만드는 이유",
+          "start_line": 227,
+          "end_line": 269
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstract-method",
+      "title": "추상 메서드",
+      "aliases": [
+        "Abstract Method",
+        "abstract 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstract-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method-declaration-without-implementation mechanism",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.oop.interface",
+        "java.oop.method-overriding"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스란?",
+          "start_line": 45,
+          "end_line": 79
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.template-method",
+      "title": "템플릿 메서드",
+      "aliases": [
+        "Template Method",
+        "템플릿 메서드 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/template-method.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single design pattern built on abstract classes",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.keyword.final",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 > ### 추상 클래스와 템플릿 메서드",
+          "start_line": 272,
+          "end_line": 396
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 > ### 템플릿 메서드 역할",
+          "start_line": 397,
+          "end_line": 410
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 응용하기",
+          "start_line": 411,
+          "end_line": 425
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 응용하기 > ### 클래스 설계하기",
+          "start_line": 426,
+          "end_line": 651
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.final",
+      "title": "final 예약어",
+      "aliases": [
+        "final keyword",
+        "final 키워드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/keyword/final.md",
+      "tags": [
+        "java",
+        "keyword"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single language keyword with three declaration positions",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.pattern.template-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어",
+          "start_line": 652,
+          "end_line": 663
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어 > ### final 변수",
+          "start_line": 664,
+          "end_line": 734
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어 > ### final 메서드",
+          "start_line": 735,
+          "end_line": 740
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어 > ### final 클래스",
+          "start_line": 741,
+          "end_line": 752
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface",
+      "title": "인터페이스",
+      "aliases": [
+        "Interface"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object-oriented type-declaration construct, including its Java 8 default/static and Java 9 private member extensions",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.oop.abstract-method",
+        "java.oop.interface-constant",
+        "java.oop.interface-specification",
+        "java.oop.polymorphism",
+        "java.oop.interface-default-method",
+        "java.oop.interface-static-method",
+        "java.oop.interface-private-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란?",
+          "start_line": 17,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 구현 코드가 없는 인터페이스",
+          "start_line": 23,
+          "end_line": 52
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 클래스에서 인터페이스 구현",
+          "start_line": 53,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-specification",
+      "title": "인터페이스의 명세 역할",
+      "aliases": [
+        "Interface Specification",
+        "인터페이스 명세",
+        "인터페이스 약속"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-specification.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "single design role of the interface construct",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.polymorphism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스와 다형성 > ### 인터페이스의 역할",
+          "start_line": 160,
+          "end_line": 181
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스와 다형성 > ### 클라이언트가 클래스를 사용하는 방법",
+          "start_line": 319,
+          "end_line": 344
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 실무에서 인터페이스를 사용하는 경우",
+          "start_line": 1019,
+          "end_line": 1061
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-constant",
+      "title": "인터페이스 상수",
+      "aliases": [
+        "Interface Constant",
+        "인터페이스 변수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-constant.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface member category",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.keyword.final"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 인터페이스 상수",
+          "start_line": 347,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-default-method",
+      "title": "디폴트 메서드",
+      "aliases": [
+        "Default Method",
+        "default 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-default-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface member category introduced in Java 8",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-static-method",
+        "java.oop.interface-private-method",
+        "java.oop.diamond-problem",
+        "java.oop.method-overriding"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드",
+          "start_line": 382,
+          "end_line": 470
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-static-method",
+      "title": "인터페이스 정적 메서드",
+      "aliases": [
+        "Interface Static Method",
+        "인터페이스 static 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-static-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface member category introduced in Java 8",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-default-method",
+        "java.oop.interface-private-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 정적 메서드",
+          "start_line": 471,
+          "end_line": 525
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 두 인터페이스의 정적 메서드가 중복되는 경우",
+          "start_line": 679,
+          "end_line": 688
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-private-method",
+      "title": "인터페이스 private 메서드",
+      "aliases": [
+        "Interface Private Method",
+        "private static 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-private-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface member category introduced in Java 9",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-default-method",
+        "java.oop.interface-static-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### private 메서드",
+          "start_line": 526,
+          "end_line": 575
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.multiple-interface-implementation",
+      "title": "다중 인터페이스 구현",
+      "aliases": [
+        "Multiple Interface Implementation",
+        "여러 인터페이스 구현"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/multiple-interface-implementation.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single type-composition rule for classes",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.diamond-problem",
+        "java.oop.inheritance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 한 클래스가 여러 인터페이스를 구현하는 경우",
+          "start_line": 578,
+          "end_line": 584
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 한 클래스가 여러 인터페이스를 구현하는 경우",
+          "start_line": 598,
+          "end_line": 678
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.diamond-problem",
+      "title": "다이아몬드 문제",
+      "aliases": [
+        "Diamond Problem"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/diamond-problem.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "merge",
+      "concept_granularity": "ambiguity from duplicated default-method implementations across interfaces",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.multiple-interface-implementation",
+        "java.oop.interface-default-method",
+        "java.oop.method-overriding",
+        "java.oop.virtual-method",
+        "java.oop.interface-static-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 두 인터페이스의 디폴트 메서드가 중복되는 경우",
+          "start_line": 689,
+          "end_line": 783
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-inheritance",
+      "title": "인터페이스 상속",
+      "aliases": [
+        "Interface Inheritance",
+        "형 상속",
+        "Type Inheritance"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-inheritance.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single type-level inheritance mechanism",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.inheritance",
+        "java.oop.multiple-interface-implementation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 인터페이스 상속하기",
+          "start_line": 784,
+          "end_line": 909
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.inheritance",
+      "title": "상속",
+      "aliases": [
+        "Inheritance",
+        "클래스 상속"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/inheritance.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented language mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.oop.method-overriding",
+        "java.oop.polymorphism",
+        "java.oop.abstract-class",
+        "java.oop.interface-inheritance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 상속이란?",
+          "start_line": 17,
+          "end_line": 23
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 인터페이스 구현과 클래스 상속 함께 쓰기",
+          "start_line": 910,
+          "end_line": 1018
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.method-overriding",
+      "title": "메서드 오버라이딩",
+      "aliases": [
+        "Method Overriding",
+        "메서드 재정의"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/method-overriding.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented method-redefinition mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.virtual-method",
+        "java.oop.abstract-method",
+        "java.oop.interface-default-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 메서드 오버라이딩",
+          "start_line": 443,
+          "end_line": 459
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.virtual-method",
+      "title": "가상 메서드",
+      "aliases": [
+        "Virtual Method"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/virtual-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "runtime method-selection mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap10"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.oop.method-overriding",
+        "java.oop.polymorphism",
+        "java.oop.diamond-problem"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 메서드 오버라이딩 > ### 묵시적 클래스 형 변환과 메서드 재정의",
+          "start_line": 502,
+          "end_line": 532
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 두 인터페이스의 디폴트 메서드가 중복되는 경우",
+          "start_line": 689,
+          "end_line": 783
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.polymorphism",
+      "title": "다형성",
+      "aliases": [
+        "Polymorphism"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/polymorphism.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented design property",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "do-it-java/chap09-chap10"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.virtual-method",
+        "java.oop.interface",
+        "java.pattern.template-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 다형성",
+          "start_line": 660,
+          "end_line": 671
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 응용하기 > ### 클래스 설계하기",
+          "start_line": 426,
+          "end_line": 651
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 인터페이스 구현과 형 변환",
+          "start_line": 141,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스와 다형성 > ### 인터페이스와 다형성",
+          "start_line": 182,
+          "end_line": 318
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.headfirst-chap01",
+      "title": "Head First Design Patterns chap01",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "Head First Design Patterns chap01: YAML frontmatter only, zero body bytes. body_bytes_after_frontmatter=0, so there is no substantive assertion to cite; the Phase 4 evidence rule rejects it before any concept is named.",
+      "pilot_strata": [
+        "book-batch-01",
+        "locked-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/headfirst/chap01.md",
+          "source_sha256": "5bc76a52b84de82b431eca3153eb88b7b46c8e97182f4acfcc5cf2a96a912934"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.kafka-chap03",
+      "title": "Kafka Definitive Guide chap03 (producer)",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "Kafka Definitive Guide chap03 (producer): YAML frontmatter only, zero body bytes. body_bytes_after_frontmatter=0, so there is no substantive assertion to cite; the Phase 4 evidence rule rejects it before any concept is named.",
+      "pilot_strata": [
+        "book-batch-01",
+        "locked-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap03.md",
+          "source_sha256": "415a2aa0a323e2a13946beb6cc01fd4a2a5d4136761647d1212b2db57676d36e"
+        }
+      ]
+    },
+    {
+      "concept_id": "book.rejected.kafka-chap04",
+      "title": "Kafka Definitive Guide chap04 (consumer)",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "Kafka Definitive Guide chap04 (consumer): YAML frontmatter only, zero body bytes. body_bytes_after_frontmatter=0, so there is no substantive assertion to cite; the Phase 4 evidence rule rejects it before any concept is named.",
+      "pilot_strata": [
+        "book-batch-01",
+        "locked-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap04.md",
+          "source_sha256": "61c9540d0ce99d8de40b8b1fc156344d32ba4b72935b3846a2ecaaa378b28c79"
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.final-method",
+      "title": "final 메서드",
+      "proposal_kind_considered": "stub",
+      "reason_code": "subsumed-by-parent-concept",
+      "reason": "chap09 L735-740's only assertable fact, 하위 클래스에서 재정의 불가, is stated verbatim at chap09 L659 inside java.keyword.final's first locator (652-663). The stub kind exists for thin concepts, not subsumed ones. Folded into java.keyword.final as its 3rd locator.",
+      "pilot_strata": [
+        "book-batch-01",
+        "folded-into-parent"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03"
+        }
+      ]
+    },
+    {
+      "concept_id": "software.practice.test-driven-development",
+      "title": "테스트 주도 개발",
+      "proposal_kind_considered": "create",
+      "reason_code": "insufficient-evidence-for-canonical-scope",
+      "reason": "chap09 L784 names and defines TDD, but the span's worked example is a main() program with no assertion, no red/green/refactor cycle, and no iteration loop. The title 테스트 주도 개발 and granularity 'single development methodology' claim more than the span supports, and proposalBody() provides no editorial slot to bound them. Recreate from stronger evidence in a future batch.",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09",
+        "deferred-pending-stronger-evidence"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03"
+        }
+      ]
+    }
+  ]
+}

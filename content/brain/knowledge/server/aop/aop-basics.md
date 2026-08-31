@@ -1,0 +1,60 @@
+---
+title: AOP
+aliases:
+  - AOP
+  - Aspect Oriented Programming
+  - 관점 지향 프로그래밍
+  - 횡단 관심사
+tags:
+  - server
+  - spring
+origin:
+  verified: 2026-08-30
+---
+
+공통 관심사와 핵심 관심사를 분리하는 프로그래밍 패러다임. 여러 번 반복해서 나타나는 코드를 Aspect로 모듈화해 핵심 로직에서 떼어낸다.
+
+## 횡단 관심사
+
+로깅, 트랜잭션, 권한 검사, 성능 측정 같은 부가 기능은 거의 모든 메서드에 필요하다. 이것들을 메서드마다 직접 넣으면 비즈니스 로직이 부가 기능에 파묻힌다.
+
+이런 관심사를 횡단 관심사(cross-cutting concern)라고 부른다. 객체 하나에 속하지 않고 여러 객체를 가로지르기 때문이다. 객체지향으로는 잘 떼어지지 않아서 [[good-object|OOP]]를 보완하려고 나온 개념이다.
+
+AOP는 패러다임이라 언어마다 구현체가 있고, 자바에서는 AspectJ가 대표적이다.
+
+## Aspect, Advice, Pointcut
+
+Aspect는 흩어진 관심사를 모듈화한 것으로 Advice와 Pointcut을 묶은 것이다. Advice가 실질적인 부가 기능 로직이고, Advice가 적용되는 객체를 Target이라고 부른다. Join point는 Advice가 적용될 수 있는 모든 위치를 가리키는 추상적인 개념이고, Pointcut은 그중 실제로 적용할 지점을 골라 정의한 것이다. Advisor는 스프링에서만 쓰는 말로 Advice와 Pointcut 한 쌍을 가리킨다. Pointcut으로 정한 지점에 Advice를 끼워 넣는 일이 Weaving이다.
+
+Join point와 Pointcut이 가장 헷갈린다. Join point는 적용 가능한 자리의 집합이고, Pointcut은 그중 여기에 적용하겠다고 고른 것이다. 스프링 AOP는 프록시 방식이라 Join point가 언제나 메서드 실행 지점이고, 그래서 Pointcut도 메서드 실행 시점만 지정할 수 있다. 이때 만들어지는 AOP 프록시는 JDK 동적 프록시이거나 CGLIB 프록시다.
+
+## 구현하는 두 방법
+
+구현하는 방법은 두 가지다. 부가 기능을 담은 Advice 클래스를 만들고 XML 설정 파일에 Aspect를 정의하거나, `@Aspect` 애노테이션을 붙인 클래스를 만들어 그 안에서 Advice와 Pointcut을 정의한다.
+
+## 위빙 시점
+
+Advice를 언제 끼워 넣느냐에 따라 위빙 시점이 갈린다.
+
+| 시점             | 무엇을 조작하나                    | 적용 범위 |
+| ---------------- | ---------------------------------- | --------- |
+| 컴파일 시점      | `.java`를 `.class`로 만들 때       | 모든 지점 |
+| 클래스 로딩 시점 | `.class`를 JVM에 올리기 전에       | 모든 지점 |
+| 런타임 시점      | 이미 올라간 객체를 프록시로 감싼다 | 메서드만  |
+
+앞의 둘은 AspectJ의 특별한 컴파일러나 클래스 로더 조작기가 필요해서 복잡하고 운영하기 어렵다. 스프링 AOP가 런타임 방식을 쓰는 이유는 그런 도구 없이 스프링만 있으면 되기 때문이다.
+
+## 런타임 위빙의 제약
+
+런타임 위빙은 실제 대상 코드를 그대로 두고 프록시로 감싸는 방식이라 메서드에만 적용할 수 있고, 스프링 컨테이너가 관리하는 빈에만 적용할 수 있다. 이 제약이 어디까지 번지는지는 [[proxy-limitation|프록시의 한계]]에 있다.
+
+## 관련
+
+- [[spring-aop-vs-aspectj|Spring AOP와 AspectJ]]
+- [[proxy-limitation|프록시의 한계]]
+- [[filter-and-interceptor|Filter와 Interceptor]]
+- [[declarative-transaction|선언적 트랜잭션]]
+
+## 출처
+
+- [[brain/notes/Interview/dog-study/dog-week04|면접 스터디 4주차 - AOP]]

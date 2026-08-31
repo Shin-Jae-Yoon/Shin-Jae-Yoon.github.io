@@ -1,0 +1,1170 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-71",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-70",
+    "applied_state": "1346 approved knowledge concepts after the graph file was mined."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/CodeTree/array.md",
+        "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1"
+      },
+      {
+        "path": "content/brain/notes/CodeTree/basic.md",
+        "source_sha256": "260c869fc99b44af91fdb2d0e72e2833d03fef3cd644fb2a440157a2b2a32ac0"
+      },
+      {
+        "path": "content/brain/notes/CodeTree/binarySearch.md",
+        "source_sha256": "d4ae0c9f4fccad36e818726fc843edd18fc5f2c5bc5bd0073894a550b8c472dd"
+      },
+      {
+        "path": "content/brain/notes/CodeTree/dp.md",
+        "source_sha256": "8f6b00ff4c5426acd8d4035eaab2f0ff618dec6576ca752a57b45dc25b767dfa"
+      },
+      {
+        "path": "content/brain/notes/CodeTree/inputoutput.md",
+        "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18"
+      },
+      {
+        "path": "content/brain/notes/CodeTree/math.md",
+        "source_sha256": "978157d4f7cea7590eaa9fd315d4ade8019f429854b46208b1064825233bcef0"
+      },
+      {
+        "path": "content/brain/notes/CodeTree/string.md",
+        "source_sha256": "5588de33bb7653c97e5f6c626adb1cff170e78a0fcb75f330ef6bed0c02774f6"
+      },
+      {
+        "path": "content/brain/notes/CodeTree/index.md",
+        "source_sha256": "f6c504f4a208b1f3f10f7b21d6abfa8816a996abf2d1d4fa899c209693c1ee77"
+      }
+    ],
+    "line_range": "whole files",
+    "series": "코드트리 나머지 - 정렬, 기본, 이분탐색, DP, 입출력, 수학, 문자열"
+  },
+  "multi_source_note": "Eight files, seven of them too small to batch alone, are mined together. Locators carry an `s` index into the source list; update candidates that draw on a file other than the first override the source per item.",
+  "overlap_analysis": {
+    "finding": "These files are a coding-test cheat sheet, so most of what they contain is the standard library surface the Java lane already applied. What is not is the sorting algorithm behind each entry point, the ordering interface supplied from outside, the reader that splits its own input, binary search, dynamic programming and three pieces of number theory.",
+    "disposition": "Nine applied concepts gain evidence or edges. Twelve new concepts, two of them opening namespaces that did not exist."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, which is most of what these files offer on a topic.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All nine update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "array L12, L22, L44-L45, L73, L109 partial; basic L8, L10-L16, L28, L56; binarySearch L8-L9, L21; inputoutput L15-L16, L98 partial, L155, L157-L159; math L14, L25-L26, L36, L50, L79-L80, L96; string L12-L19 within cited span; index whole",
+        "reason_code": "attribution-import-line-external-link-index-or-empty-scope",
+        "detail": "The course attribution, the bare import statements, the four blog and encyclopedia links credited for further reading, the code captions, the study's own index file and the two headings that carry a code listing but no prose at all - basic's space-complexity section and math's permutation section."
+      }
+    ],
+    "coverage_statement": "Every heading scope carrying prose contributes at least one cited locator, except the two named above which carry none."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 31400,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 124,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 15,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 21,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes CodeTree - ten files over batches 68 to 71.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 21,
+  "candidates": [
+    {
+      "concept_id": "java.util.arrays-sort",
+      "title": "Arrays.sort()",
+      "aliases": [
+        "DualPivotQuickSort",
+        "배열 오름차순 정렬",
+        "최악의 경우 O(n제곱)"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/arrays-sort.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single in-place ascending sort implemented as a dual-pivot quicksort that splits into three regions and mixes in insertion sort, running in n log n on average and quadratic at worst",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-class",
+        "java.oop.comparable",
+        "java.oop.comparator",
+        "java.util.arrays-binary-search",
+        "algo.sort.insertion-sort",
+        "algo.array.counting-array",
+        "algo.complexity.time-complexity",
+        "java.util.collections-sort",
+        "java.util.primitive-descending-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### sort()",
+          "start_line": 550,
+          "end_line": 559
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch03.md",
+          "source_sha256": "8525fdc270dae194d7f40c0e911e16be338f59d5268764a2ff6af14e8fef71db",
+          "heading": "## 배열 > ### 10989번 문제",
+          "start_line": 407,
+          "end_line": 409
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 13,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.comparable",
+      "title": "Comparable",
+      "aliases": [
+        "compareTo()",
+        "정렬 기준 내부 구현"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/comparable.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface by which a class states its own ordering, overriding compareTo to compare itself against another of the same type and returning positive, zero or negative - which is what sorting an object array requires",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.comparator",
+        "java.util.arrays-sort",
+        "java.oop.interface",
+        "java.util.string-class",
+        "java.util.comparator",
+        "java.util.comparator-lambda"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable",
+          "start_line": 619,
+          "end_line": 623
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### Item 내부 Comparable 구현",
+          "start_line": 669,
+          "end_line": 672
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Comparable > ### Item 내부 Comparable 구현",
+          "start_line": 706,
+          "end_line": 711
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 객체 정렬",
+          "start_line": 59,
+          "end_line": 62
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.n-range-table",
+      "title": "N의 범위로 복잡도 추론하기",
+      "aliases": [
+        "범위별 허용 복잡도",
+        "N이 10만이면 N log N"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/n-range-table.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single table read backwards from the input bound to the complexity that will fit - a handful of elements admitting factorial time, a few dozen exponential, a few hundred cubic, ten thousand quadratic, a million linearithmic, ten million linear - which is how the intended solution is guessed before it is found",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-48",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.complexity.operation-budget",
+        "algo.complexity.algorithm-choice",
+        "algo.test.complexity-first",
+        "algo.search.enumeration-complexity",
+        "algo.search.binary-search"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 시간복잡도를 통한 추론",
+          "start_line": 85,
+          "end_line": 85
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 시간복잡도를 통한 추론",
+          "start_line": 89,
+          "end_line": 98
+        },
+        {
+          "path": "content/brain/notes/CodeTree/basic.md",
+          "source_sha256": "260c869fc99b44af91fdb2d0e72e2833d03fef3cd644fb2a440157a2b2a32ac0",
+          "heading": "## 시간복잡도",
+          "start_line": 32,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.java-io-setup",
+      "title": "자바 입출력 준비",
+      "aliases": [
+        "BufferedReader를 쓴다",
+        "Scanner는 느리다",
+        "throws IOException"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/java-io-setup.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of imports and declarations worth writing before reading the problem - the collections and tokeniser, the io package with the exception declared on main, and the buffered reader in place of the scanner, which is too slow for large input",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-47",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.test.problem-format",
+        "algo.complexity.operation-budget",
+        "java.io.buffered-reader",
+        "algo.test.buffered-io-benchmark",
+        "java.io.scanner"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch00.md",
+          "source_sha256": "3ef2421fc23adcd99b03ffbdc08b4eb0166fa504c862b1f985564e04ea959938",
+          "heading": "## 목차 > ### 입출력 참고 (개인필기)",
+          "start_line": 54,
+          "end_line": 59
+        },
+        {
+          "path": "content/brain/notes/CodeTree/inputoutput.md",
+          "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18",
+          "heading": "## BufferedReader",
+          "start_line": 157,
+          "end_line": 161
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-builder-buffer",
+      "title": "StringBuilder와 StringBuffer",
+      "aliases": [
+        "문자열 연산이 많을 때",
+        "버퍼 크기를 늘리는 가변 객체",
+        "동기화 지원 여부"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-builder-buffer.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single mutable alternative for when concatenation is frequent enough that a new object per operation hurts - which comes in two forms differing only in whether the methods are synchronised, so the thread-safe one is chosen under concurrency and the other where there is none",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "java-domain",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-immutability-reason",
+        "java.util.string-class",
+        "java.oop.immutable-cost",
+        "java.thread.concurrent-collection",
+        "algo.test.java-io-setup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### StringBuilder, StringBuffer",
+          "start_line": 294,
+          "end_line": 298
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### StringBuilder, StringBuffer",
+          "start_line": 300,
+          "end_line": 304
+        },
+        {
+          "path": "content/brain/notes/CodeTree/inputoutput.md",
+          "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18",
+          "heading": "## StringBuilder",
+          "start_line": 197,
+          "end_line": 198
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-class",
+      "title": "String 클래스",
+      "aliases": [
+        "java.lang.String",
+        "CharSequence",
+        "length()",
+        "String은 불변이다",
+        "toCharArray()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-class.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single library class extending Object and implementing Serializable, CharSequence and Comparable, whose API documentation is the worked example for reading a method signature as parameters and return type",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.string-constant-pool",
+        "java.oop.interface",
+        "software.api.api",
+        "java.oop.method",
+        "java.util.printf-format",
+        "algo.string.index-of-search",
+        "java.util.string-immutability-reason",
+        "java.util.string-builder-buffer",
+        "java.array.array-clone"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### String Class",
+          "start_line": 130,
+          "end_line": 138
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열",
+          "start_line": 14,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 39,
+          "end_line": 39
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 53,
+          "end_line": 53
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 66,
+          "end_line": 66
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 메서드",
+          "start_line": 107,
+          "end_line": 121
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 01 - 불변객체 > ### String",
+          "start_line": 214,
+          "end_line": 219
+        },
+        {
+          "path": "content/brain/notes/CodeTree/string.md",
+          "source_sha256": "5588de33bb7653c97e5f6c626adb1cff170e78a0fcb75f330ef6bed0c02774f6",
+          "heading": "## 문자열 관련 메서드",
+          "start_line": 12,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-comparison",
+      "title": "문자열 비교",
+      "aliases": [
+        "String equals()",
+        "toUpperCase()",
+        "substring()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-comparison.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single rule that string values are compared with equals rather than by reference, alongside the transformation methods that return a new string instead of altering the original",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.oop.equals-hashcode",
+        "java.oop.immutable-object",
+        "java.type.string-constant-pool",
+        "algo.string.ascii-arithmetic",
+        "java.oop.comparable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### equals()",
+          "start_line": 629,
+          "end_line": 631
+        },
+        {
+          "path": "content/brain/notes/CodeTree/string.md",
+          "source_sha256": "5588de33bb7653c97e5f6c626adb1cff170e78a0fcb75f330ef6bed0c02774f6",
+          "heading": "## 문자열 관련 메서드",
+          "start_line": 20,
+          "end_line": 24
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.arrays-binary-search",
+      "title": "Arrays.binarySearch()",
+      "aliases": [
+        "이진 탐색",
+        "Insertion Point"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/arrays-binary-search.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single binary search over a sorted array returning the key's index when found, and otherwise minus the insertion point minus one, where the insertion point is the first position holding something larger",
+      "pilot_strata": [
+        "lecture-batch-24",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-sort",
+        "java.util.arrays-class",
+        "java.array.array",
+        "algo.search.binary-search"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### binarySearch()",
+          "start_line": 587,
+          "end_line": 594
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.buffered-reader",
+      "title": "BufferedReader",
+      "aliases": [
+        "readLine()",
+        "한 줄씩 입력받기",
+        "EOF에 null 반환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/buffered-reader.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single decorator reading a line at a time and answering null at end of file, which must be given a Reader - hence an InputStreamReader wrapping the standard input stream when the source is the keyboard",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "lecture-batch-71",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.system-out",
+        "java.io.stream-chaining",
+        "java.io.io-class-naming",
+        "algo.test.java-io-setup",
+        "java.io.scanner"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 106,
+          "end_line": 117
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 122,
+          "end_line": 123
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 145,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.collections-sort",
+      "title": "Collections.sort와 Tim Sort",
+      "aliases": [
+        "객체를 정렬한다",
+        "Tim Sort",
+        "삽입과 합병을 섞은 정렬",
+        "reverseOrder"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/collections-sort.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single counterpart to the array sort - it orders objects rather than primitives and uses a hybrid of insertion and merge sorting, which unlike the array's quicksort variant is log-linear in the worst case as well as the average; the same class also supplying the reversal of a list and the comparator that orders any wrapper type downward",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-sort",
+        "java.collection.collections-class",
+        "java.util.primitive-descending-sort",
+        "algo.sort.insertion-sort"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 31,
+          "end_line": 31
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 37,
+          "end_line": 43
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.primitive-descending-sort",
+      "title": "기본형 배열은 내림차순 정렬이 안 된다",
+      "aliases": [
+        "Integer로 박싱해야 한다",
+        "boxed().toArray()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/primitive-descending-sort.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single gap in the standard library - the descending order is expressed as a comparator, and a comparator takes objects, so an array of the primitive integer cannot be sorted downward in one call; it has to be boxed into the wrapper type first, which a stream does in one line",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.collections-sort",
+        "java.util.arrays-sort",
+        "java.type.reference-type",
+        "java.util.arrays-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 23,
+          "end_line": 24
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 정렬 관련",
+          "start_line": 28,
+          "end_line": 29
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.comparator",
+      "title": "Comparator 인터페이스",
+      "aliases": [
+        "compare(o1, o2)",
+        "두 매개변수 객체를 비교",
+        "java.util에서 import"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/comparator.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface for ordering supplied from outside the class being ordered - its one method takes both objects to compare rather than comparing against the receiver, which is what lets the same type be sorted by different criteria in different places, at the cost of an import the other ordering interface does not need",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.comparable",
+        "java.util.comparator-lambda",
+        "java.util.collections-sort",
+        "java.oop.interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 객체 정렬",
+          "start_line": 53,
+          "end_line": 55
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 객체 정렬",
+          "start_line": 66,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.comparator-lambda",
+      "title": "정렬 기준을 람다로 넘기기",
+      "aliases": [
+        "메서드 하나뿐인 인터페이스니까",
+        "두 번에 걸쳐 다른 기준으로 정렬"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/comparator-lambda.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the ordering interface having exactly one method - it can be written as a lambda at the call site instead of a class, which is what makes sorting the same data twice by different criteria a matter of passing a different expression",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.util.comparator",
+        "java.oop.lambda-interface",
+        "java.oop.comparable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 객체 정렬",
+          "start_line": 95,
+          "end_line": 96
+        },
+        {
+          "path": "content/brain/notes/CodeTree/array.md",
+          "source_sha256": "f37688bce09b18c7aecbfff703ea831cc7d146f8e7938ec72c61e577c0833eb1",
+          "heading": "## 객체 정렬",
+          "start_line": 108,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.search.binary-search",
+      "title": "이분 탐색",
+      "aliases": [
+        "Binary Search",
+        "가운데 값과 비교하여 구간을 좁힌다",
+        "mid는 반드시 제외한다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/binary-search.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method of finding a value in sorted data by comparing against the middle and discarding the half that cannot contain it - the next bounds moving past the middle rather than to it, since leaving it in loops forever - which is logarithmic on sorted input and costs the sort itself when the input is not",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.arrays-binary-search",
+        "algo.tree.bst",
+        "algo.complexity.time-complexity",
+        "algo.search.brute-force"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/binarySearch.md",
+          "source_sha256": "d4ae0c9f4fccad36e818726fc843edd18fc5f2c5bc5bd0073894a550b8c472dd",
+          "heading": "## Binary Search",
+          "start_line": 15,
+          "end_line": 20
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.dp.dynamic-programming",
+      "title": "동적 계획법",
+      "aliases": [
+        "DP",
+        "Dynamic Programming",
+        "작은 문제의 답을 모아 큰 문제로"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/dp/dynamic-programming.md",
+      "tags": [
+        "algo",
+        "dp"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique of answering a large problem by first answering smaller instances of the same problem and combining what they gave, rather than attacking the large one directly",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.math.fibonacci",
+        "algo.graph.floyd-warshall",
+        "algo.complexity.algorithm-choice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dp.md",
+          "source_sha256": "8f6b00ff4c5426acd8d4035eaab2f0ff618dec6576ca752a57b45dc25b767dfa",
+          "heading": "## DP",
+          "start_line": 12,
+          "end_line": 13
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.scanner",
+      "title": "Scanner",
+      "aliases": [
+        "공백과 줄바꿈으로 끊는다",
+        "next와 nextLine의 차이",
+        "느리지만 쓰기 편하다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/scanner.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reader that splits input for you as it reads - by whitespace and newline for one call and by newline alone for the other, so the second keeps the spaces and counts them in the length - offering a call per type read, at a speed slow enough that it is the first thing given up when time is tight",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.buffered-reader",
+        "java.io.scanner-delimiter",
+        "algo.test.java-io-setup",
+        "java.util.printf-format"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/inputoutput.md",
+          "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18",
+          "heading": "## Scanner",
+          "start_line": 12,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/notes/CodeTree/inputoutput.md",
+          "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18",
+          "heading": "## Scanner > ### 정수, 실수",
+          "start_line": 34,
+          "end_line": 36
+        },
+        {
+          "path": "content/brain/notes/CodeTree/inputoutput.md",
+          "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18",
+          "heading": "## Scanner > ### 문자열, 문자",
+          "start_line": 66,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.scanner-delimiter",
+      "title": "구분자는 정규 표현식이다",
+      "aliases": [
+        "useDelimiter",
+        "점 하나를 쓰려면 역슬래시 두 개"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/scanner-delimiter.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trap in setting a custom separator - what is passed is a pattern, not a literal, so a character that means something in a pattern has to be escaped, and because the language itself takes the escape character first, that escape must be written twice",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.scanner",
+        "js.regex.regex",
+        "java.util.string-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/inputoutput.md",
+          "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18",
+          "heading": "## Scanner > ### 구분자",
+          "start_line": 98,
+          "end_line": 98
+        },
+        {
+          "path": "content/brain/notes/CodeTree/inputoutput.md",
+          "source_sha256": "696d558dca4b826a0a1800587f89b146298fa833be218633e59fc70a11c8bc18",
+          "heading": "## Scanner > ### 구분자",
+          "start_line": 124,
+          "end_line": 127
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.math.euclidean-algorithm",
+      "title": "유클리드 호제법",
+      "aliases": [
+        "GCD(A, B) = GCD(B, R)",
+        "최대공약수",
+        "최소공배수는 두 수의 곱을 GCD로 나눈 것"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/math/euclidean-algorithm.md",
+      "tags": [
+        "algo",
+        "math"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single recurrence for the greatest common divisor - the divisor and the remainder have the same one as the original pair, so replacing the pair with them repeatedly ends when the remainder is zero and the last divisor is the answer - together with the identity that lets the least common multiple be read straight off it",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.math.modular-periodicity",
+        "algo.math.ceiling-division",
+        "algo.math.collatz-conjecture",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/math.md",
+          "source_sha256": "978157d4f7cea7590eaa9fd315d4ade8019f429854b46208b1064825233bcef0",
+          "heading": "## 유클리드 호제법",
+          "start_line": 12,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/notes/CodeTree/math.md",
+          "source_sha256": "978157d4f7cea7590eaa9fd315d4ade8019f429854b46208b1064825233bcef0",
+          "heading": "## 유클리드 호제법",
+          "start_line": 51,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.math.collatz-conjecture",
+      "title": "콜라츠 추측",
+      "aliases": [
+        "3n + 1 수열",
+        "짝수는 반으로 홀수는 세 배 더하기 하나"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/math/collatz-conjecture.md",
+      "tags": [
+        "algo",
+        "math"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unproven claim that halving every even number and tripling-plus-one every odd one always reaches one in finitely many steps, no counterexample having been found - which is why it appears as an exercise in writing the loop rather than in proving anything",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.math.euclidean-algorithm",
+        "algo.math.fibonacci",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/math.md",
+          "source_sha256": "978157d4f7cea7590eaa9fd315d4ade8019f429854b46208b1064825233bcef0",
+          "heading": "## 콜라스 추측",
+          "start_line": 75,
+          "end_line": 75
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.math.fibonacci",
+      "title": "피보나치 수열",
+      "aliases": [
+        "직전 두 원소의 합",
+        "첫 두 원소는 1"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/math/fibonacci.md",
+      "tags": [
+        "algo",
+        "math"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sequence beginning with two ones in which every later term is the sum of the two before it - the standard first example of a problem whose naive recursion recomputes the same subproblems",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.dp.dynamic-programming",
+        "algo.math.collatz-conjecture",
+        "cs.memory.call-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/math.md",
+          "source_sha256": "978157d4f7cea7590eaa9fd315d4ade8019f429854b46208b1064825233bcef0",
+          "heading": "## 피보나치 수열",
+          "start_line": 88,
+          "end_line": 88
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array-clone",
+      "title": "배열을 넘기면 원본이 바뀐다",
+      "aliases": [
+        "배열도 참조형",
+        "clone()으로 새 배열을 만들어 넘긴다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/array-clone.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of an array being a reference - passing one to a method hands over the same array, so anything the method writes is visible to the caller, which is avoided by handing over a copy instead",
+      "pilot_strata": [
+        "lecture-batch-71",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array-copy",
+        "java.memory.object-reference",
+        "java.copy.copy-strategy",
+        "java.array.array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/string.md",
+          "source_sha256": "5588de33bb7653c97e5f6c626adb1cff170e78a0fcb75f330ef6bed0c02774f6",
+          "heading": "## 배열 관련",
+          "start_line": 29,
+          "end_line": 30
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

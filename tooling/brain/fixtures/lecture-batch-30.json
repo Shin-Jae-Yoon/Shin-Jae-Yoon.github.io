@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-30",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-29",
+    "applied_state": "625 approved knowledge concepts after lecture-batch-29 opened the db.* namespace with lecture01."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture02.md",
+        "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f"
+      }
+    ],
+    "line_range": "L12-L363 (whole file)",
+    "series": "쉬운코드 DB (easy-db) 2/15 — RDBMS"
+  },
+  "overlap_analysis": {
+    "finding": "Only lecture01 precedes this file in the db.* namespace, so 19 of 21 candidates are creates.",
+    "disposition": "Three new subdomains open here: db.relational for the model itself from its mathematical origin through domain, attribute, tuple and the six properties of a relation; db.key for the super, candidate, primary, unique and foreign keys; db.constraint for NULL and the implicit and schema-based constraint families."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8, L18, L31-58 partial, L64-65, L72, L80-101 partial, L113-126 partial, L156 partial, L188-239 partial",
+        "reason_code": "lecture-preamble-figure-or-carried-by-owner",
+        "detail": "The channel link, the cross-reference to lecture01, figure captions and the worked student-relation build-up whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in lecture02 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 147,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 16,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 21,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "The two updates close the forward edges lecture-batch-29 had to retarget: the logical data model now points at the relation and the domain, and the database state at the relation state.",
+  "candidates_authored": 21,
+  "candidates": [
+    {
+      "concept_id": "db.model.logical-model",
+      "title": "논리적 데이터 모델",
+      "aliases": [
+        "Logical Data Model",
+        "관계형 데이터 모델",
+        "object-relational"
+      ],
+      "canonical_path": "content/brain/knowledge/db/model/logical-model.md",
+      "tags": [
+        "db",
+        "model"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single middle model detailed enough to be close to how data actually sits in a computer yet tied to no particular DBMS or storage, of which the relational model is the representative - MySQL, Oracle and MS-SQL relational, PostgreSQL object-relational",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-30"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.model.data-model",
+        "db.model.conceptual-model",
+        "db.model.physical-model",
+        "db.basic.database",
+        "db.relational.relation",
+        "db.relational.domain"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Data models > ### Logical",
+          "start_line": 109,
+          "end_line": 124
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model",
+          "start_line": 69,
+          "end_line": 70
+        }
+      ]
+    },
+    {
+      "concept_id": "db.schema.db-state",
+      "title": "데이터베이스 상태",
+      "aliases": [
+        "Database State",
+        "snapshot",
+        "스냅샷"
+      ],
+      "canonical_path": "content/brain/knowledge/db/schema/db-state.md",
+      "tags": [
+        "db",
+        "schema"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of data actually held at one moment, which changes often - the counterpart to the schema that does not",
+      "pilot_strata": [
+        "lecture-batch-29",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-30"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.schema.db-schema",
+        "db.basic.db-system",
+        "db.relational.relation-state"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture01.md",
+          "source_sha256": "76086ea73eb8a92700061b3611556baa98e4c66f64c7ee47e0524709743070be",
+          "heading": "## Schema & State > ### DB state(snapshot)",
+          "start_line": 158,
+          "end_line": 160
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.mathematical-relation",
+      "title": "수학에서의 relation",
+      "aliases": [
+        "카테시안 곱",
+        "Cartesian product",
+        "n-ary relation",
+        "n-튜플"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/mathematical-relation.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single mathematical origin of the word: a set holds distinct unordered elements, the Cartesian product of n sets is every possible n-length list drawn one element from each, and a relation is a subset of that product - each list in it being a tuple",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.relation",
+        "db.relational.domain",
+        "db.relational.tuple"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## RDBMS > ### relation in mathematics",
+          "start_line": 24,
+          "end_line": 27
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## RDBMS > ### relation in mathematics",
+          "start_line": 32,
+          "end_line": 40
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## RDBMS > ### relation in mathematics",
+          "start_line": 46,
+          "end_line": 58
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.domain",
+      "title": "도메인",
+      "aliases": [
+        "Domain",
+        "더 이상 나눌 수 없는 값들의 집합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/domain.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of atomic values that a column may draw from, which is what the mathematical set becomes in the relational model",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.mathematical-relation",
+        "db.relational.attribute",
+        "db.constraint.schema-based-constraint"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### domain",
+          "start_line": 78,
+          "end_line": 89
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.attribute",
+      "title": "속성",
+      "aliases": [
+        "Attribute",
+        "도메인이 맡은 역할의 이름"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/attribute.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single name for the role a domain plays in a relation, which is what distinguishes two columns drawn from the same domain for different purposes",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.domain",
+        "db.relational.tuple",
+        "db.relational.relation-schema"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### attribute",
+          "start_line": 95,
+          "end_line": 105
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.tuple",
+      "title": "튜플",
+      "aliases": [
+        "Tuple",
+        "각 속성의 값으로 이루어진 리스트",
+        "row"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/tuple.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of one value per attribute, which is the row that actually exists among everything the domains could have produced",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.relational.attribute",
+        "db.relational.relation",
+        "db.relational.relation-state"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### tuple",
+          "start_line": 111,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.relation",
+      "title": "릴레이션",
+      "aliases": [
+        "Relation",
+        "테이블",
+        "atomic values의 집합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/relation.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single table in the relational model, drawn as rows and columns rather than as sets, and constrained to hold values that cannot be divided further",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.mathematical-relation",
+        "db.relational.tuple",
+        "db.relational.relation-property",
+        "db.model.logical-model"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### relation, 요약",
+          "start_line": 124,
+          "end_line": 132
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.relation-schema",
+      "title": "릴레이션 스키마",
+      "aliases": [
+        "Relation Schema",
+        "이름 + 속성 리스트"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/relation-schema.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single description of a relation's structure as its name followed by its attribute list, together with the constraints on those attributes",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.attribute",
+        "db.relational.degree",
+        "db.schema.db-schema",
+        "db.relational.relational-database"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### relation schema",
+          "start_line": 138,
+          "end_line": 141
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.degree",
+      "title": "릴레이션의 차수",
+      "aliases": [
+        "Degree of Relation",
+        "속성의 수"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/degree.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single count of the attributes a relation schema declares",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.relational.relation-schema",
+        "db.relational.attribute"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### degree of relation",
+          "start_line": 147,
+          "end_line": 150
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.relation-state",
+      "title": "릴레이션 상태",
+      "aliases": [
+        "Relation State",
+        "튜플들의 집합으로서의 relation"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/relation-state.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reading of relation as only the tuples that actually exist, which is why a text using the word must be read for whether it means the abstract table or its current contents",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.relation",
+        "db.schema.db-state",
+        "db.relational.tuple"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### relation state",
+          "start_line": 156,
+          "end_line": 161
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.relational-database",
+      "title": "관계형 데이터베이스",
+      "aliases": [
+        "Relational Database",
+        "관계형 DB 스키마"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/relational-database.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single database structured on the relational model as a set of relations, whose schema is the set of relation schemas together with the integrity constraints over them",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.relation",
+        "db.relational.relation-schema",
+        "db.constraint.constraint",
+        "db.basic.database"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### relational database",
+          "start_line": 167,
+          "end_line": 173
+        }
+      ]
+    },
+    {
+      "concept_id": "db.relational.relation-property",
+      "title": "릴레이션의 여섯 가지 특징",
+      "aliases": [
+        "중복 튜플 불가",
+        "튜플 순서 무관",
+        "속성은 atomic",
+        "복합 속성",
+        "다중값 속성"
+      ],
+      "canonical_path": "content/brain/knowledge/db/relational/relation-property.md",
+      "tags": [
+        "db",
+        "relational"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of six properties following from a relation being a set of tuples - no duplicate tuple, a key drawn from a subset of the attributes, tuple order irrelevant, attribute names unique within the relation, attribute order within a tuple irrelevant, and every attribute atomic so a composite or multivalued one must be split",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.relational.relation",
+        "db.key.super-key",
+        "db.relational.domain",
+        "db.constraint.implicit-constraint"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### relation 특징",
+          "start_line": 179,
+          "end_line": 184
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### relation 특징",
+          "start_line": 188,
+          "end_line": 209
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## relational data model > ### relation 특징",
+          "start_line": 217,
+          "end_line": 239
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.null",
+      "title": "NULL",
+      "aliases": [
+        "값이 존재하지 않음",
+        "알 수 없음",
+        "해당 사항 없음"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/null.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single marker carrying at least three different meanings - absent, unknown, or not applicable - which is exactly why it is best avoided",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.constraint.schema-based-constraint",
+        "db.key.primary-key",
+        "db.relational.tuple"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### NULL",
+          "start_line": 249,
+          "end_line": 263
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.super-key",
+      "title": "슈퍼키",
+      "aliases": [
+        "Super Key",
+        "튜플을 유일하게 식별하는 속성 집합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/super-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single attribute set that identifies tuples uniquely, of which the whole attribute set is always one because a relation admits no duplicate tuple",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.candidate-key",
+        "db.relational.relation-property",
+        "db.key.primary-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 269,
+          "end_line": 273
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.candidate-key",
+      "title": "후보키",
+      "aliases": [
+        "Candidate Key",
+        "minimal superkey",
+        "최소 슈퍼키"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/candidate-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single super key from which removing any attribute would destroy uniqueness - the minimal one",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.super-key",
+        "db.key.primary-key",
+        "db.key.unique-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 277,
+          "end_line": 283
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.primary-key",
+      "title": "기본키",
+      "aliases": [
+        "Primary Key",
+        "PK",
+        "개인키"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/primary-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single candidate key chosen to identify tuples, usually the one with fewest attributes, conventionally marked by underlining",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.key.candidate-key",
+        "db.key.unique-key",
+        "db.key.foreign-key",
+        "db.constraint.null"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 287,
+          "end_line": 291
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.unique-key",
+      "title": "유일키",
+      "aliases": [
+        "Unique Key",
+        "대체키",
+        "Alternate Key"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/unique-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single candidate key that was not chosen as the primary one",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.key.candidate-key",
+        "db.key.primary-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 295,
+          "end_line": 298
+        }
+      ]
+    },
+    {
+      "concept_id": "db.key.foreign-key",
+      "title": "외래키",
+      "aliases": [
+        "Foreign Key",
+        "FK",
+        "다른 릴레이션의 PK 참조"
+      ],
+      "canonical_path": "content/brain/knowledge/db/key/foreign-key.md",
+      "tags": [
+        "db",
+        "key"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single attribute set referring to another relation's primary key",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.key.primary-key",
+        "db.constraint.schema-based-constraint",
+        "db.relational.relational-database"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### Keys",
+          "start_line": 302,
+          "end_line": 305
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.constraint",
+      "title": "제약조건",
+      "aliases": [
+        "Constraints",
+        "데이터 일관성 보장"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/db-constraint.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule the relations of a database must satisfy at all times, existing so the data stays in a consistent form",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.constraint.implicit-constraint",
+        "db.constraint.schema-based-constraint",
+        "db.relational.relational-database"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### 제약조건",
+          "start_line": 311,
+          "end_line": 312
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.implicit-constraint",
+      "title": "묵시적 제약조건",
+      "aliases": [
+        "Implicit Constraints",
+        "모델 자체가 갖는 제약"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/implicit-constraint.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class of constraint the relational model imposes by its own definition - no duplicate tuple and no repeated attribute name - which nothing needs to declare",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.constraint.constraint",
+        "db.relational.relation-property",
+        "db.constraint.schema-based-constraint"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### 제약조건",
+          "start_line": 316,
+          "end_line": 318
+        }
+      ]
+    },
+    {
+      "concept_id": "db.constraint.schema-based-constraint",
+      "title": "스키마 기반 제약조건",
+      "aliases": [
+        "Explicit Constraints",
+        "도메인 제약",
+        "키 제약",
+        "엔티티 무결성",
+        "참조 무결성"
+      ],
+      "canonical_path": "content/brain/knowledge/db/constraint/schema-based-constraint.md",
+      "tags": [
+        "db",
+        "constraint"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of constraints declared on the schema, usually through the definition language - a value must belong to its attribute's domain, no two tuples may share a key value, a NOT NULL attribute may not be null, a primary key may never be null, and a foreign key must draw from the primary key it references over the same domain",
+      "pilot_strata": [
+        "lecture-batch-30",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.constraint.constraint",
+        "db.constraint.null",
+        "db.key.primary-key",
+        "db.key.foreign-key",
+        "db.language.ddl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### 제약조건",
+          "start_line": 322,
+          "end_line": 329
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture02.md",
+          "source_sha256": "590d4f161d1e3c63d3023bf5b82be800e39aab874461f16ab6d45cf04dab586f",
+          "heading": "## NULL, 키, 제약조건 > ### 제약조건",
+          "start_line": 333,
+          "end_line": 363
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

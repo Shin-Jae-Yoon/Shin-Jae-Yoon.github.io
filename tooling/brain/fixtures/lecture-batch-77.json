@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-77",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "repair",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-76",
+    "applied_state": "1411 approved knowledge concepts; the note and lecture lanes are both complete."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/books/do-it-java/chap01.md",
+        "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a"
+      }
+    ],
+    "line_range": "L51 (the stub's existing locator)",
+    "series": "Phase 6 graph QA - isolated node repair"
+  },
+  "repair_note": {
+    "finding": "The Phase 6 projection report found exactly one knowledge note with degree zero in the graph, `java.language.pointer-absence`, an early stub applied with an empty related_concepts list. Every other isolated node in the projection is a folder page, which carries no wikilinks by construction.",
+    "action": "Edges only. No locator is added and no prose changes; the stub keeps its single source span. Three concepts it plainly belongs with gain the reciprocal edge.",
+    "why_a_batch": "The engine is the only sanctioned way to change an applied note. Editing the file by hand would break the provenance guarantee the verify step checks."
+  },
+  "overlap_analysis": {
+    "finding": "Pure edge repair; no candidate claims new ground.",
+    "disposition": "Three applied concepts gain edges."
+  },
+  "review_flag_policy": {
+    "conflict": "Every update candidate carries this flag by construction.",
+    "low-confidence": "Not used in this batch.",
+    "provenance-warning": "Not used in this batch.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "the whole of chap01 apart from the stub's existing locator",
+        "reason_code": "already-mined",
+        "detail": "This source was mined in full by book-batch-03. Nothing new is cited here."
+      }
+    ],
+    "coverage_statement": "No new coverage is claimed."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 0,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 0,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 0,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 0,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 3,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside the applied set.",
+  "candidates_authored": 3,
+  "candidates": [
+    {
+      "concept_id": "java.language.pointer-absence",
+      "title": "포인터 미사용",
+      "aliases": [
+        "No Pointer Arithmetic",
+        "포인터 부재"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/pointer-absence.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "source-backed stub for the single Java language property of withholding direct memory control by omitting pointers",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01",
+        "single-assertion-evidence",
+        "lecture-batch-77"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.platform.java-design-goals",
+        "java.memory.object-reference",
+        "java.memory.garbage-collection",
+        "java.type.reference-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 03. 프로그램이 안정적임",
+          "start_line": 51,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "java.platform.java-design-goals",
+      "title": "자바가 내세운 것들",
+      "aliases": [
+        "1996년에 발표된 객체지향 언어",
+        "네트워크와 분산처리 지원",
+        "Java API"
+      ],
+      "canonical_path": "content/brain/knowledge/java/platform/java-design-goals.md",
+      "tags": [
+        "java",
+        "platform"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single list of what the language was announced with in the mid nineties - that it is object-oriented through and through rather than an object layer over something else, and that the networking and distribution its era demanded come in the standard library rather than as an add-on - the rest of the list being the platform independence, the automatic memory management, the threading and the loading on demand, each of which is a subject on its own",
+      "pilot_strata": [
+        "lecture-batch-74",
+        "Java",
+        "java-domain",
+        "lecture-batch-77",
+        "do-it-java/chap01"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.platform.platform-independence",
+        "java.memory.garbage-collection",
+        "java.runtime.class-loading",
+        "java.net.socket",
+        "java.language.pointer-absence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "unheaded-body",
+          "start_line": 9,
+          "end_line": 9
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 24,
+          "end_line": 25
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 32,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "java.memory.object-reference",
+      "title": "객체 참조",
+      "aliases": [
+        "Object Reference",
+        "참조 변수",
+        "참조 값"
+      ],
+      "canonical_path": "content/brain/knowledge/java/memory/object-reference.md",
+      "tags": [
+        "java",
+        "memory"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java reference relationship from a variable to a heap instance address value",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-20",
+        "pl/fun-java",
+        "lecture-batch-77",
+        "do-it-java/chap01"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array-copy",
+        "java.array.object-array",
+        "java.memory.heap",
+        "java.oop.instance",
+        "java.type.reference-type",
+        "java.language.pointer-absence"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 인스턴스와 힙 메모리",
+          "start_line": 477,
+          "end_line": 511
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 객체지향 프로그래밍",
+          "start_line": 40,
+          "end_line": 43
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 객체지향 프로그래밍",
+          "start_line": 59,
+          "end_line": 63
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

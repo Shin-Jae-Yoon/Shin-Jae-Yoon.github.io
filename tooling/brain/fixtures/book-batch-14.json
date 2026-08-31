@@ -1,0 +1,782 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-14",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-13",
+    "applied_state": "333 approved knowledge concepts after book-batch-13 completed chap09."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap10.md",
+    "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+    "line_range": "L7-L386",
+    "covered_scopes": "the pre-heading preamble plus heading scopes 0-6 (## 클러스터간 미러링 활용 사례 through ### 스트레치 클러스터)",
+    "deferred_range": "L387-L821, heading scopes 7-16 (## 아파치 카프카 미러메이커 onwards), reserved for book-batch-15"
+  },
+  "split_decision": {
+    "statement": "chap10 measures 329 prose lines, inside B4, but at the realized density of the last three batches - roughly one candidate per 7 prose lines - the whole chapter would land near 48 candidates against a B5 ceiling of 40.",
+    "split_point": "L387, the ## 아파치 카프카 미러메이커 boundary. Before it the chapter is architecture: why you mirror and which topology to pick. After it is the tool: configuring, securing, deploying and tuning MirrorMaker.",
+    "resulting_sizes": "batch 14 = 175 prose lines and 28 candidates; batch 15 = 161 prose lines over L387-821."
+  },
+  "namespace_decision": {
+    "new_namespace": "kafka.mirroring.*",
+    "no_redefine_rule": "kafka.cluster.multi-cluster and kafka.cluster.mirror-maker are already applied from chap01 and carry what a multi-cluster setup and MirrorMaker are. Batch 14 asserts which topology to choose and what it costs, and relates to both rather than restating either."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 14 touches, so U3 must confirm it relates rather than restates.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is the pre-heading preamble with no heading chain.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 28,
+  "candidates": [
+    {
+      "concept_id": "kafka.mirroring.separate-cluster-reason",
+      "title": "클러스터를 분리하는 이유",
+      "aliases": ["SLA 차이", "보안 요구조건 차이", "완전히 분리된 클러스터"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/separate-cluster-reason.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of reasons two clusters stay fully separate - different owners with no reason to share, service levels or workloads one cluster cannot cover, and differing security requirements",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.cluster.multi-cluster",
+        "kafka.mirroring.replication-vs-mirroring"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "unheaded-body",
+          "start_line": 14,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.replication-vs-mirroring",
+      "title": "복제와 미러링의 구분",
+      "aliases": ["Replication vs Mirroring", "클러스터 내부 교환과 클러스터 간 복제"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/replication-vs-mirroring.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single terminological split: replication is data exchange between nodes inside one cluster, mirroring is copying data between clusters",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "provenance-warning", "low-confidence"],
+      "related_concepts": [
+        "kafka.replication.replication",
+        "kafka.cluster.mirror-maker",
+        "kafka.cluster.multi-cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "unheaded-body",
+          "start_line": 21,
+          "end_line": 23
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.regional-central-cluster",
+      "title": "지역 및 중앙 클러스터",
+      "aliases": ["Regional and Central Cluster", "지역 데이터 중앙 집계"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/regional-central-cluster.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single use case in which each site keeps a local cluster sufficient for local applications, while anything needing several sites' data is served by mirroring them into a central cluster",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.hub-and-spoke",
+        "kafka.cluster.multi-cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 클러스터간 미러링 활용 사례",
+          "start_line": 33,
+          "end_line": 43
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.ha-disaster-recovery",
+      "title": "고가용성과 재해 복구를 위한 미러링",
+      "aliases": ["High Availability", "Disaster Recovery", "다중 IDC 구축 이유"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/ha-disaster-recovery.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason to run clusters in more than one data centre even when no application needs the other site's data: availability and disaster recovery",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.active-standby",
+        "kafka.mirroring.rto",
+        "kafka.mirroring.rpo"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 클러스터간 미러링 활용 사례",
+          "start_line": 47,
+          "end_line": 49
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.regulatory-separation",
+      "title": "규제로 인한 클러스터 분리",
+      "aliases": ["나라별 정책 차이", "지역별 보존 기간"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/regulatory-separation.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single driver in which each jurisdiction's cluster must enforce its own settings and policies, retention being the typical example",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.separate-cluster-reason",
+        "kafka.retention.retention",
+        "kafka.pipeline.pipeline-security"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 클러스터간 미러링 활용 사례",
+          "start_line": 53,
+          "end_line": 55
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.cloud-migration",
+      "title": "클라우드 마이그레이션 미러링",
+      "aliases": ["온프레미스에서 클라우드로", "DB 변경 내역 미러링"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/cloud-migration.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single migration path in which Connect pushes on-premise database changes into a local cluster, mirroring carries them to a cloud cluster, and the cloud application reads them there",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.connect.kafka-connect",
+        "kafka.mirroring.regional-central-cluster",
+        "messaging.pipeline.data-pipeline"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 클러스터간 미러링 활용 사례",
+          "start_line": 59,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.edge-aggregation",
+      "title": "엣지 클러스터 집적",
+      "aliases": ["Edge Cluster", "Aggregate Cluster", "IoT 데이터 수집"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/edge-aggregation.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single topology in which poorly connected edge devices feed small edge clusters and a highly available aggregate cluster collects from them, continuing to work while an edge is offline",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.regional-central-cluster",
+        "kafka.mirroring.hub-and-spoke"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 클러스터간 미러링 활용 사례",
+          "start_line": 70,
+          "end_line": 74
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.architecture-principle",
+      "title": "다중 클러스터 아키텍처 원칙",
+      "aliases": ["원격에 쓰기보다 원격에서 읽기", "IDC당 한 개 이상의 클러스터"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/architecture-principle.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three rules the chapter's architectures share: one or more clusters per data centre, exactly-once replication between them apart from error retries, and reading from a remote centre in preference to writing to one",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.cluster.multi-cluster",
+        "kafka.mirroring.avoid-remote-write",
+        "kafka.reliability.exactly-once"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처",
+          "start_line": 80,
+          "end_line": 83
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.high-latency",
+      "title": "IDC 간 높은 지연",
+      "aliases": ["High Latency", "네트워크 홉 증가"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/high-latency.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single cross-data-centre cost in which latency grows with distance and hop count between clusters",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.limited-bandwidth",
+        "kafka.replication.end-to-end-delay"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### IDC 간 통신의 문제들",
+          "start_line": 106,
+          "end_line": 107
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.limited-bandwidth",
+      "title": "제한된 대역폭",
+      "aliases": ["Limited Bandwidth", "WAN", "광역 통신망"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/limited-bandwidth.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single constraint that a wide area network carries far less bandwidth than a single data centre and varies over time, with high latency making even the bandwidth available harder to use",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.high-latency",
+        "kafka.hardware.network-bandwidth",
+        "kafka.mirroring.cross-dc-cost"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### IDC 간 통신의 문제들",
+          "start_line": 111,
+          "end_line": 116
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.cross-dc-cost",
+      "title": "클러스터 간 통신 비용",
+      "aliases": ["데이터 전송 과금", "리전 간 비용"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/cross-dc-cost.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single monetary cost of cross-cluster traffic, since providers charge for transfer between data centres, regions and clouds",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.limited-bandwidth",
+        "kafka.replication.replication-cost"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### IDC 간 통신의 문제들",
+          "start_line": 120,
+          "end_line": 122
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.single-dc-design-assumption",
+      "title": "단일 IDC를 전제한 설계",
+      "aliases": ["브로커를 여러 IDC에 나누지 말 것", "기본값이 상정하는 환경"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/single-dc-design-assumption.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single design premise that brokers and clients were built and tuned for low latency and high bandwidth within one data centre, which is why timeout defaults and buffer sizes assume it and splitting brokers across sites is discouraged",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.high-latency",
+        "kafka.mirroring.stretch-cluster",
+        "kafka.config.request-timeout-ms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### IDC 간 통신의 문제들",
+          "start_line": 126,
+          "end_line": 129
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.avoid-remote-write",
+      "title": "원격 IDC 쓰기 회피",
+      "aliases": ["원격 브로커-컨슈머 통신만 남기기", "재시도와 버퍼 확대"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/avoid-remote-write.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule to avoid writing across data centres, leaving remote broker-to-consumer traffic as the only cross-site path, where a network break stops reads but loses nothing because the records stay in the broker",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.architecture-principle",
+        "kafka.config.delivery-timeout-ms",
+        "kafka.mirroring.single-dc-design-assumption"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### IDC 간 통신의 문제들",
+          "start_line": 133,
+          "end_line": 144
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.hub-and-spoke",
+      "title": "허브-앤-스포크",
+      "aliases": ["Hub and Spoke", "리더와 팔로워", "중앙 집계 아키텍처"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/hub-and-spoke.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single topology mirroring several local clusters one way into a central one, simple to run because each consumer always reads from the same cluster, at the price that a local application cannot see another site's data",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.regional-central-cluster",
+        "kafka.mirroring.active-active",
+        "kafka.cluster.multi-cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 허브-앤-스포크",
+          "start_line": 152,
+          "end_line": 162
+        },
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 허브-앤-스포크",
+          "start_line": 166,
+          "end_line": 178
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.active-active",
+      "title": "액티브-액티브",
+      "aliases": ["Active-Active", "양방향 미러링", "모든 데이터센터가 읽고 쓴다"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/active-active.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single topology where every data centre reads and writes the shared dataset, giving locality, redundancy and a failover that is only a network redirect, at the cost of conflicts and consistency between sites",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.circular-mirroring-prevention",
+        "kafka.mirroring.hub-and-spoke",
+        "kafka.cluster.mirror-maker"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-액티브",
+          "start_line": 184,
+          "end_line": 188
+        },
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-액티브",
+          "start_line": 200,
+          "end_line": 218
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.circular-mirroring-prevention",
+      "title": "순환 미러링 방지",
+      "aliases": ["Circular Mirroring", "데이터센터별 토픽", "레코드 헤더 태그"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/circular-mirroring-prevention.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single safeguard stopping an event from looping between clusters forever, done by giving each data centre its own topic for a logical topic, by naming conventions the mirroring tool understands, or by tagging the originating centre in a record header",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.active-active",
+        "kafka.cluster.mirror-maker",
+        "kafka.message.message"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-액티브",
+          "start_line": 190,
+          "end_line": 196
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.active-standby",
+      "title": "액티브-스탠바이",
+      "aliases": ["Active-Standby", "DR 클러스터", "대기 클러스터"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/active-standby.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single topology holding a second cluster that mirrors the first and is used only when the first becomes unusable, trivially simple to set up but leaving a cluster idle and a failover harder than it looks",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.ha-disaster-recovery",
+        "kafka.mirroring.rto",
+        "kafka.mirroring.unplanned-failover-loss"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 224,
+          "end_line": 224
+        },
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 228,
+          "end_line": 242
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.rto",
+      "title": "복구 시간 목표",
+      "aliases": ["RTO", "Recovery Time Objective"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/rto.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single target for the longest time services may stay down after a failure, which only automated failover can push low",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.rpo",
+        "kafka.mirroring.active-standby",
+        "kafka.mirroring.cluster-discovery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 248,
+          "end_line": 252
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.rpo",
+      "title": "복구 지점 목표",
+      "aliases": ["RPO", "Recovery Point Objective"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/rpo.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single target for the longest span of data a failure may lose, which only low-latency mirroring can shrink and only synchronous mirroring can bring to zero",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.mirroring.rto",
+        "kafka.mirroring.stretch-cluster",
+        "kafka.mirroring.unplanned-failover-loss"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 254,
+          "end_line": 258
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.unplanned-failover-loss",
+      "title": "계획에 없던 장애 복구의 유실",
+      "aliases": ["DR 클러스터 랙 모니터링", "계획된 장애 복구와의 차이"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/unplanned-failover-loss.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single loss window from the DR cluster trailing the primary, avoidable in a planned failover by stopping the primary and letting mirroring drain, but not in an unplanned one because mirroring solutions carry no transactions",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.rpo",
+        "kafka.mirroring.active-standby",
+        "kafka.transaction.cross-cluster-limit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 262,
+          "end_line": 268
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.auto-offset-reset-failover",
+      "title": "자동 오프셋 재설정 장애 복구",
+      "aliases": ["맨 끝에서 시작", "맨 처음부터 시작", "장애 복구 시작 오프셋"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/auto-offset-reset-failover.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single failover strategy of not mirroring offsets at all and letting the consumer's reset policy decide, choosing between reprocessing a large backlog and skipping an unknown number of events, with starting from the end the common pick",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.auto-offset-reset",
+        "kafka.mirroring.offset-topic-replication",
+        "kafka.mirroring.time-based-failover"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 276,
+          "end_line": 280
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.offset-topic-replication",
+      "title": "오프셋 토픽 복제",
+      "aliases": ["__consumer_offsets 미러링", "오프셋 불일치 주의사항"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/offset-topic-replication.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single failover strategy of mirroring the offsets topic itself, whose caveats are that producer retries make the two clusters' offsets diverge, that lag and the absence of transactions can land a committed offset before or after its record, and that a committed offset may name a record the DR cluster does not have",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.offset-translation",
+        "kafka.client.offset",
+        "kafka.transaction.atomic-multipartition-write"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 284,
+          "end_line": 291
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.time-based-failover",
+      "title": "시간 기반 장애 복구",
+      "aliases": ["타임스탬프 기준 오프셋 검색", "kafka-consumer-groups 초기화"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/time-based-failover.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single failover strategy using the message timestamp index to resolve an offset for a chosen moment and resume there, driven either from application configuration or by resetting the consumer group with the shipped tool",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.list-offsets",
+        "kafka.mirroring.auto-offset-reset-failover",
+        "kafka.adminclient.alter-consumer-group-offsets"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 295,
+          "end_line": 301
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.offset-translation",
+      "title": "오프셋 변환",
+      "aliases": ["Offset Translation", "오프셋 매핑 저장", "변환 메타데이터 토픽"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/offset-translation.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single failover strategy in which the mirroring tool records how the two clusters' offsets map, storing the mapping in a Kafka topic whenever the difference changes, so a failover looks up the DR offset for the primary's rather than translating by timestamp",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.offset-topic-replication",
+        "kafka.cluster.mirror-maker",
+        "kafka.mirroring.time-based-failover"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 305,
+          "end_line": 309
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.post-failover",
+      "title": "장애 복구 이후 역할 전환",
+      "aliases": ["주 클러스터를 DR로 전환", "원본 데이터 삭제 후 재미러링"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/post-failover.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single follow-up problem of turning the failed primary into the new DR cluster, where its surplus events make the two clusters diverge and the cleanest answer is wiping it and mirroring afresh from the new primary",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.active-standby",
+        "kafka.mirroring.unplanned-failover-loss",
+        "kafka.mirroring.offset-translation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 315,
+          "end_line": 323
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.cluster-discovery",
+      "title": "클러스터 디스커버리",
+      "aliases": ["DNS로 클러스터 전환", "호스트 이름 하드코딩 금지"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/cluster-discovery.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single mechanism letting applications find the failover cluster, done by keeping broker hostnames out of the code and repointing DNS, needing only about three brokers because a client discovers the rest from cluster metadata",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.install.bootstrap-server",
+        "kafka.config.client-dns-lookup",
+        "kafka.mirroring.rto"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 액티브-스탠바이",
+          "start_line": 329,
+          "end_line": 335
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.stretch-cluster",
+      "title": "스트레치 클러스터",
+      "aliases": ["Stretch Cluster", "여러 IDC에 걸친 단일 클러스터", "가장 가까운 레플리카 읽기"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/stretch-cluster.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single cluster spread across data centres so no mirroring process is needed, made synchronous by rack-aware replica placement with min.insync.replicas and acks=all, and needing three sites because the ZooKeeper quorum must survive losing one",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.broker-rack",
+        "kafka.config.min-insync-replicas",
+        "kafka.config.acks-all",
+        "kafka.zookeeper.ensemble-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 스트레치 클러스터",
+          "start_line": 347,
+          "end_line": 367
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.mirroring.stretch-cluster-tradeoff",
+      "title": "스트레치 클러스터의 트레이드오프",
+      "aliases": ["자원 낭비 없음", "커버하지 못하는 장애", "물리 인프라 요구"],
+      "canonical_path": "content/brain/knowledge/kafka/mirroring/stretch-cluster-tradeoff.md",
+      "tags": ["kafka", "mirroring"],
+      "proposal_kind": "create",
+      "concept_granularity": "single balance in which synchronous replication and full use of every broker come at the price of covering only whole-data-centre failure and demanding physical infrastructure not every company has",
+      "pilot_strata": ["book-batch-14", "kafka/chap10", "mirroring-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.mirroring.stretch-cluster",
+        "kafka.mirroring.active-standby",
+        "kafka.mirroring.rpo"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap10.md",
+          "source_sha256": "44f3cab2429db624b2117b8fdf27a57b958477d0c818d104de12a4878d631398",
+          "heading": "## 다중 클러스터 아키텍처 > ### 스트레치 클러스터",
+          "start_line": 371,
+          "end_line": 383
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [],
+  "rejection_probes": {
+    "scope_level": "None inside L7-386. chap10's only non-substantive scope, ## 기타 클러스터간 미러링 솔루션 (L725-726), falls in the deferred range and belongs to batch 15."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L10, L31, L87-98, L246, L272-274, L286, L313, L327, L341-343",
+        "reason_code": "section-lead-in-or-preview",
+        "detail": "Chapter and section lead-ins, plus the L87-98 preview of active-active and stretch clusters with links to an outside blog. Both topologies get their own concept from their own section, so citing the preview as well would state the same claim twice."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L7-386 contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": { "value": 175, "ceiling": 360, "satisfied": true },
+      "heading_scopes": { "value": 7, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 28, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

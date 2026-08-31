@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "policy": "explicit-owner-review-fail-closed",
+  "sourceCommit": "d92e3faa9deeb7a1b9406c6e36fbe8eac4a03443",
+  "destinationRoot": "quartz/static/dev-uni/",
+  "notes": [
+    "This design allowlist is separate from the legacy content migration ledger.",
+    "Historical publication and direction approval do not authorize copying an asset.",
+    "Every candidate remains blocked until the owner records a hash-bound approve verdict."
+  ],
+  "assets": [
+    {
+      "id": "about-jaeyoon-2026",
+      "source": {
+        "path": "static/images/about-jaeyoon-2026.jpeg",
+        "sha256": "56fa3e526b10b07e20d62a0d66e6ea68863029cf20401444ea2d6aa396e91433",
+        "bytes": 357553
+      },
+      "media": { "type": "image/jpeg", "width": 1080, "height": 1440 },
+      "destination": {
+        "path": "quartz/static/dev-uni/about-jaeyoon-2026.jpeg",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["about"],
+      "ownershipAndLicenseAssertion": "Owner-provided personal photograph approved by the depicted owner for publication on the About page.",
+      "accessibility": {
+        "decision": "semantic",
+        "proposedAltText": "카페 테라스에 앉아 있는 신재윤"
+      },
+      "budget": { "maxBytes": 500000, "maxWidth": 1200, "maxHeight": 1600 },
+      "approval": {
+        "verdict": "approve",
+        "ownerIdentity": "Shin Jae-yoon",
+        "reviewedAt": "2026-07-20T01:08:12+09:00",
+        "decisionSource": "Active Codex thread: owner supplied the photograph and requested it be added to About.",
+        "boundSourceSha256": "56fa3e526b10b07e20d62a0d66e6ea68863029cf20401444ea2d6aa396e91433",
+        "boundDestination": "quartz/static/dev-uni/about-jaeyoon-2026.jpeg",
+        "ownershipAndLicenseAssertion": "Owner-provided personal photograph approved by the depicted owner for publication on the About page.",
+        "altDecision": "semantic"
+      }
+    },
+    {
+      "id": "dev-uni-wordmark",
+      "source": {
+        "path": "static/images/logo-main.png",
+        "sha256": "578acc56da49efc8e1631bee8c053fddcce755735a595bd40e1ce6b62df413f2",
+        "bytes": 48323
+      },
+      "media": { "type": "image/png", "width": 1238, "height": 472 },
+      "destination": { "path": "quartz/static/dev-uni/wordmark.png", "transformedSha256": null },
+      "usageSurfaces": ["home", "header"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "Dev Uni 로고" },
+      "budget": { "maxBytes": 100000, "maxWidth": 1400, "maxHeight": 600 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "about-profile",
+      "source": {
+        "path": "static/images/about-profile.png",
+        "sha256": "264c58f38a6c809c936c870c514184c0311897b1bfb918594126f621c973514c",
+        "bytes": 1032035
+      },
+      "media": { "type": "image/png", "width": 975, "height": 975 },
+      "destination": {
+        "path": "quartz/static/dev-uni/about-profile.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "신재윤 프로필 이미지" },
+      "budget": { "maxBytes": 1200000, "maxWidth": 1200, "maxHeight": 1200 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "technology-java",
+      "source": {
+        "path": "static/images/logo-java.png",
+        "sha256": "07d0ee20da25b243e075dd86e9779ba77421569edb005b969ec35bc2198dd606",
+        "bytes": 23606
+      },
+      "media": { "type": "image/png", "width": 512, "height": 512 },
+      "destination": {
+        "path": "quartz/static/dev-uni/technology-java.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["home", "about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "Java" },
+      "budget": { "maxBytes": 50000, "maxWidth": 512, "maxHeight": 512 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "technology-spring",
+      "source": {
+        "path": "static/images/logo-spring.png",
+        "sha256": "9dd610c842c9c14c5c4385b5d3b02d217492f862cea5879c3c8ba6924d8f114a",
+        "bytes": 21607
+      },
+      "media": { "type": "image/png", "width": 512, "height": 512 },
+      "destination": {
+        "path": "quartz/static/dev-uni/technology-spring.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["home", "about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "Spring" },
+      "budget": { "maxBytes": 50000, "maxWidth": 512, "maxHeight": 512 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "technology-mysql",
+      "source": {
+        "path": "static/images/logo-mysql.png",
+        "sha256": "fa63f2ae16e40f2a246fea19dbac7ca6ceb0ea236aed4591dc6cf923986eef8f",
+        "bytes": 21917
+      },
+      "media": { "type": "image/png", "width": 512, "height": 512 },
+      "destination": {
+        "path": "quartz/static/dev-uni/technology-mysql.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["home", "about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "MySQL" },
+      "budget": { "maxBytes": 50000, "maxWidth": 512, "maxHeight": 512 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "technology-docker",
+      "source": {
+        "path": "static/images/logo-docker.png",
+        "sha256": "4367e7d5ccb1a36c63ffe4355839c5d742080ae1a0e9da433ae50f0d424284ec",
+        "bytes": 12652
+      },
+      "media": { "type": "image/png", "width": 512, "height": 512 },
+      "destination": {
+        "path": "quartz/static/dev-uni/technology-docker.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["home", "about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "Docker" },
+      "budget": { "maxBytes": 50000, "maxWidth": 512, "maxHeight": 512 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "technology-aws",
+      "source": {
+        "path": "static/images/logo-aws.png",
+        "sha256": "29e9e7ce643a588e4003d92ab4515fa661b9508508dde5f67d9d4329d3a62990",
+        "bytes": 22629
+      },
+      "media": { "type": "image/png", "width": 512, "height": 512 },
+      "destination": {
+        "path": "quartz/static/dev-uni/technology-aws.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["home", "about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "AWS" },
+      "budget": { "maxBytes": 50000, "maxWidth": 512, "maxHeight": 512 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "technology-git",
+      "source": {
+        "path": "static/images/logo-git.png",
+        "sha256": "5b45bc60f0fb87c34eba5f331d7975cd451b6f69e3246ef8b8d048832d22f39b",
+        "bytes": 15520
+      },
+      "media": { "type": "image/png", "width": 512, "height": 512 },
+      "destination": {
+        "path": "quartz/static/dev-uni/technology-git.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["home", "about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "Git" },
+      "budget": { "maxBytes": 50000, "maxWidth": 512, "maxHeight": 512 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "project-github-pages",
+      "source": {
+        "path": "static/images/logo-ghpages.png",
+        "sha256": "bde537e156e12108ba69b82b2281d60efb09e9be3de5babf1de684f4b38adf84",
+        "bytes": 64845
+      },
+      "media": { "type": "image/png", "width": 876, "height": 256 },
+      "destination": {
+        "path": "quartz/static/dev-uni/project-github-pages.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["portfolio"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": {
+        "decision": "semantic",
+        "proposedAltText": "GitHub Pages 기반 블로그 프로젝트"
+      },
+      "budget": { "maxBytes": 100000, "maxWidth": 1000, "maxHeight": 400 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "project-secondary",
+      "source": {
+        "path": "static/images/project_02.png",
+        "sha256": "be44de5ad451ed40e6e21618bdc5b1fe6eb75811e58887faed7229f85743626b",
+        "bytes": 591954
+      },
+      "media": { "type": "image/png", "width": 1738, "height": 1452 },
+      "destination": {
+        "path": "quartz/static/dev-uni/project-secondary.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["portfolio"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "프로젝트 화면 미리보기" },
+      "budget": { "maxBytes": 700000, "maxWidth": 1800, "maxHeight": 1500 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    },
+    {
+      "id": "project-moabam-logo",
+      "source": {
+        "path": "static/images/about-moabam-logo.png",
+        "sha256": "4a782b0a0cc815e4304a58caaa9001fb0ad46b3a895cfb39601c57265151b3e4",
+        "bytes": 725556
+      },
+      "media": { "type": "image/png", "width": 2166, "height": 1036 },
+      "destination": {
+        "path": "quartz/static/dev-uni/project-moabam-logo.png",
+        "transformedSha256": null
+      },
+      "usageSurfaces": ["portfolio", "about"],
+      "ownershipAndLicenseAssertion": null,
+      "accessibility": { "decision": "semantic", "proposedAltText": "모아밤 프로젝트 로고" },
+      "budget": { "maxBytes": 800000, "maxWidth": 2200, "maxHeight": 1100 },
+      "approval": {
+        "verdict": "pending-owner-review",
+        "ownerIdentity": null,
+        "reviewedAt": null,
+        "decisionSource": null,
+        "boundSourceSha256": null,
+        "boundDestination": null,
+        "ownershipAndLicenseAssertion": null,
+        "altDecision": null
+      }
+    }
+  ]
+}

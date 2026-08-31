@@ -1,4 +1,0 @@
----
-title: "Brain"
-layout: section
----

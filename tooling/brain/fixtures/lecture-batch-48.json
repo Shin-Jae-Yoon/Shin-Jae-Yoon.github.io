@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-48",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-47",
+    "applied_state": "1009 approved knowledge concepts after lecture-batch-47 added the array structure and its costs."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch00.md",
+        "source_sha256": "69921017cd7d356d55ff3e904e9887d8c21469ee43bd0840d36f55950e82ffa6"
+      },
+      {
+        "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+        "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1"
+      }
+    ],
+    "line_range": "p5-ch00 L14-L123, p5-ch01 L12-L962",
+    "series": "패스트캠퍼스 코딩테스트 Part5 단기완성, 0~1장"
+  },
+  "overlap_analysis": {
+    "finding": "Part 5 revisits exhaustive search at length, so the applied concept from part 1 is what most of it belongs to. What is genuinely new is the classification the recursion is written from and the transformations that make a search cheap enough to run.",
+    "disposition": "algo.search.brute-force takes this chapter's definition as evidence, including the backtracking it names and the partial-credit argument for reaching for it first. The rest is new under algo.search and algo.test."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "p5-ch00 L8-L17, L54-L56; p5-ch01 L8, L53, L63-L65, L77, L155, L194-L200, L248, L293-L297, L339-L343, L381, L427 partial, L432, L706 partial, L713-L715, L794, L878, L886-L891 partial",
+        "reason_code": "course-link-index-problem-number-caption-or-carried-by-owner",
+        "detail": "The course link and the part index, the note that the instructor has an input snippet of their own, the per-problem headers naming a judge number, the numbered captions announcing each code listing, and the walkthrough lines whose claim is already stated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across both files contributes at least one cited locator, either to a create or to an update - the four combination sections through the classification and the counting concept they share."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 31262,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 77,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 13,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 12,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 13,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. p5-ch02 on sorting is a heading with no body, so this part's sorting chapter contributes nothing.",
+  "candidates_authored": 13,
+  "candidates": [
+    {
+      "concept_id": "algo.search.brute-force",
+      "title": "완전 탐색",
+      "aliases": [
+        "Brute Force",
+        "모든 경우의 수를 시도한다",
+        "정답률 100%",
+        "백 트래킹",
+        "부분점수를 얻기 좋다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/brute-force.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single approach of trying every possibility with no optimisation at all, which is guaranteed to find the answer and is the baseline every other method is measured against - a four digit code being found by running through all ten thousand of them",
+      "pilot_strata": [
+        "lecture-batch-47",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-48"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.n-range-table",
+        "algo.complexity.algorithm-choice",
+        "algo.test.problem-solving-process",
+        "algo.search.brute-force-taxonomy",
+        "algo.search.state-carrying",
+        "algo.test.partial-score"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch04.md",
+          "source_sha256": "68ca1d97e869fb4d247658017e84f9bd7ad6fa433223c7721e2b5d2d0f242171",
+          "heading": "## 완전 탐색",
+          "start_line": 14,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초",
+          "start_line": 16,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초",
+          "start_line": 21,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.n-range-table",
+      "title": "N의 범위로 복잡도 추론하기",
+      "aliases": [
+        "범위별 허용 복잡도",
+        "N이 10만이면 N log N"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/n-range-table.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single table read backwards from the input bound to the complexity that will fit - a handful of elements admitting factorial time, a few dozen exponential, a few hundred cubic, ten thousand quadratic, a million linearithmic, ten million linear - which is how the intended solution is guessed before it is found",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain",
+        "lecture-batch-48"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.complexity.operation-budget",
+        "algo.complexity.algorithm-choice",
+        "algo.test.complexity-first",
+        "algo.search.enumeration-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 시간복잡도를 통한 추론",
+          "start_line": 85,
+          "end_line": 85
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 시간복잡도를 통한 추론",
+          "start_line": 89,
+          "end_line": 98
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.integer-type",
+      "title": "정수 자료형",
+      "aliases": [
+        "Integer Type",
+        "정수형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/integer-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "source-backed stub for the single Java integer value family whose default computation unit is the 4-byte int",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "low-evidence-scope",
+        "lecture-batch-19",
+        "pl/fun-java",
+        "lecture-batch-48",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "java.language.literal",
+        "java.type.overflow",
+        "algo.test.int-range-check"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 정수형",
+          "start_line": 73,
+          "end_line": 73
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 정수, 실수, 산술연산자",
+          "start_line": 92,
+          "end_line": 96
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.reading-habit",
+      "title": "문제를 읽는 순서",
+      "aliases": [
+        "읽기 이해하기 파악하기",
+        "최대 최소 데이터를 직접 만들어보기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/reading-habit.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single order for taking a problem in - read it whole including the time and memory limits, then set out the variables it gives and work through its own examples, then build the largest and smallest inputs it allows by hand and mark the words that constrain the answer",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.test.problem-solving-process",
+        "algo.test.complexity-first",
+        "algo.complexity.n-range-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch00.md",
+          "source_sha256": "69921017cd7d356d55ff3e904e9887d8c21469ee43bd0840d36f55950e82ffa6",
+          "heading": "## 목차 > ### 좋은 습관",
+          "start_line": 25,
+          "end_line": 34
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.complexity-first",
+      "title": "짤 가치가 있는지 먼저 계산하라",
+      "aliases": [
+        "구현 전에 복잡도부터",
+        "10만이면 이중 for문은 안 된다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/complexity-first.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single check to make before writing anything - work out what the approach would cost at the given input size, since an approach that cannot finish is not worth the time it takes to code",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.complexity.n-range-table",
+        "algo.complexity.operation-budget",
+        "algo.test.reading-habit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch00.md",
+          "source_sha256": "69921017cd7d356d55ff3e904e9887d8c21469ee43bd0840d36f55950e82ffa6",
+          "heading": "## 목차 > ### 좋은 습관",
+          "start_line": 38,
+          "end_line": 40
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.functionize",
+      "title": "반복되는 알고리즘은 함수로",
+      "aliases": [
+        "같은 알고리즘을 세 번 쓴다면"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/functionize.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single saving in a timed setting - an algorithm needed more than once is written as a function and called, rather than written out again each time",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.test.problem-solving-process",
+        "software.programming.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch00.md",
+          "source_sha256": "69921017cd7d356d55ff3e904e9887d8c21469ee43bd0840d36f55950e82ffa6",
+          "heading": "## 목차 > ### 좋은 습관",
+          "start_line": 44,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.partial-score",
+      "title": "부분 점수를 챙겨라",
+      "aliases": [
+        "못 풀어도 제출한다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/partial-score.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason to submit an incomplete or slow solution rather than nothing - the attempt itself scores where partial credit is given",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "algo.search.brute-force",
+        "algo.test.complexity-first"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch00.md",
+          "source_sha256": "69921017cd7d356d55ff3e904e9887d8c21469ee43bd0840d36f55950e82ffa6",
+          "heading": "## 목차 > ### 좋은 습관",
+          "start_line": 49,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.search.brute-force-taxonomy",
+      "title": "완전탐색의 네 가지 조합",
+      "aliases": [
+        "중복 허용 여부와 순서 여부",
+        "나열과 고르기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/brute-force-taxonomy.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of questions that classifies every exhaustive search - whether an element may be used more than once, and whether the order of what is chosen matters - which crossed give four kinds, and answering them is half of writing the recursive function",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.search.brute-force",
+        "algo.search.enumeration-complexity",
+        "algo.search.subset-as-binary"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### 완전탐색 종류",
+          "start_line": 28,
+          "end_line": 35
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.search.enumeration-complexity",
+      "title": "나열의 경우의 수 세기",
+      "aliases": [
+        "N의 M제곱",
+        "칸마다 몇 가지가 들어가는가"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/enumeration-complexity.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to count what an exhaustive search will visit - picture the slots to be filled and multiply how many values each admits, which for m slots from n values with repetition is n to the m, and compare that against the operation budget before writing it",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.search.brute-force-taxonomy",
+        "algo.complexity.operation-budget",
+        "algo.complexity.n-range-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### (1+3) 방법",
+          "start_line": 67,
+          "end_line": 73
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.int-range-check",
+      "title": "자료형은 근거를 갖고 고른다",
+      "aliases": [
+        "int는 21억까지",
+        "중간 계산 결과의 범위까지"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/int-range-check.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reading the problem statement rewards - the bounds it gives on the answer and on the intermediate results are what decide whether the default integer type is wide enough, so the type is chosen from those bounds rather than by habit",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.integer-type",
+        "java.type.overflow",
+        "algo.test.reading-habit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### BOJ 14888",
+          "start_line": 429,
+          "end_line": 431
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.search.state-carrying",
+      "title": "탐색하며 결과를 들고 다니기",
+      "aliases": [
+        "끝에서 한꺼번에 계산하지 않기",
+        "누적값을 인자로 넘기기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/state-carrying.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single optimisation available to almost any recursive search - instead of computing the result once a full arrangement is reached, carry the partial result down with the recursion so each step adds only its own work",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.search.brute-force",
+        "algo.search.enumeration-complexity",
+        "algo.complexity.algorithm-choice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### BOJ 14888",
+          "start_line": 435,
+          "end_line": 436
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### BOJ 14888",
+          "start_line": 572,
+          "end_line": 573
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.search.dimension-reduction",
+      "title": "2차원을 1차원으로 바꿔 생각하기",
+      "aliases": [
+        "인덱스를 행 값을 열로",
+        "N-Queens를 1차원 배열로"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/dimension-reduction.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single change of representation that shrinks a board problem - when exactly one thing goes in each row, the board becomes an array whose index is the row and whose value is the column, and a diagonal clash becomes an equal sum or an equal difference of the two",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.search.brute-force-taxonomy",
+        "algo.array.array-memory-layout",
+        "algo.search.state-carrying"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### BOJ 9663",
+          "start_line": 708,
+          "end_line": 711
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### BOJ 9663",
+          "start_line": 716,
+          "end_line": 717
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.search.subset-as-binary",
+      "title": "부분집합을 0과 1의 나열로",
+      "aliases": [
+        "원소마다 포함 여부를 정한다",
+        "N개 중 2가지를 N번 나열"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/search/subset-as-binary.md",
+      "tags": [
+        "algo",
+        "search"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reduction turning subset enumeration into the shape already solved - each element is asked in turn whether it is in or out, so choosing a subset of n elements is arranging two values n times over",
+      "pilot_strata": [
+        "lecture-batch-48",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.search.brute-force-taxonomy",
+        "algo.search.enumeration-complexity",
+        "algo.search.brute-force"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part5/p5-ch01.md",
+          "source_sha256": "b6c38a1c6f56d221f6416638f46194ec535b99798456712f8fe993ad33f5f1d1",
+          "heading": "## 완전탐색 - 기초 > ### BOJ 1182",
+          "start_line": 880,
+          "end_line": 892
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

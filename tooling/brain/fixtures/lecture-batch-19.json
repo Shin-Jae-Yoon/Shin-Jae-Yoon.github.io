@@ -1,0 +1,1514 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-19",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-18",
+    "applied_state": "465 approved knowledge concepts. The Book lane is complete; this opens the Lecture lane, scheduled next after Book by the consensus plan's Phase 5 hint.",
+    "lane_note": "content/brain/lectures measures 6,416 prose lines over 82 substantive files and content/brain/notes another 3,900 over 48, together about 4.5 times the Kafka book."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+        "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6"
+      },
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+        "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2"
+      }
+    ],
+    "series": "즐거운 자바 (fun-java), 11 substantive files over 1,468 prose lines, planned as six batches"
+  },
+  "overlap_analysis": {
+    "finding": "The applied index already holds 85 java, cs and software concepts, nearly all of them mined from the do-it-java book, which covers the same Java fundamentals this lecture does. fun-java01 and 02 are therefore an update-heavy batch, not a create-heavy one.",
+    "disposition": "22 of the 31 candidates are updates adding the lecture as a second source to a concept the book already established. The 9 creates are what the book did not carry: the modern-Java line at Java 8, JDK distributions, the public-class file-naming rule, System.out, bytecode, keywords, overflow, labels, and the bit-and-byte unit pair.",
+    "why_update_not_skip": "The knowledge note is a container quoting its sources. A second excerpt from a different teacher corroborates the concept and makes the lecture reachable from it, which is the point of citing provenance at all."
+  },
+  "heading_hazard": {
+    "note": "fun-java02 L206 renders as a heading in an editor but is NOT one to the engine: the line begins with a space, so it fails the ^#{1,6} match in headingChain. The 묵시적 형변환 material therefore sits inside the ## 타입의 변환 scope, and its locator carries that chain."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "fun-java01 L7, L96-98; fun-java02 L7, L24-28, L110-153, L215-239 partial, L259-305 partial, L332-341 partial, L412-421, L458-505 partial",
+        "reason_code": "lecture-preamble-tooling-or-worked-example",
+        "detail": "The course link each file opens with, IntelliJ project-layout notes that assert nothing about Java, byte-layout tables and worked numeric examples whose claim is carried by the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in fun-java01 and fun-java02 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 166,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 26,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 31,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 31,
+  "candidates": [
+    {
+      "concept_id": "java.entry-point.main-method",
+      "title": "main 메서드",
+      "aliases": [
+        "main()",
+        "Java Entry Point",
+        "프로그램 시작 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/entry-point/main-method.md",
+      "tags": [
+        "java",
+        "entry-point"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single JVM-invoked Java program entry point",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.method",
+        "software.programming.function",
+        "java.language.class-file-naming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 클래스 사용과 main() 함수",
+          "start_line": 279,
+          "end_line": 356
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징 > ### Hello 파일 분석",
+          "start_line": 56,
+          "end_line": 58
+        }
+      ]
+    },
+    {
+      "concept_id": "java.variable.variable-declaration",
+      "title": "변수 선언과 초기화",
+      "aliases": [
+        "Variable Declaration",
+        "변수 초기화",
+        "변수 이름 규칙"
+      ],
+      "canonical_path": "content/brain/knowledge/java/variable/variable-declaration.md",
+      "tags": [
+        "java",
+        "variable"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java variable-introduction mechanism covering declaration, initialization, identifier rules, and the memory it reserves",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "java.type.type-inference",
+        "java.language.literal",
+        "java.language.keyword"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 21,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 40,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 51,
+          "end_line": 53
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### int 1 = 1;",
+          "start_line": 18,
+          "end_line": 20
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 변수명 규칙",
+          "start_line": 56,
+          "end_line": 64
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 초기화",
+          "start_line": 70,
+          "end_line": 71
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.literal",
+      "title": "리터럴",
+      "aliases": [
+        "Literal",
+        "리터럴 상수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/literal.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single written numeric, character, or boolean source value",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.integer-type",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 리터럴",
+          "start_line": 235,
+          "end_line": 245
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### int 1 = 1;",
+          "start_line": 21,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 정수, 실수, 산술연산자",
+          "start_line": 92,
+          "end_line": 95
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.primitive-type",
+      "title": "기본 자료형",
+      "aliases": [
+        "Primitive Type",
+        "기본형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/primitive-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java built-in value-type family enumerated by byte width across integer, character, floating-point, and boolean groups",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.integer-type",
+        "java.type.character-type",
+        "java.type.floating-point-type",
+        "java.type.boolean-type",
+        "java.variable.variable-declaration",
+        "cs.data.bit-and-byte"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 변수 > ### Java 변수 선언, 초기화",
+          "start_line": 56,
+          "end_line": 61
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 기본형 타입",
+          "start_line": 34,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.reference-type",
+      "title": "참조 자료형",
+      "aliases": [
+        "Reference Type",
+        "객체 자료형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/reference-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java data-type category whose values refer to class instances",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "low-evidence-scope",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.memory.object-reference",
+        "java.oop.class",
+        "java.oop.instance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 참조 자료형",
+          "start_line": 722,
+          "end_line": 747
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 참조형 타입",
+          "start_line": 50,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.integer-type",
+      "title": "정수 자료형",
+      "aliases": [
+        "Integer Type",
+        "정수형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/integer-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "source-backed stub for the single Java integer value family whose default computation unit is the 4-byte int",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "low-evidence-scope",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "java.language.literal",
+        "java.type.overflow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 정수형",
+          "start_line": 73,
+          "end_line": 73
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 정수, 실수, 산술연산자",
+          "start_line": 92,
+          "end_line": 96
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.floating-point-type",
+      "title": "실수 자료형",
+      "aliases": [
+        "Floating-Point Type",
+        "실수형",
+        "부동 소수점"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/floating-point-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java real-number value family using sign/exponent/mantissa layout with double as the default",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 실수형",
+          "start_line": 136,
+          "end_line": 148
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 정수, 실수, 산술연산자",
+          "start_line": 102,
+          "end_line": 104
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.character-type",
+      "title": "문자 자료형",
+      "aliases": [
+        "Character Type",
+        "char형"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/character-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java char value type represented with a 2-byte UTF-16 code unit",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "two-scope-merge",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 문자형",
+          "start_line": 90,
+          "end_line": 96
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 문자형 - 유니코드",
+          "start_line": 108,
+          "end_line": 112
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 문자형",
+          "start_line": 182,
+          "end_line": 190
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.type-conversion",
+      "title": "형 변환",
+      "aliases": [
+        "Type Conversion",
+        "형변환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/type-conversion.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java value-retyping rule set stating that smaller-to-larger and less-to-more precise conversions are automatic",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "low-evidence-scope",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.implicit-type-conversion",
+        "java.type.explicit-type-conversion",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환",
+          "start_line": 251,
+          "end_line": 255
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 타입의 변환",
+          "start_line": 196,
+          "end_line": 200
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.implicit-type-conversion",
+      "title": "묵시적 형 변환",
+      "aliases": [
+        "Implicit Type Conversion",
+        "자동 형 변환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/implicit-type-conversion.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single automatic widening conversion applied on assignment and during mixed-type arithmetic",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.type-conversion",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환 > ### 묵시적 형 변환 (자동)",
+          "start_line": 263,
+          "end_line": 295
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 타입의 변환",
+          "start_line": 208,
+          "end_line": 239
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.explicit-type-conversion",
+      "title": "명시적 형 변환",
+      "aliases": [
+        "Explicit Type Conversion",
+        "강제 형 변환",
+        "캐스팅"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/explicit-type-conversion.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single programmer-written narrowing conversion that may lose data, and whose position changes the arithmetic result",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.type-conversion",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환 > ### 명시적 형 변환 (강제)",
+          "start_line": 301,
+          "end_line": 364
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 타입의 변환 > ### 명시적 형변환 ( = 강제 형변환, explict conversion)",
+          "start_line": 245,
+          "end_line": 263
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 타입의 변환 > ### 명시적 형변환 ( = 강제 형변환, explict conversion)",
+          "start_line": 268,
+          "end_line": 305
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.short-circuit-evaluation",
+      "title": "단락 회로 평가",
+      "aliases": [
+        "Short Circuit Evaluation",
+        "SCE"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/short-circuit-evaluation.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single evaluation rule skipping the second operand of a logical AND/OR once the result is already determined",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03",
+        "low-evidence-scope",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.operator.operator-arity",
+        "java.type.boolean-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자 > ### 논리 연산 주의점",
+          "start_line": 47,
+          "end_line": 51
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 논리형 연산자",
+          "start_line": 81,
+          "end_line": 86
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.bitwise-logical-operator",
+      "title": "비트 논리 연산자",
+      "aliases": [
+        "Bitwise Logical Operator",
+        "AND 연산자",
+        "XOR 연산자",
+        "반전 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/bitwise-logical-operator.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single family of bit-position logical operators covering AND, OR, XOR, and complement",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.operator.bit-shift-operator",
+        "java.operator.operator-arity",
+        "cs.data.bit-and-byte"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 비트 연산자 > ### 비트 논리 연산자",
+          "start_line": 114,
+          "end_line": 154
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 비트연산자",
+          "start_line": 322,
+          "end_line": 323
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.bit-shift-operator",
+      "title": "비트 이동 연산자",
+      "aliases": [
+        "Bit Shift Operator",
+        "시프트 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/bit-shift-operator.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single family of left/right bit-shift operators, including the sign-preserving and zero-filling right shifts",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.operator.bitwise-logical-operator",
+        "cs.data.bit-and-byte"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 비트 연산자 > ### 비트 이동 연산자",
+          "start_line": 160,
+          "end_line": 186
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 비트연산자",
+          "start_line": 326,
+          "end_line": 341
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.if-statement",
+      "title": "if문",
+      "aliases": [
+        "if Statement",
+        "조건문"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/if-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "source-backed stub for the single Java conditional branch form if / else if / else",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "low-evidence-scope",
+        "code-dominant-evidence",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.switch-case",
+        "java.type.boolean-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java if문",
+          "start_line": 23,
+          "end_line": 42
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 제어문 > ### if문",
+          "start_line": 349,
+          "end_line": 349
+        }
+      ]
+    },
+    {
+      "concept_id": "java.operator.conditional-operator",
+      "title": "조건 연산자",
+      "aliases": [
+        "Conditional Operator",
+        "삼항 연산자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/operator/conditional-operator.md",
+      "tags": [
+        "java",
+        "operator"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single three-operand Java operator selecting one of two results from a boolean condition",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap03",
+        "low-evidence-scope",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.operator.operator-arity",
+        "java.type.boolean-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap03.md",
+          "source_sha256": "c6ba5692b96acb00c45c1987f9e7f09d2fdf6079599154e75b84a759e6e92289",
+          "heading": "# Chapter 03 - 자바의 여러 가지 연산자 > ## Java 기본 연산자 > ### 조건 연산자",
+          "start_line": 87,
+          "end_line": 89
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 제어문 > ### if문",
+          "start_line": 363,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.switch-case",
+      "title": "switch-case문",
+      "aliases": [
+        "switch Statement",
+        "switch-case"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/switch-case.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java multi-way branch on one value, including fall-through, shared cases, default, and the Java 7 String case",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.if-statement",
+        "java.control-flow.break-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java switch-case문",
+          "start_line": 49,
+          "end_line": 68
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java switch-case문",
+          "start_line": 73,
+          "end_line": 95
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 제어문 > ### switch문",
+          "start_line": 371,
+          "end_line": 375
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.while-statement",
+      "title": "while문",
+      "aliases": [
+        "while Statement",
+        "while Loop"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/while-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "source-backed stub for the single Java pre-tested loop that repeats while its condition holds",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "code-only-scope",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.do-while-statement",
+        "java.control-flow.for-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### while문",
+          "start_line": 138,
+          "end_line": 147
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 반복문 > ### while문",
+          "start_line": 397,
+          "end_line": 400
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.do-while-statement",
+      "title": "do-while문",
+      "aliases": [
+        "do-while Statement",
+        "do-while Loop"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/do-while-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "source-backed stub for the single Java post-tested loop that runs its body once before testing",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "code-only-scope",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.while-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### do-while문",
+          "start_line": 175,
+          "end_line": 181
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 반복문 > ### do-while문",
+          "start_line": 427,
+          "end_line": 428
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.for-statement",
+      "title": "for문",
+      "aliases": [
+        "for Statement",
+        "for Loop"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/for-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java counted loop with initializer, condition, and increment clauses, each of which may be omitted",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "code-only-scope-paired-with-prose",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.while-statement",
+        "java.control-flow.break-statement",
+        "java.control-flow.continue-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### for문",
+          "start_line": 209,
+          "end_line": 212
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### for문 요소 생략하기",
+          "start_line": 221,
+          "end_line": 271
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 반복문 > ### for문",
+          "start_line": 442,
+          "end_line": 444
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.break-statement",
+      "title": "break문",
+      "aliases": [
+        "break Statement"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/break-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single unlabeled Java break statement that exits the innermost enclosing loop or switch",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.continue-statement",
+        "java.control-flow.for-statement",
+        "java.control-flow.switch-case",
+        "java.control-flow.label"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 조건문 > ### Java switch-case문",
+          "start_line": 49,
+          "end_line": 51
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### break문",
+          "start_line": 393,
+          "end_line": 404
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### break, continue 차이",
+          "start_line": 410,
+          "end_line": 412
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 반복문 > ### break, continue",
+          "start_line": 456,
+          "end_line": 456
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.continue-statement",
+      "title": "continue문",
+      "aliases": [
+        "continue Statement"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/continue-statement.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java loop-control statement that skips the remainder of the current iteration and continues according to the enclosing loop's control flow",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap04",
+        "lecture-batch-19",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.break-statement",
+        "java.control-flow.for-statement",
+        "java.control-flow.label"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### continue문",
+          "start_line": 315,
+          "end_line": 321
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap04.md",
+          "source_sha256": "347ad7a8cbf433c5b9b3795112b826a1233a6b515d08a4e3d98f7b2c69e01e67",
+          "heading": "# Chapter 04 - 자바의 제어문 > ## Java 반복문 > ### break, continue 차이",
+          "start_line": 410,
+          "end_line": 412
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 반복문 > ### break, continue",
+          "start_line": 457,
+          "end_line": 457
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.modern-java",
+      "title": "모던 자바",
+      "aliases": [
+        "Modern Java",
+        "Java 8 이후",
+        "람다",
+        "Stream API"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/modern-java.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single line drawn at Java 8, after which the language absorbed other paradigms - lambdas for functional programming, the Stream API for declarative data processing, and parallel execution across CPU cores",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.platform.platform-independence",
+        "java.runtime.jdk-distribution",
+        "software.paradigm.object-oriented-programming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징",
+          "start_line": 13,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.jdk-distribution",
+      "title": "JDK 배포판",
+      "aliases": [
+        "OpenJDK",
+        "Eclipse Temurin",
+        "Amazon Corretto",
+        "LTS 버전"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/jdk-distribution.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice among several vendors shipping the same JDK - OpenJDK, Oracle, Temurin, Corretto and others - where an LTS release is one whose maintenance is promised for a long period",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.jdk",
+        "java.language.modern-java",
+        "java.runtime.jvm"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징 > ### 작성과 실행",
+          "start_line": 24,
+          "end_line": 28
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.class-file-naming",
+      "title": "public 클래스와 파일 이름",
+      "aliases": [
+        "클래스명과 파일명 일치",
+        "대소문자 구분"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/class-file-naming.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that a public class must be declared in a file of the same name, case included, which is also where the design-versus-product distinction between class and object first shows up",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.object",
+        "java.entry-point.main-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징 > ### Hello 파일 분석",
+          "start_line": 42,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.system-out",
+      "title": "System.out",
+      "aliases": [
+        "println",
+        "PrintStream",
+        "표준 출력 필드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/system-out.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single standard output handle that is a field of the System class holding a PrintStream, whose println method writes its argument to the screen - and the worked example for reading a dotted Java expression as class, field and method",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.member-variable",
+        "java.oop.method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징 > ### Hello 파일 분석",
+          "start_line": 68,
+          "end_line": 74
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.bytecode",
+      "title": "바이트 코드",
+      "aliases": [
+        "Bytecode",
+        "javac",
+        "class 파일"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/bytecode.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single intermediate form javac produces instead of machine code, sitting between human language and the machine, which the JVM installed for the host CPU and OS then interprets line by line",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.jvm",
+        "java.runtime.jit-compiler",
+        "java.platform.platform-independence",
+        "java.runtime.jdk"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징 > ### 컴파일 과정",
+          "start_line": 84,
+          "end_line": 88
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.keyword",
+      "title": "키워드",
+      "aliases": [
+        "Keyword",
+        "예약어",
+        "Reserved Word"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/keyword.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of words the language reserves for itself - int, public, class, static, while and the rest - which therefore cannot be used as identifiers",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.variable.variable-declaration",
+        "java.language.literal"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### int 1 = 1;",
+          "start_line": 15,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.data.bit-and-byte",
+      "title": "비트와 바이트",
+      "aliases": [
+        "Bit",
+        "Byte",
+        "정보의 최소 단위"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/bit-and-byte.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unit pair in which the bit is the smallest unit a computer processes and the byte is the eight-bit group used as the basic unit of representation, spanning 00000000 to 11111111 or 00 to FF",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "java.operator.bit-shift-operator",
+        "cs.information.information-quantity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 비트연산자",
+          "start_line": 311,
+          "end_line": 318
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.overflow",
+      "title": "오버플로우",
+      "aliases": [
+        "Overflow",
+        "부호 비트 반전"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/overflow.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single wraparound in which a result past the type's maximum or below its minimum flips sign, because adding one to the largest positive pattern carries into the sign bit",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.integer-type",
+        "cs.data.bit-and-byte",
+        "java.type.explicit-type-conversion"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 오버플로우",
+          "start_line": 159,
+          "end_line": 161
+        }
+      ]
+    },
+    {
+      "concept_id": "java.control-flow.label",
+      "title": "레이블",
+      "aliases": [
+        "Label",
+        "레이블 break",
+        "중첩 반복문 탈출"
+      ],
+      "canonical_path": "content/brain/knowledge/java/control-flow/label.md",
+      "tags": [
+        "java",
+        "control-flow"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single named jump target placed on a loop, which lets break or continue leave or restart an outer loop instead of only the innermost one",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.control-flow.break-statement",
+        "java.control-flow.continue-statement",
+        "java.control-flow.for-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 반복문 > ### break, continue",
+          "start_line": 458,
+          "end_line": 459
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 반복문 > ### break, continue",
+          "start_line": 479,
+          "end_line": 479
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

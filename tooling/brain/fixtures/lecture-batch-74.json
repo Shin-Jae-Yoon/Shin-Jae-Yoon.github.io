@@ -1,0 +1,604 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-74",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-73",
+    "applied_state": "1382 approved knowledge concepts after DevCourse closed."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Java/java-features.md",
+        "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90"
+      },
+      {
+        "path": "content/brain/notes/Java/java-settings.md",
+        "source_sha256": "1f852d8e34e98322c182833225b036c659b9458676386c7ea13f44a475232a23"
+      },
+      {
+        "path": "content/brain/notes/Java/GC.md",
+        "source_sha256": "60ec943bbd8a7fd797b91a5dc7f561ea5048854ba7302f321ad4f49a642a5d3a"
+      },
+      {
+        "path": "content/brain/notes/Java/JVM.md",
+        "source_sha256": "13557c1f81ef0d60735506ca61ea9cbd55f45fb71bb6fd1900a81910f59f0838"
+      },
+      {
+        "path": "content/brain/notes/Java/JavaExecute.md",
+        "source_sha256": "9d49608c9cef6a4693f1741d6241bd4b72de7271aaf54c0fb59ae1cf87fa547c"
+      },
+      {
+        "path": "content/brain/notes/Java/JavaVersion.md",
+        "source_sha256": "a260c4e6aa5ce0a92f7d93acd2337f75f56ff5d587810ae4d19a6d1bbf3a972a"
+      },
+      {
+        "path": "content/brain/notes/Java/index.md",
+        "source_sha256": "9983e1c127f71affdfa3ff04d53ab3fd84eaf07fe2db738afebdef07fc11264b"
+      },
+      {
+        "path": "content/brain/notes/Java/design/index.md",
+        "source_sha256": "f65a5dca071a04bd6c1f3fb4272a340fb32f1e7c15c900d7e375e41533ebc811"
+      },
+      {
+        "path": "content/brain/notes/Java/design/behavioral/index.md",
+        "source_sha256": "c0f32788d86cdec57b2541f6de3f99a27e552b37e300006f45c066fec739a8d7"
+      },
+      {
+        "path": "content/brain/notes/Java/design/creational/index.md",
+        "source_sha256": "53ba5107616a6e7f04b2954b30b2748c6cf38711b47910b262159a043773eb86"
+      },
+      {
+        "path": "content/brain/notes/Java/design/structural/index.md",
+        "source_sha256": "c4a3cad3f6d7955c1fef8c7382e1bc8a78b12aed15b527b8a33040d48e6f97df"
+      }
+    ],
+    "line_range": "whole files",
+    "series": "Java 노트 - 언어 특징과 환경설정"
+  },
+  "multi_source_note": "Eleven files, nine of which are empty stubs or index pages, are mined together; locators carry an `s` index into the source list.",
+  "overlap_analysis": {
+    "finding": "The feature list restates what the Java lane has already applied in detail - the independence from the operating system, the automatic memory management, the threading and the loading on demand each have a concept already. The settings file is almost entirely installation and editor configuration; only its four naming rules are knowledge.",
+    "disposition": "Eight applied concepts gain evidence or edges. One new concept for what the language was announced with, since the object-orientation claim and the networking library claim have no other home."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All eight update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "java-features L10-L12; java-settings L27-L117, L123-L169, L175-L177, L183-L261, L269-L271",
+        "reason_code": "environment-setup-instruction-or-index",
+        "detail": "The cross-links to sibling notes, the JDK installation walkthroughs for three operating systems including the environment-variable names and shell files, the editor keyboard shortcuts, the account setup steps and the list of editor plugins with what each does. None of this states anything about the language; it is configuration, and following the established exclusion for setup instructions it is not mined."
+      },
+      {
+        "span": "GC.md, JVM.md, JavaExecute.md, JavaVersion.md, index.md, design/index.md and the three design sub-indexes",
+        "reason_code": "empty-stub-or-index",
+        "detail": "Nine files carrying no prose at all - four topic stubs never written and five index pages."
+      }
+    ],
+    "coverage_statement": "Every heading scope carrying knowledge contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 11200,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 118,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 10,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 2,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 9,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes the Java note folder.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 9,
+  "candidates": [
+    {
+      "concept_id": "java.platform.platform-independence",
+      "title": "플랫폼 독립성",
+      "aliases": [
+        "Platform Independence",
+        "Write Once Run Anywhere",
+        "WORA"
+      ],
+      "canonical_path": "content/brain/knowledge/java/platform/platform-independence.md",
+      "tags": [
+        "java",
+        "platform"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java portability property realized by compiling source to bytecode that any platform's JVM executes",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.jvm",
+        "java.runtime.jit-compiler",
+        "java.platform.java-design-goals"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 01. 플랫폼(프로그램이 실행되는 환경)에 영향을 받지 않음",
+          "start_line": 23,
+          "end_line": 25
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 18,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "java.memory.garbage-collection",
+      "title": "가비지 컬렉션",
+      "aliases": [
+        "Garbage Collection",
+        "자동 메모리 관리"
+      ],
+      "canonical_path": "content/brain/knowledge/java/memory/garbage-collection.md",
+      "tags": [
+        "java",
+        "memory"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single automatic Java heap-memory reclamation mechanism",
+      "pilot_strata": [
+        "source-backed-stub",
+        "book-batch-02",
+        "extends-applied-concept",
+        "do-it-java/chap05-chap06",
+        "lecture-batch-21",
+        "pl/fun-java",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.memory.heap",
+        "java.oop.instance",
+        "java.oop.member-variable",
+        "java.platform.java-design-goals"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 클래스와 인스턴스 > ### 인스턴스와 힙 메모리",
+          "start_line": 471,
+          "end_line": 473
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## 변수 유효 범위 > ### 멤버 변수 유효범위",
+          "start_line": 408,
+          "end_line": 411
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 27,
+          "end_line": 30
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 총정리",
+          "start_line": 308,
+          "end_line": 308
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 29,
+          "end_line": 30
+        }
+      ]
+    },
+    {
+      "concept_id": "java.thread.thread-class",
+      "title": "Thread 클래스 상속",
+      "aliases": [
+        "run() 오버라이딩",
+        "start()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/thread/thread-class.md",
+      "tags": [
+        "java",
+        "thread"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single route in which a class extends Thread and overrides run, with start being the important call because it prepares the thread and then runs that method as a new flow - and the program ends only when every thread has",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.thread.thread-creation",
+        "java.thread.runnable",
+        "java.oop.method-overriding",
+        "java.oop.inheritance",
+        "java.platform.java-design-goals"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## Java Thread 생성 > ### Thread 클래스 상속",
+          "start_line": 184,
+          "end_line": 193
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java10.md",
+          "source_sha256": "538d5c6fc14728fa953d23583a8f9d523254b8e3e9e73e00e89bdf63721505a8",
+          "heading": "## Java Thread 생성 > ### Thread 클래스 상속",
+          "start_line": 270,
+          "end_line": 270
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 35,
+          "end_line": 37
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.class-loading",
+      "title": "클래스 로딩",
+      "aliases": [
+        "Class Loading",
+        "PermGen",
+        "처음 사용될 때 메모리에 적재"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/class-loading.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single lazy load in which a class, being static, is read from disk into memory the first time it is used and kept there because secondary storage is far slower than RAM - held in PermGen up to Java 7 and in metaspace afterwards, with statics moving to the heap in Java 8",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.metaspace",
+        "java.runtime.static-pool",
+        "java.runtime.classpath",
+        "java.memory.heap",
+        "java.platform.java-design-goals"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### JVM 메모리, 인스턴스 생성",
+          "start_line": 277,
+          "end_line": 286
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### JVM 메모리, 인스턴스 생성",
+          "start_line": 296,
+          "end_line": 301
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 39,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.naming-convention",
+      "title": "자바 식별자 규칙과 명명 관례",
+      "aliases": [
+        "카멜 표기법",
+        "Camel Case",
+        "식별자 규칙"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/naming-convention.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single naming rule set: an identifier starts with a letter, underscore or dollar sign and never a digit, excludes reserved words, is case sensitive and unbounded in length, with the convention that a class name starts uppercase and each following word does too",
+      "pilot_strata": [
+        "lecture-batch-20",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.language.keyword",
+        "java.oop.class",
+        "java.variable.variable-declaration",
+        "java.language.package-naming",
+        "java.language.class-file-naming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 클래스 > ### 클래스 선언 방법",
+          "start_line": 80,
+          "end_line": 89
+        },
+        {
+          "path": "content/brain/notes/Java/java-settings.md",
+          "source_sha256": "1f852d8e34e98322c182833225b036c659b9458676386c7ea13f44a475232a23",
+          "heading": "## Java 코딩 컨벤션",
+          "start_line": 13,
+          "end_line": 13
+        },
+        {
+          "path": "content/brain/notes/Java/java-settings.md",
+          "source_sha256": "1f852d8e34e98322c182833225b036c659b9458676386c7ea13f44a475232a23",
+          "heading": "## Java 코딩 컨벤션",
+          "start_line": 19,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.package-naming",
+      "title": "패키지 이름 규칙",
+      "aliases": [
+        "도메인 역순",
+        "com.example.util"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/package-naming.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single convention of reversing a domain name and appending the project or module, which exists because two libraries may otherwise ship classes of the same name into one folder",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.language.package",
+        "java.language.import",
+        "java.language.naming-convention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Class 필드 (static 필드) > ### 패키지",
+          "start_line": 419,
+          "end_line": 428
+        },
+        {
+          "path": "content/brain/notes/Java/java-settings.md",
+          "source_sha256": "1f852d8e34e98322c182833225b036c659b9458676386c7ea13f44a475232a23",
+          "heading": "## Java 코딩 컨벤션",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ]
+    },
+    {
+      "concept_id": "java.language.class-file-naming",
+      "title": "public 클래스와 파일 이름",
+      "aliases": [
+        "클래스명과 파일명 일치",
+        "대소문자 구분"
+      ],
+      "canonical_path": "content/brain/knowledge/java/language/class-file-naming.md",
+      "tags": [
+        "java",
+        "language"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single rule that a public class must be declared in a file of the same name, case included, which is also where the design-versus-product distinction between class and object first shows up",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.object",
+        "java.entry-point.main-method",
+        "java.language.naming-convention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징 > ### Hello 파일 분석",
+          "start_line": 42,
+          "end_line": 44
+        },
+        {
+          "path": "content/brain/notes/Java/java-settings.md",
+          "source_sha256": "1f852d8e34e98322c182833225b036c659b9458676386c7ea13f44a475232a23",
+          "heading": "## Java 코딩 컨벤션",
+          "start_line": 17,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.jvm",
+      "title": "자바 가상 머신",
+      "aliases": [
+        "JVM",
+        "Java Virtual Machine"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/jvm.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java bytecode execution engine, supplied by the JRE installed for the host operating system",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap01",
+        "lecture-batch-74",
+        "Java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.platform.platform-independence",
+        "java.runtime.jit-compiler",
+        "java.runtime.jdk",
+        "java.platform.java-design-goals"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap01.md",
+          "source_sha256": "ceae42668c7cec97f00e6fc801739a26314630e2dd638474f98b522ae268991a",
+          "heading": "# Chapter 01 - 자바 프로그래밍 > ## Java 특징 > ### 01. 플랫폼(프로그램이 실행되는 환경)에 영향을 받지 않음",
+          "start_line": 29,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "java.platform.java-design-goals",
+      "title": "자바가 내세운 것들",
+      "aliases": [
+        "1996년에 발표된 객체지향 언어",
+        "네트워크와 분산처리 지원",
+        "Java API"
+      ],
+      "canonical_path": "content/brain/knowledge/java/platform/java-design-goals.md",
+      "tags": [
+        "java",
+        "platform"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of what the language was announced with in the mid nineties - that it is object-oriented through and through rather than an object layer over something else, and that the networking and distribution its era demanded come in the standard library rather than as an add-on - the rest of the list being the platform independence, the automatic memory management, the threading and the loading on demand, each of which is a subject on its own",
+      "pilot_strata": [
+        "lecture-batch-74",
+        "Java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.platform.platform-independence",
+        "java.memory.garbage-collection",
+        "java.runtime.class-loading",
+        "java.net.socket"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "unheaded-body",
+          "start_line": 9,
+          "end_line": 9
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 24,
+          "end_line": 25
+        },
+        {
+          "path": "content/brain/notes/Java/java-features.md",
+          "source_sha256": "72e40c67b8c833a2e2943c51420f8c978a364584594a477a2826dbbd544e4d90",
+          "heading": "## Java의 특징",
+          "start_line": 32,
+          "end_line": 33
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

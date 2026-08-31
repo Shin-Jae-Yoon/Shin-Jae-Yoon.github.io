@@ -1,1 +1,0 @@
-brain/Lecture/fastcampus-algo/part1-4/

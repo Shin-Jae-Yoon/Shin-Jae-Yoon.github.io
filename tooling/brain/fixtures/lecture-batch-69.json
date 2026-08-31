@@ -1,0 +1,954 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-69",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-68",
+    "applied_state": "1307 approved knowledge concepts after the first half of this file was mined."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/CodeTree/dataStructure.md",
+        "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc"
+      }
+    ],
+    "line_range": "L716-L1093 (Heap and Hashing)",
+    "series": "코드트리 Novice High 자료구조 - 후반부"
+  },
+  "split_note": {
+    "statement": "Second half of the split described in lecture-batch-68. The boundary is the heap section's own heading, so no scope is divided across the two batches.",
+    "budget_rule": "B4 is not raised."
+  },
+  "overlap_analysis": {
+    "finding": "Neither the heap nor hashing had been reached by any applied batch - the algorithm courses stopped at the search tree and the Java lane covered the map as a class without saying how it resolves collisions. This is the only source in the corpus that works through either.",
+    "disposition": "Fourteen new concepts across two namespaces that did not exist. Four applied concepts gain edges, the standard map also gaining a locator for its interface."
+  },
+  "source_defect_note": {
+    "statement": "The section heading is spelled `## Hasing`, a typo for Hashing, and the two resolution methods are written `Separata chaining` throughout where `Separate chaining` is meant. The source is left untouched: locator heading chains reproduce the misspelling exactly, since the engine compares them byte for byte.",
+    "handling": "The candidate titles and aliases use the correct spelling."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines.",
+    "provenance-warning": "The evidence span is a callout block rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L727, L735, L752, L762, L777, L810, L828, L903-L908, L934, L947, L960-L962, L966, L975, L986, L997, L1009, L1017, L1024, L1035, L1044, L1050, L1059, L1074-L1087",
+        "reason_code": "caption-external-link-list-or-api-listing",
+        "detail": "The bold captions introducing each diagram and each subsection, the four blog links credited as the source of the hash-function catalogue, the two-item list naming the resolutions immediately before each is explained, and the map's method signatures which the cited span already carries."
+      }
+    ],
+    "coverage_statement": "Every heading scope in L716-L1093 contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 21800,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 174,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 5,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 5,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 18,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "file_completion_note": "With this batch CodeTree/dataStructure.md is fully mined across batches 68 and 69.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_transfer_note": {
+    "alias": "해시 알고리즘",
+    "from": "java.collection.hash-set",
+    "to": "algo.hash.hash-algorithm",
+    "rationale": "The set class carried the phrase as an alias while describing how it buckets its elements. The named digest families are what the phrase means, and this batch applies the concept for them, so the alias moves and the incumbent keeps a qualified form."
+  },
+  "candidates_authored": 18,
+  "candidates": [
+    {
+      "concept_id": "java.collection.hash-map",
+      "title": "HashMap",
+      "aliases": [
+        "HashMap 클래스",
+        "키 중복 시 덮어쓰기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/hash-map.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Map implementation keying by hash, so putting an existing key overwrites its value, and whose contents are walked by taking the key set and iterating it to fetch each value",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-38",
+        "backend/kim-spring",
+        "lecture-batch-69",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.map-interface",
+        "java.collection.hash-set",
+        "java.oop.equals-hashcode",
+        "java.collection.iterator",
+        "java.thread.concurrent-collection",
+        "java.collection.hashmap-collision",
+        "algo.hash.hashing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashMap Class",
+          "start_line": 376,
+          "end_line": 378
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashMap Class",
+          "start_line": 400,
+          "end_line": 400
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashMap Class",
+          "start_line": 428,
+          "end_line": 429
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### HashMap",
+          "start_line": 1088,
+          "end_line": 1093
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.binary-tree-kinds",
+      "title": "이진 트리의 종류",
+      "aliases": [
+        "정 이진 트리",
+        "완전 이진 트리",
+        "포화 이진 트리",
+        "변질 이진 트리",
+        "균형 이진 트리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/binary-tree-kinds.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single set of names for the shapes a binary tree can take - every node having no children or two, every level filled except the last which fills from the left, every level filled outright, every parent having exactly one child which may all lean the same way, and every node's two subtrees differing in height by at most one",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-69",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.binary-tree",
+        "algo.tree.path-metrics",
+        "algo.tree.bst-tradeoff",
+        "algo.tree.avl-tree",
+        "algo.heap.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 197,
+          "end_line": 199
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 206,
+          "end_line": 207
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 215,
+          "end_line": 215
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 223,
+          "end_line": 224
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 232,
+          "end_line": 232
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 240,
+          "end_line": 240
+        },
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture07.md",
+          "source_sha256": "d0db32f125f5b0b9a361051cb1f1d015571cf4bca01038c9b86582019433e547",
+          "heading": "## 트리 > ### 이진 트리",
+          "start_line": 244,
+          "end_line": 245
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.tree.avl-tree",
+      "title": "AVL 트리",
+      "aliases": [
+        "balance factor",
+        "스스로 균형을 잡는 이진탐색트리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/tree/avl-tree.md",
+      "tags": [
+        "algo",
+        "tree"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single search tree that keeps itself balanced, using a factor computed per node to decide when the shape has to be corrected",
+      "pilot_strata": [
+        "lecture-batch-51",
+        "dataStructure/easy-ds",
+        "algo-domain",
+        "lecture-batch-69",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.bst-tradeoff",
+        "algo.tree.binary-tree-kinds",
+        "algo.tree.bst-complexity",
+        "java.collection.hashmap-collision"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/dataStructure/easy-ds/lecture09.md",
+          "source_sha256": "046a0619b4f3f1522b245b85b6a9f4051d99e8298205fe26328026af7647616c",
+          "heading": "## AVL 트리",
+          "start_line": 14,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.hash-set",
+      "title": "HashSet",
+      "aliases": [
+        "HashSet 클래스",
+        "버킷",
+        "HashSet의 해시 알고리즘"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/hash-set.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Set implementation that files each item by its hash code into a bucket and compares with equals only against what shares that bucket, which is why performance depends on hash codes being well spread",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-69",
+        "CodeTree"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.set-interface",
+        "java.oop.equals-hashcode",
+        "java.collection.hash-map",
+        "java.collection.hashmap-collision"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashSet Class",
+          "start_line": 255,
+          "end_line": 265
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.heap.heap",
+      "title": "힙",
+      "aliases": [
+        "heap",
+        "완전 이진 트리 모양",
+        "최대 힙과 최소 힙"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/heap/binary-heap.md",
+      "tags": [
+        "algo",
+        "heap"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single special shape of the binary tree - every level filled from the left with no gaps, which fixes the height at the logarithm of the count - ordered so that one extreme sits at the root, which is what makes finding the largest or the smallest constant and keeps every change logarithmic",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.tree.binary-tree-kinds",
+        "algo.heap.max-heap",
+        "algo.heap.heapify",
+        "algo.tree.binary-tree-array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 718,
+          "end_line": 723
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 731,
+          "end_line": 731
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.heap.max-heap",
+      "title": "최대 힙",
+      "aliases": [
+        "max-heap",
+        "부모가 자식보다 크거나 같다",
+        "k번째 최댓값은 못 구한다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/heap/max-heap.md",
+      "tags": [
+        "algo",
+        "heap"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ordering in which no node is smaller than its children, which puts the largest value at the root and nowhere else - building it costs linear time, reading that largest is constant and every insertion or removal is logarithmic, but nothing can be said about where the second largest lies, so the k-th largest is not obtainable by looking",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.heap.heap",
+        "algo.heap.heapify",
+        "algo.heap.heap-insert-delete",
+        "algo.complexity.time-complexity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 739,
+          "end_line": 748
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.heap.heapify",
+      "title": "heapify와 힙 만들기",
+      "aliases": [
+        "조건에 맞을 때까지 아래로 내린다",
+        "n / 2번째부터 거꾸로",
+        "쌓아도 O(N)"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/heap/heapify.md",
+      "tags": [
+        "algo",
+        "heap"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single repair procedure and the way a heap is built from it - compare a node against its two children, swap with the larger and continue downward from there until it is already the largest, which costs at most the height; and running it from the last node with children back to the root turns any array into a heap in linear time, since most nodes are near the bottom and barely move",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.heap.max-heap",
+        "algo.heap.heap-insert-delete",
+        "algo.tree.binary-tree-array",
+        "algo.complexity.operation-count"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 754,
+          "end_line": 761
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 766,
+          "end_line": 776
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.heap.heap-insert-delete",
+      "title": "힙의 삽입과 삭제",
+      "aliases": [
+        "끝에 넣고 부모와 비교하며 올린다",
+        "삭제는 루트에서만",
+        "끝 값을 루트로 올리고 heapify"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/heap/heap-insert-delete.md",
+      "tags": [
+        "algo",
+        "heap"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of moves that keep the shape intact - a new value goes at the very end and climbs while its parent is smaller, and a removal takes only the root, fills the hole with the last value and pushes that one back down; both walk the height of the tree and so cost the logarithm",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.heap.heapify",
+        "algo.heap.max-heap",
+        "algo.heap.heap"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 812,
+          "end_line": 813
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Tree > ### Heap",
+          "start_line": 830,
+          "end_line": 833
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.hashing",
+      "title": "해싱",
+      "aliases": [
+        "임의의 데이터를 고정된 길이로",
+        "반환값을 인덱스로 쓴다",
+        "들어온 순서와 무관"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/hashing.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single idea of turning a value of any size into a number in a fixed range and using that number as an array position, so insertion, removal and lookup each cost one pass through the function and one array access - which is why it suits work where order does not matter but those three happen constantly, and why the table is normally made three or four times larger than the data it will hold",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.hash.hash-collision",
+        "algo.hash.hash-function-methods",
+        "algo.array.counting-array",
+        "java.collection.hash-map"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing",
+          "start_line": 867,
+          "end_line": 877
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.hashing-limits",
+      "title": "해싱이 만능은 아니다",
+      "aliases": [
+        "배열은 해시 함수가 다루지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/hashing-limits.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single boundary on what can be hashed - strings and numbers map readily, but a collection whose element count is not fixed does not, so the function does not take one",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "low-confidence",
+        "provenance-warning"
+      ],
+      "related_concepts": [
+        "algo.hash.hashing",
+        "algo.hash.hash-function-methods",
+        "java.oop.equals-hashcode"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing",
+          "start_line": 898,
+          "end_line": 899
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.hash-function-methods",
+      "title": "대표적인 해시 함수",
+      "aliases": [
+        "제산법",
+        "폴딩법",
+        "곱셈법",
+        "테이블 크기는 소수로"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/hash-function-methods.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single catalogue of ways to compute the index - dividing by the table size and taking the remainder, which wants a prime divisor far from a power of two so the whole range gets used rather than only the even half; folding the key into parts and combining them; multiplying by a fraction and taking what is left; squaring and taking the middle digits; changing the base; picking the digits that vary; and choosing at random among several functions",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.hash.hashing",
+        "algo.hash.hash-collision",
+        "algo.hash.hash-algorithm",
+        "algo.math.modular-periodicity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing",
+          "start_line": 910,
+          "end_line": 915
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing",
+          "start_line": 917,
+          "end_line": 918
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing",
+          "start_line": 921,
+          "end_line": 930
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.hash-algorithm",
+      "title": "해시 알고리즘",
+      "aliases": [
+        "MD 시리즈와 SHA 시리즈",
+        "무결성 검증",
+        "MD5는 더 쓰지 말 것"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/hash-algorithm.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of named functions used to verify that data has not changed rather than to index it - the message digest series, of which the fifth was widely used until collisions were found in it and is now kept only for compatibility, and the secure hash series that replaced it as the default nearly everywhere",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.hash.hash-function-methods",
+        "algo.hash.hash-collision",
+        "cs.data.bit-and-byte"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing",
+          "start_line": 936,
+          "end_line": 939
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.hash-collision",
+      "title": "해시 충돌",
+      "aliases": [
+        "다른 값이 같은 인덱스를 받는다",
+        "충돌이 잦으면 해싱을 쓸 이유가 없다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/hash-collision.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure the whole technique lives with - two different values landing on the same position - which is unavoidable because the range of keys exceeds the size of the table, and which matters because the usual remedy of hanging a list off that position degrades every operation back to linear once enough values pile up there",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.hash.hashing",
+        "algo.hash.separate-chaining",
+        "algo.hash.open-addressing",
+        "java.collection.hashmap-collision"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 951,
+          "end_line": 956
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.separate-chaining",
+      "title": "분리 연결법",
+      "aliases": [
+        "Separate Chaining",
+        "체이닝",
+        "부하율",
+        "주소가 바뀌지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/separate-chaining.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single resolution that keeps a list at each position and appends to it - spending extra memory to leave every value's position unchanged, degrading only gradually as the table fills, and being nearly indifferent to how the function clusters its output, so only the collision count needs watching",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.hash.hash-collision",
+        "algo.hash.open-addressing",
+        "algo.list.linked-list",
+        "java.collection.hashmap-collision"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 968,
+          "end_line": 971
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 976,
+          "end_line": 982
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.open-addressing",
+      "title": "개방 주소법",
+      "aliases": [
+        "Open Addressing",
+        "빈 버킷을 찾아 넣는다",
+        "삭제 자리에 더미 노드"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/open-addressing.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single resolution that uses the table's own empty slots instead of extra memory - so a value's position changes on collision, lookups benefit from everything sitting close together, and a removal cannot simply empty the slot or whatever was displaced past it becomes unreachable, which is why a marker is left behind and why frequent removal eventually forces the table to be rebuilt",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.hash.hash-collision",
+        "algo.hash.separate-chaining",
+        "algo.hash.probing-methods",
+        "cs.os.cache-pollution"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 988,
+          "end_line": 993
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 998,
+          "end_line": 1007
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.hash.probing-methods",
+      "title": "탐사 방법 세 가지",
+      "aliases": [
+        "선형 탐사법",
+        "제곱 탐사법",
+        "이중 해시법",
+        "클러스터링"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/hash/probing-methods.md",
+      "tags": [
+        "algo",
+        "hash"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trade among the three ways of choosing the next slot - stepping one at a time is simplest and best for the cache but piles values into runs; stepping by squares breaks up those runs while leaving keys that started together still together; and hashing a second time to get the stride is barely affected by clustering at all, at the cost of the worst cache behaviour and the most computation",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.hash.open-addressing",
+        "algo.hash.hash-function-methods",
+        "algo.hash.hash-collision"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 1010,
+          "end_line": 1015
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 1018,
+          "end_line": 1022
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Hash collision",
+          "start_line": 1025,
+          "end_line": 1027
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.hashmap-collision",
+      "title": "자바의 해시 충돌 처리",
+      "aliases": [
+        "JDK 8부터 레드 블랙 트리 혼용",
+        "슬롯 8개가 임계치",
+        "부하율 75%"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/hashmap-collision.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement the standard map uses - collisions resolved by chaining, but with the chain replaced by a balanced tree once enough entries land on one slot, so the worst case drops from linear to logarithmic; the table growing before it fills, since efficiency collapses as it approaches capacity",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.hash.separate-chaining",
+        "java.collection.hash-map",
+        "algo.tree.avl-tree",
+        "java.collection.hash-set"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Java Hash collision",
+          "start_line": 1039,
+          "end_line": 1040
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Java Hash collision",
+          "start_line": 1060,
+          "end_line": 1064
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Java Hash collision",
+          "start_line": 1068,
+          "end_line": 1070
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.hash-collision-cause",
+      "title": "완벽한 해시 함수는 만들 수 없다",
+      "aliases": [
+        "값 자체를 해시로 쓸 수 있는 타입",
+        "문자열과 객체는 불가능",
+        "보조 해시 함수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/hash-collision-cause.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason collisions cannot be designed away - a type with few distinguishable values, or a number, can use the value itself as its hash, but a string or an ordinary object cannot be given a function that never repeats, so a supplementary one is applied instead; and even a perfect function would still collide once the remainder is taken, because the table is smaller than the key space",
+      "pilot_strata": [
+        "lecture-batch-69",
+        "CodeTree",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.hashmap-collision",
+        "algo.hash.hash-collision",
+        "algo.hash.hash-function-methods",
+        "java.oop.equals-hashcode"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Java Hash collision",
+          "start_line": 1045,
+          "end_line": 1046
+        },
+        {
+          "path": "content/brain/notes/CodeTree/dataStructure.md",
+          "source_sha256": "7c38308010efd558fe36d542ebdbfb307d064564f68fa79ee501504e6c87c1dc",
+          "heading": "## Hasing > ### Java Hash collision",
+          "start_line": 1051,
+          "end_line": 1055
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

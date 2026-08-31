@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "sourceRoots": ["content"],
+  "hardDenyPathSegments": [".obsidian", "private", "templates", ".DS_Store"],
+  "hardDenyBasenames": ["Untitled.md", ".env", ".env.local"],
+  "hardDenyExtensions": [".pem", ".key", ".p12", ".pfx"],
+  "temporaryPatterns": ["(^|/)~", "\\.tmp$", "\\.swp$", "\\.bak$"],
+  "secretPatterns": [
+    "-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----",
+    "(?:api[_-]?key|secret|token)\\s*[:=]\\s*[A-Za-z0-9_\\-]{16,}"
+  ],
+  "publishFrontmatterPatterns": ["^publish\\s*:\\s*true\\s*$", "^draft\\s*:\\s*false\\s*$"],
+  "emittedExtensions": [".html", ".json", ".xml", ".rss", ".map"],
+  "emittedNamePatterns": ["sitemap", "search", "graph", "rss", "feed"]
+}

@@ -1,0 +1,1330 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-34",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-33",
+    "applied_state": "714 approved knowledge concepts after lecture-batch-33 added the aggregate and stored-routine surface from lectures 09 to 11."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture12.md",
+        "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b"
+      },
+      {
+        "path": "content/brain/lectures/db/easy-db/lecture13.md",
+        "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297"
+      }
+    ],
+    "line_range": "lecture12 L12-L367, lecture13 L12-L189 (two whole files)",
+    "series": "쉬운코드 DB (easy-db) 12~13/15 — 실무에서 프로시저, trigger"
+  },
+  "overlap_analysis": {
+    "finding": "lecture12 answers the question lecture11 ended on and is argumentative rather than syntactic: it states four advantages of stored procedures, dismantles each, and shows what the logic tier does instead. lecture13 then introduces triggers and closes on the same kind of caution, which is why the two files are batched together.",
+    "disposition": "Much of lecture12 is not about databases at all - business logic, transparent change, rolling restarts, application server scaling, concurrent dispatch and caching are software concepts and are filed under software.architecture, software.deploy, software.ops and software.pattern. What is specific to the database - the cost of a DB server, the procedure's own drawbacks, and the whole trigger surface - stays under db."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "Both update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "source_defect_note": {
+    "span": "lecture13 L100-101",
+    "statement": "The NEW keyword's second bullet reads 'AFTER INSERT라면 update된 후의 tuple을 가리킴', repeating AFTER INSERT where AFTER UPDATE is meant.",
+    "disposition": "db.sql.trigger-old-new cites the span and states the pairing correctly - NEW is the inserted tuple after an insert and the updated tuple after an update - and is flagged conflict so U3 sees the discrepancy. The source file is not modified."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "lecture12 L8, L20, L47, L66-68, L78-80, L93-95, L102-104, L114-116, L120, L132, L157, L172-174, L178, L183, L193-195, L199, L209-211, L221-223, L228, L244, L254, L258, L295, L299, L310, L314, L328, L333, L342, L347, L361; lecture13 L8, L14-18, L45-53, L57, L70-76, L83-91, L103-113, L122-127, L131, L138, L153-155, L176, L187",
+        "reason_code": "lecture-preamble-figure-caption-or-carried-by-owner",
+        "detail": "The channel link, the 'ex)' scenario headers whose diagram carries the content, and the walk-through lines whose claim is already stated inside the cited span of the owning concept."
+      },
+      {
+        "span": "lecture13 L14-18",
+        "reason_code": "dictionary-gloss",
+        "detail": "The dictionary senses of the English word trigger precede the SQL definition and add nothing the definition does not carry."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across both files contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 23402,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 215,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 27,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 27,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 30,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. This batch closes the pointer lecture11 left open - the reason stored procedures are rare in practice is now stated where the argument for it is actually made.",
+  "candidates_authored": 30,
+  "candidates": [
+    {
+      "concept_id": "software.architecture.three-tier",
+      "title": "3계층 아키텍처",
+      "aliases": [
+        "Three-tier architecture",
+        "Presentation tier",
+        "Logic tier",
+        "Data tier"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/three-tier.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single division of a client-server system into three tiers - the presentation tier the user sees, built from HTML, javascript, CSS or a native app; the logic tier holding the business rules, written with something like Java and Spring or Python and Django; and the data tier that stores and serves the data, a MySQL, Oracle, PostgreSQL or MongoDB",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "software-domain",
+        "lecture-batch-34"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.basic.dbms",
+        "db.sql.stored-function-placement",
+        "software.api.api",
+        "software.architecture.business-logic",
+        "db.sql.procedure-in-practice",
+        "software.architecture.data-service"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture10.md",
+          "source_sha256": "f2b919811679525388ccee7958910d6c6b6ef3967d197a4077d166cc0cec555c",
+          "heading": "## 언제 쓰면 좋을까? > ### three-tier architecture",
+          "start_line": 158,
+          "end_line": 175
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 실무에서 프로시저 > ### 3-tier architecture",
+          "start_line": 18,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.stored-procedure",
+      "title": "스토어드 프로시저",
+      "aliases": [
+        "Stored procedure",
+        "IN 파라미터",
+        "OUT 파라미터",
+        "INOUT 파라미터"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/stored-procedure.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single user-defined procedure stored in the RDBMS that carries out one concrete task, whose parameters are marked IN to be read, OUT to be returned or INOUT for both - IN being the default and so omissible, OUT never - and whose body may branch, loop and raise or handle errors",
+      "pilot_strata": [
+        "lecture-batch-33",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-34"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.stored-function",
+        "db.sql.procedure-vs-function",
+        "db.sql.delimiter",
+        "db.sql.trigger",
+        "db.sql.procedure-in-practice",
+        "db.sql.procedure-advantage"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure",
+          "start_line": 14,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure",
+          "start_line": 31,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture11.md",
+          "source_sha256": "67b61ba2fabd7ac5b5419eb63c99b47f6088a74d9d0b5c9d2e4554153e7ac204",
+          "heading": "## Stored procedure",
+          "start_line": 39,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-in-practice",
+      "title": "실무에서 프로시저를 쓰지 않는 이유",
+      "aliases": [
+        "프로시저 권장하지 않음",
+        "data tier에 생기는 비즈니스 로직"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-in-practice.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single verdict the course reaches after weighing both sides - using a stored procedure means putting business logic in the data tier, and every advantage that buys turns out to be obtainable in the logic tier, usually on better terms",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.stored-procedure",
+        "software.architecture.three-tier",
+        "db.sql.stored-function-placement",
+        "db.sql.procedure-drawback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 실무에서 프로시저",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 실무에서 프로시저 > ### 3-tier architecture",
+          "start_line": 49,
+          "end_line": 50
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점",
+          "start_line": 283,
+          "end_line": 287
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.business-logic",
+      "title": "비즈니스 로직",
+      "aliases": [
+        "Business logic",
+        "서비스의 기능과 정책"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/business-logic.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single body of rules that is the service itself rather than its plumbing - signing up and leaving, listing and searching products, messaging - as distinct from the data those rules operate on, which is member records, product records, purchase history and the like",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.architecture.three-tier",
+        "db.sql.procedure-in-practice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 실무에서 프로시저 > ### 3-tier architecture",
+          "start_line": 18,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 실무에서 프로시저 > ### 3-tier architecture",
+          "start_line": 24,
+          "end_line": 32
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 실무에서 프로시저 > ### 3-tier architecture",
+          "start_line": 36,
+          "end_line": 43
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-advantage",
+      "title": "프로시저의 장점",
+      "aliases": [
+        "프로시저를 쓰는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-advantage.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of four things a stored procedure buys - it can change transparently to the application, it cuts network traffic and so improves response time, it is reusable across services, and it can keep sensitive data out of direct reach",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "software.deploy.transparency",
+        "db.sql.procedure-network-saving",
+        "db.sql.procedure-reuse",
+        "db.sql.procedure-access-control",
+        "db.sql.procedure-drawback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점",
+          "start_line": 56,
+          "end_line": 60
+        }
+      ]
+    },
+    {
+      "concept_id": "software.deploy.transparency",
+      "title": "투명한 변경",
+      "aliases": [
+        "transparent",
+        "쓰는 쪽을 건드리지 않는 변경"
+      ],
+      "canonical_path": "content/brain/knowledge/software/deploy/transparency.md",
+      "tags": [
+        "software",
+        "deploy"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property of a change that leaves everything using the changed thing untouched - which is what a stored procedure has over logic compiled into the application, where every edit means a rebuild and a rolling restart of servers that are taking traffic",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-advantage",
+        "db.sql.procedure-rename-problem",
+        "software.deploy.rolling-restart"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### transparent",
+          "start_line": 70,
+          "end_line": 74
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### transparent",
+          "start_line": 82,
+          "end_line": 83
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### transparent",
+          "start_line": 87,
+          "end_line": 87
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-network-saving",
+      "title": "프로시저와 네트워크 왕복",
+      "aliases": [
+        "쿼리마다 발생하는 네트워크 트래픽",
+        "호출 한 번으로 끝내기"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-network-saving.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single saving that follows from where the logic runs - the application server and the DB server are different machines, so logic in the application pays a network round trip per query, while logic in a procedure pays one round trip for the whole call",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-advantage",
+        "software.pattern.concurrent-request-dispatch",
+        "software.pattern.cache-aside"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### 응답속도 감소",
+          "start_line": 97,
+          "end_line": 98
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### 응답속도 감소",
+          "start_line": 106,
+          "end_line": 108
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-reuse",
+      "title": "프로시저의 재사용성",
+      "aliases": [
+        "여러 서비스에서 같은 로직",
+        "언어마다 다시 구현하지 않아도"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-reuse.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single advantage of logic living next to the data - three services written in Java, Python and Javascript would each have to implement the same rule, whereas a procedure is written once and called by all of them",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-advantage",
+        "db.sql.procedure-reuse-double-edge"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### 재사용 가능",
+          "start_line": 118,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### 재사용 가능",
+          "start_line": 122,
+          "end_line": 122
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-access-control",
+      "title": "프로시저를 통한 간접 접근",
+      "aliases": [
+        "민감 정보 직접 접근 차단",
+        "프로시저 권한만 부여"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-access-control.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement letting a developer build against data they may not read - the table stays out of reach and the procedure is what they are granted, so the work gets done without handing over resident registration or card numbers",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-advantage",
+        "db.security.sensitive-data-practice",
+        "db.sql.stored-procedure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### 정보 제한",
+          "start_line": 128,
+          "end_line": 130
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 장점 > ### 정보 제한",
+          "start_line": 133,
+          "end_line": 133
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-drawback",
+      "title": "프로시저의 단점",
+      "aliases": [
+        "프로시저를 피하는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-drawback.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of what a stored procedure costs - maintenance grows, adding a DB server is not a simple matter, the transparency is neither guaranteed nor always desirable, the reusability cuts both ways, and the access restriction is not airtight while blocking access slows development and customer service down",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-advantage",
+        "db.sql.procedure-maintenance-cost",
+        "db.ops.db-server-scaling",
+        "db.sql.procedure-rename-problem",
+        "db.sql.procedure-reuse-double-edge"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점",
+          "start_line": 139,
+          "end_line": 149
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-maintenance-cost",
+      "title": "두 곳에 나뉜 로직의 유지보수 비용",
+      "aliases": [
+        "소스코드와 프로시저 양쪽 버전 관리",
+        "프로시저 문법까지 알아야"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-maintenance-cost.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single cost of holding business logic in two tiers at once - both have to be read to follow one rule, both have to be versioned, the team has to know the procedure dialect on top of its own language, and a new feature means editing the procedure, editing the call site, and building and deploying anyway",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-drawback",
+        "software.architecture.three-tier",
+        "db.sql.stored-function-placement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### 유지보수 힘듦",
+          "start_line": 159,
+          "end_line": 166
+        }
+      ]
+    },
+    {
+      "concept_id": "db.ops.db-server-scaling",
+      "title": "DB 서버는 늘리기 어렵다",
+      "aliases": [
+        "데이터 복제 때문에",
+        "긴급 증설이 안 되는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/db/ops/db-server-scaling.md",
+      "tags": [
+        "db",
+        "ops"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single asymmetry that decides where logic should live - a new DB server is useless the moment it is added because the data still sits on the old one and copying it takes time, so loading the RDBMS with business logic leaves no way to answer a traffic spike",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-drawback",
+        "software.ops.app-server-scaling",
+        "db.basic.dbms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### DB서버 추가",
+          "start_line": 176,
+          "end_line": 176
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### DB서버 추가",
+          "start_line": 180,
+          "end_line": 187
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-rename-problem",
+      "title": "프로시저 이름을 바꿀 때",
+      "aliases": [
+        "새 이름으로 만들고 호출부를 옮긴 뒤 삭제",
+        "투명하지 않은 변경"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-rename-problem.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single case where the promised transparency disappears - renaming a procedure in place breaks every caller at once, so the change has to be done by creating the new name, moving call sites server by server with a restart each time, and only then dropping the old one, which is more work than the same change in source code",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.deploy.transparency",
+        "db.sql.procedure-drawback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### transparent 보장X",
+          "start_line": 197,
+          "end_line": 203
+        }
+      ]
+    },
+    {
+      "concept_id": "software.deploy.rolling-restart",
+      "title": "순차 재기동이 버그 피해를 줄인다",
+      "aliases": [
+        "하나 바꾸고 모니터링",
+        "배포 중 롤백",
+        "피해 범위 축소"
+      ],
+      "canonical_path": "content/brain/knowledge/software/deploy/rolling-restart.md",
+      "tags": [
+        "software",
+        "deploy"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single upside of the inconvenient deployment - replacing servers one at a time and watching between each means an unforeseen bug reaches only the fraction already switched and can be rolled back there, whereas a body swapped transparently in the data tier is live for all traffic at once and rolling back does not undo what it already did",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.deploy.transparency",
+        "db.sql.procedure-drawback",
+        "software.ops.app-server-scaling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### transparent 항상좋음?",
+          "start_line": 213,
+          "end_line": 215
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점 > ### 버그 피해 최소화",
+          "start_line": 312,
+          "end_line": 320
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-reuse-double-edge",
+      "title": "재사용은 양날의 검",
+      "aliases": [
+        "통제되지 않는 공유 사용",
+        "한 서비스의 폭주가 전체에 영향"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-reuse-double-edge.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single risk that comes with the same procedure being shared - one service flooding the DBMS drags down every other service using it, and there is nowhere to throttle just the offender",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-reuse",
+        "software.architecture.data-service",
+        "db.sql.procedure-drawback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### 양날의 검 재사용",
+          "start_line": 225,
+          "end_line": 226
+        }
+      ]
+    },
+    {
+      "concept_id": "software.architecture.data-service",
+      "title": "DB 앞단의 데이터 서비스",
+      "aliases": [
+        "Data Service",
+        "데이터 전담 서비스",
+        "서비스별 호출 차단"
+      ],
+      "canonical_path": "content/brain/knowledge/software/architecture/data-service.md",
+      "tags": [
+        "software",
+        "architecture"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single service placed in front of the database that every other service goes through over an interface such as a RESTful API, which gives one place to cut off a single caller that is flooding the system while the rest keep working - and which, once it exists, removes the reason to keep the logic in a procedure at all, since only one service is calling it",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-reuse-double-edge",
+        "software.api.api",
+        "software.architecture.three-tier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### 양날의 검 재사용",
+          "start_line": 230,
+          "end_line": 236
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### 양날의 검 재사용",
+          "start_line": 240,
+          "end_line": 246
+        }
+      ]
+    },
+    {
+      "concept_id": "db.security.sensitive-data-practice",
+      "title": "민감 정보를 다루는 방법",
+      "aliases": [
+        "권한 부여",
+        "암호화 저장",
+        "보안서약서"
+      ],
+      "canonical_path": "content/brain/knowledge/db/security/sensitive-data-practice.md",
+      "tags": [
+        "db",
+        "security"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single correction to the idea that a procedure hides sensitive data - a return value hands it over anyway, and locking the tables slows development and customer service down, so the real measures are granting table rights only to those responsible, encrypting sensitive columns, and backing it with policy such as a security undertaking",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.procedure-access-control",
+        "db.sql.procedure-drawback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### 완벽한 정보제한 불가",
+          "start_line": 252,
+          "end_line": 260
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### 완벽한 정보제한 불가",
+          "start_line": 264,
+          "end_line": 267
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.procedure-language-limitation",
+      "title": "프로시저 언어의 한계",
+      "aliases": [
+        "가독성이 떨어짐",
+        "디버깅이 어려움",
+        "복잡한 코드에 부적합"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/procedure-language-limitation.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of limits in the medium itself - a procedure is a poor place to write complex or flexible code, reads worse and debugs harder than the general-purpose languages available today",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-drawback",
+        "db.sql.stored-procedure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## 프로시저 단점 > ### 이외의 단점",
+          "start_line": 273,
+          "end_line": 277
+        }
+      ]
+    },
+    {
+      "concept_id": "software.ops.app-server-scaling",
+      "title": "애플리케이션 서버는 늘리기 쉽다",
+      "aliases": [
+        "오토 스케일링",
+        "데이터를 갖고 있지 않으니까"
+      ],
+      "canonical_path": "content/brain/knowledge/software/ops/app-server-scaling.md",
+      "tags": [
+        "software",
+        "ops"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the logic tier holding no data - a new application server can simply be added, and with cloud auto scaling it is nearly free to do, so CPU and memory pressure spreads out easily",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.ops.db-server-scaling",
+        "software.architecture.three-tier",
+        "software.deploy.rolling-restart"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점 > ### 서버추가 쉬움",
+          "start_line": 293,
+          "end_line": 293
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점 > ### 서버추가 쉬움",
+          "start_line": 297,
+          "end_line": 302
+        }
+      ]
+    },
+    {
+      "concept_id": "software.pattern.concurrent-request-dispatch",
+      "title": "순서가 없는 요청은 동시에 보낸다",
+      "aliases": [
+        "스레드 풀",
+        "Thread Pool",
+        "Non-blocking IO"
+      ],
+      "canonical_path": "content/brain/knowledge/software/pattern/concurrent-request-dispatch.md",
+      "tags": [
+        "software",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way the logic tier wins back the response time a procedure would have saved - queries that do not depend on each other are sent to the DB server at the same time, using a thread pool or non-blocking IO, instead of one after another",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-network-saving",
+        "software.pattern.cache-aside",
+        "cs.concurrency.concurrent-vs-parallel"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점 > ### 응답 속도 감소",
+          "start_line": 330,
+          "end_line": 336
+        }
+      ]
+    },
+    {
+      "concept_id": "software.pattern.cache-aside",
+      "title": "캐시를 두고 조회하기",
+      "aliases": [
+        "cache",
+        "Redis",
+        "key-value와 life time",
+        "캐시 먼저 확인"
+      ],
+      "canonical_path": "content/brain/knowledge/software/pattern/cache-aside.md",
+      "tags": [
+        "software",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern for queries that must run in order - look in the cache first and return if it is there, otherwise run the queries and put the computed answer in the cache under a key with a life time, so repeat requests for the same key make one round trip instead of several and the database is spared the load",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "software-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.procedure-network-saving",
+        "software.pattern.concurrent-request-dispatch",
+        "software.pattern.design-pattern"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점 > ### 응답 속도 감소",
+          "start_line": 349,
+          "end_line": 358
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture12.md",
+          "source_sha256": "46e5d572c82dd1ba913fed95133109f972343950c0bad4f89d85a3338644f10b",
+          "heading": "## Logic tier 장점 > ### 응답 속도 감소",
+          "start_line": 363,
+          "end_line": 364
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger",
+      "title": "트리거",
+      "aliases": [
+        "Trigger",
+        "CREATE TRIGGER",
+        "이벤트로 촉발되는 프로시저"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single procedure that runs by itself when an event happens in the database - an insert, update or delete on the data - which suits recording change history or keeping a statistic current, and which is best kept as a last resort because of what it costs to maintain",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.stored-procedure",
+        "db.sql.delimiter",
+        "db.sql.trigger-timing",
+        "db.sql.trigger-caution"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger",
+          "start_line": 20,
+          "end_line": 25
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-timing",
+      "title": "트리거의 시점과 단위",
+      "aliases": [
+        "BEFORE UPDATE",
+        "AFTER INSERT",
+        "FOR EACH ROW",
+        "ON 테이블"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-timing.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single declaration of when a trigger fires and over what - the event it watches, BEFORE or AFTER that event, the table it is attached to with ON, and FOR EACH ROW to run once per affected row - with the body between BEGIN and END being the action taken",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.trigger",
+        "db.sql.trigger-old-new",
+        "db.sql.trigger-for-each-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger > ### 예시 - OLD 키워드",
+          "start_line": 59,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-old-new",
+      "title": "OLD와 NEW 키워드",
+      "aliases": [
+        "OLD",
+        "NEW",
+        "변경 전 튜플",
+        "변경 후 튜플"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-old-new.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of names a trigger body uses to reach the tuple the event concerns - OLD for the tuple as it was before an update or the one just deleted, NEW for the tuple just inserted or the one as it is after an update",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.trigger-timing",
+        "db.sql.trigger",
+        "db.relational.tuple"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger > ### 예시 - OLD 키워드",
+          "start_line": 64,
+          "end_line": 68
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger > ### 예시 - NEW 키워드",
+          "start_line": 97,
+          "end_line": 101
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-multi-event",
+      "title": "여러 이벤트를 한 트리거로",
+      "aliases": [
+        "insert update delete를 한 번에 감지",
+        "MySQL은 불가능"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-multi-event.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trigger set to watch insert, update and delete together, which is what keeping a derived figure such as an average salary correct actually requires - and which MySQL does not support, so the demonstration is done on PostgreSQL",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.trigger",
+        "db.sql.trigger-timing",
+        "db.language.sql"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger > ### 예제 - 한 번에 감지",
+          "start_line": 119,
+          "end_line": 123
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-for-each-statement",
+      "title": "FOR EACH STATEMENT",
+      "aliases": [
+        "행 단위가 아닌 문장 단위",
+        "트리거가 여러 번 실행되는 문제"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-for-each-statement.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single alternative to firing per row - one UPDATE touching five tuples runs a FOR EACH ROW trigger five times, which is wasteful when the action does not depend on the individual row, so FOR EACH STATEMENT runs it once per statement instead, though MySQL does not offer it",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.trigger-timing",
+        "db.sql.trigger-caution",
+        "db.sql.trigger"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger > ### 예제 - 한 번에 감지",
+          "start_line": 129,
+          "end_line": 136
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger > ### 예제 - 한 번에 감지",
+          "start_line": 140,
+          "end_line": 142
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-when",
+      "title": "트리거의 WHEN 조건",
+      "aliases": [
+        "WHEN",
+        "트리거 발생 조건 지정"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-when.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single clause narrowing when a trigger actually fires beyond the event itself, which MySQL again does not support",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "db.sql.trigger-timing",
+        "db.sql.trigger"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger > ### 예제 - 조건 WHEN",
+          "start_line": 148,
+          "end_line": 157
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-caution",
+      "title": "트리거 사용 시 주의사항",
+      "aliases": [
+        "문서 정리가 중요",
+        "DB에 부담"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-caution.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single list of what makes triggers hard to live with - they are not visible, too many of them become impossible to follow, heavy use burdens the DB and slows responses, debugging is hard, and documentation therefore matters more than usual",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.trigger",
+        "db.sql.trigger-invisibility",
+        "db.sql.trigger-cascade"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger 주의사항",
+          "start_line": 163,
+          "end_line": 167
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-invisibility",
+      "title": "트리거는 소스 코드에 보이지 않는다",
+      "aliases": [
+        "소스 코드로는 발견할 수 없는 로직",
+        "호출부가 아예 없음"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-invisibility.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason a trigger is worse than a procedure to work with - a procedure at least has a call site in the source, while a trigger is registered in the RDBMS and fired by an event, so nothing in the application says it exists",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.sql.trigger-caution",
+        "db.sql.stored-procedure",
+        "db.sql.procedure-maintenance-cost"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger 주의사항 > ### 가시적이지 않음",
+          "start_line": 174,
+          "end_line": 181
+        }
+      ]
+    },
+    {
+      "concept_id": "db.sql.trigger-cascade",
+      "title": "트리거가 트리거를 부른다",
+      "aliases": [
+        "연속적인 트리거",
+        "트리거 연쇄"
+      ],
+      "canonical_path": "content/brain/knowledge/db/sql/trigger-cascade.md",
+      "tags": [
+        "db",
+        "sql"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single failure mode of overusing triggers - one fires another and that fires another, until what a single statement sets off can no longer be worked out",
+      "pilot_strata": [
+        "lecture-batch-34",
+        "db/easy-db",
+        "db-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "db.sql.trigger-caution",
+        "db.sql.trigger"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture13.md",
+          "source_sha256": "8d306bebed694e51b6fb53d96d7557e1dd94bc0265fe06fcaa929db17712f297",
+          "heading": "## Trigger 주의사항 > ### 지나친 사용",
+          "start_line": 189,
+          "end_line": 189
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

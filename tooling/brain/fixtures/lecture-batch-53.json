@@ -1,0 +1,1147 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-53",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-52",
+    "applied_state": "1076 approved knowledge concepts after lecture-batch-52 closed the easy-os series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/network/free-dev/network-basic/section0.md",
+        "source_sha256": "5dbf872623eed3d9b35b041ad877bbc36381b4de4d18a517f4abef1569a4466e"
+      },
+      {
+        "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+        "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad"
+      },
+      {
+        "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+        "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371"
+      },
+      {
+        "path": "content/brain/lectures/network/free-dev/network-basic/section3.md",
+        "source_sha256": "e56516c54aab5ca6ca4001ae0769a4ec5f2245a016d04bcaa82c1db59e170736"
+      },
+      {
+        "path": "content/brain/lectures/network/free-dev/network-basic/intro.md",
+        "source_sha256": "0583e4feddb85a75a16b0ef183b22a905e92fe5133428b18206afcb0c7d03c5d"
+      }
+    ],
+    "line_range": "section0 L12-L60, section1 L12-L161, section2 L12-L119, section3 L12-L102, intro whole",
+    "series": "인프런 널널한 개발자 - 네트워크 기초 section 0~3"
+  },
+  "overlap_analysis": {
+    "finding": "The kim-spring lane already built out cs.network from a course that starts at IP and moves up to HTTP. This one starts below that, at what a layer diagram means and how user code reaches the stack at all, and goes sideways into the hardware - the card, the frame, the switching tiers.",
+    "disposition": "Five applied concepts gain edges rather than content, since what they assert is unchanged. Everything here is new: the layering argument, the socket, the identifiers per layer, the host taxonomy, the switching tiers, and the packet's journey."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All five update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "alias_avoidance_note": {
+    "keys": [
+      "캡슐화",
+      "BroadCast"
+    ],
+    "incumbents": [
+      "java.oop.encapsulation",
+      "java.thread.synchronized-list"
+    ],
+    "disposition": "The network wrapping concept is titled 네트워크 캡슐화 and the broadcast concept avoids the mixed-case spelling the java concurrency note holds, since both bare terms already belong to unrelated concepts in the java namespace."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "section0 L8, L35-L38; section1 L8, L57-L60 partial, L128, L133, L140, L150; section2 L8, L110; section3 L8, L81-L86, L102; intro whole",
+        "reason_code": "course-link-illustration-external-reference-or-index",
+        "detail": "The course link on every file, the three-step conversation illustration whose point is stated in the cited line that follows it, the outbound glossary links, the note pointing back at an earlier figure, the recap callout repeating what section0 already said about the socket, the final heading with no body, and the course index."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across sections 0 to 3 contributes at least one cited locator, except section3's closing TCP/IP heading which has no body. intro contributes none, being an index."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 17959,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 194,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 16,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 16,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 22,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "series_completion_note": "This closes free-dev - the notes cover sections 0 through 3 and stop where the fourth layer would begin.",
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 22,
+  "candidates": [
+    {
+      "concept_id": "cs.network.protocol-stack",
+      "title": "인터넷 프로토콜 4계층",
+      "aliases": [
+        "애플리케이션 계층",
+        "전송 계층",
+        "인터넷 계층",
+        "네트워크 인터페이스 계층"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/protocol-stack.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single stack of four layers - application with HTTP and FTP, transport with TCP and UDP, internet with IP, and the network interface with the card and its driver - through which data is handed down from a socket library and wrapped once per layer, in TCP information, then an IP packet, then an Ethernet frame",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain",
+        "lecture-batch-53",
+        "network/free-dev"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.tcp",
+        "cs.network.ip-packet",
+        "cs.network.browser-request-flow",
+        "cs.network.layered-structure",
+        "cs.network.layer-identifier",
+        "cs.network.network-encapsulation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 62,
+          "end_line": 67
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 71,
+          "end_line": 78
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 82,
+          "end_line": 86
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.ip-and-port",
+      "title": "IP 주소와 포트",
+      "aliases": [
+        "Well Known Port",
+        "Registered Port",
+        "Dynamic Port"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/ip-and-port.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single addressing pair in which the IP identifies the machine and the port identifies which server on it, the port range split into the well-known band assigned by the registry, the registered band for organizations, and the dynamic band the operating system hands out",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "lecture-batch-53",
+        "network/free-dev"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.dns",
+        "cs.network.loopback",
+        "java.net.socket",
+        "cs.network.ip-packet",
+        "cs.network.ip-limitation",
+        "cs.network.url-structure",
+        "cs.network.layer-identifier",
+        "cs.network.ip-address-structure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 기초 용어",
+          "start_line": 11,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 120,
+          "end_line": 122
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 126,
+          "end_line": 126
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 130,
+          "end_line": 132
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 136,
+          "end_line": 143
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.tcp",
+      "title": "TCP",
+      "aliases": [
+        "Transmission Control Protocol",
+        "전송 제어 프로토콜",
+        "3 way handshake",
+        "SYN ACK"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/tcp.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single transport protocol that fixes what IP leaves open - it opens a connection first through the three way handshake, which is logical rather than physical, and from there guarantees that data arrived and that it arrived in order",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain",
+        "lecture-batch-53",
+        "network/free-dev"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-limitation",
+        "cs.network.udp",
+        "cs.network.protocol-stack",
+        "cs.network.connectionless",
+        "cs.network.socket",
+        "cs.network.segmentation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 90,
+          "end_line": 99
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.udp",
+      "title": "UDP",
+      "aliases": [
+        "User Datagram Protocol",
+        "사용자 데이터그램 프로토콜",
+        "하얀 도화지"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/udp.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single transport protocol that is nearly IP itself - port and checksum added, no handshake, no delivery guarantee, no ordering - which is exactly why it can be tuned when TCP cannot, TCP being too entrenched to change, and why HTTP/3 was built on it",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain",
+        "lecture-batch-53",
+        "network/free-dev"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.tcp",
+        "cs.network.ip-packet",
+        "cs.network.http-history",
+        "cs.network.segmentation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 103,
+          "end_line": 114
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.ip-packet",
+      "title": "IP 패킷",
+      "aliases": [
+        "Internet Protocol",
+        "IP Packet",
+        "출발지 IP와 목적지 IP"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/ip-packet.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single unit the Internet Protocol delivers in - the message is not sent as it is but wrapped in a packet carrying the source and destination addresses, which is what lets it be handed to a given IP address at all",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain",
+        "lecture-batch-53",
+        "network/free-dev"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "cs.network.ip-limitation",
+        "cs.network.protocol-stack",
+        "cs.network.l3-packet-mtu",
+        "cs.network.packet-lifecycle"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### IP(인터넷 프로토콜)",
+          "start_line": 25,
+          "end_line": 28
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### IP(인터넷 프로토콜)",
+          "start_line": 32,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.layered-structure",
+      "title": "계층 구조로 그리는 이유",
+      "aliases": [
+        "Layered 구조",
+        "상위는 하위에 의존한다",
+        "존립의 의존"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/layered-structure.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason so much of the field is drawn in stacked layers - the drawing is there to show how the parts relate, and what it shows is dependence, an upper layer relying on a lower one for what it does and often for existing at all, which is why the physical layer has to be there before anything above it",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.protocol-stack",
+        "cs.network.protocol",
+        "cs.network.layer-identifier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section0.md",
+          "source_sha256": "5dbf872623eed3d9b35b041ad877bbc36381b4de4d18a517f4abef1569a4466e",
+          "heading": "### Layer와 Layered 구조",
+          "start_line": 14,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section0.md",
+          "source_sha256": "5dbf872623eed3d9b35b041ad877bbc36381b4de4d18a517f4abef1569a4466e",
+          "heading": "### Layer와 Layered 구조",
+          "start_line": 23,
+          "end_line": 25
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.protocol",
+      "title": "프로토콜은 협의의 결과",
+      "aliases": [
+        "네트워크는 관계 네트워킹은 상호작용",
+        "규칙을 정하는 과정"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/protocol.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reading of the two words - the network being the relation and networking the interaction over it - illustrated by what two people must agree on before speaking: that sound carries through air over a short distance, that speech is the means, and that the language is one both know; the agreement itself is what a protocol is",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.layered-structure",
+        "cs.network.protocol-stack",
+        "cs.network.http-protocol"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section0.md",
+          "source_sha256": "5dbf872623eed3d9b35b041ad877bbc36381b4de4d18a517f4abef1569a4466e",
+          "heading": "### 네트워크와 네트워킹",
+          "start_line": 33,
+          "end_line": 42
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.socket",
+      "title": "소켓",
+      "aliases": [
+        "TCP/IP를 추상화한 인터페이스",
+        "소켓도 파일이다",
+        "NIC 드라이버"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/socket.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface by which user code reaches the network stack living in the kernel - the driver controls the card, the protocols are implemented at kernel level, and what user mode is given is a file, which for this particular abstraction is called a socket",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.protocol-stack",
+        "cs.os.kernel-mode",
+        "cs.network.tcp",
+        "cs.network.segmentation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section0.md",
+          "source_sha256": "5dbf872623eed3d9b35b041ad877bbc36381b4de4d18a517f4abef1569a4466e",
+          "heading": "### User mode와 Kernel mode",
+          "start_line": 54,
+          "end_line": 58
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.virtualization",
+      "title": "가상화",
+      "aliases": [
+        "하드웨어를 소프트웨어로 구현하기",
+        "Virtual Machine",
+        "논리적인 것은 가상"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/virtualization.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique of implementing in software what exists in hardware, which is what the word virtual marks throughout the field - a processor built in software being a virtual machine",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.lan-wan",
+        "cs.architecture.cpu-memory-io",
+        "cs.network.l3-switch-vs-router"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### OSI 7 Layer, 식별자",
+          "start_line": 18,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.layer-identifier",
+      "title": "계층별 식별자",
+      "aliases": [
+        "MAC 주소 48비트",
+        "IP 주소 32비트",
+        "Port 번호 16비트",
+        "Frame Packet Segment"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/layer-identifier.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single identifier per layer and the unit it rides in - the card's hardware address in the frame at the second layer, the host's address in the packet at the third, and the port number in the segment at the fourth, where the port means a physical socket to the hardware, a service to the network, and a process at the endpoint",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "cs.network.protocol-stack",
+        "cs.network.nic-frame",
+        "cs.network.switching"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### OSI 7 Layer, 식별자",
+          "start_line": 26,
+          "end_line": 27
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### OSI 7 Layer, 식별자",
+          "start_line": 32,
+          "end_line": 41
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### OSI 7 Layer, 식별자",
+          "start_line": 45,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.host",
+      "title": "호스트",
+      "aliases": [
+        "Computer + Network",
+        "Switch와 End-point",
+        "인프라와 그것을 쓰는 주체"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/host.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single word for a computer attached to the network, split into the ones that constitute the network itself as infrastructure - routers and the security and aggregation switches - and the ones that merely use it, being clients, servers and peers",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.switching",
+        "cs.network.client-server-architecture",
+        "cs.network.layer-identifier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### Host",
+          "start_line": 61,
+          "end_line": 62
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### Host",
+          "start_line": 68,
+          "end_line": 74
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.switching",
+      "title": "스위칭",
+      "aliases": [
+        "경로를 선택하는 것",
+        "L2 L3 L4 L7 스위치",
+        "Metric 값"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/switching.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single act of choosing which way a unit of data leaves a junction, the layer of the switch being named after which identifier it reads to decide - the card address, the host address, the port or the application data - and the choice among several ways being settled by a cost figure whose unit depends on the protocol",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.layer-identifier",
+        "cs.network.host",
+        "cs.network.l3-switch-vs-router",
+        "cs.network.l2-switch"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### Switch",
+          "start_line": 86,
+          "end_line": 89
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### Switch",
+          "start_line": 95,
+          "end_line": 99
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### Switch",
+          "start_line": 103,
+          "end_line": 106
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### Switch",
+          "start_line": 110,
+          "end_line": 111
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### Switch",
+          "start_line": 115,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.l3-switch-vs-router",
+      "title": "L3 스위치와 라우터의 차이",
+      "aliases": [
+        "하드웨어 기반 라우팅",
+        "ASIC chip",
+        "첫 패킷만 라우터에게 묻는다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/l3-switch-vs-router.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single difference of implementation rather than of function - both choose a route by host address, but one does it in a dedicated chip and the other in software on a processor, so the switch is faster and has more ports while the router supports more features and interfaces; the switch asks the router only for the first packet of a flow and forwards the rest itself",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.switching",
+        "cs.network.l2-switch",
+        "cs.network.virtualization"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### L3 switch / Router",
+          "start_line": 126,
+          "end_line": 129
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### L3 switch / Router",
+          "start_line": 139,
+          "end_line": 142
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### L3 switch / Router",
+          "start_line": 148,
+          "end_line": 152
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section1.md",
+          "source_sha256": "82adbe507029871fedd29a5ea109e0ec2cbc29caf7c7af9a63c3534d4af77dad",
+          "heading": "### L3 switch / Router",
+          "start_line": 154,
+          "end_line": 161
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.nic-frame",
+      "title": "NIC와 프레임",
+      "aliases": [
+        "LAN 카드",
+        "1514 bytes",
+        "Jumbo Frame",
+        "Gbps와 GBps"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/nic-frame.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single piece of hardware carrying the address the second layer identifies it by, and the unit it sends - a frame of about fifteen hundred bytes, or around ten kilobytes in the jumbo form - with the caution that a link speed is quoted in bits per second and not bytes",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.layer-identifier",
+        "cs.network.l3-packet-mtu",
+        "cs.data.bit-and-byte",
+        "cs.network.l2-switch"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### NIC, Frame, MAC 주소",
+          "start_line": 18,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### NIC, Frame, MAC 주소",
+          "start_line": 26,
+          "end_line": 28
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### NIC, Frame, MAC 주소",
+          "start_line": 32,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.l2-switch",
+      "title": "L2 스위치",
+      "aliases": [
+        "Access switch와 Distribution switch",
+        "Link-up과 Link-down",
+        "uplink",
+        "VLAN"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/l2-switch.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single tier of switching by card address, split into the one endpoints plug directly into and the one those switches themselves hang off - the latter usually offering virtual segmentation of the local network and costing an order of magnitude more - where each socket is a port, a connected cable is a link that is up, and the way out to the router is the uplink",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.switching",
+        "cs.network.nic-frame",
+        "cs.network.l3-switch-vs-router",
+        "cs.network.lan-wan"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### L2 Switch",
+          "start_line": 48,
+          "end_line": 50
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### L2 Switch",
+          "start_line": 54,
+          "end_line": 58
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### L2 Switch",
+          "start_line": 62,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.broadcast",
+      "title": "브로드캐스트",
+      "aliases": [
+        "모든 호스트에게 전송",
+        "unicast와의 대비",
+        "맨 마지막 주소"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/broadcast.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of sending that reaches every host on the network at once, during which nobody else can transmit - which is why it is kept to a minimum, against the quiet one-to-one alternative - addressed by a reserved address that is the last one in the range, all bits set in the card address and the host part all ones in the network address",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.layer-identifier",
+        "cs.network.ip-address-structure",
+        "cs.network.lan-wan"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### LAN, WAN, Broadcast",
+          "start_line": 78,
+          "end_line": 82
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### LAN, WAN, Broadcast",
+          "start_line": 86,
+          "end_line": 89
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### LAN, WAN, Broadcast",
+          "start_line": 93,
+          "end_line": 104
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.lan-wan",
+      "title": "물리 네트워크 위의 논리 네트워크",
+      "aliases": [
+        "LAN과 WAN",
+        "L3부터는 논리적"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/lan-wan.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to hold the two apart - the physical network is whether a cable is plugged in or a signal actually reaches, and everything from the third layer up exists in software on top of that",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.virtualization",
+        "cs.network.layered-structure",
+        "cs.network.l2-switch"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section2.md",
+          "source_sha256": "b21bacf926762a18b6d8110ab6b34b48f2020f1d8f86b377c5d1c7863c4a1371",
+          "heading": "### LAN, WAN, Broadcast",
+          "start_line": 114,
+          "end_line": 119
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.ip-address-structure",
+      "title": "IP 주소의 구조",
+      "aliases": [
+        "Network ID와 Host ID",
+        "물류센터까지 온 다음 집 주소"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/ip-address-structure.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single split of the thirty-two bits into a part naming the network and a part naming the host within it, which is what makes delivery two steps - reach the network first, then find the machine on it",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "cs.network.broadcast",
+        "cs.network.switching",
+        "cs.network.layer-identifier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section3.md",
+          "source_sha256": "e56516c54aab5ca6ca4001ae0769a4ec5f2245a016d04bcaa82c1db59e170736",
+          "heading": "### IPv4 주소의 기본구조",
+          "start_line": 18,
+          "end_line": 26
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.l3-packet-mtu",
+      "title": "패킷의 크기와 MTU",
+      "aliases": [
+        "Header와 Payload",
+        "Maximum Transmission Unit",
+        "1500 bytes"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/l3-packet-mtu.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single limit on how much a packet may carry - a header holding above all the source and destination, a payload holding the rest, and a maximum of about fifteen hundred bytes, past which the data has to be broken up",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-packet",
+        "cs.network.nic-frame",
+        "cs.network.segmentation",
+        "cs.network.network-encapsulation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section3.md",
+          "source_sha256": "e56516c54aab5ca6ca4001ae0769a4ec5f2245a016d04bcaa82c1db59e170736",
+          "heading": "### L3 Packet",
+          "start_line": 34,
+          "end_line": 39
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.network-encapsulation",
+      "title": "네트워크 캡슐화",
+      "aliases": [
+        "택배 박스 포장",
+        "상위 계층 전체가 하위의 payload"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/network-encapsulation.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single relation between the layers' units - what one layer produces entire becomes the payload of the layer below, wrapped and unreadable until unwrapped, like a parcel packed into a larger one",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.protocol-stack",
+        "cs.network.l3-packet-mtu",
+        "cs.network.layered-structure",
+        "cs.network.packet-lifecycle"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section3.md",
+          "source_sha256": "e56516c54aab5ca6ca4001ae0769a4ec5f2245a016d04bcaa82c1db59e170736",
+          "heading": "### Encapsulation",
+          "start_line": 47,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.packet-lifecycle",
+      "title": "패킷의 생성과 전달과 소멸",
+      "aliases": [
+        "택배 비유",
+        "Gateway가 라우팅한다",
+        "포트로 프로세스를 고른다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/packet-lifecycle.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single journey told twice, as a parcel and as data - packed at the sender, out through the door which is the interface, handed to the courier which is the gateway, sorted and routed through the system, arriving at the address, and given to the named recipient which is the port identifying the process",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.network-encapsulation",
+        "cs.network.switching",
+        "cs.network.layer-identifier",
+        "cs.network.browser-request-flow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section3.md",
+          "source_sha256": "e56516c54aab5ca6ca4001ae0769a4ec5f2245a016d04bcaa82c1db59e170736",
+          "heading": "### 패킷의 생성, 전달, 소멸",
+          "start_line": 59,
+          "end_line": 65
+        },
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section3.md",
+          "source_sha256": "e56516c54aab5ca6ca4001ae0769a4ec5f2245a016d04bcaa82c1db59e170736",
+          "heading": "### 패킷의 생성, 전달, 소멸",
+          "start_line": 69,
+          "end_line": 75
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.segmentation",
+      "title": "세그멘테이션",
+      "aliases": [
+        "Stream을 잘라 Segment로",
+        "MSS",
+        "UDP는 Datagram"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/segmentation.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single cutting up that has to happen between the socket and the network - what is written to a socket is a stream with no size of its own, and it is divided into segments no larger than the maximum the layer allows, the datagram being the equivalent unit under the connectionless protocol",
+      "pilot_strata": [
+        "lecture-batch-53",
+        "network/free-dev",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.socket",
+        "cs.network.tcp",
+        "cs.network.udp",
+        "cs.network.l3-packet-mtu"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/network/free-dev/network-basic/section3.md",
+          "source_sha256": "e56516c54aab5ca6ca4001ae0769a4ec5f2245a016d04bcaa82c1db59e170736",
+          "heading": "### 계층별 데이터 단위",
+          "start_line": 94,
+          "end_line": 98
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

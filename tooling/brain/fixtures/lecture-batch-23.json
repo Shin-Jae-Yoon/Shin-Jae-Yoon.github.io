@@ -1,0 +1,1618 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-23",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-22",
+    "applied_state": "509 approved knowledge concepts after lecture-batch-22 completed fun-java04."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+        "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0"
+      }
+    ],
+    "line_range": "L11-L1189 (whole file)",
+    "series": "즐거운 자바 (fun-java) 5/11 — 객체지향 3/3"
+  },
+  "overlap_analysis": {
+    "finding": "Constructors, abstract classes, interfaces, template method, final and the access modifiers are all applied from the do-it-java book, so 17 of 30 candidates are updates.",
+    "disposition": "The 13 creates are what the book did not carry: the immutable object, super and the compile-time super() insertion, the missing-default-constructor failure, generalizing through a parent-typed array, the final class, interface design as naming, the implied interface member modifiers, the factory method pattern, reflection, the anonymous class, the lambda interface and string comparison."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7, L23-76 partial, L117-172 partial, L275-302 partial, L392-421 partial, L479-559 partial, L700-760 partial, L723-802, L910-1003 partial, L1092-1161",
+        "reason_code": "code-listing-caption-worked-example-or-carried-by-owner",
+        "detail": "The course link, code-listing captions, the lotto exercise walkthrough and IDE instructions whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in fun-java05 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 212,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 27,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 30,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 30,
+  "candidates": [
+    {
+      "concept_id": "java.oop.constructor",
+      "title": "생성자",
+      "aliases": [
+        "Constructor",
+        "디폴트 생성자",
+        "Default Constructor"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/constructor.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java instance-initialization mechanism including implicit and explicit constructors",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.this",
+        "java.oop.constructor-chaining",
+        "java.oop.constructor-overloading",
+        "java.oop.instance",
+        "java.keyword.super",
+        "java.oop.immutable-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자",
+          "start_line": 515,
+          "end_line": 567
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자 > ### 생성자 만들기",
+          "start_line": 568,
+          "end_line": 637
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자",
+          "start_line": 13,
+          "end_line": 19
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자",
+          "start_line": 32,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.constructor-overloading",
+      "title": "생성자 오버로딩",
+      "aliases": [
+        "Constructor Overloading",
+        "생성자 오버로드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/constructor-overloading.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single same-class mechanism providing constructors with different parameter lists",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.constructor",
+        "java.oop.constructor-chaining"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 생성자 > ### 생성자 오버로드",
+          "start_line": 638,
+          "end_line": 669
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### this 생성자",
+          "start_line": 189,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.constructor-chaining",
+      "title": "생성자 체이닝",
+      "aliases": [
+        "Constructor Chaining",
+        "this 생성자 호출"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/constructor-chaining.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single same-class constructor delegation mechanism using this",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.this",
+        "java.oop.constructor",
+        "java.oop.constructor-overloading",
+        "java.keyword.super"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## this 예약어 > ### 생성자에서 다른 생성자를 호출하는 this",
+          "start_line": 67,
+          "end_line": 109
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### this 생성자",
+          "start_line": 206,
+          "end_line": 211
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.access-modifier",
+      "title": "접근 제어자",
+      "aliases": [
+        "Access Modifier",
+        "접근 지정자"
+      ],
+      "canonical_path": "content/brain/knowledge/java/keyword/access-modifier.md",
+      "tags": [
+        "java",
+        "keyword"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java declaration-access control mechanism",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap05",
+        "lecture-batch-20",
+        "pl/fun-java",
+        "lecture-batch-23"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.accessor-method",
+        "java.oop.information-hiding",
+        "java.pattern.singleton",
+        "java.oop.private-constructor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap05.md",
+          "source_sha256": "ec44b604286df987252de7fbcd47123902fd2d9708adc86214cbe15c93667351",
+          "heading": "# Chapter 05 - 클래스와 객체 (1) > ## 정보 은닉 > ### 접근 제어자",
+          "start_line": 750,
+          "end_line": 798
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## 클래스 > ### 클래스 선언 방법",
+          "start_line": 77,
+          "end_line": 77
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 템플릿 메서드 패턴, protected",
+          "start_line": 529,
+          "end_line": 530
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 접근제한자",
+          "start_line": 573,
+          "end_line": 578
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstract-class",
+      "title": "추상 클래스",
+      "aliases": [
+        "Abstract Class",
+        "추상클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstract-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented class-abstraction mechanism",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-method",
+        "java.pattern.template-method",
+        "java.oop.inheritance",
+        "java.oop.interface",
+        "java.oop.abstract-class-array",
+        "java.oop.final-class",
+        "java.oop.anonymous-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스",
+          "start_line": 17,
+          "end_line": 26
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스란?",
+          "start_line": 27,
+          "end_line": 36
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스 구현",
+          "start_line": 83,
+          "end_line": 226
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스를 만드는 이유",
+          "start_line": 227,
+          "end_line": 269
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스",
+          "start_line": 335,
+          "end_line": 343
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstract-method",
+      "title": "추상 메서드",
+      "aliases": [
+        "Abstract Method",
+        "abstract 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstract-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single method-declaration-without-implementation mechanism",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.oop.interface",
+        "java.oop.method-overriding"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 추상 클래스 > ### 추상 클래스란?",
+          "start_line": 45,
+          "end_line": 79
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스",
+          "start_line": 357,
+          "end_line": 358
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스",
+          "start_line": 387,
+          "end_line": 388
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.upcasting",
+      "title": "부모 타입으로 자식 참조",
+      "aliases": [
+        "Upcasting",
+        "업캐스팅",
+        "참조 타입과 인스턴스 타입"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/upcasting.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single assignment of a child instance to a parent-typed reference, which narrows the callable methods to the parent's and therefore tells a reader from the declaration alone what will be used - and which is why a parameter typed Object accepts anything at all",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-23"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.is-a-relation",
+        "java.oop.downcasting",
+        "java.oop.object-class",
+        "java.oop.polymorphism",
+        "java.oop.abstract-class-array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 부모 타입으로 자식 참조",
+          "start_line": 525,
+          "end_line": 541
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드 > ### toString()",
+          "start_line": 779,
+          "end_line": 789
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 부모 타입으로 자식 참조",
+          "start_line": 421,
+          "end_line": 422
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.template-method",
+      "title": "템플릿 메서드",
+      "aliases": [
+        "Template Method",
+        "템플릿 메서드 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/template-method.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single design pattern built on abstract classes",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.keyword.final",
+        "java.oop.polymorphism",
+        "java.keyword.access-modifier"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 > ### 추상 클래스와 템플릿 메서드",
+          "start_line": 272,
+          "end_line": 396
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 > ### 템플릿 메서드 역할",
+          "start_line": 397,
+          "end_line": 410
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 응용하기",
+          "start_line": 411,
+          "end_line": 425
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## 템플릿 메서드 응용하기 > ### 클래스 설계하기",
+          "start_line": 426,
+          "end_line": 651
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 템플릿 메서드 패턴, protected",
+          "start_line": 453,
+          "end_line": 455
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 템플릿 메서드 패턴, protected",
+          "start_line": 479,
+          "end_line": 480
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 템플릿 메서드 패턴, protected",
+          "start_line": 561,
+          "end_line": 565
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.final",
+      "title": "final 예약어",
+      "aliases": [
+        "final keyword",
+        "final 키워드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/keyword/final.md",
+      "tags": [
+        "java",
+        "keyword"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single language keyword with three declaration positions",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap09",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.pattern.template-method",
+        "java.oop.final-class",
+        "java.oop.immutable-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어",
+          "start_line": 652,
+          "end_line": 663
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어 > ### final 변수",
+          "start_line": 664,
+          "end_line": 734
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어 > ### final 메서드",
+          "start_line": 735,
+          "end_line": 740
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap09.md",
+          "source_sha256": "feff6b941dded7a5035ee7d412c05fa6be8cd862471ad961bcab046555d1ce03",
+          "heading": "# Chapter 09 - 추상 클래스 > ## final 예약어 > ### final 클래스",
+          "start_line": 741,
+          "end_line": 752
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 템플릿 메서드 패턴, protected",
+          "start_line": 555,
+          "end_line": 555
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface",
+      "title": "인터페이스",
+      "aliases": [
+        "Interface"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented type-declaration construct, including its Java 8 default/static and Java 9 private member extensions",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.oop.abstract-method",
+        "java.oop.interface-constant",
+        "java.oop.interface-specification",
+        "java.oop.polymorphism",
+        "java.oop.interface-default-method",
+        "java.oop.interface-static-method",
+        "java.oop.interface-private-method",
+        "java.oop.interface-design",
+        "java.oop.interface-member-modifier",
+        "java.oop.anonymous-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란?",
+          "start_line": 17,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 구현 코드가 없는 인터페이스",
+          "start_line": 23,
+          "end_line": 52
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스란? > ### 클래스에서 인터페이스 구현",
+          "start_line": 53,
+          "end_line": 140
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### 인터페이스 작성법",
+          "start_line": 686,
+          "end_line": 688
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-default-method",
+      "title": "디폴트 메서드",
+      "aliases": [
+        "Default Method",
+        "default 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-default-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface member category introduced in Java 8",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-static-method",
+        "java.oop.interface-private-method",
+        "java.oop.diamond-problem",
+        "java.oop.method-overriding",
+        "java.language.modern-java"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드",
+          "start_line": 382,
+          "end_line": 470
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### JDK8 추가 문법",
+          "start_line": 700,
+          "end_line": 711
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-static-method",
+      "title": "인터페이스 정적 메서드",
+      "aliases": [
+        "Interface Static Method",
+        "인터페이스 static 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-static-method.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single interface member category introduced in Java 8",
+      "pilot_strata": [
+        "book-batch-01",
+        "do-it-java/chap10",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-default-method",
+        "java.oop.interface-private-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 디폴트 메서드와 정적 메서드",
+          "start_line": 366,
+          "end_line": 381
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 요소 살펴보기 > ### 정적 메서드",
+          "start_line": 471,
+          "end_line": 525
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap10.md",
+          "source_sha256": "6c3ad683debac6ef445a80582bee84ead8843dea15f1d3ff4e6c4a43c1b208c0",
+          "heading": "# Chapter 10 - 인터페이스 > ## 인터페이스 활용 > ### 두 인터페이스의 정적 메서드가 중복되는 경우",
+          "start_line": 679,
+          "end_line": 688
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### JDK8 추가 문법",
+          "start_line": 715,
+          "end_line": 716
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.string-constant-pool",
+      "title": "String constant pool",
+      "aliases": [
+        "문자열 상수 풀",
+        "큰따옴표 리터럴 인스턴스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/string-constant-pool.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pool that lets a string be created without new, which is why quoting a literal is preferred over constructing one",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-23"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.language.literal",
+        "java.memory.heap",
+        "java.oop.immutable-object",
+        "java.oop.final-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 116,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 597,
+          "end_line": 598
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 622,
+          "end_line": 623
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.math-class",
+      "title": "Math 클래스",
+      "aliases": [
+        "Math Class",
+        "자바 API 문서",
+        "정적 유틸리티 클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/math-class.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single library class whose fields and methods are all static, so it is used without ever creating an instance, and the worked example for reading the Java API documentation",
+      "pilot_strata": [
+        "lecture-batch-20",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-23"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.method.static-method",
+        "software.api.api",
+        "java.oop.private-constructor",
+        "java.type.explicit-type-conversion"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## Math Class",
+          "start_line": 301,
+          "end_line": 308
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### 로또 번호 생성기 실습",
+          "start_line": 804,
+          "end_line": 808
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array",
+      "title": "배열",
+      "aliases": [
+        "Array",
+        "자바 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/java-array.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single fixed-length contiguous Java array construct",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-23",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array-copy",
+        "java.array.array-length",
+        "java.array.object-array",
+        "java.array.two-dimensional-array",
+        "java.collection.array-list",
+        "java.control-flow.enhanced-for",
+        "java.oop.abstract-class-array"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 선언과 초기화",
+          "start_line": 19,
+          "end_line": 70
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 사용하기",
+          "start_line": 71,
+          "end_line": 84
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 문자 저장 배열 만들기",
+          "start_line": 142,
+          "end_line": 172
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### 로또 번호 생성기 실습",
+          "start_line": 841,
+          "end_line": 849
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.singleton",
+      "title": "싱글톤 패턴",
+      "aliases": [
+        "Singleton Pattern",
+        "싱글턴 패턴"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/singleton.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single design pattern restricting a class to one program-wide instance",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap06",
+        "lecture-batch-20",
+        "pl/fun-java",
+        "lecture-batch-23"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.access-modifier",
+        "java.oop.constructor",
+        "java.variable.static-variable",
+        "software.pattern.design-pattern",
+        "java.oop.private-constructor",
+        "java.pattern.factory-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴이란?",
+          "start_line": 458,
+          "end_line": 477
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap06.md",
+          "source_sha256": "a7859b111f4c1937c1d3d9f2d9fd48ff0b055ebf66d3991975e9ebab8c55dede",
+          "heading": "# Chapter 06 - 클래스와 객체 (2) > ## static 응용 - 싱글톤 패턴 > ### 싱글톤 패턴으로 회사 클래스 구현",
+          "start_line": 478,
+          "end_line": 572
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java03.md",
+          "source_sha256": "40f9800e732067bc47612010271e033b9b1f30480503767bb9d3e22cb7e3512d",
+          "heading": "## Math Class > ### private",
+          "start_line": 332,
+          "end_line": 333
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴",
+          "start_line": 885,
+          "end_line": 886
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.method-overriding",
+      "title": "메서드 오버라이딩",
+      "aliases": [
+        "Method Overriding",
+        "메서드 재정의"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/method-overriding.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object-oriented method-redefinition mechanism",
+      "pilot_strata": [
+        "high-density",
+        "do-it-java/chap08",
+        "book-batch-01",
+        "extends-u2-signed-concept",
+        "lecture-batch-22",
+        "pl/fun-java",
+        "lecture-batch-23"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.virtual-method",
+        "java.oop.abstract-method",
+        "java.oop.interface-default-method",
+        "java.oop.overloading-vs-overriding",
+        "java.oop.field-hiding",
+        "java.oop.tostring",
+        "java.oop.anonymous-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap08.md",
+          "source_sha256": "1c24a98458a8b622c7bcc7ac5bbacb53fce57a80da6e12a9c8f83fe56e5086e4",
+          "heading": "# Chapter 08 - 상속과 다형성 > ## 메서드 오버라이딩",
+          "start_line": 443,
+          "end_line": 459
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 다형성, 오버라이딩",
+          "start_line": 565,
+          "end_line": 568
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 다형성, 오버라이딩",
+          "start_line": 605,
+          "end_line": 610
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 익명 클래스 > ### 이름없는 클래스",
+          "start_line": 1061,
+          "end_line": 1063
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.immutable-object",
+      "title": "불변 객체",
+      "aliases": [
+        "Immutable Object",
+        "불변성 보장"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/immutable-object.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object given its values at construction and exposing only getters, used when a value handed outside must be guaranteed not to change - String being the standard example, since none of its methods alter its contents",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.constructor",
+        "java.oop.accessor-method",
+        "java.util.string-class",
+        "java.keyword.final"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### 불변객체",
+          "start_line": 78,
+          "end_line": 84
+        }
+      ]
+    },
+    {
+      "concept_id": "java.keyword.super",
+      "title": "super 예약어",
+      "aliases": [
+        "super()",
+        "부모 생성자 호출"
+      ],
+      "canonical_path": "content/brain/knowledge/java/keyword/super.md",
+      "tags": [
+        "java",
+        "keyword"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single keyword referring to the parent instance, whose constructor form may appear only inside a constructor and only on its first line, and which every constructor must call",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.this",
+        "java.oop.constructor-chaining",
+        "java.oop.implicit-super-call",
+        "java.oop.inheritance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### super()",
+          "start_line": 217,
+          "end_line": 223
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.implicit-super-call",
+      "title": "컴파일 타임에 삽입되는 super()",
+      "aliases": [
+        "암묵적 부모 생성자 호출",
+        "기본 생성자의 super()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/implicit-super-call.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single compile-time insertion putting a bare super() at the head of any constructor that does not call one itself, which is why an empty subclass still runs its parent's constructor",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.super",
+        "java.oop.constructor",
+        "java.oop.parent-no-default-constructor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### super()",
+          "start_line": 247,
+          "end_line": 248
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### super()",
+          "start_line": 302,
+          "end_line": 302
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.parent-no-default-constructor",
+      "title": "부모에 기본 생성자가 없을 때",
+      "aliases": [
+        "명시적 super() 호출 강제",
+        "상속 컴파일 에러"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/parent-no-default-constructor.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single compile failure that follows when a parent declares constructors but no no-argument one, forcing every child constructor to call a parent constructor explicitly",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.oop.implicit-super-call",
+        "java.keyword.super",
+        "java.oop.constructor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 생성자 > ### 부모에 기본생성자 없으면?",
+          "start_line": 327,
+          "end_line": 329
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.abstract-class-array",
+      "title": "추상 클래스 배열을 통한 일반화",
+      "aliases": [
+        "부모 타입 배열",
+        "Object 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/abstract-class-array.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique of declaring an array of the parent type so every descendant can sit in it and be handled as one kind, which is what makes an Object array able to hold anything",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.array.object-array",
+        "java.oop.upcasting",
+        "java.oop.is-a-relation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 추상클래스와 배열",
+          "start_line": 443,
+          "end_line": 447
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.final-class",
+      "title": "final 클래스",
+      "aliases": [
+        "Final Class",
+        "상속 금지"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/final-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class marked so that nothing may inherit from it, the mirror image of the abstract class that cannot be instantiated and therefore requires a child",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.keyword.final",
+        "java.oop.abstract-class",
+        "java.util.string-class",
+        "java.oop.inheritance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### final",
+          "start_line": 588,
+          "end_line": 591
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-design",
+      "title": "인터페이스는 기능의 목록이다",
+      "aliases": [
+        "설계는 이름을 정하는 것",
+        "무엇을 만들지부터"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-design.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single design stance treating the interface as the list of what must exist, so the work starts by naming the functions and grouping the related ones rather than by implementing anything",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-specification",
+        "java.oop.cohesion-coupling",
+        "java.oop.abstraction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스",
+          "start_line": 663,
+          "end_line": 671
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.interface-member-modifier",
+      "title": "인터페이스 멤버의 기본 제한자",
+      "aliases": [
+        "public static final 필드",
+        "public abstract 메서드"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/interface-member-modifier.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that every interface field is public static final and every method public abstract, with the modifiers implied when omitted, which is why a field is reachable through the interface name and a method must be overridden by the implementer",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.interface",
+        "java.oop.interface-constant",
+        "java.oop.abstract-method",
+        "java.method.static-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 인터페이스 > ### 인터페이스 작성법",
+          "start_line": 689,
+          "end_line": 694
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.factory-method",
+      "title": "팩토리 메서드 패턴",
+      "aliases": [
+        "Factory Method Pattern",
+        "객체 생성 과정 은닉"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/factory-method.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern hiding how an instance is built and returning only the finished object, so the caller asks a factory for it instead of running new itself",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.pattern.design-pattern",
+        "java.pattern.singleton",
+        "java.runtime.reflection",
+        "java.oop.instance-creation-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴",
+          "start_line": 859,
+          "end_line": 861
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴",
+          "start_line": 905,
+          "end_line": 906
+        }
+      ]
+    },
+    {
+      "concept_id": "java.runtime.reflection",
+      "title": "리플렉션",
+      "aliases": [
+        "Reflection",
+        "클래스로더로 인스턴스 생성",
+        "invoke()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/runtime/reflection.md",
+      "tags": [
+        "java",
+        "runtime"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single facility for naming a class as a string, having the class loader find it on the classpath, creating an instance from that information and invoking a method by name - which is how code can run against a class whose name it learns only at run time",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.runtime.classpath",
+        "java.runtime.class-loading",
+        "java.pattern.factory-method",
+        "java.oop.instance-creation-method"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 921,
+          "end_line": 923
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 979,
+          "end_line": 984
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 팩토리 메서드 패턴 > ### 클래스로더 이용 인스턴스 생성",
+          "start_line": 1003,
+          "end_line": 1008
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.anonymous-class",
+      "title": "익명 클래스",
+      "aliases": [
+        "Anonymous Class",
+        "이름없는 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/anonymous-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single class written as a constructor call followed by a body, which overrides what it needs on the spot and is used where the type will not be reused - the way an abstract class or interface gets instantiated without a named subclass",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.abstract-class",
+        "java.oop.interface",
+        "java.oop.method-overriding",
+        "java.oop.lambda-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 익명 클래스 > ### 이름없는 클래스",
+          "start_line": 1027,
+          "end_line": 1032
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.lambda-interface",
+      "title": "람다 인터페이스",
+      "aliases": [
+        "Lambda Interface",
+        "함수형 인터페이스",
+        "람다 표현식"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/lambda-interface.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface carrying exactly one method, which is what lets an anonymous object be shortened into a lambda expression - a JDK 8 addition and part of what modern Java means, especially alongside the Stream API",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.anonymous-class",
+        "java.language.modern-java",
+        "java.oop.interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 익명 클래스 > ### 람다 인터페이스",
+          "start_line": 1167,
+          "end_line": 1172
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-comparison",
+      "title": "문자열 비교",
+      "aliases": [
+        "String equals()",
+        "toUpperCase()",
+        "substring()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-comparison.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule that string values are compared with equals rather than by reference, alongside the transformation methods that return a new string instead of altering the original",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.oop.equals-hashcode",
+        "java.oop.immutable-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### equals()",
+          "start_line": 629,
+          "end_line": 631
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

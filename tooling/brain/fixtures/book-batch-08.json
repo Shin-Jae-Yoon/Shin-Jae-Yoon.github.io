@@ -1,0 +1,746 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-08",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-07",
+    "applied_state": "202 approved knowledge concepts after book-batch-07 completed content/brain/books/kafka/chap05.md."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap07.md",
+    "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+    "line_range": "L7-L334",
+    "covered_scopes": "heading scopes 0-8 (## 신뢰성 보장 through ## 브로커 설정 > ### 디스크에 저장)",
+    "deferred_range": "L335-L757, heading scopes 9-20 (## 신뢰성 있는 시스템에서 프로듀서 through ### 프로덕션 환경 모니터링), reserved for book-batch-09"
+  },
+  "split_decision": {
+    "statement": "chap07 measures 461 prose lines against a B4 ceiling of 360, so it cannot be one batch.",
+    "split_point": "L335, the ## 신뢰성 있는 시스템에서 프로듀서 boundary. Everything before it is the reliability model and the broker settings that implement it; everything after is what producers, consumers and operators must do.",
+    "resulting_sizes": "batch 08 = 197 prose lines over L7-334; batch 09 = 265 prose lines over L335-757. Both sit inside B4."
+  },
+  "namespace_decision": {
+    "new_namespaces": "kafka.reliability.* for the guarantee model and kafka.replication.* for the replication mechanism. Neither exists in the applied index and chap07 is the first source to assert either.",
+    "reused_namespace": "kafka.config.* for the five named broker or topic settings this range introduces.",
+    "no_move_rule": "kafka.adminclient.unclean-leader-election stays at its applied path even though chap07 shows the concept is a replication concern rather than an AdminClient one. The engine forbids a batch proposal from moving an approved concept, and duplicating it under kafka.replication.* would break the one-concept-one-file rule. It is updated in place."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 08 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is an Obsidian callout rather than plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 24,
+  "candidates": [
+    {
+      "concept_id": "kafka.reliability.guarantee",
+      "title": "보장",
+      "aliases": ["Guarantee", "시스템 보장"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/guarantee.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single notion of behaviour a system promises to hold under differing conditions, the sense in which a relational database guarantees ACID",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "reliability-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": ["kafka.reliability.kafka-guarantee", "kafka.reliability.tradeoff"],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 신뢰성 보장",
+          "start_line": 16,
+          "end_line": 19
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.kafka-guarantee",
+      "title": "카프카의 신뢰성 보장",
+      "aliases": ["Kafka Reliability Guarantee", "커밋된 메세지", "파티션 내 순서 보장"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/kafka-guarantee.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of four promises Kafka makes: order within a partition, commit only after every in-sync replica has the message, no loss of a committed message while one working replica survives, and consumers reading only committed messages",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "reliability-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.reliability.guarantee",
+        "kafka.replication.in-sync-replica",
+        "kafka.client.offset",
+        "kafka.config.min-insync-replicas"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 신뢰성 보장",
+          "start_line": 23,
+          "end_line": 31
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.tradeoff",
+      "title": "신뢰성 트레이드오프",
+      "aliases": ["Reliability Tradeoff", "신뢰성과 가용성의 균형"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/tradeoff.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of five competing axes - reliability and consistency, availability, throughput, latency and hardware cost - that a Kafka deployment is tuned against",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "reliability-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.reliability.kafka-guarantee",
+        "kafka.property.high-performance",
+        "kafka.hardware.hardware-selection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 신뢰성 보장",
+          "start_line": 35,
+          "end_line": 40
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.replication",
+      "title": "복제",
+      "aliases": ["Replication", "카프카 복제"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/kafka-replication.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single core of Kafka's reliability guarantee: keeping several replicas per partition, plus the mechanism that maintains them",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.replication.replication-mechanism",
+        "kafka.reliability.kafka-guarantee",
+        "kafka.topic.partition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 복제",
+          "start_line": 48,
+          "end_line": 50
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.replication-mechanism",
+      "title": "복제 메커니즘",
+      "aliases": ["Replication Mechanism", "크래시 내구성"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/replication-mechanism.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single durability mechanism writing one message to several replicas so a crash does not lose it",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": [
+        "kafka.replication.replication",
+        "kafka.replication.in-sync-replica",
+        "kafka.broker.partition-leader"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 복제 > ### 메커니즘",
+          "start_line": 58,
+          "end_line": 58
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.in-sync-replica",
+      "title": "인-싱크 레플리카",
+      "aliases": ["ISR", "In-Sync Replica", "인싱크 레플리카"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/in-sync-replica.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single membership test - the partition leader, plus any follower holding a live ZooKeeper session that has fetched the leader's newest messages within the lag window",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.replication.out-of-sync-replica",
+        "kafka.replication.replication-lag",
+        "kafka.config.min-insync-replicas",
+        "kafka.zookeeper.zookeeper"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 복제 > ### 메커니즘",
+          "start_line": 72,
+          "end_line": 77
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.replication-lag",
+      "title": "복제 랙",
+      "aliases": ["Replication Lag", "팔로워 지연"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/replication-lag.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single measure of how far a follower's fetched offset trails the leader's newest offset",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.replication.in-sync-replica",
+        "kafka.config.replica-lag-time-max-ms",
+        "kafka.adminclient.consumer-lag"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 복제 > ### 메커니즘",
+          "start_line": 79,
+          "end_line": 83
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.out-of-sync-replica",
+      "title": "아웃-오브-싱크 레플리카",
+      "aliases": ["Out-of-Sync Replica", "OSR", "아웃오브싱크 레플리카"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/out-of-sync-replica.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single state of any replica that is not in-sync, entered by losing the ZooKeeper connection or by falling behind the leader beyond the lag window",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.replication.in-sync-replica",
+        "kafka.replication.isr-tradeoff",
+        "kafka.adminclient.unclean-leader-election"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 복제 > ### 메커니즘",
+          "start_line": 87,
+          "end_line": 94
+        },
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 레플리카 인-싱크 상태 유지하기",
+          "start_line": 286,
+          "end_line": 288
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.isr-tradeoff",
+      "title": "인-싱크 레플리카 수 트레이드오프",
+      "aliases": ["ISR Tradeoff", "실질적 복제 팩터 감소"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/isr-tradeoff.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single tension in which a slightly lagging in-sync replica slows producers and consumers while dropping it to out-of-sync restores speed but shrinks the effective replication factor and raises the loss risk",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.replication.in-sync-replica",
+        "kafka.replication.out-of-sync-replica",
+        "kafka.reliability.tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 복제 > ### 메커니즘",
+          "start_line": 98,
+          "end_line": 107
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.reliability.per-topic-reliability",
+      "title": "토픽별 신뢰성 설정",
+      "aliases": ["Per-Topic Reliability", "브로커 단위와 토픽 단위 설정"],
+      "canonical_path": "content/brain/knowledge/kafka/reliability/per-topic-reliability.md",
+      "tags": ["kafka", "reliability"],
+      "proposal_kind": "create",
+      "concept_granularity": "single consequence of the reliability settings being controllable both cluster-wide and per topic: one cluster can hold topics of differing reliability requirements",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "reliability-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.topic-default",
+        "kafka.config.core-broker-parameter",
+        "kafka.reliability.tradeoff"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정",
+          "start_line": 113,
+          "end_line": 117
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.replication-factor",
+      "title": "replication.factor",
+      "aliases": ["복제 팩터", "Replication Factor", "토픽 단위 복제 팩터"],
+      "canonical_path": "content/brain/knowledge/kafka/config/replication-factor.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single per-topic count of partition copies, where a factor of N survives N-1 broker outages at the cost of N times the disk and more brokers",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.default-replication-factor",
+        "kafka.config.rf-plus-plus",
+        "kafka.replication.replica-count-decision"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 복제 팩터",
+          "start_line": 123,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.replica-count-decision",
+      "title": "레플리카 개수 결정",
+      "aliases": ["Replica Count Decision", "가용성 지속성 처리량", "복제 트래픽"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/replica-count-decision.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single sizing decision weighing availability, durability and the replication traffic each extra replica adds between brokers",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.replication-factor",
+        "kafka.replication.end-to-end-delay",
+        "kafka.replication.replication-cost",
+        "kafka.hardware.network-bandwidth"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 복제 팩터",
+          "start_line": 141,
+          "end_line": 158
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.end-to-end-delay",
+      "title": "종단 지연",
+      "aliases": ["End-to-End Delay", "OWD", "One-Way Delay"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/end-to-end-delay.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single one-way source-to-destination latency, distinct from round-trip time, that grows with replica count because a consumer waits for replication to every in-sync replica",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": [],
+      "related_concepts": [
+        "kafka.replication.replica-count-decision",
+        "kafka.replication.in-sync-replica",
+        "kafka.property.high-performance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 복제 팩터",
+          "start_line": 160,
+          "end_line": 167
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.replication-cost",
+      "title": "복제 비용",
+      "aliases": ["Replication Cost", "복제 팩터 2 선택"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/replication-cost.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single storage and network cost of each extra replica, which justifies dropping unimportant data below a replication factor of three",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": [
+        "kafka.replication.replica-count-decision",
+        "kafka.config.replication-factor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 복제 팩터",
+          "start_line": 169,
+          "end_line": 172
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.broker-rack",
+      "title": "broker.rack",
+      "aliases": ["랙 인식 배치", "Rack Awareness", "랙 단위 사고 방지"],
+      "canonical_path": "content/brain/knowledge/kafka/config/broker-rack.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single rack label that spreads a partition's replicas across racks, so a rack switch failure cannot take the partition down regardless of replication factor",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.replication-factor",
+        "kafka.replication.replica-count-decision",
+        "kafka.hardware.hardware-selection"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 복제 팩터",
+          "start_line": 176,
+          "end_line": 181
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.unclean-leader-election-enable",
+      "title": "unclean.leader.election.enable",
+      "aliases": ["언클린 리더 선출 설정", "가용성 대 일관성 선택"],
+      "canonical_path": "content/brain/knowledge/kafka/config/unclean-leader-election-enable.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single cluster-level switch, default false, deciding whether an out-of-sync replica may take leadership - keeping the partition offline until the old leader returns, or accepting message loss to restore it",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.unclean-leader-election",
+        "kafka.replication.clean-leader-election",
+        "kafka.replication.unclean-election-inconsistency"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 언클린 리더 선출",
+          "start_line": 187,
+          "end_line": 189
+        },
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 언클린 리더 선출",
+          "start_line": 229,
+          "end_line": 239
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.clean-leader-election",
+      "title": "클린 리더 선출",
+      "aliases": ["Clean Leader Election", "무손실 리더 선출"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/clean-leader-election.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single election promoting an in-sync replica when the leader fails, which loses no committed data because committed means present on every in-sync replica",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict", "low-confidence"],
+      "related_concepts": [
+        "kafka.adminclient.unclean-leader-election",
+        "kafka.replication.in-sync-replica",
+        "kafka.broker.partition-leader"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 언클린 리더 선출",
+          "start_line": 193,
+          "end_line": 196
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.adminclient.unclean-leader-election",
+      "title": "언클린 리더 선출",
+      "aliases": ["Unclean Leader Election", "데이터 유실 감수 선출", "아웃-오브-싱크 리더 승격"],
+      "canonical_path": "content/brain/knowledge/kafka/adminclient/unclean-leader-election.md",
+      "tags": ["kafka", "adminclient"],
+      "proposal_kind": "update",
+      "concept_granularity": "single election promoting a replica that is not eligible to lead, trading the loss of events never replicated from the old leader for the partition's availability, reached when no in-sync replica survives the leader",
+      "pilot_strata": ["book-batch-07", "kafka/chap05", "adminclient-domain", "book-batch-08", "kafka/chap07"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.adminclient.preferred-leader-election",
+        "kafka.broker.partition-leader",
+        "kafka.adminclient.elect-leaders",
+        "kafka.config.unclean-leader-election-enable",
+        "kafka.replication.clean-leader-election",
+        "kafka.replication.unclean-election-inconsistency"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap05.md",
+          "source_sha256": "3834b2c32565c0d1f626fbefa549320df504ef88c49bb03786160b781b26d464",
+          "heading": "## 고급 어드민 작업 > ### 리더 선출",
+          "start_line": 722,
+          "end_line": 729
+        },
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 언클린 리더 선출",
+          "start_line": 200,
+          "end_line": 223
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.unclean-election-inconsistency",
+      "title": "언클린 선출의 일관성 파괴",
+      "aliases": ["Unclean Election Inconsistency", "같은 오프셋 다른 메세지"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/unclean-election-inconsistency.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single consistency break in which the new leader writes different messages to offsets the old leader had already used, so the same offset names two different records",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict", "provenance-warning"],
+      "related_concepts": [
+        "kafka.adminclient.unclean-leader-election",
+        "kafka.config.unclean-leader-election-enable",
+        "kafka.client.offset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 언클린 리더 선출",
+          "start_line": 241,
+          "end_line": 247
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.min-insync-replicas",
+      "title": "min.insync.replicas",
+      "aliases": ["최소 동기화 레플리카", "NotEnoughReplicasException", "읽기 전용 파티션"],
+      "canonical_path": "content/brain/knowledge/kafka/config/min-insync-replicas.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "update",
+      "concept_granularity": "single minimum count of in-sync replicas that must acknowledge a write before it is reported successful, below which the partition rejects writes and becomes read-only",
+      "pilot_strata": ["book-batch-05", "kafka/chap02", "kafka-domain", "book-batch-08", "kafka/chap07"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.default-replication-factor",
+        "kafka.config.rf-plus-plus",
+        "kafka.client.producer",
+        "kafka.replication.in-sync-replica",
+        "kafka.reliability.kafka-guarantee"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap02.md",
+          "source_sha256": "1064301f765b11b2dd4e1abc0e9a0eff647290c4374cb7eb7806b76e3b7e8d16",
+          "heading": "## 브로커 설정 > ### 토픽별 기본값",
+          "start_line": 441,
+          "end_line": 458
+        },
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 최소 인-싱크 레플리카",
+          "start_line": 253,
+          "end_line": 261
+        },
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 최소 인-싱크 레플리카",
+          "start_line": 265,
+          "end_line": 272
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.zookeeper-session-timeout-ms",
+      "title": "zookeeper.session.timeout.ms",
+      "aliases": ["주키퍼 세션 타임아웃", "브로커 하트비트 최대 간격"],
+      "canonical_path": "content/brain/knowledge/kafka/config/zookeeper-session-timeout-ms.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single ceiling on how long a broker may stop sending ZooKeeper heartbeats before it is declared dead, tuned high enough to ride out GC and network jitter and low enough to detect a real failure",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.replication.out-of-sync-replica",
+        "kafka.zookeeper.zookeeper",
+        "kafka.config.replica-lag-time-max-ms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 레플리카 인-싱크 상태 유지하기",
+          "start_line": 292,
+          "end_line": 298
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.replica-lag-time-max-ms",
+      "title": "replica.lag.time.max.ms",
+      "aliases": ["복제 랙 허용 시간", "컨슈머 최대 지연에 미치는 영향"],
+      "canonical_path": "content/brain/knowledge/kafka/config/replica-lag-time-max-ms.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single window a follower may trail the leader before dropping out of sync, which also bounds how long a consumer may wait for a message to become committed",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "config-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.replication.replication-lag",
+        "kafka.replication.out-of-sync-replica",
+        "kafka.config.zookeeper-session-timeout-ms"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 레플리카 인-싱크 상태 유지하기",
+          "start_line": 302,
+          "end_line": 309
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.flush-messages",
+      "title": "flush.messages",
+      "aliases": ["flush.ms", "디스크 플러시 설정"],
+      "canonical_path": "content/brain/knowledge/kafka/config/flush-messages.md",
+      "tags": ["kafka", "config"],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of settings capping how many messages may sit unflushed and how often a flush runs",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "config-domain"],
+      "review_flags": ["low-confidence"],
+      "related_concepts": [
+        "kafka.replication.disk-flush-policy",
+        "kafka.config.log-segment-bytes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 디스크에 저장",
+          "start_line": 315,
+          "end_line": 316
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.replication.disk-flush-policy",
+      "title": "디스크 플러시 정책",
+      "aliases": ["Disk Flush Policy", "페이지 캐시 의존", "복제가 디스크 저장보다 안전"],
+      "canonical_path": "content/brain/knowledge/kafka/replication/disk-flush-policy.md",
+      "tags": ["kafka", "replication"],
+      "proposal_kind": "create",
+      "concept_granularity": "single durability policy under which Kafka flushes only on segment roll and shutdown and otherwise leans on the page cache, because replicas in separate racks are judged safer than the leader's disk",
+      "pilot_strata": ["book-batch-08", "kafka/chap07", "replication-domain"],
+      "review_flags": ["conflict"],
+      "related_concepts": [
+        "kafka.config.flush-messages",
+        "kafka.hardware.page-cache",
+        "kafka.replication.replication-mechanism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 디스크에 저장",
+          "start_line": 320,
+          "end_line": 325
+        },
+        {
+          "path": "content/brain/books/kafka/chap07.md",
+          "source_sha256": "956bd8c97c079b9247c2267882e18cb3f629a5e5ec144aafea596062df2f75a3",
+          "heading": "## 브로커 설정 > ### 디스크에 저장",
+          "start_line": 329,
+          "end_line": 331
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [],
+  "rejection_probes": {
+    "scope_level": "None inside L7-334. chap07's only non-substantive scope, ## 시스템 신뢰성 검증 (L651-652), falls in the deferred range and belongs to batch 09."
+  },
+  "update_authoring_note": {
+    "statement": "Batch 08 authors exactly 2 update candidates. Each preserves its applied title, canonical_path, tags, every approved source locator and every approved related-concept edge, and appends chap07 evidence plus new edges.",
+    "updates": [
+      {
+        "concept_id": "kafka.adminclient.unclean-leader-election",
+        "approved_locators_preserved": ["content/brain/books/kafka/chap05.md:722-729"],
+        "new_locators": ["content/brain/books/kafka/chap07.md:200-223"],
+        "alias_change": "adds 아웃-오브-싱크 리더 승격; drops nothing",
+        "path_note": "The applied path stays under kafka/adminclient/ because the engine forbids moving an approved concept."
+      },
+      {
+        "concept_id": "kafka.config.min-insync-replicas",
+        "approved_locators_preserved": ["content/brain/books/kafka/chap02.md:441-458"],
+        "new_locators": [
+          "content/brain/books/kafka/chap07.md:253-261",
+          "content/brain/books/kafka/chap07.md:265-272"
+        ],
+        "alias_change": "drops In-Sync Replica and adds NotEnoughReplicasException and 읽기 전용 파티션. The dropped alias named the ISR concept rather than this setting, and batch 08 gives ISR its own concept at kafka.replication.in-sync-replica; leaving the alias here would point an ISR search at the wrong document."
+      }
+    ]
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8",
+        "reason_code": "chapter-preamble",
+        "detail": "A one-line chapter introduction naming reliability as important. It asserts nothing specific."
+      },
+      {
+        "span": "L60-68",
+        "reason_code": "restates-applied-concept",
+        "detail": "A 6장 리마인드 callout re-listing topic, partition, leader and follower semantics that kafka.topic.topic, kafka.topic.partition and kafka.broker.partition-leader already carry. Left uncited so no candidate restates them."
+      },
+      {
+        "span": "L128-136 partial, L143-149",
+        "reason_code": "carried-by-neighbouring-locator",
+        "detail": "Covered inside the cited replication-factor and replica-count-decision spans."
+      },
+      {
+        "span": "L278-282",
+        "reason_code": "setting-header-carried-by-owner",
+        "detail": "The two setting names and defaults are restated in each setting's own cited span."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L7-334 contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": { "value": 197, "ceiling": 360, "satisfied": true },
+      "heading_scopes": { "value": 9, "ceiling": 70, "satisfied": true },
+      "accepted_candidates": { "value": 24, "ceiling": 40, "satisfied": true }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  }
+}

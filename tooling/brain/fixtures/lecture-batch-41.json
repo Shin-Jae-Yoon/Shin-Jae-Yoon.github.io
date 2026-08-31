@@ -1,0 +1,1615 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-41",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-40",
+    "applied_state": "862 approved knowledge concepts after lecture-batch-40 opened the js namespace."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+        "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f"
+      }
+    ],
+    "line_range": "L13-L1028 (whole file)",
+    "series": "코딩애플 - Javascript 입문과 웹 UI 개발 2/3"
+  },
+  "overlap_analysis": {
+    "finding": "The file carries one long digression that is not about javascript at all - a walk through how a fractional number is stored in memory, why the error appears, what it once cost, and what to do about it.",
+    "disposition": "That digression is filed under cs.data as four concepts beside the existing bit-and-byte one, and linked to java.type.floating-point-type, which names the same representation from the language side. Everything else extends js - timers, regular expressions, scrolling, bubbling and the loop-variable trap."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locator and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "alias_avoidance_note": {
+    "keys": [
+      "부동 소수점",
+      "for문"
+    ],
+    "incumbents": [
+      "java.type.floating-point-type",
+      "java.control-flow.for-statement"
+    ],
+    "disposition": "cs.data.floating-point-representation takes IEEE 754 and 단정도 표현 rather than the bare Korean term the java concept holds, and js.basic.for-loop is titled 자바스크립트 반복문. Both are joined to their incumbents by edges instead of competing for the name."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7-L9, L221, L246, L260, L276, L294, L413-L415, L476, L744, L786 partial, L792 partial, L808, L832, L856, L926-L938, L952 partial",
+        "reason_code": "course-link-figure-caption-or-carried-by-owner",
+        "detail": "The course link, the numbered captions announcing the code or image below them, the youtube attribution for the floating-point section, and the claims already stated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 30881,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 175,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 35,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 33,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 34,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "candidates_authored": 33,
+  "candidates": [
+    {
+      "concept_id": "js.basic.var-let-const",
+      "title": "var let const의 차이",
+      "aliases": [
+        "재선언과 재할당",
+        "Block-scoped",
+        "Function-scoped"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/var-let-const.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single table of three declarations - var allows redeclaring and reassigning and is scoped to the function, let forbids redeclaring, const forbids both and is what a value that must not change is put in - with let and const scoped to any pair of braces rather than to the function",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-41"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.variable",
+        "js.basic.function",
+        "js.basic.closure-var-trap",
+        "js.basic.for-loop"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### var let const 차이",
+          "start_line": 725,
+          "end_line": 733
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### var let const 차이",
+          "start_line": 742,
+          "end_line": 744
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 변수 문법 > ### var let const 차이",
+          "start_line": 753,
+          "end_line": 753
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### var가 제대로 작동 안한 이유",
+          "start_line": 778,
+          "end_line": 780
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.callback",
+      "title": "콜백함수",
+      "aliases": [
+        "나중에 불릴 함수",
+        "괄호를 붙이면 안 된다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/callback.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single function passed to another to be run later rather than now, which is what the second argument of an event listener is - and which must be handed over by name, since writing the parentheses calls it on the spot instead",
+      "pilot_strata": [
+        "lecture-batch-40",
+        "frontend/apple-js",
+        "js-domain",
+        "lecture-batch-41"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.event.add-event-listener",
+        "js.basic.function",
+        "js.timer.set-timeout",
+        "js.event.event-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 이벤트리스너 > ### 콜백함수",
+          "start_line": 178,
+          "end_line": 178
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-01.md",
+          "source_sha256": "5c1ab9646e8e6a8acd2c08ad1b5fafb272aaad8842abbf8d1c2383526536f1fc",
+          "heading": "## 이벤트리스너 > ### 콜백함수",
+          "start_line": 186,
+          "end_line": 188
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.data.bit-and-byte",
+      "title": "비트와 바이트",
+      "aliases": [
+        "Bit",
+        "Byte",
+        "정보의 최소 단위"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/bit-and-byte.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single unit pair in which the bit is the smallest unit a computer processes and the byte is the eight-bit group used as the basic unit of representation, spanning 00000000 to 11111111 or 00 to FF",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-41",
+        "frontend/apple-js"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "java.operator.bit-shift-operator",
+        "cs.information.information-quantity",
+        "cs.data.floating-point-representation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 비트연산자",
+          "start_line": 311,
+          "end_line": 318
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.floating-point-type",
+      "title": "실수 자료형",
+      "aliases": [
+        "Floating-Point Type",
+        "실수형",
+        "부동 소수점"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/floating-point-type.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java real-number value family using sign/exponent/mantissa layout with double as the default",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java",
+        "lecture-batch-41",
+        "frontend/apple-js"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.primitive-type",
+        "cs.data.floating-point-representation",
+        "cs.data.float-practice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 자료형 > ### 실수형",
+          "start_line": 136,
+          "end_line": 148
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 변수와 리터럴 > ### 정수, 실수, 산술연산자",
+          "start_line": 102,
+          "end_line": 104
+        }
+      ]
+    },
+    {
+      "concept_id": "js.timer.set-timeout",
+      "title": "setTimeout",
+      "aliases": [
+        "몇 초 후 실행",
+        "타이머를 변수에 담기"
+      ],
+      "canonical_path": "content/brain/knowledge/js/timer/set-timeout.md",
+      "tags": [
+        "js",
+        "timer"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single built-in that runs a function once after a delay given in milliseconds, taking the function by name rather than called - writing the parentheses hands it the return value instead - and returning a handle that can be kept in a variable",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.timer.set-interval",
+        "js.timer.clear-timer",
+        "js.event.callback"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## setTimeout, setInterval > ### setTimeout",
+          "start_line": 19,
+          "end_line": 21
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## setTimeout, setInterval > ### setTimeout",
+          "start_line": 36,
+          "end_line": 36
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## setTimeout, setInterval > ### setTimeout",
+          "start_line": 42,
+          "end_line": 44
+        }
+      ]
+    },
+    {
+      "concept_id": "js.timer.set-interval",
+      "title": "setInterval",
+      "aliases": [
+        "몇 초마다 실행"
+      ],
+      "canonical_path": "content/brain/knowledge/js/timer/set-interval.md",
+      "tags": [
+        "js",
+        "timer"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single built-in that runs a function again every so many milliseconds rather than once",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "js.timer.set-timeout",
+        "js.timer.clear-timer"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## setTimeout, setInterval > ### setInterval",
+          "start_line": 54,
+          "end_line": 54
+        }
+      ]
+    },
+    {
+      "concept_id": "js.timer.clear-timer",
+      "title": "타이머 취소하기",
+      "aliases": [
+        "clearTimeout",
+        "clearInterval"
+      ],
+      "canonical_path": "content/brain/knowledge/js/timer/clear-timer.md",
+      "tags": [
+        "js",
+        "timer"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to cancel a pending timer, which requires having kept its handle in a variable - the two clearing functions are interchangeable in practice but each should be paired with its own kind for the reader's sake",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.timer.set-timeout",
+        "js.timer.set-interval",
+        "js.basic.variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## setTimeout, setInterval > ### clearTimeout",
+          "start_line": 66,
+          "end_line": 68
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.browser-api",
+      "title": "문법과 브라우저 API는 다르다",
+      "aliases": [
+        "Web Browser API",
+        "document와 setTimeout은 문법이 아니다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/browser-api.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single line between what the language itself provides - conditions, variables, functions - and what the browser lends it, the document selectors and timers and alerts being the browser's API rather than javascript syntax",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.purpose",
+        "js.dom.element-selector",
+        "js.timer.set-timeout"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## JS 문법 vs 브라우저 사용법",
+          "start_line": 83,
+          "end_line": 89
+        }
+      ]
+    },
+    {
+      "concept_id": "js.regex.regex",
+      "title": "정규식",
+      "aliases": [
+        "Regular Expression",
+        "형식 검사"
+      ],
+      "canonical_path": "content/brain/knowledge/js/regex/regular-expression.md",
+      "tags": [
+        "js",
+        "regex"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to ask whether a string has a shape rather than a particular content - whether what was typed looks like an email address, say - written as a pattern and testable against sample input before being used",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.regex.includes-limit",
+        "js.regex.syntax",
+        "js.form.prevent-default"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식",
+          "start_line": 95,
+          "end_line": 99
+        }
+      ]
+    },
+    {
+      "concept_id": "js.regex.includes-limit",
+      "title": "includes()로는 부족한 것",
+      "aliases": [
+        "문자 포함 검사",
+        "형식은 검사하지 못한다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/regex/includes-limit.md",
+      "tags": [
+        "js",
+        "regex"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single limit of asking only whether one string contains another - it cannot ask whether there is any hangul or any letter in it, whether it ends in a given character, or how many times something appears",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.regex.regex",
+        "js.regex.syntax"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식 > ### includes()",
+          "start_line": 105,
+          "end_line": 107
+        }
+      ]
+    },
+    {
+      "concept_id": "js.regex.syntax",
+      "title": "정규식 표기법",
+      "aliases": [
+        "대괄호 범위",
+        "^와 $",
+        "+ 반복",
+        "이스케이프"
+      ],
+      "canonical_path": "content/brain/knowledge/js/regex/syntax.md",
+      "tags": [
+        "js",
+        "regex"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of marks the pattern is built from - slashes around it, brackets for a range of one character, a caret and a dollar for the start and the end of the string, a bar for either, parentheses to group, a plus to repeat the thing on its left, and a backslash to mean a special character literally - with a bare pattern matching exactly one character unless a repeat is written",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.regex.regex",
+        "js.regex.includes-limit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식 > ### 정규식 파헤치기",
+          "start_line": 121,
+          "end_line": 121
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식 > ### 정규식 파헤치기",
+          "start_line": 130,
+          "end_line": 132
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식 > ### 정규식 파헤치기",
+          "start_line": 150,
+          "end_line": 156
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식 > ### 정규식 파헤치기",
+          "start_line": 171,
+          "end_line": 173
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식 > ### 정규식 파헤치기",
+          "start_line": 177,
+          "end_line": 185
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 정규식 > ### 정규식 파헤치기",
+          "start_line": 189,
+          "end_line": 193
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.carousel",
+      "title": "캐러셀",
+      "aliases": [
+        "이미지 슬라이드",
+        "translateX",
+        "one-way 애니메이션"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/carousel.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single build order for a sliding image strip - draw the before state, draw the after state, decide in script when it changes, then add the transition - where the strip is as wide as all its slides together with the overflow hidden, the movement is a transform rather than a margin because that performs better, and a previous and next button need a variable holding which slide is current",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.ui.show-hide-pattern",
+        "js.ui.css-animation-preference",
+        "js.basic.variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 211,
+          "end_line": 217
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 239,
+          "end_line": 242
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 248,
+          "end_line": 248
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 262,
+          "end_line": 263
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## Carousel (캐러셀)",
+          "start_line": 288,
+          "end_line": 288
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.return",
+      "title": "return",
+      "aliases": [
+        "함수를 변환기로",
+        "return 아래는 실행되지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/return.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single statement handing a value back out of a function and ending it there, which is what turns a function into a converter - put a price in and get the tax out, a string in and another string out",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.function",
+        "js.basic.function-parameter",
+        "software.programming.function"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## function() return 문법",
+          "start_line": 308,
+          "end_line": 310
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## function() return 문법",
+          "start_line": 314,
+          "end_line": 316
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## function() return 문법",
+          "start_line": 320,
+          "end_line": 320
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## function() return 문법",
+          "start_line": 330,
+          "end_line": 330
+        }
+      ]
+    },
+    {
+      "concept_id": "js.number.float-error",
+      "title": "소수점 연산의 오차",
+      "aliases": [
+        "2진법 변환",
+        "무한히 반복되는 소수",
+        "정수로 계산하고 나누기"
+      ],
+      "canonical_path": "content/brain/knowledge/js/number/float-error.md",
+      "tags": [
+        "js",
+        "number"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason arithmetic on decimals comes out slightly wrong - the numbers are converted to binary first, and a value such as one point one repeats forever in binary and has to be cut off to fit - which is worked around by keeping everything in integers, by using a library made for exact decimals, or by rounding the result",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.data.floating-point-representation",
+        "cs.data.repeating-binary-fraction",
+        "js.number.to-fixed",
+        "java.type.floating-point-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 자바스크립트 소수점 다루기",
+          "start_line": 336,
+          "end_line": 336
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 자바스크립트 소수점 다루기",
+          "start_line": 347,
+          "end_line": 347
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 자바스크립트 소수점 다루기",
+          "start_line": 351,
+          "end_line": 351
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 자바스크립트 소수점 다루기",
+          "start_line": 355,
+          "end_line": 364
+        }
+      ]
+    },
+    {
+      "concept_id": "js.number.to-fixed",
+      "title": "toFixed",
+      "aliases": [
+        "소수점 반올림",
+        "문자로 반환된다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/number/to-fixed.md",
+      "tags": [
+        "js",
+        "number"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method rounding a number to a given number of decimal places, whose result is a string rather than a number - which is visible in the console by the colour it prints in",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.number.float-error",
+        "js.basic.plus-operator",
+        "cs.data.float-practice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 자바스크립트 소수점 다루기 > ### 소수점 반올림",
+          "start_line": 370,
+          "end_line": 372
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.plus-operator",
+      "title": "+ 연산자가 문자를 만나면",
+      "aliases": [
+        "문자 연결",
+        "parseInt",
+        "parseFloat"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/plus-operator.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single behaviour of the plus sign when either side is a string - it joins rather than adds, so a number that arrived as text has to be converted first",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.number.to-fixed",
+        "js.basic.comparison-operator",
+        "js.form.prevent-default"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## +(플러스) 연산자 특징",
+          "start_line": 386,
+          "end_line": 388
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.data.floating-point-representation",
+      "title": "부동소수 표현",
+      "aliases": [
+        "IEEE 754",
+        "단정도 표현",
+        "부호부 지수부 가수부",
+        "mantissa와 bias"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/floating-point-representation.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single layout a fractional number is stored in - a number goes into a fixed number of bits in RAM, and for the 32-bit form one bit holds the sign, the value is converted to binary and its point shifted to just after the leading one, the digits after that point go into the last 23 bits as the mantissa, and the exponent goes into the middle 8 bits with a bias added so it need not be signed",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "cs-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.data.bit-and-byte",
+        "cs.data.repeating-binary-fraction",
+        "java.type.floating-point-type",
+        "cs.data.float-practice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 1. RAM",
+          "start_line": 427,
+          "end_line": 431
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 2. 부동소수 표현 저장",
+          "start_line": 437,
+          "end_line": 446
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 2. 부동소수 표현 저장",
+          "start_line": 450,
+          "end_line": 450
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.data.repeating-binary-fraction",
+      "title": "2진법에서 끝나지 않는 소수",
+      "aliases": [
+        "순환소수 문제",
+        "0.1은 2진법에서 딱 떨어지지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/repeating-binary-fraction.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single source of the error in the representation - some decimal fractions divide cleanly into binary and some, one tenth among them, repeat without end and must be truncated to fit the bits available",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.data.floating-point-representation",
+        "js.number.float-error",
+        "cs.data.floating-point-incident"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 3. 순환소수 문제",
+          "start_line": 456,
+          "end_line": 456
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.data.floating-point-incident",
+      "title": "패트리어트 미사일 사고",
+      "aliases": [
+        "누적된 시간 오차",
+        "0.34초와 500m"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/floating-point-incident.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single case showing the error is not always negligible - a missile defence system counting time in a truncated fraction drifted by a small amount each hour, and after long enough uptime the accumulated third of a second put its interception hundreds of metres off",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.data.repeating-binary-fraction",
+        "cs.data.float-practice",
+        "cs.data.floating-point-representation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 4. 문제 발생",
+          "start_line": 462,
+          "end_line": 470
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.data.float-practice",
+      "title": "소수를 다루는 세 가지 방법",
+      "aliases": [
+        "돈은 정수로 저장",
+        "센트 단위로",
+        "배정도 표현",
+        "double"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/data/float-practice.md",
+      "tags": [
+        "cs",
+        "data"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three answers to the error - store anything that must be exact as an integer, money in cents rather than dollars; round the result where a fraction is unavoidable; or use the 64-bit form, which shrinks the error at the cost of twice the space",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "cs-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.data.floating-point-representation",
+        "cs.data.floating-point-incident",
+        "js.number.to-fixed",
+        "js.number.float-error"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 5. 결론",
+          "start_line": 478,
+          "end_line": 480
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 5. 결론",
+          "start_line": 484,
+          "end_line": 484
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 부동소수점 부가 설명 > ### 5. 결론",
+          "start_line": 493,
+          "end_line": 495
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.scroll-event",
+      "title": "scroll 이벤트",
+      "aliases": [
+        "window.scrollY",
+        "window.scrollTo",
+        "window.scrollBy"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/scroll-event.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single event fired on the window as the page is scrolled, alongside the properties that say how far down it is and the methods that move it - one to an absolute position and one by a relative amount",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.add-event-listener",
+        "js.dom.scroll-metrics",
+        "js.event.scroll-performance"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용",
+          "start_line": 501,
+          "end_line": 504
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용",
+          "start_line": 512,
+          "end_line": 518
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용",
+          "start_line": 522,
+          "end_line": 523
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용",
+          "start_line": 531,
+          "end_line": 531
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.scroll-metrics",
+      "title": "스크롤 관련 높이 값",
+      "aliases": [
+        "scrollTop",
+        "scrollHeight",
+        "clientHeight"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/scroll-metrics.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three numbers describing a scrollable box - how far it has been scrolled from its top, its full content height, and the height actually visible - where the page uses a different property for the first than a box does, and where comparing them for equality is unsafe because the values come out fractional and differ by platform",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.scroll-event",
+        "js.dom.page-scroll-end",
+        "js.ui.scroll-progress-bar"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### div 박스 스크롤바 내린 높이, 실제 높이",
+          "start_line": 548,
+          "end_line": 552
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### div 박스 스크롤바 내린 높이, 실제 높이",
+          "start_line": 566,
+          "end_line": 566
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### div 박스 스크롤바 내린 높이, 실제 높이",
+          "start_line": 576,
+          "end_line": 576
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### 결론",
+          "start_line": 648,
+          "end_line": 652
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.page-scroll-end",
+      "title": "페이지 끝까지 스크롤했는지 확인하기",
+      "aliases": [
+        "document.documentElement",
+        "html 태그의 높이"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/page-scroll-end.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to ask the same question of the whole page rather than of a box - the measurements are taken from the html element itself, and they are only accurate once the page has finished loading, which is another reason the script belongs at the end of the body",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.scroll-metrics",
+        "js.basic.script-position",
+        "js.event.scroll-event"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### div 박스말고 현재페이지 끝까지 스크롤 체크는?",
+          "start_line": 582,
+          "end_line": 584
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### div 박스말고 현재페이지 끝까지 스크롤 체크는?",
+          "start_line": 598,
+          "end_line": 598
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.scroll-progress-bar",
+      "title": "스크롤 진행바",
+      "aliases": [
+        "스크롤 퍼센트",
+        "position fixed와 z-index"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/scroll-progress-bar.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single formula turning the scroll position into a percentage - how far it has scrolled over the full height minus one screenful - drawn as a bar pinned to the top of the page",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.dom.scroll-metrics",
+        "js.event.scroll-event",
+        "js.dom.page-scroll-end"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### scroll 내린 만큼 상단에 진행바 (스크롤퍼센트)",
+          "start_line": 604,
+          "end_line": 604
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### scroll 내린 만큼 상단에 진행바 (스크롤퍼센트)",
+          "start_line": 610,
+          "end_line": 612
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.scroll-performance",
+      "title": "스크롤 핸들러는 초당 수십 번 실행된다",
+      "aliases": [
+        "1초에 60번 이상",
+        "스크롤 이벤트 부담"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/scroll-performance.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single cost of listening to scrolling - the handler runs dozens of times a second, so what goes inside it has to be cheap, and a check meant to fire once will fire many times over",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.scroll-event",
+        "js.dom.scroll-metrics",
+        "js.event.delegation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## scroll 이벤트 활용 > ### scroll 다룰 때 주의점",
+          "start_line": 639,
+          "end_line": 642
+        }
+      ]
+    },
+    {
+      "concept_id": "js.ui.tab",
+      "title": "탭 기능",
+      "aliases": [
+        "버튼과 내용의 짝",
+        "show 클래스 탈부착"
+      ],
+      "canonical_path": "content/brain/knowledge/js/ui/tab.md",
+      "tags": [
+        "js",
+        "ui"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single four-step behaviour behind a tab strip - clear the highlight from every button, put it on the one clicked, hide every panel, show the one belonging to it - done by attaching and detaching a class rather than by setting styles, with the selectors kept in variables because looking them up is the slow part",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.dom.class-list-toggle",
+        "js.basic.for-loop",
+        "js.event.delegation",
+        "js.basic.variable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### 탭기능",
+          "start_line": 662,
+          "end_line": 664
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### 탭기능",
+          "start_line": 725,
+          "end_line": 730
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.for-loop",
+      "title": "자바스크립트 반복문",
+      "aliases": [
+        "같은 코드를 개수만큼",
+        "반복문에는 let"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/for-loop.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single construct repeating a block a counted number of times, whose counter has to be declared with let rather than var when anything inside the loop runs later than the loop itself",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.var-let-const",
+        "js.basic.closure-var-trap",
+        "js.ui.tab",
+        "java.control-flow.for-statement"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### for 반복문",
+          "start_line": 760,
+          "end_line": 760
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.closure-var-trap",
+      "title": "반복문 안의 var가 어긋나는 이유",
+      "aliases": [
+        "이벤트리스너는 나중에 실행된다",
+        "반복이 끝난 뒤의 i"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/closure-var-trap.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sequence that breaks a listener registered inside a loop - the code is read top to bottom, the listener body is not run when it is registered but stored for later, the loop finishes and leaves the counter at its final value, and because var reaches outside the loop every listener sees that one value when it finally runs",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.basic.for-loop",
+        "js.basic.var-let-const",
+        "js.event.callback",
+        "js.event.add-event-listener"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### var가 제대로 작동 안한 이유",
+          "start_line": 766,
+          "end_line": 780
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### var가 제대로 작동 안한 이유",
+          "start_line": 786,
+          "end_line": 786
+        }
+      ]
+    },
+    {
+      "concept_id": "js.basic.function-parameter",
+      "title": "코드를 함수로 줄일 때 변수는 파라미터로",
+      "aliases": [
+        "축약할 코드의 변수",
+        "파라미터로 바꿔주기"
+      ],
+      "canonical_path": "content/brain/knowledge/js/basic/function-parameter.md",
+      "tags": [
+        "js",
+        "basic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule when folding repeated code into a function - whatever varied between the copies becomes a parameter, since inside the function it is no longer in scope",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.basic.function",
+        "js.basic.return",
+        "js.basic.variable",
+        "js.ui.tab"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### 탭기능 함수 이용 축약",
+          "start_line": 792,
+          "end_line": 792
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## for 반복문, 탭기능 만들기 > ### 탭기능 함수 이용 축약",
+          "start_line": 828,
+          "end_line": 828
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.bubbling",
+      "title": "이벤트 버블링",
+      "aliases": [
+        "event bubbling",
+        "상위 html로 퍼지는 현상"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/bubbling.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single behaviour every browser has - a click on an element counts as a click on each of its ancestors in turn, so a listener on an outer box fires no matter which inner element was actually pressed, and telling them apart means asking what was pressed first",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.event-object",
+        "js.event.delegation",
+        "js.event.add-event-listener"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링",
+          "start_line": 865,
+          "end_line": 867
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링",
+          "start_line": 894,
+          "end_line": 898
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링",
+          "start_line": 902,
+          "end_line": 902
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.event-object",
+      "title": "이벤트 객체",
+      "aliases": [
+        "e.target",
+        "e.currentTarget",
+        "e.stopPropagation()"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/event-object.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single object passed to the callback carrying what is known about the event - where it actually happened as against where the listener is attached, a way to cancel the default action, and a way to stop it travelling further up - with jQuery needing its own comparison method since two selectors cannot be compared directly",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "js.event.bubbling",
+        "js.form.prevent-default",
+        "js.event.callback",
+        "js.library.jquery"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### 유용한 이벤트관련 함수들",
+          "start_line": 908,
+          "end_line": 908
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### 유용한 이벤트관련 함수들",
+          "start_line": 916,
+          "end_line": 922
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### 유용한 이벤트관련 함수들",
+          "start_line": 940,
+          "end_line": 940
+        }
+      ]
+    },
+    {
+      "concept_id": "js.event.delegation",
+      "title": "이벤트리스너 하나로 여러 요소 다루기",
+      "aliases": [
+        "이벤트 위임",
+        "리스너 하나당 램을 차지한다"
+      ],
+      "canonical_path": "content/brain/knowledge/js/event/delegation.md",
+      "tags": [
+        "js",
+        "event"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single use of bubbling as a technique - one listener on the common parent catches clicks on all its children, so three listeners become one, which matters because each one costs memory",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.bubbling",
+        "js.event.event-object",
+        "js.ui.tab",
+        "js.dom.dataset"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### 이벤트버블링 응용",
+          "start_line": 954,
+          "end_line": 956
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### 이벤트버블링 응용",
+          "start_line": 966,
+          "end_line": 966
+        }
+      ]
+    },
+    {
+      "concept_id": "js.dom.dataset",
+      "title": "dataset",
+      "aliases": [
+        "data- 속성",
+        "html 태그에 자료 숨기기"
+      ],
+      "canonical_path": "content/brain/knowledge/js/dom/dataset.md",
+      "tags": [
+        "js",
+        "dom"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to attach a value to an element in the markup and read it back from script, which lets a clicked element say which panel it belongs to instead of the script working it out from an index",
+      "pilot_strata": [
+        "lecture-batch-41",
+        "frontend/apple-js",
+        "js-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "js.event.delegation",
+        "js.ui.tab",
+        "js.event.event-object"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### Datasest",
+          "start_line": 999,
+          "end_line": 1001
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### Datasest",
+          "start_line": 1012,
+          "end_line": 1012
+        },
+        {
+          "path": "content/brain/lectures/frontend/apple-js/apple-js-02.md",
+          "source_sha256": "b0ccf469201377be7ca8dd2afe2bb595797bf2cd7d04684160bce958fb91785f",
+          "heading": "## 이벤트 버블링 > ### Datasest",
+          "start_line": 1028,
+          "end_line": 1028
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

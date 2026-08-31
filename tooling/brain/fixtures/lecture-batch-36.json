@@ -1,0 +1,1280 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-36",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-35",
+    "applied_state": "764 approved knowledge concepts after lecture-batch-35 closed the db/easy-db series with transactions and concurrency control."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/backend/kim-spring/http/section00.md",
+        "source_sha256": "612f954daa0862f9064772aa0c33151ee3f4301f1628cac7d7e2ff29c4a9b88b"
+      },
+      {
+        "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+        "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811"
+      },
+      {
+        "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+        "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf"
+      },
+      {
+        "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+        "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d"
+      }
+    ],
+    "line_range": "section00 L12-L31, section01 L12-L160, section02 L12-L201, section03 L12-L355",
+    "series": "인프런 김영한 - 모든 개발자를 위한 HTTP 웹 기본 지식 0~3/8"
+  },
+  "overlap_analysis": {
+    "finding": "This is the first batch of the kim-spring lane and it lands on cs.network, which fun-java already opened with four concepts. Three of them are exactly what sections 01 to 03 re-teach at greater depth - IP and port, DNS, and HTTP itself - so those take the evidence as updates rather than as new concepts.",
+    "disposition": "The four sections form one continuous explanation: what IP cannot do, what TCP and UDP add, how a resource is named, and what an HTTP message actually is. They are batched together at 333 prose lines, just under the B4 ceiling, so the chain is not broken across a review boundary."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All three update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "section00 L12-L21 and L29-L30",
+        "reason_code": "table-of-contents-and-restated-intro",
+        "detail": "The file is the course's table of contents. Its only claim, that everything runs on HTTP, is stated at length in section03 L16-23 and is cited there onto cs.network.http-protocol."
+      },
+      {
+        "span": "section01 L14-L19, L56; section02 L150-L152; section03 L67-L69 partial, L189-L197, L221-L229, L259, L352-L355",
+        "reason_code": "figure-caption-navigation-or-carried-by-owner",
+        "detail": "The lecture preamble link on every file, the anchor links between sections of the same page, the figure lead-ins, and the closing remark that a successful standard is simple but extensible."
+      },
+      {
+        "span": "section03 L93-L140",
+        "reason_code": "collapsed-illustrative-dialogue",
+        "detail": "A details block of shop-counter dialogues illustrating stateful versus stateless; the claim it illustrates is cited from L85-91."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in sections 01 to 03 contributes at least one cited locator, either to a create or to an update. section00 contributes none, for the reason recorded above."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 23839,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 333,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 14,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 14,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 25,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set. Sections 04 and 05 - HTTP methods and their use - are left to the next batch, so cs.network.http-request-line names GET and POST only as far as section03 does.",
+  "candidates_authored": 25,
+  "candidates": [
+    {
+      "concept_id": "cs.network.ip-and-port",
+      "title": "IP 주소와 포트",
+      "aliases": [
+        "Well Known Port",
+        "Registered Port",
+        "Dynamic Port"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/ip-and-port.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single addressing pair in which the IP identifies the machine and the port identifies which server on it, the port range split into the well-known band assigned by the registry, the registered band for organizations, and the dynamic band the operating system hands out",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-36",
+        "backend/kim-spring"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.dns",
+        "cs.network.loopback",
+        "java.net.socket",
+        "cs.network.ip-packet",
+        "cs.network.ip-limitation",
+        "cs.network.url-structure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 기초 용어",
+          "start_line": 11,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 120,
+          "end_line": 122
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 126,
+          "end_line": 126
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 130,
+          "end_line": 132
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### PORT",
+          "start_line": 136,
+          "end_line": 143
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.dns",
+      "title": "도메인 네임 서버",
+      "aliases": [
+        "DNS",
+        "도메인 주소",
+        "nslookup"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/dns.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single service translating a domain name into an IP address, configured with two name servers so one can fail",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-36",
+        "backend/kim-spring"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "cs.network.loopback",
+        "java.net.inet-address",
+        "cs.network.browser-request-flow",
+        "cs.network.uri"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 기초 용어",
+          "start_line": 31,
+          "end_line": 45
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### DNS",
+          "start_line": 149,
+          "end_line": 152
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### DNS",
+          "start_line": 156,
+          "end_line": 158
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-protocol",
+      "title": "HTTP 프로토콜",
+      "aliases": [
+        "요청-응답 규약",
+        "접속 후 close",
+        "HyperText Transfer Protocol",
+        "모든 것을 HTTP 메시지에 담는다"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-protocol.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single agreed exchange - connect, send a request, receive a response, close - which is what makes a browser and a web server able to talk at all",
+      "pilot_strata": [
+        "lecture-batch-28",
+        "pl/fun-java",
+        "cs-domain",
+        "lecture-batch-36",
+        "backend/kim-spring"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.net.socket",
+        "java.net.http-request-header",
+        "cs.network.ip-and-port",
+        "cs.network.http-history",
+        "cs.network.client-server-architecture",
+        "cs.network.stateless",
+        "cs.network.connectionless",
+        "cs.network.http-message-structure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java11.md",
+          "source_sha256": "7ad79df8b0a727b054700e4c72eabeeab27b202f17e0c710f761aef75dc14a66",
+          "heading": "## 네트워크 프로그래밍 > ### 클라이언트-서버",
+          "start_line": 123,
+          "end_line": 130
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 모든 것이 HTTP",
+          "start_line": 16,
+          "end_line": 23
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 모든 것이 HTTP",
+          "start_line": 45,
+          "end_line": 49
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.ip-packet",
+      "title": "IP 패킷",
+      "aliases": [
+        "Internet Protocol",
+        "IP Packet",
+        "출발지 IP와 목적지 IP"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/ip-packet.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unit the Internet Protocol delivers in - the message is not sent as it is but wrapped in a packet carrying the source and destination addresses, which is what lets it be handed to a given IP address at all",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.ip-and-port",
+        "cs.network.ip-limitation",
+        "cs.network.protocol-stack"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### IP(인터넷 프로토콜)",
+          "start_line": 25,
+          "end_line": 28
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### IP(인터넷 프로토콜)",
+          "start_line": 32,
+          "end_line": 33
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.ip-limitation",
+      "title": "IP 프로토콜의 한계",
+      "aliases": [
+        "비연결성",
+        "비신뢰성",
+        "프로그램 구분 불가"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/ip-limitation.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of gaps that everything above IP exists to fill - a packet is sent even when nothing is there to receive it, it may be lost or arrive out of order, and IP alone cannot tell which of several applications on one address a packet is for",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.ip-packet",
+        "cs.network.tcp",
+        "cs.network.ip-and-port"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### IP(인터넷 프로토콜)",
+          "start_line": 39,
+          "end_line": 46
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.protocol-stack",
+      "title": "인터넷 프로토콜 4계층",
+      "aliases": [
+        "애플리케이션 계층",
+        "전송 계층",
+        "인터넷 계층",
+        "네트워크 인터페이스 계층"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/protocol-stack.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single stack of four layers - application with HTTP and FTP, transport with TCP and UDP, internet with IP, and the network interface with the card and its driver - through which data is handed down from a socket library and wrapped once per layer, in TCP information, then an IP packet, then an Ethernet frame",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.tcp",
+        "cs.network.ip-packet",
+        "cs.network.browser-request-flow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 62,
+          "end_line": 67
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 71,
+          "end_line": 78
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 82,
+          "end_line": 86
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.tcp",
+      "title": "TCP",
+      "aliases": [
+        "Transmission Control Protocol",
+        "전송 제어 프로토콜",
+        "3 way handshake",
+        "SYN ACK"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/tcp.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single transport protocol that fixes what IP leaves open - it opens a connection first through the three way handshake, which is logical rather than physical, and from there guarantees that data arrived and that it arrived in order",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.ip-limitation",
+        "cs.network.udp",
+        "cs.network.protocol-stack",
+        "cs.network.connectionless"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 90,
+          "end_line": 99
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.udp",
+      "title": "UDP",
+      "aliases": [
+        "User Datagram Protocol",
+        "사용자 데이터그램 프로토콜",
+        "하얀 도화지"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/udp.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single transport protocol that is nearly IP itself - port and checksum added, no handshake, no delivery guarantee, no ordering - which is exactly why it can be tuned when TCP cannot, TCP being too entrenched to change, and why HTTP/3 was built on it",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.tcp",
+        "cs.network.ip-packet",
+        "cs.network.http-history"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section01.md",
+          "source_sha256": "54e53a2b1c8a0fef9ddf46a245bb3505f73b6b0f1b33f21f9adcb6fafb5a9811",
+          "heading": "### TCP, UDP",
+          "start_line": 103,
+          "end_line": 114
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.uri",
+      "title": "URI",
+      "aliases": [
+        "Uniform Resource Identifier",
+        "URL",
+        "URN",
+        "리소스 식별"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/uri.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single uniform way of identifying a resource, which splits into a locator saying where the resource is and a name saying what it is called - a location can change while a name cannot, but naming never became usable for actually finding anything, so URI is spoken of as meaning URL",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.url-structure",
+        "cs.network.dns",
+        "cs.network.http-protocol"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 14,
+          "end_line": 15
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 19,
+          "end_line": 22
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 30,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 39,
+          "end_line": 45
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.url-structure",
+      "title": "URL의 구조",
+      "aliases": [
+        "scheme",
+        "userinfo",
+        "host",
+        "path"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/url-structure.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single grammar a URL follows - scheme, optional userinfo, host, optional port, path, query and fragment - where the scheme is usually the protocol and settles the default port so it can be omitted, the host is a domain name or an address, and the path is hierarchical",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.uri",
+        "cs.network.query-string",
+        "cs.network.url-fragment",
+        "cs.network.ip-and-port"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 53,
+          "end_line": 59
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 63,
+          "end_line": 73
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 77,
+          "end_line": 84
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 88,
+          "end_line": 95
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 99,
+          "end_line": 107
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 111,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.query-string",
+      "title": "쿼리 스트링",
+      "aliases": [
+        "query parameter",
+        "query string",
+        "key=value"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/query-string.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single part of a URL carrying parameters to the web server as text - key=value pairs opened with ? and joined with &",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.url-structure",
+        "cs.network.http-request-line"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 122,
+          "end_line": 131
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.url-fragment",
+      "title": "fragment",
+      "aliases": [
+        "html 내부 북마크",
+        "서버에 전송되지 않는 부분"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/url-fragment.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trailing part of a URL used for bookmarks inside an html document, which is not sent to the server at all",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.url-structure",
+        "cs.network.query-string"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### URI",
+          "start_line": 135,
+          "end_line": 142
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.browser-request-flow",
+      "title": "웹 브라우저 요청 흐름",
+      "aliases": [
+        "주소창에 입력하면 일어나는 일",
+        "패킷을 까서 HTTP 메시지 확인"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/browser-request-flow.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single sequence a typed address sets off - the browser resolves the host through DNS and takes the port from the scheme, builds an HTTP request message, hands it to TCP/IP through the socket library which completes the handshake, wraps it in a packet that leaves through the network interface, and the server unwraps everything down to the HTTP message, answers with one of its own, and the browser unwraps that and renders it",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.protocol-stack",
+        "cs.network.dns",
+        "cs.network.tcp",
+        "cs.network.http-message-structure"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### Web Browser",
+          "start_line": 157,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### Web Browser",
+          "start_line": 164,
+          "end_line": 166
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### Web Browser",
+          "start_line": 172,
+          "end_line": 172
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### Web Browser",
+          "start_line": 178,
+          "end_line": 180
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### Web Browser",
+          "start_line": 188,
+          "end_line": 188
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section02.md",
+          "source_sha256": "805f4496c1a2a4827bf6ec27c0d4c41e11d8d350e6c4684713c88c2de62309bf",
+          "heading": "### Web Browser",
+          "start_line": 198,
+          "end_line": 198
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-history",
+      "title": "HTTP 버전의 역사",
+      "aliases": [
+        "HTTP/1.1",
+        "HTTP/2",
+        "HTTP/3",
+        "RFC7230"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-history.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single line of versions - 0.9 with only GET and no headers, 1.0 adding methods and headers, 1.1 in 1997 which is still the one that matters and is what most traffic uses, 2 in 2015 for performance, and 3 which swaps TCP for UDP",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-protocol",
+        "cs.network.udp",
+        "cs.network.tcp"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 모든 것이 HTTP",
+          "start_line": 27,
+          "end_line": 33
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 모든 것이 HTTP",
+          "start_line": 37,
+          "end_line": 41
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.client-server-architecture",
+      "title": "클라이언트-서버 구조",
+      "aliases": [
+        "Request Response 구조",
+        "요청과 응답",
+        "독립적으로 발전"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/client-server-architecture.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single arrangement HTTP assumes - the client sends a request message and waits, the server builds a response message from the result - whose point is the separation itself, since putting the business logic and the data on the server leaves the client free to be about the interface, and each side can then evolve on its own",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.http-protocol",
+        "software.architecture.three-tier",
+        "software.architecture.business-logic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 클라이언트-서버 구조",
+          "start_line": 57,
+          "end_line": 57
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 클라이언트-서버 구조",
+          "start_line": 61,
+          "end_line": 63
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 클라이언트-서버 구조",
+          "start_line": 67,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.stateless",
+      "title": "무상태 프로토콜",
+      "aliases": [
+        "Stateless",
+        "Stateful",
+        "상태 유지",
+        "서버가 상태를 보존하지 않음"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/stateless.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single property HTTP aims at - the server keeps nothing about the client between requests, so any server can answer any request and servers can be thrown at a surge without limit, at the cost of the client resending what the server would otherwise have remembered",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-protocol",
+        "cs.network.stateless-limit",
+        "software.ops.app-server-scaling",
+        "cs.network.stateless-traffic-design"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### Stateful, Stateless",
+          "start_line": 77,
+          "end_line": 81
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### Stateful, Stateless",
+          "start_line": 85,
+          "end_line": 91
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### Stateful, Stateless",
+          "start_line": 144,
+          "end_line": 146
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### Stateful, Stateless",
+          "start_line": 156,
+          "end_line": 158
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### Stateful, Stateless",
+          "start_line": 166,
+          "end_line": 166
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.stateless-limit",
+      "title": "무상태 설계의 한계",
+      "aliases": [
+        "로그인은 상태 유지",
+        "쿠키와 세션",
+        "상태 유지는 최소한만"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/stateless-limit.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single boundary on how far statelessness reaches - a plain introduction page needs no state, a logged-in user does, and that state is generally held with a browser cookie and a server session, which should be kept to the minimum; the other cost is how much data every request has to carry",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.stateless",
+        "cs.network.stateless-traffic-design"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### Stateful, Stateless",
+          "start_line": 172,
+          "end_line": 181
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.stateless-traffic-design",
+      "title": "대용량 트래픽은 무상태로 설계한다",
+      "aliases": [
+        "선착순 이벤트",
+        "동시 요청 수만 건",
+        "정적 페이지로 분산"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/stateless-traffic-design.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason statelessness is worth the trouble - traffic that all arrives at one instant, a first-come event or a holiday ticket opening, can only be met by adding servers, which requires the design to be stateless; and one practical trick is to put a static page with no state in front so people do not all press the button at the same moment",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.stateless",
+        "cs.network.stateless-limit",
+        "software.ops.app-server-scaling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 비 연결성",
+          "start_line": 233,
+          "end_line": 238
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 비 연결성",
+          "start_line": 242,
+          "end_line": 243
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.connectionless",
+      "title": "비 연결성",
+      "aliases": [
+        "Connectionless",
+        "연결을 유지하지 않는 모델",
+        "서버 자원 효율"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/connectionless.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single default of HTTP - the connection is dropped once the exchange is over, which works because responses come back in well under a second and because thousands of users over an hour still amount to only dozens of requests at any moment, so the server's resources go a long way",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "cs.network.http-protocol",
+        "cs.network.persistent-connection",
+        "cs.network.tcp"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 비 연결성",
+          "start_line": 203,
+          "end_line": 208
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.persistent-connection",
+      "title": "지속 연결",
+      "aliases": [
+        "Persistent Connections",
+        "핸드셰이크 반복 비용",
+        "자원이 함께 다운로드"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/persistent-connection.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single fix for what dropping the connection costs - a page pulls down css, javascript and images besides the html, and each would pay another three way handshake, so the connection is held open across them instead, with further optimisation in HTTP/2 and HTTP/3",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.connectionless",
+        "cs.network.tcp",
+        "cs.network.http-history"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### 비 연결성",
+          "start_line": 212,
+          "end_line": 217
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-message-structure",
+      "title": "HTTP 메시지 구조",
+      "aliases": [
+        "시작 라인",
+        "공백 라인",
+        "메시지 바디",
+        "CRLF"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-message-structure.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single layout every HTTP message has - a start line, headers, a blank line that must be there, and the body",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-request-line",
+        "cs.network.http-status-line",
+        "cs.network.http-header",
+        "cs.network.http-message-body"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 251,
+          "end_line": 253
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-request-line",
+      "title": "요청 라인",
+      "aliases": [
+        "request-line",
+        "HTTP 메서드",
+        "요청 대상",
+        "absolute-path"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-request-line.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single form the start line takes in a request - method, space, request target, space, HTTP version, newline - where the method names the action the server is to take, GET to fetch a resource and POST to have something processed, and the target is an absolute path with an optional query",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-message-structure",
+        "cs.network.http-status-line",
+        "cs.network.query-string"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 265,
+          "end_line": 266
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 278,
+          "end_line": 295
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-status-line",
+      "title": "상태 라인",
+      "aliases": [
+        "status-line",
+        "HTTP 상태 코드",
+        "이유 문구",
+        "reason-phrase"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-status-line.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single form the start line takes in a response - HTTP version, space, status code, space, reason phrase, newline - where the code says whether the request succeeded, 200 for success, 400 for a client error, 500 for a server one, and the phrase is a short explanation for a person",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-message-structure",
+        "cs.network.http-request-line"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 311,
+          "end_line": 318
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-header",
+      "title": "HTTP 헤더",
+      "aliases": [
+        "header-field",
+        "field-name과 field-value",
+        "임의의 헤더 추가"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-header.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single line of the form field-name, colon, optional whitespace, field-value - the name being case-insensitive and having to sit right against the colon, the value not - which carries every piece of metadata the transfer needs, from the body's type and size to compression, authentication, client and server identity and cache control, and which may be invented where the standard ones do not suffice",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-message-structure",
+        "cs.network.http-message-body",
+        "db.basic.metadata"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 325,
+          "end_line": 330
+        },
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 334,
+          "end_line": 339
+        }
+      ]
+    },
+    {
+      "concept_id": "cs.network.http-message-body",
+      "title": "HTTP 메시지 바디",
+      "aliases": [
+        "실제 전송할 데이터",
+        "byte로 표현할 수 있는 모든 것"
+      ],
+      "canonical_path": "content/brain/knowledge/cs/network/http-message-body.md",
+      "tags": [
+        "cs",
+        "network"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single part of the message holding the data actually being sent, which may be anything expressible as bytes - an html document, an image, a video, JSON",
+      "pilot_strata": [
+        "lecture-batch-36",
+        "backend/kim-spring",
+        "network-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "cs.network.http-message-structure",
+        "cs.network.http-header"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/http/section03.md",
+          "source_sha256": "08b81f8b9ade7843e71a10e1b675937727b37a9fc9276c3d34e27b3f91646b5d",
+          "heading": "### HTTP 메시지",
+          "start_line": 347,
+          "end_line": 348
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

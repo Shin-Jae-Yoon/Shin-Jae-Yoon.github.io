@@ -1,0 +1,948 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-27",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-26",
+    "applied_state": "567 approved knowledge concepts after lecture-batch-26 completed fun-java08."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+        "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb"
+      }
+    ],
+    "line_range": "L11-L1264 (whole file)",
+    "series": "즐거운 자바 (fun-java) 9/11 — Java I/O"
+  },
+  "overlap_analysis": {
+    "finding": "Java IO is almost entirely new to the index; only System.out and array copying were applied, so 18 of 20 candidates are creates.",
+    "disposition": "The file is the source for the whole java.io.* namespace - the decorator composition rule, the class-naming scheme, BufferedReader, the File class, the byte and char stream roots, why a byte read returns an int, stream chaining, the composite pattern, the specialized streams, serialization and the deep copy it enables."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7, L61, L77, L196-326 partial, L440-484, L600-708, L716-824, L834-1019 partial, L1185-1262 partial",
+        "reason_code": "code-listing-caption-worked-example-or-carried-by-owner",
+        "detail": "Collapsed code-example blocks, the file-utility exercises and walkthrough lines whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in fun-java09 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 203,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 20,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 20,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 20,
+  "candidates": [
+    {
+      "concept_id": "java.io.system-out",
+      "title": "System.out",
+      "aliases": [
+        "println",
+        "PrintStream",
+        "표준 출력 필드",
+        "System.in",
+        "System.err",
+        "표준 입출력"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/system-out.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single standard output handle that is a field of the System class holding a PrintStream, whose println method writes its argument to the screen - and the worked example for reading a dotted Java expression as class, field and method",
+      "pilot_strata": [
+        "lecture-batch-19",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-27"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.class",
+        "java.oop.member-variable",
+        "java.oop.method",
+        "java.io.java-io",
+        "java.io.buffered-reader"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java01.md",
+          "source_sha256": "5e7e2729a9206c79f11ce37fa18dc20a6a270db1d2ab626828522aff33b2c8e6",
+          "heading": "## Java의 특징 > ### Hello 파일 분석",
+          "start_line": 68,
+          "end_line": 74
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### Java IO의 특수한 객체",
+          "start_line": 63,
+          "end_line": 69
+        }
+      ]
+    },
+    {
+      "concept_id": "java.array.array-copy",
+      "title": "배열 복사",
+      "aliases": [
+        "Array Copy",
+        "얕은 복사",
+        "깊은 복사",
+        "Shallow Copy",
+        "Deep Copy"
+      ],
+      "canonical_path": "content/brain/knowledge/java/array/array-copy.md",
+      "tags": [
+        "java",
+        "array"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single Java array-copy mechanism including value, shallow-reference, and deep-object copy behavior",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-24",
+        "pl/fun-java",
+        "lecture-batch-27"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.object-array",
+        "java.memory.object-reference",
+        "java.util.arrays-copy-of",
+        "java.io.deep-copy-serialization"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 배열 복사하기",
+          "start_line": 293,
+          "end_line": 340
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## 배열이란? > ### 객체 배열 복사",
+          "start_line": 341,
+          "end_line": 499
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java06.md",
+          "source_sha256": "1c0c42400aab3db8c6c5ced58ad7a2ecb6cd991da35a434681226a48f9b29642",
+          "heading": "## Arrays > ### 얕은복사 vs 깊은복사",
+          "start_line": 510,
+          "end_line": 513
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### 얕은복사 깊은복사",
+          "start_line": 1178,
+          "end_line": 1179
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.java-io",
+      "title": "Java I/O",
+      "aliases": [
+        "입출력",
+        "Input Output"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/java-io.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of objects that read from something - keyboard, network or file - and write to something else, and which are ordinary Java objects like any other",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.io-stream",
+        "java.io.system-out"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O",
+          "start_line": 13,
+          "end_line": 22
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.decorator-pattern",
+      "title": "Java IO의 데코레이터 패턴",
+      "aliases": [
+        "Decorator Pattern",
+        "주인공과 장식",
+        "생성자로 받는 Component"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/decorator-pattern.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single composition rule by which Java IO is assembled: the four abstract components read or write one byte or char at a time and decide the target, while a decorator takes one of them in its constructor and adds a richer way of reading or writing - so a constructor parameter of those four types is the sign of a decorator",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.java-io",
+        "software.pattern.design-pattern",
+        "java.io.stream-chaining",
+        "java.oop.abstract-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### Decorator 패턴",
+          "start_line": 30,
+          "end_line": 37
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### Decorator 패턴",
+          "start_line": 41,
+          "end_line": 48
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### Decorator 패턴",
+          "start_line": 52,
+          "end_line": 55
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.io-class-naming",
+      "title": "Java IO 클래스 이름 규칙",
+      "aliases": [
+        "Stream Reader Writer 접미사",
+        "File ByteArray Buffered 접두사"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/io-class-naming.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single naming scheme that tells a class's job from its name - a Stream suffix means byte units and Reader or Writer means characters, while a File, ByteArray, CharArray, Filter, Data or Buffered prefix names what it reads from or how it wraps another",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.io-stream",
+        "java.language.naming-convention"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### Java IO의 클래스 상속도",
+          "start_line": 82,
+          "end_line": 99
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.buffered-reader",
+      "title": "BufferedReader",
+      "aliases": [
+        "readLine()",
+        "한 줄씩 입력받기",
+        "EOF에 null 반환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/buffered-reader.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single decorator reading a line at a time and answering null at end of file, which must be given a Reader - hence an InputStreamReader wrapping the standard input stream when the source is the keyboard",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.system-out",
+        "java.io.stream-chaining",
+        "java.io.io-class-naming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 106,
+          "end_line": 117
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 122,
+          "end_line": 123
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 145,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.file-class",
+      "title": "File 클래스",
+      "aliases": [
+        "java.io.File",
+        "디렉토리도 파일",
+        "createNewFile()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/file-class.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single handle on a path - a directory counts as one too - offering size, permission, existence, deletion and rename operations, whose construction creates the object but not the file on disk",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.java-io",
+        "java.io.io-class-naming",
+        "java.pattern.composite"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### File 클래스",
+          "start_line": 151,
+          "end_line": 160
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### File 클래스",
+          "start_line": 166,
+          "end_line": 172
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### File 클래스",
+          "start_line": 178,
+          "end_line": 192
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.io-stream",
+      "title": "IO 스트림",
+      "aliases": [
+        "Byte Stream",
+        "Char Stream",
+        "네 개의 추상 클래스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/io-stream.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single flow of bytes or of characters, rooted in two abstract pairs - InputStream and OutputStream for bytes, Reader and Writer for characters - from which every IO class descends",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.java-io",
+        "java.io.io-class-naming",
+        "java.io.input-stream",
+        "java.oop.abstract-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream",
+          "start_line": 328,
+          "end_line": 336
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.input-stream",
+      "title": "InputStream",
+      "aliases": [
+        "available()",
+        "read(byte[])",
+        "skip()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/input-stream.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single byte-input abstraction offering how many bytes are readable now, a single-byte read, a buffer read, a skip and a close",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.io-stream",
+        "java.io.read-returns-int",
+        "java.io.buffered-reader"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### InputStream",
+          "start_line": 366,
+          "end_line": 374
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.read-returns-int",
+      "title": "read()가 int를 반환하는 이유",
+      "aliases": [
+        "EOF 표현",
+        "-1 반환",
+        "2의 보수"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/read-returns-int.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reason a byte-wise read returns an int: every one of the 256 byte patterns is a legal datum, leaving no room to signal end of file, so the wider type carries -1 as that signal",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.input-stream",
+        "cs.data.bit-and-byte",
+        "java.type.integer-type",
+        "java.operator.bit-shift-operator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### InputStream - read()",
+          "start_line": 404,
+          "end_line": 417
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.character-encoding-size",
+      "title": "문자 저장 크기",
+      "aliases": [
+        "한글 3바이트",
+        "인코딩에 따른 파일 크기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/character-encoding-size.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single observation that three ASCII characters occupy three bytes on disk while three Korean ones occupy nine, because the encoding decides how many bytes a character costs",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.type.character-type",
+        "java.io.io-stream",
+        "cs.data.bit-and-byte"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### Reader Writer",
+          "start_line": 504,
+          "end_line": 505
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.stream-chaining",
+      "title": "스트림 연결",
+      "aliases": [
+        "IO 조립",
+        "생성자에 들어온 것을 읽는다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/stream-chaining.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single chaining behaviour in which each layer delegates to whatever was handed to its constructor, so a line-oriented writer calls the character writer beneath it, which calls the byte stream that finally reaches the file",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.buffered-reader",
+        "java.io.io-stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### Stream 흐름",
+          "start_line": 535,
+          "end_line": 538
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### Stream 흐름",
+          "start_line": 558,
+          "end_line": 563
+        }
+      ]
+    },
+    {
+      "concept_id": "java.pattern.composite",
+      "title": "컴포지트 패턴",
+      "aliases": [
+        "Composite Pattern",
+        "부분-전체 계층",
+        "단일 객체와 복합 객체를 동일하게"
+      ],
+      "canonical_path": "content/brain/knowledge/java/pattern/composite.md",
+      "tags": [
+        "java",
+        "pattern"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pattern arranging objects into a tree so a leaf and a container are handled through one common type - a folder asked for its size adds up the files and folders inside it",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "software.pattern.design-pattern",
+        "java.io.decorator-pattern",
+        "java.io.file-class",
+        "java.oop.abstract-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### Composite 패턴",
+          "start_line": 590,
+          "end_line": 596
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### Composite 패턴",
+          "start_line": 703,
+          "end_line": 706
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.data-stream",
+      "title": "DataStream",
+      "aliases": [
+        "DataInputStream",
+        "DataOutputStream",
+        "기본형 타입 입출력"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/data-stream.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single decorator pair reading and writing primitive types and strings, which must come back out in the order they went in",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.io-class-naming",
+        "java.type.primitive-type"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### DataStream",
+          "start_line": 828,
+          "end_line": 830
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.byte-array-stream",
+      "title": "ByteArrayStream",
+      "aliases": [
+        "ByteArrayInputStream",
+        "ByteArrayOutputStream",
+        "메모리에 쓰기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/byte-array-stream.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single stream pair whose target is a byte array rather than a file, which is what taking no constructor argument means - the destination is memory",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.io.io-class-naming",
+        "java.io.string-reader-writer",
+        "java.io.serialization"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### ByteArrayStream",
+          "start_line": 914,
+          "end_line": 916
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.char-array-stream",
+      "title": "CharArrayReader와 CharArrayWriter",
+      "aliases": [
+        "char 배열 입출력"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/char-array-stream.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reader and writer pair whose target is a char array",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.io.byte-array-stream",
+        "java.io.io-class-naming"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### CharArray",
+          "start_line": 973,
+          "end_line": 974
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.string-reader-writer",
+      "title": "StringReader와 StringWriter",
+      "aliases": [
+        "문자열 입출력"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/string-reader-writer.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reader and writer pair over a string, again taking no constructor argument because the destination is memory",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.io.byte-array-stream",
+        "java.util.string-class",
+        "java.io.char-array-stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### StringReader, StringWriter",
+          "start_line": 980,
+          "end_line": 981
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.serialization",
+      "title": "객체 직렬화",
+      "aliases": [
+        "Serialization",
+        "ObjectOutputStream",
+        "Serializable"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/serialization.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single conversion of an object into a stream of bytes so it can travel elsewhere, available only to primitives and to classes that implement Serializable",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.mark-interface",
+        "java.io.deep-copy-serialization",
+        "java.io.io-class-naming",
+        "java.util.string-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### ObjectStream, 직렬화",
+          "start_line": 1025,
+          "end_line": 1029
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### ObjectStream, 직렬화",
+          "start_line": 1034,
+          "end_line": 1034
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.mark-interface",
+      "title": "마크 인터페이스",
+      "aliases": [
+        "Mark Interface",
+        "메서드 없는 인터페이스"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/mark-interface.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface declaring no methods at all, implemented not to supply behaviour but to mark the class as belonging to a category",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.io.serialization",
+        "java.oop.interface",
+        "java.oop.interface-specification"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### ObjectStream, 직렬화",
+          "start_line": 1030,
+          "end_line": 1030
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.deep-copy-serialization",
+      "title": "직렬화를 이용한 깊은 복사",
+      "aliases": [
+        "Deep Copy by Serialization",
+        "리스트 복사의 착각"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/deep-copy-serialization.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single technique of serializing an object to bytes and reading it back to obtain a genuinely separate copy, needed because copying a list only duplicates the references it holds",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.serialization",
+        "java.array.array-copy",
+        "java.memory.object-reference",
+        "java.io.byte-array-stream"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### 얕은복사 깊은복사",
+          "start_line": 1143,
+          "end_line": 1145
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## IO Stream > ### 얕은복사 깊은복사",
+          "start_line": 1262,
+          "end_line": 1264
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

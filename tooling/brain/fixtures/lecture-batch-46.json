@@ -1,0 +1,1008 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-46",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-45",
+    "applied_state": "984 approved knowledge concepts after lecture-batch-45 closed the apple-html series."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch00.md",
+        "source_sha256": "3ef2421fc23adcd99b03ffbdc08b4eb0166fa504c862b1f985564e04ea959938"
+      },
+      {
+        "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+        "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414"
+      },
+      {
+        "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+        "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897"
+      }
+    ],
+    "line_range": "p1-ch00 L14-L75, p1-ch01 L12-L580, p1-ch02 L12-L257",
+    "series": "패스트캠퍼스 코딩테스트 Part1-4, 0~2장"
+  },
+  "overlap_analysis": {
+    "finding": "This lane is unlike the others: most of each file is a walkthrough of one numbered problem, so the concepts have to be the technique the walkthrough demonstrates rather than the solution itself. The string chapter also restates java.util.string-class, which the fun-java lane already applied.",
+    "disposition": "New namespace algo, under test, string, math and complexity. Two java concepts absorb what belongs to them - the string class gains the immutability and the method table, and its comparison concept gains an edge to the new String Pool concept, which is what actually explains why identity comparison misleads."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All four update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "p1-ch00 L8-L19, L47-L48; p1-ch01 L8, L41, L52, L159, L196, L270-L299, L371, L435, L482, L508, L544; p1-ch02 L8, L39-L41, L54, L71, L104-L107, L115, L137, L180 partial",
+        "reason_code": "course-link-index-step-caption-or-carried-by-owner",
+        "detail": "The course link and its table of contents, the judge site's own help pages, the numbered captions announcing each code listing, the pseudocode restated line by line in the listing that follows it, and the author's note on what they failed to see in one problem."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope across the three files contributes at least one cited locator, either to a create or to an update - the per-problem sections through the technique each demonstrates."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 26809,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 164,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 17,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 17,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 20,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "duplicate_avoided_note": {
+    "proposed": "java.util.string-pool",
+    "existing": "java.type.string-constant-pool",
+    "disposition": "The string pool was already applied from the fun-java lane in batch 21. This file's account of it - literal in the pool versus new on the heap, and why identity comparison misleads - is appended to that concept as evidence instead of being created a second time."
+  },
+  "candidates_authored": 20,
+  "candidates": [
+    {
+      "concept_id": "java.util.string-class",
+      "title": "String 클래스",
+      "aliases": [
+        "java.lang.String",
+        "CharSequence",
+        "length()",
+        "String은 불변이다",
+        "toCharArray()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-class.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single library class extending Object and implementing Serializable, CharSequence and Comparable, whose API documentation is the worked example for reading a method signature as parameters and return type",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-46",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.string-constant-pool",
+        "java.oop.interface",
+        "software.api.api",
+        "java.oop.method",
+        "java.util.printf-format",
+        "algo.string.index-of-search"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### String Class",
+          "start_line": 130,
+          "end_line": 138
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열",
+          "start_line": 14,
+          "end_line": 18
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 39,
+          "end_line": 39
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 53,
+          "end_line": 53
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 바꾸기",
+          "start_line": 66,
+          "end_line": 66
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 메서드",
+          "start_line": 107,
+          "end_line": 121
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.string-comparison",
+      "title": "문자열 비교",
+      "aliases": [
+        "String equals()",
+        "toUpperCase()",
+        "substring()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/string-comparison.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single rule that string values are compared with equals rather than by reference, alongside the transformation methods that return a new string instead of altering the original",
+      "pilot_strata": [
+        "lecture-batch-23",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-46",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.oop.equals-hashcode",
+        "java.oop.immutable-object",
+        "java.type.string-constant-pool",
+        "algo.string.ascii-arithmetic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### equals()",
+          "start_line": 629,
+          "end_line": 631
+        }
+      ]
+    },
+    {
+      "concept_id": "java.io.buffered-reader",
+      "title": "BufferedReader",
+      "aliases": [
+        "readLine()",
+        "한 줄씩 입력받기",
+        "EOF에 null 반환"
+      ],
+      "canonical_path": "content/brain/knowledge/java/io/buffered-reader.md",
+      "tags": [
+        "java",
+        "io"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single decorator reading a line at a time and answering null at end of file, which must be given a Reader - hence an InputStreamReader wrapping the standard input stream when the source is the keyboard",
+      "pilot_strata": [
+        "lecture-batch-27",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-46",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.io.decorator-pattern",
+        "java.io.system-out",
+        "java.io.stream-chaining",
+        "java.io.io-class-naming",
+        "algo.test.java-io-setup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 106,
+          "end_line": 117
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 122,
+          "end_line": 123
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java09.md",
+          "source_sha256": "5b1e2a37a03c1f0a658c1f948db7b893cf4a0c8d886488f8749520f0031bc5fb",
+          "heading": "## Java I/O > ### BufferedReader 클래스",
+          "start_line": 145,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.string-constant-pool",
+      "title": "String constant pool",
+      "aliases": [
+        "문자열 상수 풀",
+        "큰따옴표 리터럴 인스턴스",
+        "new는 매번 새 인스턴스",
+        "==는 참조 대상을 비교한다"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/string-constant-pool.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pool that lets a string be created without new, which is why quoting a literal is preferred over constructing one",
+      "pilot_strata": [
+        "lecture-batch-21",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-23",
+        "lecture-batch-46",
+        "algo/fastcampus-algo"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.util.string-class",
+        "java.language.literal",
+        "java.memory.heap",
+        "java.oop.immutable-object",
+        "java.oop.final-class",
+        "java.util.string-comparison"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## instance 필드 > ### 필드(field)",
+          "start_line": 116,
+          "end_line": 118
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 597,
+          "end_line": 598
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## final 클래스, 불변객체 String > ### String 클래스",
+          "start_line": 622,
+          "end_line": 623
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### String 내용 비교",
+          "start_line": 96,
+          "end_line": 99
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.problem-format",
+      "title": "코딩테스트 문제의 구성",
+      "aliases": [
+        "지문과 입출력 명세와 예제",
+        "stdin과 stdout"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/problem-format.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single shape every problem takes - a description of the data given and the answer wanted, a specification of the input and output, and worked examples - where the program reads from standard in and writes to standard out rather than from files",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.test.problem-solving-process",
+        "algo.test.java-io-setup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch00.md",
+          "source_sha256": "3ef2421fc23adcd99b03ffbdc08b4eb0166fa504c862b1f985564e04ea959938",
+          "heading": "## 목차 > ### 코딩테스트",
+          "start_line": 26,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch00.md",
+          "source_sha256": "3ef2421fc23adcd99b03ffbdc08b4eb0166fa504c862b1f985564e04ea959938",
+          "heading": "## 목차 > ### 코딩테스트",
+          "start_line": 33,
+          "end_line": 34
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.problem-solving-process",
+      "title": "문제 해결 과정",
+      "aliases": [
+        "요구사항 이해 설계 구현 결과",
+        "틀리면 설계로 돌아간다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/problem-solving-process.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single loop the work goes round - understand what is asked, design and check the design, implement, look at the result, and on a wrong answer go back to the design rather than patching the code",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.test.problem-format",
+        "algo.complexity.algorithm-choice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch00.md",
+          "source_sha256": "3ef2421fc23adcd99b03ffbdc08b4eb0166fa504c862b1f985564e04ea959938",
+          "heading": "## 목차 > ### 문제 해결 과정",
+          "start_line": 40,
+          "end_line": 41
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.test.java-io-setup",
+      "title": "자바 입출력 준비",
+      "aliases": [
+        "BufferedReader를 쓴다",
+        "Scanner는 느리다",
+        "throws IOException"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/test/java-io-setup.md",
+      "tags": [
+        "algo",
+        "test"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of imports and declarations worth writing before reading the problem - the collections and tokeniser, the io package with the exception declared on main, and the buffered reader in place of the scanner, which is too slow for large input",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.test.problem-format",
+        "algo.complexity.operation-budget",
+        "java.io.buffered-reader"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch00.md",
+          "source_sha256": "3ef2421fc23adcd99b03ffbdc08b4eb0166fa504c862b1f985564e04ea959938",
+          "heading": "## 목차 > ### 입출력 참고 (개인필기)",
+          "start_line": 54,
+          "end_line": 59
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.string.ascii-arithmetic",
+      "title": "아스키코드 연산으로 문자 바꾸기",
+      "aliases": [
+        "대문자 65 소문자 97",
+        "기준 문자에서의 거리"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/string/ascii-arithmetic.md",
+      "tags": [
+        "algo",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to convert a letter's case without remembering the offset between the two ranges - take how far the character is from the base of its own range and add that to the base of the other",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.util.string-class",
+        "algo.string.time-format-parse",
+        "cs.data.bit-and-byte"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 2744번 문제",
+          "start_line": 148,
+          "end_line": 151
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.string.index-bound-check",
+      "title": "인덱스 범위를 항상 확인하라",
+      "aliases": [
+        "런타임 에러의 흔한 원인",
+        "루프가 더해주는 1을 감안하기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/string/index-bound-check.md",
+      "tags": [
+        "algo",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single habit that prevents most runtime errors in string work - when one index is built from another, check what the largest value of each can be together, remembering that the loop's own increment counts toward it",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.string.index-of-search",
+        "java.util.string-class",
+        "algo.test.problem-solving-process"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 1543번 문제",
+          "start_line": 313,
+          "end_line": 314
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 1543번 문제",
+          "start_line": 333,
+          "end_line": 336
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.string.index-of-search",
+      "title": "indexOf로 찾기",
+      "aliases": [
+        "시작 인덱스부터 검색",
+        "못 찾으면 -1"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/string/index-of-search.md",
+      "tags": [
+        "algo",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single method that replaces a hand-written scan - it looks for a substring from a given position, returning where it starts or minus one, and the next search resumes past what was found",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.string.index-bound-check",
+        "java.util.string-class",
+        "algo.string.replace-count-trick"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 1543번 문제",
+          "start_line": 340,
+          "end_line": 342
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 1543번 문제",
+          "start_line": 367,
+          "end_line": 367
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.string.replace-count-trick",
+      "title": "길이 차이로 등장 횟수 세기",
+      "aliases": [
+        "replace 후 길이 비교",
+        "지운 만큼을 단어 길이로 나눈다"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/string/replace-count-trick.md",
+      "tags": [
+        "algo",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trick for counting non-overlapping occurrences without a loop - remove them all and divide how much the length shrank by the length of what was removed",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.string.index-of-search",
+        "java.util.string-class"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 1543번 문제",
+          "start_line": 389,
+          "end_line": 393
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.string.time-format-parse",
+      "title": "고정 포맷 문자열 쪼개기",
+      "aliases": [
+        "자릿수 계산",
+        "substring으로 자르기",
+        "split으로 나누기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/string/time-format-parse.md",
+      "tags": [
+        "algo",
+        "string"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice among three ways of pulling numbers out of a fixed-width formatted string - computing each digit from its character and its place value, cutting by position, or splitting on the separator",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.string.ascii-arithmetic",
+        "java.util.string-class",
+        "algo.math.unit-normalization"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 401,
+          "end_line": 402
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 413,
+          "end_line": 413
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 424,
+          "end_line": 424
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.math.unit-normalization",
+      "title": "가장 작은 단위로 통일하기",
+      "aliases": [
+        "내림해서 빌려오기 대신",
+        "몫과 나머지로 되돌리기"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/math/unit-normalization.md",
+      "tags": [
+        "algo",
+        "math"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way to compute with quantities written in tiered units - instead of borrowing from the larger tier whenever the smaller goes negative, convert everything to the smallest unit, do the arithmetic there, and rebuild the tiers with successive division and remainder",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.string.time-format-parse",
+        "algo.math.modular-periodicity",
+        "java.util.printf-format"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 437,
+          "end_line": 437
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 457,
+          "end_line": 457
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 473,
+          "end_line": 478
+        }
+      ]
+    },
+    {
+      "concept_id": "java.util.printf-format",
+      "title": "포맷 코드로 출력하기",
+      "aliases": [
+        "printf",
+        "%02d",
+        "%d %s %f"
+      ],
+      "canonical_path": "content/brain/knowledge/java/util/printf-format.md",
+      "tags": [
+        "java",
+        "util"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of codes standing for the kind of value being printed - string, character, integer, floating point, octal, hexadecimal, and the escape for the sign itself - with a width and a padding digit written between the sign and the code, which is how a number is padded to two places with a leading zero",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "java-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "java.util.string-class",
+        "algo.math.unit-normalization",
+        "algo.test.java-io-setup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 486,
+          "end_line": 494
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch01.md",
+          "source_sha256": "229439748871061d8917a5dca9d0403c726ccb802edb308af4da9756c421e414",
+          "heading": "## 문자열 > ### 13223번 문제",
+          "start_line": 502,
+          "end_line": 504
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.time-complexity",
+      "title": "시간 복잡도",
+      "aliases": [
+        "Big-O",
+        "입력 크기와의 관계",
+        "최악의 상한선"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/time-complexity.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single measure relating input size to how long an algorithm runs, given in one of three notations of which the upper bound is the one used, since what matters is the worst case the input allows",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "algo.complexity.operation-budget",
+        "algo.complexity.n-range-table",
+        "algo.complexity.algorithm-choice",
+        "cs.performance.amdahls-law"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도",
+          "start_line": 14,
+          "end_line": 18
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.operation-budget",
+      "title": "1초에 약 1억 번",
+      "aliases": [
+        "시간 제한과 연산 횟수",
+        "절대적 기준이 아닌 상대적 지표"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/operation-budget.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single rule of thumb turning a time limit into a number of operations - roughly a hundred million per second - which is a guide rather than a law, since constants and optimisation can put ten million over the limit or a billion under it",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.complexity.n-range-table",
+        "algo.test.java-io-setup"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도",
+          "start_line": 22,
+          "end_line": 28
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.algorithm-choice",
+      "title": "어떤 알고리즘을 고를 것인가",
+      "aliases": [
+        "시간이 넉넉하면 쉬운 방법",
+        "제한이 빠듯하면 효율적인 방법"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/algorithm-choice.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single criterion when more than one algorithm gives the right answer - if the limit leaves room, take the one that is easier to write correctly; only when it does not is the more efficient one worth its difficulty",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.complexity.n-range-table",
+        "algo.test.problem-solving-process"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도",
+          "start_line": 32,
+          "end_line": 35
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도",
+          "start_line": 65,
+          "end_line": 67
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.complexity.n-range-table",
+      "title": "N의 범위로 복잡도 추론하기",
+      "aliases": [
+        "범위별 허용 복잡도",
+        "N이 10만이면 N log N"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/complexity/n-range-table.md",
+      "tags": [
+        "algo",
+        "complexity"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single table read backwards from the input bound to the complexity that will fit - a handful of elements admitting factorial time, a few dozen exponential, a few hundred cubic, ten thousand quadratic, a million linearithmic, ten million linear - which is how the intended solution is guessed before it is found",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.complexity.time-complexity",
+        "algo.complexity.operation-budget",
+        "algo.complexity.algorithm-choice"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 시간복잡도를 통한 추론",
+          "start_line": 85,
+          "end_line": 85
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 시간복잡도를 통한 추론",
+          "start_line": 89,
+          "end_line": 98
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.math.modular-periodicity",
+      "title": "주기성을 모듈러로 바꾸기",
+      "aliases": [
+        "반복되면 나머지 연산",
+        "주기만큼 나눈 나머지"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/math/modular-periodicity.md",
+      "tags": [
+        "algo",
+        "math"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single reduction available whenever a process returns to a state it has been in - the length of that cycle is found, and the elapsed count is replaced by its remainder against that length, which takes the loop out of the running time",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.complexity.n-range-table",
+        "algo.math.reflection-formula",
+        "algo.math.unit-normalization"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 10158번 문제",
+          "start_line": 109,
+          "end_line": 111
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 10158번 문제",
+          "start_line": 138,
+          "end_line": 144
+        }
+      ]
+    },
+    {
+      "concept_id": "algo.math.reflection-formula",
+      "title": "튕기는 좌표를 식으로 접기",
+      "aliases": [
+        "2w - x",
+        "반복문 없이 O(1)로"
+      ],
+      "canonical_path": "content/brain/knowledge/algo/math/reflection-formula.md",
+      "tags": [
+        "algo",
+        "math"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single step past the cycle reduction - once the position is measured from zero rather than from the start, a coordinate past the halfway point of the cycle is folded back by subtracting it from twice the wall, which removes the loop entirely and leaves constant time",
+      "pilot_strata": [
+        "lecture-batch-46",
+        "algo/fastcampus-algo",
+        "algo-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "algo.math.modular-periodicity",
+        "algo.complexity.time-complexity",
+        "algo.complexity.n-range-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 10158번 문제",
+          "start_line": 180,
+          "end_line": 180
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 10158번 문제",
+          "start_line": 186,
+          "end_line": 188
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 10158번 문제",
+          "start_line": 222,
+          "end_line": 226
+        },
+        {
+          "path": "content/brain/lectures/algo/fastcampus-algo/part1-4/p1-ch02.md",
+          "source_sha256": "cbb6b82b1b171b7749e6509b062bca7b138e5e5b54cd3e888d9c77a4d532a897",
+          "heading": "## 시간 복잡도 > ### 10158번 문제",
+          "start_line": 257,
+          "end_line": 257
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

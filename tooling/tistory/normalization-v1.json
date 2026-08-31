@@ -1,0 +1,36 @@
+{
+  "id": "tistory-semantic-normalization",
+  "version": 1,
+  "frozenBeforeConversion": true,
+  "allowedMechanicalOperations": [
+    "remove document chrome outside the author post body",
+    "remove script and style elements",
+    "remove HTML comments",
+    "normalize Unicode text to NFC",
+    "normalize CRLF and CR line endings to LF",
+    "normalize insignificant inter-tag whitespace",
+    "decode equivalent HTML entities",
+    "canonicalize source-relative URLs against the canonical source URL",
+    "represent equivalent HTML and Markdown constructs as ordered semantic units"
+  ],
+  "forbiddenOperations": [
+    "rewrite",
+    "summarize",
+    "translate",
+    "reorder",
+    "spell-correct",
+    "omit author content"
+  ],
+  "semanticUnitOrder": [
+    "heading",
+    "paragraph",
+    "list-item",
+    "blockquote",
+    "code-block",
+    "table-row",
+    "image",
+    "embed",
+    "horizontal-rule"
+  ],
+  "invalidationRule": "Any change to this rule set after conversion invalidates all prior fidelity reports and requires complete regeneration."
+}

@@ -1,0 +1,890 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-25",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "lecture",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-24",
+    "applied_state": "532 approved knowledge concepts after lecture-batch-24 completed fun-java06."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+        "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f"
+      }
+    ],
+    "line_range": "L11-L583 (whole file)",
+    "series": "즐거운 자바 (fun-java) 7/11 — 제네릭과 컬렉션"
+  },
+  "overlap_analysis": {
+    "finding": "Only ArrayList and equals/hashCode were applied from the book, so this file is create-heavy: 12 of 17 candidates are new.",
+    "disposition": "Generics and the collection framework are the largest block of genuinely new java.* material in the lecture series - the Collection, Iterator, List, Set and Map interfaces, HashSet and HashMap, the interface-typed reference discipline, the Collections utility class and the array-versus-list distinction."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 19 touches, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All 22 update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new lecture locator and any new edge is appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L7, L15-49 partial, L123-131, L198-253 partial, L257-374 partial, L400-433 partial, L449-479 partial, L525-581 partial",
+        "reason_code": "code-listing-caption-or-carried-by-owner",
+        "detail": "Code listings, the interface-hierarchy figure caption and walkthrough lines whose claim is restated inside the cited span of the owning concept."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in fun-java07 contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 102,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 15,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 17,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "candidates_authored": 17,
+  "candidates": [
+    {
+      "concept_id": "java.collection.array-list",
+      "title": "ArrayList",
+      "aliases": [
+        "ArrayList 클래스",
+        "가변 길이 객체 배열"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/array-list.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single resizable Java list collection backed by array-like indexed operations",
+      "pilot_strata": [
+        "book-batch-02",
+        "do-it-java/chap07",
+        "lecture-batch-25",
+        "pl/fun-java"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.array.array-length",
+        "java.array.object-array",
+        "java.collection.list-interface",
+        "java.generic.generic",
+        "java.collection.interface-type-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### 기존 배열의 단점, 그리고 ArrayList",
+          "start_line": 578,
+          "end_line": 587
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### ArrayList 클래스 주요 메서드",
+          "start_line": 588,
+          "end_line": 607
+        },
+        {
+          "path": "content/brain/books/do-it-java/chap07.md",
+          "source_sha256": "26b847fb4b2a4a6ad00ad6716e9c6c8e12eee646d340c119a0236cebb90b19a6",
+          "heading": "# Chapter 07 - 배열과 ArrayList > ## ArrayList 클래스 활용 > ### ArrayList 클래스 활용",
+          "start_line": 608,
+          "end_line": 674
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### ArrayList Class",
+          "start_line": 187,
+          "end_line": 193
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### ArrayList Class",
+          "start_line": 197,
+          "end_line": 198
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### ArrayList Class",
+          "start_line": 225,
+          "end_line": 226
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.equals-hashcode",
+      "title": "equals()와 hashCode()",
+      "aliases": [
+        "equals",
+        "hashCode",
+        "값 비교 기준"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/equals-hashcode.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single pair that must be overridden together - equals decides value equality by a standard the developer sets rather than by reference, and hash-based collections need both to work",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-25"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.object-class",
+        "java.oop.tostring",
+        "java.oop.method-overriding",
+        "java.memory.object-reference",
+        "java.collection.hash-set",
+        "java.collection.hash-map"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드 > ### equals(), hashCode()",
+          "start_line": 845,
+          "end_line": 853
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashSet Class",
+          "start_line": 340,
+          "end_line": 342
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.upcasting",
+      "title": "부모 타입으로 자식 참조",
+      "aliases": [
+        "Upcasting",
+        "업캐스팅",
+        "참조 타입과 인스턴스 타입"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/upcasting.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single assignment of a child instance to a parent-typed reference, which narrows the callable methods to the parent's and therefore tells a reader from the declaration alone what will be used - and which is why a parameter typed Object accepts anything at all",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-23",
+        "lecture-batch-25"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.is-a-relation",
+        "java.oop.downcasting",
+        "java.oop.object-class",
+        "java.oop.polymorphism",
+        "java.oop.abstract-class-array",
+        "java.generic.generic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속 > ### 상속 - 부모 타입으로 자식 참조",
+          "start_line": 525,
+          "end_line": 541
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## Object 메서드 > ### toString()",
+          "start_line": 779,
+          "end_line": 789
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java05.md",
+          "source_sha256": "6693863b12f66af41d2b3adff313675b7676cbc923458fce811b0d63a1b61fc0",
+          "heading": "## 추상 클래스 > ### 부모 타입으로 자식 참조",
+          "start_line": 421,
+          "end_line": 422
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 제네릭 > ### 제네릭이 나온 이유",
+          "start_line": 30,
+          "end_line": 30
+        }
+      ]
+    },
+    {
+      "concept_id": "java.oop.object-class",
+      "title": "java.lang.Object",
+      "aliases": [
+        "Object 클래스",
+        "모든 클래스의 최상위"
+      ],
+      "canonical_path": "content/brain/knowledge/java/oop/object-class.md",
+      "tags": [
+        "java",
+        "oop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single root every class inherits from when it names no other parent, which is why every class is a descendant of Object",
+      "pilot_strata": [
+        "lecture-batch-22",
+        "pl/fun-java",
+        "java-domain",
+        "lecture-batch-25"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.inheritance",
+        "java.oop.tostring",
+        "java.oop.equals-hashcode",
+        "java.oop.upcasting",
+        "java.generic.generic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java04.md",
+          "source_sha256": "faf5dec5a92ca876daae00e260687b1b15074786d17e951a2cff64bc179a8215",
+          "heading": "## 상속",
+          "start_line": 518,
+          "end_line": 519
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 제네릭 > ### 제네릭이 나온 이유",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ]
+    },
+    {
+      "concept_id": "java.type.explicit-type-conversion",
+      "title": "명시적 형 변환",
+      "aliases": [
+        "Explicit Type Conversion",
+        "강제 형 변환",
+        "캐스팅"
+      ],
+      "canonical_path": "content/brain/knowledge/java/type/explicit-type-conversion.md",
+      "tags": [
+        "java",
+        "type"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single programmer-written narrowing conversion that may lose data, and whose position changes the arithmetic result",
+      "pilot_strata": [
+        "book-batch-03",
+        "do-it-java/chap02",
+        "lecture-batch-19",
+        "pl/fun-java",
+        "lecture-batch-25"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.type.type-conversion",
+        "java.type.primitive-type",
+        "java.generic.generic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/do-it-java/chap02.md",
+          "source_sha256": "ba2e2de24c1195b578fe5252eb76eaf8f46a956897c36a85ea8fe50a3452b578",
+          "heading": "# Chapter 02 - 변수와 자료형 > ## Java 형 변환 > ### 명시적 형 변환 (강제)",
+          "start_line": 301,
+          "end_line": 364
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 타입의 변환 > ### 명시적 형변환 ( = 강제 형변환, explict conversion)",
+          "start_line": 245,
+          "end_line": 263
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java02.md",
+          "source_sha256": "073e51c3687a34499a795d8ca4dfd8dbd598aa7c1fe60363ce9da1bac1d10db2",
+          "heading": "## 타입의 변환 > ### 명시적 형변환 ( = 강제 형변환, explict conversion)",
+          "start_line": 268,
+          "end_line": 305
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 제네릭 > ### 제네릭이 나온 이유",
+          "start_line": 49,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "concept_id": "java.generic.generic",
+      "title": "제네릭",
+      "aliases": [
+        "Generic",
+        "타입 파라미터",
+        "<T>"
+      ],
+      "canonical_path": "content/brain/knowledge/java/generic/java-generic.md",
+      "tags": [
+        "java",
+        "generic"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single type parameter declared after a class name or before a method's return type, which forces one type on a container so the compiler rejects a wrong value and the caller never has to cast on the way out",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.object-class",
+        "java.type.explicit-type-conversion",
+        "java.collection.collection-framework",
+        "java.collection.array-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 제네릭 > ### 제네릭이 나온 이유",
+          "start_line": 50,
+          "end_line": 51
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 제네릭 > ### 제네릭 기본/장점",
+          "start_line": 59,
+          "end_line": 69
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 제네릭 > ### 제네릭 기본/장점",
+          "start_line": 87,
+          "end_line": 105
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.collection-framework",
+      "title": "컬렉션 프레임워크",
+      "aliases": [
+        "Java Collections Framework",
+        "Collections API",
+        "자료구조 클래스 모음"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/collection-framework.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of data-structure classes added in Java 2, built as interfaces and the classes implementing them, whose members store Object unless a generic type is given",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.generic.generic",
+        "java.collection.collection-interface",
+        "java.collection.interface-type-reference"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크",
+          "start_line": 113,
+          "end_line": 119
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.collection-interface",
+      "title": "Collection 인터페이스",
+      "aliases": [
+        "Collection",
+        "자료가 있다는 표현",
+        "add() size() iterator()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/collection-interface.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single root interface of the framework, remembering no order and allowing duplicates, offering add, size and an iterator that keeps taking items while any remain",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.collection-framework",
+        "java.collection.iterator",
+        "java.collection.list-interface",
+        "java.collection.set-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### Collection Interface",
+          "start_line": 133,
+          "end_line": 141
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.iterator",
+      "title": "Iterator 인터페이스",
+      "aliases": [
+        "Iterator",
+        "hasNext()",
+        "next()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/iterator.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface for taking items out of a structure, where hasNext must be asked before next is called",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.collection.collection-interface",
+        "java.control-flow.enhanced-for",
+        "java.collection.map-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### Iterator Interface",
+          "start_line": 147,
+          "end_line": 150
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.list-interface",
+      "title": "List 인터페이스",
+      "aliases": [
+        "List",
+        "순서가 중요한 자료"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/list-interface.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Collection subinterface for data whose order matters, adding index-based get on top of everything Collection offers",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.collection.collection-interface",
+        "java.collection.array-list",
+        "java.collection.set-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### List Interface",
+          "start_line": 156,
+          "end_line": 158
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.set-interface",
+      "title": "Set 인터페이스",
+      "aliases": [
+        "Set",
+        "중복을 허용하지 않는 자료"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/set-interface.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Collection subinterface storing one copy of each value, which is why what goes into it must implement equals and hashCode properly",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.collection-interface",
+        "java.oop.equals-hashcode",
+        "java.collection.hash-set",
+        "java.collection.map-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### Set Interface",
+          "start_line": 164,
+          "end_line": 168
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.map-interface",
+      "title": "Map 인터페이스",
+      "aliases": [
+        "Map",
+        "key-value",
+        "keySet()"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/map-interface.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single key-value structure holding one value per key, storing with put and reading with get - null when the key is absent - and exposing its keys as a Set precisely because they cannot repeat",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.set-interface",
+        "java.collection.hash-map",
+        "java.collection.collection-framework",
+        "java.collection.iterator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### Map Interface",
+          "start_line": 174,
+          "end_line": 181
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.hash-set",
+      "title": "HashSet",
+      "aliases": [
+        "HashSet 클래스",
+        "해시 알고리즘",
+        "버킷"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/hash-set.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Set implementation that files each item by its hash code into a bucket and compares with equals only against what shares that bucket, which is why performance depends on hash codes being well spread",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.set-interface",
+        "java.oop.equals-hashcode",
+        "java.collection.hash-map"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashSet Class",
+          "start_line": 255,
+          "end_line": 265
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.hash-map",
+      "title": "HashMap",
+      "aliases": [
+        "HashMap 클래스",
+        "키 중복 시 덮어쓰기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/hash-map.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Map implementation keying by hash, so putting an existing key overwrites its value, and whose contents are walked by taking the key set and iterating it to fetch each value",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.map-interface",
+        "java.collection.hash-set",
+        "java.oop.equals-hashcode",
+        "java.collection.iterator"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashMap Class",
+          "start_line": 376,
+          "end_line": 378
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashMap Class",
+          "start_line": 400,
+          "end_line": 400
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### HashMap Class",
+          "start_line": 428,
+          "end_line": 429
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.interface-type-reference",
+      "title": "참조 타입은 인터페이스로",
+      "aliases": [
+        "Program to an interface",
+        "인스턴스 타입은 클래스로"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/interface-type-reference.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single discipline of declaring the reference as the interface the purpose needs and the instance as the class, so a better implementation can be swapped in later and only one set of methods has to be learned",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.oop.upcasting",
+        "java.collection.collection-interface",
+        "java.collection.list-interface",
+        "java.oop.interface-design"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### 컬렉션 사용 Tip",
+          "start_line": 435,
+          "end_line": 441
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### 컬렉션 사용 Tip",
+          "start_line": 475,
+          "end_line": 489
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### 컬렉션 사용 Tip",
+          "start_line": 514,
+          "end_line": 514
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.collections-class",
+      "title": "Collections 클래스",
+      "aliases": [
+        "Collections.sort()",
+        "Collections.shuffle()",
+        "자료구조 유틸리티"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/collections-class.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single utility class of list operations - sorting, which still requires the elements to implement Comparable, and shuffling - named in the plural to distinguish it from the Collection interface",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.collection.collection-interface",
+        "java.oop.comparable",
+        "java.util.arrays-sort",
+        "java.collection.list-interface"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### 정렬, 섞기",
+          "start_line": 520,
+          "end_line": 521
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### 정렬, 섞기",
+          "start_line": 548,
+          "end_line": 550
+        },
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### 정렬, 섞기",
+          "start_line": 558,
+          "end_line": 558
+        }
+      ]
+    },
+    {
+      "concept_id": "java.collection.array-vs-list",
+      "title": "배열과 리스트의 차이",
+      "aliases": [
+        "고정 크기와 가변 크기"
+      ],
+      "canonical_path": "content/brain/knowledge/java/collection/array-vs-list.md",
+      "tags": [
+        "java",
+        "collection"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single distinction that an array's size is fixed when it is made while a list grows as needed",
+      "pilot_strata": [
+        "lecture-batch-25",
+        "pl/fun-java",
+        "java-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "provenance-warning",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "java.array.array",
+        "java.collection.list-interface",
+        "java.collection.array-list"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/pl/fun-java/fun-java07.md",
+          "source_sha256": "0bd2e46a2a58724e7d8564f3d53e8f2033c80ff3d6c70b2ea9e25bf70da53f7f",
+          "heading": "## 컬렉션 프레임워크 > ### 정렬, 섞기",
+          "start_line": 581,
+          "end_line": 583
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

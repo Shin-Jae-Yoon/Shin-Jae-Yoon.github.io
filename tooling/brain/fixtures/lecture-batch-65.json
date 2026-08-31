@@ -1,0 +1,1301 @@
+{
+  "schema_version": 1,
+  "batch_id": "lecture-batch-65",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "note",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "lecture-batch-64",
+    "applied_state": "1246 approved knowledge concepts after lecture-batch-64 mined the sixth week."
+  },
+  "scope": {
+    "sources": [
+      {
+        "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+        "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9"
+      }
+    ],
+    "line_range": "L8-L523 (whole file)",
+    "series": "면접 스터디 dog-study 7주차 - DataSource, 커넥션 풀, 트랜잭션 동기화와 추상화, @Transactional"
+  },
+  "overlap_analysis": {
+    "finding": "The deepest treatment of transactions anywhere in the tree. The easy-db lane applied the four properties as definitions and this file argues each of them; the isolation property in particular turns out to have four settable levels defined by which of three anomalies they permit, which nothing applied covered.",
+    "disposition": "Nine applied concepts take evidence - the data source and the pool from the sixth week, the transaction and its four properties from easy-db, the rollback default from the first week of this study, and the self-invocation trap from the fourth. New: how the pool hands out a connection and how large to make it, the boundary and what managing it by hand costs, the per-thread synchronisation and the abstraction over it, the proxy the annotation works through, and the six attributes including propagation and the isolation levels."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept, so U3 must confirm it relates rather than restates. Every update candidate carries this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "update_authoring_note": {
+    "statement": "All nine update candidates were generated mechanically from the applied notes, so every approved locator, alias, tag, path and edge is carried forward verbatim and only the new locators and edges are appended.",
+    "tooling": ".omx/tmp/lane/build-updates.mjs reads each applied note's frontmatter and emits the candidate; the diff against the staged document is checked before signing."
+  },
+  "alias_avoidance_note": {
+    "key": "isolation level",
+    "incumbent": "db.transaction.isolation",
+    "disposition": "The concept enumerating the four levels takes their names as aliases rather than the term itself, which the isolation property already holds from the easy-db lane."
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L8-L16, L112-L119, L178-L191, L194-L196, L237, L264-L269, L290, L301-L349, L363, L405, L419-L421, L433-L435, L446-L448, L461-L463, L471-L479 partial, L493, L516-L523",
+        "reason_code": "topic-header-collapsed-aside-figure-caption-code-or-carried-by-owner",
+        "detail": "The topic list the week was set, the collapsed aside re-explaining context switching and blocking which cs.os already covers, the summary paragraphs announcing the three spring facilities before each is explained in its own section, the code listings demonstrating the internal-call failure, the figure captions above each isolation level's diagram, and the closing reference list."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in the file contributes at least one cited locator, either to a create or to an update."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "bytes": {
+        "value": 29836,
+        "ceiling": 60000,
+        "satisfied": true
+      },
+      "prose_lines": {
+        "value": 252,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 21,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "positive_prose_scopes": {
+        "value": 21,
+        "ceiling": 55,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 22,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "forward_reference_note": "No candidate references a concept outside this batch and the applied set.",
+  "alias_yield_note": {
+    "keys": [
+      "@Transactional",
+      "SERIALIZABLE",
+      "rollbackFor와 noRollbackFor"
+    ],
+    "incumbents": [
+      "db.transaction.application-transaction",
+      "java.io.serialization",
+      "spring.tx.rollback-policy"
+    ],
+    "disposition": "Three names already belong elsewhere - the annotation to the applied concept about transaction boundaries in code, the word serializable to the java serialisation concept where it is an interface name, and the rollback attributes to the rollback policy concept from the first week. Each new concept takes a descriptive alias instead and links to the holder."
+  },
+  "candidates_authored": 22,
+  "candidates": [
+    {
+      "concept_id": "spring.db.datasource",
+      "title": "DataSource",
+      "aliases": [
+        "데이터베이스 커넥션을 획득하는 객체",
+        "커넥션 정보로 스프링이 만들어 둔 빈",
+        "커넥션 획득을 추상화한 것",
+        "구현체만 바꾸면 된다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/datasource.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single object through which a database connection is obtained, which spring boot builds from the connection settings and registers as a bean, so anything needing it has it injected rather than constructing it",
+      "pilot_strata": [
+        "lecture-batch-39",
+        "backend/kim-spring",
+        "spring-domain",
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "lecture-batch-65"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.di.dependency-injection",
+        "spring.db.jdbc-template",
+        "spring.db.h2",
+        "spring.db.connection-pool",
+        "spring.db.jdbc",
+        "spring.db.hikaricp-flow",
+        "spring.db.pool-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/backend/kim-spring/spring-intro/spring-basic-02.md",
+          "source_sha256": "fb64e7fc0eedc167d090bb4fc5abca46fc87efcc2026a01c3569534a170efee2",
+          "heading": "## 스프링 DB 접근 기술 > ### 순수 JDBC",
+          "start_line": 376,
+          "end_line": 377
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## DataSource",
+          "start_line": 26,
+          "end_line": 29
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## DataSource",
+          "start_line": 31,
+          "end_line": 35
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.connection-pool",
+      "title": "커넥션 풀",
+      "aliases": [
+        "커넥션 생성 비용이 크다",
+        "미리 만들어두고 빌려 쓴다",
+        "DBCP",
+        "접속 수를 제한할 수 있다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/connection-pool.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single arrangement for the cost of opening a database connection - a number of them are opened in advance and lent out as needed rather than made and destroyed per request",
+      "pilot_strata": [
+        "lecture-batch-64",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-65"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.db.datasource",
+        "spring.db.jdbc",
+        "spring.di.bean-lifecycle",
+        "cs.os.thread-count-io-bound",
+        "spring.db.hikaricp-flow",
+        "spring.db.pool-sizing",
+        "spring.tx.transaction-synchronization"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week06.md",
+          "source_sha256": "c4c805ca93db8f35cfc682f425b14b96d105d6caaf141514d523640cc6300b62",
+          "heading": "## DAO > ### DAO vs Repository",
+          "start_line": 192,
+          "end_line": 192
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool",
+          "start_line": 41,
+          "end_line": 43
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool",
+          "start_line": 45,
+          "end_line": 55
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool > ### DBCP의 과정",
+          "start_line": 61,
+          "end_line": 63
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool > ### DBCP 특징/고려사항",
+          "start_line": 88,
+          "end_line": 91
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.transaction",
+      "title": "트랜잭션",
+      "aliases": [
+        "Transaction",
+        "단일한 논리적 작업 단위",
+        "START TRANSACTION",
+        "시작하지 않으면 DB가 대신 시작한다",
+        "읽기 전용일 수도 있다"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/db-transaction.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single logical unit of work - several SQL statements bound together for a reason outside the database, so that they cannot be divided and it can never happen that only some of them reach the data",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db",
+        "lecture-batch-63",
+        "Interview/dog-study",
+        "lecture-batch-65"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.rollback",
+        "db.transaction.atomicity",
+        "db.language.dml",
+        "db.transaction.read-only-transaction",
+        "db.transaction.commit-timing-tradeoff",
+        "db.basic.workload",
+        "spring.arch.service-layer",
+        "spring.tx.transaction-boundary",
+        "spring.tx.propagation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 14,
+          "end_line": 17
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## 트랜잭션",
+          "start_line": 29,
+          "end_line": 31
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 트랜잭션이란?",
+          "start_line": 38,
+          "end_line": 46
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## ACID 소개",
+          "start_line": 14,
+          "end_line": 15
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션",
+          "start_line": 126,
+          "end_line": 126
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.atomicity",
+      "title": "원자성",
+      "aliases": [
+        "Atomicity",
+        "ALL or Nothing",
+        "모두 성공하거나 모두 실패하거나"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/atomicity.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single guarantee that a transaction either happens entirely or not at all - a failure partway through cancels everything already done, as if nothing had happened - where making commit permanent and rollback complete is the DBMS's job and deciding the transaction's boundary and what counts as a failure is the developer's",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db",
+        "lecture-batch-65",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "db.transaction.rollback",
+        "db.transaction.consistency",
+        "db.transaction.durability",
+        "db.transaction.crash-recovery",
+        "db.transaction.commit-timing-tradeoff",
+        "spring.tx.transaction-boundary"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Atomicity",
+          "start_line": 140,
+          "end_line": 144
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Atomicity",
+          "start_line": 150,
+          "end_line": 154
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## 원자성 (Atomicity)",
+          "start_line": 126,
+          "end_line": 134
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션 > ### 트랜잭션 성질",
+          "start_line": 134,
+          "end_line": 137
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.consistency",
+      "title": "일관성",
+      "aliases": [
+        "Consistency",
+        "일관된 상태에서 또 다른 일관된 상태로"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/consistency.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single guarantee that a transaction moves the database from one consistent state to another - a transaction violating a rule declared in the database, whether a constraint or a trigger, is rolled back, and the DBMS checks those rules before the commit; whatever consistency means to the application beyond them is the developer's to keep",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-65",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.constraint.constraint",
+        "db.sql.trigger",
+        "db.transaction.atomicity",
+        "db.sql.constraint-violation-error",
+        "db.transaction.isolation-level"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Consistency",
+          "start_line": 160,
+          "end_line": 165
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Consistency",
+          "start_line": 170,
+          "end_line": 172
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션 > ### 트랜잭션 성질",
+          "start_line": 139,
+          "end_line": 141
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.isolation",
+      "title": "격리성",
+      "aliases": [
+        "Isolation",
+        "isolation level",
+        "혼자 실행되는 것처럼"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/isolation.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single guarantee that concurrent transactions behave as though each ran alone, offered at several levels because enforcing it strictly costs performance - a higher level shields a transaction from the others but lowers concurrency, a lower level raises concurrency at the risk of wrong results - and the level is the developer's to choose",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-65",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.concurrency.concurrency-control",
+        "db.transaction.transaction",
+        "db.concurrency.lost-update",
+        "db.transaction.isolation-level",
+        "db.transaction.read-phenomena"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Isolation",
+          "start_line": 178,
+          "end_line": 182
+        },
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Isolation",
+          "start_line": 186,
+          "end_line": 191
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션 > ### 트랜잭션 성질",
+          "start_line": 143,
+          "end_line": 145
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.durability",
+      "title": "지속성",
+      "aliases": [
+        "Durability",
+        "영존성",
+        "비휘발성 메모리에 저장"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/durability.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single guarantee that a committed transaction survives - it stays in the database through a power failure or a crash, which is what storing it permanently on non-volatile media means, and the DBMS is what provides it",
+      "pilot_strata": [
+        "lecture-batch-35",
+        "db/easy-db",
+        "db-domain",
+        "lecture-batch-57",
+        "db/hussein-db",
+        "lecture-batch-65",
+        "Interview/dog-study"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.commit",
+        "db.transaction.atomicity",
+        "db.model.physical-model",
+        "db.transaction.commit-timing-tradeoff",
+        "db.transaction.crash-recovery",
+        "spring.tx.transaction-abstraction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/lectures/db/easy-db/lecture14.md",
+          "source_sha256": "337c654a706e209cece683e1300d3180951bdd106cddc4219e279203db1fd78c",
+          "heading": "## ACID > ### Durability",
+          "start_line": 205,
+          "end_line": 209
+        },
+        {
+          "path": "content/brain/lectures/db/hussein-db/lecture01.md",
+          "source_sha256": "95d52eff42b97bd2a0ff83be647475947b7de64cc3e429ff497450be9358ebb4",
+          "heading": "## ACID 소개",
+          "start_line": 31,
+          "end_line": 32
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션 > ### 트랜잭션 성질",
+          "start_line": 147,
+          "end_line": 149
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.rollback-policy",
+      "title": "스프링의 기본 롤백 정책",
+      "aliases": [
+        "UnChecked와 Error만 롤백",
+        "Checked는 롤백하지 않는다",
+        "무조건 throw 하라",
+        "체크 예외는 비즈니스 결과로 쓰이니까",
+        "rollbackFor와 noRollbackFor"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/rollback-policy.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single default that surprises people - the transaction annotation rolls back for unchecked exceptions and errors but not for checked ones, so an exception that the compiler forced the code to declare will let the transaction commit unless the policy is configured otherwise or the exception is rethrown",
+      "pilot_strata": [
+        "lecture-batch-58",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-65"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "java.exception.checked-unchecked",
+        "db.transaction.rollback",
+        "db.transaction.application-transaction",
+        "spring.test.transactional-rollback",
+        "spring.tx.transaction-attributes",
+        "java.exception.translation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week01.md",
+          "source_sha256": "aa0f18c830e3d1dd69ce9f05cf413304c5ef3f80b446047ec75f9b9ea09234a4",
+          "heading": "## TOPIC 02 - Exception > ### Checked vs Unchecked",
+          "start_line": 422,
+          "end_line": 434
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### 롤백/커밋",
+          "start_line": 495,
+          "end_line": 500
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### 롤백/커밋",
+          "start_line": 504,
+          "end_line": 511
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.aop.self-invocation",
+      "title": "자기 자신을 호출하면 AOP가 걸리지 않는다",
+      "aliases": [
+        "프록시를 거치지 않는 내부 호출",
+        "private 메서드의 @Transactional이 안 먹는 이유"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/aop/self-invocation.md",
+      "tags": [
+        "spring",
+        "aop"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single consequence of the proxy approach that catches everyone - the advice lives on the proxy, so a call arriving from outside passes through it while a call the target makes to its own method does not, which is why an annotation on an inner or private method has no effect; the transaction annotation is an aspect like any other and fails the same way",
+      "pilot_strata": [
+        "lecture-batch-61",
+        "Interview/dog-study",
+        "spring-domain",
+        "lecture-batch-65"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.aop.terminology",
+        "spring.aop.weaving-time",
+        "db.transaction.application-transaction",
+        "spring.tx.rollback-policy",
+        "spring.tx.transactional-proxy",
+        "spring.tx.declarative-vs-programmatic"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### (심화) AOP 적용 안되는 경우",
+          "start_line": 361,
+          "end_line": 363
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### (심화) AOP 적용 안되는 경우",
+          "start_line": 385,
+          "end_line": 388
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### (심화) AOP 적용 안되는 경우",
+          "start_line": 392,
+          "end_line": 403
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week04.md",
+          "source_sha256": "95c7925f1282366bfe82ca4f65f0dfb1d33e47e49f6d61e1038306a21c6234f4",
+          "heading": "## AOP > ### @Transactional 문제도 여기!?",
+          "start_line": 409,
+          "end_line": 412
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## @Transactional > ### 선언적 트랜잭션 문제점",
+          "start_line": 292,
+          "end_line": 297
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.hikaricp-flow",
+      "title": "커넥션 풀이 커넥션을 내주는 순서",
+      "aliases": [
+        "HikariCP",
+        "이전에 쓰던 커넥션을 먼저",
+        "HandOffQueue"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/hikaricp-flow.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single order the default pool follows when asked for a connection - it looks first among those this thread used before, then among all the free ones, and only if none is available does it wait on a hand-off queue until one is returned or the timeout expires and it throws",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.db.connection-pool",
+        "spring.db.pool-sizing",
+        "spring.db.datasource"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool > ### DBCP의 과정",
+          "start_line": 69,
+          "end_line": 81
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.db.pool-sizing",
+      "title": "커넥션 풀 크기를 정할 때",
+      "aliases": [
+        "스레드 풀보다 크게",
+        "늘린다고 계속 빨라지지 않는다",
+        "디스크 병목"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/db/pool-sizing.md",
+      "tags": [
+        "spring",
+        "db"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single trade in sizing the pool - a larger one costs memory and shortens waiting, a smaller one the reverse - constrained by the threads that use it, since connections beyond the thread count are only occupying memory, and bounded above by the database's disk, past which more threads only add switching cost and contend for the same input and output",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.db.connection-pool",
+        "cs.os.thread-count-io-bound",
+        "cs.os.switching-overhead",
+        "spring.db.hikaricp-flow"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Connection Pool > ### DBCP 특징/고려사항",
+          "start_line": 97,
+          "end_line": 108
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.transaction-boundary",
+      "title": "트랜잭션 경계 설정",
+      "aliases": [
+        "쿼리마다 커밋되면 안 된다",
+        "서비스 앞뒤로 트랜잭션을 연다",
+        "직접 관리할 때의 네 가지 부담"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/transaction-boundary.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single decision of where a transaction begins and ends, which has to be one business operation rather than one query - otherwise a failure halfway leaves the earlier queries committed - and which, done by hand, complicates the service, requires the connection to be carried through every call, ties the code to one data access technology, and mixes a concern that is not the business logic into it",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.transaction",
+        "spring.arch.service-layer",
+        "spring.tx.transaction-synchronization",
+        "db.transaction.atomicity"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션 > ### JDBC api 트랜잭션",
+          "start_line": 156,
+          "end_line": 157
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션 > ### JDBC api 트랜잭션",
+          "start_line": 161,
+          "end_line": 163
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## 데이터베이스 트랜잭션 > ### JDBC api 트랜잭션",
+          "start_line": 165,
+          "end_line": 172
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.transaction-synchronization",
+      "title": "트랜잭션 동기화",
+      "aliases": [
+        "TransactionSynchronizationManager",
+        "ThreadLocal에 커넥션을 보관",
+        "기술마다 보관할 것이 다르다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/transaction-synchronization.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single way of not passing the connection through every method - it is kept in a per-thread store the framework provides, opened and set non-committing when the transaction begins, fetched from there by the repository, and committed or rolled back and returned to the pool at the end; being per-thread it is safe under concurrency, and being about the connection specifically it still binds the code to one technology",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.tx.transaction-boundary",
+        "spring.tx.transaction-abstraction",
+        "db.transaction.autocommit",
+        "spring.db.connection-pool"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 트랜잭션 동기화",
+          "start_line": 198,
+          "end_line": 200
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 트랜잭션 동기화",
+          "start_line": 204,
+          "end_line": 209
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 트랜잭션 동기화",
+          "start_line": 213,
+          "end_line": 216
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.transaction-abstraction",
+      "title": "트랜잭션 추상화",
+      "aliases": [
+        "PlatformTransactionManager",
+        "가져오고 커밋하고 롤백한다",
+        "추상화의 대가"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/transaction-abstraction.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single interface over every data access technology, justified by their all doing the same three things - begin, commit, roll back - so the application names the abstraction and stays independent of which is underneath, at the usual cost of a layer between the code and what actually happens",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.tx.transaction-synchronization",
+        "spring.basic.psa",
+        "spring.tx.declarative-vs-programmatic",
+        "software.principle.dip"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 트랜잭션 추상화",
+          "start_line": 222,
+          "end_line": 229
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 트랜잭션 추상화",
+          "start_line": 231,
+          "end_line": 231
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.declarative-vs-programmatic",
+      "title": "선언적 트랜잭션과 프로그래밍 방식",
+      "aliases": [
+        "TransactionTemplate",
+        "선언적 트랜잭션",
+        "적으면 직접 많으면 선언적으로"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/declarative-vs-programmatic.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single choice between writing the boundary out and declaring it - writing it out gives exact control over where it starts and ends and is right where there are few, while declaring it separates the transaction from the business logic entirely and is what scales to many, at the cost of inheriting the proxy's limitation on internal calls",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.tx.transaction-abstraction",
+        "spring.tx.transactional-proxy",
+        "spring.aop.aop",
+        "spring.tx.transaction-boundary"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 선언적 vs 프로그래밍",
+          "start_line": 239,
+          "end_line": 246
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 선언적 vs 프로그래밍",
+          "start_line": 248,
+          "end_line": 254
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Spring 트랜잭션 > ### 선언적 vs 프로그래밍",
+          "start_line": 258,
+          "end_line": 258
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.transactional-proxy",
+      "title": "@Transactional이 동작하는 방식",
+      "aliases": [
+        "프록시 객체가 생성된다",
+        "private에는 걸리지 않는다",
+        "static과 final에도 걸리지 않는다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/transactional-proxy.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single mechanism behind the annotation - a proxy is generated around the bean, which receives the call, opens the transaction, invokes the real method and commits or rolls back; because the proxy works by overriding, only methods it can override are advised, which excludes the private ones and equally the static and final ones",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "spring.aop.self-invocation",
+        "spring.tx.declarative-vs-programmatic",
+        "spring.aop.weaving-time",
+        "db.transaction.autocommit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## @Transactional",
+          "start_line": 275,
+          "end_line": 284
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.transaction-attributes",
+      "title": "트랜잭션의 여섯 속성",
+      "aliases": [
+        "전파 고립 읽기전용 타임아웃",
+        "롤백 대상 지정"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/transaction-attributes.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of six settings the annotation accepts - how it behaves when one is already running, how far it is isolated from others, whether it may write, how long it may take, and which exceptions do and do not roll it back",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.tx.propagation",
+        "db.transaction.isolation-level",
+        "spring.tx.read-only",
+        "spring.tx.rollback-policy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성",
+          "start_line": 353,
+          "end_line": 359
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.propagation",
+      "title": "트랜잭션 전파",
+      "aliases": [
+        "REQUIRED",
+        "REQUIRES_NEW",
+        "NESTED",
+        "이미 진행 중인 트랜잭션이 있을 때"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/propagation.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single setting deciding what happens when a boundary is reached while another transaction is already open - join it, which is the default and is what merges several boundaries into one; demand one and fail without it; suspend it and start an independent one; tolerate its absence; refuse it; or nest inside it, which differs from the independent form in that the child is rolled back with the parent while the parent is not rolled back with the child - which is what a log written alongside a main operation wants",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [],
+      "related_concepts": [
+        "spring.tx.transaction-attributes",
+        "spring.tx.transaction-boundary",
+        "db.transaction.rollback",
+        "spring.tx.transactional-proxy"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Propagation",
+          "start_line": 365,
+          "end_line": 367
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Propagation",
+          "start_line": 372,
+          "end_line": 380
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Propagation",
+          "start_line": 384,
+          "end_line": 401
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.isolation-level",
+      "title": "격리 수준의 네 단계",
+      "aliases": [
+        "READ UNCOMMITTED",
+        "READ COMMITTED",
+        "REPEATABLE READ",
+        "순차적으로 진행하는 수준"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/isolation-level.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single ladder from least to most isolated - reading what is not yet committed, which is fastest and admits every anomaly; reading only committed data, which still lets a row change between two reads; preventing that by taking a snapshot at the start, which still lets new rows appear within a range; and running transactions one after another, which admits nothing and costs the most - with the default coming from the driver and differing by product",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.isolation",
+        "db.transaction.read-phenomena",
+        "db.concurrency.concurrency-control",
+        "spring.tx.transaction-attributes"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 407,
+          "end_line": 407
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 411,
+          "end_line": 415
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 423,
+          "end_line": 424
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 437,
+          "end_line": 439
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 450,
+          "end_line": 453
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 465,
+          "end_line": 467
+        }
+      ]
+    },
+    {
+      "concept_id": "db.transaction.read-phenomena",
+      "title": "격리 수준이 낮을 때 나타나는 현상",
+      "aliases": [
+        "더티 리드",
+        "Non-Repeatable Read",
+        "Phantom Read"
+      ],
+      "canonical_path": "content/brain/knowledge/db/transaction/read-phenomena.md",
+      "tags": [
+        "db",
+        "transaction"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of three anomalies the isolation levels are defined by preventing - reading a value another transaction has not committed and may roll back, reading the same row twice within one transaction and getting different values, and running the same query twice and finding rows that were not there before",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "db-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.isolation-level",
+        "db.transaction.isolation",
+        "db.concurrency.lost-update",
+        "db.concurrency.conflict"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 425,
+          "end_line": 428
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 440,
+          "end_line": 442
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Isolation",
+          "start_line": 454,
+          "end_line": 457
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.timeout",
+      "title": "트랜잭션 타임아웃",
+      "aliases": [
+        "기본값은 제한 없음",
+        "새 트랜잭션을 여는 전파와 함께"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/timeout.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single limit on how long a transaction may run, absent unless set, and meaningful only where the boundary actually starts a new transaction rather than joining one",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "spring.tx.transaction-attributes",
+        "spring.tx.propagation",
+        "spring.db.pool-sizing"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### Timeout",
+          "start_line": 473,
+          "end_line": 475
+        }
+      ]
+    },
+    {
+      "concept_id": "spring.tx.read-only",
+      "title": "읽기 전용 트랜잭션 설정",
+      "aliases": [
+        "쓰기 시도를 막는다",
+        "플러시가 일어나지 않는다",
+        "slave로 보낸다"
+      ],
+      "canonical_path": "content/brain/knowledge/spring/tx/read-only.md",
+      "tags": [
+        "spring",
+        "tx"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single flag with two purposes - it forbids writing within the transaction, and it lets the layers below optimise, the persistence context skipping its flush and a replicated database routing the work to a read replica",
+      "pilot_strata": [
+        "lecture-batch-65",
+        "Interview/dog-study",
+        "spring-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "db.transaction.read-only-transaction",
+        "spring.tx.transaction-attributes",
+        "spring.jpa.entity-manager",
+        "db.ops.db-server-scaling"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### readOnly",
+          "start_line": 481,
+          "end_line": 483
+        },
+        {
+          "path": "content/brain/notes/Interview/dog-study/dog-week07.md",
+          "source_sha256": "813715f5c1ba00d03ced1ed0fbc9d1e00b481224e8013b160130c3539d38e8e9",
+          "heading": "## Transactional 속성 > ### readOnly",
+          "start_line": 487,
+          "end_line": 489
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": []
+}

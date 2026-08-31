@@ -1,0 +1,1439 @@
+{
+  "schema_version": 1,
+  "batch_id": "book-batch-18",
+  "phase": 5,
+  "mode": "batch",
+  "lane": "book",
+  "review_gate": "U3",
+  "status": "awaiting_user_review",
+  "produced_by": "candidate authoring lane, Claude Code session continuing the brain-restructure work",
+  "derived_from": {
+    "predecessor_batch": "book-batch-17",
+    "applied_state": "434 approved knowledge concepts after book-batch-17 covered chap14 L278-473."
+  },
+  "scope": {
+    "source": "content/brain/books/kafka/chap14.md",
+    "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+    "line_range": "L474-L995",
+    "covered_scopes": "heading scopes 21-32 (## 예제 through ## 스트림 처리 프레임워크 선택)",
+    "completes": "chap14, and with it every substantive source file under content/brain/books."
+  },
+  "review_flag_policy": {
+    "conflict": "The candidate's evidence lies in the same domain as an applied concept that batch 18 touches, so U3 must confirm it relates rather than restates. Both update candidates carry this flag by construction.",
+    "low-confidence": "The cited span carries three or fewer prose lines, or the concept boundary is an authoring judgement over a container anchor.",
+    "provenance-warning": "The evidence span is not plain prose.",
+    "sampling_note": "Every flagged candidate must be fully sampled at U3."
+  },
+  "candidates_authored": 34,
+  "candidates": [
+    {
+      "concept_id": "kafka.stream.topology",
+      "title": "처리 토폴로지",
+      "aliases": [
+        "Topology",
+        "소스와 싱크 스트림",
+        "처리 그래프"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/topology.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single graph joining one or more source streams through stream processors to one or more sink streams, where each processor is one transformation applied to the events passing through",
+      "pilot_strata": [
+        "book-batch-16",
+        "kafka/chap14",
+        "stream-domain",
+        "book-batch-18"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-processing",
+        "kafka.connect.connector",
+        "kafka.stream.state",
+        "kafka.stream.processor",
+        "kafka.stream.multi-stage-repartition"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 개념 > ### 토폴로지",
+          "start_line": 108,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.processor-api",
+      "title": "Processor API",
+      "aliases": [
+        "저수준 스트림즈 API",
+        "변환 직접 구현"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/processor-api.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single low-level of the two Streams APIs, letting the developer write the transformation directly rather than composing one from the DSL",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.streams-dsl",
+        "kafka.stream.topology"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제",
+          "start_line": 476,
+          "end_line": 482
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.streams-dsl",
+      "title": "스트림 DSL",
+      "aliases": [
+        "Streams DSL",
+        "고수준 API",
+        "KafkaStreams 실행 객체"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/streams-dsl.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single high-level API defining an application as a chain of transformations, always starting from a builder that produces the topology and ending in a KafkaStreams object whose start spawns the processing threads and whose close ends them",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.processor-api",
+        "kafka.stream.streams-builder",
+        "kafka.stream.streams-lifecycle"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제",
+          "start_line": 486,
+          "end_line": 494
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 단어 개수 세기",
+          "start_line": 507,
+          "end_line": 509
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.dag",
+      "title": "유향 비순환 그래프",
+      "aliases": [
+        "DAG",
+        "Directed Acyclic Graph"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/dag.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single graph shape a processing topology takes, whose vertices are the transformations applied to the stream's events and whose edges never form a cycle",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.topology",
+        "kafka.stream.processor"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제",
+          "start_line": 500,
+          "end_line": 501
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.application-id",
+      "title": "application.id",
+      "aliases": [
+        "애플리케이션 ID",
+        "인스턴스 협력과 내부 저장소 이름"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/application-id.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single identifier every Streams application carries, used both to make its instances cooperate and to name its local stores and their backing topics, and therefore required to be unique per application on one cluster",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "config-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.config.group-id",
+        "kafka.stream.local-state-persistence",
+        "kafka.stream.streams-dsl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 단어 개수 세기",
+          "start_line": 525,
+          "end_line": 529
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.serde",
+      "title": "Serde",
+      "aliases": [
+        "시리얼라이저 디시리얼라이저",
+        "Serdes.String()",
+        "객체별 Serde 지정"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/serde.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single serializer-deserializer pair a Streams application needs for every type it reads or writes, defaulted in configuration and overridable per topology step, and built with Gson, Avro or Protobuf for anything that is not a plain string",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.schema.serialization-format",
+        "kafka.connect.converter",
+        "kafka.stream.windowed-serde"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 단어 개수 세기",
+          "start_line": 541,
+          "end_line": 543
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 주식 시장 통계",
+          "start_line": 600,
+          "end_line": 604
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 클릭 스트림 확장",
+          "start_line": 729,
+          "end_line": 729
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.streams-builder",
+      "title": "StreamsBuilder",
+      "aliases": [
+        "토폴로지 정의 시작점",
+        "입력 토픽 지정"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/streams-builder.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single entry point creating the topology from a named input topic, from which each event is split, rekeyed and grouped by the DSL operations chained onto it",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.streams-dsl",
+        "kafka.stream.topology",
+        "kafka.message.message-key"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 단어 개수 세기",
+          "start_line": 568,
+          "end_line": 570
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.streams-lifecycle",
+      "title": "카프카 스트림즈 실행과 종료",
+      "aliases": [
+        "streams.start()",
+        "streams.close()"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/streams-lifecycle.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single start-and-stop pair that begins and ends the application's processing",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.streams-dsl",
+        "kafka.stream.streams-deployment"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 단어 개수 세기",
+          "start_line": 582,
+          "end_line": 584
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.streams-deployment",
+      "title": "스트림즈 애플리케이션 배포",
+      "aliases": [
+        "YARN이나 Mesos 불필요",
+        "인스턴스를 띄우는 것이 곧 클러스터"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/streams-deployment.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single deployment property distinguishing Streams from cluster frameworks: no resource manager or framework install is needed, since starting more instances of the application is what forms the processing cluster",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.thread-load-balancing",
+        "kafka.stream.streams-lifecycle",
+        "kafka.stream.task-parallelism"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 단어 개수 세기",
+          "start_line": 590,
+          "end_line": 592
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.materialized",
+      "title": "Materialized",
+      "aliases": [
+        "상태 저장소 설정 객체",
+        "withValueSerde"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/materialized.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single configuration object naming the state store an aggregation writes to and supplying the Serde that store uses for the aggregate",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.serde",
+        "kafka.stream.local-state",
+        "kafka.stream.stream-to-table"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 주식 시장 통계",
+          "start_line": 619,
+          "end_line": 621
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.windowed-serde",
+      "title": "WindowedSerde",
+      "aliases": [
+        "윈도우 타임스탬프 포함 직렬화",
+        "윈도우 적용 데이터 형식"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/windowed-serde.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Serde storing a windowed result together with its window timestamp, taking the window size as part of its construction though not for the encoding itself",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.serde",
+        "kafka.stream.time-window",
+        "kafka.stream.materialized"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 주식 시장 통계",
+          "start_line": 627,
+          "end_line": 629
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.ktable",
+      "title": "KTable",
+      "aliases": [
+        "구체화된 저장소",
+        "변경 스트림으로 갱신되는 테이블"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/ktable.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single materialized store kept current by the change stream feeding it",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.stream-to-table",
+        "kafka.stream.stream-table-join",
+        "kafka.stream.stream-table-duality"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 클릭 스트림 확장",
+          "start_line": 705,
+          "end_line": 705
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream-table-join",
+      "title": "스트림-테이블 조인",
+      "aliases": [
+        "Stream-Table Join",
+        "캐시된 테이블에 대한 조인",
+        "leftJoin"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/stream-table-join.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single join in which one side is a stream of changes to a locally cached table, where each event is enriched from that cached copy, the caller decides how the two values combine, and a missing match is preserved rather than dropped",
+      "pilot_strata": [
+        "book-batch-17",
+        "kafka/chap14",
+        "stream-domain",
+        "book-batch-18"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.cdc",
+        "kafka.stream.external-lookup-cost",
+        "kafka.stream.stream-table-duality",
+        "kafka.stream.ktable"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 스트림-테이블 조인",
+          "start_line": 376,
+          "end_line": 376
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 클릭 스트림 확장",
+          "start_line": 711,
+          "end_line": 715
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.windowed-join",
+      "title": "윈도우 조인",
+      "aliases": [
+        "Windowed Join",
+        "스트리밍 조인",
+        "조인 윈도우 상태 저장소",
+        "JoinWindows"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/windowed-join.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "update",
+      "concept_granularity": "single join of two unbounded streams matching events that share a key within the same time window, supported when both are partitioned on the join key by assigning matching partitions to one task and holding the join window in its state store, with the window itself declared as a span before and after the event",
+      "pilot_strata": [
+        "book-batch-17",
+        "kafka/chap14",
+        "stream-domain",
+        "book-batch-18"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.time-window",
+        "kafka.stream.table-table-join",
+        "kafka.stream.local-state-persistence",
+        "kafka.stream.join-task-colocation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 디자인 패턴 > ### 스트리밍 조인(윈도우 조인)",
+          "start_line": 392,
+          "end_line": 396
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 예제 > ### 클릭 스트림 확장",
+          "start_line": 721,
+          "end_line": 723
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.processor",
+      "title": "스트림 프로세서",
+      "aliases": [
+        "소스 프로세서",
+        "싱크 프로세서",
+        "Processor"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/processor.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single node of a topology, most of them implementing a filter, map or aggregation, with source processors reading from a topic and sink processors writing to one, so a topology always begins at a source and ends at a sink",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.topology",
+        "kafka.stream.dag",
+        "kafka.connect.task"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 생성하기",
+          "start_line": 737,
+          "end_line": 743
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.topology-execution-stage",
+      "title": "논리적 토폴로지와 물리적 토폴로지",
+      "aliases": [
+        "StreamsBuilder.build()",
+        "DSL 메소드의 독립 변환"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/topology-execution-stage.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single three-stage path from a logical topology defined by DSL calls, through the physical topology the build step derives, to the running application - where translating each DSL method on its own is what leaves the result unoptimized",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.streams-dsl",
+        "kafka.config.topology-optimization",
+        "kafka.stream.topology"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 최적화하기",
+          "start_line": 749,
+          "end_line": 749
+        },
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 최적화하기",
+          "start_line": 755,
+          "end_line": 759
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.config.topology-optimization",
+      "title": "TOPOLOGY_OPTIMIZATION",
+      "aliases": [
+        "토폴로지 최적화 활성화",
+        "build(props)"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/config/topology-optimization.md",
+      "tags": [
+        "kafka",
+        "config"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single setting enabling topology optimization, which applies only when the build call is given the properties, and whose effect is worth measuring as run time and bytes written",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "config-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.topology-execution-stage",
+        "kafka.stream.streams-dsl"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 최적화하기",
+          "start_line": 765,
+          "end_line": 769
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.topology-test-driver",
+      "title": "TopologyTestDriver",
+      "aliases": [
+        "목업 입력·출력 토픽",
+        "캐시 미시뮬레이션 한계"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/topology-test-driver.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unit-test harness feeding a mock input topic, running the topology and comparing the mock output against expectations, which cannot catch anything that depends on the caching it does not simulate",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.integration-test",
+        "kafka.stream.topology",
+        "kafka.adminclient.mock-admin-client"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 테스트하기",
+          "start_line": 777,
+          "end_line": 781
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.integration-test",
+      "title": "스트림즈 통합 테스트",
+      "aliases": [
+        "EmbeddedKafkaCluster",
+        "Testcontainers"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/integration-test.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single pair of integration approaches - a broker inside the test JVM, or brokers in Docker containers - with the container route preferred because it isolates Kafka and its dependencies from the test application",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.topology-test-driver",
+        "kafka.reliability.application-validation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 테스트하기",
+          "start_line": 783,
+          "end_line": 785
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.thread-load-balancing",
+      "title": "스트림즈의 부하 분산",
+      "aliases": [
+        "인스턴스 내 다중 스레드",
+        "장비 간 균등 분담"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/thread-load-balancing.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single scaling model running several threads inside an instance and several instances across machines, with every active thread taking an equal share of the work either way",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.task-parallelism",
+        "kafka.stream.thread-count",
+        "kafka.stream.streams-deployment"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 규모 확장하기",
+          "start_line": 793,
+          "end_line": 795
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.task-parallelism",
+      "title": "태스크 단위 병렬 처리",
+      "aliases": [
+        "파티션 수가 태스크 수를 결정",
+        "병렬 처리의 기본 단위"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/task-parallelism.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single unit of parallelism: the engine splits the topology into tasks numbering as many as the input partitions, each owning a subset, running every processing step for them and writing to the sink independently of the others",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.topic.partition",
+        "kafka.stream.thread-count",
+        "kafka.connect.task"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 규모 확장하기",
+          "start_line": 801,
+          "end_line": 805
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.thread-count",
+      "title": "스레드 수 결정",
+      "aliases": [
+        "파티션 수만큼의 태스크",
+        "스레드를 늘리거나 인스턴스를 늘리거나"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/thread-count.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single scaling decision in which the developer picks the thread count per instance, each thread runs a share of the tasks, and the ceiling is the input partition count - so more speed means more threads, and an exhausted server means another instance, with Kafka coordinating the assignment",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.task-parallelism",
+        "kafka.stream.thread-load-balancing",
+        "kafka.client.consumer-group"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 규모 확장하기",
+          "start_line": 811,
+          "end_line": 817
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.join-task-colocation",
+      "title": "조인 태스크의 파티션 집약",
+      "aliases": [
+        "조인 파티션을 한 태스크에",
+        "동일 파티션 수 요구"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/join-task-colocation.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single dependency created by joins: every partition a join needs goes to one task, which is why all topics in a join must be partitioned on the same key into the same number of partitions",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.task-parallelism",
+        "kafka.stream.windowed-join",
+        "kafka.stream.repartition-subtopology"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 규모 확장하기",
+          "start_line": 823,
+          "end_line": 825
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.repartition-subtopology",
+      "title": "리파티셔닝과 서브 토폴로지",
+      "aliases": [
+        "새 토픽을 통한 셔플",
+        "서브 토폴로지 분할"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/repartition-subtopology.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single mechanism in which repartitioning writes to a new topic instead of shuffling between tasks, splitting the topology into two sub-topologies that run at their own pace and need share neither thread nor server",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.multi-stage-repartition",
+        "kafka.stream.task-parallelism",
+        "kafka.stream.join-task-colocation"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 토폴로지 규모 확장하기",
+          "start_line": 831,
+          "end_line": 835
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.failure-offset-resume",
+      "title": "마지막 커밋 오프셋에서 재개",
+      "aliases": [
+        "재시작 후 처리 지점 복구"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/failure-offset-resume.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single recovery step in which a restarted application reads its last committed offset from Kafka and resumes from the point it had processed",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.client.offset",
+        "kafka.stream.changelog",
+        "kafka.reliability.correct-offset-commit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 장애 처리하기",
+          "start_line": 843,
+          "end_line": 843
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.changelog",
+      "title": "체인지 로그",
+      "aliases": [
+        "Changelog",
+        "로컬 상태 저장소 복구"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/changelog.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single Kafka-held log of state changes from which a lost local store is rebuilt",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict",
+        "low-confidence"
+      ],
+      "related_concepts": [
+        "kafka.stream.local-state-persistence",
+        "kafka.stream.recovery-speed",
+        "kafka.retention.log-compaction"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 장애 처리하기",
+          "start_line": 849,
+          "end_line": 849
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.task-ha",
+      "title": "태스크 고가용성",
+      "aliases": [
+        "다른 스레드에서 태스크 재시작",
+        "컨슈머 코디네이션 재사용"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/task-ha.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single availability mechanism reusing the consumer group coordination protocol, so a failed task restarts on another live thread the way a dead consumer's partitions move to a surviving one, and improvements to that protocol accrue to Streams",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.client.consumer-group",
+        "kafka.client.consumer-rebalance-frequency",
+        "kafka.reliability.exactly-once"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 장애 처리하기",
+          "start_line": 855,
+          "end_line": 861
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.recovery-speed",
+      "title": "상태 복구 속도",
+      "aliases": [
+        "compaction.lag.ms 낮추기",
+        "세그먼트 크기 축소"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/recovery-speed.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single availability cost in which a task taking over must first rebuild its state from the internal topic, during which its data goes unprocessed, shortened mainly by lowering the compaction lag and the segment size",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.changelog",
+        "kafka.config.log-segment-bytes",
+        "kafka.stream.standby-replica"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 장애 처리하기",
+          "start_line": 867,
+          "end_line": 869
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.standby-replica",
+      "title": "스탠바이 레플리카",
+      "aliases": [
+        "Standby Replica",
+        "따라가기만 하는 태스크"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/standby-replica.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single task on another server that only keeps pace with the active one's state, so a failure resumes almost immediately instead of waiting for a rebuild",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.recovery-speed",
+        "kafka.stream.task-ha",
+        "kafka.mirroring.multi-region-cluster"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 카프카 스트림즈 : 아키텍처 개요 > ### 장애 처리하기",
+          "start_line": 875,
+          "end_line": 877
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.stream-usecase",
+      "title": "스트림 처리 활용 사례",
+      "aliases": [
+        "고객 서비스",
+        "사물 인터넷",
+        "사기 탐지",
+        "이상 탐지"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/stream-usecase.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single family of three uses the chapter names - near-real-time customer service, predictive maintenance over device telemetry, and fraud or anomaly detection where catching a pattern early is worth far more than a batch job that finds it late",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.usecase.use-case-family",
+        "kafka.stream.stream-processing",
+        "kafka.stream.time-window"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 활용 사례",
+          "start_line": 883,
+          "end_line": 899
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.framework-application-type",
+      "title": "애플리케이션 종류별 스트림 솔루션",
+      "aliases": [
+        "데이터 수집",
+        "밀리초 단위 작업",
+        "비동기 마이크로서비스",
+        "준 실시간 분석"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/framework-application-type.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single taxonomy of four application kinds that decides which stream solution fits - moving data between systems, near-instant responses, asynchronous microservices holding a local cache, and near-real-time analytics doing complex aggregation and joins",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.framework-problem-fit",
+        "kafka.connect.connect-vs-client",
+        "kafka.stream.request-response"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 프레임워크 선택",
+          "start_line": 907,
+          "end_line": 931
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.framework-problem-fit",
+      "title": "문제 유형별 프레임워크 요구",
+      "aliases": [
+        "마이크로배치 대신 이벤트 단위 저지연",
+        "로컬 저장소 지원 여부"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/framework-problem-fit.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of requirements each problem type imposes - connector coverage for ingestion, per-event low latency over micro-batching for sub-millisecond work, message-bus integration and a materialized local view for microservices, and rich aggregation, window and join APIs for analytics",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.framework-application-type",
+        "kafka.connect.kafka-connect",
+        "kafka.stream.local-state"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 프레임워크 선택",
+          "start_line": 939,
+          "end_line": 961
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.framework-operability",
+      "title": "스트림 시스템의 운영성",
+      "aliases": [
+        "배포와 모니터링 용이성",
+        "재처리 대응"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/framework-operability.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single operability checklist for a stream system - is it easy to deploy, monitor and troubleshoot, can it scale both ways, does it fit the existing infrastructure, and what happens when a mistake forces reprocessing",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.framework-general-criteria",
+        "kafka.stream.reprocessing-new-version",
+        "kafka.stream.streams-deployment"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 프레임워크 선택",
+          "start_line": 969,
+          "end_line": 977
+        }
+      ]
+    },
+    {
+      "concept_id": "kafka.stream.framework-general-criteria",
+      "title": "프레임워크 선택의 보편 기준",
+      "aliases": [
+        "디버깅 용이성",
+        "추상화의 완성도",
+        "커뮤니티"
+      ],
+      "canonical_path": "content/brain/knowledge/kafka/stream/framework-general-criteria.md",
+      "tags": [
+        "kafka",
+        "stream"
+      ],
+      "proposal_kind": "create",
+      "concept_granularity": "single set of criteria beyond features - how fast a good application can be written and debugged, whether the abstraction really handles scaling and recovery instead of leaking them back to the developer, and how active the community is",
+      "pilot_strata": [
+        "book-batch-18",
+        "kafka/chap14",
+        "stream-domain"
+      ],
+      "review_flags": [
+        "conflict"
+      ],
+      "related_concepts": [
+        "kafka.stream.framework-operability",
+        "kafka.stream.framework-problem-fit"
+      ],
+      "locators": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4",
+          "heading": "## 스트림 처리 프레임워크 선택",
+          "start_line": 983,
+          "end_line": 995
+        }
+      ]
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "concept_id": "book.rejected.kafka-chap14-l0733",
+      "title": "chap14 카프카 스트림즈 아키텍처 개요 섹션 머리말",
+      "proposal_kind_considered": "stub",
+      "reason_code": "insufficient-source-evidence",
+      "reason": "chap14 L733-734 `## 카프카 스트림즈 : 아키텍처 개요` carries only the heading and one blank line (span_sha256 38dfa31429b730dfad77ce5abf3a67b1bf719a2d072f2bfb9dc97a642da45df6; prose_lines=0; code_lines=0), and the engine's substantiveBodyText() gate returns false.",
+      "pilot_strata": [
+        "book-batch-18",
+        "scope-level-rejection-probe"
+      ],
+      "expected_outcome": "rejected",
+      "sources": [
+        {
+          "path": "content/brain/books/kafka/chap14.md",
+          "source_sha256": "42b59e533a0bd289e81c9338a1871567cce87ff1d175d3b4caa67cb994534bb4"
+        }
+      ],
+      "engine_substantive": false
+    }
+  ],
+  "update_authoring_note": {
+    "statement": "Batch 18 authors 2 update candidates, both revising concepts book-batch-17 applied from the design-pattern section with the worked example's detail. Each preserves its applied title, canonical_path, tags, approved locator and approved edges.",
+    "updates": [
+      {
+        "concept_id": "kafka.stream.stream-table-join",
+        "approved_locators_preserved": [
+          "content/brain/books/kafka/chap14.md:376-376"
+        ],
+        "new_locators": [
+          "content/brain/books/kafka/chap14.md:711-715"
+        ],
+        "why_update_not_create": "The 클릭 스트림 확장 example explains the same join - that the caller decides how the two values combine and that a missing match is preserved - rather than a different one."
+      },
+      {
+        "concept_id": "kafka.stream.windowed-join",
+        "approved_locators_preserved": [
+          "content/brain/books/kafka/chap14.md:392-396"
+        ],
+        "new_locators": [
+          "content/brain/books/kafka/chap14.md:721-723"
+        ],
+        "why_update_not_create": "Same join, with how the window is declared as a span before and after the event."
+      }
+    ]
+  },
+  "exclusions_and_coverage": {
+    "uncited_substantive_prose": [
+      {
+        "span": "L513, L523, L533-535, L539, L547, L574, L588, L598, L617, L625, L695-699, L703, L709, L719, L727, L753, L763, L775, L791, L799, L809, L821, L829, L841, L847, L853, L865, L873, L883 partial, L905, L911-929 partial, L935-957 partial, L965-967, L981, L987, L993",
+        "reason_code": "numbered-sub-label-or-carried-by-owner",
+        "detail": "Bold numbering labels and section lead-ins, plus L533-535 which restates the bootstrap server requirement kafka.install.bootstrap-server already carries. Each label's content is inside the cited span of the concept that owns it."
+      },
+      {
+        "span": "L514-521, L548-567, L575-581, L605-616, L630-653, L655-694",
+        "reason_code": "code-carried-by-neighbouring-locator",
+        "detail": "Java listings whose meaning is carried by the cited commentary."
+      }
+    ],
+    "coverage_statement": "Every substantive heading scope in L474-995 contributes at least one cited locator. The one non-substantive scope is filed as a rejection probe."
+  },
+  "budget_accounting": {
+    "ceilings_unchanged": "B1 60000 bytes, B2 70 heading scopes, B3 55 positive prose scopes, B4 360 prose lines, B5 40 accepted candidates. None is raised.",
+    "selected_vs_budget": {
+      "prose_lines": {
+        "value": 168,
+        "ceiling": 360,
+        "satisfied": true
+      },
+      "heading_scopes": {
+        "value": 12,
+        "ceiling": 70,
+        "satisfied": true
+      },
+      "accepted_candidates": {
+        "value": 33,
+        "ceiling": 40,
+        "satisfied": true
+      }
+    }
+  },
+  "finalization_status": {
+    "state": "authored, awaiting propose",
+    "forbidden": "This manifest authorizes nothing. It is the input to `propose --batch`; U3 signature and apply are separate gates."
+  },
+  "alias_ownership_correction": {
+    "trigger": "The collision gate caught 스트림 프로세서 held as an alias on kafka.stream.topology.",
+    "correction": "That name belongs to the topology's nodes, not to the topology. chap14's 토폴로지 생성하기 scope defines the processor properly, so the alias moves to the new kafka.stream.processor.",
+    "bonus": "The same update restores the topology-to-repartition edge book-batch-16 had to drop as a forward reference.",
+    "note": "Alias move and edge additions only. The approved locator is preserved."
+  }
+}
