@@ -226,13 +226,27 @@ plugins:
       priority: 5
       condition: not-index
   - source: github:quartz-community/comments
-    enabled: false
+    enabled: true
     options:
       provider: giscus
-      options: {}
+      options:
+        repo: Shin-Jae-Yoon/Shin-Jae-Yoon.github.io
+        repoId: R_kgDOI3_Rgg
+        category: Announcements
+        categoryId: DIC_kwDOI3_Rgs4DEl_c
+        # 경로로 글과 Discussion 을 잇는다. url 은 쿼리스트링까지 키에 넣어
+        # 같은 글에 Discussion 이 여러 개 생길 수 있다. 예전 utterances 도 pathname 이었다.
+        mapping: pathname
+        # 본문의 sha1 해시로 대조한다. GitHub 의 흐릿한 검색에 걸려 엉뚱한 글타래가
+        # 붙는 것을 막는다.
+        strict: true
+        lang: ko
+        reactionsEnabled: true
+        inputPosition: bottom
     layout:
       position: afterBody
       priority: 10
+      condition: dev-uni-comments
   - source: github:quartz-community/footer
     enabled: true
     options:

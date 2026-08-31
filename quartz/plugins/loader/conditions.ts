@@ -50,6 +50,16 @@ const devUniConditions = {
     const surface = classifyDevUniSurface(props.fileData)
     return surface === "garden-detail" || surface === "article-detail"
   },
+  // 댓글은 Brain 의 개별 문서에만 붙인다. 지식, 강의, 도서, 메모가 여기 들어간다.
+  //
+  // `garden-detail` 만으로는 부족하다. classifyDevUniSurface 는 brain 아래 슬러그를
+  // 전부 garden-detail 로 보기 때문에 폴더 인덱스도 걸린다. 폴더 페이지는 자식 목록일
+  // 뿐이라 댓글을 달 자리가 아니고, 글 하나에 붙어야 할 글타래가 목록에도 생긴다.
+  "dev-uni-comments": (props) => {
+    const slug = props.fileData.slug ?? ""
+    if (slug === "index" || slug.endsWith("/index")) return false
+    return classifyDevUniSurface(props.fileData) === "garden-detail"
+  },
 } satisfies Record<string, ConditionPredicate>
 
 export function registerCondition(name: string, predicate: ConditionPredicate): void {
